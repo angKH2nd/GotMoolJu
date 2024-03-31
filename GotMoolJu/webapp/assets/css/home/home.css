@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.hydrated body{
+	margin: 0;
+}
+
+.home_area{
+	height: 1000px;
+	width: calc(100% - 92px);
+	margin-left: 92px;
+}
+
+.home_area>div{
+	width: 100%;
+}
+
+.top_area{
+	height: 70px;
+}
+
+.center_area{
+	height: 80%;
+}
+
+.bottom_area{
+	height: 70px;
+}
+
+.home_area div{border: 0.5px solid skyblue;}
