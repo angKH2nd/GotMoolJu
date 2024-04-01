@@ -4,13 +4,26 @@
 	margin: 0;
 }
 
-.home_area{
+.outer{
 	height: 1000px;
-	width: calc(100% - 92px);
+	width: 100%;
+}
+
+.outer>div{
+	height: 100%;
+	float: left;
+}
+
+.menubar_area{
+	width: 92px;
+}
+
+.main_area{
+	width: calc(100% - 95px);
 	margin-left: 92px;
 }
 
-.home_area>div{
+.main_area>div{
 	width: 100%;
 }
 
@@ -19,11 +32,17 @@
 }
 
 .center_area{
-	height: 80%;
+	height: calc(100% - 140px);
 }
 
 .bottom_area{
 	height: 70px;
 }
 
-.home_area div{border: 0.5px solid skyblue;}
+.center_form{
+	width: calc(100% - 500px);
+	height: 100%;
+	padding: 10px 250px;
+}
+
+.main_area div{border: 0.5px solid skyblue;}
