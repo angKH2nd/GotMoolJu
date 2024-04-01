@@ -11,7 +11,9 @@
 <body>
 	<jsp:include page="../common/menubar.jsp" />
 	<div class="home_area">
-		<div class="top_area"></div>
+		<div class="top_area">
+			<jsp:include page="../common/header.jsp" />
+		</div>
 		<div class="center_area"></div>
 		<div class="bottom_area">
 			<jsp:include page="../common/footer.jsp" />
