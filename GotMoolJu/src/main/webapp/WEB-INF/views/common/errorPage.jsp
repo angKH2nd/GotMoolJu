@@ -5,12 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="resources/css/common/header.css">
 </head>
 <body>
-	<div class="common_header">
-		
-	</div>
-	<script src="resources/js/common/header.js"></script>
+	${ errorMsg }
 </body>
 </html>

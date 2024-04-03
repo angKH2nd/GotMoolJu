@@ -1,80 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="memberMapper">
-	<!-- 
-	    * DML
-	    <insert|update|delete id="각 sql문 식별자" [parameterType="전달받을자바타입(플클래스명)|별칭"]>
-	 
-	    </insert|update|delete>
-	 
-	    * SELECT
-	    <select id="각 sql문 식별자" [parameterType="전달받을자바타입(플클래스명)|별칭"]
-	   						      resultType="조회 결과를 반환하고자 하는 자바타입"|resultMap="조회결과를 뽑아서 매핑할 resultMap의 id">
-	    </select>
-	-->
-	<insert id="insertMember" parameterType="Member">
-		insert
-		  into member
-		  (
-		    user_no
-		  , user_id
-		  , user_pwd
-		  , user_name
-		  , email
-		  , birthday
-		  , gender
-		  , phone
-		  , address
-		  )
-		  values
-		  (
-		    seq_uno.nextval
-		  , #{userId}
-		  , #{userPwd}
-		  , #{userName}
-		  , #{email}
-		  , #{birthday}
-		  , #{gender}
-		  , #{phone}
-		  , #{address}
-		  )
-	</insert>
-	
-	 	<!-- 좌측은 DB 우측은 VO -->
-	<resultMap id="memberResultSet" type="Member">
-	 	<result column="user_no" property="userNo" />
-	 	<result column="user_id" property="userId" />
-	 	<result column="user_pwd" property="userPwd" />
-	 	<result column="USER_NAME" property="userName" />
-	 	<result column="email" property="email" />
-	 	<result column="birthday" property="birthday" />
-	 	<result column="gender" property="gender" />
-	 	<result column="phone" property="phone" />
-	 	<result column="address" property="address" />
-	 	<result column="enroll_date" property="enrollDate" />
-	 	<result column="modify_date" property="modifyDate" />
-	 	<result column="status" property="status" />
+
+	<resultMap id="memberResult" type="Member">
+		<result column="user_no" property="userNo"/>
+		<result column="user_id" property="userId"/>
+		<result column="user_pwd" property="userPwd"/>
+		<result column="user_name" property="userName"/>
+		<result column="user_nickname" property="userNickname"/>
+		<result column="user_ssn" property="userSsn"/>
+		<result column="user_phone" property="userPhone"/>
+		<result column="user_email" property="userEmail"/>
+		<result column="user_address" property="userAddress"/>
+		<result column="user_area_no" property="userAreaNo"/>
+		<result column="user_enroll_date" property="userEnrollDate"/>
+		<result column="user_modify_date" property="userModifyDate"/>
+		<result column="user_status" property="userStatus"/>
 	</resultMap>
-	
-	<select id="loginMember" resultMap="memberResultSet" parameterType="Member">
+
+	<select id="loginMember" resultMap="memberResult">
 		select
 		       user_no
 		     , user_id
 		     , user_pwd
 		     , user_name
-		     , email
-		     , birthday
-		     , gender
-		     , phone
-		     , address
-		     , enroll_date
-		     , modify_date
-		     , status
-		  from member
-		 where user_id = #{userId}
+		     , user_nickname
+		     , user_ssn
+		     , user_phone
+		     , user_email
+		     , user_address
+		     , user_area_no
+		     , user_enroll_date
+		     , user_modify_date
+		     , user_status
+		  from tb_member
+		 where status = 'Y'
+		   and user_id = #{userId}
 		   and user_pwd = #{userPwd}
-		   and status = 'Y'
 	</select>
+
 </mapper>

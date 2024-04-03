@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="assets/css/home/home.css">
+<link rel="stylesheet" href="resources/css/home/home.css">
 </head>
-<link rel="icon" sizes="32x32" type="image/png" href="assets/images/got/got_logo.ico">
+<link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <body>
 	<div class="outer">
 		<jsp:include page="../common/menubar.jsp" />
@@ -27,6 +27,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="assets/js/home/home.js"></script>
+	<script src="resources/js/home/home.js"></script>
 </body>
 </html>

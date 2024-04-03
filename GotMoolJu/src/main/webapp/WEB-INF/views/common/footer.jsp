@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="assets/css/common/footer.css">
+<link rel="stylesheet" href="resources/css/common/footer.css">
 </head>
 <body>
 	<div class="common_footer">
 		Copyright © 2024 GotMoolJu Institute All Right Reserved
 	</div>
 	<button onclick="backToTop()" id="btn-back-to-top">Top</button>
-	<script src="assets/js/common/footer.js"></script>
+	<script src="resources/js/common/footer.js"></script>
 </body>
 </html>

@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="assets/css/common/menubar.css">
+<link rel="stylesheet" href="resources/css/common/menubar.css">
 </head>
-<link rel="icon" sizes="32x32" type="image/png" href="assets/images/got/got_logo.ico">
+<link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <body id="body-pd">
 	<div class="l-navbar" id="navbar">
        	<nav class="nav">
@@ -88,6 +88,6 @@
     </div>
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-    <script src="assets/js/common/menubar.js"></script>
+    <script src="resources/js/common/menubar.js"></script>
 </body>
 </html>

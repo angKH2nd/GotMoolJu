@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
@@ -9,21 +7,18 @@
 	
 	<typeAliases>
 		<typeAlias type="com.kh.got.member.model.vo.Member" alias="Member"/>
+		
+		<typeAlias type="com.kh.got.qna.model.vo.Qna" alias="Qna"/>
+		<typeAlias type="com.kh.got.qna.model.vo.QnaAnswer" alias="QnaAnswer"/>
+		<typeAlias type="com.kh.got.announcement.model.vo.Announcement" alias="Announcement"/>
+		<typeAlias type="com.kh.got.faq.model.vo.Faq" alias="Faq"/>
+		
+		<typeAlias type="com.kh.got.re.model.vo.Review" alias="Review"/>
 	</typeAliases>
-	
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC"/>
-				<dataSource type="POOLED">
-					<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-					<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-					<property name="username" value="got"/>
-					<property name="password" value="got"/>
-				</dataSource>
-		</environment>
-	</environments>
 	
 	<mappers>
 		<mapper resource="/mappers/member-mapper.xml"/>
+		<mapper resource="/mappers/qna-mapper.xml"/>
+		<mapper resource="/mappers/re-mapper.xml"/>
 	</mappers>
 </configuration>
