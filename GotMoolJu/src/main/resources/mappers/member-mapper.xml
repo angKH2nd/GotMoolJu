@@ -34,7 +34,7 @@
 		     , user_modify_date
 		     , user_status
 		  from tb_member
-		 where status = 'Y'
+		 where user_status = 'Y'
 		   and user_id = #{userId}
 		   and user_pwd = #{userPwd}
 	</select>

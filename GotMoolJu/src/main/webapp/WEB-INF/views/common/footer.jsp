@@ -11,7 +11,6 @@
 	<div class="common_footer">
 		Copyright © 2024 GotMoolJu Institute All Right Reserved
 	</div>
-	<button onclick="backToTop()" id="btn-back-to-top">Top</button>
 	<script src="resources/js/common/footer.js"></script>
 </body>
 </html>

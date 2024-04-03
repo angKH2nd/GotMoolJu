@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-.hydrated body{
+body{
 	margin: 0;
 }
 
 .outer{
-	height: 1500px;
 	width: 100%;
+	height: 1000px;
 }
 
 .outer>div{
@@ -14,40 +14,89 @@
 	float: left;
 }
 
-.menubar_area{
-	width: 92px;
+.left-side {
+	width: 70px;
 }
 
-.main_area{
-	width: calc(100% - 95px);
-	margin-left: 92px;
+.right-side {
+    width: calc(100% - 70px);
 }
 
-.main_area>div{
-	width: 100%;
+.left-side>div{
+    float: left;
+    height: 100%;
 }
 
-.top_area{
+.sidebar {
+    position: relative;
+    width: 70px;
+    background-color: white;
+    border-right: 0.5px solid lightgray;
+    z-index: 1;
+}
+
+.sidebar-toggle {
+    position: relative;
+    z-index: 2;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center-align content */
+    align-items: center; /* Horizontally center-align content */
+    cursor: pointer;
+    border-bottom: 0.5px solid lightgray;
+}
+
+.sidebar ul li .icon-area {
+    margin-bottom: 10px; /* Adjust spacing between icon and text */
+}
+
+.sidebar ul li .text-area {
+    font-size: 12px; /* Adjust font size */
+    line-height: 1; /* Ensure proper vertical alignment */
+}
+
+.home, .member, .comunity, .helpcenter, .chart, .loan, .etc {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #f3f5f9;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-right: 0.5px solid lightgray;
+    padding: 10px;
+}
+
+.right-side>div {
+    width: 100%;
+}
+
+.header-side {
+	height: 60px;
+}
+
+.map-side {
+	height: calc(100% - 110px)
+}
+
+.footer-side {
 	height: 50px;
 }
 
-.center_area{
-	height: calc(100% - 100px);
+.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
-
-.bottom_area{
-	height: 50px;
-}
-
-.center_form{
-	width: calc(100% - 300px);
-	height: calc(100% - 20px);
-	padding: 10px 150px;
-}
-
-.inside_area{
-	width: 100%;
-	height: 100%;
-}
-
-.main_area div{border: 0.5px solid skyblue;}

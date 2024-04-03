@@ -25,7 +25,7 @@ public class MemberController {
 			return "common/errorPage";
 		}else {
 			session.setAttribute("loginUser", loginUser);
-			return "redirect:/home.got";
+			return "redirect:/home.got?toggle=member";
 		}
 	}
 	
