@@ -30,8 +30,8 @@
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
        				<li onClick="javascript:popOpen();">
-		        		<div class="icon-area"><img width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
-            			<div class="text-area" style="padding: 0 0 10px 0">회원</div>
+		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
+            			<div class="text-area" style="padding: 0 0 10px 0;">회원</div>
             		</li>
             	</c:when>
             	<c:otherwise>
