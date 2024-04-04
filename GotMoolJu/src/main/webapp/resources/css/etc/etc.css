@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.etc-outer {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.etc-outer div{box-sizing: border-box; border: 0.5px solid skyblue;}
+
+.etc-outer::-webkit-scrollbar {
+	display:none;
+}
+
+.etc-outer>div {
+	width: 100%;
+}
+
+.etc-menu1 {
+	height: 120px;
+}
+
+.etc-menu1>div {
+	width: 100%;
+}
+
+.etc-cancel {
+	height: 60px;
+}
+
+.etc-cancel>div {
+	float: left;
+	height: 100%;
+}
+
+.etc-cancel-blank {
+	width: calc(100% - 20px);
+}
+
+.etc-cancel-btn {
+	width: 20px;
+}
+
+.etc-profile {
+	height: 60px;
+}
+
+.etc-menu2 {
+	height: 20%;
+}
+
+.etc-menu3 {
+	height: 500px;
+}
+
+.etc-menu4 {
+	height: 20%;
+}
+
+.etc-menu5 {
+	height: 20%;
+}
+
+
+
+
+
+
+
+

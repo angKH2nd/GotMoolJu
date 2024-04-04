@@ -8,9 +8,10 @@
 		<result column="user_pwd" property="userPwd"/>
 		<result column="user_name" property="userName"/>
 		<result column="user_nickname" property="userNickname"/>
-		<result column="user_ssn" property="userSsn"/>
 		<result column="user_phone" property="userPhone"/>
 		<result column="user_email" property="userEmail"/>
+		<result column="user_gender" property="userGender"/>
+		<result column="user_age" property="userAge"/>
 		<result column="user_address" property="userAddress"/>
 		<result column="user_area_no" property="userAreaNo"/>
 		<result column="user_enroll_date" property="userEnrollDate"/>
@@ -19,15 +20,16 @@
 	</resultMap>
 
 	<select id="loginMember" resultMap="memberResult">
-		select
+	 	select
 		       user_no
 		     , user_id
 		     , user_pwd
 		     , user_name
 		     , user_nickname
-		     , user_ssn
 		     , user_phone
 		     , user_email
+		     , user_gender
+		     , user_age
 		     , user_address
 		     , user_area_no
 		     , user_enroll_date
@@ -36,7 +38,38 @@
 		  from tb_member
 		 where user_status = 'Y'
 		   and user_id = #{userId}
-		   and user_pwd = #{userPwd}
 	</select>
+	 
+	<insert id="insertMember">
+		insert
+		  into tb_member
+		  (
+		    user_no
+		  ,	user_id
+		  , user_pwd
+		  , user_name
+		  , user_nickname
+		  , user_phone
+		  , user_email
+		  , user_gender
+		  , user_age
+		  , user_address
+		  , user_area_no
+		  )
+		  values
+		  ( 
+		    seq_user_no.nextval
+		  , #{userId}
+		  , #{userPwd}
+		  , #{userName}
+		  , #{userNickname}
+		  , #{userPhone}
+		  , #{userEmail}
+		  , #{userGender}
+		  , #{userAge}
+		  , #{userAddress}
+		  , #{userAreaNo}
+		  )
+	</insert>
 
 </mapper>

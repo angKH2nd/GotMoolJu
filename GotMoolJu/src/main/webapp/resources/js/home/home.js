@@ -26,6 +26,6 @@ function toggleDiv(divId) {
 function cancelDiv() {
     var divs = document.querySelectorAll('.sidebar-toggle > div');
     divs.forEach(function(div) {
-        div.style.display = 'none'; // Hide all divs
+        div.style.display = 'none';
     });
 }

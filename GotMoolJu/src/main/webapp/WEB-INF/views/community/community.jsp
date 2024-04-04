@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +7,6 @@
 <title>갓물주</title>
 </head>
 <body>
-	회원 눌림
+	여기 커뮤 jsp임
 </body>
 </html>
