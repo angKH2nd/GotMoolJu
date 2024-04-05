@@ -34,6 +34,10 @@
 	float: left;
 }
 
+.member-admin {
+	width: 100px;
+}
+
 .member-likes {
 	width: 50px;
 }

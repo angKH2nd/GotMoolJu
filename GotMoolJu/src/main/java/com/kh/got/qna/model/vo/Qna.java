@@ -9,13 +9,12 @@ import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 @ToString
 public class Qna {
 	
-	private String qnaNo;
+	private int qnaNo;
 	private String qnaWriter;
 	private String qnaTitle;
 	private String qnaContent;

@@ -25,10 +25,19 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="member-likes mh"><i class="fa-solid fa-heart fa-lg"></i></div>
-					<div class="member-notice mh"><i class="fa-regular fa-bell fa-lg"></i></div>
-					<div class="member-picture mh">프사</div>
-					<div class="member-nickname">${ loginUser.userNickname } 님 &nbsp;</div>
+					<c:choose>
+						<c:when test="${ loginUser.userId eq 'admin' }">
+							<div class="member-admin mh"><a class="tdna" href="main.ad">관리자</a></div>
+							<div class="member-picture mh">프사</div>
+							<div class="member-nickname">${ loginUser.userNickname } 님 &nbsp;</div>
+						</c:when>
+						<c:otherwise>
+							<div class="member-likes mh"><i class="fa-solid fa-heart fa-lg"></i></div>
+							<div class="member-notice mh"><i class="fa-regular fa-bell fa-lg"></i></div>
+							<div class="member-picture mh">프사</div>
+							<div class="member-nickname">${ loginUser.userNickname } 님 &nbsp;</div>
+						</c:otherwise>
+					</c:choose>
 				</c:otherwise>
 			</c:choose>
 		</div>

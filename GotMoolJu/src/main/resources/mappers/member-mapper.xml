@@ -36,7 +36,7 @@
 		     , user_modify_date
 		     , user_status
 		  from tb_member
-		 where user_status = 'Y'
+		 where user_status in('Y', 'A')
 		   and user_id = #{userId}
 	</select>
 	 
@@ -71,5 +71,25 @@
 		  , #{userAreaNo}
 		  )
 	</insert>
+	
+	<update id="updateMember">
+		update
+			   tb_member
+		   set user_nickname = ${userNickname}
+		   	 , user_email = #{userEmail}
+		     , user_age = #{userAge}
+		     , user_phone = #{userPhone}
+		     , user_address = #{userAddress}
+		     , user_area_no = ${userAreaNo}
+		     , user_modify_date = sysdate
+		 where user_id = #{userId}
+	</update>
+	
+	<update id="deleteMember">
+		update
+			   tb_member
+		   set user_status = 'N'
+		 where user_id = #{userId}
+	</update>
 
 </mapper>

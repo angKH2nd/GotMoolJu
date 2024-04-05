@@ -17,12 +17,7 @@
 			</div>
 			<div class="help-center-profile"></div>
 		</div>
-		<div class="help-center-menu2">
-			<c:if test="${ not empty loginUser }">
-				메뉴2 자리이긴 한데 급한대로 여기에 로그아웃 했음 <br><br>
-				<a href="logout.me">로그아웃</a>
-			</c:if>
-		</div>
+		<div class="help-center-menu2">메뉴2</div>
 		<div class="help-center-menu3">메뉴3</div>
 		<div class="help-center-menu4">광고</div>
 		<div class="help-center-menu5">SNS 공유</div>

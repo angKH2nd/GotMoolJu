@@ -21,31 +21,16 @@ public class MemberController {
 	@Autowired
 	private BCryptPasswordEncoder bcryptPasswordEncoder;
 
-	/*
-	@RequestMapping("login.me")
-	public String loginMember(Member m, Model model, HttpSession session) {
-		Member loginUser = mService.loginMember(m);
-		
-		if(loginUser == null) {
-			model.addAttribute("errorMsg", "로그인 실패");
-			return "common/errorPage";
-		}else {
-			session.setAttribute("loginUser", loginUser);
-			return "redirect:/home.got?toggle=rank";
-		}
-	}
-	*/
 	@RequestMapping("login.me")
 	public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) {
 		Member loginUser = mService.loginMember(m);
 		
 		if(loginUser != null && bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())) {
 			session.setAttribute("loginUser", loginUser);
-			mv.setViewName("redirect:/home.got");
 		}else {
-			mv.addObject("errorMsg", "로그인실패");
-			mv.setViewName("common/errorPage");
+			mv.addObject("alertMsg", "로그인에 실패하였습니다.");
 		}
+		mv.setViewName("redirect:/home.got");
 		return mv;
 	}
 	
@@ -68,22 +53,47 @@ public class MemberController {
 		int result = mService.insertMember(m);
 		
 		if(result > 0) {
-			session.setAttribute("alertMsg", "회원가입성공");
-			return "redirect:/";
+			session.setAttribute("alertMsg", "성공적으로 회원가입되었습니다.");
+			return "redirect:/home.got";
 		}else {
-			model.addAttribute("errorMsg", "회원가입실패");
+			model.addAttribute("errorMsg", "회원가입에 실패하였습니다.");
 			return "common/errorPage";
 		}
 	}
 	
 	@RequestMapping("update.me")
-	public void updateMember(Member m) {
+	public String updateMember(Member m, Model model, HttpSession session) {
+		int result = mService.updateMember(m);
 		
+		if(result > 0) {
+			session.setAttribute("loginUser", mService.loginMember(m));
+			session.setAttribute("alertMsg", "성공적으로 회원정보 수정되었습니다.");
+			return "redirect:/home.got";
+		}else {
+			model.addAttribute("errorMsg", "회원정보수정에 실패하였습니다.");
+			return "common/errorPage";
+		}
 	}
 	
 	@RequestMapping("delete.me")
-	public void deleteMember(String userId) {
+	public String deleteMember(String userId, String userPwd, HttpSession session, Model model) {
+		String encPwd = ((Member)session.getAttribute("loginUser")).getUserPwd();
 		
+		if(bcryptPasswordEncoder.matches(userPwd, encPwd)) {
+			int result = mService.deleteMember(userId);
+			
+			if(result > 0) {
+				session.removeAttribute("loginUser");
+				session.setAttribute("alertMsg", "성공적으로 탈퇴되었습니다. 그 동안 이용해주셔서 감사합니다.");
+				return "redirect:/home.got";
+			}else {
+				model.addAttribute("errorMsg", "회원 탈퇴에 실패하였습니다.");
+				return "common/errorPage";
+			}
+		}else {
+			session.setAttribute("alertMsg", "비밀번호를 잘못 입력하셨습니다.");
+			return "redirect:/home.got?toggle=myPage";
+		}
 	}
 	
 	@RequestMapping("idCheck.me")

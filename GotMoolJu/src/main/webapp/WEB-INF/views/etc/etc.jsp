@@ -15,16 +15,33 @@
 				<div class="etc-cancel-blank"></div>
 				<div class="etc-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
 			</div>
-			<div class="etc-profile"></div>
+			<div class="etc-profile">
+				<div class="etc-profile-frame fl"></div>
+				<div class="etc-profile-edit fl">
+					<div class="etc-profile-edit-title">
+						<div class="etc-profile-edit-title-name fl fb">${ loginUser.userName }</div>
+						<div class="etc-profile-edit-title-icon fl fb"><i class="fa-solid fa-user-pen mh"></i> 편집</div>
+					</div>
+					<div class="etc-profile-edit-email">${ loginUser.userEmail }</div>
+				</div>
+			</div>
 		</div>
 		<div class="etc-menu2">
-			<c:if test="${ not empty loginUser }">
-				메뉴2 자리이긴 한데 급한대로 여기에 로그아웃 했음 <br><br>
-				<a href="logout.me">로그아웃</a>
-			</c:if>
+			<div class="bgh mh">주요메뉴1</div>
+			<div class="bgh mh">주요메뉴2</div>
+			<div class="bgh mh">주요메뉴3</div>
 		</div>
-		<div class="etc-menu3">메뉴3</div>
-		<div class="etc-menu4">광고</div>
+		<div class="etc-menu3">
+			<div class="bgh mh">서브메뉴1</div>
+			<div class="bgh mh">서브메뉴2</div>
+			<div class="bgh mh">서브메뉴3</div>
+			<div class="bgh mh">서브메뉴4</div>
+			<div class="bgh mh">서브메뉴5</div>
+			<div class="bgh mh">서브메뉴6</div>
+			<div class="bgh mh">서브메뉴7</div>
+		</div>
+		<div class="etc-menu4">44444
+		</div>
 		<div class="etc-menu5">SNS 공유</div>
 	</div>
 	<script src="resources/js/etc/etc.js"></script>

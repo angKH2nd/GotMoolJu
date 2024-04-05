@@ -9,13 +9,12 @@ import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 @ToString
 public class Member {
 	
-	private String userNo;
+	private int userNo;
 	private String userId;
 	private String userPwd;
 	private String userName;

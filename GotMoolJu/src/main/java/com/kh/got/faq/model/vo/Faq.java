@@ -15,11 +15,11 @@ import lombok.ToString;
 @ToString
 public class Faq {
 	
-	private String faqNo;
+	private int faqNo;
 	private String faqTitle;
 	private String faqContent;
 	private String faqWriter;
-	private String faqCount;
+	private int faqCount;
 	private Date faqCreateDate;
 	private Date faqModifyDate;
 	private String faqStatus;

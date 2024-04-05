@@ -9,17 +9,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 @ToString
 public class Announcement {
 	
-	private String announcementNo;
+	private int announcementNo;
 	private String announcementTitle;
 	private String announcementContent;
 	private String announcementWriter;
-	private String announcementCount;
+	private int announcementCount;
 	private Date announcementCreateDate;
 	private String announcementStatus;
 
