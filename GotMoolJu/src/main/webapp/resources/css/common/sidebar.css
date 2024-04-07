@@ -3,23 +3,244 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 /*---------------- 공용 css ----------------*/
-.mh:hover {
-	cursor: pointer;
+.mh:hover {cursor: pointer;}
+.bgh:hover {background-color: #dee0e5;}
+.tdna {text-decoration: none;}
+.tac {text-align: center;}
+.tar {text-align: right;}
+.fl {float: left;}
+.fb {font-weight: bold;}
+.pd15 {padding: 15px;}
+.bgwh {background-color: white;}
+.bdn {border: none;}
+.bdlg {border: 0.5px solid lightgray;}
+.brc {border-radius: 50%;}
+.br5 {border-radius: 5px;}
+.btn-format {background-color: white; border: none;}
+.no-scrollbar::-webkit-scrollbar {display:none;}
+
+.centerY {
+    display: flex;
+    align-items: center;
 }
 
-.bgh:hover {
-	background-color: #dee0e5;
+.centerXY {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	text-align: center;
 }
 
-.tdna {
-	text-decoration: none;
+.input-outline:focus {
+	outline: none;
+	border: 0.5px solid lightgray;
 }
 
-.fl {
-	float: left;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------- 커뮤니티 움직이는 아이콘 시작 ------------- */
+.commu-area {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.6);
 }
 
-.fb {
-	font-weight: bold;
+.community-wrap {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.community-circle {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    background: linear-gradient(#3c5aff, #52f2fd);
+    transform: translate3d(0, 0, 0);
+}
+
+.wave-one {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -65%;
+    left: -30%;
+    border-radius: 45%;
+    background: rgba(3,169,244,0.8);
+    animation: move 3s infinite linear;
+}
+
+.wave-two {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: -90%;
+    left: -30%;
+    border-radius: 45%;
+    background: rgba(34,79,242,0.8);
+    animation: move 5s infinite linear;
+}
+
+.wave-three {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: -100%;
+    left: -30%;
+    border-radius: 45%;
+    background: #1d074b;
+    border: 6px solid rgba(131,119,152,0.7);
+    animation: move 7s infinite linear;
+}
+
+.wave-four {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: -100%;
+    left: -30%;
+    border-radius: 46%;
+    background: linear-gradient(rgba(252,251,232,0.1) 10%, transparent);
+    animation: move 7s infinite linear;
+}
+
+@keyframes move {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-moon {
+    position: absolute;
+    top: 19%;
+    left: 33%;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    animation: moon-rotation 4s infinite linear;
+}
+
+.community-blur {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+@keyframes moon-rotation {
+    0%, 100% {
+       transform: rotate(0deg);
+    }
+    50% {
+       transform: rotate(-20deg);
+    }
+}
+
+.fa-asterisk {
+    position: absolute;
+    font-size: 13px;
+}
+
+.community-star1 {
+    top: 70px;
+    left: 90px;
+    animation: star-one 1.2s infinite;
+}
+      
+.community-star2 {
+    top: 50px;
+    right: 110px;
+    animation: star-two 1.7s infinite;
+}
+      
+.community-star3 {
+    top: 180px;
+    left: 45px;
+    animation: star-three 1.5s infinite;
+}
+      
+.community-star4 {
+    top: 120px;
+    right: 40px;
+    font-size: 5px;
+    animation: star-five 1.9s infinite;
+}
+
+.community-star5 {
+    top: 200px;
+    right: 90px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+}
+
+
+@keyframes star-one {
+    0%, 100% {
+       transform: scale(0);
+       opacity: 0;
+    }
+    50% {
+       transform: scale(1);
+       opacity: 1;
+    }
+}
+    
+@keyframes star-two {
+    0%, 100% {
+       transform: scale(0);
+       opacity: 0;
+    }
+    50% {
+       transform: scale(1);
+       opacity: 1;
+    }
+}
+    
+@keyframes star-three {
+    0%, 100% {
+       transform: scale(0);
+       opacity: 0;
+    }
+    50% {
+       transform: scale(1);
+       opacity: 1;
+    }
+}
+    
+@keyframes star-four {
+    0%, 100% {
+       transform: scale(0);
+       opacity: 0;
+    }
+    50% {
+       transform: scale(1);
+       opacity: 1;
+    }
+}
+
+@keyframes star-five {
+    0%, 100% {
+       transform: scale(0);
+       opacity: 0;
+    }
+    50% {
+       transform: scale(1);
+       opacity: 1;
+    } 
+}
+/* ------------- 커뮤니티 움직이는 아이콘 끝 ------------- */

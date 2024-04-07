@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.community-bar-toggle > div {
+    display: none;
+}
+
+.community-outer div{box-sizing: border-box;}
+
+.community-outer {
+	width: 100%;
+	height: 100%;
+}
+
+.community-nav-area {
+	height: 60px;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.community-content {
+	height: calc(100% - 60px);
+}
+
+.community-nav-area>div {
+	height: 100%;
+}
+
+.community-nav {
+	width: calc(100% - 20px);
+}
+
+.community-cancel {
+	width: 20px;
+}
+
+.community-nav>div {
+	width: 100%;
+	height: 100%;
+}
+
+.community-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100%;
+}
+
+.community-bar li {
+    margin-right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.community-content>div {
+	width: 100%;
+	height: 100%;
+}
+
+.community-bar-toggle>div {
+	width: 100%;
+	height: 100%;
+}
+
+.community2-container {
+	overflow-x: auto;
+    white-space: nowrap; 
+}

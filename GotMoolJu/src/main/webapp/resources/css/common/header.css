@@ -18,7 +18,44 @@
 
 .header-popular {
 	width: 480px;
-	background-color: skyblue;
+}
+
+.popular-title {
+	width: 20%;
+}
+
+.block {
+	padding-top: 20px; 
+	height: 20px; 
+	overflow: hidden; 
+	width: 80%; 
+	font-size: 12px;
+}
+
+.block ul, .block li {
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+}
+
+#ticker li button:hover {
+    cursor: pointer;
+}
+
+.block li button {
+	display: block; 
+	height: 20px; 
+	line-height: 20px;
+	color: #555; 
+	background-color: white;
+	border: none;
+}
+
+.block li span {
+	padding: 2px 5px; 
+	color: #565c75; 
+	font-weight: bold; 
+	margin-right: 3px;
 }
 
 .header-blank {
@@ -76,7 +113,33 @@
 	cursor: pointer;
 }
 
-/*---------------- 팝업 버튼 스타일 ----------------*/
+/* 팝업 배경 */
+.modal-bg {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 999;
+}
+
+/* ---------------- 로그인 ---------------- */
+.modal-wrap {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 550px;
+	background: #fff;
+	z-index: 1000;
+	border-radius: 20px;
+}
+
 .btn-box .btn-open {
     display: block;
     width: 200px;
@@ -91,32 +154,242 @@
     color: #fff;
 }
 
-/* 팝업 스타일 */
-.modal-bg {
-	display: none;
+.modal-wrap>div {
 	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.6);
-	z-index: 999;
 }
 
-.modal-wrap {
+.login-head {
+	height: 50%;
+}
+
+.login-body {
+	height: 35%;
+}
+
+.login-bottom {
+	height: 15%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.login-head>div {
+	width: 100%;
+}
+
+.login-logo {
+	height: 30%;
+}
+
+.login-input {
+	height: 50%;
+	padding-top: 50px;
+}
+
+.login-btn {
+	height: 20%;
+}
+
+.login-input>div {
+	width: 100%;
+}
+
+.login-id {
+	padding-top: 30px;
+	height: 40%;
+}
+
+.login-pwd {
+	height: 40%;
+}
+
+.login-input>div>input {
+	width: 310px;
+	height: 70%;
+}
+
+.login-input-set {
+	padding-left: 38px;
+}
+
+.login-i-id {
+	position: absolute; 
+	left: 30px; 
+	top: 34%; 
+	transform: translateY(-34%);
+}
+
+.login-i-pwd {
+	position: absolute; 
+	left: 30px; 
+	top: 44%; 
+	transform: translateY(-44%);
+}
+
+.checkbox-label {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.checkbox-label span {
+    position: relative;
+    top: 2px;
+}
+
+.id-pw-search {
+    background-color: white;
+    border: none;
+    font-size: 13px;
+    position: relative;
+    top: 2px;
+}
+
+.btn-primary {
+	height: 42.5px;
+	width: 351px;
+	background-color: #002250;
+	border: 0.5px solid #002250;
+	color: white;
+	font-size: 16px;
+}
+
+.login-bottom>button {
+	background-color: white;
+	border: none;
+}
+
+.modal-before {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: white;
+    border: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-color: white;
+    border: none;
+}
+/* ---------------- 로그인 ---------------- */
+
+/* ---------------- 회원가입 ---------------- */
+.modal-enroll-wrap {
 	display: none;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	width: 450px;
+	width: 350px;
 	height: 550px;
 	background: #fff;
 	z-index: 1000;
 	border-radius: 20px;
+	overflow: auto;
 }
-/*---------------- 팝업 버튼 스타일 ----------------*/
+
+.modal-enroll-wrap
+
+.modal-enroll-wrap>div {
+	width: 100%;
+}
+
+.enroll-head {
+	height: 30px;
+}
+
+.enroll-body {
+	height: auto;
+}
+
+.enroll-bottom {
+	height: 42.5px;
+}
+
+.enroll-body>table {
+	width: 100%;
+	height: 100%;
+}
+
+.enroll-body>table tr {
+	height: 40px;
+}
+
+.enroll-bottom>div {
+	width: 47%;
+	height: 100%;
+}
+
+.enroll-submit-btn {
+	margin-right: 16px;
+	text-align: right;
+}
+
+.enroll-reset-btn {
+	text-align: left;
+}
+
+.enroll-border-top {
+	border-radius: 5px 5px 0 0;
+}
+
+.enroll-border-bottom {
+	border-radius: 0 0 5px 5px;
+}
+
+.enroll-td-set {
+	position: relative; 
+	padding-top: 0; 
+	padding-bottom: 0;
+}
+
+.enroll-i-set {
+	position: absolute; 
+	left: 10px; 
+	top: 50%; 
+	transform: translateY(-50%);
+}
+
+.enroll-btn-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #002250;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.enroll-input-set {
+	padding-left: 35px; 
+	width: 306px; 
+	height: 100%;
+}
+
+.enroll-input-set:focus {
+	outline: none;
+	border: 0.5px solid lightgray;
+}
+
+/* 유효성 검사 css */
+.validate {
+	color: red; 
+	font-size: 12px; 
+	padding-left : 5px;
+}
+/* 유효성 검사 css */
+
+/* ---------------- 회원가입 ---------------- */
+
+
+
 
 
 

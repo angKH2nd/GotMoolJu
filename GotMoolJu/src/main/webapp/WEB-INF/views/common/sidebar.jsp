@@ -39,26 +39,38 @@
         	</li>
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:popOpen();" data-target="member">
-		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
+       				<li onClick="javascript:openLogin();" data-target="member">
+		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
             			<div class="text-area" style="padding: 0 0 10px 0;">회원</div>
             		</li>
             	</c:when>
             	<c:otherwise>
-            		<li onclick="toggleDiv('member')" data-target="member">
-		        		<div class="icon-area">쌔삥</div>
-		        		<div class="text-area" style="padding: 0 0 10px 0">회원</div>
-		        	</li>
+            		<c:choose>
+            			<c:when test="${ loginUser.userId eq 'admin' }">
+		            		<li onclick="toggleDiv('member')" data-target="member">
+				        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=30 height=30 src="${ loginUser.userUpdateName }"></div>
+				        		<div class="text-area" style="padding: 0 0 10px 0">관리자</div>
+				        	</li>
+			        	</c:when>
+			        	<c:otherwise>
+			        		<li onclick="toggleDiv('member')" data-target="member">
+				        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
+				        		<div class="text-area" style="padding: 0 0 10px 0">회원</div>
+				        	</li>
+			        	</c:otherwise>
+		        	</c:choose>
             	</c:otherwise>
            	</c:choose>
-	        <li onclick="cancelDiv()" data-target="map">
+	        <li onclick="cancelDiv()" data-target="map" class="map-option">
 	        	<div class="icon-area"><i class="fa-solid fa-map fa-xl"></i></div>
 	        	<div class="text-area">지도</div>
         	</li>
+        	<%-- 상세보기는 좌측 리스트에 노출시키지는 않는 것으로
 	        <li onclick="toggleDiv('re')" data-target="re">
 	        	<div class="icon-area"><i class="fa-solid fa-house fa-xl"></i></div>
 	        	<div class="text-area">상세보기</div>
         	</li>
+        	 --%>
 	        <li onclick="toggleDiv('rank')" data-target="rank">
 	        	<div class="icon-area"><i class="fa-solid fa-chart-line fa-xl"></i></div>
 	        	<div class="text-area">차트</div>
@@ -69,18 +81,38 @@
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:popOpen();" data-target="community">
+       				<li onClick="javascript:openLogin();" data-target="community">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('community')" data-target="community">
             	</c:otherwise>
            	</c:choose>
-        		<div class="icon-area"><i class="fa-solid fa-comments fa-xl"></i></div>
-        		<div class="text-area">커뮤니티</div>
+        		<div class="icon-area commu-area" style="margin: 7px 0 0 0;">
+        			<div class="community-wrap">
+					    <div class="community-circle">
+						    <div class="wave-one"></div>
+						    <div class="wave-two"></div>
+						    <div class="wave-three"></div>
+						    <div class="wave-four"></div>
+						    
+						    <i class="fas fa-moon"></i>
+						    <i class="fas fa-moon community-blur"></i>
+						    
+						    <div class="community-star">
+						        <i class="fas fa-asterisk community-star1"></i>
+						        <i class="fas fa-asterisk community-star2"></i>
+						        <i class="fas fa-asterisk community-star3"></i>
+						        <i class="fas fa-asterisk community-star4"></i>
+						        <i class="fas fa-asterisk community-star5"></i>
+						    </div>
+					    </div>
+					</div>
+        		</div>
+        		<div class="text-area" style="padding-bottom: 15px;">커뮤니티</div>
 	        </li>
            	<c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:popOpen();" data-target="helpCenter">
+       				<li onClick="javascript:openLogin();" data-target="helpCenter">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('helpCenter')" data-target="helpCenter">
@@ -91,7 +123,7 @@
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:popOpen();" data-target="etc">
+       				<li onClick="javascript:openLogin();" data-target="etc">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('etc')" data-target="etc">
@@ -111,7 +143,7 @@
 	    </ul>
 	</div>
 	<div class="sidebar-toggle">
-	    <div class="home">홈 눌림</div>
+	    <div class="home"><%@ include file="../homeTown/homeTown.jsp" %></div>
 	    <div class="re">상세보기 눌림</div>
 	    <div class="member"><%@ include file="../member/mypage.jsp" %></div>
 	    <div class="rank"><%@ include file="../rank/rank.jsp" %></div>

@@ -40,16 +40,16 @@ public class MemberController {
 		return "redirect:/home.got";
 	}
 	
-	@RequestMapping("enrollForm.me")
-	public String enrollForm() {
-		return "/";
-	}
-	
 	@RequestMapping("insert.me")
 	public String insertMember(Member m, Model model, HttpSession session) {
 		String encPwd = bcryptPasswordEncoder.encode(m.getUserPwd());
+		String userAddressNormal = m.getUserAddressNormal();
+		String userAddressDetail = m.getUserAddressDetail();
 		
+		m.setUserAddress(userAddressNormal + userAddressDetail);
 		m.setUserPwd(encPwd);
+		m.setUserOriginName("basicUserProfile.png");
+		m.setUserUpdateName("resources/images/member/basicUserProfile.png");
 		int result = mService.insertMember(m);
 		
 		if(result > 0) {

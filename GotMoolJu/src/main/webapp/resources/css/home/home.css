@@ -77,11 +77,10 @@ body::-webkit-scrollbar {
     left: 0;
     width: 450px;
     height: 100%;
-    background-color: #f3f5f9;
+    background-color: #ffffff;
     transition: opacity 0.3s ease;
     z-index: 3;
     border-right: 0.5px solid lightgray;
-    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -95,6 +94,10 @@ body::-webkit-scrollbar {
 
 .map-side {
 	height: calc(100% - 110px);
+}
+
+.map-option {
+    color: #4373f4;
 }
 
 .footer-side {

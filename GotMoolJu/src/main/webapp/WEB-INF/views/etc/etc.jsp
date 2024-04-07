@@ -10,35 +10,44 @@
 </head>
 <body>
 	<div class="etc-outer">
-		<div class="etc-menu1">
+		<div class="etc-menu1 pd15">
 			<div class="etc-cancel">
 				<div class="etc-cancel-blank"></div>
 				<div class="etc-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
 			</div>
 			<div class="etc-profile">
-				<div class="etc-profile-frame fl"></div>
+				<div class="etc-profile-frame centerXY fl">
+					<c:choose>
+						<c:when test="${ loginUser.userId eq 'admin' }">
+							<img class="brc" width=30 height=30 src="${ loginUser.userUpdateName }">
+						</c:when>
+						<c:otherwise>
+							<img class="brc" width=50 height=50 src="${ loginUser.userUpdateName }" style="padding-bottom: 10px;">
+						</c:otherwise>
+					</c:choose>
+				</div>
 				<div class="etc-profile-edit fl">
 					<div class="etc-profile-edit-title">
 						<div class="etc-profile-edit-title-name fl fb">${ loginUser.userName }</div>
-						<div class="etc-profile-edit-title-icon fl fb"><i class="fa-solid fa-user-pen mh"></i> 편집</div>
+						<div class="etc-profile-edit-title-icon fl fb" style="padding-top: 5px;"><i class="fa-solid fa-user-pen fa-sm mh fl" style="padding-top: 8px;"></i> <div class="fl mh">편집</div></div>
 					</div>
 					<div class="etc-profile-edit-email">${ loginUser.userEmail }</div>
 				</div>
 			</div>
 		</div>
 		<div class="etc-menu2">
-			<div class="bgh mh">주요메뉴1</div>
-			<div class="bgh mh">주요메뉴2</div>
-			<div class="bgh mh">주요메뉴3</div>
+			<div class="bgh mh pd15 centerY">주요메뉴1</div>
+			<div class="bgh mh pd15 centerY">주요메뉴2</div>
+			<div class="bgh mh pd15 centerY">주요메뉴3</div>
 		</div>
 		<div class="etc-menu3">
-			<div class="bgh mh">서브메뉴1</div>
-			<div class="bgh mh">서브메뉴2</div>
-			<div class="bgh mh">서브메뉴3</div>
-			<div class="bgh mh">서브메뉴4</div>
-			<div class="bgh mh">서브메뉴5</div>
-			<div class="bgh mh">서브메뉴6</div>
-			<div class="bgh mh">서브메뉴7</div>
+			<div class="bgh mh pd15 centerY">서브메뉴1</div>
+			<div class="bgh mh pd15 centerY">서브메뉴2</div>
+			<div class="bgh mh pd15 centerY">서브메뉴3</div>
+			<div class="bgh mh pd15 centerY">서브메뉴4</div>
+			<div class="bgh mh pd15 centerY">서브메뉴5</div>
+			<div class="bgh mh pd15 centerY">서브메뉴6</div>
+			<div class="bgh mh pd15 centerY">서브메뉴7</div>
 		</div>
 		<div class="etc-menu4">44444
 		</div>

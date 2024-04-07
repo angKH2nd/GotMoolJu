@@ -11,12 +11,13 @@
 		<result column="user_phone" property="userPhone"/>
 		<result column="user_email" property="userEmail"/>
 		<result column="user_gender" property="userGender"/>
-		<result column="user_age" property="userAge"/>
 		<result column="user_address" property="userAddress"/>
 		<result column="user_area_no" property="userAreaNo"/>
 		<result column="user_enroll_date" property="userEnrollDate"/>
 		<result column="user_modify_date" property="userModifyDate"/>
 		<result column="user_status" property="userStatus"/>
+		<result column="user_origin_name" property="userOriginName"/>
+		<result column="user_update_name" property="userUpdateName"/>
 	</resultMap>
 
 	<select id="loginMember" resultMap="memberResult">
@@ -29,12 +30,13 @@
 		     , user_phone
 		     , user_email
 		     , user_gender
-		     , user_age
 		     , user_address
 		     , user_area_no
 		     , user_enroll_date
 		     , user_modify_date
 		     , user_status
+		     , user_origin_name
+		     , user_update_name
 		  from tb_member
 		 where user_status in('Y', 'A')
 		   and user_id = #{userId}
@@ -52,9 +54,10 @@
 		  , user_phone
 		  , user_email
 		  , user_gender
-		  , user_age
 		  , user_address
 		  , user_area_no
+		  , user_origin_name
+		  , user_update_name
 		  )
 		  values
 		  ( 
@@ -66,9 +69,10 @@
 		  , #{userPhone}
 		  , #{userEmail}
 		  , #{userGender}
-		  , #{userAge}
 		  , #{userAddress}
-		  , #{userAreaNo}
+		  , 1
+  		  , #{userOriginName}
+		  , #{userUpdateName}
 		  )
 	</insert>
 	
