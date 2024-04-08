@@ -2,7 +2,7 @@
 
 /* reset */
 section { width: 100%; }
-li { 
+slideWrap li { 
     display: inline-block; 
     list-style: none; 
 }

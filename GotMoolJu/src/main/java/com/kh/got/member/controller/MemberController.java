@@ -7,12 +7,19 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.got.member.model.service.MemberService;
 import com.kh.got.member.model.vo.Member;
+
+import net.nurigo.sdk.NurigoApp;
+import net.nurigo.sdk.message.exception.NurigoMessageNotReceivedException;
+import net.nurigo.sdk.message.model.Message;
+import net.nurigo.sdk.message.service.DefaultMessageService;
 
 @Controller
 public class MemberController {
@@ -104,5 +111,26 @@ public class MemberController {
 		int count = mService.idCheck(checkId);
 		return count > 0 ? "NNNNN" : "NNNNY";
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="sendSms", produces = "text/html; charset=UTF-8")
+    public String sendSms(@RequestParam("userPhone") String userPhone) {
+        DefaultMessageService messageService = NurigoApp.INSTANCE.initialize("NCS4GTSLFXOTFG3X", "WSMGBCFRJEXLWNCGU6LEL3DQAJ6AUACG", "https://api.coolsms.co.kr");
+
+        Message message = new Message();
+        message.setFrom("발신자");
+        message.setTo("수신자");
+        message.setText("문자인증내용임다 실험중이에여 ㅎㅎㅎㅎㅎ");
+
+        try {
+            messageService.send(message);
+            return "SMS sent successfully";
+        } catch (NurigoMessageNotReceivedException exception) {
+            System.out.println(exception.getFailedMessageList());
+            return "SMS sending failed: " + exception.getMessage();
+        } catch (Exception exception) {
+            return "SMS sending failed: " + exception.getMessage();
+        }
+    }
 	
 }
