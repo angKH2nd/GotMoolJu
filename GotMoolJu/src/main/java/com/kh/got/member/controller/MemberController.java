@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.got.member.model.service.MemberService;
@@ -22,7 +24,7 @@ public class MemberController {
 	private BCryptPasswordEncoder bcryptPasswordEncoder;
 
 	@RequestMapping("login.me")
-	public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) {
+	public ModelAndView loginMember(@ModelAttribute Member m, HttpSession session, ModelAndView mv) {
 		Member loginUser = mService.loginMember(m);
 		
 		if(loginUser != null && bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())) {
@@ -41,7 +43,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("insert.me")
-	public String insertMember(Member m, Model model, HttpSession session) {
+	public String insertMember(@ModelAttribute Member m, Model model, HttpSession session) {
 		String encPwd = bcryptPasswordEncoder.encode(m.getUserPwd());
 		String userAddressNormal = m.getUserAddressNormal();
 		String userAddressDetail = m.getUserAddressDetail();
@@ -62,7 +64,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("update.me")
-	public String updateMember(Member m, Model model, HttpSession session) {
+	public String updateMember(@ModelAttribute Member m, Model model, HttpSession session) {
 		int result = mService.updateMember(m);
 		
 		if(result > 0) {
@@ -96,9 +98,11 @@ public class MemberController {
 		}
 	}
 	
+	@ResponseBody
 	@RequestMapping("idCheck.me")
-	public void idCheck(String checkId) {
-		
+	public String idCheck(String checkId) {
+		int count = mService.idCheck(checkId);
+		return count > 0 ? "NNNNN" : "NNNNY";
 	}
 	
 }

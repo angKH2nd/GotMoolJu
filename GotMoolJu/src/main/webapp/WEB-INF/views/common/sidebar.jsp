@@ -11,6 +11,8 @@
 <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <%-- jQuery 라이브러리 --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<%-- sweetalert --%>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <style>
@@ -39,9 +41,9 @@
         	</li>
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:openLogin();" data-target="member">
+       				<li onClick="openLoginForm();" data-target="member">
 		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
-            			<div class="text-area" style="padding: 0 0 10px 0;">회원</div>
+            			<div class="text-area" style="padding: 0 0 10px 0;">마이페이지</div>
             		</li>
             	</c:when>
             	<c:otherwise>
@@ -55,7 +57,7 @@
 			        	<c:otherwise>
 			        		<li onclick="toggleDiv('member')" data-target="member">
 				        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
-				        		<div class="text-area" style="padding: 0 0 10px 0">회원</div>
+				        		<div class="text-area" style="padding: 0 0 10px 0">마이페이지</div>
 				        	</li>
 			        	</c:otherwise>
 		        	</c:choose>
@@ -81,7 +83,7 @@
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:openLogin();" data-target="community">
+       				<li onClick="openLoginForm();" data-target="community">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('community')" data-target="community">
@@ -112,7 +114,7 @@
 	        </li>
            	<c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:openLogin();" data-target="helpCenter">
+       				<li onClick="openLoginForm();" data-target="helpCenter">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('helpCenter')" data-target="helpCenter">
@@ -123,7 +125,7 @@
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  
-       				<li onClick="javascript:openLogin();" data-target="etc">
+       				<li onClick="openLoginForm();" data-target="etc">
             	</c:when>
             	<c:otherwise>
             		<li onclick="toggleDiv('etc')" data-target="etc">

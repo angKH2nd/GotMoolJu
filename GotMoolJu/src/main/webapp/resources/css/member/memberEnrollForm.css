@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.enroll-head {
+	height: 30px;
+}
+
+.enroll-body {
+	height: auto;
+}
+
+.enroll-bottom {
+	height: 42.5px;
+}
+
+.enroll-body>table {
+	width: 100%;
+	height: 100%;
+}
+
+.enroll-body>table tr {
+	height: 40px;
+}
+
+.enroll-bottom>div {
+	width: 47%;
+	height: 100%;
+}
+
+.enroll-submit-btn {
+	margin-right: 16px;
+	text-align: right;
+}
+
+.enroll-reset-btn {
+	text-align: left;
+}
+
+.enroll-border-top {
+	border-radius: 5px 5px 0 0;
+}
+
+.enroll-border-bottom {
+	border-radius: 0 0 5px 5px;
+}
+
+.enroll-td-set {
+	position: relative; 
+	padding-top: 0; 
+	padding-bottom: 0;
+}
+
+.enroll-i-set {
+	position: absolute; 
+	left: 10px; 
+	top: 50%; 
+	transform: translateY(-50%);
+}
+
+.enroll-btn-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #002250;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.enroll-input-set {
+	padding-left: 35px; 
+	width: 306px; 
+	height: 100%;
+}
+
+.enroll-input-set:focus {
+	outline: none;
+	border: 0.5px solid lightgray;
+}
+
+/* 유효성 검사 css */
+.validate {
+	color: red; 
+	font-size: 12px; 
+	padding-left : 5px;
+}
+/* 유효성 검사 css */

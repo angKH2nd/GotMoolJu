@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="community-cancel fl">
-				<div class="etc-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
+				<div class="community-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
 			</div>
 		</div>
 		<div class="community-content pd15">

@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+.btn-box .btn-open {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 80px auto 0;
+    line-height: 50px;
+    background: #333;
+    text-align: center;
+}
+
+.btn-box .btn-open span {
+    color: #fff;
+}
+
+.modal-wrap>div {
+	width: 100%;
+}
+
+.login-head {
+	height: 50%;
+}
+
+.login-body {
+	height: 35%;
+}
+
+.login-bottom {
+	height: 15%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.login-head>div {
+	width: 100%;
+}
+
+.login-logo {
+	height: 30%;
+}
+
+.login-input {
+	height: 50%;
+	padding-top: 50px;
+}
+
+.login-btn {
+	height: 20%;
+}
+
+.login-input>div {
+	width: 100%;
+}
+
+.login-id {
+	padding-top: 30px;
+	height: 40%;
+}
+
+.login-pwd {
+	height: 40%;
+}
+
+.login-input>div>input {
+	width: 310px;
+	height: 70%;
+}
+
+.login-input-set {
+	padding-left: 38px;
+}
+
+.login-i-id {
+	position: absolute; 
+	left: 30px; 
+	top: 34%; 
+	transform: translateY(-34%);
+}
+
+.login-i-pwd {
+	position: absolute; 
+	left: 30px; 
+	top: 44%; 
+	transform: translateY(-44%);
+}
+
+.checkbox-label {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.checkbox-label span {
+    position: relative;
+    top: 2px;
+}
+
+.id-pw-search {
+    background-color: white;
+    border: none;
+    font-size: 13px;
+    position: relative;
+    top: 2px;
+}
+
+.btn-primary {
+	height: 42.5px;
+	width: 351px;
+	background-color: #002250;
+	border: 0.5px solid #002250;
+	color: white;
+	font-size: 16px;
+}
+
+.login-bottom>button {
+	background-color: white;
+	border: none;
+}
+
+.modal-before {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: white;
+    border: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-color: white;
+    border: none;
+}
