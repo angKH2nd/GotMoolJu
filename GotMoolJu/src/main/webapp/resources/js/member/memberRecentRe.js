@@ -1,34 +1,24 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const imgSlide = document.querySelector(".imgSlide");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    
-    if (!imgSlide || !prevBtn || !nextBtn) {
-        console.error("One or more elements not found.");
-        return;
+document.addEventListener('DOMContentLoaded', function() {
+  const listContainer = document.querySelector('.recent-list-container');
+  const leftButton = document.querySelector('.recent-left-button');
+  const rightButton = document.querySelector('.recent-right-button');
+  const lists = document.querySelectorAll('.recent-list');
+
+  let currentIndex = 0;
+  const maxIndex = lists.length - 7;
+  const itemWidth = 130; // Adjust according to your list item width
+
+  leftButton.addEventListener('click', function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      listContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
-    
-    let slideOffset = 0;
+  });
 
-    // 이전 버튼 클릭 시 슬라이드 왼쪽으로 이동
-    prevBtn.addEventListener("click", function() {
-        slideOffset += 475;
-        
-        if (slideOffset >= 0) {
-            slideOffset = -950;
-        }
-        
-        imgSlide.style.left = slideOffset + "px";
-    });
-
-    // 다음 버튼 클릭 시 슬라이드 오른쪽으로 이동
-    nextBtn.addEventListener("click", function() {
-        slideOffset -= 475;
-        
-        if (slideOffset <= -950) {
-            slideOffset = 0;
-        }
-        
-        imgSlide.style.left = slideOffset + "px";
-    });
+  rightButton.addEventListener('click', function() {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      listContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+  });
 });

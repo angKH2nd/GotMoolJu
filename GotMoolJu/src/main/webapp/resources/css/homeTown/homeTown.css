@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.homeTown-outer div{box-sizing: border-box; border: 0.5px solid skyblue;}
+.homeTown-outer div{box-sizing: border-box;}
 
 .homeTown-outer {
 	width: 100%;
@@ -30,4 +30,68 @@
 
 .homeTown-cancel {
 	width: 20px;
+}
+
+.homeTown-content>div {
+	width: 100%;
+}
+
+.homeTown-title {
+	height: 70px;
+	padding: 0 15px;
+}
+
+.homeTown-search {
+	height: 55px;
+	margin: 15px 0;
+}
+
+.homeTown-weather {
+	height: 200px;
+}
+
+.homeTown-title>div {
+	height: 100%;
+}
+
+.homeTown-count {
+	width: auto;
+}
+
+.homeTown-blank {
+	width: 20%;
+}
+
+.homeTown-find {
+	width: 30%;
+}
+
+.homeTown-count>div {
+	width: 100%;
+}
+
+.homeTown-count-head {
+	height: 50px;
+	color: #505d7c;
+}
+
+.homeTown-count-comment {
+	height: calc(100% - 50px);
+	color: #bbbbc3;
+	font-size: 14px;
+}
+
+.homeTown-count-head>div {
+	height: 100%;
+}
+
+.homeTown-count-head-num {
+	width: calc(100% - 33px);
+	font-size: 35px;
+}
+
+.homeTown-count-head-text {
+	width: 33px;
+	font-size: 20px;
+	line-height: 50px;
 }

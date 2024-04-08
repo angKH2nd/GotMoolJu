@@ -15,7 +15,7 @@
 }
 
 .mypage-body1 {
-	height: 310px;
+	height: 300px;
 }
 
 .mypage-body2 {
@@ -74,7 +74,7 @@
 }
 
 .mypage-recent-area {
-	height: 80px;
+	height: 100px;
 	margin-top: 40px;
 }
 
@@ -115,6 +115,32 @@
 }
 
 .mypage-likes-content>div {
+	width: 50%;
+	height: 100%;
+}
+
+.mypage-notices>div {
+	height: 100%;
+}
+
+.mypage-notices-icon {
+	width: 25px;
+}
+
+.mypage-notices-title {
+	width: calc(100% - 110px);
+	padding-left: 10px;
+}
+
+.mypage-notices-content {
+	width: 50px; 
+}
+
+.mypage-notices-more {
+	width: 25px;
+}
+
+.mypage-notices-content>div {
 	width: 50%;
 	height: 100%;
 }

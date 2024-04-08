@@ -22,7 +22,7 @@
 							<img class="brc" width=30 height=30 src="${ loginUser.userUpdateName }">
 						</c:when>
 						<c:otherwise>
-							<img class="brc" width=50 height=50 src="${ loginUser.userUpdateName }" style="padding-bottom: 10px;">
+							<img class="brc" width=50 height=50 src="${ loginUser.userUpdateName }" style="padding-bottom: 30px;">
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -36,22 +36,25 @@
 			</div>
 		</div>
 		<div class="etc-menu2">
-			<div class="bgh mh pd15 centerY">주요메뉴1</div>
-			<div class="bgh mh pd15 centerY">주요메뉴2</div>
-			<div class="bgh mh pd15 centerY">주요메뉴3</div>
+			<div class="bgh mh pd15 centerY">구해줘 마이 홈!</div>
+			<div class="bgh mh pd15 centerY">지금 핫한?</div>
+			<div class="bgh mh pd15 centerY">이달의 떡상</div>
 		</div>
 		<div class="etc-menu3">
+			<div class="bgh mh pd15 centerY">빠른 조회</div>
+			<div class="bgh mh pd15 centerY">세금계산기</div>
 			<div class="bgh mh pd15 centerY">서브메뉴1</div>
 			<div class="bgh mh pd15 centerY">서브메뉴2</div>
 			<div class="bgh mh pd15 centerY">서브메뉴3</div>
-			<div class="bgh mh pd15 centerY">서브메뉴4</div>
-			<div class="bgh mh pd15 centerY">서브메뉴5</div>
-			<div class="bgh mh pd15 centerY">서브메뉴6</div>
-			<div class="bgh mh pd15 centerY">서브메뉴7</div>
 		</div>
-		<div class="etc-menu4">44444
+		<div class="etc-menu4">
+			<div class="bgh mh pd15 centerY">개선의견 등록</div>
+			<div class="bgh mh pd15 centerY">고객센터</div>
+			<div class="bgh mh pd15 centerY">이용안내</div>
 		</div>
-		<div class="etc-menu5">SNS 공유</div>
+		<div class="etc-menu5">44444
+		</div>
+		<div class="etc-menu6">SNS 공유</div>
 	</div>
 	<script src="resources/js/etc/etc.js"></script>
 </body>

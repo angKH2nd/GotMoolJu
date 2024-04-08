@@ -23,7 +23,7 @@
 		</div>
 		<div class="mypage-body1">
 			<div class="mypage-alert-area pd15">
-				<div class="mypage-likes br5 pd20">
+				<div class="mypage-likes br5 pd20 mh">
 					<div class="mypage-likes-icon centerXY fl"><i class="fa-solid fa-heart fa-lg"></i></div>
 					<div class="mypage-likes-title centerY fl">찜 목록</div>
 					<div class="mypage-likes-content fl">
@@ -32,12 +32,20 @@
 					</div>
 					<div class="mypage-likes-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>
 				</div>
-				<div class="mypage-notices br5 pd20">알림</div>
+				<div class="mypage-notices br5 pd20 mh">
+					<div class="mypage-notices-icon centerXY fl"><i class="fa-solid fa-bell fa-lg"></i></div>
+					<div class="mypage-notices-title centerY fl">알림 목록</div>
+					<div class="mypage-notices-content fl">
+						<div class="mypage-notices-count centerXY fl">9</div>
+						<div class="mypage-notices-count-name centerXY fl"> 건</div>
+					</div>
+					<div class="mypage-notices-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>
+				</div>
 			</div>
 			<div class="mypage-recent-area"><%@ include file="./memberRecentRe.jsp" %></div>
 		</div>
-		<div class="mypage-body2">바디2</div>
-		<div class="mypage-body3">바디3</div>
+		<div class="mypage-body2 pd15">뭘넣지..? 바디2</div>
+		<div class="mypage-body3 pd15">뭘넣지..? 바디3</div>
 	</div>
 	<script src="resources/js/member/mypage.js"></script>
 </body>
