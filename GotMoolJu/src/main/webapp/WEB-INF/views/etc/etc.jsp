@@ -16,13 +16,13 @@
 				<div class="etc-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
 			</div>
 			<div class="etc-profile">
-				<div class="etc-profile-frame centerXY fl">
+				<div class="etc-profile-frame fl">
 					<c:choose>
 						<c:when test="${ loginUser.userId eq 'admin' }">
 							<img class="brc" width=30 height=30 src="${ loginUser.userUpdateName }">
 						</c:when>
 						<c:otherwise>
-							<img class="brc" width=50 height=50 src="${ loginUser.userUpdateName }" style="padding-bottom: 30px;">
+							<img class="brc" width=50 height=50 src="${ loginUser.userUpdateName }">
 						</c:otherwise>
 					</c:choose>
 				</div>

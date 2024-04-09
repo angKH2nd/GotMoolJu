@@ -1,1 +1,100 @@
 @charset "UTF-8";
+
+.id-pwd-head {
+	height: 30px;
+	padding: 15px 0;
+}
+
+.id-pwd-body {
+	height: 300px;
+}
+
+.id-pwd-btn {
+	width: 100%;
+	height: 35px;
+}
+
+.id-pwd-btn>div {
+	width: 50%;
+	height: 100%;
+}
+
+.id-pwd-btn button {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	border: none;
+}
+
+.id-select-btn button {
+	color: #0f0b26;
+	border-bottom: 2px solid #0f0b26;
+}
+
+.pwd-select-btn button {
+	color: gray;
+	border-bottom: 1px solid gray;
+}
+
+.id-pwd-bottom {
+	height: 42.5px;
+}
+
+.id-area, .pwd-area {
+	width: 320px;
+	height: calc(100% - 35px);
+}
+
+.id-area table, .pwd-area table {
+	width: 100%;
+	height: 80%;
+}
+
+.id-area input, .pwd-area input {
+    width: calc(100% - 35px);
+    height: 100%;
+    padding-left: 35px; 
+    border: none;
+    border-bottom: 0.5px solid lightgray;
+}
+
+.id-pwd-input-outline:focus {
+	outline: none;
+	border: none;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.pwd-area {
+	display: none;
+}
+
+.id-pwd-td-set {
+	position: relative; 
+	padding-top: 0; 
+	padding-bottom: 0;
+}
+
+.id-pwd-i-set {
+	position: absolute; 
+	left: 10px; 
+	top: 50%; 
+	transform: translateY(-50%);
+}
+
+.sms-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-id-btn {
+	width: 100%;
+	height: 100%;
+}
+

@@ -79,11 +79,9 @@
 	<%-- 회원가입 modal 영역 --%>
 	
 	<%-- 아이디/비밀번호 찾기 영역 --%>
-	<form action="searchIdPwd.me" method="post">
-	    <div class="modal-searchIdPwd-wrap no-scrollbar pd15">
-	    	<%@ include file="../member/memberSearchIdPwdForm.jsp" %>
-	    </div>
-    </form>
+    <div class="modal-searchIdPwd-wrap no-scrollbar">
+    	<%@ include file="../member/memberSearchIdPwdForm.jsp" %>
+    </div>
 	
 	<script src="resources/js/common/header.js"></script>
 </body>

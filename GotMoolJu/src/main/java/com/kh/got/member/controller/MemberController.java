@@ -2,6 +2,7 @@ package com.kh.got.member.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.got.common.template.RandomNumber;
 import com.kh.got.member.model.service.MemberService;
 import com.kh.got.member.model.vo.Member;
 
@@ -113,23 +115,30 @@ public class MemberController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="sendSms", produces = "text/html; charset=UTF-8")
-    public String sendSms(@RequestParam("userPhone") String userPhone) {
+	@RequestMapping(value="sendIdSms", produces = "application/json; charset=UTF-8")
+    public String sendIdSms(@RequestParam("userIdPhone") String userIdPhone) {
         DefaultMessageService messageService = NurigoApp.INSTANCE.initialize("NCS4GTSLFXOTFG3X", "WSMGBCFRJEXLWNCGU6LEL3DQAJ6AUACG", "https://api.coolsms.co.kr");
-
+        
+        JSONObject jObj = new JSONObject();
+        
+        int random = new RandomNumber().random4();
+        
         Message message = new Message();
-        message.setFrom("발신자");
-        message.setTo("수신자");
-        message.setText("문자인증내용임다 실험중이에여 ㅎㅎㅎㅎㅎ");
-
+        message.setFrom("01091907946");
+        message.setTo(userIdPhone);
+        message.setText("[갓물주] 인증번호는 " + random + " 입니다.");
+        
         try {
             messageService.send(message);
-            return "SMS sent successfully";
+            jObj.put("result", "Y");
+            jObj.put("random", random);
+            return jObj.toJSONString();
         } catch (NurigoMessageNotReceivedException exception) {
-            System.out.println(exception.getFailedMessageList());
-            return "SMS sending failed: " + exception.getMessage();
+        	jObj.put("result", "N");
+            return "SMSF";
         } catch (Exception exception) {
-            return "SMS sending failed: " + exception.getMessage();
+        	jObj.put("result", "N");
+            return "SMSF";
         }
     }
 	
