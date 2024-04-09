@@ -124,7 +124,7 @@ public class MemberController {
         int random = new RandomNumber().random4();
         
         Message message = new Message();
-        message.setFrom("01091907946");
+        message.setFrom("발신번호");
         message.setTo(userIdPhone);
         message.setText("[갓물주] 인증번호는 " + random + " 입니다.");
         
