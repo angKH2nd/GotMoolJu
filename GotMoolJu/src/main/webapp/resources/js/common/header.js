@@ -27,11 +27,15 @@ function openSearchIdPwdForm() {
 }
 
 function closeSearchIdPwdForm() {
+	$("#searchIdName").val("");
+	$("#searchIdPhone").val("");
     $(modalSearchIdPwd).hide();
     closeBg();
 }
 
 function beforeSearchIdPwdForm() {
+	$("#searchIdName").val("");
+	$("#searchIdPhone").val("");
 	closeSearchIdPwdForm();
 	openLoginForm();
 }
@@ -65,6 +69,9 @@ function openBg() {
 function closeBg() {
 	$(modalLogin).hide();
 	$(modalEnroll).hide();
+	$(modalSearchIdPwd).hide();
+	$("#searchIdName").val("");
+	$("#searchIdPhone").val("");
 	$(modalBg).hide();
 }
 /* 공용 모달 배경 닫기 */

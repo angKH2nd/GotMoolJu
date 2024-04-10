@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 
-.search-id-btn {
+.search-id-btn, .search-pwd-btn {
 	width: 100%;
 	height: 100%;
 }
