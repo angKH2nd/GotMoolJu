@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.member-notice-form {
+	width: calc(100% - 15px);
+	height: 100%;
+	overflow-y: auto;
+}
+
+.member-notice-form>div {
+	width: calc(100% - 15px);
+}
+
+.member-notice-form-top {
+	height: 60px;
+}
+
+.member-notice-form-top>div {
+	height: 100%;
+}
+
+.member-notice-form-previous {
+	width: 40px;
+}
+
+.member-notice-form-title {
+	width: calc(100% - 120px);
+	text-align: center;
+}
+
+.member-notice-form-blank {
+	width: 80px;
+	text-align: right;
+}

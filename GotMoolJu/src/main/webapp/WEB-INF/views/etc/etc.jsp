@@ -29,7 +29,7 @@
 				<div class="etc-profile-edit fl">
 					<div class="etc-profile-edit-title">
 						<div class="etc-profile-edit-title-name fl fb">${ loginUser.userName }</div>
-						<div class="etc-profile-edit-title-icon fl fb" style="padding-top: 5px;"><i class="fa-solid fa-user-pen fa-sm mh fl" style="padding-top: 8px;"></i> <div class="fl mh">편집</div></div>
+						<div class="etc-profile-edit-title-icon fl fb" style="padding-top: 5px;" onclick="openMemberUpdateForm();"><i class="fa-solid fa-user-pen fa-sm mh fl" style="padding-top: 8px;"></i> <div class="fl mh">편집</div></div>
 					</div>
 					<div class="etc-profile-edit-email">${ loginUser.userEmail }</div>
 				</div>
@@ -54,7 +54,9 @@
 		</div>
 		<div class="etc-menu5">44444
 		</div>
-		<div class="etc-menu6">SNS 공유</div>
+		<div class="etc-menu6 pd15">
+			갓물주 채널
+		</div>
 	</div>
 	<script src="resources/js/etc/etc.js"></script>
 </body>

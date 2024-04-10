@@ -36,6 +36,25 @@ function beforeSearchIdPwdForm() {
 	openLoginForm();
 }
 
+/* 헤더 > 찜 or 헤더 > 알림 클릭 */
+function openDibs() {
+	var memberDiv = document.querySelector('.member');
+    if (memberDiv && memberDiv.style.display !== 'block') {
+        toggleDiv('member');
+    }
+	toggleMypageDiv('memberDibsList');
+}
+
+function openNotice() {
+	var memberDiv = document.querySelector('.member');
+    if (memberDiv && memberDiv.style.display !== 'block') {
+        toggleDiv('member');
+    }
+	toggleMypageDiv('memberNoticeList');
+}
+
+/* 헤더 > 찜 or 헤더 > 알림 클릭 */
+
 /* 공용 모달 배경 열기 */
 function openBg() {
 	$(modalBg).show();

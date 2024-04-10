@@ -37,7 +37,7 @@
 					<div class="member-picture"></div>
 					<div class="member-nickname">
 						<div class="member-nickname-blank"></div>
-						<div class="member-nickname-profile" onClick="openLoginForm();"><img width=40 height=40 src="resources/images/member/basicUserProfile.png"> &nbsp;</div>
+						<div class="member-nickname-profile" onClick="openLoginForm();"><img width=40 height=40 src="resources/images/etc/smile.png"> &nbsp;</div>
 					</div>
 				</c:when>
 				<c:otherwise>
@@ -48,9 +48,9 @@
 							<div class="member-nickname">${ loginUser.userNickname } 님 &nbsp;</div>
 						</c:when>
 						<c:otherwise>
-							<div class="member-likes mh centerXY"><i class="fa-solid fa-heart fa-lg"></i></div>
-							<div class="member-notice mh centerXY"><i class="fa-regular fa-bell fa-lg"></i></div>
-							<div class="member-picture mh centerXY"><img class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
+							<div class="member-likes mh centerXY" onclick="openDibs();"><i class="fa-solid fa-heart fa-lg"></i></div>
+							<div class="member-notice mh centerXY" onclick="openNotice();"><i class="fa-regular fa-bell fa-lg"></i></div>
+							<div class="member-picture mh centerXY" onclick="toggleDiv('member')"><img class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
 							<div class="member-nickname">${ loginUser.userNickname } 님 &nbsp;</div>
 						</c:otherwise>
 					</c:choose>

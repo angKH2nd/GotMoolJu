@@ -42,7 +42,7 @@
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
        				<li onClick="openLoginForm();" data-target="member">
-		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
+		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/etc/smile.png"></div>
             			<div class="text-area" style="padding: 0 0 10px 0;">마이페이지</div>
             		</li>
             	</c:when>
@@ -63,7 +63,7 @@
 		        	</c:choose>
             	</c:otherwise>
            	</c:choose>
-	        <li onclick="cancelDiv()" data-target="map" class="map-option">
+	        <li onclick="openMap()" data-target="map" class="map-option">
 	        	<div class="icon-area"><i class="fa-solid fa-map fa-xl"></i></div>
 	        	<div class="text-area">지도</div>
         	</li>
@@ -144,6 +144,8 @@
 	        </c:if>
 	    </ul>
 	</div>
+	
+	<%-- 사이드바 관련 토글 --%>
 	<div class="sidebar-toggle">
 	    <div class="home"><%@ include file="../homeTown/homeTown.jsp" %></div>
 	    <div class="re">상세보기 눌림</div>
@@ -154,6 +156,14 @@
 	    <div class="helpCenter"><%@ include file="../helpCenter/helpCenter.jsp" %></div>
 	    <div class="etc"><%@ include file="../etc/etc.jsp" %></div>
 	</div>
+	
+	<%-- 마이페이지 관련 토글 --%>
+	<div class="mypage-toggle">
+		<div class="updateMemberForm"><%@ include file="../member/memberUpdateForm.jsp" %></div>
+		<div class="memberDibsList"><%@ include file="../member/memberDibsList.jsp" %></div>
+		<div class="memberNoticeList"><%@ include file="../member/memberNoticeList.jsp" %></div>
+	</div>
+	
     <script src="resources/js/common/sidebar.js"></script>
 </body>
 </html>
