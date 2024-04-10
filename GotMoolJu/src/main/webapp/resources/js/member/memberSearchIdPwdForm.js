@@ -93,7 +93,10 @@ function sendIdSms() {
     $.ajax({
         type: "POST",
         url: "sendIdSms",
-        data: {userIdPhone: $("#searchIdPhone").val()},
+        data: {
+        	searchIdName: $("#searchIdName").val(),
+        	searchIdPhone: $("#searchIdPhone").val()
+    	},
         success: function(data) {
         	console.log(data);
             if(data.result === "Y"){

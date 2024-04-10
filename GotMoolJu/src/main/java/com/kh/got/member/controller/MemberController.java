@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kh.got.common.model.vo.SmsConfig;
 import com.kh.got.common.template.RandomNumber;
 import com.kh.got.member.model.service.MemberService;
 import com.kh.got.member.model.vo.Member;
@@ -114,19 +116,26 @@ public class MemberController {
 		return count > 0 ? "NNNNN" : "NNNNY";
 	}
 	
+	@Autowired
+    private SmsConfig smsConfig;
+	
 	@ResponseBody
 	@RequestMapping(value="sendIdSms", produces = "application/json; charset=UTF-8")
-    public String sendIdSms(@RequestParam("userIdPhone") String userIdPhone) {
-        DefaultMessageService messageService = NurigoApp.INSTANCE.initialize("NCS4GTSLFXOTFG3X", "WSMGBCFRJEXLWNCGU6LEL3DQAJ6AUACG", "https://api.coolsms.co.kr");
-        
+    public String sendIdSms(@RequestParam("searchIdName") String searchIdName, @RequestParam("searchIdPhone") String searchIdPhone) {
+		DefaultMessageService messageService = NurigoApp.INSTANCE.initialize(
+				smsConfig.getSmsApiKey(),
+                smsConfig.getSmsApiSecret(),
+                "https://api.coolsms.co.kr"
+        );
+		
         JSONObject jObj = new JSONObject();
         
         int random = new RandomNumber().random4();
         
         Message message = new Message();
-        message.setFrom("발신번호");
-        message.setTo(userIdPhone);
-        message.setText("[갓물주] 인증번호는 " + random + " 입니다.");
+        message.setFrom("01091907946");
+        message.setTo(searchIdPhone);
+        message.setText("[갓물주] " + searchIdName + "님의 인증번호는 " + random + " 입니다.");
         
         try {
             messageService.send(message);
