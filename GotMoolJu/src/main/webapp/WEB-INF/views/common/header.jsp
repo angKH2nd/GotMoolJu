@@ -82,6 +82,11 @@
     <div class="modal-searchIdPwd-wrap no-scrollbar">
     	<%@ include file="../member/memberSearchIdPwdForm.jsp" %>
     </div>
+    
+    <%-- 비밀번호 찾기 - 신규 비밀번호 설정 영역 --%>
+    <div class="modal-searchNewPwd-wrap no-scrollbar">
+    	<%@ include file="../member/memberSearchNewPwdForm.jsp" %>
+	</div>
 	
 	<script src="resources/js/common/header.js"></script>
 </body>

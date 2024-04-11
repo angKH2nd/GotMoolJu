@@ -2,6 +2,7 @@
 var modalLogin = $('.modal-wrap');
 var modalEnroll = $('.modal-enroll-wrap');
 var modalSearchIdPwd = $('.modal-searchIdPwd-wrap');
+var modalSearchNewPwd = $('.modal-searchNewPwd-wrap');
 var modalBg = $('.modal-bg');
 
 function openEnrollForm() {
@@ -28,7 +29,9 @@ function openSearchIdPwdForm() {
 
 function closeSearchIdPwdForm() {
 	$("#searchIdName").val("");
+	$("#searchPwdName").val("");
 	$("#searchIdPhone").val("");
+	$("#searchPwdPhone").val("");
 	$("#validateIdPhone").val("");
 	$("#validatePwdPhone").val("");
     $(modalSearchIdPwd).hide();
@@ -39,6 +42,24 @@ function closeSearchIdPwdForm() {
 
 function beforeSearchIdPwdForm() {
 	closeSearchIdPwdForm();
+	openLoginForm();
+}
+
+function openNewPwdForm() {
+	closeSearchIdPwdForm();
+	$(modalSearchNewPwd).show();
+	openBg();
+}
+
+function closeNewPwdForm() {
+	$("#searchNewPwd").val("");
+	$("#searchNewPwdCheck").val("");
+	$(modalSearchNewPwd).hide();
+	closeBg();
+}
+
+function beforeNewPwdForm() {
+	closeNewPwdForm();
 	openLoginForm();
 }
 
@@ -72,6 +93,7 @@ function closeBg() {
 	$(modalLogin).hide();
 	$(modalEnroll).hide();
 	$(modalSearchIdPwd).hide();
+	$(modalSearchNewPwd).hide();
 	$(".id-area #validateSmsTr").hide();
     $(".pwd-area #validateSmsTr").hide();
 	$("#searchIdName").val("");
@@ -84,7 +106,12 @@ function closeBg() {
 	$("#sendPwdSms").prop('disabled', true);
 	$("#searchIdBtn").prop('disabled', true);
 	$("#searchPwdBtn").prop('disabled', true);
-	$("#searchIdBtn").css('backgroundColor', '#0f0b26').css('color', 'black');
+	$("#searchIdBtn").css('backgroundColor', '#fafafa').css('color', '#b4b4b4');
+	$("#searchPwdBtn").css('backgroundColor', '#fafafa').css('color', '#b4b4b4');
+	$("#sendIdSms").css('backgroundColor', '#808080').css('color', 'white');
+	$("#sendPwdSms").css('backgroundColor', '#808080').css('color', 'white');
+	$("#validateIdPhoneBtn").css('backgroundColor', '#808080').css('color', 'white');
+	$("#validatePwdPhoneBtn").css('backgroundColor', '#808080').css('color', 'white');
 	$(modalBg).hide();
 }
 /* 공용 모달 배경 닫기 */

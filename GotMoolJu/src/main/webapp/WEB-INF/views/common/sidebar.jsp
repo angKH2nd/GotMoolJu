@@ -78,8 +78,8 @@
 	        	<div class="text-area">차트</div>
 	        </li>
 	        <li onclick="toggleDiv('loan')" data-target="loan">
-	        	<div class="icon-area"><i class="fa-solid fa-sack-dollar fa-xl"></i></div>
-	        	<div class="text-area">대출</div>
+	        	<div class="icon-area" style="margin: 0;"><img style="margin: 10px 0 0 0;" class="brc" width=40 height=40 src="resources/images/etc/money.png"></div>
+	        	<div class="text-area" style="padding: 0 0 10px 0;">대출</div>
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.got.common.model.vo.SmsConfig;
+import com.kh.got.common.template.PhoneNumber;
 import com.kh.got.common.template.RandomNumber;
 import com.kh.got.member.model.service.MemberService;
 import com.kh.got.member.model.vo.Member;
@@ -136,6 +137,44 @@ public class MemberController {
         message.setFrom("01091907946");
         message.setTo(searchIdPhone);
         message.setText("[갓물주] " + searchIdName + "님의 인증번호는 " + random + " 입니다.");
+        
+        try {
+            messageService.send(message);
+            jObj.put("result", "Y");
+            jObj.put("random", random);
+            return jObj.toJSONString();
+        } catch (NurigoMessageNotReceivedException exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        } catch (Exception exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        }
+    }
+	
+	@ResponseBody
+	@RequestMapping(value="searchId", produces = "text/html; charset=utf-8")
+	public String searchId(@RequestParam("searchIdName") String searchIdName, @RequestParam("searchIdPhone") String searchIdPhone) {
+		return mService.searchId(searchIdName, PhoneNumber.phoneNumberFormat(searchIdPhone));
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="sendPwdSms", produces = "application/json; charset=UTF-8")
+    public String sendPwdSms(@RequestParam("searchPwdId") String searchPwdId, @RequestParam("searchPwdPhone") String searchPwdPhone) {
+		DefaultMessageService messageService = NurigoApp.INSTANCE.initialize(
+				smsConfig.getSmsApiKey(),
+                smsConfig.getSmsApiSecret(),
+                "https://api.coolsms.co.kr"
+        );
+		
+        JSONObject jObj = new JSONObject();
+        
+        int random = new RandomNumber().random4();
+        
+        Message message = new Message();
+        message.setFrom("01091907946");
+        message.setTo(searchPwdPhone);
+        message.setText("[갓물주] 비밀번호찾기 인증번호는 " + random + " 입니다.");
         
         try {
             messageService.send(message);

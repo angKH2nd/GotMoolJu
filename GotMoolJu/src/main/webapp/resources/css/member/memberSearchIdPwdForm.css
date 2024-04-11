@@ -55,13 +55,13 @@
     height: 100%;
     padding-left: 35px; 
     border: none;
-    border-bottom: 0.5px solid lightgray;
+    border-bottom: 0.5px solid #002250;
 }
 
 .id-pwd-input-outline:focus {
 	outline: none;
 	border: none;
-	border-bottom: 0.5px solid lightgray;
+	border-bottom: 0.5px solid #002250;
 }
 
 .pwd-area {

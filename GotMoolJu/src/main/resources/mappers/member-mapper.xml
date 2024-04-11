@@ -102,5 +102,14 @@
 		  from tb_member
 		 where user_id = #{checkId}
 	</select>
+	
+	<select id="searchId" resultType="string">
+		select
+			   user_id
+		  from tb_member
+		 where user_name = #{searchIdName}
+		   and user_phone = #{searchIdPhone}
+		   and user_status in ('Y', 'A')
+	</select>
 
 </mapper>

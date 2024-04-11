@@ -1,5 +1,8 @@
 package com.kh.got.member.model.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +29,14 @@ public class MemberDao {
 
 	public int idCheck(SqlSessionTemplate sqlSession, String checkId) {
 		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
+
+	public String searchId(SqlSessionTemplate sqlSession, String searchIdName, String searchIdPhone) {
+		Map<String, String> parameters = new HashMap<>();
+	    parameters.put("searchIdName", searchIdName);
+	    parameters.put("searchIdPhone", searchIdPhone);
+	    
+		return sqlSession.selectOne("memberMapper.searchId", parameters);
 	}
 	
 }
