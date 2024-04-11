@@ -84,6 +84,7 @@ function closeBg() {
 	$("#sendPwdSms").prop('disabled', true);
 	$("#searchIdBtn").prop('disabled', true);
 	$("#searchPwdBtn").prop('disabled', true);
+	$("#searchIdBtn").css('backgroundColor', '#0f0b26').css('color', 'black');
 	$(modalBg).hide();
 }
 /* 공용 모달 배경 닫기 */
