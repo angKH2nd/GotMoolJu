@@ -12,7 +12,7 @@
 <%-- jQuery 라이브러리 --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <%-- sweetalert --%>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <style>

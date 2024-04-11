@@ -29,13 +29,15 @@ function openSearchIdPwdForm() {
 function closeSearchIdPwdForm() {
 	$("#searchIdName").val("");
 	$("#searchIdPhone").val("");
+	$("#validateIdPhone").val("");
+	$("#validatePwdPhone").val("");
     $(modalSearchIdPwd).hide();
+    $(".id-area #validateSmsTr").hide();
+    $(".pwd-area #validateSmsTr").hide();
     closeBg();
 }
 
 function beforeSearchIdPwdForm() {
-	$("#searchIdName").val("");
-	$("#searchIdPhone").val("");
 	closeSearchIdPwdForm();
 	openLoginForm();
 }
@@ -70,8 +72,18 @@ function closeBg() {
 	$(modalLogin).hide();
 	$(modalEnroll).hide();
 	$(modalSearchIdPwd).hide();
+	$(".id-area #validateSmsTr").hide();
+    $(".pwd-area #validateSmsTr").hide();
 	$("#searchIdName").val("");
 	$("#searchIdPhone").val("");
+	$("#searchPwdId").val("");
+	$("#searchPwdPhone").val("");
+	$("#validateIdPhone").val("");
+	$("#validatePwdPhone").val("");
+	$("#sendIdSms").prop('disabled', true);
+	$("#sendPwdSms").prop('disabled', true);
+	$("#searchIdBtn").prop('disabled', true);
+	$("#searchPwdBtn").prop('disabled', true);
 	$(modalBg).hide();
 }
 /* 공용 모달 배경 닫기 */

@@ -43,10 +43,10 @@
 				</tr>
 				<tr>
 					<td colspan=2 class="id-pwd-td-set" id="validateSmsTr">
-						<input type="number" name="validateIdPhone" id="validateIdPhone" class="id-pwd-input-outline" placeholder="인증번호를 입력해주세요." required maxlength=4>
+						<input type="number" name="validateIdPhone" id="validateIdPhone" class="id-pwd-input-outline" placeholder="인증번호를 입력해주세요." required maxlength=4 onkeyup="checkIdSmsInput()">
 						<input type="hidden" id="validateIdPhoneOrigin">
 						<i class="fa-solid fa-envelope id-pwd-i-set"></i>
-						<button type="button" class="sms-btn br5" onclick="validateIdSms();">인증확인</button>
+						<button type="button" id="validateIdPhoneBtn" class="sms-btn br5" onclick="validateIdSms();" disabled>인증확인</button>
 					</td>
 				</tr>
 				<tr>
@@ -88,7 +88,7 @@
 					<td colspan=2 class="id-pwd-td-set" id="validateSmsTr">
 						<input type="number" name="validatePwdPhone" id="validatePwdPhone" class="id-pwd-input-outline" placeholder="인증번호를 입력해주세요." required maxlength=4>
 						<i class="fa-solid fa-envelope id-pwd-i-set"></i>
-						<button type="button" class="sms-btn br5" onclick="validatePwdSms();">인증확인</button>
+						<button type="button" id="validatePwdPhoneBtn" class="sms-btn br5" onclick="validatePwdSms();">인증확인</button>
 					</td>
 				</tr>
 				<tr>

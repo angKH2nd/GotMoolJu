@@ -98,19 +98,51 @@ function sendIdSms() {
         	searchIdPhone: $("#searchIdPhone").val()
     	},
         success: function(data) {
-        	console.log(data);
             if(data.result === "Y"){
+            	swal('인증번호 발송 완료!', "발송된 인증번호를 입력해주세요.", 'success');
             	$(".id-area #validateSmsTr").show();
             	$(".id-area #sendIdSms").prop('disabled', true);
             	$("#validateIdPhoneOrigin").val(data.random);
             }else {
             	alert("인증번호 발송에 실패했습니다.");
+        		swal('인증번호 발송 실패!', "이름과 휴대폰번호를 확인해주세요.", 'warning');
             }
         }, 
         error: function() {
-            console.log("통신실패");
+        	swal('인증번호 발송 실패!', "관리자에게 문의해주세요", 'warning');
         }
     });
+}
+
+function checkIdSmsInput() {
+	var input = $("#validateIdPhone").val();
+    var button = $("#validateIdPhoneBtn");
+    
+    if (input.trim() === "") {
+        button.disabled = true;
+        button.css('backgroundColor', 'gray');
+    } else {
+        button.disabled = false;
+        button.css('backgroundColor', '#002250');
+    }
+}
+
+function validateIdSms() {
+	if($("#validateIdPhoneOrigin").val() === $("#validateIdPhone").val()){
+		// 인증번호 일치할 경우
+		swal('인증 성공!', "인증번호가 확인되었습니다. 아이디 찾기를 진행해주세요.", 'success');
+		console.log("일치함");
+		$("#searchIdBtn").prop('disabled', false);
+		$("#searchIdBtn").css('backgroundColor', '#002250');
+		$("#sendIdSms").prop('disabled', true);
+		$("#validateIdPhoneBtn").prop('disabled', true);
+	}else {
+		// 인증번호 일치하지 않을 경우
+		swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
+		console.log("일치하지않음");
+		$("#searchIdBtn").prop('disabled', true);
+		$("#searchIdBtn").css('backgroundColor', 'gray');
+	}
 }
 
 function openIdForm() {
