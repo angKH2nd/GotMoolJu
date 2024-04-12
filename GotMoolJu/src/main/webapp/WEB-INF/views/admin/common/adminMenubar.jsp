@@ -1,32 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>갓물주</title>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport" />
-<!-- <%--     Fonts and icons     --%> -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-<!-- <%--     필요 없는 듯
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>갓물주</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!-- <%--     Fonts and icons     --%> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+      rel="stylesheet"
+    />
+    <!-- <%--     필요 없는 듯
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> 
 --%> -->
-<!-- <%-- CSS Files 필수--%> -->
-<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="resources/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-<!-- <%-- CSS Just for demo purpose, don't include it in your project --%> -->
-<link href="resources/assets/demo/demo.css" rel="stylesheet" /> <!-- 있으면 업그레이드가 가장 아래로 내려가짐-->
-</head>
-<body>
-	<div class="wrapper">
+    <!-- <%-- CSS Files 필수--%> -->
+    <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="resources/assets/css/now-ui-dashboard.css?v=1.5.0"
+      rel="stylesheet"
+    />
+    <!-- <%-- CSS Just for demo purpose, don't include it in your project --%> -->
+    <link href="resources/assets/demo/demo.css" rel="stylesheet" />
+    <!-- 있으면 업그레이드가 가장 아래로 내려가짐-->
+  </head>
+  <body>
+    <div class="wrapper">
       <div class="sidebar" data-color="gotmoolju">
         <!-- <%--
         Tip 1: You can change the color of the sidebar using: data-color="gotmoolju | blue | green | orange | red | yellow"
-    	--%> -->
+    	  --%> -->
         <div class="logo">
           <a href="http://www.creative-tim.com" class="simple-text logo-mini">
             CT
@@ -37,22 +46,22 @@
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
           <ul class="nav">
-            <li>
-              <a href="./dashboard.html">
-                <i class="now-ui-icons design_app"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
             <li class="active">
-              <a href="./icons.html">
-                <i class="now-ui-icons education_atom"></i>
-                <p>Icons</p>
+              <a href="main.ad">
+                <i class="now-ui-icons text_align-left"></i>
+                <p>메인화면</p>
               </a>
             </li>
             <li>
               <a href="memberList.ad">
-                <i class="now-ui-icons location_map-big"></i>
+                <i class="now-ui-icons design_bullet-list-67"></i>
                 <p>회원</p>
+              </a>
+            </li>
+            <li>
+              <a href="./icons.html">
+                <i class="now-ui-icons education_atom"></i>
+                <p>Icons</p>
               </a>
             </li>
             <li>
@@ -82,14 +91,32 @@
             <li class="active-pro">
               <a href="#">
                 <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                <p>로그아웃 ? </p>
+                <p>로그아웃 ?</p>
               </a>
             </li>
           </ul>
         </div>
       </div>
-      </div>
     </div>
+
+    <!-- 메뉴바 클릭 시 색 변경 안됨 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navItems = document.querySelectorAll(".sidebar .nav li");
+
+        navItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            // 모든 항목에서 'active' 클래스 제거
+            navItems.forEach(function (item) {
+              item.classList.remove("active");
+            });
+            // 클릭한 항목에만 'active' 클래스 추가
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+
     <!-- <%--   Core JS Files   --%> -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -108,5 +135,5 @@
     ></script>
     <!-- <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%> -->
     <script src="resources/assets/demo/demo.js"></script>
-</body>
+  </body>
 </html>

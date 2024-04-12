@@ -4,11 +4,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="../assets/img/apple-icon.png"
-    />
+	<link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -45,11 +41,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <jsp:include page="common/adminBigHeader.jsp" />
 
-
-<%--    <jsp:include page="board/adminMainBoard.jsp" />  --%>
-
-	<jsp:include page="member/adminMember.jsp" />
-  
+    <jsp:include page="board/adminMainBoard.jsp" />  
+    
     
     
     <!--   Core JS Files   -->

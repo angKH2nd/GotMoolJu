@@ -155,12 +155,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <!-- 하단 보드 2개 뭉친 div-->
           <div class="row">
             <!-- 4번 보드 감싸고 있는 div, 패딩 o-->
-            <div class="col-md-6">
+            <div class="col-md-6" >
             <!-- 4번 보드-->
-              <div class="card">
+              <div class="card" style="height:441px">
                 <!-- 4번 card title -->
                 <div class="card-header">
-                  <h5 class="card-category">All Memeber List 회원란 or 관련 버튼 클릭 시 회원jsp 상세 뜨게 </h5>
+                  <h5 class="card-category">All Memeber List 회원란 or 관련 버튼 클릭 시 회원jsp 상세 뜨게 &lt; 더보기 &gt; 기능넣기 </h5>
                   <h4 class="card-title">회원조회</h4>
                 </div>
                 <!-- 4번 card content-->
@@ -179,30 +179,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <td>user01</td>
                           <td>돼지불백집이쑤시개도둑</td>
                           <td class="text-right">010-0526-1564</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>user02</td>
-                          <td>공중화장실휴지도둑</td>
-                          <td class="text-right">010-1593-8423</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>user03</td>
-                          <td>기사식당명함도둑</td>
-                          <td class="text-right">010-7513-1513</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>user04</td>
-                          <td>휴게소컵도둑</td>
-                          <td class="text-right">010-5238-1728</td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>user05</td>
-                          <td>주호민이알려주는고데기사용법</td>
-                          <td class="text-right">010-4215-9178</td>
                         </tr>
                       </tbody>
                     </table>
@@ -355,26 +331,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
        </div>
     
-    <!--   Core JS Files   -->
+    <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
     <script src="resources/assets/js/core/bootstrap.min.js"></script>
     <script src="resources/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-    <!--  Google Maps Plugin    -->
+    <%--  Google Maps Plugin    --%>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!-- Chart JS -->
+    <%-- Chart JS --%>
     <script src="resources/assets/js/plugins/chartjs.min.js"></script>
-    <!--  Notifications Plugin    -->
+    <%--  Notifications Plugin    --%>
     <script src="resources/assets/js/plugins/bootstrap-notify.js"></script>
-    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <%-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc --%>
     <script
       src="resources/assets/js/now-ui-dashboard.min.js?v=1.5.0"
       type="text/javascript"
     ></script>
-    <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+    <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%>
     <script src="resources/assets/demo/demo.js"></script>
 
-    <!-- 푸터바 삽입-->
+    <%-- 푸터바 삽입--%>
     <%--
     <jsp:include page="../common/adminFooter.jsp" />
   	 --%>
