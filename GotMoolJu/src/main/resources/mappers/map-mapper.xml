@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapMapper">
+
+	<resultMap type="MapVO" id="mapResult">
+		<result column="seq" property="seq"/>
+		<result column="room_type" property="roomType"/>
+		<result column="selling_type" property="sellingType"/>
+		<result column="location" property="location"/>
+		<result column="apt_name" property="aptName"/>
+		<result column="title" property="title"/>
+		<result column="price" property="price"/>
+		<result column="img_url" property="imgUrl"/>
+		<result column="img_urls" property="imgUrls"/>
+		<result column="room_desc" property="roomDesc"/>
+	</resultMap>
+	
+	<select id="selectAllList" resultMap="mapResult"> 
+	select 
+		   SEQ 
+		 , ROOM_TYPE 
+		 , SELLING_TYPE
+		 , LOCATION 
+		 , APT_NAME 
+		 , TITLE 
+		 , PRICE 
+		 , IMG_URL 
+		 , IMG_URLS 
+		 , ROOM_DESC 
+	  from tb_apt 
+	 where rownum between 1 and 20 
+	 </select>
+
+
+
+
+</mapper>

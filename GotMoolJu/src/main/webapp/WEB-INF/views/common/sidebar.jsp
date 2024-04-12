@@ -13,6 +13,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <%-- sweetalert --%>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9165mfbte9"></script>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9165mfbte9&submodules=OregDk87L7tsQ35dcpp+Mg=="></script>
 </head>
 <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <style>
@@ -150,7 +152,7 @@
 	<%-- 사이드바 관련 토글 --%>
 	<div class="sidebar-toggle">
 	    <div class="home"><%@ include file="../homeTown/homeTown.jsp" %></div>
-	    <div class="re">상세보기 눌림</div>
+	    <div class="re"><%@ include file="../map/detailMap.jsp" %></div>
 	    <div class="member"><%@ include file="../member/mypage.jsp" %></div>
 	    <div class="rank"><%@ include file="../rank/rank.jsp" %></div>
 	    <div class="loan"><%@ include file="../loan/loan.jsp" %></div>
