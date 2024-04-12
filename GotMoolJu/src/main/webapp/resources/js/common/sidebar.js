@@ -1,1 +1,4 @@
-console.log("sidebar");
+function openMap() {
+	cancelDiv();
+	cancelMypageDiv();
+}

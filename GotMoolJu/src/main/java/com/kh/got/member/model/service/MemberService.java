@@ -19,4 +19,10 @@ public interface MemberService {
 	// 아이디 중복체크 서비스 (select)
 	int idCheck(String checkId);
 
+	// 아이디 찾기 서비스 (select)
+	String searchId(String searchIdName, String searchIdPhone);
+
+	// 비밀번호 찾기 서비스 (update)
+	int searchNewPwd(String searchNewPwd, String searchNewPwdUserId);
+	
 }

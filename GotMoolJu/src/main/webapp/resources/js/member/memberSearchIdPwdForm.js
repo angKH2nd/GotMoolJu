@@ -93,22 +93,138 @@ function sendIdSms() {
     $.ajax({
         type: "POST",
         url: "sendIdSms",
-        data: {userIdPhone: $("#searchIdPhone").val()},
+        data: {
+        	searchIdName: $("#searchIdName").val(),
+        	searchIdPhone: $("#searchIdPhone").val()
+    	},
         success: function(data) {
-        	console.log(data);
             if(data.result === "Y"){
+            	swal('인증번호 발송 완료!', "발송된 인증번호를 입력해주세요.", 'success');
             	$(".id-area #validateSmsTr").show();
             	$(".id-area #sendIdSms").prop('disabled', true);
             	$("#validateIdPhoneOrigin").val(data.random);
             }else {
-            	alert("인증번호 발송에 실패했습니다.");
+        		swal('인증번호 발송 실패!', "이름과 휴대폰번호를 확인해주세요.", 'warning');
             }
         }, 
         error: function() {
-            console.log("통신실패");
+        	swal('인증번호 발송 실패!', "관리자에게 문의해주세요", 'warning');
         }
     });
 }
+
+function checkIdSmsInput() {
+	var input = $("#validateIdPhone").val();
+    var button = $("#validateIdPhoneBtn");
+    
+    if (input.trim() === "") {
+        button.prop('disabled', true);
+        button.css('backgroundColor', 'gray');
+    } else {
+        button.prop('disabled', false);
+        button.css('backgroundColor', '#002250');
+    }
+}
+
+function validateIdSms() {
+	if($("#validateIdPhoneOrigin").val() === $("#validateIdPhone").val()){
+		// 인증번호 일치할 경우
+		swal('인증 성공!', "인증번호가 확인되었습니다. 아이디 찾기를 진행해주세요.", 'success');
+		$("#searchIdBtn").prop('disabled', false);
+		$("#searchIdBtn").css('backgroundColor', '#002250').css('color', 'white');
+		$("#sendIdSms").prop('disabled', true);
+		$("#validateIdPhoneBtn").prop('disabled', true);
+	}else {
+		// 인증번호 일치하지 않을 경우
+		swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
+		$("#searchIdBtn").prop('disabled', true);
+		$("#searchIdBtn").css('backgroundColor', '#fafafa').css('color', 'black');
+		$("#validateIdPhone").focus();
+	}
+}
+
+function searchId() {
+	$.ajax({
+		url: "searchId",
+		data: {
+        	searchIdName: $("#searchIdName").val(),
+        	searchIdPhone: $("#searchIdPhone").val()
+    	},
+    	success: function(result){
+    		if(result === ''){
+    			swal('아이디 찾기 실패!', "정보(이름/휴대폰)를 확인해주시고, 문제가 계속될 경우 관리자에게 문의 부탁드립니다.", 'warning');
+    			$("#sendIdSms").css('backgroundColor', '#808080').css('color', 'white');
+    			openSearchIdPwdForm();
+    			checkIdSmsInput();
+    		}else {
+    			swal('아이디 찾기 성공!', $("#searchIdName").val() + " 님의 아이디는 \'" + result + "\' 입니다.", 'success');
+    			beforeSearchIdPwdForm();
+    		}
+    	}, error: function(){
+    		swal('아이디 찾기 실패!', "잠시 후 다시 시도해주세요. 문제가 계속될 경우 관리자에게 문의 부탁드립니다.", 'warning');
+    	}
+	})
+}
+
+/* ------------------ 비밀번호 sms 시작 ------------------ */
+
+function sendPwdSms() {
+    $.ajax({
+        type: "POST",
+        url: "sendPwdSms",
+        data: {
+        	searchPwdId: $("#searchPwdId").val(),
+        	searchPwdPhone: $("#searchPwdPhone").val()
+    	},
+        success: function(data) {
+            if(data.result === "Y"){
+            	swal('인증번호 발송 완료!', "발송된 인증번호를 입력해주세요.", 'success');
+            	$(".pwd-area #validateSmsTr").show();
+            	$(".pwd-area #sendPwdSms").prop('disabled', true);
+            	$("#validatePwdPhoneOrigin").val(data.random);
+            }else {
+        		swal('인증번호 발송 실패!', "아이디와 휴대폰번호를 확인해주세요.", 'warning');
+            }
+        }, 
+        error: function() {
+        	swal('인증번호 발송 실패!', "관리자에게 문의해주세요", 'warning');
+        }
+    });
+}
+
+function checkPwdSmsInput() {
+	var input = $("#validatePwdPhone").val();
+    var button = $("#validatePwdPhoneBtn");
+    
+    if (input.trim() === "") {
+        button.prop('disabled', true);
+        button.css('backgroundColor', 'gray');
+    } else {
+        button.prop('disabled', false);
+        button.css('backgroundColor', '#002250');
+    }
+}
+
+function validatePwdSms() {
+	if($("#validatePwdPhoneOrigin").val() === $("#validatePwdPhone").val()){
+		// 인증번호 일치할 경우
+		swal('인증 성공!', "인증번호가 확인되었습니다. 비밀번호 찾기를 진행해주세요.", 'success');
+		$("#searchPwdBtn").prop('disabled', false);
+		$("#searchPwdBtn").css('backgroundColor', '#002250').css('color', 'white');
+		$("#sendPwdSms").prop('disabled', true);
+		$("#validatePwdPhoneBtn").prop('disabled', true);
+	}else {
+		// 인증번호 일치하지 않을 경우
+		swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
+		$("#searchPwdBtn").prop('disabled', true);
+		$("#searchPwdBtn").css('backgroundColor', '#fafafa').css('color', 'black');
+		$("#validatePwdPhone").focus();
+	}
+}
+
+/* ------------------ 비밀번호 sms 끝 ------------------ */
+
+/* ------------------ 아이디/비밀번호 열람 시작 ------------------ */
 
 function openIdForm() {
     // id-area를 보이도록 설정
@@ -139,3 +255,4 @@ function openPwdForm() {
     document.querySelector('.id-select-btn button').style.color = 'gray';
     document.querySelector('.id-select-btn button').style.borderBottom = '1px solid gray';
 }
+/* ------------------ 아이디/비밀번호 열람 끝 ------------------ */

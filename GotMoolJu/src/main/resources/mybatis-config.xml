@@ -14,11 +14,13 @@
 		<typeAlias type="com.kh.got.faq.model.vo.Faq" alias="Faq"/>
 		
 		<typeAlias type="com.kh.got.re.model.vo.Review" alias="Review"/>
+		<typeAlias type="com.kh.got.common.model.vo.MapVO" alias="MapVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="/mappers/member-mapper.xml"/>
 		<mapper resource="/mappers/qna-mapper.xml"/>
 		<mapper resource="/mappers/re-mapper.xml"/>
+		<mapper resource="/mappers/map-mapper.xml"/>
 	</mappers>
 </configuration>

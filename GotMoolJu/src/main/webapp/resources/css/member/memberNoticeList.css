@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.member-dibs-form {
+	width: calc(100% - 15px);
+	height: 100%;
+	overflow-y: auto;
+}
+
+.member-dibs-form>div {
+	width: calc(100% - 15px);
+}
+
+.member-dibs-form-top {
+	height: 60px;
+}
+
+.member-dibs-form-top>div {
+	height: 100%;
+}
+
+.member-dibs-form-previous {
+	width: 40px;
+}
+
+.member-dibs-form-title {
+	width: calc(100% - 120px);
+	text-align: center;
+}
+
+.member-dibs-form-blank {
+	width: 80px;
+	text-align: right;
+}

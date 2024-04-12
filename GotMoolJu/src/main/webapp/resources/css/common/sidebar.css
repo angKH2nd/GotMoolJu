@@ -10,6 +10,9 @@
 .tar {text-align: right;}
 .fl {float: left;}
 .fb {font-weight: bold;}
+.fs12 {font-size: 12px;}
+.fs16 {font-size: 16px;}
+.pdlr15 {padding: 0 15px;}
 .pd15 {padding: 15px;}
 .pd20 {padding: 20px;}
 .bgwh {background-color: white;}
@@ -17,6 +20,7 @@
 .bdlg {border: 0.5px solid lightgray;}
 .brc {border-radius: 50%;}
 .br5 {border-radius: 5px;}
+.br15 {border-radius: 15px;}
 .btn-format {background-color: white; border: none;}
 .no-scrollbar::-webkit-scrollbar {display:none;}
 
@@ -36,8 +40,6 @@
 	outline: none;
 	border: 0.5px solid lightgray;
 }
-
-
 
 
 

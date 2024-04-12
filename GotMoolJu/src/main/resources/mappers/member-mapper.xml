@@ -102,5 +102,22 @@
 		  from tb_member
 		 where user_id = #{checkId}
 	</select>
+	
+	<select id="searchId" resultType="string">
+		select
+			   user_id
+		  from tb_member
+		 where user_name = #{searchIdName}
+		   and user_phone = #{searchIdPhone}
+		   and user_status in ('Y', 'A')
+	</select>
+	
+	<update id="searchNewPwd">
+		update
+			   tb_member
+		   set user_pwd = #{searchNewPwd}
+		 where user_status = 'Y'
+		   and user_id = #{searchNewPwdUserId}
+	</update>
 
 </mapper>

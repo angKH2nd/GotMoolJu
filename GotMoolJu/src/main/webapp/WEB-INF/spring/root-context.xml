@@ -25,5 +25,7 @@
     	<property name="maxUploadSize" value="100000000"/> 
     	<property name="maxInMemorySize" value="100000000"/>
     </bean>
+    
+    <!-- sms api 서비스 관련 -->
 		
 </beans>

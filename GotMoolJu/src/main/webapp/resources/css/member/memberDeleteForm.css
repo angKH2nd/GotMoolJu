@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.delete-head {
+	height: 30px;
+	padding: 15px 0;
+}
+
+.delete-body {
+	height: 300px;
+}
+
+.delete-bottom {
+	height: 42.5px;
+}
+
+.delete-area {
+	width: 320px;
+	height: calc(100% - 35px);
+}
+
+.delete-area table {
+	width: 100%;
+	height: 80%;
+}
+
+.delete-area input {
+    width: calc(100% - 35px);
+    height: 100%;
+    padding-left: 35px; 
+    border: none;
+    border-bottom: 0.5px solid #002250;
+}
+
+.delete-pwd-input-outline:focus {
+	outline: none;
+	border: none;
+	border-bottom: 0.5px solid #002250;
+}
+
+.delete-pwd-td-set {
+	position: relative; 
+	padding-top: 0; 
+	padding-bottom: 0;
+}
+
+.delete-pwd-i-set {
+	position: absolute; 
+	left: 10px; 
+	top: 50%; 
+	transform: translateY(-50%);
+}
+
+.delete-pwd-btn {
+	width: 100%;
+	height: 100%;
+}
+

@@ -86,30 +86,30 @@
   				
   				<tr>
 			    <td colspan="3" class="enroll-td-set">
-			        <input id="sample6_postcode" type="text" name="userAddressPost" placeholder="우편번호" readonly class="bdlg enroll-border-top enroll-input-set">
+			        <input id="enroll_postcode" type="text" name="userAddressPost" placeholder="우편번호" readonly class="bdlg enroll-border-top enroll-input-set">
 			        <i class="fa-solid fa-compass enroll-i-set"></i>
-			        <button type="button" onclick="sample6_execDaumPostcode()" class="enroll-btn-search br5">주소검색</button>
+			        <button type="button" onclick="enrollSearchAddress()" class="enroll-btn-search br5">주소검색</button>
 			        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 			    </td>
 			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input id="sample6_address" type="text" name="userAddressNormal" placeholder="주소" readonly class="enroll-input-set bdlg enroll-border-bottom">
+			        <input id="enroll_address" type="text" name="userAddressNormal" placeholder="주소" readonly class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-home enroll-i-set"></i>
 			    </td>
   				</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input  id="sample6_detailAddress" type="text" name="userAddressDetail" placeholder="상세주소" required class="enroll-input-set bdlg enroll-border-bottom">
+			        <input  id="enroll_detailAddress" type="text" name="userAddressDetail" placeholder="상세주소" required class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-location-dot fa-lg enroll-i-set"></i>
 			    </td>
   				</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input  id="sample6_extraAddress" type="text" name="userAddressExtra" placeholder="참고항목" readonly class="enroll-input-set bdlg enroll-border-bottom">
+			        <input  id="enroll_extraAddress" type="text" name="userAddressExtra" placeholder="참고항목" readonly class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-signs-post enroll-i-set"></i>
 			    </td>
   				</tr>

@@ -12,7 +12,9 @@
 <%-- jQuery 라이브러리 --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <%-- sweetalert --%>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9165mfbte9"></script>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9165mfbte9&submodules=OregDk87L7tsQ35dcpp+Mg=="></script>
 </head>
 <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <style>
@@ -27,11 +29,13 @@
 	}
 </style>
 <body>
-	<c:if test="${ not empty alertMsg }">
+	<c:if test="${ not empty swalMsg1 && not empty swalMsg2 && not empty swalMsg3 }">
 		<script>
-			alert("${alertMsg}");
+			swal("${swalMsg1}", "${swalMsg2}", "${swalMsg3}");
 		</script>
-		<c:remove var="alertMsg" scope="session" />
+		<c:remove var="swalMsg1" scope="session" />
+		<c:remove var="swalMsg2" scope="session" />
+		<c:remove var="swalMsg3" scope="session" />
 	</c:if>
 
 	<div class="sidebar" id="sidebar">
@@ -42,7 +46,7 @@
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
        				<li onClick="openLoginForm();" data-target="member">
-		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/member/basicUserProfile.png"></div>
+		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/etc/smile.png"></div>
             			<div class="text-area" style="padding: 0 0 10px 0;">마이페이지</div>
             		</li>
             	</c:when>
@@ -63,7 +67,7 @@
 		        	</c:choose>
             	</c:otherwise>
            	</c:choose>
-	        <li onclick="cancelDiv()" data-target="map" class="map-option">
+	        <li onclick="openMap()" data-target="map" class="map-option">
 	        	<div class="icon-area"><i class="fa-solid fa-map fa-xl"></i></div>
 	        	<div class="text-area">지도</div>
         	</li>
@@ -78,8 +82,8 @@
 	        	<div class="text-area">차트</div>
 	        </li>
 	        <li onclick="toggleDiv('loan')" data-target="loan">
-	        	<div class="icon-area"><i class="fa-solid fa-sack-dollar fa-xl"></i></div>
-	        	<div class="text-area">대출</div>
+	        	<div class="icon-area" style="margin: 0;"><img style="margin: 10px 0 0 0;" class="brc" width=40 height=40 src="resources/images/etc/money.png"></div>
+	        	<div class="text-area" style="padding: 0 0 10px 0;">대출</div>
 	        </li>
 	        <c:choose>
        			<c:when test="${ empty loginUser }">  
@@ -144,9 +148,11 @@
 	        </c:if>
 	    </ul>
 	</div>
+	
+	<%-- 사이드바 관련 토글 --%>
 	<div class="sidebar-toggle">
 	    <div class="home"><%@ include file="../homeTown/homeTown.jsp" %></div>
-	    <div class="re">상세보기 눌림</div>
+	    <div class="re"><%@ include file="../map/detailMap.jsp" %></div>
 	    <div class="member"><%@ include file="../member/mypage.jsp" %></div>
 	    <div class="rank"><%@ include file="../rank/rank.jsp" %></div>
 	    <div class="loan"><%@ include file="../loan/loan.jsp" %></div>
@@ -154,6 +160,14 @@
 	    <div class="helpCenter"><%@ include file="../helpCenter/helpCenter.jsp" %></div>
 	    <div class="etc"><%@ include file="../etc/etc.jsp" %></div>
 	</div>
+	
+	<%-- 마이페이지 관련 토글 --%>
+	<div class="mypage-toggle">
+		<div class="updateMemberForm"><%@ include file="../member/memberUpdateForm.jsp" %></div>
+		<div class="memberDibsList"><%@ include file="../member/memberDibsList.jsp" %></div>
+		<div class="memberNoticeList"><%@ include file="../member/memberNoticeList.jsp" %></div>
+	</div>
+	
     <script src="resources/js/common/sidebar.js"></script>
 </body>
 </html>
