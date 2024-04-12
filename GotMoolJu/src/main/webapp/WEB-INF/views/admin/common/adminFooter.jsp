@@ -17,7 +17,7 @@
       <div class="main-panel" id="main-panel">
         <!-- Navbar -->
 
-        <footer class="footer" style="border: 1px solid red">
+        <footer class="footer">
           <div class="container-fluid">
             <nav>
               <ul>
@@ -32,7 +32,8 @@
                 </li>
               </ul>
             </nav>
-            <div class="copyright" id="copyright">
+            <!-- 주소값 -->
+            <div class="copyright" id="copyright" >
               &copy;
               <script>
                 document

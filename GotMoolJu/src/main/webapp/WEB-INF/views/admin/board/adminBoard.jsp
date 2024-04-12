@@ -4,7 +4,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
-	<link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../assets/img/apple-icon.png"
+    />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -35,16 +39,38 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body>
     <!-- 메뉴바 삽입-->
-    
+    <%--
     <div style="float: left;">
-    	<jsp:include page="common/adminMenubar.jsp" />
+    	<jsp:include page="../common/adminMenubar.jsp" />
     </div>
-    <jsp:include page="common/adminBigHeader.jsp" />
+    <jsp:include page="../common/adminThinHeader.jsp" />
+  	 --%>
+    <div class="wrapper">
+      <div class="main-panel" id="main-panel">
+        <!-- Navbar -->
+        <!-- End Navbar -->
 
-    <jsp:include page="board/adminMainBoard.jsp" />  
-    
-    
-    
+            <div class="content" >
+              <div class="card" >
+                <!-- 흰색, 전체 페이지-->
+                <div class="card-header">
+                  <h5 class="title">타이틀</h5>
+                  <p class="category">
+                    소제목임다
+                    <a href="#">소제목 옆의 링크</a>
+                  </p>
+                </div>
+                <div class="card-body all-icons">
+                  <!-- 하단, 흰색 보드 -->
+                  <div class="row">
+                    여기에 내용 쓰기
+                    <div style="width: 100%; height: 1200px"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+  	  </div>
+    </div>
     <!--   Core JS Files   -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -65,6 +91,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="resources/assets/demo/demo.js"></script>
 
     <!-- 푸터바 삽입-->
-    <jsp:include page="common/adminFooter.jsp" />
+    <%--
+    <jsp:include page="../common/adminFooter.jsp" />
+  	 --%>
   </body>
 </html>

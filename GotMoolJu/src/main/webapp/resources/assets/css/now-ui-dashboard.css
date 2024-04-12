@@ -3994,6 +3994,7 @@ Created using IcoMoon - icomoon.io
   margin-top: 7px;
 }
 
+/* 메뉴바 글씨 변경 */
 .sidebar .nav li > a,
 .off-canvas-sidebar .nav li > a {
   margin: 10px 15px 0;
@@ -4021,6 +4022,7 @@ Created using IcoMoon - icomoon.io
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 메뉴바 호버 시 아이콘 색 변경 */
 .sidebar .nav li:hover:not(.active) > a i,
 .sidebar .nav li:focus:not(.active) > a i,
 .off-canvas-sidebar .nav li:hover:not(.active) > a i,
@@ -4028,6 +4030,7 @@ Created using IcoMoon - icomoon.io
   color: #ffffff;
 }
 
+/* 메뉴바 클릭 시 색 변경 */
 .sidebar .nav li.active > a,
 .off-canvas-sidebar .nav li.active > a {
   background-color: #ffffff;
@@ -4183,6 +4186,35 @@ Created using IcoMoon - icomoon.io
   background: -moz-linear-gradient(#888 0%, #000 80%);
   background: linear-gradient(#888 0%, #000 80%);
   z-index: 3;
+}
+
+.sidebar[data-color="gotmoolju"]:after,
+.off-canvas-sidebar[data-color="gotmoolju"]:after {
+  background: #12192c;
+}
+
+.sidebar[data-color="gotmoolju"]
+  .nav
+  li.active
+  > a:not([data-toggle="collapse"]),
+.off-canvas-sidebar[data-color="gotmoolju"]
+  .nav
+  li.active
+  > a:not([data-toggle="collapse"]) {
+  color: #12192c;
+}
+
+.sidebar[data-color="gotmoolju"]
+  .nav
+  li.active
+  > a:not([data-toggle="collapse"])
+  i,
+.off-canvas-sidebar[data-color="gotmoolju"]
+  .nav
+  li.active
+  > a:not([data-toggle="collapse"])
+  i {
+  color: #12192c;
 }
 
 .sidebar[data-color="blue"]:after,
@@ -4347,11 +4379,15 @@ Created using IcoMoon - icomoon.io
   margin-bottom: 50px;
 }
 
-.perfect-scrollbar-on .sidebar,
-.perfect-scrollbar-on .main-panel {
+.perfect-scrollbar-on .sidebar {
   height: 100%;
   max-height: 100%;
 }
+
+/* .perfect-scrollbar-on .main-panel {
+  height: 100%;
+  max-height: 100%;
+} */
 
 @media (min-width: 991px) {
   .sidebar {
