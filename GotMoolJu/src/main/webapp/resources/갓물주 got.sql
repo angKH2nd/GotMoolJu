@@ -92,11 +92,11 @@ INSERT INTO TB_MEMBER VALUES (0, 'admin', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7Ud
 CREATE SEQUENCE SEQ_USER_NO
 NOCACHE;
 
-INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user01', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김재영', '돼지불백집이쑤시개도둑', '010-0526-1564', 'nano@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_nano.png', 'resources/images/member/got_nano.png');
-INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user02', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '류은송', '공중화장실휴지도둑', '010-1593-8423', 'resong@kh.or.kr', 'F', '서울시 광진구 중곡동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_eunsong.png', 'resources/images/member/got_eunsong.png');
-INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user03', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '박민규', '기사식당명함도둑', '010-7513-1513', 'park@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_kyuu.jpg', 'resources/images/member/got_kyuu.jpg');
-INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user04', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '신나리', '휴게소컵도둑', '010-5238-1728', 'shin@kh.or.kr', 'F', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_lee.jpeg', 'resources/images/member/got_berry.jpg');
-INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user05', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '이상용', '주호민이알려주는고데기사용법', '010-4215-9178', 'leessang@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_berry.jpg', 'resources/images/member/got_lee.jpeg');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user01', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김재영', '돼지불백집이쑤시개도둑', '010-0526-1564', 'nano@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_nano.png', 'resources/uploadFiles/member/2024032609000082221.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user02', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '류은송', '공중화장실휴지도둑', '010-1593-8423', 'resong@kh.or.kr', 'F', '서울시 광진구 중곡동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_eunsong.png', 'resources/uploadFiles/member/2024032609000082222.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user03', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '박민규', '기사식당명함도둑', '010-7513-1513', 'park@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_kyuu.jpg', 'resources/uploadFiles/member/2024032609000082223.jpg');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user04', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '신나리', '휴게소컵도둑', '010-5238-1728', 'shin@kh.or.kr', 'F', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_berry.jpg', 'resources/uploadFiles/member/2024032609000082224.jpg');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user05', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '이상용', '주호민이알려주는고데기사용법', '010-4215-9178', 'leessang@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_lee.jpeg', 'resources/uploadFiles/member/2024032609000082225.jpeg');
 --------------------------------------------------
 -------------- ANNOUNCEMENT 관련 ------------------	
 --------------------------------------------------

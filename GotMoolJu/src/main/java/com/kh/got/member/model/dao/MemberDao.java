@@ -32,11 +32,19 @@ public class MemberDao {
 	}
 
 	public String searchId(SqlSessionTemplate sqlSession, String searchIdName, String searchIdPhone) {
-		Map<String, String> parameters = new HashMap<>();
-	    parameters.put("searchIdName", searchIdName);
-	    parameters.put("searchIdPhone", searchIdPhone);
+		Map<String, String> searchIdParameters = new HashMap<>();
+		searchIdParameters.put("searchIdName", searchIdName);
+		searchIdParameters.put("searchIdPhone", searchIdPhone);
 	    
-		return sqlSession.selectOne("memberMapper.searchId", parameters);
+		return sqlSession.selectOne("memberMapper.searchId", searchIdParameters);
+	}
+
+	public int searchNewPwd(SqlSessionTemplate sqlSession, String searchNewPwd, String searchNewPwdUserId) {
+		Map<String, String> searchNewPwdParameters = new HashMap<>();
+		searchNewPwdParameters.put("searchNewPwd", searchNewPwd);
+		searchNewPwdParameters.put("searchNewPwdUserId", searchNewPwdUserId);
+		
+		return sqlSession.update("memberMapper.searchNewPwd", searchNewPwdParameters);
 	}
 	
 }

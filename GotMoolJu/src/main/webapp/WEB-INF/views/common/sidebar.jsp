@@ -27,11 +27,13 @@
 	}
 </style>
 <body>
-	<c:if test="${ not empty alertMsg }">
+	<c:if test="${ not empty swalMsg1 && not empty swalMsg2 && not empty swalMsg3 }">
 		<script>
-			alert("${alertMsg}");
+			swal("${swalMsg1}", "${swalMsg2}", "${swalMsg3}");
 		</script>
-		<c:remove var="alertMsg" scope="session" />
+		<c:remove var="swalMsg1" scope="session" />
+		<c:remove var="swalMsg2" scope="session" />
+		<c:remove var="swalMsg3" scope="session" />
 	</c:if>
 
 	<div class="sidebar" id="sidebar">

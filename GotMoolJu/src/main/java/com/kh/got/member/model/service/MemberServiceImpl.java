@@ -46,4 +46,10 @@ public class MemberServiceImpl implements MemberService {
 		return mDao.searchId(sqlSession, searchIdName, searchIdPhone);
 	}
 
+	@Override
+	public int searchNewPwd(String searchNewPwd, String searchNewPwdUserId) {
+		return mDao.searchNewPwd(sqlSession, searchNewPwd, searchNewPwdUserId);
+	}
+
+
 }

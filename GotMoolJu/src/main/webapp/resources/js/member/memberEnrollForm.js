@@ -321,7 +321,7 @@ $(document).ready(function() {
 /* ------------- 회원가입 유효성검사 끝 ------------- */
 
 /* ------------- 도로명주소 api 시작 ------------- */
-function sample6_execDaumPostcode() {
+function enrollSearchAddress() {
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; 		// 주소 변수
@@ -350,17 +350,17 @@ function sample6_execDaumPostcode() {
                     extraAddr = ' (' + extraAddr + ')';
                 }
                 // 조합된 참고항목을 해당 필드에 넣는다
-                document.getElementById("sample6_extraAddress").value = extraAddr;
+                document.getElementById("enroll_extraAddress").value = extraAddr;
             
             } else {
-                document.getElementById("sample6_extraAddress").value = '';
+                document.getElementById("enroll_extraAddress").value = '';
             }
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById("sample6_address").value = addr;
+            document.getElementById('enroll_postcode').value = data.zonecode;
+            document.getElementById("enroll_address").value = addr;
             // 커서를 상세주소 필드로 이동
-            document.getElementById("sample6_detailAddress").focus();
+            document.getElementById("enroll_detailAddress").focus();
         }
     }).open();
 }

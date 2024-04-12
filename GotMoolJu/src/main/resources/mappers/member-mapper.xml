@@ -111,5 +111,13 @@
 		   and user_phone = #{searchIdPhone}
 		   and user_status in ('Y', 'A')
 	</select>
+	
+	<update id="searchNewPwd">
+		update
+			   tb_member
+		   set user_pwd = #{searchNewPwd}
+		 where user_status = 'Y'
+		   and user_id = #{searchNewPwdUserId}
+	</update>
 
 </mapper>

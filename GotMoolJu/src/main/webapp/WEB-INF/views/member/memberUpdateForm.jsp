@@ -13,7 +13,7 @@
 		<div class="member-update-form-top pd15">
 			<div class="member-update-form-previous fl mh" onclick="toggleMypageDiv('updateMemberForm')"><i class="fa-solid fa-angle-left fa-xl"></i></div>
 			<div class="member-update-form-title fl">프로필 관리</div>
-			<div class="member-update-form-logout fl mh"><a class="tdna" href="logout.me">로그아웃</a></div>
+			<div class="member-update-form-logout fl mh"><button class="btn-format mh" onclick="openDeleteMemberForm();"><b>회원탈퇴</b></button></div>
 		</div>
 		<div class="member-update-form-picture centerXY">
 			<img class="brc mh" width=60 height=60 src="${ loginUser.userUpdateName }">
@@ -58,7 +58,7 @@
 					<tr style="height: 50px;">
 						<td class="update-td-set">
 							<input class="fs16 bdlg br5 input-outline" type="text" id="updateAddress" name="updateAddress" placeholder="주소를 입력해주세요." maxlength="40" readonly value="${ loginUser.userAddress }">
-							<button type="button" onclick="sample6_execDaumPostcode()" class="enroll-btn-search br5">주소검색</button>
+							<button type="button" onclick="updateMemberAddress()" class="enroll-btn-search br5">주소검색</button>
 						</td>
 					</tr>
 					<tr style="height: 10px;"><td>&nbsp;</td></tr>
@@ -66,10 +66,10 @@
 					<tr style="height: 10px; font-size: 12px;"><td>변경할 주소</td></tr>
 					<tr style="height: 50px;">
 						<td>
-							<input class="fs16 bdlg br5 input-outline" id="sample6_postcode" type="text" name="updateAddressPost" placeholder="우편번호" readonly>
-							<input class="fs16 bdlg br5 input-outline" id="sample6_address" type="text" name="updateAddressNormal" placeholder="주소" readonly>
-							<input class="fs16 bdlg br5 input-outline" id="sample6_detailAddress" type="text" name="updateAddressDetail" placeholder="상세주소" readonly>
-							<input class="fs16 bdlg br5 input-outline" id="sample6_extraAddress" type="text" name="updateAddressExtra" placeholder="참고항목" readonly>
+							<input class="fs16 bdlg br5 input-outline" id="update_postcode" type="text" name="updateAddressPost" placeholder="우편번호" readonly>
+							<input class="fs16 bdlg br5 input-outline" id="update_address" type="text" name="updateAddressNormal" placeholder="주소" readonly>
+							<input class="fs16 bdlg br5 input-outline" id="update_detailAddress" type="text" name="updateAddressDetail" placeholder="상세주소" readonly>
+							<input class="fs16 bdlg br5 input-outline" id="update_extraAddress" type="text" name="updateAddressExtra" placeholder="참고항목" readonly>
 						</td>
 					</tr>
 					<tr style="height: 10px;"><td>&nbsp;</td></tr>

@@ -89,7 +89,7 @@
 						<input type="number" name="validatePwdPhone" id="validatePwdPhone" class="id-pwd-input-outline" placeholder="인증번호를 입력해주세요." required maxlength=4 onkeyup="checkPwdSmsInput()">
 						<input type="hidden" id="validatePwdPhoneOrigin">
 						<i class="fa-solid fa-envelope id-pwd-i-set"></i>
-						<button type="button" id="validatePwdPhoneBtn" class="sms-btn br5" onclick="validatePwdSms();">인증확인</button>
+						<button type="button" id="validatePwdPhoneBtn" class="sms-btn br5 mh" onclick="validatePwdSms();">인증확인</button>
 					</td>
 				</tr>
 				<tr>
@@ -97,7 +97,7 @@
 				</tr>
 				<tr>
 					<td colspan=2 class="id-pwd-td-set">
-						<button type="button" class="search-pwd-btn br5" id="searchPwdBtn" disabled onclick="openNewPwdForm();">비밀번호 찾기</button>
+						<button type="button" class="search-pwd-btn br5 mh" id="searchPwdBtn" disabled onclick="openNewPwdForm();">비밀번호 찾기</button>
 					</td>
 				</tr>
 			</table>

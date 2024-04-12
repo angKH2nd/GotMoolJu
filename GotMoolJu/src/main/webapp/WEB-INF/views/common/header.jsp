@@ -88,6 +88,11 @@
     	<%@ include file="../member/memberSearchNewPwdForm.jsp" %>
 	</div>
 	
+	<%-- 회원 탈퇴 영역 --%>
+	<div class="modal-delete-wrap no-scrollbar">
+    	<%@ include file="../member/memberDeleteForm.jsp" %>
+	</div>
+	
 	<script src="resources/js/common/header.js"></script>
 </body>
 </html>

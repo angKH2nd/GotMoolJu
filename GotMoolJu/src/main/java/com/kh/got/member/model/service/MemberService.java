@@ -22,4 +22,7 @@ public interface MemberService {
 	// 아이디 찾기 서비스 (select)
 	String searchId(String searchIdName, String searchIdPhone);
 
+	// 비밀번호 찾기 서비스 (update)
+	int searchNewPwd(String searchNewPwd, String searchNewPwdUserId);
+	
 }

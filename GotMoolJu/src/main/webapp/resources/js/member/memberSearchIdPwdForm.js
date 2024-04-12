@@ -196,12 +196,12 @@ function checkPwdSmsInput() {
 	var input = $("#validatePwdPhone").val();
     var button = $("#validatePwdPhoneBtn");
     
-    if ($(input).trim() === "") {
-        $(button).prop('disabled', true);
-        $(button).css('backgroundColor', 'gray');
+    if (input.trim() === "") {
+        button.prop('disabled', true);
+        button.css('backgroundColor', 'gray');
     } else {
-        $(button).prop('disabled', false);
-        $(button).css('backgroundColor', '#002250');
+        button.prop('disabled', false);
+        button.css('backgroundColor', '#002250');
     }
 }
 

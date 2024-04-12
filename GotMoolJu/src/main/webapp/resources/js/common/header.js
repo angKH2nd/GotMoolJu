@@ -28,6 +28,7 @@ function openSearchIdPwdForm() {
 }
 
 function closeSearchIdPwdForm() {
+	$("#searchNewPwdUserId").val($("#searchPwdId").val());
 	$("#searchIdName").val("");
 	$("#searchPwdName").val("");
 	$("#searchIdPhone").val("");
@@ -94,6 +95,7 @@ function closeBg() {
 	$(modalEnroll).hide();
 	$(modalSearchIdPwd).hide();
 	$(modalSearchNewPwd).hide();
+	$(".modal-delete-wrap").hide();
 	$(".id-area #validateSmsTr").hide();
     $(".pwd-area #validateSmsTr").hide();
 	$("#searchIdName").val("");
