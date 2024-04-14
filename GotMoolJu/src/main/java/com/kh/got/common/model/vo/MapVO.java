@@ -13,15 +13,19 @@ import lombok.ToString;
 @AllArgsConstructor
 public class MapVO {
 	
-	private String seq;
-	private String roomType;
-	private String sellingType;
-	private String location;
+	private String aptNo;
+	private String aptRoomType;
+	private String aptSellingType;
+	private String aptLocation;
 	private String aptName;
-	private String title;
-	private String price;
-	private String imgUrl;
-	private String imgUrls;
-	private String roomDesc;
+	private String aptIntroduce;
+	private String aptPrice;
+	private String aptImgUrl;
+	private String aptImgUrls;
+	private String aptDesc;
+	private String aptReview;
+	private String aptCount;
+	private String aptCreateDate;
+	private String aptStatus;
 	
 }

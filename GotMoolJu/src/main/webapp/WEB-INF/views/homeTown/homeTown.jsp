@@ -25,13 +25,13 @@
 						<div class="homeTown-count-head-num fl">2,505,192</div>
 						<div class="homeTown-count-head-text fl">개</div>
 					</div>
-					<div class="homeTown-count-comment">2024.04.08 21:00 중복매물 포함</div>
+					<div class="homeTown-count-comment" id="currentTime"></div>
 				</div>
 				<div class="homeTown-blank fl"></div>
-				<div class="homeTown-find fl">구해줘 마이 홈</div>
+				<div class="homeTown-find fl mh"><img width=70 height=60 src="resources/images/got/got_logo_big.jpg"></div>
 			</div>
-			<div class="homeTown-search pd15">검색 jsp include 예정</div>
-			<div class="homeTown-weather pd15">weather jsp include 예정</div> 
+			<div class="homeTown-search pd15" onclick="toggleHomeTownDiv('searchApt');"><input class="home-search-bar-design br5 mh" type="text" value="찾으시는 매물이 있으신가요?" readonly><i class="fa-solid fa-magnifying-glass" id="home-search-bar-design-i"></i></div>
+			<div class="homeTown-weather pd15"><%@ include file="./weather.jsp" %></div> 
 			<div class="homeTown-content1 pd15">content1 예정</div> 
 		</div>
 	</div>

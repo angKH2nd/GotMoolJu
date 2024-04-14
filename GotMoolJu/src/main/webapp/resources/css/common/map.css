@@ -5,15 +5,49 @@
 	height: 100%;
 }
 
-.circle{
-		width: 80px;
-		height: 25px;
-		background-color: rgb(67, 77, 104);
-		border-radius: 20px;
-		text-align: center;
-	}
-	.name{
-		color: white;
-		font-weight: 400;
-		font-size: 10px;
-	}
+.map-circle {
+	width: 80px;
+	height: 25px;
+	background-color: rgb(67, 77, 104);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.map-name {
+	color: white;
+	font-weight: 400;
+	font-size: 10px;
+}
+
+.map-buttons, .zoom-buttons {
+	position: fixed;
+    top: 80px; /* 수직 위치 조정 */
+    right: 20px; /* 오른쪽으로부터의 거리 */
+    display: flex;
+    flex-direction: column;
+}
+
+.map-buttons .control-btn {
+    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+    background-color: #434d68;
+    color: white;
+}
+
+.zoom-buttons>button {
+	width: 42px;
+    height: 42px;
+    background-color: #dedcdc;
+    color: black;
+    border: none;
+}
+
+.zoom-buttons {
+	margin-top: 460px;
+}
+
+.zoom-buttons #zoomOut {
+	margin-top: 10px;
+}
+

@@ -76,15 +76,25 @@
 		  )
 	</insert>
 	
+	<update id="updateMemberFile">
+		update
+			   tb_member
+		   set user_nickname = #{userNickname}
+		   	 , user_email = #{userEmail}
+		     , user_phone = #{userPhone}
+		     , user_address = #{userAddress}
+		     , user_modify_date = sysdate
+		     , user_update_name = #{userUpdateName}
+		 where user_id = #{userId}
+	</update>
+	
 	<update id="updateMember">
 		update
 			   tb_member
-		   set user_nickname = ${userNickname}
+		   set user_nickname = #{userNickname}
 		   	 , user_email = #{userEmail}
-		     , user_age = #{userAge}
 		     , user_phone = #{userPhone}
 		     , user_address = #{userAddress}
-		     , user_area_no = ${userAreaNo}
 		     , user_modify_date = sysdate
 		 where user_id = #{userId}
 	</update>

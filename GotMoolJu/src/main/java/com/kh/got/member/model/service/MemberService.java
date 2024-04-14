@@ -11,6 +11,9 @@ public interface MemberService {
 	int insertMember(Member m);
 	
 	// 정보수정 서비스 (update)
+	int updateMemberFile(Member m);
+	
+	// 정보수정 서비스 (update)
 	int updateMember(Member m);
 	
 	// 회원탈퇴 서비스 (update)

@@ -15,7 +15,7 @@
    		</div>
    		<div class="login-input">
   				<div class="login-id">
-	        	<input type="text" class="form-control input-outline login-input-set mb-2 mr-sm-2 bdlg br5" placeholder="ID" name="userId" required> <br>
+	        	<input type="text" class="form-control input-outline login-input-set mb-2 mr-sm-2 bdlg br5" placeholder="ID" name="userId" required value="${empty cookie.id.value ? '' : cookie.id.value}"> <br>
 	        	<i class="fa-solid fa-user login-i-id"></i>
   				</div>
   				<div class="login-pwd">
@@ -27,7 +27,7 @@
         	<button type="submit" class="btn-primary br5 fb mh">로그인</button>
         	<div style="padding-top: 4px;">
         		<label class="checkbox-label">
-				    <input type="checkbox" class="mh"><span>로그인 정보기억</span>
+				    <input type="checkbox" ${empty cookie.id.value ? '' : 'checked'} name="rememberId" class="mh"><span>로그인 정보기억</span>
 				</label>
    				<button type="button" class="id-pw-search mh" style="margin-left: 112px;" onClick="openSearchIdPwdForm();">아이디/비밀번호찾기</button>
    			</div>

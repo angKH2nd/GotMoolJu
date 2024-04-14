@@ -13,6 +13,7 @@
 .fs12 {font-size: 12px;}
 .fs16 {font-size: 16px;}
 .pdlr15 {padding: 0 15px;}
+.pd5 {padding: 5px;}
 .pd15 {padding: 15px;}
 .pd20 {padding: 20px;}
 .bgwh {background-color: white;}
@@ -20,9 +21,12 @@
 .bdlg {border: 0.5px solid lightgray;}
 .brc {border-radius: 50%;}
 .br5 {border-radius: 5px;}
+.br10 {border-radius: 10px;}
 .br15 {border-radius: 15px;}
 .btn-format {background-color: white; border: none;}
 .no-scrollbar::-webkit-scrollbar {display:none;}
+.hoverZ{transition: transform 0.3s ease;} /* 0.3초 동안 transform 속성의 변화를 애니메이션화 */
+.hoverZ:hover{transform: scale(1.1);}     /* 마우스 호버 시 110%로 확대 */
 
 .centerY {
     display: flex;
@@ -40,12 +44,6 @@
 	outline: none;
 	border: 0.5px solid lightgray;
 }
-
-
-
-
-
-
 
 
 

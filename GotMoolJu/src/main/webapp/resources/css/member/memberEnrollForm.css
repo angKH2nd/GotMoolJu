@@ -79,10 +79,32 @@
 	border: 0.5px solid lightgray;
 }
 
+#enroll-send-email-btn, #enroll-send-phone-btn {
+	background-color: gray;
+}
+
+.enroll-email-btn, .enroll-phone-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 /* 유효성 검사 css */
 .validate {
 	color: red; 
 	font-size: 12px; 
-	padding-left : 5px;
+	padding-left: 5px;
+}
+
+.validateComplete {
+	color: green;
+	font-size: 12px;
+	padding-left: 5px;
 }
 /* 유효성 검사 css */

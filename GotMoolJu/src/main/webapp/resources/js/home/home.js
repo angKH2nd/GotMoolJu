@@ -27,6 +27,9 @@ function checkAllDivClosed() {
 
 function toggleDiv(divId) {
 	cancelMypageDiv();
+	cancelHomeTownDiv();
+	cancelEtcDiv();
+	$(".uwm").remove();
 
     var divs = document.querySelectorAll('.sidebar-toggle > div');
     var lis = document.querySelectorAll('.sidebar li');

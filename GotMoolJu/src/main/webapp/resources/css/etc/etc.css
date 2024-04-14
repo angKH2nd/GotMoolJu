@@ -106,7 +106,7 @@
 }
 
 .etc-menu4 {
-	height: 18%;
+	height: 23%;
 	padding: 16px 0 0 0;
 	margin: 16px 0 0 0;
 	border-top: 0.5px solid lightgray;
@@ -123,6 +123,44 @@
 	height: 20%;
 }
 
+.etc-menu6>div {
+	width: 100%;
+}
 
+.etc-menu6-title {
+	height: 40px;
+	margin-bottom: 5px;
+}
+
+.etc-menu6-content {
+	height: calc(100% - 45px);
+}
+
+.etc-menu6-content>div {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+/* --------------- 기타 토글 관련 시작 --------------- */
+.etc-toggle {
+    position: relative;
+    z-index: 1004;
+}
+
+.etc-toggle>div {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: opacity 0.3s ease;
+    z-index: 1005;
+    border-right: 0.5px solid lightgray;
+    box-sizing: border-box;
+}
+/* --------------- 기타 토글 관련 끝 --------------- */
 
 

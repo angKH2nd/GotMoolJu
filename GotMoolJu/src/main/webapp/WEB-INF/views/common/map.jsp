@@ -9,17 +9,22 @@
 </head>
 <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
 <body>
-	
-	<div id="map" style="width: 1850px;height:600px;"></div>
-	<div id="zoom" style="width:50%;height:50px;"></div>
+	<div id="map" style="width: 1850px; height:600px;"></div>
+	<div id="zoom" style="width:50%; height:50px;"></div>
 
-	<!-- 지도 유형 변경 -->
-	<div class="buttons">
-           <input id="NORMAL" type="button" value="일반지도" class="control-btn control-on" />
-           <input id="TERRAIN" type="button" value="지형도" class="control-btn" />
-           <input id="SATELLITE" type="button" value="위성지도" class="control-btn" />
-           <input id="HYBRID" type="button" value="겹쳐보기" class="control-btn" />
-       </div> 
+	<%-- 지도 유형 변경 --%>
+	<div class="map-buttons">
+        <input id="NORMAL" type="button" value="일반&#10;지도" class="control-btn control-on brc fs12 fb mh hoverZ" />
+        <input id="TERRAIN" type="button" value="지형" class="control-btn brc fs12 fb mh hoverZ" />
+        <input id="SATELLITE" type="button" value="위성&#10;지도" class="control-btn brc fs12 fb mh hoverZ" />
+        <input id="HYBRID" type="button" value="겹쳐&#10;보기" class="control-btn brc fs12 fb mh hoverZ" />
+    </div> 
+    
+    <%-- 줌 버튼 --%>
+    <div class="zoom-buttons">
+	    <button id="zoomIn" class="zoom-control-btn brc mh"><i class="fa-solid fa-plus"></i></button>
+	    <button id="zoomOut" class="zoom-control-btn brc mh"><i class="fa-solid fa-minus"></i></button>
+	</div>
 
     <button onclick="toggleDiv('home')">이거 누르면 홈 열림</button>
     <button onclick="toggleDiv('re')">이건 누르면 상세보기 열림</button>
@@ -63,9 +68,9 @@
 				map: map,
 				icon: {
 					content: [
-	                    '<div class="circle">',
+	                    '<div class="map-circle">',
 	                        '<div>',
-	                                '<span class="name">' + locations[i].name + '</span>',
+	                                '<span class="map-name">' + locations[i].name + '</span>',
 	                        '</div>',
 	                    '</div>'
 	                ].join(''),
@@ -74,14 +79,11 @@
 					origin: new naver.maps.Point(0, 0),
 					anchor: new naver.maps.Point(12, 34)
 				}
-	
-	
 			});
-			
 		}
 
 		// 지도 유형 변경
-		var btns = $(".buttons > input");
+		var btns = $(".map-buttons > input");
 		btns.on("click", function(e) {
 			e.preventDefault();
 
@@ -94,11 +96,9 @@
 				$(this).addClass("control-on");
 			}
 		});
-			
 	
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
-			console.log('Zoom level changed:', zoomLevel);
 			// 여기서 함수 호출
 			handleZoomChange(zoomLevel);
 		});
@@ -110,25 +110,31 @@
 			$("#zoom").html("줌 레벨 : " + zoomLevel);
 		}
 		
+		// + 버튼 클릭 시 줌 인
+		$('#zoomIn').on('click', function() {
+		    var currentZoom = map.getZoom();
+		    map.setZoom(currentZoom + 1);
+		});
+
+		// - 버튼 클릭 시 줌 아웃
+		$('#zoomOut').on('click', function() {
+		    var currentZoom = map.getZoom();
+		    map.setZoom(currentZoom - 1);
+		});
+		
 		$(function(){
-			
 			$.ajax({
 				url:"select.ma",
 				success:function(data){
-					console.log(data);
-					
 					for(let i in data){
-						
-						console.log(data[i].location.split(","));
-						
 						new naver.maps.Marker({
-							position: new naver.maps.LatLng(data[i].location.split(",")[1], data[i].location.split(",")[0]),
+							position: new naver.maps.LatLng(data[i].aptLocation.split(",")[1], data[i].aptLocation.split(",")[0]),
 							map: map,
 							icon: {
 								content: [
 				                    '<div style="width:30px; height:30px; border-radius:50%; background-color:gray; text-align: center;">',
 				                        '<div>',
-				                                '<span class="name">' + "집" + '</span>',
+				                                '<span class="map-name">' + "집" + '</span>',
 				                        '</div>',
 				                    '</div>'
 				                ].join(''),
@@ -147,6 +153,5 @@
 			
 		})
 	</script>
-	
 </body>
 </html>

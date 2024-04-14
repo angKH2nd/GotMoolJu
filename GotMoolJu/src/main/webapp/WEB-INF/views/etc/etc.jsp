@@ -48,14 +48,24 @@
 			<div class="bgh mh pd15 centerY">서브메뉴3</div>
 		</div>
 		<div class="etc-menu4">
-			<div class="bgh mh pd15 centerY">개선의견 등록</div>
-			<div class="bgh mh pd15 centerY">고객센터</div>
-			<div class="bgh mh pd15 centerY">이용안내</div>
+			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('insertImprovementIdeation');">개선의견 등록</div>
+			<div class="bgh mh pd15 centerY" onclick="openHelpCenter();">고객센터</div>
+			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('introduceHowToUseGot');">이용안내</div>
+			<div class="bgh mh pd15 centerY" onclick="openMemberDeleteForm();">회원탈퇴</div>
 		</div>
-		<div class="etc-menu5">44444
+		<div class="etc-menu5">
+			<img width=449 height=160 src="resources/images/advertisement/adv1.png">
 		</div>
 		<div class="etc-menu6 pd15">
-			갓물주 채널
+			<div class="etc-menu6-title">갓물주 채널</div>
+			<div class="etc-menu6-content">
+				<div class="etc-sns fl mh centerXY hoverZ" onclick="openGithub();"><img width=30 height=30 src="resources/images/etc/github-logo.png"></div>
+				<div class="etc-sns fl mh centerXY hoverZ" onclick="openNotion();"><img width=30 height=30 src="resources/images/etc/notion-logo.png"></div>
+				<div class="etc-sns fl mh centerXY hoverZ"><img width=45 height=45 src="resources/images/etc/youtube-logo.jpg"></div>
+				<div class="etc-sns fl mh centerXY hoverZ"><img width=30 height=30 src="resources/images/etc/kakaotalk-logo.png"></div>
+				<div class="etc-sns fl mh centerXY hoverZ">5</div>
+				<div class="etc-sns fl mh centerXY hoverZ">6</div>
+			</div>
 		</div>
 	</div>
 	<script src="resources/js/etc/etc.js"></script>

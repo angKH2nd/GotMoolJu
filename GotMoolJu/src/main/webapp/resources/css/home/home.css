@@ -36,12 +36,12 @@ body::-webkit-scrollbar {
     width: 70px;
     background-color: white;
     border-right: 0.5px solid lightgray;
-    z-index: 1;
+    z-index: 1001;
 }
 
 .sidebar-toggle {
     position: relative;
-    z-index: 2;
+    z-index: 1002;
 }
 
 .sidebar ul {
@@ -79,7 +79,7 @@ body::-webkit-scrollbar {
     height: 100%;
     background-color: #ffffff;
     transition: opacity 0.3s ease;
-    z-index: 3;
+    z-index: 1003;
     border-right: 0.5px solid lightgray;
     box-sizing: border-box;
 }

@@ -3,31 +3,31 @@
 <mapper namespace="mapMapper">
 
 	<resultMap type="MapVO" id="mapResult">
-		<result column="seq" property="seq"/>
-		<result column="room_type" property="roomType"/>
-		<result column="selling_type" property="sellingType"/>
-		<result column="location" property="location"/>
+		<result column="apt_no" property="aptNo"/>
+		<result column="apt_room_type" property="aptRoomType"/>
+		<result column="apt_selling_type" property="aptSellingType"/>
+		<result column="apt_location" property="aptLocation"/>
 		<result column="apt_name" property="aptName"/>
-		<result column="title" property="title"/>
-		<result column="price" property="price"/>
-		<result column="img_url" property="imgUrl"/>
-		<result column="img_urls" property="imgUrls"/>
-		<result column="room_desc" property="roomDesc"/>
+		<result column="apt_introduce" property="aptIntroduce"/>
+		<result column="apt_price" property="aptPrice"/>
+		<result column="apt_img_url" property="aptImgUrl"/>
+		<result column="apt_img_urls" property="aptImgUrls"/>
+		<result column="apt_desc" property="aptDesc"/>
 	</resultMap>
 	
 	<select id="selectAllList" resultMap="mapResult"> 
 	select 
-		   SEQ 
-		 , ROOM_TYPE 
-		 , SELLING_TYPE
-		 , LOCATION 
-		 , APT_NAME 
-		 , TITLE 
-		 , PRICE 
-		 , IMG_URL 
-		 , IMG_URLS 
-		 , ROOM_DESC 
-	  from tb_apt 
+		   APT_NO
+		 , APT_ROOM_TYPE
+		 , APT_SELLING_TYPE
+		 , APT_LOCATION
+		 , APT_NAME
+		 , APT_INTRODUCE
+		 , APT_PRICE
+		 , APT_IMG_URL
+		 , APT_IMG_URLS
+		 , APT_DESC
+	  from tb_apt
 	 where rownum between 1 and 20 
 	 </select>
 

@@ -20,7 +20,6 @@ public class MapServiceImpl implements MapService {
 
 	@Override
 	public ArrayList<MapVO> selectAllList() {
-		
 		return mDao.selectAllList(sqlSession);
 	}
 

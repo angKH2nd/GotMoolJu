@@ -50,10 +50,10 @@ $(document).ready(function() {
 
         if (allClear) {
             sendSmsBtn.prop('disabled', false);
-            sendSmsBtn.css('backgroundColor', '#002250');
+            sendSmsBtn.css('backgroundColor', '#002250').css('color', 'white');
         } else {
             sendSmsBtn.prop('disabled', true);
-            sendSmsBtn.css('backgroundColor', 'gray');
+            sendSmsBtn.css('backgroundColor', '#808080').css('color', 'white');
         }
     }
     
@@ -81,10 +81,10 @@ $(document).ready(function() {
 
         if (allClear) {
             sendSmsBtn.prop('disabled', false);
-            sendSmsBtn.css('backgroundColor', '#002250');
+            sendSmsBtn.css('backgroundColor', '#002250').css('color', 'white');
         } else {
             sendSmsBtn.prop('disabled', true);
-            sendSmsBtn.css('backgroundColor', 'gray');
+            sendSmsBtn.css('backgroundColor', '#808080').css('color', 'white');
         }
     }
 });
@@ -138,14 +138,14 @@ function validateIdSms() {
 		// 인증번호 일치하지 않을 경우
 		swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
 		$("#searchIdBtn").prop('disabled', true);
-		$("#searchIdBtn").css('backgroundColor', '#fafafa').css('color', 'black');
+		$("#searchIdBtn").css('backgroundColor', 'white').css('color', 'lightgray').css('border', 'none');
 		$("#validateIdPhone").focus();
 	}
 }
 
 function searchId() {
 	$.ajax({
-		url: "searchId",
+		url: "searchId.me",
 		data: {
         	searchIdName: $("#searchIdName").val(),
         	searchIdPhone: $("#searchIdPhone").val()
@@ -217,7 +217,7 @@ function validatePwdSms() {
 		// 인증번호 일치하지 않을 경우
 		swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
 		$("#searchPwdBtn").prop('disabled', true);
-		$("#searchPwdBtn").css('backgroundColor', '#fafafa').css('color', 'black');
+		$("#searchPwdBtn").css('backgroundColor', 'white').css('color', 'lightgray').css('border', 'none');
 		$("#validatePwdPhone").focus();
 	}
 }

@@ -20,71 +20,90 @@
    			
    			<tr>
 			    <td colspan="3" class="enroll-td-set">
-			        <input type="text" name="userId" placeholder="ID를 입력해주세요." maxlength="10" required class="enroll-input-set bdlg enroll-border-top">
+			        <input type="text" id="userId" name="userId" placeholder="ID를 입력해주세요." maxlength="10" required class="enroll-input-set bdlg enroll-border-top">
 			        <i class="fa-solid fa-user enroll-i-set"></i>
 			    </td>
 			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input type="password" name="userPwd" placeholder="비밀번호를 입력해주세요." maxlength="12" required autocomplete="off" class="enroll-input-set bdlg">
+			        <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호를 입력해주세요." maxlength="12" required autocomplete="off" class="enroll-input-set bdlg">
 			        <i class="fa-solid fa-key enroll-i-set"></i>
 			    </td>
-  				</tr>
+  			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input type="password" name="userPwdCheck" placeholder="비밀번호를 다시 입력해주세요." maxlength="12" required autocomplete="off" class="enroll-input-set bdlg enroll-border-bottom">
+			        <input type="password" id="userPwdCheck" name="userPwdCheck" placeholder="비밀번호를 다시 입력해주세요." maxlength="12" required autocomplete="off" class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-key enroll-i-set"></i>
 			    </td>
-  				</tr>
+  			</tr>
   				
-  				<tr style="height: 10px;"><td colspan="3"></td></tr>
+  			<tr style="height: 10px;"><td colspan="3"></td></tr>
   				
-  				<tr>
+  			<tr>
 			    <td colspan="3" class="enroll-td-set">
-			        <input type="text" name="userName" placeholder="이름을 입력해주세요." maxlength="3" required class="enroll-input-set bdlg enroll-border-top">
+			        <input type="text" id="userName" name="userName" placeholder="이름을 입력해주세요." maxlength="3" required class="enroll-input-set bdlg enroll-border-top">
 			        <i class="fa-solid fa-id-card enroll-i-set"></i>
 			    </td>
 			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input type="text" name="userNickname" placeholder="닉네임을 입력해주세요." maxlength="15" required class="enroll-input-set bdlg">
+			        <input type="text" id="userNickname" name="userNickname" placeholder="닉네임을 입력해주세요." maxlength="15" required class="enroll-input-set bdlg">
 			        <i class="fa-solid fa-star enroll-i-set"></i>
 			    </td>
-  				</tr>
+  			</tr>
   				
-  				<tr>
+  			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input type="email" name="userEmail" placeholder="이메일을 입력해주세요." maxlength="40" required class="enroll-input-set bdlg">
+			        <input type="email" id="userEmail" name="userEmail" placeholder="이메일을 입력해주세요." maxlength="40" required class="enroll-input-set bdlg">
 			        <i class="fa-solid fa-envelope enroll-i-set"></i>
-			        <button type="button" class="enroll-btn-search br5">인증하기</button>
+			        <button type="button" class="enroll-btn-search br5" id="enroll-send-email-btn" disabled>인증하기</button>
 			    </td>
-  				</tr>
-  				
-  				<tr>
-   				<td colspan="3" class="enroll-td-set">
-   					<div class="enroll-input-set bdlg" style="line-height: 42.5px; width: 308px;">
-    					<input type="radio" name="userGender" id="Male" value="M" required>
-                    	<label for="Male" style="font-size: 14px;">남자</label> &nbsp;&nbsp;
-                    	<input type="radio" name="userGender" id="Female" value="F" required>
-                    	<label for="Female" style="font-size: 14px;">여자</label><br>
-				        <i class="fa-solid fa-venus-mars fa-sm enroll-i-set"></i>
-				    </div>
-			    </td>
-  				</tr>
+  			</tr>
+  			
+  			<tr id="validateEnrollEmailTr">
+				<td colspan=2 class="enroll-td-set">
+					<input type="number" name="validateEnrollEmail" id="validateEnrollEmail" class="enroll-input-set bdlg" placeholder="인증번호를 입력해주세요." required maxlength=6>
+					<input type="hidden" id="validateEnrollEmailOrigin">
+					<i class="fa-solid fa-envelope enroll-i-set"></i>
+					<button type="button" id="validateEnrollEmailBtn" class="enroll-email-btn br5" disabled>인증확인</button>
+				</td>
+			</tr>
   				
    			<tr>
    				<td colspan="3" class="enroll-td-set">
-			        <input type="text" name="userPhone" placeholder="'-' 포함 전화번호를 입력해주세요." maxlength="13" required class="enroll-input-set bdlg enroll-border-bottom">
+			        <input type="text" name="userPhone" placeholder="'-' 포함 전화번호를 입력해주세요." maxlength="13" required class="enroll-input-set bdlg">
 			        <i class="fa-solid fa-phone enroll-i-set"></i>
+			        <button type="button" class="enroll-btn-search br5" id="enroll-send-phone-btn" disabled>인증하기</button>
 			    </td>
-  				</tr>
+  			</tr>
+  			
+  			<tr id="validateEnrollPhoneTr">
+				<td colspan=2 class="enroll-td-set">
+					<input type="number" name="validateEnrollPhone" id="validateEnrollPhone" class="enroll-input-set bdlg" placeholder="인증번호를 입력해주세요." required maxlength=4>
+					<input type="hidden" id="validateEnrollPhoneOrigin">
+					<i class="fa-solid fa-envelope enroll-i-set"></i>
+					<button type="button" id="validateEnrollPhoneBtn" class="enroll-phone-btn br5" disabled>인증확인</button>
+				</td>
+			</tr>
+  			
+  			<tr>
+   				<td colspan="3" class="enroll-td-set">
+   					<div class="enroll-input-set bdlg enroll-border-bottom" id="userGenderLine" style="line-height: 42.5px; width: 308px;">
+    					<input type="radio" name="userGender" id="Male" value="M" required>
+                    	<label for="Male" style="font-size: 14px;">남</label> &nbsp;&nbsp;
+                    	<input type="radio" name="userGender" id="Female" value="F" required>
+                    	<label for="Female" style="font-size: 14px;">여</label><br>
+				        <i class="fa-solid fa-venus-mars fa-sm enroll-i-set"></i>
+				    </div>
+			    </td>
+  			</tr>
   				
-  				<tr style="height: 10px;"><td colspan="3"></td></tr>
+  			<tr style="height: 10px;"><td colspan="3"></td></tr>
   				
-  				<tr>
+  			<tr>
 			    <td colspan="3" class="enroll-td-set">
 			        <input id="enroll_postcode" type="text" name="userAddressPost" placeholder="우편번호" readonly class="bdlg enroll-border-top enroll-input-set">
 			        <i class="fa-solid fa-compass enroll-i-set"></i>
@@ -98,21 +117,21 @@
 			        <input id="enroll_address" type="text" name="userAddressNormal" placeholder="주소" readonly class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-home enroll-i-set"></i>
 			    </td>
-  				</tr>
+  			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
 			        <input  id="enroll_detailAddress" type="text" name="userAddressDetail" placeholder="상세주소" required class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-location-dot fa-lg enroll-i-set"></i>
 			    </td>
-  				</tr>
+			</tr>
    			
    			<tr>
    				<td colspan="3" class="enroll-td-set">
 			        <input  id="enroll_extraAddress" type="text" name="userAddressExtra" placeholder="참고항목" readonly class="enroll-input-set bdlg enroll-border-bottom">
 			        <i class="fa-solid fa-signs-post enroll-i-set"></i>
 			    </td>
-  				</tr>
+  			</tr>
   				
    			<tr style="height: 25px;"><td colspan=3>&nbsp;</td></tr>
    		</table>

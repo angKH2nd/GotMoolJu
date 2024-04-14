@@ -26,6 +26,7 @@
 
 .homeTown-nav {
 	width: calc(100% - 20px);
+	padding-top: 10px;
 }
 
 .homeTown-cancel {
@@ -46,6 +47,26 @@
 	margin: 15px 0;
 }
 
+.home-search-bar-design {
+	width: 373px;
+	height: 35px;
+	border: 0.5px solid lightgray;
+	padding-left: 40px;
+}
+
+.home-search-bar-design:focus {
+	border: 0.5px solid lightgray;
+	outline: none;
+}
+
+#home-search-bar-design-i {
+    position: absolute;
+    left: 30px;
+    top: 19%;
+    transform: translateY(-19%);
+    pointer-events: none;
+}
+
 .homeTown-weather {
 	height: 200px;
 }
@@ -64,6 +85,7 @@
 
 .homeTown-find {
 	width: 30%;
+	text-align: right;
 }
 
 .homeTown-count>div {
@@ -95,3 +117,27 @@
 	font-size: 20px;
 	line-height: 50px;
 }
+
+/* --------------- 홈 타운 토글 관련 시작 --------------- */
+.homeTown-toggle {
+    position: relative;
+    z-index: 1004;
+}
+
+.homeTown-toggle>div {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: opacity 0.3s ease;
+    z-index: 1005;
+    border-right: 0.5px solid lightgray;
+    box-sizing: border-box;
+}
+/* --------------- 홈 타운 토글 관련 끝 --------------- */
+
+
+

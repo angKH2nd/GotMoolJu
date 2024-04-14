@@ -152,13 +152,10 @@
 
 
 
-
-
-
 /* --------------- 마이페이지 토글 관련 시작 --------------- */
 .mypage-toggle {
     position: relative;
-    z-index: 4;
+    z-index: 1004;
 }
 
 .mypage-toggle>div {
@@ -170,7 +167,7 @@
     height: 100%;
     background-color: #ffffff;
     transition: opacity 0.3s ease;
-    z-index: 5;
+    z-index: 1005;
     border-right: 0.5px solid lightgray;
     box-sizing: border-box;
 }

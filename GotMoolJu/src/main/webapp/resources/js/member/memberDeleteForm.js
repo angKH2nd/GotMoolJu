@@ -39,7 +39,7 @@ $(document).ready(function() {
             deletePwdBtn.css('backgroundColor', '#002250').css('color', 'white');
         } else {
             deletePwdBtn.prop('disabled', true);
-            deletePwdBtn.css('backgroundColor', '#fafafa').css('color', 'black');
+            deletePwdBtn.css('backgroundColor', 'white').css('color', 'lightgray').css('border', 'none');
         }
     }
 });
@@ -51,7 +51,6 @@ function deleteMember() {
       		deletePwd: $("#deletePwd").val()
       	 },
       	 success: function (result) {
-      	 	 console.log(result);
       	 	 if(result > 0) {
       	 	 	 location.href = "home.got";
       	 	 }

@@ -1,5 +1,7 @@
 package com.kh.got.member.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -24,6 +27,7 @@ import java.io.InputStream;
 
 import com.kh.got.common.model.vo.SmsConfig;
 import com.kh.got.common.template.FileConverter;
+import com.kh.got.common.template.MailSendService;
 import com.kh.got.common.template.PhoneNumber;
 import com.kh.got.common.template.RandomNumber;
 import com.kh.got.common.template.UploadFile;
@@ -43,13 +47,33 @@ public class MemberController {
 	
 	@Autowired
 	private BCryptPasswordEncoder bcryptPasswordEncoder;
+	
+	@Autowired
+    private SmsConfig smsConfig;
+	
+	@Autowired
+	private MailSendService mailService;
 
 	@RequestMapping("login.me")
-	public String loginMember(@ModelAttribute Member m, HttpSession session) {
+	public String loginMember(@ModelAttribute Member m, @RequestParam(value = "rememberId", required = false, defaultValue = "false") boolean rememberId, HttpSession session, HttpServletResponse response) {
 		Member loginUser = mService.loginMember(m);
 		
 		if(loginUser != null && bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())) {
 			session.setAttribute("loginUser", loginUser);
+			session.setAttribute("swalMsg1", "로그인 성공!");
+			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+			session.setAttribute("swalMsg3", "success");
+			
+			if (rememberId) {
+		        // 아이디 기억하기가 체크된 경우
+				Cookie cookie = new Cookie("id", loginUser.getUserId());
+				response.addCookie(cookie);
+		    }else {
+		    	// 아이디 기억하기가 체크되지 않은 경우
+		    	Cookie cookie = new Cookie("id", loginUser.getUserId());
+		    	cookie.setMaxAge(0);
+		    	response.addCookie(cookie);
+		    }
 		}else {
 			session.setAttribute("swalMsg1", "로그인 실패!");
 			session.setAttribute("swalMsg2", "아이디, 비밀번호를 확인해주세요.");
@@ -63,6 +87,38 @@ public class MemberController {
 		session.invalidate();
 		return "redirect:/home.got";
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="sendEnrollPhone.me", produces = "application/json; charset=UTF-8")
+    public String sendEnrollPhone(@RequestParam("enrollName") String enrollName, @RequestParam("enrollPhone") String enrollPhone) {
+		DefaultMessageService messageService = NurigoApp.INSTANCE.initialize(
+				smsConfig.getSmsApiKey(),
+                smsConfig.getSmsApiSecret(),
+                "https://api.coolsms.co.kr"
+        );
+		
+        JSONObject jObj = new JSONObject();
+        
+        int random = new RandomNumber().random4();
+        
+        Message message = new Message();
+        message.setFrom("01091907946");
+        message.setTo(enrollPhone);
+        message.setText("[갓물주] " + enrollName + "님의 회원가입 인증번호는 " + random + " 입니다.");
+        
+        try {
+            messageService.send(message);
+            jObj.put("result", "Y");
+            jObj.put("random", random);
+            return jObj.toJSONString();
+        } catch (NurigoMessageNotReceivedException exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        } catch (Exception exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        }
+    }
 	
 	@RequestMapping("insert.me")
 	public String insertMember(@ModelAttribute Member m, Model model, HttpSession session) {
@@ -102,31 +158,12 @@ public class MemberController {
 		}
 	}
 	
-	@RequestMapping("update.me")
-	public String updateMember(@ModelAttribute Member m, Model model, HttpSession session) {
-		int result = mService.updateMember(m);
-		
-		if(result > 0) {
-			session.setAttribute("loginUser", mService.loginMember(m));
-			session.setAttribute("swalMsg1", "회원정보수정 성공!");
-			session.setAttribute("swalMsg2", "성공적으로 회원정보가 수정되었습니다.");
-			session.setAttribute("swalMsg3", "warning");
-			return "redirect:/home.got";
-		}else {
-			model.addAttribute("errorMsg", "회원정보수정에 실패하였습니다.");
-			return "common/errorPage";
-		}
-	}
-	
 	@ResponseBody
 	@RequestMapping("idCheck.me")
 	public String idCheck(String checkId) {
 		int count = mService.idCheck(checkId);
 		return count > 0 ? "NNNNN" : "NNNNY";
 	}
-	
-	@Autowired
-    private SmsConfig smsConfig;
 	
 	@ResponseBody
 	@RequestMapping(value="sendIdSms", produces = "application/json; charset=UTF-8")
@@ -144,7 +181,7 @@ public class MemberController {
         Message message = new Message();
         message.setFrom("01091907946");
         message.setTo(searchIdPhone);
-        message.setText("[갓물주] " + searchIdName + "님의 인증번호는 " + random + " 입니다.");
+        message.setText("[갓물주] " + searchIdName + "님의 아이디 찾기 인증번호는 " + random + " 입니다.");
         
         try {
             messageService.send(message);
@@ -161,7 +198,7 @@ public class MemberController {
     }
 	
 	@ResponseBody
-	@RequestMapping(value="searchId", produces = "text/html; charset=utf-8")
+	@RequestMapping(value="searchId.me", produces = "text/html; charset=utf-8")
 	public String searchId(@RequestParam("searchIdName") String searchIdName, @RequestParam("searchIdPhone") String searchIdPhone) {
 		return mService.searchId(searchIdName, PhoneNumber.phoneNumberFormat(searchIdPhone));
 	}
@@ -199,7 +236,7 @@ public class MemberController {
     }
 	
 	@ResponseBody
-	@RequestMapping(value="searchNewPwd")
+	@RequestMapping(value="searchNewPwd.me")
 	public int searchNewPwd(@RequestParam("searchNewPwd") String searchNewPwd, @RequestParam("searchNewPwdUserId") String searchNewPwdUserId, HttpSession session, Model model) {
 		return mService.searchNewPwd(bcryptPasswordEncoder.encode(searchNewPwd), searchNewPwdUserId);
 	}
@@ -224,8 +261,126 @@ public class MemberController {
 			session.setAttribute("swalMsg2", "비밀번호를 확인해주세요.");
 			session.setAttribute("swalMsg3", "warning");	
   	 	 }
-		
 		return result;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="sendUpdateSms.me", produces = "application/json; charset=UTF-8")
+    public String sendUpdateSms(@RequestParam("UpdatePhone") String UpdatePhone, HttpSession session) {
+		DefaultMessageService messageService = NurigoApp.INSTANCE.initialize(
+				smsConfig.getSmsApiKey(),
+                smsConfig.getSmsApiSecret(),
+                "https://api.coolsms.co.kr"
+        );
+		
+        JSONObject jObj = new JSONObject();
+        
+        int random = new RandomNumber().random4();
+        
+        Message message = new Message();
+        message.setFrom("01091907946");
+        message.setTo(UpdatePhone);
+        message.setText("[갓물주] " + ((Member)session.getAttribute("loginUser")).getUserName() + "님의 전화번호 변경 인증번호는 " + random + " 입니다.");
+        
+        try {
+            messageService.send(message);
+            jObj.put("result", "Y");
+            jObj.put("random", random);
+            return jObj.toJSONString();
+        } catch (NurigoMessageNotReceivedException exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        } catch (Exception exception) {
+        	jObj.put("result", "N");
+            return "SMSF";
+        }
+    }
+	
+	@ResponseBody
+	@RequestMapping(value="updateFile.me")
+	public int updateMemberFile(@RequestParam("profileImg") MultipartFile profileImg,
+				             @RequestParam("updateNickname") String updateNickname,
+				             @RequestParam("updatePhone") String updatePhone,
+				             @RequestParam("updateEmail") String updateEmail,
+				             @RequestParam("updateAddress") String updateAddress,
+				             							  Model model, HttpSession session) {
+		Member loginUser = ((Member)session.getAttribute("loginUser"));
+		loginUser.setUserNickname(updateNickname);
+		loginUser.setUserPhone(updatePhone);
+		loginUser.setUserEmail(updateEmail);
+		loginUser.setUserAddress(updateAddress);
+		
+		// 기존 프로필 이미지 파일을 삭제
+	    if (!profileImg.isEmpty() && loginUser.getUserUpdateName() != null) {
+	    	new File(session.getServletContext().getRealPath(loginUser.getUserUpdateName())).delete();
+	    }
+
+	    // 새로운 프로필 이미지 파일을 저장
+		if(!profileImg.getOriginalFilename().equals("")) {
+			String updateName = UploadFile.saveFile(profileImg, session);
+			loginUser.setUserOriginName(profileImg.getOriginalFilename());
+			loginUser.setUserUpdateName("resources/uploadFiles/member/" + updateName);
+		}
+		
+		int result = mService.updateMemberFile(loginUser);
+		
+		if(result > 0) {
+			session.setAttribute("loginUser", mService.loginMember(loginUser));
+			session.setAttribute("swalMsg1", "회원정보수정 성공!");
+			session.setAttribute("swalMsg2", "성공적으로 수정되었습니다.");
+			session.setAttribute("swalMsg3", "success");
+		}else {
+			model.addAttribute("errorMsg", "회원정보수정에 실패했습니다.");
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="update.me")
+	public int updateMember(@RequestParam("updateNickname") String updateNickname,
+				             @RequestParam("updatePhone") String updatePhone,
+				             @RequestParam("updateEmail") String updateEmail,
+				             @RequestParam("updateAddress") String updateAddress,
+				             							  Model model, HttpSession session) {
+		Member loginUser = ((Member)session.getAttribute("loginUser"));
+		loginUser.setUserNickname(updateNickname);
+		loginUser.setUserPhone(updatePhone);
+		loginUser.setUserEmail(updateEmail);
+		loginUser.setUserAddress(updateAddress);
+		
+		int result = mService.updateMember(loginUser);
+		
+		if(result > 0) {
+			session.setAttribute("loginUser", mService.loginMember(loginUser));
+			session.setAttribute("swalMsg1", "회원정보수정 성공!");
+			session.setAttribute("swalMsg2", "성공적으로 수정되었습니다.");
+			session.setAttribute("swalMsg3", "success");
+		}else {
+			model.addAttribute("errorMsg", "회원정보수정에 실패했습니다.");
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="updatePwd.me")
+	public int updatePwd(@RequestParam("updatePwd") String searchNewPwd, HttpSession session, Model model) {
+		int result = mService.searchNewPwd(bcryptPasswordEncoder.encode(searchNewPwd), ((Member)session.getAttribute("loginUser")).getUserId());		
+		if(result > 0) {
+			session.removeAttribute("loginUser");
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="sendEnrollEmail.me", produces = "application/json; charset=UTF-8")
+    public String sendEnrollEmail(@RequestParam("enrollName") String enrollName, @RequestParam("enrollEmail") String enrollEmail) {
+		return mailService.joinEmail(enrollName, enrollEmail);
+    }
+	
+	@ResponseBody
+	@RequestMapping(value="sendUpdateEmailSms.me", produces = "application/json; charset=UTF-8")
+    public String sendUpdateEmailSms(@RequestParam("updateName") String updateName, @RequestParam("updateEmail") String updateEmail) {
+		return mailService.updateEmail(updateName, updateEmail);
+    }
 	
 }

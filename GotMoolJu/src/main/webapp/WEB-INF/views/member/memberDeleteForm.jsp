@@ -35,9 +35,12 @@
 				<tr style="height: 10px;">
 					<td colspan=2 class="delete-pwd-td-set">&nbsp;</td>
 				</tr>
+				<tr style="height: 50px; color: red">
+					<th colspan=2 class="delete-pwd-td-set fs12">탈퇴 후에는 계정이 삭제되며 복구되지 않습니다.</th>
+				</tr>
 				<tr>
 					<td colspan=2 class="delete-pwd-td-set">
-						<button type="button" class="delete-pwd-btn br5 mh" id="deletePwdBtn" disabled onclick="deleteMember();">회원탈퇴</button>
+						<button type="button" class="delete-pwd-btn br10 mh" id="deletePwdBtn" disabled onclick="deleteMember();">회원탈퇴</button>
 					</td>
 				</tr>
 			</table>

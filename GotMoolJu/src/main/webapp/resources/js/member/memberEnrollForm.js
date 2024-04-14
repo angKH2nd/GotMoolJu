@@ -12,6 +12,10 @@ $(document).ready(function() {
 		userAddressNormal: false,
 		userAddressDetail: false,
 	};
+	
+	// 페이지 로드 시 validateEnrollEmailTr, validateEnrollPhoneTr 숨기기
+    $(".enroll-body #validateEnrollEmailTr").hide();
+    $(".enroll-body #validateEnrollPhoneTr").hide();
 
 	var userIdInput = $('input[name="userId"]');
 	var userPwdInput = $('input[name="userPwd"]');
@@ -21,6 +25,7 @@ $(document).ready(function() {
 	var userNicknameInput = $('input[name="userNickname"]');
 	var userEmailInput = $('input[name="userEmail"]');
 	var userPhoneInput = $('input[name="userPhone"]');
+	var userGenderInput = $('#userGenderLine');
 
 	var userAddressNormalInput = $('input[name="userAddressNormal"]');
 	var userAddressDetailInput = $('input[name="userAddressDetail"]');
@@ -46,11 +51,11 @@ $(document).ready(function() {
 	
     function validateId(userId) {
     	if(userId.val() === '') {
-            userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning"><td colspan="3" class="validate">ID는 필수 입력사항입니다.</td ></tr>');
+            userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning" class="wm"><td colspan="3" class="validate">ID는 필수 입력사항입니다.</td ></tr>');
             isValid.userId = false;
     	} else {
 	    	if (!userIdRegex.test(userId.val())) {
-	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning"><td colspan="3" class="validate">ID는 영문, 숫자로 구성된 4자~10자여야 합니다.</td></tr>');
+	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning" class="wm"><td colspan="3" class="validate">ID는 영문, 숫자로 구성된 4자~10자여야 합니다.</td></tr>');
 	        	isValid.userId = false;
 	        } else{
 	        	$.ajax({
@@ -58,7 +63,7 @@ $(document).ready(function() {
 					data:{checkId:userId.val()},
 					success:function(result){
 						if(result === "NNNNN"){
-							userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning"><td colspan="3" class="validate">중복된 ID입니다.</td></tr>');
+							userPwdCheckInput.closest('tr').after('<tr height=16px; id="idWarning" class="wm"><td colspan="3" class="validate">중복된 ID입니다.</td></tr>');
 	        				isValid.userId = false;
 						}else {
 							$('#idWarning').remove();
@@ -84,11 +89,11 @@ $(document).ready(function() {
 	
     function validatePwd(userPwd) {
     	if(userPwd.val() === '') {
-            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdWarning"><td colspan="3" class="validate">비밀번호는 필수 입력사항입니다.</td ></tr>');
+            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdWarning" class="wm"><td colspan="3" class="validate">비밀번호는 필수 입력사항입니다.</td ></tr>');
             isValid.userPwd = false;
     	} else {
 	    	if (!userPwdRegex.test(userPwd.val())) {
-	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdWarning"><td colspan="3" class="validate">비밀번호는 영문, 숫자로 구성된 4자~12자여야 합니다.</td></tr>');
+	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdWarning" class="wm"><td colspan="3" class="validate">비밀번호는 영문, 숫자로 구성된 4자~12자여야 합니다.</td></tr>');
 	        	isValid.userPwd = false;
 	        } else{
 	        	$('#pwdWarning').remove();
@@ -109,11 +114,11 @@ $(document).ready(function() {
 	
     function validatePwdCheck(userPwdCheck) {
     	if(userPwdCheck.val() === '') {
-            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdCheckWarning"><td colspan="3" class="validate">비밀번호확인은 필수 입력사항입니다.</td ></tr>');
+            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdCheckWarning" class="wm"><td colspan="3" class="validate">비밀번호확인은 필수 입력사항입니다.</td ></tr>');
             isValid.userPwdCheck = false;
     	} else {
 	    	if (userPwdCheck.val() !== $('input[name="userPwd"]').eq(1).val()) {
-	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdCheckWarning"><td colspan="3" class="validate">비밀번호가 일치하지 않습니다.</td></tr>');
+	            userPwdCheckInput.closest('tr').after('<tr height=16px; id="pwdCheckWarning" class="wm"><td colspan="3" class="validate">비밀번호가 일치하지 않습니다.</td></tr>');
 	        	isValid.userPwdCheck = false;
 	        } else{
 	        	$('#pwdCheckWarning').remove();
@@ -134,11 +139,11 @@ $(document).ready(function() {
 	
     function validateName(userName) {
     	if(userName.val() === '') {
-            userPhoneInput.closest('tr').after('<tr height=16px; id="nameWarning"><td colspan="3" class="validate">이름은 필수 입력사항입니다.</td ></tr>');
+            userGenderInput.closest('tr').after('<tr height=16px; id="nameWarning" class="wm"><td colspan="3" class="validate">이름은 필수 입력사항입니다.</td ></tr>');
             isValid.userName = false;
     	} else {
 	    	if (!userNameRegex.test(userName.val())) {
-	            userPhoneInput.closest('tr').after('<tr height=16px; id="nameWarning"><td colspan="3" class="validate">올바른 이름을 입력해주세요.</td></tr>');
+	            userGenderInput.closest('tr').after('<tr height=16px; id="nameWarning" class="wm"><td colspan="3" class="validate">올바른 이름을 입력해주세요.</td></tr>');
 	        	isValid.userName = false;
 	        } else{
 	        	$('#nameWarning').remove();
@@ -159,11 +164,11 @@ $(document).ready(function() {
 	
     function validateNickname(userNickname) {
     	if(userNickname.val() === '') {
-            userPhoneInput.closest('tr').after('<tr height=16px; id="nicknameWarning"><td colspan="3" class="validate">닉네임은 필수 입력사항입니다.</td ></tr>');
+            userGenderInput.closest('tr').after('<tr height=16px; id="nicknameWarning" class="wm"><td colspan="3" class="validate">닉네임은 필수 입력사항입니다.</td ></tr>');
             isValid.userNickname = false;
     	} else {
 	    	if (!userNicknameRegex.test(userNickname.val())) {
-	            userPhoneInput.closest('tr').after('<tr height=16px; id="nicknameWarning"><td colspan="3" class="validate">닉네임은 한글, 영문, 숫자로 구성된 1자~15자여야 합니다.</td></tr>');
+	            userGenderInput.closest('tr').after('<tr height=16px; id="nicknameWarning" class="wm"><td colspan="3" class="validate">닉네임은 한글, 영문, 숫자로 구성된 1자~15자여야 합니다.</td></tr>');
 	        	isValid.userNickname = false;
 	        } else{
 	        	$('#nicknameWarning').remove();
@@ -184,38 +189,71 @@ $(document).ready(function() {
 	
     function validateEmail(userEmail) {
     	if(userEmail.val() === '') {
-            userPhoneInput.closest('tr').after('<tr height=16px; id="emailWarning"><td colspan="3" class="validate">이메일은 필수 입력사항입니다.</td ></tr>');
+            userGenderInput.closest('tr').after('<tr height=16px; id="emailWarning" class="wm"><td colspan="3" class="validate">이메일은 필수 입력사항입니다.</td ></tr>');
             isValid.userEmail = false;
+            $("#enroll-send-email-btn").prop('disabled', true);
     	} else {
-	    	if (!userEmailRegex.test(userEmail.val())) {
-	            userPhoneInput.closest('tr').after('<tr height=16px; id="emailWarning"><td colspan="3" class="validate">올바른 이메일을 입력해주세요.</td></tr>');
+	    	if (!userEmailRegex.test(userEmail.val()) && userNameRegex.test($('input[name="userName"]').val())) {
+	            userGenderInput.closest('tr').after('<tr height=16px; id="emailWarning" class="wm"><td colspan="3" class="validate">올바른 이메일을 입력해주세요.</td></tr>');
 	        	isValid.userEmail = false;
+	        	$("#enroll-send-email-btn").prop('disabled', true);
+	        	$("#enroll-send-email-btn").css('backgroundColor', '#808080').css('color', 'white');
 	        } else{
+	        	$("#enroll-send-email-btn").prop('disabled', false);
+	        	$("#enroll-send-email-btn").css('backgroundColor', '#002250').css('color', 'white');
 	        	$('#emailWarning').remove();
-	        	isValid.userEmail = true;
-	        	isComplete();
 	        }
         }
     }
-    /* ------------- 이메일 끝 ------------- */
     
-    /* ------------- 성별 시작 ------------- */
-    var genderRadios = $('input[name="userGender"]');
-
-	// 라디오 버튼에 변경 이벤트 리스너 추가
-	genderRadios.change(function() {
-	    // 선택된 라디오 버튼의 값을 가져옴
-	    var selectedValue = $('input[name="userGender"]:checked').val();
+    $("#enroll-send-email-btn").click(function(){
+	    $.ajax({
+	        type: "POST",
+	        url: "sendEnrollEmail.me",
+	        data: {
+	        	enrollName: $('input[name="userName"]').val(),
+	        	enrollEmail: $('input[name="userEmail"]').val(),
+	    	},
+	        success: function(data) {
+	        	swal('인증메일 발송 완료!', "발송된 인증번호를 입력해주세요.", 'success');
+	        	$("#validateEnrollEmailOrigin").val(data);
+	        	$(".enroll-body #validateEnrollEmailTr").show();
+	        	$(".enroll-body #enroll-send-email-btn").prop('disabled', true);
+	        }, 
+	        error: function() {
+	        	swal('인증메일 발송 실패!', "관리자에게 문의해주세요", 'warning');
+	        }
+	    });
+	})
 	
-	    // 선택된 값이 존재하는 경우 userGender를 true로 설정
-	    if (selectedValue === 'M' || selectedValue === 'F') {
-	        isValid.userGender = true;
+	$("#validateEnrollEmail").keyup(function(){
+		var inputValue = $(this).val().trim(); // Get the trimmed value of the input
+
+	    if (inputValue !== "") {
+	        $("#validateEnrollEmailBtn").prop("disabled", false);
+	        $("#validateEnrollEmailBtn").css('backgroundColor', '#002250').css('color', 'white');
 	    } else {
-	        isValid.userGender = false;
+	        $("#validateEnrollEmailBtn").prop("disabled", true);
+	        $("#validateEnrollEmailBtn").css('backgroundColor', '#808080').css('color', 'white');
 	    }
-	    isComplete();
-	});
-    /* ------------- 성별 끝 ------------- */
+	})
+	
+	$("#validateEnrollEmailBtn").click(function(){
+		if($("#validateEnrollEmail").val() === $("#validateEnrollEmailOrigin").val()){
+			isValid.userEmail = true;
+			isComplete();
+			$(".enroll-body #validateEnrollEmailTr").hide();
+			$("#enroll-send-email-btn").prop('disabled', true);
+			$("#enroll-send-email-btn").css('backgroundColor', '#808080').css('color', 'white');
+			$("#enroll-send-email-btn").text("인증완료");
+			swal('인증 성공!', "인증번호가 확인되었습니다.", 'success');
+		}else {
+			isValid.userEmail = false;
+			swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
+			$("#validateEnrollEmailBtn").val("");
+		}
+	})
+    /* ------------- 이메일 끝 ------------- */
     
     /* ------------- 휴대폰 시작 ------------- */
     userPhoneInput.on('input', function(event) {
@@ -246,20 +284,89 @@ $(document).ready(function() {
 	
 	function validatePhone(userPhone) {
     	if(userPhone.val() === '') {
-            userPhone.closest('tr').after('<tr height=16px; id="phoneWarning"><td colspan="3" class="validate">휴대폰 번호는 필수 입력사항입니다.</td ></tr>');
+            userGenderInput.closest('tr').after('<tr height=16px; id="phoneWarning" class="wm"><td colspan="3" class="validate">휴대폰 번호는 필수 입력사항입니다.</td ></tr>');
             isValid.userPhone = false;
+            $("#enroll-send-phone-btn").prop('disabled', true);
     	} else {
 	    	if (!userPhoneRegex.test(userPhone.val())) {
-	            userPhone.closest('tr').after('<tr height=16px; id="phoneWarning"><td colspan="3" class="validate">\'-\' 포함 올바른 번호를 입력해주세요.</td></tr>');
+	            userGenderInput.closest('tr').after('<tr height=16px; id="phoneWarning" class="wm"><td colspan="3" class="validate">\'-\' 포함 올바른 번호를 입력해주세요.</td></tr>');
 	        	isValid.userPhone = false;
+	        	$("#enroll-send-phone-btn").prop('disabled', true);
+	        	$("#enroll-send-phone-btn").css('backgroundColor', '#808080').css('color', 'white');
 	        } else{
+	        	$("#enroll-send-phone-btn").prop('disabled', false);
+	        	$("#enroll-send-phone-btn").css('backgroundColor', '#002250').css('color', 'white');
 	        	$('#phoneWarning').remove();
-	        	isValid.userPhone = true;
-	        	isComplete();
 	        }
         }
     }
+    
+    $("#enroll-send-phone-btn").click(function(){
+	    $.ajax({
+	        type: "POST",
+	        url: "sendEnrollPhone.me",
+	        data: {
+	        	enrollName: $('input[name="userName"]').val(),
+	        	enrollPhone: $('input[name="userPhone"]').val().replace(/-/g, ''),
+	    	},
+	        success: function(data) {
+	        	swal('인증번호 발송 완료!', "발송된 인증번호를 입력해주세요.", 'success');
+	        	$("#validateEnrollPhoneOrigin").val(data.random);
+	        	$(".enroll-body #validateEnrollPhoneTr").show();
+	        	$(".enroll-body #enroll-send-phone-btn").prop('disabled', true);
+	        }, 
+	        error: function() {
+	        	swal('인증번호 발송 실패!', "관리자에게 문의해주세요", 'warning');
+	        }
+	    });
+	})
+	
+	$("#validateEnrollPhone").keyup(function(){
+		var inputValue = $(this).val().trim();
+
+	    if (inputValue !== "") {
+	        $("#validateEnrollPhoneBtn").prop("disabled", false);
+	        $("#validateEnrollPhoneBtn").css('backgroundColor', '#002250').css('color', 'white');
+	    } else {
+	        $("#validateEnrollPhoneBtn").prop("disabled", true);
+	        $("#validateEnrollPhoneBtn").css('backgroundColor', '#808080').css('color', 'white');
+	    }
+	})
+	
+	$("#validateEnrollPhoneBtn").click(function(){
+		if($("#validateEnrollPhone").val() === $("#validateEnrollPhoneOrigin").val()){
+			isValid.userPhone = true;
+			isComplete();
+			$(".enroll-body #validateEnrollPhoneTr").hide();
+			$("#enroll-send-phone-btn").prop('disabled', true);
+			$("#enroll-send-phone-btn").css('backgroundColor', '#808080').css('color', 'white');
+			$("#enroll-send-phone-btn").text("인증완료");
+			swal('인증 성공!', "인증번호가 확인되었습니다.", 'success');
+		}else {
+			isValid.userPhone = false;
+			swal('인증 실패!', "인증번호가 일치하지 않습니다. 확인해주세요.", 'warning');
+			$("#validateEnrollPhoneBtn").val("");
+		}
+	})
     /* ------------- 휴대폰 끝 ------------- */
+    
+    /* ------------- 성별 시작 ------------- */
+    var genderRadios = $('input[name="userGender"]');
+
+	// 라디오 버튼에 변경 이벤트 리스너 추가
+	genderRadios.change(function() {
+	    // 선택된 라디오 버튼의 값을 가져옴
+	    var selectedValue = $('input[name="userGender"]:checked').val();
+	
+	    // 선택된 값이 존재하는 경우 userGender를 true로 설정
+	    if (selectedValue === 'M' || selectedValue === 'F') {
+	        isValid.userGender = true;
+	    } else {
+	        isValid.userGender = false;
+	    }
+	    isComplete();
+	});
+    /* ------------- 성별 끝 ------------- */
     
     /* ------------- 일반주소 시작 ------------- */
 	function validateAddressNormal() {
@@ -280,15 +387,16 @@ $(document).ready(function() {
 	
     function validateAddressDetail(userAddressDetail) {
     	if(userAddressDetail.val() === '') {
-            userAddressDetailInput.closest('tr').after('<tr height=16px; id="addressDetailWarning"><td colspan="3" class="validate">상세주소는 필수 입력사항입니다.</td ></tr>');
+            userAddressDetailInput.closest('tr').after('<tr height=16px; id="addressDetailWarning" class="wm"><td colspan="3" class="validate">상세주소는 필수 입력사항입니다.</td ></tr>');
             isValid.userAddressDetail = false;
     	} else {
 	    	if (!userAddressDetailRegex.test(userAddressDetail.val())) {
-	            userAddressDetailInput.closest('tr').after('<tr height=16px; id="addressDetailWarning"><td colspan="3" class="validate">올바른 상세주소를 입력해주세요.</td></tr>');
+	            userAddressDetailInput.closest('tr').after('<tr height=16px; id="addressDetailWarning" class="wm"><td colspan="3" class="validate">올바른 상세주소를 입력해주세요.</td></tr>');
 	        	isValid.userAddressDetail = false;
 	        } else{
 	        	$('#addressDetailWarning').remove();
 	        	isValid.userAddressDetail = true;
+	        	console.log(isValid);
 	        	validateAddressNormal();
 	        	isComplete();
 	        }

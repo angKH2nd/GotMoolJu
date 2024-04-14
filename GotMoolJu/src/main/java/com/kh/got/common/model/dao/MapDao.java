@@ -11,9 +11,7 @@ import com.kh.got.common.model.vo.MapVO;
 public class MapDao {
 	
 	public ArrayList<MapVO> selectAllList(SqlSessionTemplate sqlSession){
-		
 		return (ArrayList)sqlSession.selectList("mapMapper.selectAllList");
-		
 	}
 	
 	

@@ -41,12 +41,12 @@
 	<div class="sidebar" id="sidebar">
 	    <ul>
 	        <li onclick="toggleDiv('home')" data-target="home">
-	        	<div class="icon-area"><img width=40 height=40 style="padding-top: 20px;" src="resources/images/got/got_logo_big.jpg"></div>
+	        	<div class="icon-area hoverZ"><img width=40 height=40 style="padding-top: 20px;" src="resources/images/got/got_logo_big.jpg"></div>
         	</li>
        		<c:choose>
        			<c:when test="${ empty loginUser }">  
        				<li onClick="openLoginForm();" data-target="member">
-		        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/etc/smile.png"></div>
+		        		<div class="icon-area hoverZ" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="resources/images/etc/smile.png"></div>
             			<div class="text-area" style="padding: 0 0 10px 0;">마이페이지</div>
             		</li>
             	</c:when>
@@ -54,13 +54,13 @@
             		<c:choose>
             			<c:when test="${ loginUser.userId eq 'admin' }">
 		            		<li onclick="toggleDiv('member')" data-target="member">
-				        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=30 height=30 src="${ loginUser.userUpdateName }"></div>
+				        		<div class="icon-area hoverZ" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=30 height=30 src="${ loginUser.userUpdateName }"></div>
 				        		<div class="text-area" style="padding: 0 0 10px 0">관리자</div>
 				        	</li>
 			        	</c:when>
 			        	<c:otherwise>
 			        		<li onclick="toggleDiv('member')" data-target="member">
-				        		<div class="icon-area" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
+				        		<div class="icon-area hoverZ" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
 				        		<div class="text-area" style="padding: 0 0 10px 0">마이페이지</div>
 				        	</li>
 			        	</c:otherwise>
@@ -68,7 +68,7 @@
             	</c:otherwise>
            	</c:choose>
 	        <li onclick="openMap()" data-target="map" class="map-option">
-	        	<div class="icon-area"><i class="fa-solid fa-map fa-xl"></i></div>
+	        	<div class="icon-area hoverZ"><i class="fa-solid fa-map fa-xl"></i></div>
 	        	<div class="text-area">지도</div>
         	</li>
         	<%-- 상세보기는 좌측 리스트에 노출시키지는 않는 것으로
@@ -78,11 +78,11 @@
         	</li>
         	 --%>
 	        <li onclick="toggleDiv('rank')" data-target="rank">
-	        	<div class="icon-area"><i class="fa-solid fa-chart-line fa-xl"></i></div>
+	        	<div class="icon-area hoverZ"><i class="fa-solid fa-chart-line fa-xl"></i></div>
 	        	<div class="text-area">차트</div>
 	        </li>
 	        <li onclick="toggleDiv('loan')" data-target="loan">
-	        	<div class="icon-area" style="margin: 0;"><img style="margin: 10px 0 0 0;" class="brc" width=40 height=40 src="resources/images/etc/money.png"></div>
+	        	<div class="icon-area hoverZ" style="margin: 0;"><img style="margin: 10px 0 0 0;" class="brc" width=40 height=40 src="resources/images/etc/money.png"></div>
 	        	<div class="text-area" style="padding: 0 0 10px 0;">대출</div>
 	        </li>
 	        <c:choose>
@@ -93,7 +93,7 @@
             		<li onclick="toggleDiv('community')" data-target="community">
             	</c:otherwise>
            	</c:choose>
-        		<div class="icon-area commu-area" style="margin: 7px 0 0 0;">
+        		<div class="icon-area commu-area hoverZ" style="margin: 7px 0 0 0;">
         			<div class="community-wrap">
 					    <div class="community-circle">
 						    <div class="wave-one"></div>
@@ -124,7 +124,7 @@
             		<li onclick="toggleDiv('helpCenter')" data-target="helpCenter">
             	</c:otherwise>
            	</c:choose>
-           		<div class="icon-area"><i class="fa-solid fa-headphones fa-xl"></i></div>
+           		<div class="icon-area hoverZ"><i class="fa-solid fa-headphones fa-xl"></i></div>
 	        	<div class="text-area">고객센터</div>
 	        </li>
 	        <c:choose>
@@ -135,13 +135,13 @@
             		<li onclick="toggleDiv('etc')" data-target="etc">
             	</c:otherwise>
            	</c:choose>
-	        	<div class="icon-area"><i class="fa-solid fa-bars fa-xl"></i></div>
+	        	<div class="icon-area hoverZ"><i class="fa-solid fa-bars fa-xl"></i></div>
 	        	<div class="text-area">기타</div>
 	        </li>
 	        <c:if test="${ not empty loginUser }">
 		        <a href="logout.me" class="tdna" style="color: black;">
 		        	<li>
-		        		<div class="icon-area"><i class="fa-solid fa-right-from-bracket fa-xl"></i></div>
+		        		<div class="icon-area hoverZ"><i class="fa-solid fa-right-from-bracket fa-xl"></i></div>
 		        		<div class="text-area">로그아웃</div>
 		        	</li>
 		        </a>
@@ -161,11 +161,22 @@
 	    <div class="etc"><%@ include file="../etc/etc.jsp" %></div>
 	</div>
 	
+	<%-- 홈 타운 관련 토글 --%>
+	<div class="homeTown-toggle">
+		<div class="searchApt"><%@ include file="../homeTown/searchApt.jsp" %></div>
+	</div>
+	
 	<%-- 마이페이지 관련 토글 --%>
 	<div class="mypage-toggle">
 		<div class="updateMemberForm"><%@ include file="../member/memberUpdateForm.jsp" %></div>
 		<div class="memberDibsList"><%@ include file="../member/memberDibsList.jsp" %></div>
 		<div class="memberNoticeList"><%@ include file="../member/memberNoticeList.jsp" %></div>
+	</div>
+	
+	<%-- 기타 관련 토글 --%>
+	<div class="etc-toggle">
+		<div class="insertImprovementIdeation"><%@ include file="../etc/insertImprovementIdeation.jsp" %></div>
+		<div class="introduceHowToUseGot"><%@ include file="../etc/introduceHowToUseGot.jsp" %></div>
 	</div>
 	
     <script src="resources/js/common/sidebar.js"></script>
