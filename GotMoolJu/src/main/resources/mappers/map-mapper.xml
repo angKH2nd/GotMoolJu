@@ -28,7 +28,7 @@
 		 , APT_IMG_URLS
 		 , APT_DESC
 	  from tb_apt
-	 where rownum between 1 and 20 
+	 where rownum between 1 and 2000
 	 </select>
 
 
