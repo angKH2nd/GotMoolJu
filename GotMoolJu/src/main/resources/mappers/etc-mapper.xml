@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="etcMapper">
+	<resultMap id="impReplyResult" type="Improvement">
+		<result column="imp_reply_no" property="impReplyNo"/>
+		<result column="imp_reply_content" property="impReplyContent"/>
+		<result column="imp_reply_writer" property="impReplyWriter"/>
+		<result column="imp_reply_profile" property="impReplyProfile"/>
+		<result column="imp_reply_type" property="impReplyType"/>
+		<result column="imp_reply_likes" property="impReplyLikes"/>
+		<result column="imp_reply_dislikes" property="impReplyDislikes"/>
+		<result column="imp_reply_create_date" property="impReplyCreateDate"/>
+		<result column="imp_reply_modify_date" property="impReplyModifyDate"/>
+		<result column="imp_reply_status" property="impReplyStatus"/>
+	</resultMap>
+
+	<select id="selectImpReplyList" resultMap="impReplyResult">
+	 	select
+		       imp_reply_no
+		     , imp_reply_content
+		     , imp_reply_writer
+		     , imp_reply_profile
+		     , imp_reply_type
+		     , imp_reply_likes
+		     , imp_reply_dislikes
+		     , to_char(imp_reply_create_date, 'YYYY-MM-DD') as "imp_reply_create_date"
+		     , to_char(imp_reply_modify_date, 'YYYY-MM-DD') as "imp_reply_modify_date"
+		     , imp_reply_status
+		  from tb_improvement
+		 order
+		    by imp_reply_no desc
+	</select>
+	 
+</mapper>

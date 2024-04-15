@@ -1,1 +1,205 @@
 @charset "UTF-8";
+
+.improvement-form {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.improvement-form>div {
+	width: calc(100% - 30px);
+}
+
+.improvement-top {
+	height: 30px;
+}
+
+.improvement-top>div {
+	height: 100%;
+}
+
+.improvement-previous {
+	width: 40px;
+}
+
+.improvement-title {
+	width: calc(100% - 60px);
+	text-align: center;
+}
+
+.improvement-cancel {
+	width: 20px;
+}
+
+.improvement-center {
+	height: 300px;
+}
+
+.improvement-center>div {
+	width: 100%;
+}
+
+.improvement-img {
+	height: 200px;
+}
+
+.improvement-text {
+	height: 40px;
+	color: #434d68;
+	border-bottom: 0.5px solid lightgray;
+	padding: 0 15px 15px 15px;
+}
+
+.improvement-reply-area {
+	height: 510px;
+	overflow-y: auto;
+}
+
+.improvement-reply-area>div {
+	width: 100%;
+}
+
+.improvement-input-area {
+	height: 170px;
+}
+
+.improvement-list-area {
+	height: calc(100% - 200px);
+}
+
+.improvement-list-area>div {
+	width: 100%;
+	height: 130px;
+	margin: 5px 0;
+	padding: 10px 0;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.improvement-more-btn-area {
+	height: 30px;
+}
+
+.improvement-more-btn-area>button {
+	width: 100%;
+	height: 100%;
+}
+
+.improvement-reply {
+	width: 100%;
+}
+
+.improvement-reply textarea {
+	width: 98%;
+	height: 100%;
+	resize: none;
+	border: none;
+	outline: none;
+}
+
+.improvement-reply-profile {
+	height: 25px;
+}
+
+.improvement-reply-profile>div {
+	height: 100%;
+}
+
+.improvement-reply-profile-img {
+	width: 25px;
+	margin-right: 5px;
+}
+
+.improvement-reply-profile-nickname {
+	width: 200px;
+	font-size: 15px;
+}
+
+.improvement-reply-blank {
+	width: calc(100% - 285px);
+}
+
+.improvement-edit {
+	width: 25px;
+	margin-right: 5px;
+}
+
+.improvement-delete {
+	width: 25px;
+}
+
+.improvement-reply-content {
+	height: 60px;
+	font-size: 15px;
+	padding: 10px 0;
+}
+
+.improvement-reply-date {
+	height: 25px;
+}
+
+.improvement-reply-date>div {
+	height: 100%;
+}
+
+.improvement-date {
+	width: 100px;
+	font-size: 11px;
+}
+
+.improvement-alert {
+	width: 55px;
+	margin-left: 5px;
+}
+.improvement-alert>button {
+	font-size: 12px;
+}
+
+.improvement-blank {
+	width: calc(100% - 279px);
+}
+
+.improvement-finger {
+	width: 119px;
+}
+
+.improvement-finger>div {
+	width: 52px;
+	height: 100%;
+	border-radius: 3px;
+	text-align: right;
+}
+
+.improvement-finger-likes {
+	margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
