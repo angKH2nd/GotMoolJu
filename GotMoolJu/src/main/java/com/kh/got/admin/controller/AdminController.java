@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.kh.got.admin.model.service.AdminMemberService;
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.common.template.Pagination;
@@ -20,26 +22,20 @@ public class AdminController {
 	private AdminMemberService adminMService;
 	
 	// 메인 페이지
-	@RequestMapping("/main.ad")
-    public String openHome() {
-        return "admin/adminMain";
+	@RequestMapping("main.ad")
+    public ModelAndView openHome(ModelAndView mv) {
+		// 회원 5명 정도 조회용
+		ArrayList<Member> list = adminMService.selectMemberMiniList();
+		
+        mv.addObject("list", list)
+		  .setViewName("admin/adminMain");
+
+        return mv;
     }
 
-	// 메인 화면, 회원 5명 정도 조회용
-	@RequestMapping("/mainMini.ad")
-	public void openAdminMiniList(ModelAndView mv) {
-		
-	}
-//	
-//	ArrayList<Member> list = adminMService.selectMemberMiniList();
-//	
-//	selectMemberMiniList
-//	"adminMainBoard"
-//	return 
-	
 	
 	// 회원 정보 조회 페이지로 이동
-	@RequestMapping("/memberList.ad")
+	@RequestMapping("memberList.ad")
     public ModelAndView openMemberList(@RequestParam (value = "cpage", defaultValue = "1") int currentPage, ModelAndView mv) {
 		
 		int listCount = adminMService.selectMemberCount();
@@ -60,9 +56,16 @@ public class AdminController {
     }
 	
 	// 회원 상세 정보 조회 페이지로 이동
-	@RequestMapping("/memberDetail.ad")
+	@RequestMapping("memberDetail.ad")
 	public String openMemberDetail() {
 		return "admin/member/adminMemberDetail";
 	}
 
+	
+	// 실험용
+	@RequestMapping("typography")
+    public String openHomeq() {
+        return "admin/common/typography";
+    }
+	
 }

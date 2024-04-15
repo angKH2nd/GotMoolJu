@@ -11,6 +11,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>갓물주</title>
+    <style>
+	    #memberlistClick1:hover {
+		  cursor: pointer;
+		}
+    </style>
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
       name="viewport"
@@ -42,44 +47,40 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <jsp:include page="../common/adminMenubar.jsp" />
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
-
-    <div class="main-panel" id="main-panel">
-      <%-- Navbar --%>
-      <%-- End Navbar --%>
-
-      <div class="content">
-        <div class="card">
-          <%-- 흰색, 전체 페이지 --%>
-          <div class="card-header">
-            <h5 class="title" style="margin: 1%">회원정보</h5>
-            <p class="category">
-             <h6 style="margin-left: 90%; color: rightgray"> &lt; 총 회원 :  ${ pi.listCount } &gt;</h6>
-            </p>
-             
-            
-          </div>
-          <div
-            class="card-body all-icons"
-            style="margin-right: 4%; margin-left: 4%"
-          >
-            <%-- 하단, 흰색 보드 --%>
-            <div class="row">
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" id="memberList">
-                    <thead class="text-primary">
-                      <th>No</th>
-                      <th>ID</th>
-                      <th>NICKNAME</th>
-                      <th>NAME</th>
-                      <th>address</th>
-                      <th>phone</th>
-                      <th class="text-right">status</th>
-                    </thead>
-                    <tbody>
-	                    <c:forEach var="ad" items="${ list }">
+<!-- 여기서부터 -->
+     <div class="wrapper">
+      <div class="main-panel" id="main-panel">
+        <!-- End Navbar -->
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">회원정보</h4>
+                  <p class="category">
+		             <h6 style="margin-left: 90%; color: rightgray"> &lt; 총 회원 :  ${ pi.listCount } &gt;</h6>
+		           </p>
+                </div>
+                 <div
+		            class="card-body all-icons"
+		            style="margin-right: 4%; margin-left: 4%"
+		          >
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table" id="memberList">
+                      <thead class="text-primary">
+	                      <th>No</th>
+	                      <th>ID</th>
+	                      <th>NICKNAME</th>
+	                      <th>NAME</th>
+	                      <th>address</th>
+	                      <th>phone</th>
+	                      <th class="text-right">status</th>
+                      </thead>
+                      <tbody id="memberlistClick1">
+                        <c:forEach var="ad" items="${ list }">
 	                      <tr>
-	                        <td>${ ad.userNo }</td>
+	                        <td class="mno">${ ad.userNo }</td>
 	                        <td>${ ad.userId }</td>
 	                        <td>${ ad.userNickname }</td>
 	                        <td>${ ad.userName }</td>
@@ -87,32 +88,31 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                        <td>${ ad.userPhone }</td>
 	                        <c:choose>
 		                        <c:when test="${ ad.userStatus eq 'A' }">
-		                        	<td class="text-right" style="color:green"> 관리자 </td>
+		                        	<td class="text-right" style="color:darkgreen"> 관리자 </td>
 		                        </c:when>
 		                        <c:when test="${ ad.userStatus eq 'B' }">
 		                        	<td class="text-right" style="color:darkgray"> 블랙리스트 </td>
 		                        </c:when>
 		                        <c:when test="${ ad.userStatus eq 'N' }">
-		                        	<td class="text-right" style="color:red"> 탈퇴 </td>
+		                        	<td class="text-right" style="color:darkred"> 탈퇴 </td>
 		                        </c:when>
 		                        <c:otherwise>
-		                       		<td class="text-right" style="color:blue"> 사용중 </td>
+		                       		<td class="text-right" style="color:darkblue"> 사용중 </td>
 		                        </c:otherwise>
 	                        </c:choose>
 	                      </tr>
 						</c:forEach>
-                    </tbody>
-                  </table>
-                </div>
+                      </tbody>
+                    </table>
+                  </div>
                 
                 <script>
 				$(function(){
-					$("#memberList>tbody>tr").click(function(){
+					$("#memberlistClick1>tr").click(function(){
+						console.log("눌림")
 		                  location.href = 'memberDetail.ad?mno=' + $(this).children(".mno").text();
 		               })
 				})
-			
-			
 				</script>
                 
                 
@@ -144,7 +144,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </div>
             
               </div>
-              <div style="width: 100%; height: auto"></div>
             </div>
           </div>
         </div>

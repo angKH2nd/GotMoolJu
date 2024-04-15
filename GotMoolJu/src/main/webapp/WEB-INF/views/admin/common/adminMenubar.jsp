@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +32,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 있으면 업그레이드가 가장 아래로 내려가짐-->
   </head>
   <body>
-    <div class="wrapper">
       <div class="sidebar" data-color="gotmoolju">
         <!-- <%--
         Tip 1: You can change the color of the sidebar using: data-color="gotmoolju | blue | green | orange | red | yellow"
@@ -46,7 +46,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
           <ul class="nav">
-            <li class="active">
+            <!-- active임 원래 -->
+            <li class="active1">
               <a href="main.ad">
                 <i class="now-ui-icons text_align-left"></i>
                 <p>메인화면</p>
@@ -98,24 +99,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
-
-    <!-- 메뉴바 클릭 시 색 변경 안됨 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var navItems = document.querySelectorAll(".sidebar .nav li");
-
-        navItems.forEach(function (item) {
-          item.addEventListener("click", function () {
-            // 모든 항목에서 'active' 클래스 제거
-            navItems.forEach(function (item) {
-              item.classList.remove("active");
-            });
-            // 클릭한 항목에만 'active' 클래스 추가
-            this.classList.add("active");
-          });
-        });
-      });
-    </script>
 
     <!-- <%--   Core JS Files   --%> -->
     <script src="resources/assets/js/core/jquery.min.js"></script>

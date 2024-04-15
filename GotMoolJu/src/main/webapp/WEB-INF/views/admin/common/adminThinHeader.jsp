@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../../../resources/images/got/got_logo.ico">
+
 <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
 <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -22,6 +24,7 @@
 <link href="resources/assets/demo/demo.css" rel="stylesheet" /> <!-- 있으면 업그레이드가 가장 아래로 내려가짐-->
 </head>
 <body>
+		<div class="wrapper" style="height:auto">
         <div class="main-panel" id="main-panel">
           <!-- Navbar -->
           <nav

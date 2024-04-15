@@ -155,6 +155,22 @@
      		 by user_no
 	</select>
 	
+	<!-- 메인 화면, 회원 5명 정도 조회용 -->
+	 
+	<select id="selectMemberMiniList" resultMap="memberResult">
+ 		 select
+		        user_no
+		      , user_id
+		      , user_nickname
+		      , user_phone
+		   from tb_member
+          where user_status = 'Y'
+		  order 
+     		 by user_no
+	</select>
+	 
 	
-
+	
+	
+	
 </mapper>

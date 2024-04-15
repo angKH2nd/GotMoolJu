@@ -8,7 +8,7 @@ import com.kh.got.member.model.vo.Member;
 public interface AdminMemberService {
 
 	// 메인 화면, 회원 5명 정도 조회용
-//	ArrayList<Member> selectMemberMiniList(PageInfo pi);
+	ArrayList<Member> selectMemberMiniList();
 	
 	// 회원 리스트 조회 서비스 (select) 
 	int selectMemberCount(); 			 			 // 회원 전체 숫자 조회용

@@ -12,11 +12,17 @@ import com.kh.got.member.model.vo.Member;
 @Repository
 public class AdminMemberDao {
 
+	// 메인 화면, 회원 5명 정도 조회용
+	public ArrayList<Member> selectMemberMiniList(SqlSessionTemplate sqlSession) {
+		return (ArrayList) sqlSession.selectList("memberMapper.selectMemberMiniList");
+	}
+	
 	// 회원 리스트 조회 (select) 
 	public int selectMemberCount(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("memberMapper.selectMemberCount");
 	}
 
+	// 회원 전체 리스트 조회용
 	public ArrayList<Member> selectMemberList(SqlSessionTemplate sqlSession, PageInfo pi) {
 		
 		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
@@ -25,7 +31,8 @@ public class AdminMemberDao {
 		RowBounds rowBounds = new RowBounds(offset, limit);
 
 		return (ArrayList) sqlSession.selectList("memberMapper.selectMemberList", null, rowBounds);
-
 	}
+	
+
 
 }
