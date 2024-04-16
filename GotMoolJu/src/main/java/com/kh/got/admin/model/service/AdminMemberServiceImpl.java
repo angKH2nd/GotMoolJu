@@ -37,11 +37,18 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 		return adminMDao.selectMemberList(sqlSession, pi);
 	}
 
-	// 회원 상세 정보 조회용
+	// 회원 상세 정보 조회 페이지, detailForm
 	@Override
-	public String selectMemberDetail() {
-		return null;
+	public Member selectMemberDetail(int userNo) {
+		return adminMDao.selectMemberDetail(sqlSession, userNo);
 	}
+
+	// 회원 디테일 폼 status 변경
+	@Override
+	public int updateMemberDetail(Member m) {
+		return adminMDao.updateMemberDetail(sqlSession, m);
+	}
+
 
 
 

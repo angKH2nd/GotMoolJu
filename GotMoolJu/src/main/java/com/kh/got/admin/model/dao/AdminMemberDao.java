@@ -32,6 +32,19 @@ public class AdminMemberDao {
 
 		return (ArrayList) sqlSession.selectList("memberMapper.selectMemberList", null, rowBounds);
 	}
+
+	// 회원 상세 정보 조회 페이지, detailForm
+	public Member selectMemberDetail(SqlSessionTemplate sqlSession, int userNo) {
+		return sqlSession.selectOne("memberMapper.selectMemberDetail", userNo);
+	}
+
+	// 회원 디테일 폼 status 변경
+	public int updateMemberDetail(SqlSessionTemplate sqlSession, Member m) {
+		return sqlSession.update("memberMapper.updateMemberDetail", m);
+	}
+	
+	
+	
 	
 
 

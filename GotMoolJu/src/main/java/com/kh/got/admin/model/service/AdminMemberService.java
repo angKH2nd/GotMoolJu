@@ -14,7 +14,12 @@ public interface AdminMemberService {
 	int selectMemberCount(); 			 			 // 회원 전체 숫자 조회용
 	ArrayList<Member> selectMemberList(PageInfo pi); // 회원 전체 리스트 조회용
 
-	// 회원 상세 정보 조회용
-	String selectMemberDetail();
+	// 회원 상세 정보 조회용, detailForm
+	Member selectMemberDetail(int userNo);
+
+	// 회원 디테일 폼 status 변경
+	int updateMemberDetail(Member m);
+	
+	
 	
 }

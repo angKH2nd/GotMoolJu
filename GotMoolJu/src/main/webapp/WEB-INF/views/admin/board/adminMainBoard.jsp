@@ -165,7 +165,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <!-- 4번 card title -->
               <div class="card-header">
                 <h4 class="card-title">회원조회</h4>
-                <a href="memberList.ad" class="card-category" style="float:right">
+                <a href="memberList.ad" class="card-category" style="float:right; text-decoration: none !important" >
                  &lt; 더보기 &gt;
                 </a>
               </div>
