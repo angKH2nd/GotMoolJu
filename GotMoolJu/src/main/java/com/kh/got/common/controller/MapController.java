@@ -19,7 +19,14 @@ public class MapController {
 	
 	@RequestMapping(value="select.ma", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public String selectAllList() {
+	public String selectAllList(String north, String east, String south, String west, String centerLat, String centerLng) {
+		
+		System.out.println("north : " + north);
+		System.out.println("east : " + east);
+		System.out.println("south : " + south);
+		System.out.println("west : " + west);
+		System.out.println("centerLat : " + centerLat);
+		System.out.println("centerLng : " + centerLng);
 		
 		ArrayList<MapVO> list = mService.selectAllList();
 		

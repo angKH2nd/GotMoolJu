@@ -44,6 +44,45 @@
 			maxZoom: 17,
 			minZoom: 8
 		});
+
+
+		/* 지도 범위 구하기
+		var rect = new naver.maps.Rectangle({
+			bounds: map.getBounds(),
+			map: map
+		});
+
+		// 지도의 bounds가 변경될 때 이벤트 리스너 추가
+		naver.maps.Event.addListener(map, "bounds_changed", function() {
+			// bounds 변경 시 rect 사각형의 bounds 업데이트
+			var newBounds = map.getBounds();
+			rect.setBounds(newBounds);
+
+			// 500ms 지연 후 AJAX 요청 실행
+			setTimeout(function() {
+				var center = map.getCenter();
+				$.ajax({
+					url: "select.ma",
+					type: "GET",  // HTTP 메소드 지정, POST를 사용할 수도 있음
+					data: {
+						// rect.getBounds()를 호출하여 최신 bounds 정보를 서버로 전송
+						north: newBounds.getNE().lat(),
+						east: newBounds.getNE().lng(),
+						south: newBounds.getSW().lat(),
+						west: newBounds.getSW().lng(),
+						centerLat: center.lat(),  // 중심 위도
+                		centerLng: center.lng()
+					},
+					success: function(data) {
+						// console.log("성공:", data);
+					},
+					error: function() {
+						console.log("AJAX 요청 실패");
+					}
+				});
+			}, 1000);
+		});
+		*/
 	
 		// 광역시청
 		/*
@@ -111,7 +150,7 @@
 	
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
-			// 여기서 함수 호출
+			
 			handleZoomChange(zoomLevel);
 
 			if (zoomLevel <= 10) {
@@ -132,16 +171,18 @@
 				
 				
 			}
-			
-    
-
+		
 		});
 
+		naver.maps.Event.addListener(map, 'zoom_changed', function() {
+			var zoomLevel = map.getZoom();
+
+			handleZoomChange(zoomLevel);
+		})
 	
 		// 줌 변경 시 실행할 함수
 		function handleZoomChange(zoomLevel) {
-			// 여기에 줌 변경 시 실행할 작업을 넣으세요
-			// 예를 들어, 줌 레벨에 따라 UI 요소를 업데이트하거나 추가 작업을 수행할 수 있습니다
+			
 			$("#zoom").html("줌 레벨 : " + zoomLevel);
 		}
 		

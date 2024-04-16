@@ -7,23 +7,22 @@ var markers = [];
 
 
 					for(let i in data){
-						marker = new naver.maps.Marker({
-								position: new naver.maps.LatLng(data[i].aptLocation.split(",")[1], data[i].aptLocation.split(",")[0]),
-								map: map,
-								icon: {
-									content: [
-										'<div style="width:100px; height:30px; border-radius:10%; background-color:gray; text-align: center;">',
-											'<div>',
-													'<span class="map-name">' + data[i].aptName + '</span>',
-											'</div>',
-										'</div>'
-									].join(''),
-									size: new naver.maps.Size(25, 34),
-									scaledSize: new naver.maps.Size(25, 34),
-									origin: new naver.maps.Point(0, 0),
-									anchor: new naver.maps.Point(12, 34),
-									draggable: true
-								}
+						var marker = new naver.maps.Marker({
+									position: new naver.maps.LatLng(data[i].aptLocation.split(",")[1], data[i].aptLocation.split(",")[0]),
+									map: map,
+									icon: {
+										content: [
+											'<div style="width:100px; height:30px; border-radius:10%; background-color:gray; text-align: center;">',
+												'<div>',
+														'<span class="map-name">' + data[i].aptName + '</span>',
+												'</div>',
+											'</div>'
+										].join(''),
+										size: new naver.maps.Size(25, 34),
+										scaledSize: new naver.maps.Size(25, 34),
+										origin: new naver.maps.Point(0, 0),
+										anchor: new naver.maps.Point(12, 34),
+									}
 							
 						});
 
@@ -66,21 +65,21 @@ var markers = [];
             anchor: N.Point(20, 20)
         };
 
-			function markering(){
+		function markering(){
 
+			new MarkerClustering({
+				minClusterSize: 4,
+				maxZoom: 16,
+				map: map,
+				markers: markers,
+				disableClickZoom: false,
+				gridSize: 150,
+				icons: [marker1, marker2, marker3, marker4, marker5],
+				indexGenerator: [5, 10, 30, 50, 100],
+				stylingFunction: function(clusterMarker, count) {
+					$(clusterMarker.getElement()).find('div:first-child').text(count);
+				}
+			});
+		}
 				
-				var markerClustering = new MarkerClustering({
-					minClusterSize: 4,
-					maxZoom: 16,
-					map: map,
-					markers: markers,
-					disableClickZoom: false,
-					gridSize: 150,
-					icons: [marker1, marker2, marker3, marker4, marker5],
-					indexGenerator: [5, 10, 30, 50, 100],
-					stylingFunction: function(clusterMarker, count) {
-						$(clusterMarker.getElement()).find('div:first-child').text(count);
-					}
-				});
-				
-			}
+			

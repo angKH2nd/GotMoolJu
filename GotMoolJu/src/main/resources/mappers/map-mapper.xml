@@ -18,17 +18,9 @@
 	<select id="selectAllList" resultMap="mapResult"> 
 	select 
 		   APT_NO
-		 , APT_ROOM_TYPE
-		 , APT_SELLING_TYPE
 		 , APT_LOCATION
-		 , APT_NAME
-		 , APT_INTRODUCE
-		 , APT_PRICE
-		 , APT_IMG_URL
-		 , APT_IMG_URLS
-		 , APT_DESC
 	  from tb_apt
-	 where rownum between 1 and 2000
+	 where rownum between 1 and 200
 	 </select>
 
 
