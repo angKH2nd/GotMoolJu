@@ -318,20 +318,29 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 							}
 						</script>
 					 -->
-	                <a
-	                  href="memberDetailUpdate.ad?mno=${m.userNo}&mStatus=${ m.userStatus }"
+	                <button
 	                  id="detailFormUp"
 	                  style="color: whitesmoke;
 	                  text-align: center;
 	                  text-decoration: none !important"
-	                  onclick="updateLink()"
-	                  >저장</a>
-	                   
+	                  onclick="updateLink();" 
+	                  type="button"
+	                  >저장</button>
+	                   <input type="hidden" id="admUpdateUserNo" value=${ m.userNo }>
 	                    
 	              </div>
 	              
 	              
+	              
+	              
 	              <script>
+	              	function updateLink() {
+	              		mno = $("#admUpdateUserNo").val();
+	              		mStatus = $("#statusSelect").val();
+	              		location.href = "memberDetailUpdate.ad?mno=" + mno + "&mStatus=" + mStatus;
+	              	}
+	              
+	              	/*
 	                document.addEventListener("DOMContentLoaded", function () {
 	                  var clickableDiv = document.getElementById(
 	                    "detailFormUpdateClick"
@@ -344,6 +353,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                    }
 	                  });
 	                });
+	              	*/
 	              </script>
 	            </div>
 	          </div>

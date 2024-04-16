@@ -75,6 +75,7 @@ public class AdminController {
 		return "admin/member/adminMemberDetail";
 		
 	}
+	
 	// 회원 디테일 폼 status 변경
 	@RequestMapping("memberDetailUpdate.ad")
 	public String updateMemberDetail(@RequestParam("mno") int mno,@RequestParam("mStatus") String mStatus, Model model, HttpSession session) {
@@ -101,5 +102,4 @@ public class AdminController {
 	
 	
 	}
-
 }
