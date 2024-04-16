@@ -80,10 +80,30 @@ function updateImpReply(no, content) {
 /* -------------- 좋아요 싫어요 관련 -------------- */
 $(document).on("click", ".improvement-can-select", function() {
 	var impReplyChoose = $(this).closest('.improvement-can-select').data("imp-reply-choose");
-	var impReplyType = $(this).closest('.improvement-can-select').data("type");
-	console.log('원래 내 값 : ' + impReplyChoose);
-	console.log('지금 내가 누른 값 : ' + impReplyType);
+	var impReplyNo = $(this).closest('.improvement-can-select').data("reply-no");
+	
+	updateImpReplyChoose(impReplyNo, impReplyChoose);
 })
+
+function updateImpReplyChoose(no, choose) {
+	$.ajax({
+		url: "updateImpReplyChoose.etc",
+		data: {
+			impReplyNo:no,
+			impReplyChoose:choose
+		},
+		success: function (result) {
+			if(result !== 1){
+				swal('업데이트 실패!', '관리자에게 문의해주세요', 'warning');
+			}
+			toggleDiv('etc');
+			toggleDiv('etc');
+			toggleEtcDiv('insertImprovementIdeation');
+		}, error: function () {
+			swal('업데이트 실패!', '관리자에게 문의해주세요', 'warning');
+		}
+	});
+}
 /* -------------- 좋아요 싫어요 관련 -------------- */
 
 function loadComments(impStart, loadCount) {
@@ -93,9 +113,13 @@ function loadComments(impStart, loadCount) {
       		var myImp = JSON.parse(data.myImp);
       		var impList = JSON.parse(data.impList);
       		
-      		console.log(myImp);
-      		console.log(myImp[0].impChooseReplyNo);
-      		console.log(impList);
+      		var myImpArr = []; // 좋아요 싫어요 표시한 게시글 번호
+      		var myImpArr2 = []; // 좋아요 싫어요 상태 값
+      		
+      		for(let i = 0; i < myImp.length; i++){
+      			myImpArr[i] = myImp[i].impChooseReplyNo;
+      			myImpArr2[i] = myImp[i].impChooseStatus;
+      		}
       		
       		let value = "";
 
@@ -125,10 +149,23 @@ function loadComments(impStart, loadCount) {
 		      					`
 		      		}else { // 작성자 본인이 아닐 때
 		      			if(impList[i].impReplyType === 'O'){ // 비밀 댓글이 아닐 때
-		      					if(){ // 좋아요 싫어요 체크되었을 때
+		      				let matchFound = false;
+		      				let matchValue;
+		      				let matchStatus;
+		      				
+		      				for(let j = 0; j < myImpArr.length; j++){
+		      					if(myImpArr[j] === impList[i].impReplyNo){
+		      						matchFound = true;
+		      						matchValue = myImpArr[j];
+		      						matchStatus = myImpArr2[j];
 		      						
-				      			}else { // 좋아요 싫어요 체크하지 않았을 때
-				      				value += `
+		      						break;
+		      					}
+		      				}
+		      				
+	      					if(matchFound){ // 좋아요 싫어요 체크되었을 때
+	      						if(matchStatus == 1){ // 좋아요
+	      							value += `
 				      						<div class="improvement-reply">
 												<div class="improvement-reply-profile">
 													<div class="improvement-reply-profile-img fl centerXY"><img width=25 height=25 class="brc" src="${impList[i].impReplyProfile}"></div>
@@ -143,14 +180,58 @@ function loadComments(impStart, loadCount) {
 													<div class="improvement-alert fl centerY"></div>
 													<div class="improvement-blank fl"></div>
 													<div class="improvement-finger fl">
-														<div class="improvement-finger-likes fl bdlg centerY"><i class="fa-solid fa-thumbs-up" style="color: red; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyLikes}</span></div>
-														<div class="improvement-finger-dislikes fl bdlg centerY"><i class="fa-solid fa-thumbs-down" style="color: blue; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyDislikes}</span></div>
+														<div class="improvement-finger-likes improvement-can-select improvement-choose-likes fl bdlg centerY mh" data-imp-reply-choose=1 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-up" style="color: red; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyLikes}</span></div>
+														<div class="improvement-finger-dislikes improvement-can-select fl bdlg centerY mh" data-imp-reply-choose=2 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-down" style="color: blue; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyDislikes}</span></div>
 													</div>
 												</div>
 											</div>
 					      					`
-				      			}
-				      		})
+	      						}else { // 싫어요
+	      							value += `
+				      						<div class="improvement-reply">
+												<div class="improvement-reply-profile">
+													<div class="improvement-reply-profile-img fl centerXY"><img width=25 height=25 class="brc" src="${impList[i].impReplyProfile}"></div>
+													<div class="improvement-reply-profile-nickname fl centerY">${impList[i].impReplyWriter}</div>
+													<div class="improvement-reply-blank fl"></div>
+													<div class="improvement-edit fl centerXY"></div>
+													<div class="improvement-delete fl centerXY"></div>
+												</div>
+												<div class="improvement-reply-content">${impList[i].impReplyContent}</div>
+												<div class="improvement-reply-date">
+													<div class="improvement-date fl centerY">${impList[i].impReplyModifyDate}</div>
+													<div class="improvement-alert fl centerY"></div>
+													<div class="improvement-blank fl"></div>
+													<div class="improvement-finger fl">
+														<div class="improvement-finger-likes improvement-can-select fl bdlg centerY mh" data-imp-reply-choose=1 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-up" style="color: red; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyLikes}</span></div>
+														<div class="improvement-finger-dislikes improvement-can-select improvement-choose-dislikes fl bdlg centerY mh" data-imp-reply-choose=2 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-down" style="color: blue; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyDislikes}</span></div>
+													</div>
+												</div>
+											</div>
+					      					`
+	      						}
+			      			}else { // 좋아요 싫어요 체크하지 않았을 때
+			      				value += `
+			      						<div class="improvement-reply">
+											<div class="improvement-reply-profile">
+												<div class="improvement-reply-profile-img fl centerXY"><img width=25 height=25 class="brc" src="${impList[i].impReplyProfile}"></div>
+												<div class="improvement-reply-profile-nickname fl centerY">${impList[i].impReplyWriter}</div>
+												<div class="improvement-reply-blank fl"></div>
+												<div class="improvement-edit fl centerXY"></div>
+												<div class="improvement-delete fl centerXY"></div>
+											</div>
+											<div class="improvement-reply-content">${impList[i].impReplyContent}</div>
+											<div class="improvement-reply-date">
+												<div class="improvement-date fl centerY">${impList[i].impReplyModifyDate}</div>
+												<div class="improvement-alert fl centerY"></div>
+												<div class="improvement-blank fl"></div>
+												<div class="improvement-finger fl">
+													<div class="improvement-finger-likes improvement-can-select fl bdlg centerY mh" data-imp-reply-choose=1 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-up" style="color: red; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyLikes}</span></div>
+													<div class="improvement-finger-dislikes improvement-can-select fl bdlg centerY mh" data-imp-reply-choose=2 data-reply-no=${impList[i].impReplyNo}><i class="fa-solid fa-thumbs-down" style="color: blue; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyDislikes}</span></div>
+												</div>
+											</div>
+										</div>
+				      					`
+			      			}
 		      			}else { // 비밀 댓글일 때
 		      				value += `
 		      						<div class="improvement-reply">

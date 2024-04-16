@@ -72,5 +72,36 @@
 		  from tb_imp_choose
 		 where imp_choose_user_no = #{impChooseUserNo}
 	</select>
+	
+	<delete id="deleteImpChooseList">
+		delete from tb_imp_choose
+		 where imp_choose_user_no = #{impChooseUserNo}
+		   and imp_choose_reply_no = #{impChooseReplyNo}
+		   and imp_choose_status = #{impChooseStatus}
+	</delete>
+	
+	<update id="updateImpChooseList">
+		update
+			   tb_imp_choose
+		   set imp_choose_status = #{impChooseStatus}
+		 where imp_choose_user_no = #{impChooseUserNo}
+		   and imp_choose_reply_no = #{impChooseReplyNo}
+	</update>
+	
+	<insert id="insertImpChooseList">
+		insert
+		  into tb_imp_choose
+		     (
+		       imp_choose_user_no
+		     , imp_choose_reply_no
+		     , imp_choose_status
+		     )
+		values
+			 (
+			   #{impChooseUserNo}
+			 , #{impChooseReplyNo}
+			 , #{impChooseStatus}
+			 )
+	</insert>
 	 
 </mapper>

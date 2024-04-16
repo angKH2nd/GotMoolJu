@@ -17,4 +17,13 @@ public interface EtcService {
 	// 3. 개선의견 수정 서비스
 	int updateImpReply(int impReplyNo, String impReplyContent);
 	
+	// 4. 개선의견 좋아요싫어요 삭제 서비스
+	int deleteImpChooseList(ImpChoose impChoose);
+	
+	// 5. 개선의견 좋아요싫어요 변경 서비스
+	int updateImpChooseList(ImpChoose impChoose);
+	
+	// 6. 개선의견 좋아요싫어요 등록 서비스
+	int insertImpChooseList(ImpChoose impChoose);
+	
 }

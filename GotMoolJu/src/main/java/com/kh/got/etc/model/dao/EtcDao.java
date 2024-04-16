@@ -33,5 +33,17 @@ public class EtcDao {
 	public ArrayList<ImpChoose> selectImpChooseList(SqlSessionTemplate sqlSession, int impChooseUserNo) {
 		return (ArrayList)sqlSession.selectList("etcMapper.selectImpChooseList", impChooseUserNo);
 	}
+
+	public int deleteImpChooseList(SqlSessionTemplate sqlSession, ImpChoose impChoose) {
+		return sqlSession.delete("etcMapper.deleteImpChooseList", impChoose);
+	}
+
+	public int updateImpChooseList(SqlSessionTemplate sqlSession, ImpChoose impChoose) {
+		return sqlSession.update("etcMapper.updateImpChooseList", impChoose);
+	}
+
+	public int insertImpChooseList(SqlSessionTemplate sqlSession, ImpChoose impChoose) {
+		return sqlSession.insert("etcMapper.insertImpChooseList", impChoose);
+	}
 	
 }

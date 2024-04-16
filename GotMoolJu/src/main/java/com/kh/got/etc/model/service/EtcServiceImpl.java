@@ -38,6 +38,21 @@ public class EtcServiceImpl implements EtcService {
 	public int updateImpReply(int impReplyNo, String impReplyContent) {
 		return eDao.updateImpReply(sqlSession, impReplyNo, impReplyContent);
 	}
+
+	@Override
+	public int deleteImpChooseList(ImpChoose impChoose) {
+		return eDao.deleteImpChooseList(sqlSession, impChoose);
+	}
+
+	@Override
+	public int updateImpChooseList(ImpChoose impChoose) {
+		return eDao.updateImpChooseList(sqlSession, impChoose);
+	}
+
+	@Override
+	public int insertImpChooseList(ImpChoose impChoose) {
+		return eDao.insertImpChooseList(sqlSession, impChoose);
+	}
 	
 	
 }
