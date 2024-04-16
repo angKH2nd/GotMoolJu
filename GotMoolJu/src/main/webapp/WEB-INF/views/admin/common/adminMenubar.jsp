@@ -55,7 +55,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </li>
             <li>
               <a href="memberList.ad">
-                <i class="now-ui-icons design_bullet-list-67"></i>
+                <i class="now-ui-icons business_badge"></i>
                 <p>회원</p>
               </a>
             </li>
@@ -84,9 +84,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="./typography.html">
-                <i class="now-ui-icons text_caps-small"></i>
-                <p>Typography</p>
+              <a href="announcementList.ad">
+                <i class="now-ui-icons business_bulb-63"></i>
+                <p>공지사항</p>
               </a>
             </li>
             <li class="active-pro">

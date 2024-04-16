@@ -203,147 +203,67 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 			})
 		</script>
 			
-          <!-- 5번 시작-->
+          <!-- 5번 보드 감싸고 있는 div, 패딩 o-->
           <div class="col-md-6">
-            <!-- 5번 board-->
-            <div class="card card-tasks">
+            <!-- 5번 보드-->
+            <div class="card" style="height: 441px">
+              <!-- 5번 card title -->
               <div class="card-header">
-                <h5 class="card-category">Backend development</h5>
-                <h4 class="card-title">Tasks</h4>
+                <h4 class="card-title">공지사항</h4>
+                <a href="#" class="card-category" style="float:right; text-decoration: none !important" >
+                 &lt; 더보기 / function 달 예정, 가장 최신글이 가장 위에 보일 예정 &gt;
+                </a>
               </div>
-              <!-- 5번 board content-->
+              <!-- 5번 card content-->
               <div class="card-body">
-                <div class="table-full-width table-responsive">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                checked
-                              />
-                              <span class="form-check-sign"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-left">
-                          Sign contract for "What are conference organizers
-                          afraid of?"
-                        </td>
-                        <td class="td-actions text-right">
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Edit Task"
-                          >
-                            <i class="now-ui-icons ui-2_settings-90"></i>
-                          </button>
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Remove"
-                          >
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" />
-                              <span class="form-check-sign"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-left">
-                          Lines From Great Russian Literature? Or E-mails From
-                          My Boss?
-                        </td>
-                        <td class="td-actions text-right">
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Edit Task"
-                          >
-                            <i class="now-ui-icons ui-2_settings-90"></i>
-                          </button>
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Remove"
-                          >
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input
-                                class="form-check-input"
-                                type="checkbox"
-                                checked
-                              />
-                              <span class="form-check-sign"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td class="text-left">
-                          Flooded: One year later, assessing what was lost and
-                          what was found when a ravaging rain swept through
-                          metro Detroit
-                        </td>
-                        <td class="td-actions text-right">
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Edit Task"
-                          >
-                            <i class="now-ui-icons ui-2_settings-90"></i>
-                          </button>
-                          <button
-                            type="button"
-                            rel="tooltip"
-                            title=""
-                            class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
-                            data-original-title="Remove"
-                          >
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
-                          </button>
-                        </td>
-                      </tr>
+                <div class="table-responsive">
+                  <table class="table" id="miniAnnouncementArea">
+                    <thead class="text-primary">
+                      <th>No</th>
+                      <th>작성자</th>
+                      <th>제목</th>
+                      <th>작성일</th>
+                    </thead>
+                    <tbody id="AnnouncementlistClick">
+		                      <tr>
+		                        <td class="ano">1</td>
+		                        <td>관리자</td>
+		                        <td>오픈! 갓물주!</td>
+		                        <td>2024/03/26</td>
+		                      </tr>
+		                      <tr>
+		                        <td class="ano">2</td>
+		                        <td>관리자</td>
+		                        <td>공지제목2!</td>
+		                        <td>2024/03/27</td>
+		                      </tr>
+		                      <tr>
+		                        <td class="ano">3</td>
+		                        <td>관리자</td>
+		                        <td>공지제목3!</td>
+		                        <td>2024/03/28</td>
+		                      </tr>
+		                      <tr>
+		                        <td class="ano">4</td>
+		                        <td>관리자</td>
+		                        <td>공지제목4!</td>
+		                        <td>2024/03/29</td>
+		                      </tr>
+		                      <tr>
+		                        <td class="ano">5</td>
+		                        <td>관리자</td>
+		                        <td>공지제목5!</td>
+		                        <td>2024/03/30</td>
+		                      </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-              <!-- 5번 board footer-->
-              <div class="card-footer">
-                <hr />
-                <div class="stats">
-                  <i class="now-ui-icons loader_refresh spin"></i> Updated 3
-                  minutes ago
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+         </div>
+       </div>
+   </div>
 
     <%-- Core JS Files --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>

@@ -102,4 +102,13 @@ public class AdminController {
 	
 	
 	}
+	// 잠시 확인용, 공지사항
+	@RequestMapping("announcementList.ad")
+    public String openAnnoun() {
+		
+
+        return "board/adminAnnouncement";
+    }
+	
+	
 }

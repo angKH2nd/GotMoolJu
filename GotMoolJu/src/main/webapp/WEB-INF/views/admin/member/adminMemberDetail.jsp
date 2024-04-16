@@ -303,10 +303,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                  </button>
 	                </div>
 	              </div>
-	              <div
+	             <!--  <div
 	                id="detailFormUpdateClick"
 	                style="background-color: #12192c; height: 30px; cursor: pointer; text-align: center"
-	              >
+	              >  -->
 	<!--   <a href="#" id="detailFormUp" style="color: whitesmoke; text-align: center; text-decoration: none !important" onclick="updateLink()">저장</a>  -->
 	                 
 	                 <!-- 
@@ -320,8 +320,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 					 -->
 	                <button
 	                  id="detailFormUp"
-	                  style="color: whitesmoke;
+	                  style="background-color: #12192c; color: whitesmoke;
 	                  text-align: center;
+	                  width:350px;
 	                  text-decoration: none !important"
 	                  onclick="updateLink();" 
 	                  type="button"
