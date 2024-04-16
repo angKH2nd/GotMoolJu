@@ -17,6 +17,7 @@
 		<typeAlias type="com.kh.got.common.model.vo.MapVO" alias="MapVO"/>
 		
 		<typeAlias type="com.kh.got.etc.model.vo.Improvement" alias="Improvement"/>
+		<typeAlias type="com.kh.got.etc.model.vo.ImpChoose" alias="ImpChoose"/>
 	</typeAliases>
 	
 	<mappers>

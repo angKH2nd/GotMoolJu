@@ -173,7 +173,15 @@
 	margin-right: 8px;
 }
 
+.improvement-choose-likes {
+	border: 0.5px solid red;
+	color: red;
+}
 
+.improvement-choose-dislikes {
+	border: 0.5px solid blue;
+	color: blue;
+}
 
 
 

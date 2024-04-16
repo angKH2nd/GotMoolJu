@@ -16,10 +16,10 @@ public class Improvement {
 	private String impReplyWriter;
 	private String impReplyProfile;
 	private String impReplyType;
-	private int impReplyLikes;
-	private int impReplyDislikes;
 	private String impReplyCreateDate;
 	private String impReplyModifyDate;
 	private String impReplyStatus;
+	private String impReplyLikes;
+	private String impReplyDislikes;
 	
 }

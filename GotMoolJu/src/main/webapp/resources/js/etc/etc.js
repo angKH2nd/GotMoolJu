@@ -22,7 +22,10 @@ function cancelEtcDiv() {
 
 function resetInsertImprovementIdeation() {
 	/* ------------------- insertImprovementIdeation input 리셋 ------------------- */
-	
+	$("#loadCount").val(5);
+	if($("#isLogin").val() !== 'blank'){
+		loadComments(0, $("#loadCount").val());
+	}
     /* ------------------- insertImprovementIdeation input 리셋 ------------------- */
 }
 

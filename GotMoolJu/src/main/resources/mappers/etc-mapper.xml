@@ -7,28 +7,70 @@
 		<result column="imp_reply_writer" property="impReplyWriter"/>
 		<result column="imp_reply_profile" property="impReplyProfile"/>
 		<result column="imp_reply_type" property="impReplyType"/>
-		<result column="imp_reply_likes" property="impReplyLikes"/>
-		<result column="imp_reply_dislikes" property="impReplyDislikes"/>
 		<result column="imp_reply_create_date" property="impReplyCreateDate"/>
 		<result column="imp_reply_modify_date" property="impReplyModifyDate"/>
 		<result column="imp_reply_status" property="impReplyStatus"/>
+		<result column="imp_reply_likes" property="impReplyLikes"/>
+		<result column="imp_reply_dislikes" property="impReplyDislikes"/>
+	</resultMap>
+	
+	<resultMap id="impChooseResult" type="ImpChoose">
+		<result column="imp_choose_user_no" property="impChooseUserNo" />
+		<result column="imp_choose_reply_no" property="impChooseReplyNo" />
+		<result column="imp_choose_status" property="impChooseStatus" />
 	</resultMap>
 
 	<select id="selectImpReplyList" resultMap="impReplyResult">
-	 	select
-		       imp_reply_no
-		     , imp_reply_content
-		     , imp_reply_writer
-		     , imp_reply_profile
-		     , imp_reply_type
-		     , imp_reply_likes
-		     , imp_reply_dislikes
-		     , to_char(imp_reply_create_date, 'YYYY-MM-DD') as "imp_reply_create_date"
-		     , to_char(imp_reply_modify_date, 'YYYY-MM-DD') as "imp_reply_modify_date"
-		     , imp_reply_status
-		  from tb_improvement
-		 order
-		    by imp_reply_no desc
+	 	 SELECT
+			    i.IMP_REPLY_NO
+			  , i.IMP_REPLY_CONTENT
+			  , i.IMP_REPLY_WRITER
+			  , i.IMP_REPLY_PROFILE
+			  , i.IMP_REPLY_TYPE
+			  , TO_CHAR(i.IMP_REPLY_CREATE_DATE, 'YYYY-MM-DD') AS IMP_REPLY_CREATE_DATE
+			  , TO_CHAR(i.IMP_REPLY_MODIFY_DATE, 'YYYY-MM-DD') AS IMP_REPLY_MODIFY_DATE
+			  , i.IMP_REPLY_STATUS
+			  , COUNT(CASE WHEN c.IMP_CHOOSE_STATUS = 1 THEN 1 END) AS IMP_REPLY_LIKES
+			  , COUNT(CASE WHEN c.IMP_CHOOSE_STATUS = 2 THEN 1 END) AS IMP_REPLY_DISLIKES
+		   FROM TB_IMPROVEMENT i
+		   LEFT 
+		   JOIN TB_IMP_CHOOSE c ON i.IMP_REPLY_NO = c.IMP_CHOOSE_REPLY_NO
+		  GROUP 
+		   	 BY
+			    i.IMP_REPLY_NO
+			  , i.IMP_REPLY_CONTENT
+			  , i.IMP_REPLY_WRITER
+			  , i.IMP_REPLY_PROFILE
+			  , i.IMP_REPLY_TYPE
+			  , i.IMP_REPLY_CREATE_DATE
+			  , i.IMP_REPLY_MODIFY_DATE
+			  , i.IMP_REPLY_STATUS
+		  ORDER 
+		  	 BY i.IMP_REPLY_NO DESC
+	</select>
+	
+	<update id="deleteImpReply">
+		update
+			   tb_improvement
+		   set imp_reply_status = 'N'
+		 where imp_reply_no = #{impReplyNo}
+	</update>
+	
+	<update id="updateImpReply">
+		update
+			   tb_improvement
+		   set imp_reply_content = #{impReplyContent}
+		     , imp_reply_modify_date = sysdate
+		 where imp_reply_no = #{impReplyNo}
+	</update>
+	
+	<select id="selectImpChooseList" resultMap="impChooseResult">
+		select
+			   imp_choose_user_no
+		     , imp_choose_reply_no
+		     , imp_choose_status
+		  from tb_imp_choose
+		 where imp_choose_user_no = #{impChooseUserNo}
 	</select>
 	 
 </mapper>

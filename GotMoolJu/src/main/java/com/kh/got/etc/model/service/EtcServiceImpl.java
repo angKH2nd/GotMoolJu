@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.got.etc.model.dao.EtcDao;
+import com.kh.got.etc.model.vo.ImpChoose;
 import com.kh.got.etc.model.vo.Improvement;
 
 @Service
@@ -19,10 +20,24 @@ public class EtcServiceImpl implements EtcService {
 	private SqlSessionTemplate sqlSession;
 	
 	@Override
+	public ArrayList<ImpChoose> selectImpChooseList(int impChooseUserNo) {
+		return eDao.selectImpChooseList(sqlSession, impChooseUserNo);
+	}
+	
+	@Override
 	public ArrayList<Improvement> selectImpReplyList() {
 		return eDao.selectImpReplyList(sqlSession);
 	}
 
+	@Override
+	public int deleteImpReply(int impReplyNo) {
+		return eDao.deleteImpReply(sqlSession, impReplyNo);
+	}
+
+	@Override
+	public int updateImpReply(int impReplyNo, String impReplyContent) {
+		return eDao.updateImpReply(sqlSession, impReplyNo, impReplyContent);
+	}
 	
 	
 }
