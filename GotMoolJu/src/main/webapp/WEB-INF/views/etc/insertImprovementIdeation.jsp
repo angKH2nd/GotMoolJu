@@ -33,7 +33,7 @@
 			</div>
 			 --%>
 			<div class="improvement-img pd15">
-				<img width=419 height=200 src="resources/images/advertisement/adv6.jpg">
+				<img width=419 height=140 src="resources/images/advertisement/adv6.png">
 			</div>
 			<div class="improvement-text fs16 centerY">
 				갓물주가 대한민국 대표 부동산플랫폼으로 나아갈 수 있도록 고객님들의 솔직한 의견을 남겨주세요!
