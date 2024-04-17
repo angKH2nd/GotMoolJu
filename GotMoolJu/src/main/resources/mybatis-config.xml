@@ -26,5 +26,6 @@
 		<mapper resource="/mappers/re-mapper.xml"/>
 		<mapper resource="/mappers/map-mapper.xml"/>
 		<mapper resource="/mappers/etc-mapper.xml"/>
+		<mapper resource="/mappers/announcement-mapper.xml"/>
 	</mappers>
 </configuration>
