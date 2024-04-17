@@ -20,10 +20,10 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 	private SqlSessionTemplate sqlSession;
 	
 	// 메인 화면, 회원 5명 정도 조회용
-//	@Override
-//	public ArrayList<Member> selectMemberMiniList(PageInfo pi) {
-//		return adminMDao.selectMemberMiniList(sqlSession, pi);
-//	}
+	@Override
+	public ArrayList<Member> selectMemberMiniList() {
+		return adminMDao.selectMemberMiniList(sqlSession);
+	}
 	
 	// 회원 전체 숫자 조회용
 	@Override
@@ -37,11 +37,22 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 		return adminMDao.selectMemberList(sqlSession, pi);
 	}
 
-	// 회원 상세 정보 조회용
+	// 회원 상세 정보 조회 페이지, detailForm
 	@Override
-	public String selectMemberDetail() {
-		return null;
+	public Member selectMemberDetail(int userNo) {
+		return adminMDao.selectMemberDetail(sqlSession, userNo);
 	}
+
+	// 회원 디테일 폼 status 변경
+	@Override
+	public int updateMemberDetail(Member m) {
+		return adminMDao.updateMemberDetail(sqlSession, m);
+	}
+
+
+
+
+
 
 
 

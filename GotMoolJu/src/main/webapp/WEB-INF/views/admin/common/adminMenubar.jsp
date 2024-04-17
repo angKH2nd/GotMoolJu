@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +32,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <!-- 있으면 업그레이드가 가장 아래로 내려가짐-->
   </head>
   <body>
-    <div class="wrapper">
       <div class="sidebar" data-color="gotmoolju">
         <!-- <%--
         Tip 1: You can change the color of the sidebar using: data-color="gotmoolju | blue | green | orange | red | yellow"
@@ -46,7 +46,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
           <ul class="nav">
-            <li class="active">
+            <!-- active임 원래 -->
+            <li class="active1">
               <a href="main.ad">
                 <i class="now-ui-icons text_align-left"></i>
                 <p>메인화면</p>
@@ -54,68 +55,50 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </li>
             <li>
               <a href="memberList.ad">
-                <i class="now-ui-icons design_bullet-list-67"></i>
+                <i class="now-ui-icons business_badge"></i>
                 <p>회원</p>
               </a>
             </li>
             <li>
-              <a href="./icons.html">
-                <i class="now-ui-icons education_atom"></i>
-                <p>Icons</p>
+              <a href="announcementDetailList.ad">
+                <i class="now-ui-icons clothes_tie-bow"></i>
+                <p>잠깐 공지사항 디테일</p>
               </a>
             </li>
             <li>
               <a href="./notifications.html">
-                <i class="now-ui-icons ui-1_bell-53"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>Notifications</p>
               </a>
             </li>
             <li>
               <a href="./user.html">
-                <i class="now-ui-icons users_single-02"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>User Profile</p>
               </a>
             </li>
             <li>
               <a href="./tables.html">
-                <i class="now-ui-icons design_bullet-list-67"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>Table List</p>
               </a>
             </li>
             <li>
-              <a href="./typography.html">
-                <i class="now-ui-icons text_caps-small"></i>
-                <p>Typography</p>
+              <a href="announcementList.ad">
+                <i class="now-ui-icons business_bulb-63"></i>
+                <p>공지사항</p>
               </a>
             </li>
             <li class="active-pro">
-              <a href="#">
-                <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                <p>로그아웃 ?</p>
+              <a href="logout.me">
+                <i class="now-ui-icons media-1_button-power"></i>
+                <p>로그아웃</p>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-    <!-- 메뉴바 클릭 시 색 변경 안됨 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var navItems = document.querySelectorAll(".sidebar .nav li");
-
-        navItems.forEach(function (item) {
-          item.addEventListener("click", function () {
-            // 모든 항목에서 'active' 클래스 제거
-            navItems.forEach(function (item) {
-              item.classList.remove("active");
-            });
-            // 클릭한 항목에만 'active' 클래스 추가
-            this.classList.add("active");
-          });
-        });
-      });
-    </script>
 
     <!-- <%--   Core JS Files   --%> -->
     <script src="resources/assets/js/core/jquery.min.js"></script>

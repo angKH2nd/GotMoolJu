@@ -4,7 +4,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
-	<link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
+    <link
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+      href="resources/images/got/got_logo.ico"
+    />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -35,16 +40,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body>
     <!-- 메뉴바 삽입-->
-    
-    <div style="float: left;">
-    	<jsp:include page="common/adminMenubar.jsp" />
-    </div>
-    <jsp:include page="common/adminBigHeader.jsp" />
 
-    <jsp:include page="board/adminMainBoard.jsp" />  
-    
-    
-    
+    <div style="float: left">
+      <jsp:include page="common/adminMenubar.jsp" />
+    </div>
+      <jsp:include page="common/adminBigHeader.jsp" />
+    <jsp:include page="board/adminMainBoard.jsp" />
+
     <!--   Core JS Files   -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
