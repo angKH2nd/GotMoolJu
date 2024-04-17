@@ -60,26 +60,26 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="./icons.html">
-                <i class="now-ui-icons education_atom"></i>
-                <p>Icons</p>
+              <a href="announcementDetailList.ad">
+                <i class="now-ui-icons clothes_tie-bow"></i>
+                <p>잠깐 공지사항 디테일</p>
               </a>
             </li>
             <li>
               <a href="./notifications.html">
-                <i class="now-ui-icons ui-1_bell-53"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>Notifications</p>
               </a>
             </li>
             <li>
               <a href="./user.html">
-                <i class="now-ui-icons users_single-02"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>User Profile</p>
               </a>
             </li>
             <li>
               <a href="./tables.html">
-                <i class="now-ui-icons design_bullet-list-67"></i>
+                <i class="now-ui-icons clothes_tie-bow"></i>
                 <p>Table List</p>
               </a>
             </li>
@@ -90,9 +90,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li class="active-pro">
-              <a href="#">
-                <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                <p>로그아웃 ?</p>
+              <a href="logout.me">
+                <i class="now-ui-icons media-1_button-power"></i>
+                <p>로그아웃</p>
               </a>
             </li>
           </ul>

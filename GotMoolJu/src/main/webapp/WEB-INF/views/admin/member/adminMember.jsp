@@ -71,11 +71,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <thead class="text-primary">
 	                      <th>No</th>
 	                      <th>ID</th>
-	                      <th>NICKNAME</th>
-	                      <th>NAME</th>
-	                      <th>address</th>
-	                      <th>phone</th>
-	                      <th class="text-right">status</th>
+	                      <th>Nickname</th>
+	                      <th>Name</th>
+	                      <th>Address</th>
+	                      <th>Phone</th>
+	                      <th class="text-right">Status</th>
                       </thead>
                       <tbody id="memberlistClick1">
                         <c:forEach var="ad" items="${ list }">

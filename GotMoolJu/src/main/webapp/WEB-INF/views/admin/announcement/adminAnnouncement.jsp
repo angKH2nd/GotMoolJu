@@ -70,27 +70,53 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <table class="table" id="announcementList">
                       <thead class="text-primary">
 	                      <th>No</th>
-	                      <th>ID</th>
-	                      <th>NICKNAME</th>
-	                      <th>NAME</th>
-	                      <th>address</th>
-	                      <th>phone</th>
-	                      <th class="text-right">status</th>
+	                      <th>Writer</th>
+	                      <th style="width:45%">Title</th>
+	                      <th>Views</th>
+	                      <th>Created Date</th>
+	                      <th class="text-right">Status</th>
                       </thead>
                       <tbody id="announcementListClick1">
 	                      <tr>
-	                        <td class="ano">1</td>
-	                        <td>ㅇㅇ</td>
-	                        <td>ㅇㅇ</td>
-	                        <td>ㅇㅇ</td>
-	                        <td>ㅇㅇ</td>
-	                        <td>ㅇㅇ</td>
+	                        <td class="ano">30</td>
+	                        <td>관리자</td>
+	                        <td>안녕! 공지사항 30번째야!</td>
+	                        <td>3</td>
+	                        <td>2024-04-17</td>
+	                        <td class="text-right">Y</td>
+	                      </tr>
+	                      <tr>
+	                        <td class="ano">29</td>
+	                        <td>관리자</td>
+	                        <td>안녕! 공지사항 29번째야!</td>
+	                        <td>55</td>
+	                        <td>2024-04-16</td>
+	                        <td class="text-right">N</td>
+	                      </tr>
+	                      <tr>
+	                        <td class="ano">28</td>
+	                        <td>관리자</td>
+	                        <td>안녕! 공지사항 28번째야!</td>
+	                        <td>43</td>
+	                        <td>2024-04-15</td>
+	                        <td class="text-right">Y</td>
+	                      </tr>
+	                      <tr>
+	                        <td class="ano">27</td>
+	                        <td>관리자</td>
+	                        <td>안녕! 공지사항 27번째야!</td>
+	                        <td>22</td>
+	                        <td>2024-04-14</td>
+	                        <td class="text-right">Y</td>
 	                      </tr>
                       </tbody>
                     </table>
+                    <td class="text-center">
+                       <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
+                    </td>
                   </div>
+                  <br>
                 
-                <!-- 
             <div id="pagingArea" style="float:right">
                 <ul class="pagination">
                 	
@@ -117,7 +143,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         			</c:choose>
                 </ul>
             </div>
-             -->
+             
             
               </div>
             </div>
@@ -125,6 +151,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
+  </div>
+ </div>  
+    
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
