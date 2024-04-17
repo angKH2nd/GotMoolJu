@@ -80,7 +80,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <tr>
 	                        <td class="ano">30</td>
 	                        <td>관리자</td>
-	                        <td>안녕! 공지사항 30번째야!</td>
+	                        <td>안녕! 공지사항      30번째야!</td>
 	                        <td>3</td>
 	                        <td>2024-04-17</td>
 	                        <td class="text-right">Y</td>
