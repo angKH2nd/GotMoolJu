@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="announcementMapper">
-
+	<resultMap id="announcementResult" type="Announcement">
+		<result column="announcement_no" property="announcementNo" />
+		<result column="announcement_title" property="announcementTitle" />
+		<result column="announcement_content" property="announcementContent" />
+		<result column="announcement_writer" property="announcementWriter" />
+		<result column="announcement_count" property="announcementCount" />
+		<result column="announcement_create_date" property="announcementCreateDate" />
+		<result column="announcement_status" property="announcementStatus" />
+	</resultMap>
 	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </mapper>
