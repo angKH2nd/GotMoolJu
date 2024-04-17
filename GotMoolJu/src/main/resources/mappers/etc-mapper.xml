@@ -103,5 +103,25 @@
 			 , #{impChooseStatus}
 			 )
 	</insert>
+	
+	<insert id="insertImpReply">
+		insert
+		  into tb_improvement
+		  	 (
+		  	   imp_reply_no
+		  	 , imp_reply_content
+		  	 , imp_reply_writer
+		  	 , imp_reply_profile
+		  	 , imp_reply_type
+		  	 )
+		values
+			 (
+			   seq_imp_reply_no.nextval
+			 , #{impReplyContent}
+			 , #{impReplyWriter}
+			 , #{impReplyProfile}
+			 , #{impReplyType}
+			 )
+	</insert>
 	 
 </mapper>

@@ -63,6 +63,55 @@
 	height: 170px;
 }
 
+.improvement-input-area>div {
+	width: 100%;
+}
+
+.improvement-input-title {
+	height: 35px;
+}
+
+.improvement-input-content {
+	height: calc(100% - 70px);
+}
+
+.improvement-input-content>textarea {
+	width: 99%;
+	height: 98%;
+	resize: none;
+}
+
+.improvement-input-content>textarea:focus {
+	border: none;
+	outline: none;
+	border: 0.5px solid black;
+}
+
+.improvement-input-insert {
+	height: 35px;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.improvement-input-insert>div {
+	height: 100%;
+	line-height: 35px;
+}
+
+.improvement-input-count {
+	width: calc(100% - 350px);
+	padding-left: 5px;
+	color: gray;
+}
+
+.improvement-input-secret {
+	width: 295px;
+}
+
+.improvement-input-insert-btn {
+	width: 50px;
+	text-align: center;
+}
+
 .improvement-list-area {
 	height: calc(100% - 200px);
 }

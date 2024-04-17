@@ -3,6 +3,62 @@ function cancelInsertImprovementIdeation() {
 	cancelDiv();
 }
 
+function countHowLong() {
+	var textarea = $('.improvement-input-content textarea');
+    var inputLength = textarea.val().length;
+    
+    if (inputLength > 100) {
+        var truncatedInput = textarea.val().substring(0, 100);
+        textarea.val(truncatedInput);
+        inputLength = 100;
+    }
+    
+    $('#improvement-input-count-span').text(inputLength);
+}
+
+function changeSecret() {
+	if ($('#isSecret').val() === 'O') {
+        $('.improvement-input-secret i').removeClass('fa-lock').addClass('fa-lock-open');
+        $('#isSecret').val('S');
+    } else {
+        $('.improvement-input-secret i').removeClass('fa-lock-open').addClass('fa-lock');
+        $('#isSecret').val('O');
+    }
+}
+
+/* -------------- 등록 관련 -------------- */
+$(document).on("click", ".improvement-input-area .improvement-input-insert-btn", function() {
+	var textarea = $('.improvement-input-content textarea');
+    var inputLength = textarea.val().length;
+    
+	if(inputLength > 0) {
+		$.ajax({
+			url: "insertImpReply.etc",
+			data: {
+				impReplyContent:$(".improvement-input-content textarea").val(),
+				impReplyType:$("#isSecret").val()
+			},
+			success: function(result) {
+				if(result > 0) {
+					swal("개선의견 등록 성공!", "성공적으로 등록되었습니다. 소중한 의견 감사합니다.", 'success')
+					.then(function() {
+			            loadComments(0, $("#loadCount").val());
+			            $(".improvement-input-content textarea").val('');
+			            $("#improvement-input-count-span").html(0);
+			        })
+				}else {
+					swal("개선의견 등록 실패!", "관리자에게 문의해주세요", 'warning');
+				}
+			}, error: function(result) {
+				swal("개선의견 등록 실패!", "관리자에게 문의해주세요", 'warning');
+			}
+		});
+	}else {
+		swal("개선의견 등록 실패!", "내용을 입력해주세요.", 'warning');
+	}
+});
+/* -------------- 등록 관련 -------------- */
+
 /* -------------- 수정 삭제 관련 -------------- */
 $(document).on("click", ".improvement-delete .fa-trash", function() {
     var impReplyNo = $(this).closest('.improvement-delete').data("imp-reply-no"); // 해당 요소의 imp-reply-no 속성값 가져오기
@@ -121,6 +177,8 @@ function loadComments(impStart, loadCount) {
       			myImpArr2[i] = myImp[i].impChooseStatus;
       		}
       		
+      		$("#improvement-reply-total-count").html(impList.length);
+      		
       		let value = "";
 
       		for(let i = impStart; i < Math.min(impStart + loadCount, impList.length); i++){
@@ -138,7 +196,7 @@ function loadComments(impStart, loadCount) {
 									<div class="improvement-reply-content"><textarea readonly>${impList[i].impReplyContent}</textarea></div>
 									<div class="improvement-reply-date">
 										<div class="improvement-date fl centerY">${impList[i].impReplyModifyDate}</div>
-										<div class="improvement-alert fl centerY"><button type="button" class="btn-format mh"><i class="fa-solid fa-person-military-pointing fa-sm"></i> 신고</button></div>
+										<div class="improvement-alert fl centerY"></div>
 										<div class="improvement-blank fl"></div>
 										<div class="improvement-finger fl">
 											<div class="improvement-finger-likes fl bdlg centerY"><i class="fa-solid fa-thumbs-up" style="color: red; padding-left: 5px; text-align: left;"></i><span style="text-align: right; width: 27px; font-size: 14px; padding-right: 3px;" class="fb"> ${impList[i].impReplyLikes}</span></div>

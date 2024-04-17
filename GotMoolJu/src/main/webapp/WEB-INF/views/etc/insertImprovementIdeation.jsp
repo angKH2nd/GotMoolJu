@@ -41,7 +41,14 @@
 		</div>
 		<div class="improvement-reply-area pd15 no-scrollbar">
 			<div class="improvement-input-area">
-				댓글 작성 영역
+				<div class="improvement-input-title">의견 <span id="improvement-reply-total-count"></span></div>
+				<div class="improvement-input-content"><textarea onkeyup="countHowLong();"></textarea></div>
+				<div class="improvement-input-insert">
+					<div class="improvement-input-count fl"><span id="improvement-input-count-span">0</span>/100</div>
+					<div class="improvement-input-secret fl mh" onclick="changeSecret();"><i class="fa-solid fa-lock-open"></i></div>
+					<input type="hidden" id="isSecret" value="O">
+					<div class="improvement-input-insert-btn fl mh">등록</div>
+				</div>
 			</div>
 			<div class="improvement-list-area">
 				

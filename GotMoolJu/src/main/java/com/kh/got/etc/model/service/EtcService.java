@@ -26,4 +26,7 @@ public interface EtcService {
 	// 6. 개선의견 좋아요싫어요 등록 서비스
 	int insertImpChooseList(ImpChoose impChoose);
 	
+	// 7. 개선의견 등록 서비스
+	int insertImpReply(Improvement imp);
+	
 }

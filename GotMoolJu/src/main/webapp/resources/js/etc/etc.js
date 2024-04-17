@@ -26,6 +26,10 @@ function resetInsertImprovementIdeation() {
 	if($("#isLogin").val() !== 'blank'){
 		loadComments(0, $("#loadCount").val());
 	}
+	$(".improvement-input-content textarea").val('');
+	$("#improvement-input-count-span").html(0);
+    $("#isSecret").val('S');
+    $('.improvement-input-secret i').removeClass('fa-lock').addClass('fa-lock-open');
     /* ------------------- insertImprovementIdeation input 리셋 ------------------- */
 }
 

@@ -50,7 +50,13 @@ public class EtcController {
 	public int updateImpReplyChoose(@RequestParam("impReplyNo") int impReplyNo, @RequestParam("impReplyChoose") int impReplyChoose, HttpSession session) {
 		int result = 0;
 		int loginUserNo = ((Member)session.getAttribute("loginUser")).getUserNo();
-		String newChoose = impReplyChoose == 1 ? "2" : "1";
+		String newChoose = "";
+		
+		if(impReplyChoose == 1) {
+			newChoose = "2";
+		}else {
+			newChoose = "1";
+		}
 		
 		ArrayList<ImpChoose> myChooselist = eService.selectImpChooseList(loginUserNo);
 		
@@ -68,6 +74,28 @@ public class EtcController {
 				result = eService.insertImpChooseList(new ImpChoose(loginUserNo, impReplyNo, String.valueOf(impReplyChoose)));
 			}
 		}
+		
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="insertImpReply.etc")
+	public int insertImpReply(@RequestParam("impReplyContent") String impReplyContent, @RequestParam("impReplyType") String impReplyType, HttpSession session) {
+		String realType = "";
+		if(impReplyType.equals("O")) {
+			realType = "S";
+		}else {
+			realType = "O";
+		}
+		
+		Member loginUser = (Member)session.getAttribute("loginUser");
+		Improvement imp = new Improvement(); 
+		imp.setImpReplyContent(impReplyContent);
+		imp.setImpReplyWriter(loginUser.getUserNickname());
+		imp.setImpReplyProfile(loginUser.getUserUpdateName());
+		imp.setImpReplyType(realType);
+		
+		int result = eService.insertImpReply(imp); 
 		
 		return result;
 	}

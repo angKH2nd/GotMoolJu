@@ -53,6 +53,11 @@ public class EtcServiceImpl implements EtcService {
 	public int insertImpChooseList(ImpChoose impChoose) {
 		return eDao.insertImpChooseList(sqlSession, impChoose);
 	}
+
+	@Override
+	public int insertImpReply(Improvement imp) {
+		return eDao.insertImpReply(sqlSession, imp);
+	}
 	
 	
 }

@@ -45,5 +45,9 @@ public class EtcDao {
 	public int insertImpChooseList(SqlSessionTemplate sqlSession, ImpChoose impChoose) {
 		return sqlSession.insert("etcMapper.insertImpChooseList", impChoose);
 	}
+
+	public int insertImpReply(SqlSessionTemplate sqlSession, Improvement imp) {
+		return sqlSession.insert("etcMapper.insertImpReply", imp);
+	}
 	
 }

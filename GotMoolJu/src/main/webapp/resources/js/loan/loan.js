@@ -7,6 +7,26 @@ $(document).ready(function() {
 			let value = "";
 			itemArr.each(function(i, item){
 				let loanAmt = parseInt($(item).find("loanAmt").text()).toLocaleString();
+				
+				let bankImg = "";
+				
+				switch($(item).find("bankNm").text()){
+					case '부산은행' : bankImg = 'bank_bnk.jpg'; break;
+					case '대구은행' : bankImg = 'bank_daegu.jpg'; break;
+					case '케이뱅크' : bankImg = 'bank_k.jpg'; break;
+					case '토스뱅크' : bankImg = 'bank_toss.png'; break;
+					case '카카오뱅크' : bankImg = 'bank_kakao.png'; break;
+					case '하나은행' : bankImg = 'bank_hana.png'; break;
+					case '농협은행' : bankImg = 'bank_nh.png'; break;
+					case '국민은행' : bankImg = 'bank_kb.png'; break;
+					case '기업은행' : bankImg = 'bank_ibk.png'; break;
+					case '수협중앙회' : bankImg = 'bank_sh.png'; break;
+					case '신한은행' : bankImg = 'bank_shinhan.png'; break;
+					case '우리은행' : bankImg = 'bank_we.png'; break;
+					case '경남은행' : bankImg = 'bank_bnk.jpg'; break;
+					case '전북은행' : bankImg = 'bank_jb.png'; break;
+					case '광주은행' : bankImg = 'bank_kwangju.png'; break;
+				}
 			
 				value += `
 						<div class="loan-list-bank bdlg br5">
@@ -19,7 +39,7 @@ $(document).ready(function() {
 									<div class="loan-list-bank-price">대출실행금액 : ${loanAmt} 원</div>
 								</div>
 							</div>
-							<div class="loan-list-bank-right fl centerXY">로고</div>
+							<div class="loan-list-bank-right fl centerXY"><img width=50 height=50 src="resources/images/loan/${bankImg}"></div>
 						</div>
 						`
 			})
