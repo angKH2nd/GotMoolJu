@@ -7,10 +7,10 @@ $(document).ready(function() {
 			let value = "";
 			itemArr.each(function(i, item){
 				let loanAmt = parseInt($(item).find("loanAmt").text()).toLocaleString();
-				
+				let bankName = $(item).find("bankNm").text();
 				let bankImg = "";
 				
-				switch($(item).find("bankNm").text()){
+				switch(bankName){
 					case '부산은행' : bankImg = 'bank_bnk.jpg'; break;
 					case '대구은행' : bankImg = 'bank_daegu.jpg'; break;
 					case '케이뱅크' : bankImg = 'bank_k.jpg'; break;
@@ -29,7 +29,7 @@ $(document).ready(function() {
 				}
 			
 				value += `
-						<div class="loan-list-bank bdlg br5">
+						<div class="loan-list-bank bdlg br5 mh" data-bank-name="${bankName}">
 							<div class="loan-list-bank-left fl pd5" style="width: 260px;">
 								<div class="loan-list-bank-top">${$(item).find("bankNm").text()}</div>
 								<div class="loan-list-bank-blank"></div>
@@ -49,6 +49,11 @@ $(document).ready(function() {
 			swal("대출 조회 실패!", "관리자에게 문의해주세요", 'warning');
 		}
 	});
+	
+	$(".loan-list").on("click", ".loan-list-bank", function() {
+        let bankName = $(this).data("bank-name");
+        openBank(bankName);
+    });
 	
 	function makeCircleChart(itemArr) {
 		// 은행별 대출실행금액 데이터 배열 생성
@@ -119,3 +124,11 @@ $(document).ready(function() {
         };
 	}
 })
+
+function openBank(bankName) {
+    switch(bankName){
+        case '부산은행': window.open('https://www.busanbank.co.kr/ib20/mnu/BHP00001', '_blank'); break;
+        case '신한은행': window.open('https://www.shinhan.com/index.jsp', '_blank'); break;
+        // 다른 은행들에 대한 처리 추가
+    }
+}
