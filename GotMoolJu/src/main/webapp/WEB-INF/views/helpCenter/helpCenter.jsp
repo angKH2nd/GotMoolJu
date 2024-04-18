@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
+<script src="resources/js/helpCenter/helpCenter.js"></script>
 <link rel="stylesheet" href="resources/css/helpCenter/helpCenter.css">
 </head>
 <body>
@@ -15,8 +16,8 @@
 				<div class="helpCenter-bar" id="helpCenter-bar">
 				    <ul>
 				        <li class="mh announcement-btn" onclick="toggleHelpCenter('announcement')">공지사항</li>
-				        <li class="mh faq-btn" onclick="toggleHelpCenter('faq')">자주묻는질문</li>
-				        <li class="mh qna-btn" onclick="toggleHelpCenter('qna')">Q&A</li>
+				        <li class="mh faq-btn" onclick="toggleHelpCenter('faq'); loadFaqs()">자주묻는질문</li>
+				        <li class="mh qna-btn" onclick="toggleHelpCenter('qna'); loadQna()">Q&A</li>
 				        <li class="mh guide-btn" onclick="toggleHelpCenter('guide')">가이드</li>
 				    </ul>
 				</div>
@@ -34,6 +35,10 @@
 			</div>
 		</div>
 	</div>
-	<script src="resources/js/helpCenter/helpCenter.js"></script>
+	
+	<script type="text/javascript">
+	
+	</script>
+	
 </body>
 </html>

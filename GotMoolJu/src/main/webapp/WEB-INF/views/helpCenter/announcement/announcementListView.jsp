@@ -6,10 +6,188 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
+
+
+<style>
+        #announcementList {
+            text-align: center;
+        }
+        
+        #announcementList>tbody>tr:hover {
+            cursor: pointer;
+        }
+        
+        #announcement-pagingArea {
+            width: 80%;
+            margin: auto;
+        }
+        
+        .announcement-content {
+            background-color:rgb(247, 245, 245);
+            width:100%;
+            margin:auto;
+        }
+        .announcement-innerOuter {
+            border:1px solid lightgray;
+            width:100%;
+            margin:auto;
+           
+            background-color:white;
+        }
+        .hidden-content {
+		    display: none;
+		}
+        
+       
+    </style>
+
 <link rel="stylesheet" href="resources/css/helpCenter/announcement/announcementListView.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="path/to/your/script.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="resources/js/helpCenter/announcement/announcementListView.js"></script>
+
 </head>
 <body>
+
+	<div class="announcement-content">
+        <br><br>
+        <div class="announcement-innerOuter" style="padding:5% 10%;">
+            <h2>갓물주 게시판</h2>
+            <br>
+	            <!-- 로그인후 상태일 경우만 보여지는 글쓰기 버튼-->
+	            <c:if test="${loginUser.userId == 'admin'  }">
+           			<a class="announcement-btn btn-secondary btn-sm" style="float:right" href="enrollForm.an">글쓰기</a>
+            	</c:if>
+            
+            <br></br>
+            <table id="announcementList" class="announcement-table table-hover" align="center">
+                <thead>
+                  <tr>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                  </tr>
+                </thead>
+                <tbody>
+	               
+	               <c:forEach var="a" items="${ announcementList }">
+                        <tr>
+	                        <td>${ a.announcementTitle }</td>
+	                        <td>${ a.announcementCreateDate }</td>
+	                        <td>${ a.announcementCount }</td>
+	                    </tr>
+	                    
+	                     <tr class="announcementContent1" style="display: none;">
+			                <td colspan="3">
+			                    <div> ${a.announcementContent}</div>
+			                </td>
+			            </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            <br>
+            
+            <script>
+				$(document).ready(function(){
+					$("#announcementList>tbody>tr:not(.announcementContent1)").click(function() {
+			            $(".announcementContent1").not($(this).next('.announcementContent1')).hide();
+						$(this).next('.announcementContent1').toggle();
+					});
+				});
+				
+			</script>
+			
+			<!-- paging area -->
+			<div id="announcement-pagingArea">
+                <ul class="announcement-pagination">
+                	<c:choose>
+					    <c:when test="${announcementPi.currentPage eq 1 }">
+					        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+					    </c:when>
+					    <c:otherwise>
+					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage - 1})">Previous</a></li>
+					    </c:otherwise>
+					</c:choose>
+					<c:forEach var="p" begin="${announcementPi.startPage }" end="${announcementPi.endPage }">
+					    <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${p})">${p}</a></li>
+					</c:forEach>
+					<c:choose>
+					    <c:when test="${announcementPi.currentPage eq announcementPi.maxPage }">
+					        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">Next</a></li>
+					    </c:when>
+					    <c:otherwise>
+					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage + 1})">Next</a></li>
+					    </c:otherwise>
+					</c:choose>
+					
+              </ul>
+            </div>
+           
+           
+           <script>
+           /*
+			    function loadPage(pageNumber) {
+			        console.log("page loading:", pageNumber);
+			        $.ajax({
+			            url: "list.an", // mapping in Controller
+			            data: {
+			                cpage: pageNumber
+			            },
+			            success: function(response) {
+			                console.log("date format AJAX:", response);
+							let announcement = response.anList;
+							let pageInfo = response.anPageInfo;
+			                
+			                let value = "";
+			                for (let i in announcement) {
+			                    value += "<tr>"
+			                            + "<td>" + announcement[i].announcementTitle + "</td>"
+			                            + "<td>" + announcement[i].announcementCreateDate + "</td>"
+			                            + "<td>" + announcement[i].announcementCount + "</td>"
+			                            + "</tr>";
+			                    value += "<tr class='announcementContent' style='display: none;'>"
+			                        + "<td colspan='3'>" + announcement[i].announcementContent + "</td>"
+			                        + "</tr>";        
+			                }
+			                $('#announcementList tbody').html(value);
+			                updatePagination(pageInfo);
+			            },
+			            error: function() {
+			                alert('통신 실패');
+			            }
+			        });
+			    }
+			    
+			    function updatePagination(pi) {
+			        let paginationHTML = "";
+			        if (pi.currentPage > 1) {
+			            paginationHTML += '<li class="page-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadPage(' + (pi.currentPage - 1) + ')">Previous</a></li>';
+			        }
+			        for (let p = pi.startPage; p <= pi.endPage; p++) {
+			            paginationHTML += '<li class="page-item ' + (p === pi.currentPage ? 'active' : '') + '"><a class="page-link" href="#" onclick="event.preventDefault(); loadPage(' + p + ')">' + p + '</a></li>';
+			        }
+			        if (pi.currentPage < pi.maxPage) {
+			            paginationHTML += '<li class="page-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadPage(' + (pi.currentPage + 1) + ')">Next</a></li>';
+			        }
+			        $(".announcement-pagination").html(paginationHTML);
+			    }
+
+			
+			    // Document ready is still needed for the click event binding
+			 $(document).ready(function() {
+			    $(document).on('click', '#announcementList tbody tr:not(.announcementContent)', function() {
+			        $(this).next('.announcementContent').toggle();  // Теперь переключает следующий tr с классом .announcementContent
+			    });
+			});
+		*/
+			</script>
+				
+	</div>
+</div>
+
+
+
 	여기 announcementListView.jsp임
-	<script src="resources/js/helpCenter/announcement/announcementListView.js"></script>
 </body>
 </html>
