@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<script src="resources/js/helpCenter/helpCenter.js"></script>
 <link rel="stylesheet" href="resources/css/helpCenter/helpCenter.css">
 </head>
 <body>
@@ -26,19 +25,15 @@
 				<div class="help-cancel-btn mh" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
 			</div>
 		</div>
-		<div class="help-content pd15">
+		<div class="help-content">
 			<div class="helpCenter-bar-toggle">
 			    <div class="announcement"><%@ include file="announcement/announcementListView.jsp" %></div>
-			    <div class="faq faq-container"><%@ include file="faq/faqListView.jsp" %></div>
+			    <div class="faq faq-container no-scrollbar"><%@ include file="faq/faqListView.jsp" %></div>
 			    <div class="qna"><%@ include file="qna/qnaListView.jsp" %></div>
 			    <div class="guide"><%@ include file="guide/guideListView.jsp" %></div>
 			</div>
 		</div>
 	</div>
-	
-	<script type="text/javascript">
-	
-	</script>
-	
+	<script src="resources/js/helpCenter/helpCenter.js"></script>
 </body>
 </html>

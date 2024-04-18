@@ -2,5 +2,37 @@
 
 .faq-form {
 	height: 100%;
-	width: 700px;
+	width: 100%;
+	background-color: #f3f3f3;
 }
+
+.faq-form>div {
+	width: 100%;
+}
+
+.faq-title {
+	height: 100px;
+}
+
+.faq-list {
+	height: calc(100% - 100px);
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.faq-answer {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #333;
+    height: 45px;
+    border-radius: 25px;
+    background-color: white;
+}
+

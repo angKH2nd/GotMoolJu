@@ -1,1 +1,25 @@
 @charset "UTF-8";
+
+#qnaList {
+	width: 100%;
+	height: 100%;
+}
+
+#qnaList>div {
+	width: 100%;
+}
+
+.qna-top-area {
+	width: 100%;
+	height: 50px;
+}
+
+#qnaList>table {
+	width: 100%;
+}
+
+#qnaDetail {
+	width: 100%;
+	height: 100%;
+	display: none;
+}

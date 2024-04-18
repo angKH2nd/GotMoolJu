@@ -16,7 +16,7 @@
 	    margin: 0;
 	    padding: 0;
 	  }
-	  #map {
+	  #helpMap {
 	    height: 500px; /* Высота карты */
 	  }
 	</style>
@@ -25,12 +25,12 @@
 </head>
 <body>
 
-	<div id="map"></div>
+	<div id="helpMap"></div>
 
   <script>
     function initMap() {
-        var center = {lat: 37.496391, lng: 127.033829}; // center of the map
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var center = {lat: 37.496391, lng: 127.033829};
+        var map = new google.maps.Map(document.getElementById('helpMap'), {
             zoom: 14,
             center: center
         });
@@ -41,8 +41,6 @@
         });
     }
     </script>
-	
-
 
 	여기 guideListView.jsp임
 	<script src="resources/js/helpCenter/guide/guideListView.js"></script>
