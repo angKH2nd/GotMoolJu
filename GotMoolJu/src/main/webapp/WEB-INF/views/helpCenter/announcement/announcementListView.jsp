@@ -42,8 +42,6 @@
     </style>
 
 <link rel="stylesheet" href="resources/css/helpCenter/announcement/announcementListView.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="path/to/your/script.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="resources/js/helpCenter/announcement/announcementListView.js"></script>
 
