@@ -1,5 +1,8 @@
 package com.kh.got.community.model.service;
 
-public class CommunityServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CommunityServiceImpl implements CommunityService {
 
 }
