@@ -158,15 +158,20 @@
 	
 	<!-- ad. 메인 화면, 회원 5명 정도 조회용 -->
 	<select id="selectMemberMiniList" resultMap="memberResult">
- 		 select
-		        user_no
-		      , user_id
-		      , user_nickname
-		      , user_phone
-		   from tb_member
-          where user_status = 'Y'
-		  order 
-     		 by user_no
+		 select *
+		   from 
+		      (
+		 		select
+				        user_no
+				      , user_id
+				      , user_nickname
+				      , user_phone
+				   from tb_member
+		          where user_status = 'Y'
+				  order 
+		     		 by user_no
+		      )
+		 where rownum between 1 and 5 
 	</select>
 	 
 	 <!-- ad. 회원 상세 정보 조회 페이지, detailForm, 사진 o -->

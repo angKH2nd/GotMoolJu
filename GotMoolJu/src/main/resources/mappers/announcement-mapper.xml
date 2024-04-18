@@ -11,15 +11,63 @@
 		<result column="announcement_status" property="announcementStatus" />
 	</resultMap>
 	
+	
+	
+	<!-- 메인화면, 공지글 5개 정도 조회용 -->
+	<select id="selectAnnouncementMiniList" resultMap="announcementResult" >
+		select *
+		  from
+			 (
+		       select
+		              announcement_no
+		            , announcement_title
+		            , announcement_create_date
+		            , user_nickname as "ANNOUNCEMENT_WRITER"
+		        from tb_announcement
+		        join tb_member on (announcement_writer = user_no)
+		       order
+		          by
+		             announcement_no desc
+		      ) 
+		 where rownum between 1 and 5
+		 
+	</select>
 
+	<!-- 공지사항 전체 리스트 개수 -->
+	<select id="selectAnnouncementCount" resultType="_int">
+    select
+           count(*)
+      from tb_announcement
+	</select>
 
+	<!--  공지사항 전체 리스트  -->
+	<select id="selectAnnouncementList" resultMap="announcementResult">
+    select 
+           announcement_no
+         , announcement_title
+         , user_nickname as "ANNOUNCEMENT_WRITER"
+         , announcement_count
+		 , announcement_create_date
+         , announcement_status
+     from tb_announcement
+     join tb_member on (announcement_writer = user_no)
+    order
+       by
+          announcement_no desc
 
+	</select>
 
-
-
-
-
-
+	<select id="selectAnnouncementDetail" resultMap="announcementResult">
+	    select 
+	           announcement_no
+	         , announcement_title
+	         , announcement_content
+	         , announcement_count
+	         , announcement_create_date
+	      from tb_announcement
+	     where announcement_no = #{announcementNo}
+	
+	</select>
 
 
 

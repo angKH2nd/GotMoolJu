@@ -47,38 +47,41 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <jsp:include page="../common/adminMenubar.jsp" />
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
+    
+  <form id="adminAnnoDeailForm" method="post" action="announcementDetail.ad">
+  <input type="hidden" name="ano" value="${ adminA.announcementNo }">
 <!-- 여기서부터 -->
-   <div class="wrapper ">
+   <div class="wrapper">
     <div class="main-panel" id="main-panel" >
       <!-- End Navbar -->
-      <div class="content"">
+      <div class="content">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <div class="card card-upgrade">
               <div class="card-header text-center">
-                <h4 class="card-title">공지사항 등록하기</h3>
-                  <p class="card-category"><br><br></p>
+                <h4 class="card-title">공지사항</h3>
+                  <p class="card-category">${ adminA.announcementCreateDate }<br>조회수: ${ adminA.announcementCount }</p>
               </div>
               <div class="card-body">
-                <div class="table-responsive table-upgrade"  style="height:600px">
+                <div class="table-responsive table-upgrade" style="height:600px">
                   <table class="table" >
                     <thead>
                       <th>Title</th>
-                      <th><input id="anno-content" class="anno-content" type="text" placeholder="제목을 입력해 주세요." style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px;"></th>
+                      <th><input id="anno-content" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px; background-color: #f1f1f1; border: 2px solid #12192c;" readonly></th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Content</td>
                          <td>
-						   <textarea id="anno-content" class="anno-content" placeholder="내용을 입력해 주세요." style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none;"></textarea>
+						   <textarea id="anno-content" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none; background-color: #f1f1f1; border: 2px solid #12192c;" readonly> ${ adminA.announcementContent } </textarea>
 						 </td>
                       </tr>
                       <tr>
                         <td>
-                          <a href="announcementList.ad" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">뒤로가기</a>
+                          <a href="#" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">수정하기</a>
                         </td>
                         <td>
-                          <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">등록하기</a>
+                          <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">삭제하기</a>
                         </td>
                       </tr>
                     </tbody>
@@ -91,6 +94,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
   </div>
+ </form>
     
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>

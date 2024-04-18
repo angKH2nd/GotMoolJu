@@ -17,16 +17,16 @@ public class AdminMemberDao {
 		return (ArrayList) sqlSession.selectList("memberMapper.selectMemberMiniList");
 	}
 	
-	// 회원 리스트 조회 (select) 
+	// 회원 리스트 명 수 조회 (select) 
 	public int selectMemberCount(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("memberMapper.selectMemberCount");
 	}
 
 	// 회원 전체 리스트 조회용
-	public ArrayList<Member> selectMemberList(SqlSessionTemplate sqlSession, PageInfo pi) {
+	public ArrayList<Member> selectMemberList(SqlSessionTemplate sqlSession, PageInfo adminPi) {
 		
-		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
-		int limit = pi.getBoardLimit();
+		int offset = (adminPi.getCurrentPage() - 1) * adminPi.getBoardLimit();
+		int limit = adminPi.getBoardLimit();
 
 		RowBounds rowBounds = new RowBounds(offset, limit);
 
@@ -39,8 +39,8 @@ public class AdminMemberDao {
 	}
 
 	// 회원 디테일 폼 status 변경
-	public int updateMemberDetail(SqlSessionTemplate sqlSession, Member m) {
-		return sqlSession.update("memberMapper.updateMemberDetail", m);
+	public int updateMemberDetail(SqlSessionTemplate sqlSession, Member adminM) {
+		return sqlSession.update("memberMapper.updateMemberDetail", adminM);
 	}
 	
 	

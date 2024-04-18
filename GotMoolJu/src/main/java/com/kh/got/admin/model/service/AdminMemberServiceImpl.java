@@ -33,8 +33,8 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 
 	// 회원 전체 리스트 조회용
 	@Override
-	public ArrayList<Member> selectMemberList(PageInfo pi) {
-		return adminMDao.selectMemberList(sqlSession, pi);
+	public ArrayList<Member> selectMemberList(PageInfo adminPi) {
+		return adminMDao.selectMemberList(sqlSession, adminPi);
 	}
 
 	// 회원 상세 정보 조회 페이지, detailForm
@@ -45,8 +45,8 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 
 	// 회원 디테일 폼 status 변경
 	@Override
-	public int updateMemberDetail(Member m) {
-		return adminMDao.updateMemberDetail(sqlSession, m);
+	public int updateMemberDetail(Member adminM) {
+		return adminMDao.updateMemberDetail(sqlSession, adminM);
 	}
 
 

@@ -12,7 +12,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>갓물주</title>
     <style>
-	    #memberlistClick1:hover {
+	    #announcementListClick1:hover {
 		  cursor: pointer;
 		}
     </style>
@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="card-header">
                   <h4 class="card-title">공지사항</h4>
                   <p class="category">
-		             <h6 style="margin-left: 90%; color: rightgray"> &lt; 공지사항 개수 :  &gt;</h6>
+		             <h6 style="margin-left: 86%; color: rightgray"> &lt; 공지사항 개수 : ${ adminPi.listCount } &gt;</h6>
 		           </p>
                 </div>
                  <div
@@ -77,68 +77,75 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <th class="text-right">Status</th>
                       </thead>
                       <tbody id="announcementListClick1">
-	                      <tr>
-	                        <td class="ano">30</td>
-	                        <td>관리자</td>
-	                        <td>안녕! 공지사항      30번째야!</td>
-	                        <td>3</td>
-	                        <td>2024-04-17</td>
-	                        <td class="text-right">Y</td>
-	                      </tr>
-	                      <tr>
-	                        <td class="ano">29</td>
-	                        <td>관리자</td>
-	                        <td>안녕! 공지사항 29번째야!</td>
-	                        <td>55</td>
-	                        <td>2024-04-16</td>
-	                        <td class="text-right">N</td>
-	                      </tr>
-	                      <tr>
-	                        <td class="ano">28</td>
-	                        <td>관리자</td>
-	                        <td>안녕! 공지사항 28번째야!</td>
-	                        <td>43</td>
-	                        <td>2024-04-15</td>
-	                        <td class="text-right">Y</td>
-	                      </tr>
-	                      <tr>
-	                        <td class="ano">27</td>
-	                        <td>관리자</td>
-	                        <td>안녕! 공지사항 27번째야!</td>
-	                        <td>22</td>
-	                        <td>2024-04-14</td>
-	                        <td class="text-right">Y</td>
-	                      </tr>
+	                      <c:forEach var="ad" items="${ admAnnouncementList }">
+		                      <tr>
+		                        <td class="ano">${ ad.announcementNo }</td>
+		                        <td>${ ad.announcementWriter }</td>
+		                        <td>${ ad.announcementTitle }</td>
+		                        <td>${ ad.announcementCount }</td>
+		                        <td>${ ad.announcementCreateDate }</td>
+		                        
+		                        <c:choose>
+			                        <c:when test="${ ad.announcementStatus eq 'Y' }">
+			                        	<td class="text-right" style="color: blue">${ ad.announcementStatus }</td>
+			                     	</c:when>
+			                     	<c:otherwise>
+			                     		<td class="text-right" style="color: red">${ ad.announcementStatus }</td>
+			                     	</c:otherwise>
+		                     	</c:choose>
+		                      </tr>
+	                      </c:forEach>
+
+	                     <%--
+	                      <script>
+	                      $(function(){
+	                    	    $("#dd").click(function(){ // 클릭 이벤트가 발생했을 때
+	                    	        console.log(list); // 콘솔에 메시지 출력
+	                    	    });
+	                    	});
+	                      
+	                      </script>
+	                       --%>
                       </tbody>
                     </table>
                     <td class="text-center">
-                       <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
+                       <a target="_blank" href="announcementEnroll.ad" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
                     </td>
                   </div>
                   <br>
+                  
+                                  <script>
+				$(function(){
+					$("#announcementListClick1>tr").click(function(){
+						// console.log("눌림")
+		                  location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
+		               })
+				})
+				</script>
+				
                 
             <div id="pagingArea" style="float:right">
                 <ul class="pagination">
                 	
                 	<c:choose>
-                		<c:when test="${ pi.currentPage eq 1 }">
+                		<c:when test="${ adminPi.currentPage eq 1 }">
                    			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
                    		</c:when> 
                    		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="list.bo?cpage=${ pi.currentPage -1 }">Previous</a></li>
+                   			<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
                    		</c:otherwise>
                    	</c:choose>
                    	
-                   	<c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
-                   		<li class="page-item"><a class="page-link" href="list.bo?cpage=${ p }">${ p }</a></li>
+                   	<c:forEach var="p" begin="${ adminPi.startPage }" end="${ adminPi.endPage }">
+                   		<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ p }">${ p }</a></li>
                     </c:forEach>
                     
                     <c:choose>
-                    	<c:when test="${ pi.currentPage eq pi.maxPage }">
+                    	<c:when test="${ adminPi.currentPage eq adminPi.maxPage }">
 							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
         				</c:when>
         				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="list.bo?cpage=${ pi.currentPage + 1 }">Next</a></li>
+        					<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
         				</c:otherwise>
         			</c:choose>
                 </ul>

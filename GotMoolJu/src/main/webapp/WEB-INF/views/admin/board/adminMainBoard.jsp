@@ -15,8 +15,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <title>갓물주</title>
     <style>
 	    #memberlistClick:hover {
-		  cursor: pointer;
-	}
+			cursor: pointer;
+		}
+		#announcementlistClick:hover{
+			cursor: pointer;
+		}
     
     </style>
     <meta
@@ -180,7 +183,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <th>phone</th>
                     </thead>
                     <tbody id="memberlistClick">
-	                    <c:forEach var="ad" items="${ list }">
+	                    <c:forEach var="ad" items="${ admMemberList }">
 		                      <tr>
 		                        <td class="mno">${ ad.userNo }</td>
 		                        <td>${ ad.userId }</td>
@@ -210,9 +213,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <!-- 5번 card title -->
               <div class="card-header">
                 <h4 class="card-title">공지사항</h4>
-                <a href="#" class="card-category" style="float:right; text-decoration: none !important" >
-                 &lt; 더보기 / function 달 예정, 가장 최신글이 가장 위에 보일 예정 &gt;
+                <a href="announcementList.ad" class="card-category" style="float:right; text-decoration: none !important" >
+                 &lt; 더보기 &gt;
                 </a>
+                
               </div>
               <!-- 5번 card content-->
               <div class="card-body">
@@ -224,42 +228,30 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <th>제목</th>
                       <th>작성일</th>
                     </thead>
-                    <tbody id="AnnouncementlistClick">
+                    <tbody id="announcementlistClick">
+           		      <c:forEach var="ad" items="${ admAnnouncementList }">
 		                      <tr>
-		                        <td class="ano">1</td>
-		                        <td>관리자</td>
-		                        <td>오픈! 갓물주!</td>
-		                        <td>2024/03/26</td>
+		                        <td class="ano">${ ad.announcementNo }</td>
+		                        <td>${ ad.announcementWriter }</td>
+		                        <td>${ ad.announcementTitle }</td>
+		                        <td>${ ad.announcementCreateDate }</td>
 		                      </tr>
-		                      <tr>
-		                        <td class="ano">2</td>
-		                        <td>관리자</td>
-		                        <td>공지제목2!</td>
-		                        <td>2024/03/27</td>
-		                      </tr>
-		                      <tr>
-		                        <td class="ano">3</td>
-		                        <td>관리자</td>
-		                        <td>공지제목3!</td>
-		                        <td>2024/03/28</td>
-		                      </tr>
-		                      <tr>
-		                        <td class="ano">4</td>
-		                        <td>관리자</td>
-		                        <td>공지제목4!</td>
-		                        <td>2024/03/29</td>
-		                      </tr>
-		                      <tr>
-		                        <td class="ano">5</td>
-		                        <td>관리자</td>
-		                        <td>공지제목5!</td>
-		                        <td>2024/03/30</td>
-		                      </tr>
+		               </c:forEach>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
+            
+           
+         <script>
+			$(function(){
+				$("#miniAnnouncementArea>tbody>tr").click(function(){
+	                  location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
+	               })
+			})
+		</script>
+		 
           </div>
          </div>
        </div>

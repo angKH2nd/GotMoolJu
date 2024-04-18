@@ -60,9 +60,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="announcementDetailList.ad">
+              <a href="#">
                 <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>잠깐 공지사항 디테일</p>
+                <p>nonono</p>
               </a>
             </li>
             <li>
