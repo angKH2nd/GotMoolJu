@@ -28,12 +28,10 @@ public class HomeController {
 	ArrayList<Announcement> list = aService.selectList(pi);
 	
 	mv.addObject("announcementPi", pi)
-			.addObject("announcementList", list)
-			.setViewName("home/home");	
-	       
-			return mv;
-	    }
-		
-	}
+		.addObject("announcementList", list)
+		.setViewName("home/home");	
+       
+		return mv;
+    }
 	
 }
