@@ -11,19 +11,21 @@
 <body>
 	<div id="qnaList">
 		<div class="qna-top-area pd15">TBD 작업</div>
-		<table class="qna_list_area">
-			<thead>
-				<tr>
-                    <th>글제목</th>
-                    <th width=50>작성자</th>
-                    <th width=93>작성일</th>
-                    <th width=40>답변</th>
-            	</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-		</table>
+		<div class="qna-table-area pd15">
+			<table class="qna_list_area">
+				<thead>
+					<tr>
+	                    <th>글제목</th>
+	                    <th width=80>작성자</th>
+	                    <th width=93>작성일</th>
+	                    <th width=40>답변</th>
+	            	</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
 		<button type="button" id="insertQnaFormBtn">글쓰기</button>
 	</div>
 	

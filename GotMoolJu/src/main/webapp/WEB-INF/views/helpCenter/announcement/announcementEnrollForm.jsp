@@ -21,7 +21,6 @@
                         <th><label for="title">제목</label></th>
                         <td><input type="text" id="announcement-title" class="announcement form-control" name="announcementTitle" required></td>
                     </tr>
-                
                     <tr>
                         <th colspan="2"><label for="content">내용</label></th>
                     </tr>
@@ -31,7 +30,6 @@
                         </th>
                     </tr>
                 </table>
-                <br>
 
                 <div align="center">
                     <button type="submit" class="btn btn-primary">등록하기</button>

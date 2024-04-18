@@ -14,8 +14,12 @@
 	height: 50px;
 }
 
-#qnaList>table {
-	width: 100%;
+.qna_list_area {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    text-indent: initial;
+    border-spacing: 2px;
 }
 
 #qnaDetail {
@@ -26,4 +30,16 @@
 
 #qnaInsert {
 	display: none;	
+}
+
+.qna_list_area>thead>tr {
+	border-bottom: 1px solid black;
+	height: 40px;
+	line-height: 40px;
+}
+
+.qna_list_area>tbody>tr {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 0.5px solid lightgray;
 }

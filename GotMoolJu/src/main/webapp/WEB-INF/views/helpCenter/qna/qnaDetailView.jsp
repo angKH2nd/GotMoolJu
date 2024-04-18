@@ -11,10 +11,10 @@
 <body>
 	<div class="qna-detail-form">
 		<div class="qna-detail-head-area">
-			<div id="qna-sample"></div>
+			<div id="qna-sample"><button id="closeQnaDetailBtn">qna 상세 정보 닫기</button></div>
 		</div>
 		<div class="qna-detail-area">
-			여기 상세정보 작성시작하면 ok
+			
 		</div>
 	</div>
 </body>

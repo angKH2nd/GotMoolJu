@@ -6,85 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-
-
-<style>
-        #announcementList {
-            text-align: center;
-        }
-        
-        #announcementList>tbody>tr:hover {
-            cursor: pointer;
-        }
-        
-        #announcement-pagingArea {
-            width: 80%;
-            margin: auto;
-        }
-        
-        .announcement-content {
-            background-color:rgb(247, 245, 245);
-            width:100%;
-            margin:auto;
-        }
-        .announcement-innerOuter {
-            border:1px solid lightgray;
-            width:100%;
-            margin:auto;
-           
-            background-color:white;
-        }
-        .hidden-content {
-		    display: none;
-		}
-        
-       
-    </style>
-
 <link rel="stylesheet" href="resources/css/helpCenter/announcement/announcementListView.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="resources/js/helpCenter/announcement/announcementListView.js"></script>
-
 </head>
 <body>
-
 	<div class="announcement-content">
-        <br><br>
-        <div class="announcement-innerOuter" style="padding:5% 10%;">
-            <h2>갓물주 게시판</h2>
-            <br>
-	            <!-- 로그인후 상태일 경우만 보여지는 글쓰기 버튼-->
-	            <c:if test="${loginUser.userId == 'admin'  }">
-           			<a class="announcement-btn btn-secondary btn-sm" style="float:right" href="enrollForm.an">글쓰기</a>
-            	</c:if>
+        <div class="announcement-innerOuter pd15">
+            <!-- 로그인후 상태일 경우만 보여지는 글쓰기 버튼-->
+            <c:if test="${loginUser.userId == 'admin'  }">
+         		<a class="announcement-btn btn-secondary btn-sm" style="float: right" href="enrollForm.an">글쓰기</a>
+           	</c:if>
             
-            <br></br>
             <table id="announcementList" class="announcement-table table-hover" align="center">
                 <thead>
-                  <tr>
-                    <th>제목</th>
-                    <th>작성일</th>
-                    <th>조회수</th>
-                  </tr>
+                    <tr>
+	                    <th width=25>#</th>
+	                    <th>제목</th>
+	                    <th width=95>작성일</th>
+                    </tr>
                 </thead>
                 <tbody>
-	               
 	               <c:forEach var="a" items="${ announcementList }">
-                        <tr>
-	                        <td>${ a.announcementTitle }</td>
+                        <tr class="mh bgh">
+	                        <td>${ a.announcementNo }</td>
+	                        <td style="text-align: left; padding-left: 10px;">${ a.announcementTitle }</td>
 	                        <td>${ a.announcementCreateDate }</td>
-	                        <td>${ a.announcementCount }</td>
 	                    </tr>
-	                    
-	                     <tr class="announcementContent1" style="display: none;">
-			                <td colspan="3">
-			                    <div> ${a.announcementContent}</div>
+	                    <tr class="announcementContent1 mh dn">
+			                <td colspan="3" style="text-align: left; padding-left: 5px;">
+			                    <div><i class="fa-solid fa-circle-exclamation" style="margin-right: 12px;"></i> ${a.announcementContent}</div>
 			                </td>
 			            </tr>
                     </c:forEach>
                 </tbody>
             </table>
-            <br>
             
             <script>
 				$(document).ready(function(){
@@ -93,18 +48,17 @@
 						$(this).next('.announcementContent1').toggle();
 					});
 				});
-				
 			</script>
 			
 			<!-- paging area -->
 			<div id="announcement-pagingArea">
-                <ul class="announcement-pagination">
+                <ul class="announcement-pagination centerX" style="padding-left: 165px;">
                 	<c:choose>
 					    <c:when test="${announcementPi.currentPage eq 1 }">
-					        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+					        <li class="page-item disabled dn"><a class="page-link" href="javascript:void(0);"><i class="fa-solid fa-angle-left"></i></a></li>
 					    </c:when>
 					    <c:otherwise>
-					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage - 1})">Previous</a></li>
+					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
 					    </c:otherwise>
 					</c:choose>
 					<c:forEach var="p" begin="${announcementPi.startPage }" end="${announcementPi.endPage }">
@@ -112,19 +66,17 @@
 					</c:forEach>
 					<c:choose>
 					    <c:when test="${announcementPi.currentPage eq announcementPi.maxPage }">
-					        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">Next</a></li>
+					        <li class="page-item disabled"><a class="page-link" href="javascript:void(0);"><i class="fa-solid fa-angle-right"></i></a></li>
 					    </c:when>
 					    <c:otherwise>
-					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage + 1})">Next</a></li>
+					        <li class="page-item"><a class="page-link" href="javascript:void(0);" onclick="loadPage(${announcementPi.currentPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
 					    </c:otherwise>
 					</c:choose>
-					
-              </ul>
+                </ul>
             </div>
            
-           
            <script>
-           /*
+           		/*
 			    function loadPage(pageNumber) {
 			        console.log("page loading:", pageNumber);
 			        $.ajax({
@@ -170,22 +122,18 @@
 			        }
 			        $(".announcement-pagination").html(paginationHTML);
 			    }
-
 			
 			    // Document ready is still needed for the click event binding
-			 $(document).ready(function() {
-			    $(document).on('click', '#announcementList tbody tr:not(.announcementContent)', function() {
-			        $(this).next('.announcementContent').toggle();  // Теперь переключает следующий tr с классом .announcementContent
-			    });
-			});
-		*/
+				$(document).ready(function() {
+					$(document).on('click', '#announcementList tbody tr:not(.announcementContent)', function() {
+					    $(this).next('.announcementContent').toggle();  // Теперь переключает следующий tr с классом .announcementContent
+					});
+				});
+				*/
 			</script>
-				
+		</div>
 	</div>
-</div>
 
-
-
-	여기 announcementListView.jsp임
+	<script src="resources/js/helpCenter/announcement/announcementListView.js"></script>
 </body>
 </html>

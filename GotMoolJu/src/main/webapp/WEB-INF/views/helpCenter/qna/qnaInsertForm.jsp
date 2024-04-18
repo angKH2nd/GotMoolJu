@@ -11,10 +11,10 @@
 <body>
 	<div class="qna-insert-form">
 		<div class="qna-insert-head-area">
-			<div id="qna-insert-close-btn"></div>
+			<div id="qna-insert-close-btn"><button id="closeQnaInsertBtn">qna 글쓰기 닫기</button></div>
 		</div>
 		<div class="qna-insert-area">
-			여기 글쓰기 작성시작하면 ok
+			
 		</div>
 	</div>
 </body>

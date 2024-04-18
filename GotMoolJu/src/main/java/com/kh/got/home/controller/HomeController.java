@@ -20,16 +20,15 @@ public class HomeController {
 	private AnnouncementService aService;
 	
 	@RequestMapping("/home.got")
-	public ModelAndView selectList(@RequestParam(value="cpage", defaultValue =  "1") int currentPage,ModelAndView mv) {
+	public ModelAndView selectList(@RequestParam(value="cpage", defaultValue =  "1") int currentPage, ModelAndView mv) {
+		int listCount = aService.selectListCount();
 		
-	int listCount = aService.selectListCount();
-	
-	PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 3, 3);
-	ArrayList<Announcement> list = aService.selectList(pi);
-	
-	mv.addObject("announcementPi", pi)
-		.addObject("announcementList", list)
-		.setViewName("home/home");	
+		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 3, 10);
+		ArrayList<Announcement> list = aService.selectList(pi);
+		
+		mv.addObject("announcementPi", pi)
+			.addObject("announcementList", list)
+			.setViewName("home/home");	
        
 		return mv;
     }

@@ -40,9 +40,8 @@ function formatWriterName(name) {
     if (name.length <= 4) {
         return name; // 이름의 길이가 4 이하인 경우 변환할 필요 x
     } else {
-        // 첫 5글자와 나머지를 *로 대체한 문자열 생성
-        let formattedName = name.substring(0, 4) + "*".repeat(name.length - 4);
-        return formattedName;
+        // 첫 4글자와 나머지를 *로 대체한 문자열 생성
+        return name.substring(0, 4) + "**";
     }
 }
 
@@ -62,12 +61,12 @@ function loadQna(){
                 
                 if (response[i].qnaType == 2) {
                 	// 비밀글
-                	qnaHtml += "<td>" + "<i class=\"fa-solid fa-lock\"></i> " + response[i].qnaTitle + "</td>"
+                	qnaHtml += "<td style=\"text-align: left; padding-left: 5px;\">" + "<i class=\"fa-solid fa-lock\"></i> " + response[i].qnaTitle + "</td>"
                         	+ "<td>" + formattedWriter + "</td>"
                         	+ "<td>" + response[i].qnaCreateDate + "</td>";
                 } else {
                 	// 일반글
-                	qnaHtml += "<td>" + response[i].qnaTitle + "</td>"
+                	qnaHtml += "<td style=\"text-align: left; padding-left: 5px;\">" + response[i].qnaTitle + "</td>"
                         	+ "<td>" + formattedWriter + "</td>"
                         	+ "<td>" + response[i].qnaCreateDate + "</td>";
                 }
@@ -110,4 +109,3 @@ function toggleHelpCenter(divClass) {
         selectedButton.style.color = 'black';
     }
 }
-

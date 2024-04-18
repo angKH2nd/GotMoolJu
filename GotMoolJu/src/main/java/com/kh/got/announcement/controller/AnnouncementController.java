@@ -20,46 +20,46 @@ import com.kh.got.announcement.model.vo.Announcement;
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.common.template.Pagination;
 
-@Controller
-public class AnnouncementController {
-
-@Autowired
-private AnnouncementServiceImpl aService;
-		
-
-@ResponseBody
-@RequestMapping(value = "list.an", produces = "application/json; charset=utf-8")
-public String selectList(@RequestParam(value = "cpage", defaultValue = "1") int currentPage) {
-    int listCount = aService.selectListCount(); // Total announcements
-    PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 3, 3); // 3 announcements per page
-    ArrayList<Announcement> list = aService.selectList(pi);
-
-    Map<String, Object> resultMap = new HashMap<>();
-    resultMap.put("anList", list);
-    resultMap.put("anPageInfo", pi);
-    
-    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-
-    return gson.toJson(resultMap);
-}
-
-@RequestMapping("enrollForm.an")
-public String enrollForm() {
-	return "helpCenter/announcement/announcementEnrollForm";
-}
-
-@RequestMapping("insert.an")
-public String insertAnnouncement(Announcement a, HttpSession session, Model model) {
-	int result = aService.insertAnnouncement(a);
+	@Controller
+	public class AnnouncementController {
 	
-	if(result>0) {
-		session.setAttribute("alertMsg", "게시글 등록되었습니다");
-		return "redirect:list.an";
-	}else {
-		model.addAttribute("errorMsg", "게시글 등록 실패");
-		return "common/errorPage";
+	@Autowired
+	private AnnouncementServiceImpl aService;
+
+	@ResponseBody
+	@RequestMapping(value = "list.an", produces = "application/json; charset=utf-8")
+	public String selectList(@RequestParam(value = "cpage", defaultValue = "1") int currentPage) {
+	    int listCount = aService.selectListCount(); // Total announcements
+	    PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 3, 10); // 10 announcements per page
+	    ArrayList<Announcement> list = aService.selectList(pi);
+	
+	    Map<String, Object> resultMap = new HashMap<>();
+	    resultMap.put("anList", list);
+	    resultMap.put("anPageInfo", pi);
+	    
+	    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+	
+	    return gson.toJson(resultMap);
 	}
-}
+
+	@RequestMapping("enrollForm.an")
+	public String enrollForm() {
+		return "helpCenter/announcement/announcementEnrollForm";
+	}
+
+	@RequestMapping("insert.an")
+	public String insertAnnouncement(Announcement a, HttpSession session, Model model) {
+		int result = aService.insertAnnouncement(a);
+		
+		if(result>0) {
+			session.setAttribute("alertMsg", "게시글 등록되었습니다");
+			return "redirect:list.an";
+		}else {
+			model.addAttribute("errorMsg", "게시글 등록 실패");
+			return "common/errorPage";
+		}
+	}
+	
 	@RequestMapping("detail.an")
 	public String selectAnnouncement(int ano, Model model) {
 		int aCount = aService.increaseCount(ano);

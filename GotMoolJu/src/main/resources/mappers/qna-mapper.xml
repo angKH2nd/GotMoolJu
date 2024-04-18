@@ -17,7 +17,7 @@
 	<select id="selectQnaList" resultMap="qnaResult">
 	      select  
 	             q.qna_no
-	           , m.user_id as "qna_writer"
+	           , m.user_nickname as "qna_writer"
 	           , q.qna_title
 	           , q.qna_content
 	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_date"

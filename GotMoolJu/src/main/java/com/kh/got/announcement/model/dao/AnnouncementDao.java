@@ -17,13 +17,11 @@ public class AnnouncementDao {
 		}
 
 	public ArrayList<Announcement> selectList(SqlSessionTemplate sqlSession,PageInfo pi){
-			
-		int offset = (pi.getCurrentPage()- 1)* pi.getBoardLimit();//how many pages it be seen 
+		int offset = (pi.getCurrentPage()- 1)* pi.getBoardLimit(); //how many pages it be seen 
 		int limit = pi.getBoardLimit();
 		
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		return (ArrayList)sqlSession.selectList("announcementMapper.selectList", null, rowBounds);
-	
 	}
 	
 	public int insertAnnouncement(SqlSessionTemplate sqlSession, Announcement a) {
