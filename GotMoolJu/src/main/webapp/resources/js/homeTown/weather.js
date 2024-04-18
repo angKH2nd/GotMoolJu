@@ -1,0 +1,3 @@
+function openCommunity() {
+	toggleDiv('community');
+}
