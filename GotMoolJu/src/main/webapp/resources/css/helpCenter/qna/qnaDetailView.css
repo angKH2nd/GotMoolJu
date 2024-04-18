@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.qna-detail-form {
+	width: 100%;
+	heigth: 100%;
+}
+
+.qna-detail-form>div {
+	width: 100%;
+}
