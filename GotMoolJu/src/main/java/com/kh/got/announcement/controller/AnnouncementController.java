@@ -39,7 +39,7 @@ public String selectList(@RequestParam(value = "cpage", defaultValue = "1") int 
     resultMap.put("anList", list);
     resultMap.put("anPageInfo", pi);
     
-    Gson gson = new GsonBuilder().setDateFormat("yyy-MM-dd").create();
+    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
     return gson.toJson(resultMap);
 }
