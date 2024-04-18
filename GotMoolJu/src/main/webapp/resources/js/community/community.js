@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    toggleCommunity('community1');
+    toggleCommunity('town');
 });
 
 function toggleCommunity(divClass) {

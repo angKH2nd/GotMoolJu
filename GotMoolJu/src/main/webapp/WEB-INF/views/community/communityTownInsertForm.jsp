@@ -8,7 +8,10 @@
 <title>갓물주</title>
 </head>
 <body>
-	이게 상세보기2 누르면 열리는 화면임 (평소엔 숨겨두기)
-    <button type="button" onclick="goBackToCommunity1ListView();">다시 community1ListView.jsp 로 돌아가기</button>
+	글쓰기 작성 폼
+	
+	<br>
+	
+	<button type="button" onclick="changeTownArea();">이전</button>
 </body>
 </html>

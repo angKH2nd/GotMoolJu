@@ -18,6 +18,8 @@
 		
 		<typeAlias type="com.kh.got.etc.model.vo.Improvement" alias="Improvement"/>
 		<typeAlias type="com.kh.got.etc.model.vo.ImpChoose" alias="ImpChoose"/>
+		
+		<typeAlias type="com.kh.got.community.model.vo.Town" alias="Town"/>
 	</typeAliases>
 	
 	<mappers>
@@ -27,5 +29,6 @@
 		<mapper resource="/mappers/map-mapper.xml"/>
 		<mapper resource="/mappers/etc-mapper.xml"/>
 		<mapper resource="/mappers/announcement-mapper.xml"/>
+		<mapper resource="/mappers/community-mapper.xml"/>
 	</mappers>
 </configuration>
