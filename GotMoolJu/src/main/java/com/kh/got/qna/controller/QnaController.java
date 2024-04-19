@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -29,6 +31,16 @@ public String selectList() {
 	    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 	
 	    return gson.toJson(list); 
+	}
+
+@ResponseBody
+@RequestMapping(value = "detail.qna", produces= "application/json; charset=utf-8")
+public String selectQna(@RequestParam("qno") int qno) {
+	
+		Qna q = qService.selectQna(qno);
+		//System.out.println(q);
+		return new Gson().toJson(q);
+
 	}
 }
 

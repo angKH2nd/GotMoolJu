@@ -24,4 +24,29 @@ public class QnaServiceImpl implements QnaService {
 		return qDao.selectQnaList(sqlSession);
 	}
 
+	@Override
+	public int increaseCount(int qnaNo) {
+		return qDao.increaseCount(sqlSession, qnaNo);
+	}
+
+	@Override
+	public Qna selectQna(int qnaNo) {
+		return qDao.selectQna(sqlSession, qnaNo) ;
+	}
+
+	@Override
+	public int insertQna(Qna q) {
+		return qDao.insertQna(sqlSession, q);
+	}
+
+	@Override
+	public int deleteQna(int qnaNo) {
+		return qDao.deleteQna(sqlSession, qnaNo);
+	}
+
+	@Override
+	public int updateQna(Qna q) {
+		return qDao.updateQna(sqlSession, q);
+	}
+
 }

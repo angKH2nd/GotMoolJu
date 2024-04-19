@@ -50,7 +50,7 @@ function loadQna(){
     $.ajax({
         url: "list.qna",
         success: function(response){
-            // console.log("Data AJAX:", response);
+             console.log("Data AJAX:", response);
 
             let qnaHtml = ""; 
             for (let i = 0; i < response.length; i++) { 
