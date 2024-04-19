@@ -11,6 +11,14 @@
 	background-color: rgb(67, 77, 104);
 	border-radius: 20px;
 	text-align: center;
+	border: 1px solid rgb(67, 77, 104);
+}
+
+.map-circle:hover{
+	background-color: white;
+	.map-name{
+		color: rgb(67, 77, 104);
+	}
 }
 
 .map-name {
@@ -51,3 +59,41 @@
 	margin-top: 10px;
 }
 
+.jachi-outer{
+	position: relative; 
+	width: 100px; 
+	height: 25px; 
+	background-color: white; 
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid chocolate;
+	font-size: 12px;
+}
+.jachi-inner{
+	position: absolute; 
+	width: 35px; 
+	height: 25px; 
+	background-color: chocolate; 
+	text-align: center;
+	border-radius: 8px;
+	border: 1px solid chocolate;
+	left: 0;
+}
+.aptImage{
+	width: 60px;
+	height: 78px;
+	background-image: url("../../uploadFiles/member/apartment.png");
+	text-align: center;
+	line-height: 45px;
+	color: white;
+}
+.aptImageName{
+	width: 60px;
+	height: 14px;
+	font-size: 11px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: rgb(94, 97, 94, 0.4);
+	color: white;
+	text-align: center;
+}

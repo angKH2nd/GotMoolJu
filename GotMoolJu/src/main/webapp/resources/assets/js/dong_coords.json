@@ -1,0 +1,2804 @@
+[
+  {
+    "center_long": 126.9693239,
+    "center_lati": 37.58920545,
+    "sgg_nm": "종로구",
+    "emd_nm": "청운동"
+  },
+  {
+    "center_long": 126.9679415,
+    "center_lati": 37.58450635,
+    "sgg_nm": "종로구",
+    "emd_nm": "신교동"
+  },
+  {
+    "center_long": 126.9727063,
+    "center_lati": 37.58469795,
+    "sgg_nm": "종로구",
+    "emd_nm": "궁정동"
+  },
+  {
+    "center_long": 126.9719527,
+    "center_lati": 37.58266756,
+    "sgg_nm": "종로구",
+    "emd_nm": "효자동"
+  },
+  {
+    "center_long": 126.9724744,
+    "center_lati": 37.58056045,
+    "sgg_nm": "종로구",
+    "emd_nm": "창성동"
+  },
+  {
+    "center_long": 126.9728698,
+    "center_lati": 37.57807741,
+    "sgg_nm": "종로구",
+    "emd_nm": "통의동"
+  },
+  {
+    "center_long": 126.9737908,
+    "center_lati": 37.57532129,
+    "sgg_nm": "종로구",
+    "emd_nm": "적선동"
+  },
+  {
+    "center_long": 126.9702194,
+    "center_lati": 37.58016137,
+    "sgg_nm": "종로구",
+    "emd_nm": "통인동"
+  },
+  {
+    "center_long": 126.962737,
+    "center_lati": 37.58039873,
+    "sgg_nm": "종로구",
+    "emd_nm": "누상동"
+  },
+  {
+    "center_long": 126.968284,
+    "center_lati": 37.57929005,
+    "sgg_nm": "종로구",
+    "emd_nm": "누하동"
+  },
+  {
+    "center_long": 126.9634101,
+    "center_lati": 37.58353853,
+    "sgg_nm": "종로구",
+    "emd_nm": "옥인동"
+  },
+  {
+    "center_long": 126.970873,
+    "center_lati": 37.5775935,
+    "sgg_nm": "종로구",
+    "emd_nm": "체부동"
+  },
+  {
+    "center_long": 126.9681453,
+    "center_lati": 37.57729943,
+    "sgg_nm": "종로구",
+    "emd_nm": "필운동"
+  },
+  {
+    "center_long": 126.9717423,
+    "center_lati": 37.57531367,
+    "sgg_nm": "종로구",
+    "emd_nm": "내자동"
+  },
+  {
+    "center_long": 126.9659572,
+    "center_lati": 37.57541166,
+    "sgg_nm": "종로구",
+    "emd_nm": "사직동"
+  },
+  {
+    "center_long": 126.9747589,
+    "center_lati": 37.57312324,
+    "sgg_nm": "종로구",
+    "emd_nm": "도렴동"
+  },
+  {
+    "center_long": 126.9740135,
+    "center_lati": 37.57158829,
+    "sgg_nm": "종로구",
+    "emd_nm": "당주동"
+  },
+  {
+    "center_long": 126.9719717,
+    "center_lati": 37.57332521,
+    "sgg_nm": "종로구",
+    "emd_nm": "내수동"
+  },
+  {
+    "center_long": 126.9767892,
+    "center_lati": 37.58030401,
+    "sgg_nm": "종로구",
+    "emd_nm": "세종로"
+  },
+  {
+    "center_long": 126.973922,
+    "center_lati": 37.57019018,
+    "sgg_nm": "종로구",
+    "emd_nm": "신문로1가"
+  },
+  {
+    "center_long": 126.9692253,
+    "center_lati": 37.57086963,
+    "sgg_nm": "종로구",
+    "emd_nm": "신문로2가"
+  },
+  {
+    "center_long": 126.9801789,
+    "center_lati": 37.57145109,
+    "sgg_nm": "종로구",
+    "emd_nm": "청진동"
+  },
+  {
+    "center_long": 126.9804207,
+    "center_lati": 37.56952204,
+    "sgg_nm": "종로구",
+    "emd_nm": "서린동"
+  },
+  {
+    "center_long": 126.9806453,
+    "center_lati": 37.57369824,
+    "sgg_nm": "종로구",
+    "emd_nm": "수송동"
+  },
+  {
+    "center_long": 126.9796777,
+    "center_lati": 37.57531295,
+    "sgg_nm": "종로구",
+    "emd_nm": "중학동"
+  },
+  {
+    "center_long": 126.9797151,
+    "center_lati": 37.57043337,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로1가"
+  },
+  {
+    "center_long": 126.9831783,
+    "center_lati": 37.57130655,
+    "sgg_nm": "종로구",
+    "emd_nm": "공평동"
+  },
+  {
+    "center_long": 126.9846825,
+    "center_lati": 37.57415668,
+    "sgg_nm": "종로구",
+    "emd_nm": "관훈동"
+  },
+  {
+    "center_long": 126.9830128,
+    "center_lati": 37.57352261,
+    "sgg_nm": "종로구",
+    "emd_nm": "견지동"
+  },
+  {
+    "center_long": 126.9925501,
+    "center_lati": 37.58171457,
+    "sgg_nm": "종로구",
+    "emd_nm": "와룡동"
+  },
+  {
+    "center_long": 126.9916744,
+    "center_lati": 37.57650587,
+    "sgg_nm": "종로구",
+    "emd_nm": "권농동"
+  },
+  {
+    "center_long": 126.9882389,
+    "center_lati": 37.57638912,
+    "sgg_nm": "종로구",
+    "emd_nm": "운니동"
+  },
+  {
+    "center_long": 126.9897057,
+    "center_lati": 37.57434877,
+    "sgg_nm": "종로구",
+    "emd_nm": "익선동"
+  },
+  {
+    "center_long": 126.9864208,
+    "center_lati": 37.57520168,
+    "sgg_nm": "종로구",
+    "emd_nm": "경운동"
+  },
+  {
+    "center_long": 126.9860044,
+    "center_lati": 37.56912548,
+    "sgg_nm": "종로구",
+    "emd_nm": "관철동"
+  },
+  {
+    "center_long": 126.9860738,
+    "center_lati": 37.57171567,
+    "sgg_nm": "종로구",
+    "emd_nm": "인사동"
+  },
+  {
+    "center_long": 126.9886233,
+    "center_lati": 37.57257268,
+    "sgg_nm": "종로구",
+    "emd_nm": "낙원동"
+  },
+  {
+    "center_long": 126.9869347,
+    "center_lati": 37.5704583,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로2가"
+  },
+  {
+    "center_long": 126.9807261,
+    "center_lati": 37.58279761,
+    "sgg_nm": "종로구",
+    "emd_nm": "팔판동"
+  },
+  {
+    "center_long": 126.9810099,
+    "center_lati": 37.5907547,
+    "sgg_nm": "종로구",
+    "emd_nm": "삼청동"
+  },
+  {
+    "center_long": 126.9836299,
+    "center_lati": 37.57740019,
+    "sgg_nm": "종로구",
+    "emd_nm": "안국동"
+  },
+  {
+    "center_long": 126.9809344,
+    "center_lati": 37.57962288,
+    "sgg_nm": "종로구",
+    "emd_nm": "소격동"
+  },
+  {
+    "center_long": 126.9827311,
+    "center_lati": 37.58069151,
+    "sgg_nm": "종로구",
+    "emd_nm": "화동"
+  },
+  {
+    "center_long": 126.9804003,
+    "center_lati": 37.57726223,
+    "sgg_nm": "종로구",
+    "emd_nm": "사간동"
+  },
+  {
+    "center_long": 126.9818728,
+    "center_lati": 37.57677744,
+    "sgg_nm": "종로구",
+    "emd_nm": "송현동"
+  },
+  {
+    "center_long": 126.9848415,
+    "center_lati": 37.58268347,
+    "sgg_nm": "종로구",
+    "emd_nm": "가회동"
+  },
+  {
+    "center_long": 126.9852843,
+    "center_lati": 37.57832853,
+    "sgg_nm": "종로구",
+    "emd_nm": "재동"
+  },
+  {
+    "center_long": 126.9869298,
+    "center_lati": 37.58235185,
+    "sgg_nm": "종로구",
+    "emd_nm": "계동"
+  },
+  {
+    "center_long": 126.9882633,
+    "center_lati": 37.58392421,
+    "sgg_nm": "종로구",
+    "emd_nm": "원서동"
+  },
+  {
+    "center_long": 126.994196,
+    "center_lati": 37.57438433,
+    "sgg_nm": "종로구",
+    "emd_nm": "훈정동"
+  },
+  {
+    "center_long": 126.9917427,
+    "center_lati": 37.57243596,
+    "sgg_nm": "종로구",
+    "emd_nm": "묘동"
+  },
+  {
+    "center_long": 126.992998,
+    "center_lati": 37.5721947,
+    "sgg_nm": "종로구",
+    "emd_nm": "봉익동"
+  },
+  {
+    "center_long": 126.9907417,
+    "center_lati": 37.57198186,
+    "sgg_nm": "종로구",
+    "emd_nm": "돈의동"
+  },
+  {
+    "center_long": 126.994044,
+    "center_lati": 37.5692376,
+    "sgg_nm": "종로구",
+    "emd_nm": "장사동"
+  },
+  {
+    "center_long": 126.9904753,
+    "center_lati": 37.56907654,
+    "sgg_nm": "종로구",
+    "emd_nm": "관수동"
+  },
+  {
+    "center_long": 126.9923534,
+    "center_lati": 37.57040848,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로3가"
+  },
+  {
+    "center_long": 126.9976926,
+    "center_lati": 37.57234352,
+    "sgg_nm": "종로구",
+    "emd_nm": "인의동"
+  },
+  {
+    "center_long": 126.9983083,
+    "center_lati": 37.56963703,
+    "sgg_nm": "종로구",
+    "emd_nm": "예지동"
+  },
+  {
+    "center_long": 126.9975372,
+    "center_lati": 37.57556173,
+    "sgg_nm": "종로구",
+    "emd_nm": "원남동"
+  },
+  {
+    "center_long": 127.0001684,
+    "center_lati": 37.57375254,
+    "sgg_nm": "종로구",
+    "emd_nm": "연지동"
+  },
+  {
+    "center_long": 126.9979532,
+    "center_lati": 37.57067202,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로4가"
+  },
+  {
+    "center_long": 127.0030882,
+    "center_lati": 37.57305,
+    "sgg_nm": "종로구",
+    "emd_nm": "효제동"
+  },
+  {
+    "center_long": 127.0035339,
+    "center_lati": 37.57061741,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로5가"
+  },
+  {
+    "center_long": 127.0076852,
+    "center_lati": 37.57194722,
+    "sgg_nm": "종로구",
+    "emd_nm": "종로6가"
+  },
+  {
+    "center_long": 127.005633,
+    "center_lati": 37.57724049,
+    "sgg_nm": "종로구",
+    "emd_nm": "이화동"
+  },
+  {
+    "center_long": 126.9996944,
+    "center_lati": 37.57870344,
+    "sgg_nm": "종로구",
+    "emd_nm": "연건동"
+  },
+  {
+    "center_long": 127.005962,
+    "center_lati": 37.5749588,
+    "sgg_nm": "종로구",
+    "emd_nm": "충신동"
+  },
+  {
+    "center_long": 127.0048791,
+    "center_lati": 37.58140392,
+    "sgg_nm": "종로구",
+    "emd_nm": "동숭동"
+  },
+  {
+    "center_long": 127.0017548,
+    "center_lati": 37.58781302,
+    "sgg_nm": "종로구",
+    "emd_nm": "혜화동"
+  },
+  {
+    "center_long": 126.9974876,
+    "center_lati": 37.58911429,
+    "sgg_nm": "종로구",
+    "emd_nm": "명륜1가"
+  },
+  {
+    "center_long": 126.9990413,
+    "center_lati": 37.58470008,
+    "sgg_nm": "종로구",
+    "emd_nm": "명륜2가"
+  },
+  {
+    "center_long": 126.9998816,
+    "center_lati": 37.58223245,
+    "sgg_nm": "종로구",
+    "emd_nm": "명륜4가"
+  },
+  {
+    "center_long": 126.9931473,
+    "center_lati": 37.58822121,
+    "sgg_nm": "종로구",
+    "emd_nm": "명륜3가"
+  },
+  {
+    "center_long": 127.0124486,
+    "center_lati": 37.57540762,
+    "sgg_nm": "종로구",
+    "emd_nm": "창신동"
+  },
+  {
+    "center_long": 127.0189456,
+    "center_lati": 37.5755741,
+    "sgg_nm": "종로구",
+    "emd_nm": "숭인동"
+  },
+  {
+    "center_long": 126.9644685,
+    "center_lati": 37.56854771,
+    "sgg_nm": "종로구",
+    "emd_nm": "교남동"
+  },
+  {
+    "center_long": 126.966861,
+    "center_lati": 37.56791634,
+    "sgg_nm": "종로구",
+    "emd_nm": "평동"
+  },
+  {
+    "center_long": 126.9652182,
+    "center_lati": 37.5700805,
+    "sgg_nm": "종로구",
+    "emd_nm": "송월동"
+  },
+  {
+    "center_long": 126.9639857,
+    "center_lati": 37.57115084,
+    "sgg_nm": "종로구",
+    "emd_nm": "홍파동"
+  },
+  {
+    "center_long": 126.9614576,
+    "center_lati": 37.57153892,
+    "sgg_nm": "종로구",
+    "emd_nm": "교북동"
+  },
+  {
+    "center_long": 126.9626274,
+    "center_lati": 37.57368012,
+    "sgg_nm": "종로구",
+    "emd_nm": "행촌동"
+  },
+  {
+    "center_long": 126.9592754,
+    "center_lati": 37.61937824,
+    "sgg_nm": "종로구",
+    "emd_nm": "구기동"
+  },
+  {
+    "center_long": 126.9745007,
+    "center_lati": 37.61302931,
+    "sgg_nm": "종로구",
+    "emd_nm": "평창동"
+  },
+  {
+    "center_long": 126.9655904,
+    "center_lati": 37.59476325,
+    "sgg_nm": "종로구",
+    "emd_nm": "부암동"
+  },
+  {
+    "center_long": 126.9564818,
+    "center_lati": 37.60085596,
+    "sgg_nm": "종로구",
+    "emd_nm": "홍지동"
+  },
+  {
+    "center_long": 126.9618378,
+    "center_lati": 37.60252001,
+    "sgg_nm": "종로구",
+    "emd_nm": "신영동"
+  },
+  {
+    "center_long": 126.9585814,
+    "center_lati": 37.57710996,
+    "sgg_nm": "종로구",
+    "emd_nm": "무악동"
+  },
+  {
+    "center_long": 126.9790092,
+    "center_lati": 37.56815708,
+    "sgg_nm": "중구",
+    "emd_nm": "무교동"
+  },
+  {
+    "center_long": 126.9811863,
+    "center_lati": 37.5679094,
+    "sgg_nm": "중구",
+    "emd_nm": "다동"
+  },
+  {
+    "center_long": 126.9772465,
+    "center_lati": 37.56773133,
+    "sgg_nm": "중구",
+    "emd_nm": "태평로1가"
+  },
+  {
+    "center_long": 126.9805403,
+    "center_lati": 37.56599854,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로1가"
+  },
+  {
+    "center_long": 126.9859301,
+    "center_lati": 37.5658843,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로2가"
+  },
+  {
+    "center_long": 126.9828604,
+    "center_lati": 37.56757978,
+    "sgg_nm": "중구",
+    "emd_nm": "남대문로1가"
+  },
+  {
+    "center_long": 126.9842476,
+    "center_lati": 37.56809747,
+    "sgg_nm": "중구",
+    "emd_nm": "삼각동"
+  },
+  {
+    "center_long": 126.9846404,
+    "center_lati": 37.56728482,
+    "sgg_nm": "중구",
+    "emd_nm": "수하동"
+  },
+  {
+    "center_long": 126.9869848,
+    "center_lati": 37.56744983,
+    "sgg_nm": "중구",
+    "emd_nm": "장교동"
+  },
+  {
+    "center_long": 126.9895155,
+    "center_lati": 37.56746732,
+    "sgg_nm": "중구",
+    "emd_nm": "수표동"
+  },
+  {
+    "center_long": 126.9800647,
+    "center_lati": 37.56407544,
+    "sgg_nm": "중구",
+    "emd_nm": "소공동"
+  },
+  {
+    "center_long": 126.9776216,
+    "center_lati": 37.55807988,
+    "sgg_nm": "중구",
+    "emd_nm": "남창동"
+  },
+  {
+    "center_long": 126.9782046,
+    "center_lati": 37.5624526,
+    "sgg_nm": "중구",
+    "emd_nm": "북창동"
+  },
+  {
+    "center_long": 126.9763635,
+    "center_lati": 37.56298803,
+    "sgg_nm": "중구",
+    "emd_nm": "태평로2가"
+  },
+  {
+    "center_long": 126.982118,
+    "center_lati": 37.56395497,
+    "sgg_nm": "중구",
+    "emd_nm": "남대문로2가"
+  },
+  {
+    "center_long": 126.9795916,
+    "center_lati": 37.56170046,
+    "sgg_nm": "중구",
+    "emd_nm": "남대문로3가"
+  },
+  {
+    "center_long": 126.9757,
+    "center_lati": 37.56060501,
+    "sgg_nm": "중구",
+    "emd_nm": "남대문로4가"
+  },
+  {
+    "center_long": 126.9753115,
+    "center_lati": 37.55610013,
+    "sgg_nm": "중구",
+    "emd_nm": "남대문로5가"
+  },
+  {
+    "center_long": 126.9727725,
+    "center_lati": 37.55909999,
+    "sgg_nm": "중구",
+    "emd_nm": "봉래동1가"
+  },
+  {
+    "center_long": 126.9709871,
+    "center_lati": 37.5565563,
+    "sgg_nm": "중구",
+    "emd_nm": "봉래동2가"
+  },
+  {
+    "center_long": 126.9815145,
+    "center_lati": 37.55651031,
+    "sgg_nm": "중구",
+    "emd_nm": "회현동1가"
+  },
+  {
+    "center_long": 126.9829342,
+    "center_lati": 37.55876258,
+    "sgg_nm": "중구",
+    "emd_nm": "회현동2가"
+  },
+  {
+    "center_long": 126.9840771,
+    "center_lati": 37.56016838,
+    "sgg_nm": "중구",
+    "emd_nm": "회현동3가"
+  },
+  {
+    "center_long": 126.9825182,
+    "center_lati": 37.56117,
+    "sgg_nm": "중구",
+    "emd_nm": "충무로1가"
+  },
+  {
+    "center_long": 126.9877968,
+    "center_lati": 37.56172856,
+    "sgg_nm": "중구",
+    "emd_nm": "충무로2가"
+  },
+  {
+    "center_long": 126.9846625,
+    "center_lati": 37.56430296,
+    "sgg_nm": "중구",
+    "emd_nm": "명동1가"
+  },
+  {
+    "center_long": 126.985254,
+    "center_lati": 37.56290325,
+    "sgg_nm": "중구",
+    "emd_nm": "명동2가"
+  },
+  {
+    "center_long": 126.9845977,
+    "center_lati": 37.55934759,
+    "sgg_nm": "중구",
+    "emd_nm": "남산동1가"
+  },
+  {
+    "center_long": 126.9857876,
+    "center_lati": 37.55859158,
+    "sgg_nm": "중구",
+    "emd_nm": "남산동2가"
+  },
+  {
+    "center_long": 126.9874176,
+    "center_lati": 37.56015397,
+    "sgg_nm": "중구",
+    "emd_nm": "남산동3가"
+  },
+  {
+    "center_long": 126.9878051,
+    "center_lati": 37.56442966,
+    "sgg_nm": "중구",
+    "emd_nm": "저동1가"
+  },
+  {
+    "center_long": 126.9958393,
+    "center_lati": 37.56232925,
+    "sgg_nm": "중구",
+    "emd_nm": "충무로4가"
+  },
+  {
+    "center_long": 126.9996416,
+    "center_lati": 37.56284332,
+    "sgg_nm": "중구",
+    "emd_nm": "충무로5가"
+  },
+  {
+    "center_long": 126.9961464,
+    "center_lati": 37.56420423,
+    "sgg_nm": "중구",
+    "emd_nm": "인현동2가"
+  },
+  {
+    "center_long": 126.9982083,
+    "center_lati": 37.56425405,
+    "sgg_nm": "중구",
+    "emd_nm": "예관동"
+  },
+  {
+    "center_long": 127.0005628,
+    "center_lati": 37.56134647,
+    "sgg_nm": "중구",
+    "emd_nm": "묵정동"
+  },
+  {
+    "center_long": 126.9924666,
+    "center_lati": 37.56108823,
+    "sgg_nm": "중구",
+    "emd_nm": "필동1가"
+  },
+  {
+    "center_long": 126.9947217,
+    "center_lati": 37.55877227,
+    "sgg_nm": "중구",
+    "emd_nm": "필동2가"
+  },
+  {
+    "center_long": 126.9970218,
+    "center_lati": 37.55851624,
+    "sgg_nm": "중구",
+    "emd_nm": "필동3가"
+  },
+  {
+    "center_long": 126.990829,
+    "center_lati": 37.56057518,
+    "sgg_nm": "중구",
+    "emd_nm": "남학동"
+  },
+  {
+    "center_long": 126.9894031,
+    "center_lati": 37.56065989,
+    "sgg_nm": "중구",
+    "emd_nm": "주자동"
+  },
+  {
+    "center_long": 126.9901171,
+    "center_lati": 37.55522164,
+    "sgg_nm": "중구",
+    "emd_nm": "예장동"
+  },
+  {
+    "center_long": 127.0075868,
+    "center_lati": 37.56098013,
+    "sgg_nm": "중구",
+    "emd_nm": "장충동1가"
+  },
+  {
+    "center_long": 127.0005899,
+    "center_lati": 37.55499479,
+    "sgg_nm": "중구",
+    "emd_nm": "장충동2가"
+  },
+  {
+    "center_long": 127.0053243,
+    "center_lati": 37.56502343,
+    "sgg_nm": "중구",
+    "emd_nm": "광희동1가"
+  },
+  {
+    "center_long": 127.0084283,
+    "center_lati": 37.5639453,
+    "sgg_nm": "중구",
+    "emd_nm": "광희동2가"
+  },
+  {
+    "center_long": 127.0042426,
+    "center_lati": 37.56352924,
+    "sgg_nm": "중구",
+    "emd_nm": "쌍림동"
+  },
+  {
+    "center_long": 127.0068842,
+    "center_lati": 37.56778312,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로6가"
+  },
+  {
+    "center_long": 127.0096241,
+    "center_lati": 37.56628825,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로7가"
+  },
+  {
+    "center_long": 126.9977536,
+    "center_lati": 37.56644226,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로4가"
+  },
+  {
+    "center_long": 127.0023546,
+    "center_lati": 37.56672536,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로5가"
+  },
+  {
+    "center_long": 126.9993763,
+    "center_lati": 37.56826955,
+    "sgg_nm": "중구",
+    "emd_nm": "주교동"
+  },
+  {
+    "center_long": 127.0029803,
+    "center_lati": 37.56872704,
+    "sgg_nm": "중구",
+    "emd_nm": "방산동"
+  },
+  {
+    "center_long": 127.0008856,
+    "center_lati": 37.56473508,
+    "sgg_nm": "중구",
+    "emd_nm": "오장동"
+  },
+  {
+    "center_long": 126.9922082,
+    "center_lati": 37.56632624,
+    "sgg_nm": "중구",
+    "emd_nm": "을지로3가"
+  },
+  {
+    "center_long": 126.9929205,
+    "center_lati": 37.56781784,
+    "sgg_nm": "중구",
+    "emd_nm": "입정동"
+  },
+  {
+    "center_long": 126.995939,
+    "center_lati": 37.56767655,
+    "sgg_nm": "중구",
+    "emd_nm": "산림동"
+  },
+  {
+    "center_long": 126.9917456,
+    "center_lati": 37.56238683,
+    "sgg_nm": "중구",
+    "emd_nm": "충무로3가"
+  },
+  {
+    "center_long": 126.9922244,
+    "center_lati": 37.564426,
+    "sgg_nm": "중구",
+    "emd_nm": "초동"
+  },
+  {
+    "center_long": 126.9943101,
+    "center_lati": 37.56458804,
+    "sgg_nm": "중구",
+    "emd_nm": "인현동1가"
+  },
+  {
+    "center_long": 126.9897933,
+    "center_lati": 37.56423969,
+    "sgg_nm": "중구",
+    "emd_nm": "저동2가"
+  },
+  {
+    "center_long": 127.0136696,
+    "center_lati": 37.55791053,
+    "sgg_nm": "중구",
+    "emd_nm": "신당동"
+  },
+  {
+    "center_long": 127.0163806,
+    "center_lati": 37.56731099,
+    "sgg_nm": "중구",
+    "emd_nm": "흥인동"
+  },
+  {
+    "center_long": 127.0152873,
+    "center_lati": 37.56437425,
+    "sgg_nm": "중구",
+    "emd_nm": "무학동"
+  },
+  {
+    "center_long": 127.0208385,
+    "center_lati": 37.56854521,
+    "sgg_nm": "중구",
+    "emd_nm": "황학동"
+  },
+  {
+    "center_long": 126.9739194,
+    "center_lati": 37.5631419,
+    "sgg_nm": "중구",
+    "emd_nm": "서소문동"
+  },
+  {
+    "center_long": 126.9731461,
+    "center_lati": 37.56661111,
+    "sgg_nm": "중구",
+    "emd_nm": "정동"
+  },
+  {
+    "center_long": 126.9707134,
+    "center_lati": 37.56257324,
+    "sgg_nm": "중구",
+    "emd_nm": "순화동"
+  },
+  {
+    "center_long": 126.9684761,
+    "center_lati": 37.56411651,
+    "sgg_nm": "중구",
+    "emd_nm": "의주로1가"
+  },
+  {
+    "center_long": 126.9682787,
+    "center_lati": 37.56652616,
+    "sgg_nm": "중구",
+    "emd_nm": "충정로1가"
+  },
+  {
+    "center_long": 126.9663364,
+    "center_lati": 37.55883621,
+    "sgg_nm": "중구",
+    "emd_nm": "중림동"
+  },
+  {
+    "center_long": 126.9696216,
+    "center_lati": 37.56073659,
+    "sgg_nm": "중구",
+    "emd_nm": "의주로2가"
+  },
+  {
+    "center_long": 126.9673134,
+    "center_lati": 37.55616563,
+    "sgg_nm": "중구",
+    "emd_nm": "만리동1가"
+  },
+  {
+    "center_long": 126.963964,
+    "center_lati": 37.55462681,
+    "sgg_nm": "중구",
+    "emd_nm": "만리동2가"
+  },
+  {
+    "center_long": 126.9806228,
+    "center_lati": 37.549902,
+    "sgg_nm": "용산구",
+    "emd_nm": "후암동"
+  },
+  {
+    "center_long": 126.985019,
+    "center_lati": 37.5428862,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동2가"
+  },
+  {
+    "center_long": 126.9851823,
+    "center_lati": 37.53053632,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동4가"
+  },
+  {
+    "center_long": 126.9723657,
+    "center_lati": 37.54540641,
+    "sgg_nm": "용산구",
+    "emd_nm": "갈월동"
+  },
+  {
+    "center_long": 126.9733621,
+    "center_lati": 37.5428618,
+    "sgg_nm": "용산구",
+    "emd_nm": "남영동"
+  },
+  {
+    "center_long": 126.9770274,
+    "center_lati": 37.54001205,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동1가"
+  },
+  {
+    "center_long": 126.9724313,
+    "center_lati": 37.55207177,
+    "sgg_nm": "용산구",
+    "emd_nm": "동자동"
+  },
+  {
+    "center_long": 126.9667992,
+    "center_lati": 37.55216608,
+    "sgg_nm": "용산구",
+    "emd_nm": "서계동"
+  },
+  {
+    "center_long": 126.9674685,
+    "center_lati": 37.54879204,
+    "sgg_nm": "용산구",
+    "emd_nm": "청파동1가"
+  },
+  {
+    "center_long": 126.9662426,
+    "center_lati": 37.54600826,
+    "sgg_nm": "용산구",
+    "emd_nm": "청파동2가"
+  },
+  {
+    "center_long": 126.9671116,
+    "center_lati": 37.5432559,
+    "sgg_nm": "용산구",
+    "emd_nm": "청파동3가"
+  },
+  {
+    "center_long": 126.9674469,
+    "center_lati": 37.53998056,
+    "sgg_nm": "용산구",
+    "emd_nm": "원효로1가"
+  },
+  {
+    "center_long": 126.9633397,
+    "center_lati": 37.53629745,
+    "sgg_nm": "용산구",
+    "emd_nm": "원효로2가"
+  },
+  {
+    "center_long": 126.9549781,
+    "center_lati": 37.53577368,
+    "sgg_nm": "용산구",
+    "emd_nm": "신창동"
+  },
+  {
+    "center_long": 126.9514352,
+    "center_lati": 37.53548579,
+    "sgg_nm": "용산구",
+    "emd_nm": "산천동"
+  },
+  {
+    "center_long": 126.9466681,
+    "center_lati": 37.53450124,
+    "sgg_nm": "용산구",
+    "emd_nm": "청암동"
+  },
+  {
+    "center_long": 126.9576593,
+    "center_lati": 37.53432706,
+    "sgg_nm": "용산구",
+    "emd_nm": "원효로3가"
+  },
+  {
+    "center_long": 126.9507163,
+    "center_lati": 37.53255077,
+    "sgg_nm": "용산구",
+    "emd_nm": "원효로4가"
+  },
+  {
+    "center_long": 126.9609711,
+    "center_lati": 37.54282439,
+    "sgg_nm": "용산구",
+    "emd_nm": "효창동"
+  },
+  {
+    "center_long": 126.9560422,
+    "center_lati": 37.53872764,
+    "sgg_nm": "용산구",
+    "emd_nm": "도원동"
+  },
+  {
+    "center_long": 126.9596909,
+    "center_lati": 37.53765918,
+    "sgg_nm": "용산구",
+    "emd_nm": "용문동"
+  },
+  {
+    "center_long": 126.9694198,
+    "center_lati": 37.53710869,
+    "sgg_nm": "용산구",
+    "emd_nm": "문배동"
+  },
+  {
+    "center_long": 126.9657739,
+    "center_lati": 37.53518051,
+    "sgg_nm": "용산구",
+    "emd_nm": "신계동"
+  },
+  {
+    "center_long": 126.9730217,
+    "center_lati": 37.5360775,
+    "sgg_nm": "용산구",
+    "emd_nm": "한강로1가"
+  },
+  {
+    "center_long": 126.9685983,
+    "center_lati": 37.53154133,
+    "sgg_nm": "용산구",
+    "emd_nm": "한강로2가"
+  },
+  {
+    "center_long": 126.976939,
+    "center_lati": 37.5318615,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동3가"
+  },
+  {
+    "center_long": 126.9745751,
+    "center_lati": 37.52614746,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동5가"
+  },
+  {
+    "center_long": 126.9621918,
+    "center_lati": 37.5276683,
+    "sgg_nm": "용산구",
+    "emd_nm": "한강로3가"
+  },
+  {
+    "center_long": 126.9665321,
+    "center_lati": 37.51745298,
+    "sgg_nm": "용산구",
+    "emd_nm": "이촌동"
+  },
+  {
+    "center_long": 126.9925228,
+    "center_lati": 37.53851002,
+    "sgg_nm": "용산구",
+    "emd_nm": "이태원동"
+  },
+  {
+    "center_long": 127.0051789,
+    "center_lati": 37.53754255,
+    "sgg_nm": "용산구",
+    "emd_nm": "한남동"
+  },
+  {
+    "center_long": 126.9951453,
+    "center_lati": 37.52446161,
+    "sgg_nm": "용산구",
+    "emd_nm": "동빙고동"
+  },
+  {
+    "center_long": 126.9913114,
+    "center_lati": 37.51862166,
+    "sgg_nm": "용산구",
+    "emd_nm": "서빙고동"
+  },
+  {
+    "center_long": 126.9998219,
+    "center_lati": 37.52130228,
+    "sgg_nm": "용산구",
+    "emd_nm": "주성동"
+  },
+  {
+    "center_long": 126.9848236,
+    "center_lati": 37.51864049,
+    "sgg_nm": "용산구",
+    "emd_nm": "용산동6가"
+  },
+  {
+    "center_long": 127.0009364,
+    "center_lati": 37.52687181,
+    "sgg_nm": "용산구",
+    "emd_nm": "보광동"
+  },
+  {
+    "center_long": 127.0248183,
+    "center_lati": 37.56845704,
+    "sgg_nm": "성동구",
+    "emd_nm": "상왕십리동"
+  },
+  {
+    "center_long": 127.028025,
+    "center_lati": 37.56398727,
+    "sgg_nm": "성동구",
+    "emd_nm": "하왕십리동"
+  },
+  {
+    "center_long": 127.0323485,
+    "center_lati": 37.56649089,
+    "sgg_nm": "성동구",
+    "emd_nm": "홍익동"
+  },
+  {
+    "center_long": 127.0335501,
+    "center_lati": 37.56381116,
+    "sgg_nm": "성동구",
+    "emd_nm": "도선동"
+  },
+  {
+    "center_long": 127.0407428,
+    "center_lati": 37.56736421,
+    "sgg_nm": "성동구",
+    "emd_nm": "마장동"
+  },
+  {
+    "center_long": 127.0476005,
+    "center_lati": 37.55890772,
+    "sgg_nm": "성동구",
+    "emd_nm": "사근동"
+  },
+  {
+    "center_long": 127.0359886,
+    "center_lati": 37.55762724,
+    "sgg_nm": "성동구",
+    "emd_nm": "행당동"
+  },
+  {
+    "center_long": 127.033808,
+    "center_lati": 37.55088716,
+    "sgg_nm": "성동구",
+    "emd_nm": "응봉동"
+  },
+  {
+    "center_long": 127.0249946,
+    "center_lati": 37.55356063,
+    "sgg_nm": "성동구",
+    "emd_nm": "금호동1가"
+  },
+  {
+    "center_long": 127.0204149,
+    "center_lati": 37.55303985,
+    "sgg_nm": "성동구",
+    "emd_nm": "금호동2가"
+  },
+  {
+    "center_long": 127.0195571,
+    "center_lati": 37.54989246,
+    "sgg_nm": "성동구",
+    "emd_nm": "금호동3가"
+  },
+  {
+    "center_long": 127.0243015,
+    "center_lati": 37.54546593,
+    "sgg_nm": "성동구",
+    "emd_nm": "금호동4가"
+  },
+  {
+    "center_long": 127.02059,
+    "center_lati": 37.54088766,
+    "sgg_nm": "성동구",
+    "emd_nm": "옥수동"
+  },
+  {
+    "center_long": 127.0428205,
+    "center_lati": 37.54361013,
+    "sgg_nm": "성동구",
+    "emd_nm": "성수동1가"
+  },
+  {
+    "center_long": 127.056636,
+    "center_lati": 37.54068641,
+    "sgg_nm": "성동구",
+    "emd_nm": "성수동2가"
+  },
+  {
+    "center_long": 127.0620787,
+    "center_lati": 37.55317975,
+    "sgg_nm": "성동구",
+    "emd_nm": "송정동"
+  },
+  {
+    "center_long": 127.0563598,
+    "center_lati": 37.56146709,
+    "sgg_nm": "성동구",
+    "emd_nm": "용답동"
+  },
+  {
+    "center_long": 127.0887869,
+    "center_lati": 37.56353619,
+    "sgg_nm": "광진구",
+    "emd_nm": "중곡동"
+  },
+  {
+    "center_long": 127.0817382,
+    "center_lati": 37.55057936,
+    "sgg_nm": "광진구",
+    "emd_nm": "능동"
+  },
+  {
+    "center_long": 127.0928492,
+    "center_lati": 37.54440945,
+    "sgg_nm": "광진구",
+    "emd_nm": "구의동"
+  },
+  {
+    "center_long": 127.1047097,
+    "center_lati": 37.54783278,
+    "sgg_nm": "광진구",
+    "emd_nm": "광장동"
+  },
+  {
+    "center_long": 127.0745245,
+    "center_lati": 37.5316965,
+    "sgg_nm": "광진구",
+    "emd_nm": "자양동"
+  },
+  {
+    "center_long": 127.0732227,
+    "center_lati": 37.54323211,
+    "sgg_nm": "광진구",
+    "emd_nm": "화양동"
+  },
+  {
+    "center_long": 127.0736719,
+    "center_lati": 37.55303732,
+    "sgg_nm": "광진구",
+    "emd_nm": "군자동"
+  },
+  {
+    "center_long": 127.0255609,
+    "center_lati": 37.5749437,
+    "sgg_nm": "동대문구",
+    "emd_nm": "신설동"
+  },
+  {
+    "center_long": 127.0342917,
+    "center_lati": 37.57572086,
+    "sgg_nm": "동대문구",
+    "emd_nm": "용두동"
+  },
+  {
+    "center_long": 127.0372406,
+    "center_lati": 37.58377503,
+    "sgg_nm": "동대문구",
+    "emd_nm": "제기동"
+  },
+  {
+    "center_long": 127.0557054,
+    "center_lati": 37.57974743,
+    "sgg_nm": "동대문구",
+    "emd_nm": "전농동"
+  },
+  {
+    "center_long": 127.0566988,
+    "center_lati": 37.57101949,
+    "sgg_nm": "동대문구",
+    "emd_nm": "답십리동"
+  },
+  {
+    "center_long": 127.0700244,
+    "center_lati": 37.57020695,
+    "sgg_nm": "동대문구",
+    "emd_nm": "장안동"
+  },
+  {
+    "center_long": 127.0452888,
+    "center_lati": 37.58879593,
+    "sgg_nm": "동대문구",
+    "emd_nm": "청량리동"
+  },
+  {
+    "center_long": 127.0514534,
+    "center_lati": 37.5937357,
+    "sgg_nm": "동대문구",
+    "emd_nm": "회기동"
+  },
+  {
+    "center_long": 127.0645215,
+    "center_lati": 37.58821353,
+    "sgg_nm": "동대문구",
+    "emd_nm": "휘경동"
+  },
+  {
+    "center_long": 127.06325,
+    "center_lati": 37.59946111,
+    "sgg_nm": "동대문구",
+    "emd_nm": "이문동"
+  },
+  {
+    "center_long": 127.0892189,
+    "center_lati": 37.5823761,
+    "sgg_nm": "중랑구",
+    "emd_nm": "면목동"
+  },
+  {
+    "center_long": 127.0871203,
+    "center_lati": 37.59847695,
+    "sgg_nm": "중랑구",
+    "emd_nm": "상봉동"
+  },
+  {
+    "center_long": 127.0781468,
+    "center_lati": 37.60050145,
+    "sgg_nm": "중랑구",
+    "emd_nm": "중화동"
+  },
+  {
+    "center_long": 127.0797416,
+    "center_lati": 37.61271312,
+    "sgg_nm": "중랑구",
+    "emd_nm": "묵동"
+  },
+  {
+    "center_long": 127.1063286,
+    "center_lati": 37.59958728,
+    "sgg_nm": "중랑구",
+    "emd_nm": "망우동"
+  },
+  {
+    "center_long": 127.1008088,
+    "center_lati": 37.61260284,
+    "sgg_nm": "중랑구",
+    "emd_nm": "신내동"
+  },
+  {
+    "center_long": 126.9929126,
+    "center_lati": 37.59724501,
+    "sgg_nm": "성북구",
+    "emd_nm": "성북동"
+  },
+  {
+    "center_long": 127.0037031,
+    "center_lati": 37.58952569,
+    "sgg_nm": "성북구",
+    "emd_nm": "성북동1가"
+  },
+  {
+    "center_long": 127.0182785,
+    "center_lati": 37.59779445,
+    "sgg_nm": "성북구",
+    "emd_nm": "돈암동"
+  },
+  {
+    "center_long": 127.0072644,
+    "center_lati": 37.59003933,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동1가"
+  },
+  {
+    "center_long": 127.0082647,
+    "center_lati": 37.58872066,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동2가"
+  },
+  {
+    "center_long": 127.0112534,
+    "center_lati": 37.59038715,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동3가"
+  },
+  {
+    "center_long": 127.010656,
+    "center_lati": 37.59175708,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동4가"
+  },
+  {
+    "center_long": 127.0153866,
+    "center_lati": 37.59163936,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동5가"
+  },
+  {
+    "center_long": 127.0142556,
+    "center_lati": 37.59353155,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동6가"
+  },
+  {
+    "center_long": 127.014198,
+    "center_lati": 37.59632605,
+    "sgg_nm": "성북구",
+    "emd_nm": "동소문동7가"
+  },
+  {
+    "center_long": 127.0078934,
+    "center_lati": 37.58491313,
+    "sgg_nm": "성북구",
+    "emd_nm": "삼선동1가"
+  },
+  {
+    "center_long": 127.0113758,
+    "center_lati": 37.58387955,
+    "sgg_nm": "성북구",
+    "emd_nm": "삼선동2가"
+  },
+  {
+    "center_long": 127.0130663,
+    "center_lati": 37.58654322,
+    "sgg_nm": "성북구",
+    "emd_nm": "삼선동3가"
+  },
+  {
+    "center_long": 127.0131677,
+    "center_lati": 37.59002478,
+    "sgg_nm": "성북구",
+    "emd_nm": "삼선동4가"
+  },
+  {
+    "center_long": 127.0158779,
+    "center_lati": 37.58854083,
+    "sgg_nm": "성북구",
+    "emd_nm": "삼선동5가"
+  },
+  {
+    "center_long": 127.0182358,
+    "center_lati": 37.59231397,
+    "sgg_nm": "성북구",
+    "emd_nm": "동선동1가"
+  },
+  {
+    "center_long": 127.0200217,
+    "center_lati": 37.59017904,
+    "sgg_nm": "성북구",
+    "emd_nm": "동선동2가"
+  },
+  {
+    "center_long": 127.0206836,
+    "center_lati": 37.59393205,
+    "sgg_nm": "성북구",
+    "emd_nm": "동선동3가"
+  },
+  {
+    "center_long": 127.0186241,
+    "center_lati": 37.5951964,
+    "sgg_nm": "성북구",
+    "emd_nm": "동선동4가"
+  },
+  {
+    "center_long": 127.0166693,
+    "center_lati": 37.59628661,
+    "sgg_nm": "성북구",
+    "emd_nm": "동선동5가"
+  },
+  {
+    "center_long": 127.022107,
+    "center_lati": 37.58870611,
+    "sgg_nm": "성북구",
+    "emd_nm": "안암동1가"
+  },
+  {
+    "center_long": 127.0231867,
+    "center_lati": 37.58690018,
+    "sgg_nm": "성북구",
+    "emd_nm": "안암동2가"
+  },
+  {
+    "center_long": 127.0233367,
+    "center_lati": 37.58354635,
+    "sgg_nm": "성북구",
+    "emd_nm": "안암동3가"
+  },
+  {
+    "center_long": 127.0246665,
+    "center_lati": 37.58068796,
+    "sgg_nm": "성북구",
+    "emd_nm": "안암동4가"
+  },
+  {
+    "center_long": 127.0283853,
+    "center_lati": 37.58845682,
+    "sgg_nm": "성북구",
+    "emd_nm": "안암동5가"
+  },
+  {
+    "center_long": 127.0213676,
+    "center_lati": 37.58291803,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동4가"
+  },
+  {
+    "center_long": 127.0200852,
+    "center_lati": 37.58239846,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동5가"
+  },
+  {
+    "center_long": 127.0188642,
+    "center_lati": 37.58039122,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동6가"
+  },
+  {
+    "center_long": 127.0223785,
+    "center_lati": 37.57977368,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동7가"
+  },
+  {
+    "center_long": 127.0196677,
+    "center_lati": 37.58649815,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동1가"
+  },
+  {
+    "center_long": 127.0182315,
+    "center_lati": 37.58575727,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동2가"
+  },
+  {
+    "center_long": 127.0163637,
+    "center_lati": 37.58396378,
+    "sgg_nm": "성북구",
+    "emd_nm": "보문동3가"
+  },
+  {
+    "center_long": 126.9976694,
+    "center_lati": 37.61558695,
+    "sgg_nm": "성북구",
+    "emd_nm": "정릉동"
+  },
+  {
+    "center_long": 127.0221422,
+    "center_lati": 37.60859152,
+    "sgg_nm": "성북구",
+    "emd_nm": "길음동"
+  },
+  {
+    "center_long": 127.0339033,
+    "center_lati": 37.59717389,
+    "sgg_nm": "성북구",
+    "emd_nm": "종암동"
+  },
+  {
+    "center_long": 127.039357,
+    "center_lati": 37.60468157,
+    "sgg_nm": "성북구",
+    "emd_nm": "하월곡동"
+  },
+  {
+    "center_long": 127.0477742,
+    "center_lati": 37.60617014,
+    "sgg_nm": "성북구",
+    "emd_nm": "상월곡동"
+  },
+  {
+    "center_long": 127.0499155,
+    "center_lati": 37.61521889,
+    "sgg_nm": "성북구",
+    "emd_nm": "장위동"
+  },
+  {
+    "center_long": 127.0614809,
+    "center_lati": 37.60826582,
+    "sgg_nm": "성북구",
+    "emd_nm": "석관동"
+  },
+  {
+    "center_long": 127.0238799,
+    "center_lati": 37.62109935,
+    "sgg_nm": "강북구",
+    "emd_nm": "미아동"
+  },
+  {
+    "center_long": 127.0367555,
+    "center_lati": 37.62904413,
+    "sgg_nm": "강북구",
+    "emd_nm": "번동"
+  },
+  {
+    "center_long": 127.0073718,
+    "center_lati": 37.63832678,
+    "sgg_nm": "강북구",
+    "emd_nm": "수유동"
+  },
+  {
+    "center_long": 127.0005172,
+    "center_lati": 37.66328646,
+    "sgg_nm": "강북구",
+    "emd_nm": "우이동"
+  },
+  {
+    "center_long": 127.0270974,
+    "center_lati": 37.65335781,
+    "sgg_nm": "도봉구",
+    "emd_nm": "쌍문동"
+  },
+  {
+    "center_long": 127.0310643,
+    "center_lati": 37.66528391,
+    "sgg_nm": "도봉구",
+    "emd_nm": "방학동"
+  },
+  {
+    "center_long": 127.0440647,
+    "center_lati": 37.64774549,
+    "sgg_nm": "도봉구",
+    "emd_nm": "창동"
+  },
+  {
+    "center_long": 127.0292352,
+    "center_lati": 37.68484897,
+    "sgg_nm": "도봉구",
+    "emd_nm": "도봉동"
+  },
+  {
+    "center_long": 127.056741,
+    "center_lati": 37.62824387,
+    "sgg_nm": "노원구",
+    "emd_nm": "월계동"
+  },
+  {
+    "center_long": 127.0910109,
+    "center_lati": 37.63049638,
+    "sgg_nm": "노원구",
+    "emd_nm": "공릉동"
+  },
+  {
+    "center_long": 127.07251,
+    "center_lati": 37.63764459,
+    "sgg_nm": "노원구",
+    "emd_nm": "하계동"
+  },
+  {
+    "center_long": 127.0703367,
+    "center_lati": 37.67299194,
+    "sgg_nm": "노원구",
+    "emd_nm": "상계동"
+  },
+  {
+    "center_long": 127.0799978,
+    "center_lati": 37.65101289,
+    "sgg_nm": "노원구",
+    "emd_nm": "중계동"
+  },
+  {
+    "center_long": 126.8945465,
+    "center_lati": 37.58557348,
+    "sgg_nm": "은평구",
+    "emd_nm": "수색동"
+  },
+  {
+    "center_long": 126.9345829,
+    "center_lati": 37.60530976,
+    "sgg_nm": "은평구",
+    "emd_nm": "녹번동"
+  },
+  {
+    "center_long": 126.9355775,
+    "center_lati": 37.61915586,
+    "sgg_nm": "은평구",
+    "emd_nm": "불광동"
+  },
+  {
+    "center_long": 126.9135787,
+    "center_lati": 37.62154268,
+    "sgg_nm": "은평구",
+    "emd_nm": "갈현동"
+  },
+  {
+    "center_long": 126.9073108,
+    "center_lati": 37.6110726,
+    "sgg_nm": "은평구",
+    "emd_nm": "구산동"
+  },
+  {
+    "center_long": 126.9231529,
+    "center_lati": 37.61225609,
+    "sgg_nm": "은평구",
+    "emd_nm": "대조동"
+  },
+  {
+    "center_long": 126.9231251,
+    "center_lati": 37.59383529,
+    "sgg_nm": "은평구",
+    "emd_nm": "응암동"
+  },
+  {
+    "center_long": 126.9146253,
+    "center_lati": 37.60457763,
+    "sgg_nm": "은평구",
+    "emd_nm": "역촌동"
+  },
+  {
+    "center_long": 126.9072034,
+    "center_lati": 37.59561342,
+    "sgg_nm": "은평구",
+    "emd_nm": "신사동"
+  },
+  {
+    "center_long": 126.9059645,
+    "center_lati": 37.58416813,
+    "sgg_nm": "은평구",
+    "emd_nm": "증산동"
+  },
+  {
+    "center_long": 126.9378235,
+    "center_lati": 37.63967722,
+    "sgg_nm": "은평구",
+    "emd_nm": "진관동"
+  },
+  {
+    "center_long": 126.9641762,
+    "center_lati": 37.56485395,
+    "sgg_nm": "서대문구",
+    "emd_nm": "충정로2가"
+  },
+  {
+    "center_long": 126.9619637,
+    "center_lati": 37.56211701,
+    "sgg_nm": "서대문구",
+    "emd_nm": "충정로3가"
+  },
+  {
+    "center_long": 126.9660704,
+    "center_lati": 37.56157043,
+    "sgg_nm": "서대문구",
+    "emd_nm": "합동"
+  },
+  {
+    "center_long": 126.9672879,
+    "center_lati": 37.56333097,
+    "sgg_nm": "서대문구",
+    "emd_nm": "미근동"
+  },
+  {
+    "center_long": 126.9624187,
+    "center_lati": 37.56681403,
+    "sgg_nm": "서대문구",
+    "emd_nm": "냉천동"
+  },
+  {
+    "center_long": 126.9594361,
+    "center_lati": 37.5679061,
+    "sgg_nm": "서대문구",
+    "emd_nm": "천연동"
+  },
+  {
+    "center_long": 126.9591279,
+    "center_lati": 37.56935098,
+    "sgg_nm": "서대문구",
+    "emd_nm": "옥천동"
+  },
+  {
+    "center_long": 126.9577082,
+    "center_lati": 37.57029922,
+    "sgg_nm": "서대문구",
+    "emd_nm": "영천동"
+  },
+  {
+    "center_long": 126.9540462,
+    "center_lati": 37.57377155,
+    "sgg_nm": "서대문구",
+    "emd_nm": "현저동"
+  },
+  {
+    "center_long": 126.9543864,
+    "center_lati": 37.5624197,
+    "sgg_nm": "서대문구",
+    "emd_nm": "북아현동"
+  },
+  {
+    "center_long": 126.9489511,
+    "center_lati": 37.58707668,
+    "sgg_nm": "서대문구",
+    "emd_nm": "홍제동"
+  },
+  {
+    "center_long": 126.9463135,
+    "center_lati": 37.56041263,
+    "sgg_nm": "서대문구",
+    "emd_nm": "대현동"
+  },
+  {
+    "center_long": 126.9443095,
+    "center_lati": 37.56422007,
+    "sgg_nm": "서대문구",
+    "emd_nm": "대신동"
+  },
+  {
+    "center_long": 126.941396,
+    "center_lati": 37.56554453,
+    "sgg_nm": "서대문구",
+    "emd_nm": "신촌동"
+  },
+  {
+    "center_long": 126.9469256,
+    "center_lati": 37.57263109,
+    "sgg_nm": "서대문구",
+    "emd_nm": "봉원동"
+  },
+  {
+    "center_long": 126.9342114,
+    "center_lati": 37.55869869,
+    "sgg_nm": "서대문구",
+    "emd_nm": "창천동"
+  },
+  {
+    "center_long": 126.9328276,
+    "center_lati": 37.57198173,
+    "sgg_nm": "서대문구",
+    "emd_nm": "연희동"
+  },
+  {
+    "center_long": 126.9385709,
+    "center_lati": 37.59302549,
+    "sgg_nm": "서대문구",
+    "emd_nm": "홍은동"
+  },
+  {
+    "center_long": 126.911189,
+    "center_lati": 37.57880151,
+    "sgg_nm": "서대문구",
+    "emd_nm": "북가좌동"
+  },
+  {
+    "center_long": 126.9194412,
+    "center_lati": 37.57562165,
+    "sgg_nm": "서대문구",
+    "emd_nm": "남가좌동"
+  },
+  {
+    "center_long": 126.9563198,
+    "center_lati": 37.55446838,
+    "sgg_nm": "마포구",
+    "emd_nm": "아현동"
+  },
+  {
+    "center_long": 126.9549477,
+    "center_lati": 37.54807048,
+    "sgg_nm": "마포구",
+    "emd_nm": "공덕동"
+  },
+  {
+    "center_long": 126.955943,
+    "center_lati": 37.54413092,
+    "sgg_nm": "마포구",
+    "emd_nm": "신공덕동"
+  },
+  {
+    "center_long": 126.9500482,
+    "center_lati": 37.53975918,
+    "sgg_nm": "마포구",
+    "emd_nm": "도화동"
+  },
+  {
+    "center_long": 126.9404525,
+    "center_lati": 37.54149849,
+    "sgg_nm": "마포구",
+    "emd_nm": "용강동"
+  },
+  {
+    "center_long": 126.9398014,
+    "center_lati": 37.53891238,
+    "sgg_nm": "마포구",
+    "emd_nm": "토정동"
+  },
+  {
+    "center_long": 126.9438442,
+    "center_lati": 37.53713453,
+    "sgg_nm": "마포구",
+    "emd_nm": "마포동"
+  },
+  {
+    "center_long": 126.9431969,
+    "center_lati": 37.54980406,
+    "sgg_nm": "마포구",
+    "emd_nm": "대흥동"
+  },
+  {
+    "center_long": 126.9473284,
+    "center_lati": 37.54913172,
+    "sgg_nm": "마포구",
+    "emd_nm": "염리동"
+  },
+  {
+    "center_long": 126.9377854,
+    "center_lati": 37.55438895,
+    "sgg_nm": "마포구",
+    "emd_nm": "노고산동"
+  },
+  {
+    "center_long": 126.9368297,
+    "center_lati": 37.54857718,
+    "sgg_nm": "마포구",
+    "emd_nm": "신수동"
+  },
+  {
+    "center_long": 126.9343747,
+    "center_lati": 37.54222206,
+    "sgg_nm": "마포구",
+    "emd_nm": "현석동"
+  },
+  {
+    "center_long": 126.9325632,
+    "center_lati": 37.54576156,
+    "sgg_nm": "마포구",
+    "emd_nm": "구수동"
+  },
+  {
+    "center_long": 126.9300886,
+    "center_lati": 37.55026506,
+    "sgg_nm": "마포구",
+    "emd_nm": "창전동"
+  },
+  {
+    "center_long": 126.9244872,
+    "center_lati": 37.54667064,
+    "sgg_nm": "마포구",
+    "emd_nm": "상수동"
+  },
+  {
+    "center_long": 126.927799,
+    "center_lati": 37.54359212,
+    "sgg_nm": "마포구",
+    "emd_nm": "하중동"
+  },
+  {
+    "center_long": 126.9303513,
+    "center_lati": 37.54317848,
+    "sgg_nm": "마포구",
+    "emd_nm": "신정동"
+  },
+  {
+    "center_long": 126.9220685,
+    "center_lati": 37.54260554,
+    "sgg_nm": "마포구",
+    "emd_nm": "당인동"
+  },
+  {
+    "center_long": 126.9187984,
+    "center_lati": 37.55383938,
+    "sgg_nm": "마포구",
+    "emd_nm": "서교동"
+  },
+  {
+    "center_long": 126.9251542,
+    "center_lati": 37.55759509,
+    "sgg_nm": "마포구",
+    "emd_nm": "동교동"
+  },
+  {
+    "center_long": 126.909045,
+    "center_lati": 37.54702306,
+    "sgg_nm": "마포구",
+    "emd_nm": "합정동"
+  },
+  {
+    "center_long": 126.8999305,
+    "center_lati": 37.55547773,
+    "sgg_nm": "마포구",
+    "emd_nm": "망원동"
+  },
+  {
+    "center_long": 126.9215286,
+    "center_lati": 37.56302323,
+    "sgg_nm": "마포구",
+    "emd_nm": "연남동"
+  },
+  {
+    "center_long": 126.9046938,
+    "center_lati": 37.56565856,
+    "sgg_nm": "마포구",
+    "emd_nm": "성산동"
+  },
+  {
+    "center_long": 126.9061678,
+    "center_lati": 37.57163083,
+    "sgg_nm": "마포구",
+    "emd_nm": "중동"
+  },
+  {
+    "center_long": 126.8798862,
+    "center_lati": 37.57072004,
+    "sgg_nm": "마포구",
+    "emd_nm": "상암동"
+  },
+  {
+    "center_long": 126.855719,
+    "center_lati": 37.51519455,
+    "sgg_nm": "양천구",
+    "emd_nm": "신정동"
+  },
+  {
+    "center_long": 126.8745213,
+    "center_lati": 37.53604466,
+    "sgg_nm": "양천구",
+    "emd_nm": "목동"
+  },
+  {
+    "center_long": 126.8343212,
+    "center_lati": 37.52660594,
+    "sgg_nm": "양천구",
+    "emd_nm": "신월동"
+  },
+  {
+    "center_long": 126.8717806,
+    "center_lati": 37.55454956,
+    "sgg_nm": "강서구",
+    "emd_nm": "염창동"
+  },
+  {
+    "center_long": 126.8543091,
+    "center_lati": 37.55456419,
+    "sgg_nm": "강서구",
+    "emd_nm": "등촌동"
+  },
+  {
+    "center_long": 126.8472706,
+    "center_lati": 37.5406992,
+    "sgg_nm": "강서구",
+    "emd_nm": "화곡동"
+  },
+  {
+    "center_long": 126.8510598,
+    "center_lati": 37.56788945,
+    "sgg_nm": "강서구",
+    "emd_nm": "가양동"
+  },
+  {
+    "center_long": 126.8294099,
+    "center_lati": 37.56864909,
+    "sgg_nm": "강서구",
+    "emd_nm": "마곡동"
+  },
+  {
+    "center_long": 126.8333047,
+    "center_lati": 37.55249139,
+    "sgg_nm": "강서구",
+    "emd_nm": "내발산동"
+  },
+  {
+    "center_long": 126.8196338,
+    "center_lati": 37.54708772,
+    "sgg_nm": "강서구",
+    "emd_nm": "외발산동"
+  },
+  {
+    "center_long": 126.8089331,
+    "center_lati": 37.55391791,
+    "sgg_nm": "강서구",
+    "emd_nm": "공항동"
+  },
+  {
+    "center_long": 126.8135872,
+    "center_lati": 37.57589545,
+    "sgg_nm": "강서구",
+    "emd_nm": "방화동"
+  },
+  {
+    "center_long": 126.8035927,
+    "center_lati": 37.58711401,
+    "sgg_nm": "강서구",
+    "emd_nm": "개화동"
+  },
+  {
+    "center_long": 126.787803,
+    "center_lati": 37.56562488,
+    "sgg_nm": "강서구",
+    "emd_nm": "과해동"
+  },
+  {
+    "center_long": 126.7847744,
+    "center_lati": 37.55295574,
+    "sgg_nm": "강서구",
+    "emd_nm": "오곡동"
+  },
+  {
+    "center_long": 126.7979334,
+    "center_lati": 37.54347717,
+    "sgg_nm": "강서구",
+    "emd_nm": "오쇠동"
+  },
+  {
+    "center_long": 126.8821852,
+    "center_lati": 37.50994601,
+    "sgg_nm": "구로구",
+    "emd_nm": "신도림동"
+  },
+  {
+    "center_long": 126.884687,
+    "center_lati": 37.49423458,
+    "sgg_nm": "구로구",
+    "emd_nm": "구로동"
+  },
+  {
+    "center_long": 126.8880377,
+    "center_lati": 37.48270011,
+    "sgg_nm": "구로구",
+    "emd_nm": "가리봉동"
+  },
+  {
+    "center_long": 126.8588758,
+    "center_lati": 37.50316824,
+    "sgg_nm": "구로구",
+    "emd_nm": "고척동"
+  },
+  {
+    "center_long": 126.8519427,
+    "center_lati": 37.49422475,
+    "sgg_nm": "구로구",
+    "emd_nm": "개봉동"
+  },
+  {
+    "center_long": 126.8385473,
+    "center_lati": 37.49199188,
+    "sgg_nm": "구로구",
+    "emd_nm": "오류동"
+  },
+  {
+    "center_long": 126.8285256,
+    "center_lati": 37.50043277,
+    "sgg_nm": "구로구",
+    "emd_nm": "궁동"
+  },
+  {
+    "center_long": 126.8206168,
+    "center_lati": 37.49414445,
+    "sgg_nm": "구로구",
+    "emd_nm": "온수동"
+  },
+  {
+    "center_long": 126.839819,
+    "center_lati": 37.48083574,
+    "sgg_nm": "구로구",
+    "emd_nm": "천왕동"
+  },
+  {
+    "center_long": 126.8245968,
+    "center_lati": 37.48103628,
+    "sgg_nm": "구로구",
+    "emd_nm": "항동"
+  },
+  {
+    "center_long": 126.8837782,
+    "center_lati": 37.47668465,
+    "sgg_nm": "금천구",
+    "emd_nm": "가산동"
+  },
+  {
+    "center_long": 126.8982967,
+    "center_lati": 37.46747612,
+    "sgg_nm": "금천구",
+    "emd_nm": "독산동"
+  },
+  {
+    "center_long": 126.9092898,
+    "center_lati": 37.4495302,
+    "sgg_nm": "금천구",
+    "emd_nm": "시흥동"
+  },
+  {
+    "center_long": 126.9069132,
+    "center_lati": 37.51378578,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동"
+  },
+  {
+    "center_long": 126.9128668,
+    "center_lati": 37.51762642,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동1가"
+  },
+  {
+    "center_long": 126.9121947,
+    "center_lati": 37.52060986,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동2가"
+  },
+  {
+    "center_long": 126.9078989,
+    "center_lati": 37.51826291,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동3가"
+  },
+  {
+    "center_long": 126.9035778,
+    "center_lati": 37.51789069,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동4가"
+  },
+  {
+    "center_long": 126.9066806,
+    "center_lati": 37.52107507,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동5가"
+  },
+  {
+    "center_long": 126.9030742,
+    "center_lati": 37.5216322,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동6가"
+  },
+  {
+    "center_long": 126.9071197,
+    "center_lati": 37.52429193,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동7가"
+  },
+  {
+    "center_long": 126.9052944,
+    "center_lati": 37.52829995,
+    "sgg_nm": "영등포구",
+    "emd_nm": "영등포동8가"
+  },
+  {
+    "center_long": 126.9284679,
+    "center_lati": 37.52850493,
+    "sgg_nm": "영등포구",
+    "emd_nm": "여의도동"
+  },
+  {
+    "center_long": 126.8985128,
+    "center_lati": 37.52168456,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동1가"
+  },
+  {
+    "center_long": 126.8937057,
+    "center_lati": 37.52248372,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동2가"
+  },
+  {
+    "center_long": 126.8971135,
+    "center_lati": 37.52586214,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동3가"
+  },
+  {
+    "center_long": 126.8991361,
+    "center_lati": 37.52903857,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동4가"
+  },
+  {
+    "center_long": 126.9012001,
+    "center_lati": 37.53208722,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동5가"
+  },
+  {
+    "center_long": 126.9028803,
+    "center_lati": 37.53466062,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동6가"
+  },
+  {
+    "center_long": 126.9040116,
+    "center_lati": 37.5364245,
+    "sgg_nm": "영등포구",
+    "emd_nm": "당산동"
+  },
+  {
+    "center_long": 126.900542,
+    "center_lati": 37.50910124,
+    "sgg_nm": "영등포구",
+    "emd_nm": "도림동"
+  },
+  {
+    "center_long": 126.8970601,
+    "center_lati": 37.5122829,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동1가"
+  },
+  {
+    "center_long": 126.8930947,
+    "center_lati": 37.51277805,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동2가"
+  },
+  {
+    "center_long": 126.8957153,
+    "center_lati": 37.51727019,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동3가"
+  },
+  {
+    "center_long": 126.889873,
+    "center_lati": 37.51446765,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동4가"
+  },
+  {
+    "center_long": 126.8838558,
+    "center_lati": 37.51668292,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동5가"
+  },
+  {
+    "center_long": 126.8846543,
+    "center_lati": 37.51989726,
+    "sgg_nm": "영등포구",
+    "emd_nm": "문래동6가"
+  },
+  {
+    "center_long": 126.8886986,
+    "center_lati": 37.52319021,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동1가"
+  },
+  {
+    "center_long": 126.8837578,
+    "center_lati": 37.52342706,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동2가"
+  },
+  {
+    "center_long": 126.8910477,
+    "center_lati": 37.52903607,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동3가"
+  },
+  {
+    "center_long": 126.8961516,
+    "center_lati": 37.53631783,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동4가"
+  },
+  {
+    "center_long": 126.8926451,
+    "center_lati": 37.53936666,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동5가"
+  },
+  {
+    "center_long": 126.8895728,
+    "center_lati": 37.54263763,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동6가"
+  },
+  {
+    "center_long": 126.889121,
+    "center_lati": 37.54796944,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양화동"
+  },
+  {
+    "center_long": 126.913614,
+    "center_lati": 37.50606443,
+    "sgg_nm": "영등포구",
+    "emd_nm": "신길동"
+  },
+  {
+    "center_long": 126.9001289,
+    "center_lati": 37.49542735,
+    "sgg_nm": "영등포구",
+    "emd_nm": "대림동"
+  },
+  {
+    "center_long": 126.8869421,
+    "center_lati": 37.53288701,
+    "sgg_nm": "영등포구",
+    "emd_nm": "양평동"
+  },
+  {
+    "center_long": 126.9418837,
+    "center_lati": 37.51156995,
+    "sgg_nm": "동작구",
+    "emd_nm": "노량진동"
+  },
+  {
+    "center_long": 126.9440804,
+    "center_lati": 37.49870788,
+    "sgg_nm": "동작구",
+    "emd_nm": "상도동"
+  },
+  {
+    "center_long": 126.9506417,
+    "center_lati": 37.50327444,
+    "sgg_nm": "동작구",
+    "emd_nm": "상도1동"
+  },
+  {
+    "center_long": 126.953659,
+    "center_lati": 37.51244777,
+    "sgg_nm": "동작구",
+    "emd_nm": "본동"
+  },
+  {
+    "center_long": 126.962337,
+    "center_lati": 37.5054929,
+    "sgg_nm": "동작구",
+    "emd_nm": "흑석동"
+  },
+  {
+    "center_long": 126.9738752,
+    "center_lati": 37.49921742,
+    "sgg_nm": "동작구",
+    "emd_nm": "동작동"
+  },
+  {
+    "center_long": 126.9723115,
+    "center_lati": 37.48562253,
+    "sgg_nm": "동작구",
+    "emd_nm": "사당동"
+  },
+  {
+    "center_long": 126.9280082,
+    "center_lati": 37.50687882,
+    "sgg_nm": "동작구",
+    "emd_nm": "대방동"
+  },
+  {
+    "center_long": 126.917191,
+    "center_lati": 37.49267403,
+    "sgg_nm": "동작구",
+    "emd_nm": "신대방동"
+  },
+  {
+    "center_long": 126.9534875,
+    "center_lati": 37.47797497,
+    "sgg_nm": "관악구",
+    "emd_nm": "봉천동"
+  },
+  {
+    "center_long": 126.9358077,
+    "center_lati": 37.46319952,
+    "sgg_nm": "관악구",
+    "emd_nm": "신림동"
+  },
+  {
+    "center_long": 126.9777685,
+    "center_lati": 37.46411143,
+    "sgg_nm": "관악구",
+    "emd_nm": "남현동"
+  },
+  {
+    "center_long": 126.993118,
+    "center_lati": 37.47949267,
+    "sgg_nm": "서초구",
+    "emd_nm": "방배동"
+  },
+  {
+    "center_long": 127.0374217,
+    "center_lati": 37.47196936,
+    "sgg_nm": "서초구",
+    "emd_nm": "양재동"
+  },
+  {
+    "center_long": 127.0179444,
+    "center_lati": 37.46593428,
+    "sgg_nm": "서초구",
+    "emd_nm": "우면동"
+  },
+  {
+    "center_long": 127.0486297,
+    "center_lati": 37.44332069,
+    "sgg_nm": "서초구",
+    "emd_nm": "원지동"
+  },
+  {
+    "center_long": 127.0090916,
+    "center_lati": 37.51510277,
+    "sgg_nm": "서초구",
+    "emd_nm": "잠원동"
+  },
+  {
+    "center_long": 127.0007635,
+    "center_lati": 37.50396465,
+    "sgg_nm": "서초구",
+    "emd_nm": "반포동"
+  },
+  {
+    "center_long": 127.0168054,
+    "center_lati": 37.48837476,
+    "sgg_nm": "서초구",
+    "emd_nm": "서초동"
+  },
+  {
+    "center_long": 127.0767407,
+    "center_lati": 37.45814977,
+    "sgg_nm": "서초구",
+    "emd_nm": "내곡동"
+  },
+  {
+    "center_long": 127.053651,
+    "center_lati": 37.46367011,
+    "sgg_nm": "서초구",
+    "emd_nm": "염곡동"
+  },
+  {
+    "center_long": 127.0621706,
+    "center_lati": 37.4440742,
+    "sgg_nm": "서초구",
+    "emd_nm": "신원동"
+  },
+  {
+    "center_long": 127.0385491,
+    "center_lati": 37.5000784,
+    "sgg_nm": "강남구",
+    "emd_nm": "역삼동"
+  },
+  {
+    "center_long": 127.0625919,
+    "center_lati": 37.48027638,
+    "sgg_nm": "강남구",
+    "emd_nm": "개포동"
+  },
+  {
+    "center_long": 127.0504718,
+    "center_lati": 37.5243959,
+    "sgg_nm": "강남구",
+    "emd_nm": "청담동"
+  },
+  {
+    "center_long": 127.0561216,
+    "center_lati": 37.51396894,
+    "sgg_nm": "강남구",
+    "emd_nm": "삼성동"
+  },
+  {
+    "center_long": 127.0633467,
+    "center_lati": 37.49918983,
+    "sgg_nm": "강남구",
+    "emd_nm": "대치동"
+  },
+  {
+    "center_long": 127.0265021,
+    "center_lati": 37.52380657,
+    "sgg_nm": "강남구",
+    "emd_nm": "신사동"
+  },
+  {
+    "center_long": 127.0317125,
+    "center_lati": 37.51367913,
+    "sgg_nm": "강남구",
+    "emd_nm": "논현동"
+  },
+  {
+    "center_long": 127.0284788,
+    "center_lati": 37.53073624,
+    "sgg_nm": "강남구",
+    "emd_nm": "압구정동"
+  },
+  {
+    "center_long": 127.1045968,
+    "center_lati": 37.46436945,
+    "sgg_nm": "강남구",
+    "emd_nm": "세곡동"
+  },
+  {
+    "center_long": 127.100351,
+    "center_lati": 37.47626848,
+    "sgg_nm": "강남구",
+    "emd_nm": "자곡동"
+  },
+  {
+    "center_long": 127.1120707,
+    "center_lati": 37.47081186,
+    "sgg_nm": "강남구",
+    "emd_nm": "율현동"
+  },
+  {
+    "center_long": 127.0828605,
+    "center_lati": 37.48800811,
+    "sgg_nm": "강남구",
+    "emd_nm": "일원동"
+  },
+  {
+    "center_long": 127.0967187,
+    "center_lati": 37.48587603,
+    "sgg_nm": "강남구",
+    "emd_nm": "수서동"
+  },
+  {
+    "center_long": 127.0452769,
+    "center_lati": 37.48859588,
+    "sgg_nm": "강남구",
+    "emd_nm": "도곡동"
+  },
+  {
+    "center_long": 127.0833905,
+    "center_lati": 37.51196283,
+    "sgg_nm": "송파구",
+    "emd_nm": "잠실동"
+  },
+  {
+    "center_long": 127.0989786,
+    "center_lati": 37.5239236,
+    "sgg_nm": "송파구",
+    "emd_nm": "신천동"
+  },
+  {
+    "center_long": 127.113997,
+    "center_lati": 37.53320666,
+    "sgg_nm": "송파구",
+    "emd_nm": "풍납동"
+  },
+  {
+    "center_long": 127.1135472,
+    "center_lati": 37.50510761,
+    "sgg_nm": "송파구",
+    "emd_nm": "송파동"
+  },
+  {
+    "center_long": 127.1025131,
+    "center_lati": 37.50272625,
+    "sgg_nm": "송파구",
+    "emd_nm": "석촌동"
+  },
+  {
+    "center_long": 127.091888,
+    "center_lati": 37.50190205,
+    "sgg_nm": "송파구",
+    "emd_nm": "삼전동"
+  },
+  {
+    "center_long": 127.1184044,
+    "center_lati": 37.49568678,
+    "sgg_nm": "송파구",
+    "emd_nm": "가락동"
+  },
+  {
+    "center_long": 127.1225595,
+    "center_lati": 37.48558504,
+    "sgg_nm": "송파구",
+    "emd_nm": "문정동"
+  },
+  {
+    "center_long": 127.1320642,
+    "center_lati": 37.47687259,
+    "sgg_nm": "송파구",
+    "emd_nm": "장지동"
+  },
+  {
+    "center_long": 127.1253889,
+    "center_lati": 37.51567462,
+    "sgg_nm": "송파구",
+    "emd_nm": "방이동"
+  },
+  {
+    "center_long": 127.1340201,
+    "center_lati": 37.50400505,
+    "sgg_nm": "송파구",
+    "emd_nm": "오금동"
+  },
+  {
+    "center_long": 127.1449797,
+    "center_lati": 37.48972689,
+    "sgg_nm": "송파구",
+    "emd_nm": "거여동"
+  },
+  {
+    "center_long": 127.1527525,
+    "center_lati": 37.49848697,
+    "sgg_nm": "송파구",
+    "emd_nm": "마천동"
+  },
+  {
+    "center_long": 127.1508102,
+    "center_lati": 37.54905366,
+    "sgg_nm": "강동구",
+    "emd_nm": "명일동"
+  },
+  {
+    "center_long": 127.1582301,
+    "center_lati": 37.56382203,
+    "sgg_nm": "강동구",
+    "emd_nm": "고덕동"
+  },
+  {
+    "center_long": 127.1696399,
+    "center_lati": 37.55110316,
+    "sgg_nm": "강동구",
+    "emd_nm": "상일동"
+  },
+  {
+    "center_long": 127.145929,
+    "center_lati": 37.53961619,
+    "sgg_nm": "강동구",
+    "emd_nm": "길동"
+  },
+  {
+    "center_long": 127.1447269,
+    "center_lati": 37.52826357,
+    "sgg_nm": "강동구",
+    "emd_nm": "둔촌동"
+  },
+  {
+    "center_long": 127.1310624,
+    "center_lati": 37.55780509,
+    "sgg_nm": "강동구",
+    "emd_nm": "암사동"
+  },
+  {
+    "center_long": 127.1289921,
+    "center_lati": 37.53049385,
+    "sgg_nm": "강동구",
+    "emd_nm": "성내동"
+  },
+  {
+    "center_long": 127.1276315,
+    "center_lati": 37.54437601,
+    "sgg_nm": "강동구",
+    "emd_nm": "천호동"
+  },
+  {
+    "center_long": 127.1733835,
+    "center_lati": 37.56891584,
+    "sgg_nm": "강동구",
+    "emd_nm": "강일동"
+  }
+]

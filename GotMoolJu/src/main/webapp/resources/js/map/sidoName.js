@@ -1,4 +1,7 @@
-		
+$(function(){
+
+
+    
     const locations = [
 { name: "서울특별시", latitude: 37.5665, longitude: 126.9780 },
 { name: "부산광역시", latitude: 35.1796, longitude: 129.0756 },
@@ -19,7 +22,7 @@
 { name: "제주특별자치도", latitude: 33.4986, longitude: 126.5312 }
 ];
 
-var markers = [];
+var sidoMarkers = [];
 
 for (let i = 0; i < locations.length; i++) {
     var marker = new naver.maps.Marker({
@@ -39,38 +42,19 @@ for (let i = 0; i < locations.length; i++) {
                             anchor: new naver.maps.Point(12, 34)
                         }
                     });
-            markers.push(marker);
+            sidoMarkers.push(marker);
 
         }
 
-        // for (var i = 0, ii = markers.length; i < ii; i++) {
-        //     (function (index) {
-        //         naver.maps.Event.addListener(markers[index], 'click', function () {
-        //             var position = markers[index].position;
-        
-        //             console.log(position.x);
-        //             console.log(position.y);
-        //             console.log(position);
-        
-        //             'click', naver.maps.Util.bind(function(e) {
-        //                 map.morph(e.coord, map.getZoom() + 1);
-        //             }, this)
-
-        //             // Center the map to the marker's position with a smooth transition
-        //             map.setCenter(position, { duration: 500 });
-        
-        //             // Optionally, you can also adjust the zoom level smoothly
-        //             map.setZoom(map.getZoom() + 1, { duration: 500 }); // Zoom in by one level with a smooth transition
-        //         });
-        //     })(i);
-        // }
-
         // 클릭된 좌표로 줌 + 1 해서 이동
-        for (var i = 0, ii = markers.length; i < ii; i++) {
+        for (var i = 0, ii = sidoMarkers.length; i < ii; i++) {
             (function (index) {
-                naver.maps.Event.addListener(markers[index], 'click', function (e) {
+                naver.maps.Event.addListener(sidoMarkers[index], 'click', function (e) {
                     // Smoothly move the map to the clicked position and adjust zoom level
                     map.morph(e.coord, map.getZoom() + 1);
                 });
             })(i);
         }
+
+
+})	

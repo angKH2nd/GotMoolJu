@@ -6,15 +6,17 @@
 		<result column="apt_no" property="aptNo"/>
 		<result column="apt_room_type" property="aptRoomType"/>
 		<result column="apt_selling_type" property="aptSellingType"/>
-		<result column="apt_location" property="aptLocation"/>
+		<result column="apt_location_x" property="aptLocationX"/>
+		<result column="apt_location_y" property="aptLocationY"/>
 		<result column="apt_name" property="aptName"/>
 		<result column="apt_introduce" property="aptIntroduce"/>
 		<result column="apt_price" property="aptPrice"/>
 		<result column="apt_img_url" property="aptImgUrl"/>
 		<result column="apt_img_urls" property="aptImgUrls"/>
 		<result column="apt_desc" property="aptDesc"/>
+		<result column="apt_count" property="aptCount"/>
 	</resultMap>
-	
+	<!--  
 	<select id="selectAllList" resultMap="mapResult"> 
 	select 
 		   APT_NO
@@ -22,8 +24,56 @@
 	  from tb_apt
 	 where rownum between 1 and 200
 	 </select>
+	 -->
 
-
+	<select id="countJachi" resultType="string">
+		select count(*)
+		  from tb_apt
+		 where apt_address like '%'||#{jachi}||'%'
+	</select>
+	
+	<select id="detailAptCount" resultMap="mapResult">
+		SELECT 
+		       APT_NAME,
+		       COUNT(APT_NAME) AS apt_count,
+		       SUBSTR(APT_LOCATION, 1, INSTR(APT_LOCATION, ',') - 1) AS apt_location_y,
+		       SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) AS apt_location_x
+		  FROM 
+		       TB_APT
+		 WHERE 
+		       SUBSTR(APT_LOCATION, 1, INSTR(APT_LOCATION, ',') - 1) BETWEEN #{minX} AND #{maxX}
+		       AND SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) BETWEEN #{minY} AND #{maxY}
+		 GROUP 
+		    BY 
+		       APT_NAME,
+		       SUBSTR(APT_LOCATION, 1, INSTR(APT_LOCATION, ',') - 1),
+		       SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1)
+	</select>
+	
+	<select id="detailApt" resultMap="mapResult">
+		select 
+	           APT_NO
+	         , APT_SELLING_TYPE
+	         , APT_NAME        
+	         , APT_PRICE
+	         , APT_IMG_URL
+	         , APT_DESC
+	      from tb_apt
+	    where apt_name = #{aptName}	
+	      and SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) = #{aptLocation}
+	</select>
+	
+	<select id="countDong" resultType="string">
+		select count(*)
+		  from tb_apt
+		 where apt_address like '%'||#{dong}||'%'
+	</select>
+	
+	
+	
+	
+	
+	
 
 
 </mapper>
