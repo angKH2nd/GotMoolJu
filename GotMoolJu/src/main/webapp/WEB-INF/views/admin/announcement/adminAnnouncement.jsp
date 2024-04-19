@@ -109,7 +109,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </tbody>
                     </table>
                     <td class="text-center">
-                       <a target="_blank" href="announcementEnroll.ad" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
+                       <a href="announcementEnrollForm.ad" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
                     </td>
                   </div>
                   <br>

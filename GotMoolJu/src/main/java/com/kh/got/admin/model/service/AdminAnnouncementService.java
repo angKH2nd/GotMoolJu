@@ -17,6 +17,22 @@ public interface AdminAnnouncementService {
 	// 공지사항 디테일
 	Announcement selectAnnouncementDetail(int announcementNo);
 	
+	// 공지사항 조회수
+	int adminAnnouncementIncreaseCount(int announcementNo);
+
+	// 공지사항 삭제
+	int adminAnnouncementDelete(int announcementNo);
+
+	// 공지사항 복구
+	int adminAnnouncementRevive(int announcementNo);
+
+	// 공지사항 등록
+	int adminAnnouncementEnroll(Announcement adminA);
+
+
+	
+
+	
 
 	
 	

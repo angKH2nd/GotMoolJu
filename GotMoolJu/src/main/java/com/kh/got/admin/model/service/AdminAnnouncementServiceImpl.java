@@ -44,6 +44,33 @@ public class AdminAnnouncementServiceImpl implements AdminAnnouncementService {
 		return adminADao.selectAnnouncementDetail(sqlSession, announcementNo);
 	}
 	
+	// 공지사항 조회수	
+	@Override
+	public int adminAnnouncementIncreaseCount(int announcementNo) {
+		return adminADao.adminAnnouncementIncreaseCount(sqlSession, announcementNo);
+	}
+	
+
+	// 공지사항 삭제
+	@Override
+	public int adminAnnouncementDelete(int announcementNo) {
+		return adminADao.adminAnnouncementDelete(sqlSession, announcementNo);
+	}
+
+	// 공지사항 복구
+	@Override
+	public int adminAnnouncementRevive(int announcementNo) {
+		return adminADao.adminAnnouncementRevive(sqlSession, announcementNo);
+	}
+
+	// 공지사항 등록
+	@Override
+	public int adminAnnouncementEnroll(Announcement adminA) {
+		return adminADao.adminAnnouncementEnroll(sqlSession, adminA);
+	}
+
+	
+	
 	
 	
 	

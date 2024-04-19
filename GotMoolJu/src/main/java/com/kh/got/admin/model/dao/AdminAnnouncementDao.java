@@ -38,6 +38,28 @@ public class AdminAnnouncementDao {
 		return sqlSession.selectOne("announcementMapper.selectAnnouncementDetail", announcementNo);
 	}
 	
+	// 공지사항 조회수
+	public int adminAnnouncementIncreaseCount(SqlSessionTemplate sqlSession, int announcementNo) {
+		return sqlSession.update("announcementMapper.adminAnnouncementIncreaseCount", announcementNo);
+	}
+
+	// 공지사항 삭제
+	public int adminAnnouncementDelete(SqlSessionTemplate sqlSession, int announcementNo) {
+		return sqlSession.update("announcementMapper.adminAnnouncementDelete", announcementNo);
+	}
+
+	// 공지사항 복구
+	public int adminAnnouncementRevive(SqlSessionTemplate sqlSession, int announcementNo) {
+		return sqlSession.update("announcementMapper.adminAnnouncementRevive", announcementNo);
+	}
+
+	// 공지사항 등록
+	public int adminAnnouncementEnroll(SqlSessionTemplate sqlSession, Announcement adminA) {
+		return sqlSession.insert("announcementMapper.adminAnnouncementEnroll", adminA);
+	}
+
+
+
 	
 	
 	
