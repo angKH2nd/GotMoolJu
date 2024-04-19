@@ -16,6 +16,11 @@
 		<result column="town_reply_count" property="townReplyCount"/>
 	</resultMap>
 	
+	<resultMap id="townStarResult" type="TownStar">
+		<result column="town_star_ref_no" property="townStarRefNo"/>
+		<result column="town_star_user_no" property="townStarUserNo"/>
+	</resultMap>
+	
 	<select id="selectTownList" resultMap="townResult">
 		select 
 			   t.town_no
@@ -86,5 +91,13 @@
 			 , #{userNo}
 			 )	
 	</insert>
+	
+	<select id="isMyTown" resultMap="townStarResult">
+		select
+		       town_star_ref_no
+		     , town_star_user_no
+		  from tb_town_star
+		 where town_star_user_no = #{userNo}
+	</select>
 	
 </mapper>

@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="town-main-list-area">
-	
+		
 	</div>
 	
 	<button type="button" class="button-write mh" onclick="changeTownArea();"><i class="fa-solid fa-pen hoverZ"></i></button>

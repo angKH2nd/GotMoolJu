@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 import com.google.gson.JsonElement;
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownStar;
 
 public interface CommunityService {
 
 	// 1. 커뮤니티 조회 서비스
 	ArrayList<Town> selectTownList();
-	// ArrayList<TownStar> selectTownStarList();
+	ArrayList<TownStar> isMyTown(int userNo);
 
 	// 2. 커뮤니티 좋아요 서비스
 	int updateTownLikes(int townNo);

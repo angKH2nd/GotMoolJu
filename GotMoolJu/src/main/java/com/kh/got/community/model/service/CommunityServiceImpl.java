@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.got.community.model.dao.CommunityDao;
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownStar;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {
@@ -32,12 +33,11 @@ public class CommunityServiceImpl implements CommunityService {
 	public int updateTownStar(int townNo, int userNo) {
 		return cDao.updateTownStar(sqlSession, townNo, userNo);
 	}
-	
-	/*
+
 	@Override
-	public ArrayList<TownStar> selectTownStarList() {
-		return null;
+	public ArrayList<TownStar> isMyTown(int userNo) {
+		return cDao.isMyTown(sqlSession, userNo);
 	}
-	*/
+	
 	
 }

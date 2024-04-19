@@ -24,9 +24,14 @@ public class CommunityController {
 	@ResponseBody
 	@RequestMapping(value="townList.cm", produces = "application/json; charset=utf-8")
 	public String selectTownList(HttpSession session) {
+		Member loginUser = null;
 		JSONObject jObj = new JSONObject();
+		
+		if((Member)session.getAttribute("loginUser") != null) {
+			loginUser = (Member)session.getAttribute("loginUser");
+			jObj.put("myTownStarList", new Gson().toJson(cService.isMyTown(loginUser.getUserNo())));
+		}
 		jObj.put("townList", new Gson().toJson(cService.selectTownList()));
-		// jObj.put("myTown", new Gson().toJson(cService.selectTownList(((Member)session.getAttribute("loginUser")).getUserNo())));
 		
 		return jObj.toJSONString();
 	}

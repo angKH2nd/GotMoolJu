@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownStar;
 
 @Repository
 public class CommunityDao {
@@ -34,6 +35,10 @@ public class CommunityDao {
 		}else {
 			return result; 
 		}
+	}
+
+	public ArrayList<TownStar> isMyTown(SqlSessionTemplate sqlSession, int userNo) {
+		return (ArrayList)sqlSession.selectList("communityMapper.isMyTown", userNo);
 	}
 	
 	

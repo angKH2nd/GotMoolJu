@@ -3,9 +3,19 @@ function selectTownList() {
 		url: "townList.cm",
 		dataType: "json",
 		success: function(response) {
+			var myTownStarArr = [];
+			
+			if(response.myTownStarList !== undefined){
+				var myTownStarList = JSON.parse(response.myTownStarList);
+				for(let i = 0; i < myTownStarList.length; i++){
+					myTownStarArr.push(myTownStarList[i].townStarRefNo);
+				}
+			}
+			
 			var townList = JSON.parse(response.townList);
+			
 			let townListHtml= "";
-            
+			
             $(townList).each(function(index, town) {
             	townListHtml += `
                     <div class="town-main-post pd15" id="${town.townNo}">
@@ -24,12 +34,23 @@ function selectTownList() {
                     `;
                 }
                 
+                townListHtml += `<div class="town-post-bottom">`;
+                
+                if (myTownStarArr.includes(town.townNo)) { // 즐겨찾기한 경우
+	                townListHtml += `
+	                            <div class="town-post-star fl mh yellowStar" onclick="updateTownStar(${town.townNo});">
+	                                <div class="town-post-star-i centerY fl"><i class="fa-regular fa-star"></i></div>
+	                                <div class="town-post-star-num centerY fl">${town.townStar}</div>
+	                            </div>`
+                }else { // 즐겨찾기하지 않은 경우
+                	townListHtml += `
+	                            <div class="town-post-star fl mh" onclick="updateTownStar(${town.townNo});">
+	                                <div class="town-post-star-i centerY fl"><i class="fa-regular fa-star"></i></div>
+	                                <div class="town-post-star-num centerY fl">${town.townStar}</div>
+	                            </div>`
+                }
+                            
                 townListHtml += `
-                        <div class="town-post-bottom">
-                            <div class="town-post-star fl mh" onclick="updateTownStar(${town.townNo});">
-                                <div class="town-post-star-i centerY fl"><i class="fa-regular fa-star"></i></div>
-                                <div class="town-post-star-num centerY fl">${town.townStar}</div>
-                            </div>
                             <div class="town-post-likes fl mh" onclick="updateTownLikes(${town.townNo});">
                                 <div class="town-post-likes-i centerY fl"><i class="fa-regular fa-thumbs-up"></i></div>
                                 <div class="town-post-likes-num centerY fl">${town.townLikes}</div>
