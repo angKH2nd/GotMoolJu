@@ -6,12 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
+<link rel="stylesheet" href="resources/css/community/communityTownList.css">
 </head>
 <body>
-	여기에서는 리스트 보여주기
+	<div class="town-main-list-area">
 	
-	<br>
+	</div>
 	
-	<button type="button" onclick="changeTownArea();">글쓰기</button>
+	<button type="button" class="button-write mh" onclick="changeTownArea();"><i class="fa-solid fa-pen hoverZ"></i></button>
+	
+	<script src="resources/js/community/communityTownList.js"></script>
 </body>
 </html>

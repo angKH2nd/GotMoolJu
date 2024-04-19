@@ -9,7 +9,13 @@ public interface CommunityService {
 
 	// 1. 커뮤니티 조회 서비스
 	ArrayList<Town> selectTownList();
-	// ArrayList<TownLikes> selectTownLikesList();
 	// ArrayList<TownStar> selectTownStarList();
 
+	// 2. 커뮤니티 좋아요 서비스
+	int updateTownLikes(int townNo);
+
+	// 3. 커뮤니티 즐겨찾기 서비스
+	int updateTownStar(int townNo, int userNo);
+	
+	
 }

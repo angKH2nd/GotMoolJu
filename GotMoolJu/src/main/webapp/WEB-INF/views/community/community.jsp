@@ -14,7 +14,7 @@
 			<div class="community-nav fl">
 				<div class="community-bar" id="community-bar">
 				    <ul>
-				        <li class="mh town-btn" onclick="toggleCommunity('town')">동네소식</li>
+				        <li class="mh town-btn" onclick="toggleCommunity('town'); selectTownList();">동네소식</li>
 				        <li class="mh community3-btn" onclick="toggleCommunity('community3')">커뮤3</li>
 				        <li class="mh community4-btn" onclick="toggleCommunity('community4')">커뮤4</li>
 				    </ul>

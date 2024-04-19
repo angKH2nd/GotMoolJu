@@ -1,5 +1,6 @@
 $(document).ready(function() {
     toggleCommunity('town');
+    $(".town-btn").click();
 });
 
 function toggleCommunity(divClass) {

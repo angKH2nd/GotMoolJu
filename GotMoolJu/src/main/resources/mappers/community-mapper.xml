@@ -3,8 +3,88 @@
 <mapper namespace="communityMapper">
 	<resultMap id="townResult" type="Town">
 		<result column="town_no" property="townNo"/>
+		<result column="town_writer" property="townWriter"/>
+		<result column="town_writer_img" property="townWriterImg"/>
+		<result column="town_title" property="townTitle"/>
+		<result column="town_content" property="townContent"/>
+		<result column="town_star" property="townStar"/>
+		<result column="town_likes" property="townLikes"/>
+		<result column="town_click" property="townClick"/>
+		<result column="town_create_date" property="townCreateDate"/>
+		<result column="town_modify_date" property="townModifyDate"/>
+		<result column="town_thumbnail" property="townThumbnail"/>
+		<result column="town_reply_count" property="townReplyCount"/>
 	</resultMap>
 	
+	<select id="selectTownList" resultMap="townResult">
+		select 
+			   t.town_no
+			 , t.town_writer
+			 , m.user_update_name AS town_writer_img
+			 , t.town_title
+			 , t.town_content
+			 , t.town_likes
+			 , t.town_click
+			 , t.town_create_date
+			 , to_char(t.town_modify_date, 'RRRR.MM.DD') as "town_modify_date"
+			 , a.attachment_path || a.attachment_update_name as town_thumbnail
+			 , coalesce(count(tr.town_reply_no), 0) as town_reply_count
+			 , coalesce((select count(*) from tb_town_star ts where ts.town_star_ref_no = t.town_no), 0) as town_star
+		  from tb_town t
+		  left 
+		  join tb_attachment a on t.town_no = a.attachment_town_no and a.attachment_level = 1
+		  join tb_member m on t.town_writer = m.user_nickname
+		  left
+		  join tb_town_reply tr on t.town_no = tr.town_reply_ref_no
+		 group
+		 	by t.town_no
+			 , t.town_writer
+			 , m.user_update_name
+			 , t.town_title
+			 , t.town_content
+			 , t.town_likes
+			 , t.town_click
+			 , t.town_create_date
+			 , t.town_modify_date
+			 , a.attachment_path
+			 , a.attachment_update_name
+		 order
+		    by t.town_no desc
+	</select>
 	
+	<update id="updateTownLikes">
+		update tb_town
+		   set town_likes = town_likes + 1
+		 where town_no = #{townNo}
+		   and town_status = 'Y'
+	</update>
+	
+	<select id="isTownStar" resultType="_int">
+		select
+		       count(*)
+		  from tb_town_star
+		 where town_star_ref_no = #{townNo}
+		   and town_star_user_no = #{userNo}
+	</select>
+	
+	<delete id="deleteTownStar">
+		delete from tb_town_star
+		 where town_star_ref_no = #{townNo}
+		   and town_star_user_no = #{userNo}
+	</delete>
+	
+	<insert id="insertTownStar">
+		insert
+		  into tb_town_star
+			 (
+			   town_star_ref_no
+			 , town_star_user_no
+			 )
+		values
+			 (
+			   #{townNo}
+			 , #{userNo}
+			 )	
+	</insert>
 	
 </mapper>

@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+.town-main-list-area {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: #f3f3f3;
+}
+
+.town-main-list-area>div {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	background-color: white;
+}
+
+.town-main-post>div {
+	width: 100%;
+}
+
+.town-post-profile {
+	height: 50px;
+}
+
+.town-post-profile>div {
+	height: 100%;
+}
+
+.town-post-profile-img {
+	width: 50px;
+}
+
+.town-post-profile-nickname {
+	width: calc(100% - 50px);
+	padding-left: 10px;
+}
+
+.town-post-title {
+	height: 35px;
+}
+
+.town-post-content {
+	height: auto;
+	min-height: 100px;
+	padding-top: 5px;
+}
+
+.town-post-thumbnail {
+	height: 235px;
+	padding-top: 5px;
+}
+
+.town-post-bottom {
+	height: 30px;
+	color: gray;
+}
+
+.town-post-bottom>div {
+	height: 100%;
+}
+
+.town-post-star {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-post-star>div {
+	height: 100%;
+}
+
+.town-post-star-i {
+	width: 20px;
+}
+
+.town-post-star-num {
+	width: calc(100% - 20px);
+}
+
+.town-post-likes {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-post-likes>div {
+	height: 100%;
+}
+
+.town-post-likes-i {
+	width: 20px;
+}
+
+.town-post-likes-num {
+	width: calc(100% - 20px);
+}
+
+.town-post-reply {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-post-reply>div {
+	height: 100%;
+}
+
+.town-post-reply-i {
+	width: 20px;
+}
+
+.town-post-reply-num {
+	width: calc(100% - 20px);
+}
+
+.town-post-count {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-post-count>div {
+	height: 100%;
+}
+
+.town-post-count-i {
+	width: 20px;
+}
+
+.town-post-count-num {
+	width: calc(100% - 20px);
+}
+
+.town-post-date {
+	width: 100px;
+}
+
+.town-post-date>div {
+	height: 100%;
+}
+
+.town-post-date-i {
+	width: 20px;
+}
+
+.town-post-date-num {
+	width: calc(100% - 20px);
+}
+
+.town-post-blank {
+	width: calc(100% - 300px);
+}
+
+.button-write {
+    position: fixed;
+    bottom: 20px;
+    left: 24.5%; 
+    transform: translateX(-24.5%);
+    z-index: 1010;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #434d68;
+    border: none;
+    color: white;
+}
