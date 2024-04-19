@@ -23,4 +23,56 @@ public class MapServiceImpl implements MapService {
 		return mDao.selectAllList(sqlSession);
 	}
 
+	@Override
+	public String countJachi(String jachi) {
+		return mDao.countJachi(sqlSession, jachi);
+	}
+
+
+	@Override
+	public ArrayList<MapVO> detailAptCount(String minX, String minY, String maxX, String maxY) {
+		
+		return mDao.detailAptCount(sqlSession, minX, minY, maxX, maxY);
+	}
+
+	@Override
+	public ArrayList<MapVO> detailApt(String aptName, String aptLocation) {
+
+		return mDao.detailApt(sqlSession, aptName, aptLocation);
+	}
+
+	@Override
+	public String countDong(String dong) {
+		
+		return mDao.countDong(sqlSession, dong);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
