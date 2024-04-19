@@ -2,12 +2,14 @@ package com.kh.got.qna.model.service;
 
 import java.util.ArrayList;
 
+import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.qna.model.vo.Qna;
 
 public interface QnaService {
 	
-	//qna 전체 목록 조회
-	ArrayList<Qna> selectQnaList();
+	//페이징비 와 qna 전체 목록 조회 
+	int selectListCount();
+	ArrayList<Qna> selectQnaList(PageInfo pi);
 	
 	//qna 상세 보기
 	int increaseCount(int qnaNo);

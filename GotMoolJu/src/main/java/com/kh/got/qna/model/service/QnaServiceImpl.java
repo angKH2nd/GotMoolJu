@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.qna.model.dao.QnaDao;
 import com.kh.got.qna.model.vo.Qna;
 
@@ -20,8 +21,13 @@ public class QnaServiceImpl implements QnaService {
 	private SqlSessionTemplate sqlSession;
 
 	@Override
-	public ArrayList<Qna> selectQnaList() {
-		return qDao.selectQnaList(sqlSession);
+	public int selectListCount() {
+		return qDao.selectListCount(sqlSession);
+	}
+
+	@Override
+	public ArrayList<Qna> selectQnaList(PageInfo pi) {
+		return qDao.selectQnaList(sqlSession, pi);
 	}
 
 	@Override
@@ -48,5 +54,7 @@ public class QnaServiceImpl implements QnaService {
 	public int updateQna(Qna q) {
 		return qDao.updateQna(sqlSession, q);
 	}
+
+	
 
 }

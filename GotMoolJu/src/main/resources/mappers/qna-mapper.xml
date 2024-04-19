@@ -18,6 +18,15 @@
      	<result column="answer_date" property="qnaAnswerCreateDate"/>
     
     </resultMap>
+    
+    
+    <select id="selectListCount" resultType="_int">
+    	select
+    			count(*) as "count"
+    		from tb_qna
+    		where qna_status = 'Y' 
+    
+    </select>
 
 	<select id="selectQnaList" resultMap="qnaResult">
 	      select  
