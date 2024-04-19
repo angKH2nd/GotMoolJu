@@ -59,7 +59,7 @@
 	</select>
 
 	<!-- 공지사항 디테일 -->
-	<select id="selectAnnouncementDetail" resultMap="announcementResult">
+	<select id="adminAnnouncementselectDetail" resultMap="announcementResult">
 	    select 
 	           announcement_no
 	         , announcement_title
@@ -119,8 +119,17 @@
 	       )
 			   
 	</insert>
-
-
+	
+	<!-- 공지사항 수정 // 날짜 변경해야할지 말지 상의 필요 -->
+	<update id="adminAnnouncementupdate">
+		update tb_announcement
+	       set announcement_title = #{announcementTitle}
+	         , announcement_content = #{announcementContent}
+	         , announcement_create_date = sysdate
+	     where announcement_no = #{announcementNo}
+	       and announcement_status = 'Y'
+	
+	</update>
 
 
 </mapper>

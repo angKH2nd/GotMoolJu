@@ -47,7 +47,7 @@ public class AdminAnnouncementController {
 	// 공지사항 디테일
 	@RequestMapping("announcementDetail.ad")
     public String openAnnounDetail(@RequestParam("ano") int ano, Model model) {
-		Announcement adminA = adminAService.selectAnnouncementDetail(ano); // 공지사항 디테일
+		Announcement adminA = adminAService.adminAnnouncementselectDetail(ano); // 공지사항 디테일
 //		System.out.println(ano + " db전");
 		int result = adminAService.adminAnnouncementIncreaseCount(ano); // 공지사항 조회수
 //		System.out.println("db 후 " + result);
@@ -125,19 +125,31 @@ public class AdminAnnouncementController {
 	// 공지사항 수정 폼
 	@RequestMapping("announcementUpdateForm.ad")
 	public String openAnnounUpdateForm(int ano, Model model) {
-		model.addAttribute("adminA", adminAService.selectAnnouncementDetail(ano));
+		model.addAttribute("adminA", adminAService.adminAnnouncementselectDetail(ano));
 		
 		return "admin/announcement/adminAnnouncementUpdate";
 	}
 	
 	// 공지사항 수정
-	// @RequestMapping("announcementUpdate.ad")
-	// public String openAnnounUpdate() {
+	@RequestMapping("announcementUpdate.ad")
+	public String openAnnounUpdate(Announcement adminA, HttpSession session, Model model) {
+		int result = adminAService.adminAnnouncementupdate(adminA);
+//		System.out.println("db후" + result); // 여기까진 오나 result가 아직 안 넘어옴
+//		System.out.println(adminA.getAnnouncementNo());
+//		System.out.println(adminA.getAnnouncementTitle());
+//		System.out.println(adminA.getAnnouncementContent());
 		
-		// @RequestParam("ano") int ano, Model model, HttpSession session
+		if(result > 0) { // 수정 성공 => 상세페이지 url 재요청 => detail.bo
+			session.setAttribute("alertMsg", "공지사항 수정이 완료되었습니다.");
+			return "redirect:announcementDetail.ad?ano=" + adminA.getAnnouncementNo();
+		}else { // 수정 실패 => 에러페이지
+			model.addAttribute("errorMsg", "공지사항 수정 실패");
+			return "common/errorPage";
+		}
 		
 		
-//	}
+		
+	}
 	
 	
 	

@@ -15,7 +15,7 @@ public interface AdminAnnouncementService {
 	ArrayList<Announcement> selectAnnouncementList(PageInfo adminPi); // 전체 공지사항
 
 	// 공지사항 디테일
-	Announcement selectAnnouncementDetail(int announcementNo);
+	Announcement adminAnnouncementselectDetail(int announcementNo);
 	
 	// 공지사항 조회수
 	int adminAnnouncementIncreaseCount(int announcementNo);
@@ -28,6 +28,9 @@ public interface AdminAnnouncementService {
 
 	// 공지사항 등록
 	int adminAnnouncementEnroll(Announcement adminA);
+
+	// 공지사항 수정
+	int adminAnnouncementupdate(Announcement adminA);
 
 
 	

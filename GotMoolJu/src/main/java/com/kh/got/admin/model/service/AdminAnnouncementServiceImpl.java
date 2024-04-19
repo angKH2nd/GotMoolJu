@@ -40,8 +40,8 @@ public class AdminAnnouncementServiceImpl implements AdminAnnouncementService {
 
 	// 공지사항 디테일
 	@Override
-	public Announcement selectAnnouncementDetail(int announcementNo) {
-		return adminADao.selectAnnouncementDetail(sqlSession, announcementNo);
+	public Announcement adminAnnouncementselectDetail(int announcementNo) {
+		return adminADao.adminAnnouncementselectDetail(sqlSession, announcementNo);
 	}
 	
 	// 공지사항 조회수	
@@ -67,6 +67,12 @@ public class AdminAnnouncementServiceImpl implements AdminAnnouncementService {
 	@Override
 	public int adminAnnouncementEnroll(Announcement adminA) {
 		return adminADao.adminAnnouncementEnroll(sqlSession, adminA);
+	}
+
+	// 공지사항 수정
+	@Override
+	public int adminAnnouncementupdate(Announcement adminA) {
+		return adminADao.adminAnnouncementupdate(sqlSession, adminA);
 	}
 
 	

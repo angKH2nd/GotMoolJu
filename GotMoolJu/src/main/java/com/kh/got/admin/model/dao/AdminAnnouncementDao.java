@@ -34,8 +34,8 @@ public class AdminAnnouncementDao {
 	}
 	
 	// 공지사항 디테일
-	public Announcement selectAnnouncementDetail(SqlSessionTemplate sqlSession, int announcementNo) {
-		return sqlSession.selectOne("announcementMapper.selectAnnouncementDetail", announcementNo);
+	public Announcement adminAnnouncementselectDetail(SqlSessionTemplate sqlSession, int announcementNo) {
+		return sqlSession.selectOne("announcementMapper.adminAnnouncementselectDetail", announcementNo);
 	}
 	
 	// 공지사항 조회수
@@ -56,6 +56,11 @@ public class AdminAnnouncementDao {
 	// 공지사항 등록
 	public int adminAnnouncementEnroll(SqlSessionTemplate sqlSession, Announcement adminA) {
 		return sqlSession.insert("announcementMapper.adminAnnouncementEnroll", adminA);
+	}
+
+	// 공지사항 수정
+	public int adminAnnouncementupdate(SqlSessionTemplate sqlSession, Announcement adminA) {
+		return sqlSession.update("announcementMapper.adminAnnouncementupdate", adminA);
 	}
 
 

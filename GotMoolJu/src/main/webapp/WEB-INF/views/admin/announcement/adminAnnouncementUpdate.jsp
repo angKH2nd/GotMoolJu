@@ -50,7 +50,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!-- 여기서부터 -->
  <form id="adminAnnouncementUpdateForm" method="post" action="announcementUpdate.ad">
-  <input type="hidden" name="ano" value="${ adminA.announcementNo }">
+  <input type="hidden" name="announcementNo" value="${ adminA.announcementNo }">
    <div class="wrapper">
     <div class="main-panel" id="main-panel" >
       <!-- End Navbar -->
