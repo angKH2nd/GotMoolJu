@@ -26,6 +26,12 @@
 				</tbody>
 			</table>
 		</div>
+		<br><br>
+		
+		<!-- pagination 그리기 div -->
+		<div class="qna-pagination"></div>
+		
+		<br><br>
 		<button type="button" id="insertQnaFormBtn">글쓰기</button>
 	</div>
 	
