@@ -22,7 +22,7 @@
 		</c:choose>
 		
 		<div class="improvement-top pd15">
-			<div class="improvement-previous fl mh" onclick="toggleEtcDiv('insertImprovementIdeation');"><i class="fa-solid fa-angle-left fa-xl"></i></div>
+			<div class="improvement-previous fl mh" onclick="toggleEtcDiv('insertImprovementIdeation');"><i class="fa-solid fa-angle-left fa-lg"></i></div>
 			<div class="improvement-title fl">개선의견 등록</div>
 			<div class="improvement-cancel fl mh" onclick="cancelInsertImprovementIdeation();"><b><i class="fa-solid fa-xmark fa-lg"></i></b></div>
 		</div>

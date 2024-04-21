@@ -11,7 +11,7 @@
 <body>
 	<div class="member-update-form no-scrollbar">
 		<div class="member-update-form-top pd15">
-			<div class="member-update-form-previous fl mh" onclick="toggleMypageDiv('updateMemberForm')"><i class="fa-solid fa-angle-left fa-xl"></i></div>
+			<div class="member-update-form-previous fl mh" onclick="toggleMypageDiv('updateMemberForm')"><i class="fa-solid fa-angle-left fa-lg"></i></div>
 			<div class="member-update-form-title fl">프로필 관리</div>
 			<div class="member-update-form-delete fl mh"><button class="btn-format mh" onclick="openDeleteMemberForm();"><b>회원탈퇴</b></button></div>
 		</div>

@@ -3,4 +3,5 @@ function openMap() {
 	cancelMypageDiv();
 	cancelHomeTownDiv();
 	cancelEtcDiv();
+	cancelAptDetailDiv();
 }

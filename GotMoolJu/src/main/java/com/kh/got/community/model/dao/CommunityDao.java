@@ -29,9 +29,17 @@ public class CommunityDao {
 		int result = sqlSession.selectOne("communityMapper.isTownStar", updateTownStarParameters);
 		
 		if(result == 1) {
-			return result = sqlSession.delete("communityMapper.deleteTownStar", updateTownStarParameters);
+			result = sqlSession.delete("communityMapper.deleteTownStar", updateTownStarParameters);
+			if(result > 0) {
+				sqlSession.update("communityMapper.decreaseTownStar", townNo);
+			}
+			return result;
 		}else if(result == 0){
-			return result = sqlSession.insert("communityMapper.insertTownStar", updateTownStarParameters);
+			result = sqlSession.insert("communityMapper.insertTownStar", updateTownStarParameters);
+			if(result > 0) {
+				sqlSession.update("communityMapper.increaseTownStar", townNo);
+			}
+			return result;
 		}else {
 			return result; 
 		}
@@ -39,6 +47,14 @@ public class CommunityDao {
 
 	public ArrayList<TownStar> isMyTown(SqlSessionTemplate sqlSession, int userNo) {
 		return (ArrayList)sqlSession.selectList("communityMapper.isMyTown", userNo);
+	}
+
+	public Town selectMyBestTown(SqlSessionTemplate sqlSession, String userNickname) {
+		return sqlSession.selectOne("communityMapper.selectMyBestTown", userNickname);
+	}
+
+	public ArrayList<Town> selectTownStarList(SqlSessionTemplate sqlSession, int userNo) {
+		return (ArrayList)sqlSession.selectList("communityMapper.selectTownStarList", userNo);
 	}
 	
 	

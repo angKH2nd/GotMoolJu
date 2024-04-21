@@ -105,7 +105,7 @@
 	</div>
 	<div class="id-pwd-bottom"></div>
 	
-	<button type="button" class="modal-before mh" onClick="beforeSearchIdPwdForm();"><i class="fa-solid fa-angle-left fa-xl"></i></button>
+	<button type="button" class="modal-before mh" onClick="beforeSearchIdPwdForm();"><i class="fa-solid fa-angle-left fa-lg"></i></button>
    	<button type="button" class="modal-close mh" onClick="closeSearchIdPwdForm();"><i class="fa-solid fa-xmark fa-xl"></i></button>
 	<script src="resources/js/member/memberSearchIdPwdForm.js"></script>
 </body>

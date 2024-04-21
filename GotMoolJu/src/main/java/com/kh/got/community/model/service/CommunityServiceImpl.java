@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.JsonElement;
 import com.kh.got.community.model.dao.CommunityDao;
 import com.kh.got.community.model.vo.Town;
 import com.kh.got.community.model.vo.TownStar;
@@ -37,6 +38,16 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public ArrayList<TownStar> isMyTown(int userNo) {
 		return cDao.isMyTown(sqlSession, userNo);
+	}
+
+	@Override
+	public Town selectMyBestTown(String userNickname) {
+		return cDao.selectMyBestTown(sqlSession, userNickname);
+	}
+
+	@Override
+	public ArrayList<Town> selectTownStarList(int userNo) {
+		return cDao.selectTownStarList(sqlSession, userNo);
 	}
 	
 	

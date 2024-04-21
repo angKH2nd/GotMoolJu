@@ -4,49 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-    .detailMap-outer{
-        height: 100%;
-        width: 100%;
-        overflow-y: auto;
-    }
-    .no-scrollbar::-webkit-scrollbar {display:none;}
-    .detailMap-apt{
-        width: 100%;
-        height: 150px;
-        border-bottom: 1px solid rgb(237, 237, 237);
-        box-sizing: border-box;
-    }
-    .detailMap-apt>*{
-        height: 100%;
-        float: left;
-    }
-    .detailMap-apt-img{
-        width: 40%;
-        text-align: center;
-    }
-    .detailMap-apt-content{
-        width: 60%;
-    }
-    .detailMap-apt-img>img{
-        width: 85%;
-        height: 85%;
-    }
-    .detailMap-apt:hover{
-        cursor: pointer;
-        border: 1px solid orange;
-    }
-</style>
+<title>갓물주</title>
+<link rel="stylesheet" href="resources/css/map/detailMap.css">
 </head>
 <body>
-
-	<div class="detailMap-outer no-scrollbar">
-
-
+	<div class="detailMap-form">
+		<div class="detailMap-top pd15">
+			<div class="detailMap-top-title centerXY fl"></div>
+			<div class="detailMap-top-cancel mh fl" onclick="toggleDiv('re')"><i class="fa-solid fa-xmark fa-lg"></i></div>
+		</div>
+		<div class="detailMap-outer no-scrollbar">
+		
+		</div>
     </div>
-
-
-
+    <script src="resources/js/map/detailMap.js"></script>
 </body>
 </html>

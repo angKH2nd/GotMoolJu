@@ -35,7 +35,6 @@
 
 	<!-- <script src="./resources/js/map/sidoName.js"></script>	 -->
 	<script>
-
 		// 맵 생성
 		var map = new naver.maps.Map('map', {
 			center: new naver.maps.LatLng(37.5565003, 126.9883882),
@@ -47,29 +46,29 @@
 		var markers = [];
 
 		const locations = [
-{ name: "서울특별시", latitude: 37.5665, longitude: 126.9780 },
-{ name: "부산광역시", latitude: 35.1796, longitude: 129.0756 },
-{ name: "인천광역시", latitude: 37.4563, longitude: 126.7052 },
-{ name: "대구광역시", latitude: 35.8714, longitude: 128.6014 },
-{ name: "광주광역시", latitude: 35.1595, longitude: 126.8526 },
-{ name: "대전광역시", latitude: 36.3504, longitude: 127.3845 },
-{ name: "울산광역시", latitude: 35.5384, longitude: 129.3114 },
-{ name: "세종특별자치시", latitude: 36.5979, longitude: 127.2943 },
-{ name: "경기도", latitude: 37.2751, longitude: 127.0097 },
-{ name: "충청북도", latitude: 36.6376, longitude: 127.4912 },
-{ name: "충청남도", latitude: 36.6588, longitude: 126.6729 },
-{ name: "전라남도", latitude: 35.1547, longitude: 126.8531 },
-{ name: "경상북도", latitude: 36.5769, longitude: 128.5056 },
-{ name: "경상남도", latitude: 35.2383, longitude: 128.6922 },
-{ name: "강원특별자치도", latitude: 37.8854, longitude: 127.7306 },
-{ name: "전북특별자치도", latitude: 35.8242, longitude: 127.1480 },
-{ name: "제주특별자치도", latitude: 33.4986, longitude: 126.5312 }
-];
+			{ name: "서울특별시", latitude: 37.5665, longitude: 126.9780 },
+			{ name: "부산광역시", latitude: 35.1796, longitude: 129.0756 },
+			{ name: "인천광역시", latitude: 37.4563, longitude: 126.7052 },
+			{ name: "대구광역시", latitude: 35.8714, longitude: 128.6014 },
+			{ name: "광주광역시", latitude: 35.1595, longitude: 126.8526 },
+			{ name: "대전광역시", latitude: 36.3504, longitude: 127.3845 },
+			{ name: "울산광역시", latitude: 35.5384, longitude: 129.3114 },
+			{ name: "세종특별자치시", latitude: 36.5979, longitude: 127.2943 },
+			{ name: "경기도", latitude: 37.2751, longitude: 127.0097 },
+			{ name: "충청북도", latitude: 36.6376, longitude: 127.4912 },
+			{ name: "충청남도", latitude: 36.6588, longitude: 126.6729 },
+			{ name: "전라남도", latitude: 35.1547, longitude: 126.8531 },
+			{ name: "경상북도", latitude: 36.5769, longitude: 128.5056 },
+			{ name: "경상남도", latitude: 35.2383, longitude: 128.6922 },
+			{ name: "강원특별자치도", latitude: 37.8854, longitude: 127.7306 },
+			{ name: "전북특별자치도", latitude: 35.8242, longitude: 127.1480 },
+			{ name: "제주특별자치도", latitude: 33.4986, longitude: 126.5312 }
+			];
+			
+			var markers = [];
 
-var markers = [];
-
-for (let i = 0; i < locations.length; i++) {
-    var marker = new naver.maps.Marker({
+		for (let i = 0; i < locations.length; i++) {
+		    var marker = new naver.maps.Marker({
                 position: new naver.maps.LatLng(locations[i].latitude, locations[i].longitude),
                 map: map,
                 icon: {
@@ -87,7 +86,6 @@ for (let i = 0; i < locations.length; i++) {
                         }
                     });
             markers.push(marker);
-
         }
 
         // 클릭된 좌표로 줌 + 1 해서 이동
@@ -100,19 +98,13 @@ for (let i = 0; i < locations.length; i++) {
             })(i);
         }
 
-
-
-
-
 		// 줌 변경 이벤트
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
 			
 			handleZoomChange(zoomLevel);
 
-
 			if (zoomLevel <= 10) {
-
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
@@ -140,24 +132,23 @@ for (let i = 0; i < locations.length; i++) {
 
 				for (let i = 0; i < locations.length; i++) {
 					var marker = new naver.maps.Marker({
-								position: new naver.maps.LatLng(locations[i].latitude, locations[i].longitude),
-								map: map,
-								icon: {
-									content: [
-										'<div class="map-circle">',
-											'<div>',
-												'<span class="map-name">' + locations[i].name + '</span>',
-												'</div>',
-												'</div>'
-											].join(''),
-											size: new naver.maps.Size(25, 34),
-											scaledSize: new naver.maps.Size(25, 34),
-											origin: new naver.maps.Point(0, 0),
-											anchor: new naver.maps.Point(12, 34)
-										}
-									});
-							markers.push(marker);
-
+						position: new naver.maps.LatLng(locations[i].latitude, locations[i].longitude),
+						map: map,
+						icon: {
+							content: [
+								'<div class="map-circle">',
+									'<div>',
+										'<span class="map-name">' + locations[i].name + '</span>',
+										'</div>',
+										'</div>'
+									].join(''),
+									size: new naver.maps.Size(25, 34),
+									scaledSize: new naver.maps.Size(25, 34),
+									origin: new naver.maps.Point(0, 0),
+									anchor: new naver.maps.Point(12, 34)
+								}
+							});
+					markers.push(marker);
 				}
 
 				// 클릭된 좌표로 줌 + 1 해서 이동
@@ -169,15 +160,11 @@ for (let i = 0; i < locations.length; i++) {
 						});
 					})(i);
 				}
-
-				
 			}else if(zoomLevel == 11 || zoomLevel == 12){
-				
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
 				}
-				
 
 				{
 					var SeoulDistricts = [
@@ -210,7 +197,6 @@ for (let i = 0; i < locations.length; i++) {
 				}
 
 				for (let i = 0; i < SeoulDistricts.length; i++) {
-
 					(function(i) {
 						$.ajax({
 							url: "countJachi.ma",
@@ -241,90 +227,73 @@ for (let i = 0; i < locations.length; i++) {
 										// Smoothly move the map to the clicked position and adjust zoom level
 										map.morph(e.coord, map.getZoom() + 1);
 									});
-
 								}
-							
 							},
 							error: function(){
 								console.log("실패")
 							}
 						});
 					})(i);
-
-				
-					}
-
+				}
 			}else if(zoomLevel == 13 || zoomLevel == 14){
 
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
-
 				}
 
 				let dongCoords = load();
 
-				
-
 				const getData = () => {
 					dongCoords.then((appData) => {
-
-						console.log(appData[1].center_lati);
-						console.log(appData[1].emd_nm);
-
+						// console.log(appData[1].center_lati);
+						// console.log(appData[1].emd_nm);
 						for (let i = 0; i < appData.length; i++) {
-
-			(function(i) {
-				$.ajax({
-					url: "countDong.ma",
-					data: {dong : appData[i].emd_nm},
-					success: function(count){
-
-						if(count != 0){
-
-							var marker = new naver.maps.Marker({
-								position: new naver.maps.LatLng(appData[i].center_lati, appData[i].center_long),
-								map: map,
-								icon: {
-									content: [
-										'<div class="jachi-outer">',
-											'<div>',
-												'<span class="jachi-inner">' + count + '</span>',
-												'</div>',
-												appData[i].emd_nm+ '</div>'
-											].join(''),
-											size: new naver.maps.Size(25, 34),
-											scaledSize: new naver.maps.Size(25, 34),
-											origin: new naver.maps.Point(0, 0),
-											anchor: new naver.maps.Point(12, 34)
+							(function(i) {
+								$.ajax({
+									url: "countDong.ma",
+									data: {dong : appData[i].emd_nm},
+									success: function(count){
+				
+										if(count != 0){
+				
+											var marker = new naver.maps.Marker({
+												position: new naver.maps.LatLng(appData[i].center_lati, appData[i].center_long),
+												map: map,
+												icon: {
+													content: [
+														'<div class="jachi-outer">',
+															'<div>',
+																'<span class="jachi-inner">' + count + '</span>',
+																'</div>',
+																appData[i].emd_nm+ '</div>'
+															].join(''),
+															size: new naver.maps.Size(25, 34),
+															scaledSize: new naver.maps.Size(25, 34),
+															origin: new naver.maps.Point(0, 0),
+															anchor: new naver.maps.Point(12, 34)
+														}
+													});
+											markers.push(marker);
+											naver.maps.Event.addListener(marker, 'click', function (e) {
+												// Smoothly move the map to the clicked position and adjust zoom level
+												map.morph(e.coord, map.getZoom() + 1);
+											});
+				
+										}
+									
+										},
+										error: function(){
+											console.log("실패")
 										}
 									});
-							markers.push(marker);
-							naver.maps.Event.addListener(marker, 'click', function (e) {
-								// Smoothly move the map to the clicked position and adjust zoom level
-								map.morph(e.coord, map.getZoom() + 1);
-							});
+								})(i);
+							}
+						});
+					};
 
-						}
-					
-						},
-						error: function(){
-							console.log("실패")
-						}
-					});
-				})(i);
-
-
-		}
-
-
-		});
-	};
-
-	getData();
-
+		getData();
 			}else if(zoomLevel >= 15){
-
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
@@ -332,20 +301,12 @@ for (let i = 0; i < locations.length; i++) {
 
 				setTimeout(() => {
 					detailMakers();
-					
 				}, 300);
-
-
 			}
-
-		
 		});
 
-
 		function detailMakers(){
-
 			var mapBounds = map.getBounds();
-
 			$.ajax({
 				url:"detailAptCount.ma",
 				data:{
@@ -355,65 +316,49 @@ for (let i = 0; i < locations.length; i++) {
 					maxY:mapBounds._max.y
 				},
 				success:function(data){
-
 					for(let i=0; i<data.length; i++){
 
-						
 						var marker = new naver.maps.Marker({
 							position: new naver.maps.LatLng(data[i].aptLocationX, data[i].aptLocationY),
 							map: map,
 							icon: {
-								content: [
-									'<div class="aptContent">',
-										'<div class="aptImage">',
-											data[i].aptCount,
-											'</div>',
-										'<div class="aptImageName">' + data[i].aptName + '</div>',
-										'<input type="hidden" value="' + data[i].aptLocationX + '" id="aptLocation">',
-										'</div>'		
-										].join(''),
-													size: new naver.maps.Size(25, 34),
-													scaledSize: new naver.maps.Size(25, 34),
-													origin: new naver.maps.Point(0, 0),
-													anchor: new naver.maps.Point(12, 34)
-												}
-											});
-											markers.push(marker);
-											naver.maps.Event.addListener(marker, 'click', function (e) {
-												// Smoothly move the map to the clicked position and adjust zoom level
-												map.morph(e.coord);
-											});
-										}
-											
-
-										},
-										error:function(){
-											console.log("실패")
-										}
-										
-										
-									})
-									
-									
-								}
-
-									
-
-					
+							content: [
+								'<div class="aptContent">',
+									'<div class="aptImage">',
+										data[i].aptCount,
+										'</div>',
+									'<div class="aptImageName">' + data[i].aptName + '</div>',
+									'<input type="hidden" value="' + data[i].aptLocationX + '" id="aptLocation">',
+									'</div>'		
+									].join(''),
+										size: new naver.maps.Size(25, 34),
+										scaledSize: new naver.maps.Size(25, 34),
+										origin: new naver.maps.Point(0, 0),
+										anchor: new naver.maps.Point(12, 34)
+									}
+								});
+							markers.push(marker);
+							naver.maps.Event.addListener(marker, 'click', function (e) {
+								// Smoothly move the map to the clicked position and adjust zoom level
+								map.morph(e.coord);
+							});
+						}
+					},
+					error:function(){
+						console.log("실패")
+					}
+				})
+			}
 
 		//------------------- 줌인 줌아웃 -------------------------------
-
-
 		
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
-
 			handleZoomChange(zoomLevel);
 		})
 	
 		// 줌 변경 시 실행할 함수
 		function handleZoomChange(zoomLevel) {
-			
 			$("#zoom").html("줌 레벨 : " + zoomLevel);
 		}
 		
@@ -439,21 +384,12 @@ for (let i = 0; i < locations.length; i++) {
 		// 		}
 				
 		// 	 if(currentZoomLevel >= 15){
-
-				
-				
 		// 		setTimeout(() => {
 		// 			detailMakers()
-					
 		// 		}, 500);
-	
-
 		// 		console.log(markers)
 		// 	 }
-			 
-
 		// });	
-
 			
 		$(document).on('click', '.aptContent', function(e) {
 			var aptNameElement = $(this).find('.aptImageName');
@@ -466,18 +402,16 @@ for (let i = 0; i < locations.length; i++) {
 		});
 
 		async function load() {
-				// 파일 읽어 오기
-				const data = await fetch('resources/assets/js/dong_coords.json');
-				// JSON으로 해석
-				const obj = await data.json();
-				
-				return obj;
-
-				}
+			// 파일 읽어 오기
+			const data = await fetch('resources/assets/js/dong_coords.json');
+			// JSON으로 해석
+			const obj = await data.json();
+			
+			return obj;
+		}
 	</script>
 		
 	<script src="./resources/js/common/map.js"></script>
 	<script src="./resources/js/map/mapChange.js"></script>
-	
 </body>
 </html>

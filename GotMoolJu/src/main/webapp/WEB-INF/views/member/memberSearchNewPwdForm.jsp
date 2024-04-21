@@ -46,7 +46,7 @@
 	</div>
 	<div class="new-pwd-bottom"></div>
 	
-	<button type="button" class="modal-before mh" onClick="beforeNewPwdForm();"><i class="fa-solid fa-angle-left fa-xl"></i></button>
+	<button type="button" class="modal-before mh" onClick="beforeNewPwdForm();"><i class="fa-solid fa-angle-left fa-lg"></i></button>
    	<button type="button" class="modal-close mh" onClick="closeNewPwdForm();"><i class="fa-solid fa-xmark fa-xl"></i></button>
 	<script src="resources/js/member/memberSearchNewPwdForm.js"></script>
 </body>

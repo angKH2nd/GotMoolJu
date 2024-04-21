@@ -53,13 +53,13 @@
             	<c:otherwise>
             		<c:choose>
             			<c:when test="${ loginUser.userId eq 'admin' }">
-		            		<li onclick="toggleDiv('member')" data-target="member">
+		            		<li onclick="toggleDiv('member'); showRecentProperties();" data-target="member">
 				        		<div class="icon-area hoverZ" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=30 height=30 src="${ loginUser.userUpdateName }"></div>
 				        		<div class="text-area" style="padding: 0 0 10px 0">관리자</div>
 				        	</li>
 			        	</c:when>
 			        	<c:otherwise>
-			        		<li onclick="toggleDiv('member')" data-target="member">
+			        		<li onclick="toggleDiv('member'); showRecentProperties();" data-target="member">
 				        		<div class="icon-area hoverZ" style="margin: 0"><img style="margin-top: 10px;" class="brc" width=40 height=40 src="${ loginUser.userUpdateName }"></div>
 				        		<div class="text-area" style="padding: 0 0 10px 0">마이페이지</div>
 				        	</li>
@@ -171,6 +171,11 @@
 		<div class="updateMemberForm"><%@ include file="../member/memberUpdateForm.jsp" %></div>
 		<div class="memberDibsList"><%@ include file="../member/memberDibsList.jsp" %></div>
 		<div class="memberNoticeList"><%@ include file="../member/memberNoticeList.jsp" %></div>
+	</div>
+	
+	<%-- 맵 상세보기 관련 토글 --%>
+	<div class="apt-detail-toggle">
+		<div class="aptDetailForm"><%@ include file="../map/aptDetailForm.jsp" %></div>
 	</div>
 	
 	<%-- 기타 관련 토글 --%>

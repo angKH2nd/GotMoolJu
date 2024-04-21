@@ -18,5 +18,10 @@ public interface CommunityService {
 	// 3. 커뮤니티 즐겨찾기 서비스
 	int updateTownStar(int townNo, int userNo);
 	
+	// 4. 커뮤니티 내 최고 인기글 서비스
+	Town selectMyBestTown(String userNickname);
+	
+	// 5. 커뮤니티 즐겨찾기 목록 조회 서비스
+	ArrayList<Town> selectTownStarList(int userNo);
 	
 }

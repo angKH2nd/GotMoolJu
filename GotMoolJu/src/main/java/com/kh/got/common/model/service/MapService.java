@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.kh.got.common.model.vo.MapVO;
 
-
 public interface MapService {
 
 	ArrayList<MapVO> selectAllList();
@@ -17,16 +16,8 @@ public interface MapService {
 	
 	ArrayList<MapVO> detailApt(String aptName, String aptLocation);
 	
+	MapVO selectAptDetail(String aptNo);
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	int selectAptCount();
 	
 }

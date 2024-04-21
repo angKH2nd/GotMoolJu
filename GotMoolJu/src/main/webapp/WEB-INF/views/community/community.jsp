@@ -15,8 +15,9 @@
 				<div class="community-bar" id="community-bar">
 				    <ul>
 				        <li class="mh town-btn" onclick="toggleCommunity('town'); selectTownList();">동네소식</li>
-				        <li class="mh community3-btn" onclick="toggleCommunity('community3')">커뮤3</li>
-				        <li class="mh community4-btn" onclick="toggleCommunity('community4')">커뮤4</li>
+				        <li class="mh communityStar-btn" onclick="toggleCommunity('communityStar'); selectTownStarList();">즐겨찾기</li>
+				        <li class="mh communityHot-btn" onclick="toggleCommunity('communityHot')">핫이슈</li>
+				        <li class="mh communityRank-btn" onclick="toggleCommunity('communityRank')">명예의 전당</li>
 				    </ul>
 				</div>
 			</div>
@@ -27,8 +28,9 @@
 		<div class="community-content">
 			<div class="community-bar-toggle">
 			    <div class="town"><%@ include file="town.jsp" %></div>
-			    <div class="community3"><%@ include file="community3ListView.jsp" %></div>
-			    <div class="community4"><%@ include file="community4ListView.jsp" %></div>
+			    <div class="communityStar"><%@ include file="communityStar.jsp" %></div>
+			    <div class="communityHot"><%@ include file="communityHot.jsp" %></div>
+			    <div class="communityRank"><%@ include file="communityRank.jsp" %></div>
 			</div>
 		</div>
 	</div>

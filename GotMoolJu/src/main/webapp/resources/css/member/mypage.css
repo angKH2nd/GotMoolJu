@@ -19,7 +19,135 @@
 }
 
 .mypage-body2 {
-	height: 300px;
+	height: 240px;
+}
+
+.mypage-body2>div {
+	width: 379px;
+}
+
+.mypage-star-head {
+	height: 40px;
+	background-color: #4373f4;
+	color: white;
+	padding: 10px 20px;
+}
+
+.mypage-star-head>div {
+	height: 100%;
+}
+
+.mypage-star-icon {
+	width: 25px;
+	color: yellow;
+}
+
+.mypage-star-title {
+	width: calc(100% - 110px);
+	padding-left: 10px;
+}
+
+.mypage-star-content {
+	width: 50px; 
+}
+
+.mypage-star-content>div {
+	width: 25px;
+	height: 100%;
+}
+
+.mypage-star-more {
+	width: 25px;
+}
+
+.mypage-popular-no-write {
+	width: 100%;
+	height: 160px;
+	display: flex;
+    flex-direction: column;
+}
+
+.mypage-popular-no-write>div {
+	width: 100%;
+	height: 50%;
+}
+
+.mypage-star-content-popular {
+	height: 160px;
+	padding: 10px 20px;
+	margin-top: 10px;
+	background-color: #ecf1fe;
+}
+
+.mypage-star-content-popular>div {
+	width: 100%;
+}
+
+.mypage-star-popular-title {
+	height: 25px;
+}
+
+.mypage-star-popular-community {
+	height: calc(100% - 45px);
+	padding: 10px 0;
+}
+
+.mypage-star-popular-community>div {
+	width: 100%;
+}
+
+.mypage-popular-top {
+	height: 50px;
+}
+
+.mypage-popular-top>div {
+	height: 100%;
+}
+
+.mypage-popular-top-profile {
+	width: 45px;
+}
+
+.mypage-popular-top-nickname {
+	width: calc(100% - 65px);
+}
+
+.mypage-popular-top-go {
+	width: 20px;
+}
+
+.mypage-popular-bottom {
+	height: 30px;
+}
+
+.mypage-popular-bottom>div {
+	height: 100%;
+	width: 40px;
+}
+
+.mypage-popular-bottom>div>div {
+	height: 100%;
+	width: 20px;
+}
+
+.mypage-popular-star-icon {
+	color: yellow;
+}
+
+.mypage-popular-likes-icon {
+	color: blue;
+}
+
+.mypage-popular-center {
+	height: auto;
+}
+
+.mypage-popular-center>div {
+	width: 100%;
+}
+
+.mypage-popular-center-title {
+	height: 35px;
 }
 
 .mypage-body3 {
@@ -74,8 +202,7 @@
 }
 
 .mypage-recent-area {
-	height: 100px;
-	margin-top: 40px;
+	height: 130px;
 }
 
 .mypage-alert-area>div {
@@ -86,11 +213,13 @@
 	height: 40px;
 	margin-bottom: 10px;
 	background-color: #f5f5f5;
+	padding: 10px 20px;
 }
 
 .mypage-notices {
 	height: 40px;
 	background-color: #f3f5f9;
+	padding: 10px 20px;
 }
 
 .mypage-dibs>div {
@@ -99,6 +228,7 @@
 
 .mypage-dibs-icon {
 	width: 25px;
+	color: red;
 }
 
 .mypage-dibs-title {

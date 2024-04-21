@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+.detailMap-form {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.detailMap-top {
+	width: calc(100% - 30px);
+	height: 30px;
+}
+
+.detailMap-top>div {
+	height: 100%;
+}
+
+.detailMap-top-title {
+	width: calc(100% - 20px);
+}
+
+.detailMap-top-cancel {
+	width: 20px;
+}
+
+.detailMap-outer{
+    height: calc(100% - 60px);
+    width: 100%;
+    overflow-y: auto;
+}
+
+.no-scrollbar::-webkit-scrollbar {display:none;}
+
+.detailMap-apt{
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.detailMap-apt>*{
+    height: 100%;
+    float: left;
+}
+
+.detailMap-apt-img{
+    width: 40%;
+    text-align: center;
+}
+
+.detailMap-apt-content{
+    width: calc(60% - 25px);
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.detailMap-apt-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.detailMap-apt:hover{
+    cursor: pointer;
+    border: 1px solid orange;
+}
+
+.detailMap-apt-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detailMap-apt-content li {
+	margin-top: 15px;
+}
+
+/* --------------- 아파트 상세보기 토글 관련 시작 --------------- */
+.apt-detail-toggle {
+    position: relative;
+    z-index: 1004;
+}
+
+.apt-detail-toggle>div {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: opacity 0.3s ease;
+    z-index: 1005;
+    border-right: 0.5px solid lightgray;
+    box-sizing: border-box;
+}
+/* --------------- 아파트 상세보기 토글 관련 끝 --------------- */

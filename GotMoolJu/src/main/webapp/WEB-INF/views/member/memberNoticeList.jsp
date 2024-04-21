@@ -11,7 +11,7 @@
 <body>
 	<div class="member-notice-form no-scrollbar">
 		<div class="member-notice-form-top pd15">
-			<div class="member-notice-form-previous fl mh" onclick="toggleMypageDiv('memberNoticeList')"><i class="fa-solid fa-angle-left fa-xl"></i></div>
+			<div class="member-notice-form-previous fl mh" onclick="toggleMypageDiv('memberNoticeList')"><i class="fa-solid fa-angle-left fa-lg"></i></div>
 			<div class="member-notice-form-title fl">알림</div>
 			<div class="member-notice-form-blank fl mh"></div>
 		</div>

@@ -17,9 +17,7 @@ public class MapDao {
 	}
 	
 	public String countJachi(SqlSessionTemplate sqlSession, String jachi) {
-		
 		return sqlSession.selectOne("mapMapper.countJachi", jachi);
-		
 	}
 	
 	public ArrayList<MapVO> detailAptCount(SqlSessionTemplate sqlSession, String minX, String minY, String maxX, String maxY){
@@ -30,7 +28,6 @@ public class MapDao {
 		searchMap.put("maxY", maxY);
 		
 		return (ArrayList)sqlSession.selectList("mapMapper.detailAptCount", searchMap);
-		
 	}
 	
 	public ArrayList<MapVO> detailApt(SqlSessionTemplate sqlSession, String aptName, String aptLocation){
@@ -38,23 +35,19 @@ public class MapDao {
 		detailApt.put("aptName", aptName);
 		detailApt.put("aptLocation", aptLocation);
 		
-		
 		return (ArrayList)sqlSession.selectList("mapMapper.detailApt", detailApt);
-		
 	}
 	
 	public String countDong(SqlSessionTemplate sqlSession, String dong) {
-		
 		return sqlSession.selectOne("mapMapper.countDong", dong);
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public MapVO selectAptDetail(SqlSessionTemplate sqlSession, String aptNo) {
+		return sqlSession.selectOne("mapMapper.selectAptDetail", aptNo);
+	}
+
+	public int selectAptCount(SqlSessionTemplate sqlSession) {
+		return sqlSession.selectOne("mapMapper.selectAptCount");
+	}
 
 }

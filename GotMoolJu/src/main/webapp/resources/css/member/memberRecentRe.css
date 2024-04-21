@@ -20,9 +20,6 @@
 
 .recent-list {
     display: inline-block;
-    width: 80px;
-    height: 60px;
-    background-color: lightblue;
     text-align: center;
     line-height: 60px;
 }
@@ -33,7 +30,7 @@
     top: 55%;
     width: 25px;
     height: 25px;
-    background-color: #fdfefd;
+    background-color: rgba(255, 255, 255, 0.5);
     color: black;
     border: none;
     cursor: pointer;

@@ -20,6 +20,41 @@ function cancelMypageDiv() {
     });
 }
 
+function openMyStar() {
+	toggleDiv('member');
+	toggleDiv('community');
+}
+
+function openCommunityEnrollForm() {
+	openMyStar();
+	changeTownArea();
+}
+
+$(document).ready(function() {
+	if($(".mypage-name").html() !== ''){
+		$.ajax({
+			url: "selectMyBestTown.cm",
+			success: function(data) {
+				if(data.townNo !== undefined){
+					$(".mypage-popular-center-title").html(data.townTitle);
+					$(".mypage-popular-star-count").html(data.townStar);
+					$(".mypage-popular-likes-count").html(data.townLikes);
+					$(".mypage-popular-reply-count").html(data.townReplyCount);
+					$(".mypage-popular-click-count").html(data.townClick);
+				}else {
+					var mypagePopularHtml = `<div class="mypage-popular-no-write centerXY">
+												<div class="centerXY">작성한 커뮤니티 게시글이 없습니다.<br>커뮤니티에 글을 작성해보세요!<br><br></div>
+												<div class="mh" style="color: #434d68;" onclick="openCommunityEnrollForm();"><i class="fa-solid fa-pencil"></i> 글 작성하기</div>
+											</div>`;
+					$(".mypage-star-popular-community").html(mypagePopularHtml);
+				}
+			}, error: function() {
+				console.log('조회실패');
+			}
+		})
+	}
+})
+
 function resetMemberUpdateForm() {
 	/* ------------------- memberUpdateForm input 리셋 ------------------- */
     $("#update_postcode").val("");

@@ -22,7 +22,7 @@
 			<div class="homeTown-title">
 				<div class="homeTown-count fl">
 					<div class="homeTown-count-head">
-						<div class="homeTown-count-head-num fl">2,505,192</div>
+						<div class="homeTown-count-head-num fl">${ aptCount }</div>
 						<div class="homeTown-count-head-text fl">개</div>
 					</div>
 					<div class="homeTown-count-comment" id="currentTime"></div>

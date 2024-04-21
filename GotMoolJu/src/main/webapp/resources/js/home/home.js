@@ -29,6 +29,7 @@ function toggleDiv(divId) {
 	cancelMypageDiv();
 	cancelHomeTownDiv();
 	cancelEtcDiv();
+	cancelAptDetailDiv();
 	$(".uwm").remove();
 
     var divs = document.querySelectorAll('.sidebar-toggle > div');

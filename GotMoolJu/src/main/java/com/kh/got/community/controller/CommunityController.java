@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.kh.got.community.model.service.CommunityService;
+import com.kh.got.community.model.vo.Town;
 import com.kh.got.member.model.vo.Member;
 
 @Controller
@@ -46,6 +47,27 @@ public class CommunityController {
 	@RequestMapping(value="updateTownStar.cm")
 	public int updateTownStar(@RequestParam("townNo") int townNo, HttpSession session) {
 		return cService.updateTownStar(townNo, ((Member)session.getAttribute("loginUser")).getUserNo());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="selectMyBestTown.cm")
+	public Town selectMyBestTown(HttpSession session) {
+		return cService.selectMyBestTown(((Member)session.getAttribute("loginUser")).getUserNickname());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="townStarList.cm", produces = "application/json; charset=utf-8")
+	public String selectStarTownList(HttpSession session) {
+		Member loginUser = null;
+		JSONObject jObj = new JSONObject();
+		
+		if((Member)session.getAttribute("loginUser") != null) {
+			loginUser = (Member)session.getAttribute("loginUser");
+			jObj.put("myTownStarList", new Gson().toJson(cService.isMyTown(loginUser.getUserNo())));
+		}
+		jObj.put("townList", new Gson().toJson(cService.selectTownStarList(loginUser.getUserNo())));
+		
+		return jObj.toJSONString();
 	}
 	
 }

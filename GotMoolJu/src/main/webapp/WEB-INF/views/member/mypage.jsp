@@ -23,7 +23,7 @@
 		</div>
 		<div class="mypage-body1">
 			<div class="mypage-alert-area pd15">
-				<div class="mypage-dibs br5 pd20 mh" onclick="toggleMypageDiv('memberDibsList');">
+				<div class="mypage-dibs br5 mh" onclick="toggleMypageDiv('memberDibsList');">
 					<div class="mypage-dibs-icon centerXY fl"><i class="fa-solid fa-heart fa-lg"></i></div>
 					<div class="mypage-dibs-title centerY fl">찜 목록</div>
 					<div class="mypage-dibs-content fl">
@@ -32,7 +32,7 @@
 					</div>
 					<div class="mypage-dibs-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>
 				</div>
-				<div class="mypage-notices br5 pd20 mh" onclick="toggleMypageDiv('memberNoticeList');">
+				<div class="mypage-notices br5 mh" onclick="toggleMypageDiv('memberNoticeList');">
 					<div class="mypage-notices-icon centerXY fl"><i class="fa-solid fa-bell fa-lg"></i></div>
 					<div class="mypage-notices-title centerY fl">알림 목록</div>
 					<div class="mypage-notices-content fl">
@@ -44,7 +44,48 @@
 			</div>
 			<div class="mypage-recent-area"><%@ include file="./memberRecentRe.jsp" %></div>
 		</div>
-		<div class="mypage-body2 pd15">뭘넣지..? 바디2</div>
+		<div class="mypage-body2 pd15">
+			<div class="mypage-star-head br5 mh" onclick="openMyStar();">
+				<div class="mypage-star-icon centerXY fl"><i class="fa-solid fa-star fa-lg"></i></div>
+				<div class="mypage-star-title centerY fl">지금까지 내가 모은 별</div>
+				<div class="mypage-star-content fl">
+					<div class="mypage-star-count centerXY fl">3</div>
+					<div class="mypage-star-count-name centerXY fl"> 개</div>
+				</div>
+				<div class="mypage-star-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>
+			</div>
+			<div class="mypage-star-content-popular br5">
+				<div class="mypage-star-popular-title fb">가장 인기있는 내 글 🤩</div>
+				<div class="mypage-star-popular-community">
+					<div class="mypage-popular-top">
+						<div class="mypage-popular-top-profile centerXY fl"><img width=40 height=40 class="brc" src="${ loginUser.userUpdateName }"></div>
+						<div class="mypage-popular-top-nickname centerY fl"> &nbsp; ${ loginUser.userNickname }</div>
+						<div class="mypage-popular-top-go centerY fl mh" onclick="openMyStar();"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+					</div>
+					<div class="mypage-popular-center">
+						<div class="mypage-popular-center-title centerY"></div>
+					</div>
+					<div class="mypage-popular-bottom">
+						<div class="mypage-popular-star fl">
+							<div class="mypage-popular-star-icon centerY fl"><i class="fa-solid fa-star"></i></div>
+							<div class="mypage-popular-star-count centerY fl"></div>
+						</div>
+						<div class="mypage-popular-likes fl">
+							<div class="mypage-popular-likes-icon centerY fl"><i class="fa-regular fa-thumbs-up"></i></div>
+							<div class="mypage-popular-likes-count centerY fl"></div>
+						</div>
+						<div class="mypage-popular-reply fl">
+							<div class="mypage-popular-reply-icon centerY fl"><i class="fa-solid fa-comment-dots"></i></div>
+							<div class="mypage-popular-reply-count centerY fl"></div>
+						</div>
+						<div class="mypage-popular-click fl">
+							<div class="mypage-popular-click-icon centerY fl"><i class="fa-solid fa-arrow-pointer"></i></div>
+							<div class="mypage-popular-click-count centerY fl"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="mypage-body3 pd15">뭘넣지..? 바디3</div>
 	</div>
 	

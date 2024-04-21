@@ -78,6 +78,13 @@
 		   and town_star_user_no = #{userNo}
 	</delete>
 	
+	<update id="decreaseTownStar">
+		update tb_town
+		   set town_star = town_star - 1
+		 where town_no = #{townNo}
+		   and town_status = 'Y'
+	</update>
+	
 	<insert id="insertTownStar">
 		insert
 		  into tb_town_star
@@ -92,12 +99,91 @@
 			 )	
 	</insert>
 	
+	<update id="increaseTownStar">
+		update tb_town
+		   set town_star = town_star + 1
+		 where town_no = #{townNo}
+		   and town_status = 'Y'
+	</update>
+	
 	<select id="isMyTown" resultMap="townStarResult">
 		select
 		       town_star_ref_no
 		     , town_star_user_no
 		  from tb_town_star
 		 where town_star_user_no = #{userNo}
+	</select>
+	
+	<select id="selectMyBestTown" resultMap="townResult">
+		select 
+		       *
+		  from (
+		        select 
+		               town_no
+		             , town_writer
+		             , town_writer_img
+		             , town_title
+		             , town_star
+		             , town_likes
+		             , town_click
+		             , town_modify_date
+		             , coalesce(count(town_reply_no), 0) as town_reply_count
+		          from tb_town
+		          left
+		          join tb_town_reply on (town_no = town_reply_ref_no)
+		         where town_status = 'Y'
+		           and town_writer = '돼지불백집이쑤시개도둑'
+		         group
+		            by town_no
+		             , town_writer
+		             , town_writer_img
+		             , town_title
+		             , town_star
+		             , town_likes
+		             , town_click
+		             , town_modify_date
+		         order
+		            by town_star desc, town_likes, town_click
+		       )
+		 where rownum = 1
+	</select>
+	
+	<select id="selectTownStarList" resultMap="townResult">
+		select 
+			   t.town_no
+			 , t.town_writer
+			 , m.user_update_name AS town_writer_img
+			 , t.town_title
+			 , t.town_content
+			 , t.town_likes
+			 , t.town_click
+			 , t.town_create_date
+			 , to_char(t.town_modify_date, 'RRRR.MM.DD') as "town_modify_date"
+			 , a.attachment_path || a.attachment_update_name as town_thumbnail
+			 , coalesce(count(tr.town_reply_no), 0) as town_reply_count
+			 , coalesce((select count(*) from tb_town_star ts where ts.town_star_ref_no = t.town_no), 0) as town_star
+		  from tb_town t
+		  left 
+		  join tb_attachment a on t.town_no = a.attachment_town_no and a.attachment_level = 1
+		  join tb_member m on t.town_writer = m.user_nickname
+		  left
+		  join tb_town_reply tr on t.town_no = tr.town_reply_ref_no
+          join tb_town_star on t.town_no = town_star_ref_no
+         where town_star_user_no = #{userNo}
+		 group
+		 	by t.town_no
+			 , t.town_writer
+			 , m.user_update_name
+			 , t.town_title
+			 , t.town_content
+			 , t.town_likes
+			 , t.town_click
+			 , t.town_create_date
+			 , t.town_modify_date
+			 , a.attachment_path
+			 , a.attachment_update_name
+		 order
+		    by t.town_no desc
 	</select>
 	
 </mapper>

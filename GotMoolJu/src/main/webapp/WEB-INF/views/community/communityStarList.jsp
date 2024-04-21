@@ -6,10 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="resources/css/community/community4/community4ListView.css">
+<link rel="stylesheet" href="resources/css/community/communityStarList.css">
 </head>
 <body>
-	여기 community4ListView.jsp임
-	<script src="resources/js/community/community4/community4ListView.js"></script>
+	<div class="town-star-main-star-list-area">
+	
+	</div>
+	
+	<script src="resources/js/community/communityStarList.js"></script>
 </body>
 </html>

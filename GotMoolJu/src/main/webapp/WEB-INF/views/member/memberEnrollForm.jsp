@@ -141,7 +141,7 @@
    		<div class="enroll-reset-btn fl"><button type="reset" class="btn-format mh">초기화</button></div>
    	</div>
    	
-   	<button type="button" class="modal-before mh" onClick="beforeEnrollForm();"><i class="fa-solid fa-angle-left fa-xl"></i></button>
+   	<button type="button" class="modal-before mh" onClick="beforeEnrollForm();"><i class="fa-solid fa-angle-left fa-lg"></i></button>
    	<button type="button" class="modal-close mh" onClick="closeLoginForm();"><i class="fa-solid fa-xmark fa-xl"></i></button>
    	<script src="resources/js/member/memberEnrollForm.js"></script>
 </body>

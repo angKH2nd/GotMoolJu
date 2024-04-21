@@ -51,6 +51,17 @@ function openMemberDeleteForm() {
 	openDeleteMemberForm();
 }
 
+function openRank() {
+	cancelDiv();
+	toggleDiv('rank');
+}
+
+function openCommunityHot() {
+	cancelDiv();
+	toggleDiv('community');
+	toggleCommunity('communityHot');
+}
+
 /* ----------------- SNS ----------------- */
 function openGithub() {
 	location.href = 'https://github.com/angKH2nd/GotMoolJu';

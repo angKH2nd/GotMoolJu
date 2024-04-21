@@ -13,8 +13,31 @@
 		<result column="apt_price" property="aptPrice"/>
 		<result column="apt_img_url" property="aptImgUrl"/>
 		<result column="apt_img_urls" property="aptImgUrls"/>
+		<result column="apt_img_urls1" property="aptImgUrls1"/>
+		<result column="apt_img_urls2" property="aptImgUrls2"/>
+		<result column="apt_img_urls3" property="aptImgUrls3"/>
+		<result column="apt_img_urls4" property="aptImgUrls4"/>
+		<result column="apt_img_urls5" property="aptImgUrls5"/>
 		<result column="apt_desc" property="aptDesc"/>
+		<result column="apt_desc1" property="aptDesc1"/>
+		<result column="apt_desc2" property="aptDesc2"/>
+		<result column="apt_desc3" property="aptDesc3"/>
 		<result column="apt_count" property="aptCount"/>
+		<result column="apt_create_date" property="aptCreateDate"/>
+		<result column="apt_status" property="aptStatus"/>
+		<result column="apt_memo" property="aptMemo"/>
+		<result column="apt_room_size" property="aptRoomSize"/>
+		<result column="apt_provision_size" property="aptProvisionSize"/>
+		<result column="apt_address" property="aptAddress"/>
+		<result column="apt_dong" property="aptDong"/>
+		<result column="apt_ho" property="aptHo"/>
+		<result column="apt_tags" property="aptTags"/>
+		<result column="apt_tags1" property="aptTags1"/>
+		<result column="apt_tags2" property="aptTags2"/>
+		<result column="apt_tags3" property="aptTags3"/>
+		<result column="apt_beds" property="aptBeds"/>
+		<result column="apt_bath" property="aptBath"/>
+		<result column="apt_entrance_type" property="aptEntranceType"/>
 	</resultMap>
 	<!--  
 	<select id="selectAllList" resultMap="mapResult"> 
@@ -58,6 +81,7 @@
 	         , APT_PRICE
 	         , APT_IMG_URL
 	         , APT_DESC
+	         , APT_ADDRESS
 	      from tb_apt
 	    where apt_name = #{aptName}	
 	      and SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) = #{aptLocation}
@@ -69,11 +93,49 @@
 		 where apt_address like '%'||#{dong}||'%'
 	</select>
 	
+	<select id="selectAptDetail" resultMap="mapResult">
+		select
+			   apt_no
+			 , apt_selling_type
+			 , apt_location
+			 , apt_name
+			 , apt_introduce
+			 , apt_price
+			 , apt_img_url
+			 , apt_img_urls
+			 , REGEXP_SUBSTR(apt_img_urls, '[^,]+', 1, 1) AS apt_img_urls1
+			 , REGEXP_SUBSTR(apt_img_urls, '[^,]+', 1, 2) AS apt_img_urls2
+			 , REGEXP_SUBSTR(apt_img_urls, '[^,]+', 1, 3) AS apt_img_urls3
+			 , REGEXP_SUBSTR(apt_img_urls, '[^,]+', 1, 4) AS apt_img_urls4
+			 , REGEXP_SUBSTR(apt_img_urls, '[^,]+', 1, 5) AS apt_img_urls5
+			 , REGEXP_SUBSTR(apt_desc, '[^,]+', 1, 1) AS apt_desc1
+			 , REGEXP_SUBSTR(apt_desc, '[^,]+', 1, 2) AS apt_desc2
+			 , REGEXP_SUBSTR(apt_desc, '[^,]+', 1, 3) AS apt_desc3
+			 , apt_desc
+			 , apt_review
+			 , apt_count
+			 , apt_create_date
+			 , apt_status
+			 , apt_memo
+			 , apt_room_size
+			 , apt_provision_size
+			 , apt_address
+			 , apt_dong
+			 , apt_ho
+			 , apt_tags
+			 , REGEXP_SUBSTR(apt_tags, '[^,]+', 1, 1) AS apt_tags1
+			 , REGEXP_SUBSTR(apt_tags, '[^,]+', 1, 2) AS apt_tags2
+			 , REGEXP_SUBSTR(apt_tags, '[^,]+', 1, 3) AS apt_tags3
+			 , apt_beds
+			 , apt_bath
+			 , apt_entrance_type
+		  from tb_apt
+		 where apt_no = #{aptNo}
+	</select>
 	
-	
-	
-	
-	
-
+	<select id="selectAptCount" resultType="_int">
+		select count(*)
+  		  from tb_apt
+	</select>
 
 </mapper>

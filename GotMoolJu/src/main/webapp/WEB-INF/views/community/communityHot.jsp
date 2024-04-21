@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<link rel="stylesheet" href="resources/css/community/community3/community3ListView.css">
+<link rel="stylesheet" href="resources/css/community/communityHot.css">
 </head>
 <body>
-	여기 community3ListView.jsp임
-	<script src="resources/js/community/community3/community3ListView.js"></script>
+	여기 communityHot.jsp임
+	<script src="resources/js/community/communityHot.js"></script>
 </body>
 </html>

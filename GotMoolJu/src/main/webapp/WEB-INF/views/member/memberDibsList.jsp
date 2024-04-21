@@ -11,7 +11,7 @@
 <body>
 	<div class="member-dibs-form no-scrollbar">
 		<div class="member-dibs-form-top pd15">
-			<div class="member-dibs-form-previous fl mh" onclick="toggleMypageDiv('memberDibsList')"><i class="fa-solid fa-angle-left fa-xl"></i></div>
+			<div class="member-dibs-form-previous fl mh" onclick="toggleMypageDiv('memberDibsList')"><i class="fa-solid fa-angle-left fa-lg"></i></div>
 			<div class="member-dibs-form-title fl">찜 목록</div>
 			<div class="member-dibs-form-blank fl mh"></div>
 		</div>

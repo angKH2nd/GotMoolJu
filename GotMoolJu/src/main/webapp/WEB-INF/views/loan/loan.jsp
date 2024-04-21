@@ -11,17 +11,17 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div class="loan-form no-scrollbar">
-    <div class="loan-top pd15">
-        <div class="loan-top-title centerXY fl">은행별 전세대출 금리</div>
-        <div class="loan-top-cancel fl" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
-        </div>
+	    <div class="loan-top pd15">
+	        <div class="loan-top-title centerXY fl">은행별 전세대출 금리</div>
+	        <div class="loan-top-cancel fl" onClick="cancelDiv()"><i class="fa-solid fa-xmark fa-lg"></i></div>
+	    </div>
         <div class="loan-center pd15">
-        <div class="loan-center-title">대출실행금액</div>
-       		<div class="loan-center-circle centerXY bdlg br5 pd15"><canvas id="circleChart" width="370" height="370"></canvas></div>
+        	<div class="loan-center-title"><i class="fa-solid fa-crown"></i> 대출실행금액 Top 10</div>
+            <div class="loan-center-circle centerXY bdlg br5 pd15"><canvas id="barChart" width="370" height="370"></canvas></div>
         </div>
         <div class="loan-x pd15">
-        	<div class="loan-x-title">대출금리</div>
-        	<div class="loan-x-chart">차트</div>
+            <div class="loan-x-title"><i class="fa-solid fa-coins"></i> 대출금리</div>
+            <div class="loan-x-chart centerXY bdlg br5 pd15"><canvas id="loanChart" width="370" height="370"></canvas></div>
         </div>
         <div class="loan-list pd15"></div>
     </div>
