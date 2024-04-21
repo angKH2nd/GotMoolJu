@@ -66,9 +66,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="./notifications.html">
-                <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>Notifications</p>
+              <a href="qnaList.ad">
+                <i class="now-ui-icons ui-1_send"></i>
+                <p>Q&A</p>
               </a>
             </li>
             <li>

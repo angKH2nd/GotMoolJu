@@ -12,7 +12,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>갓물주</title>
     <style>
-	    #announcementListClick1:hover {
+	    #adminQnAListClick1:hover {
 		  cursor: pointer;
 		}
     </style>
@@ -56,9 +56,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">공지사항</h4>
+                  <h4 class="card-title">Q & A</h4>
                   <p class="category">
-		             <h6 style="margin-left: 86%; color: rightgray"> &lt; 공지사항 개수 : ${ adminPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 86%; color: rightgray"> &lt; Q&A 개수 : ${ adminPi.listCount } &gt;</h6>
 		           </p>
                 </div>
                  <div
@@ -67,35 +67,67 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		          >
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="announcementList">
+                    <table class="table" id="adminQnAList">
                       <thead class="text-primary">
 	                      <th>No</th>
 	                      <th>Writer</th>
-	                      <th style="width:45%">Title</th>
-	                      <th>Views</th>
-	                      <th>Created Date</th>
-	                      <th class="text-right">Status</th>
+	                      <th>Title</th>
+	                      <th style="width:45%">Content</th>
+	                      <th>작성일</th>
+	                      <th>답변</th>
+	                      <th>공개</th> <%-- 🔒, 🔓 --%>
+	                      <th class="text-right">게시</th> <%-- 게시여부 --%>
                       </thead>
-                      <tbody id="announcementListClick1">
-	                      <c:forEach var="ad" items="${ admAnnouncementList }">
-		                      <tr>
-		                        <td class="ano">${ ad.announcementNo }</td>
-		                        <td>${ ad.announcementWriter }</td>
-		                        <td>${ ad.announcementTitle }</td>
-		                        <td>${ ad.announcementCount }</td>
-		                        <td>${ ad.announcementCreateDate }</td>
-		                        
-		                        <c:choose>
-			                        <c:when test="${ ad.announcementStatus eq 'Y' }">
-			                        	<td class="text-right" style="color: blue">${ ad.announcementStatus }</td>
-			                     	</c:when>
-			                     	<c:otherwise>
-			                     		<td class="text-right" style="color: red">${ ad.announcementStatus }</td>
-			                     	</c:otherwise>
-		                     	</c:choose>
-		                      </tr>
-	                      </c:forEach>
-
+                      <tbody id="adminQnAListClick1">
+                      <c:forEach var="ad" items="${ admQnaList }">
+		                 <tr name="adminQnAListClick2">
+	                        <td class="qno" id="adminQ">${ ad.qnaNo }</td>
+	                        <td>${ ad.qnaWriter }</td>
+	                        <td>${ ad.qnaTitle }</td>
+	                        <td>${ ad.qnaContent }</td>
+	                        <c:choose>
+	                        	<c:when test="${ ad.qnaModifyDate eq null }">
+	                        		<td>${ ad.qnaCreateDate }</td>
+	                        	</c:when>
+	                        	<c:otherwise>
+	                        		<td>${ ad.qnaCreateDate } <br> (수정: ${ ad.qnaModifyDate })</td>
+	                        	</c:otherwise>
+	                        </c:choose>
+	                        <c:choose>
+	                        	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
+	                        		<td>답변대기</td>
+	                        	</c:when>
+	                        	<c:otherwise>
+	                        		<td>답변완료</td>
+	                        	</c:otherwise>
+	                        </c:choose>
+	                        <c:choose>
+	                        	<c:when test="${ ad.qnaType eq 1 }">
+	                        		<td>🔓</td>
+	                        	</c:when>
+	                        	<c:otherwise>
+	                        		<td>🔒</td>
+	                        	</c:otherwise>
+	                        </c:choose>
+	                        <c:choose>
+	                        	<c:when test="${ ad.qnaStatus eq 'Y' }">
+	                        		<td class="text-right" style="color: blue">Y</td>
+	                        	</c:when>
+	                        	<c:otherwise>
+	                        		<td class="text-right" style="color: red">Y</td>
+	                        	</c:otherwise>
+	                        </c:choose>
+		                 </tr>
+		             </c:forEach>    
+		             <%-- QNA_NO == QNA_ANSWER_REF_NO 일 시 그 아래 뜨게 --%>
+		                 <tr name="adminQnAanswer" style="height:130px; background-color:rgb(246, 245, 255)">
+		                 	<td></td>
+		                 	<td colspan=2>관리자</td>
+		                 	<td name="qnaAnswerContent">니가 알아봐!</td>
+		                 	<td colspan=2>2024-02-28 <br>(수정: 2024-02-29)</td>
+		                 	<td colspan=2 align="center"> <button style="float:right">수정하기 <%--or null일 시 답변하기 --%></button></td>
+		                 </tr>
+				     
 	                     <%--
 	                      <script>
 	                      $(function(){
@@ -108,22 +140,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                       --%>
                       </tbody>
                     </table>
+                    
+                    <%--
                     <td class="text-center">
                        <a href="announcementEnrollForm.ad" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
                     </td>
+                     --%>
                   </div>
                   <br>
                   
+                  <%--
                 <script>
 				$(function(){
-					$("#announcementListClick1>tr").click(function(){
+					$("#>tr").click(function(){
 						// console.log("눌림")
 		                  location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
 		               })
 				})
 				</script>
-				
-                
+				 --%>
+			<script>
+			$(function(){
+			    $('tr[name="adminQnAListClick2"]').click(function(){
+			        // 클릭된 요소의 바로 다음 요소 (adminQnAanswer)의 가시성 토글
+			        $(this).next('tr[name="adminQnAanswer"]').toggle();
+			    });
+			});
+		    </script>
+
+				               
             <div id="pagingArea" style="float:right">
                 <ul class="pagination">
                 	
@@ -132,12 +177,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                    			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
                    		</c:when> 
                    		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
+                   			<li class="page-item"><a class="page-link" href="qnaList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
                    		</c:otherwise>
                    	</c:choose>
                    	
                    	<c:forEach var="p" begin="${ adminPi.startPage }" end="${ adminPi.endPage }">
-                   		<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ p }">${ p }</a></li>
+                   		<li class="page-item"><a class="page-link" href="qnaList.ad?cpage=${ p }">${ p }</a></li>
                     </c:forEach>
                     
                     <c:choose>
@@ -145,12 +190,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
         				</c:when>
         				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
+        					<li class="page-item"><a class="page-link" href="qnaList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
         				</c:otherwise>
         			</c:choose>
                 </ul>
             </div>
-             
+              
             
               </div>
             </div>
