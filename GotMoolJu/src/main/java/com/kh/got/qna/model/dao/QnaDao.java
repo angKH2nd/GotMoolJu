@@ -35,14 +35,14 @@ public class QnaDao {
 	}
 	
 	public int insertQna(SqlSessionTemplate sqlSession, Qna q) {
-		return sqlSession.insert("qnaMapper", q);
+		return sqlSession.insert("qnaMapper.insertQna", q);
 	}
 	
 	public int deleteQna(SqlSessionTemplate sqlSession, int qnaNo) {
-		return sqlSession.update("qnaMapper", qnaNo);
+		return sqlSession.update("qnaMapper.deleteQna", qnaNo);
 	}
 	
-	public int updateQna(SqlSessionTemplate sqlSession, Qna q) {
-		return sqlSession.update("qnaMapper", q);
+	public int updateQna(SqlSessionTemplate sqlSession, int qnaNo, Qna q) {
+		return sqlSession.update("qnaMapper.updateQna", q);
 	}
-}
+}	

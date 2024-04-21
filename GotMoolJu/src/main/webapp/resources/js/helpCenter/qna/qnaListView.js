@@ -39,11 +39,15 @@ function showQnaDetail(qnaNo) {
 			success: function(result){
 				console.log(result);
 				// 성공한 경우 => qnaDetailView.jsp 내에 해당 ajax 조회 결과 (qna 상세정보) 기입해주기 (qna-detail-area 는 예시)
-				$(".qna-detail-area").html(result.qnaContent);
+				if(result.qnaType == 2){
+					$(".qna-detail-area tbody td").html(비밀글입니다);
+				}else{
+					$(".qna-detail-area tbody td").html(result.qnaContent);
+				}
 			}, error: function(){
 				console.log('error');
 			}
-		})
+		});
 	
     $("#qnaList").hide(); // 리스트 숨기기
     $("#qnaDetail").show(); // 상세보기 열기

@@ -7,9 +7,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -52,5 +57,20 @@ public String selectQna(@RequestParam("qno") int qno) {
 		return new Gson().toJson(q);
 
 	}
+
+@ResponseBody
+@RequestMapping(value = "delete.qna")
+public int deleteQna(@RequestParam("qno") int qno) {
+    int result = qService.deleteQna(qno);
+        return result;
+    }
+
+
+@ResponseBody
+@RequestMapping(value = "update.qna")
+public int updateQna(@RequestParam("qno") int qno, @RequestParam ("Qna q")Qna q) {
+   
+        return qService.updateQna(qno, q);
+    }
 }
 

@@ -49,11 +49,34 @@
 	           , m.user_nickname as "qna_writer"
 	           , q.qna_title
 	           , q.qna_content
+	           , q.qna_type
 	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_date"
 	       from tb_qna q
 	       left join tb_member m on q.qna_writer = m.user_no
 	      where q.qna_no = #{qnaNo} and q.qna_status = 'Y'
 	
 	</select>
+	
+	<update id="updateQna">
+		update 	
+				 tb_qna
+			set   qna_title = #{qnaTitle}
+				, qna_content = #{boardContent}
+			where qna_no = #{qnaNo}	
+	
+	</update>
+	
+	<update id="deleteQna">
+		update	
+				tb_qna
+			set qna_status = 'N'
+		  where qna_no = #{qnaNo}		
+	
+	</update>
+	
+	
+	
+	
+	
 
 </mapper>
