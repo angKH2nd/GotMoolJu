@@ -49,7 +49,7 @@
 				<div class="mypage-star-icon centerXY fl"><i class="fa-solid fa-star fa-lg"></i></div>
 				<div class="mypage-star-title centerY fl">지금까지 내가 모은 별</div>
 				<div class="mypage-star-content fl">
-					<div class="mypage-star-count centerXY fl">3</div>
+					<div class="mypage-star-count centerXY fl"></div>
 					<div class="mypage-star-count-name centerXY fl"> 개</div>
 				</div>
 				<div class="mypage-star-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>

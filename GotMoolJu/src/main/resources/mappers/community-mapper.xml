@@ -14,6 +14,11 @@
 		<result column="town_modify_date" property="townModifyDate"/>
 		<result column="town_thumbnail" property="townThumbnail"/>
 		<result column="town_reply_count" property="townReplyCount"/>
+		<result column="town_detail_img1" property="townDetailImg1"/>
+		<result column="town_detail_img2" property="townDetailImg2"/>
+		<result column="town_detail_img3" property="townDetailImg3"/>
+		<result column="town_detail_img4" property="townDetailImg4"/>
+		<result column="town_detail_img5" property="townDetailImg5"/>
 	</resultMap>
 	
 	<resultMap id="townStarResult" type="TownStar">
@@ -132,7 +137,7 @@
 		          left
 		          join tb_town_reply on (town_no = town_reply_ref_no)
 		         where town_status = 'Y'
-		           and town_writer = '돼지불백집이쑤시개도둑'
+		           and town_writer = #{userNickname}
 		         group
 		            by town_no
 		             , town_writer
@@ -185,5 +190,42 @@
 		 order
 		    by t.town_no desc
 	</select>
+	
+	<select id="selectMyStarCount" resultType="_int">
+		select
+		       sum(town_star) as "count"
+		  from tb_town
+		 where town_writer = #{userNickname}
+	</select>
+	
+	<insert id="insertTown">
+		insert
+		  into tb_town
+		  	 (
+		  	   town_no
+		  	 , town_writer
+		  	 , town_writer_img
+		  	 , town_title
+		  	 , town_content
+		  	 , town_thumbnail
+		  	 , town_detail_img2
+		  	 , town_detail_img3
+		  	 , town_detail_img4
+		  	 , town_detail_img5
+		  	 )
+		values
+			 (
+			   seq_town_no.nextval
+			 , #{townWriter}
+			 , #{townWriterImg}
+			 , #{townTitle}
+			 , #{townContent}
+			 , #{townThumbnail}
+			 , #{townDetailImg2}
+			 , #{townDetailImg3}
+			 , #{townDetailImg4}
+			 , #{townDetailImg5}
+			 )
+	</insert>
 	
 </mapper>

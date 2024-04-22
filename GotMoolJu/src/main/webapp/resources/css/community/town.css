@@ -21,6 +21,11 @@
 	overflow-y: auto;
 }
 
+.town-main-content>div {
+	width: 100%;
+	height: 100%;
+}
+
 .town-main-insert {
     display: none;
 }

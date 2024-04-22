@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="resources/css/community/communityTownList.css">
 </head>
 <body>
-	<div class="town-main-list-area">
+	<div class="town-main-list-area no-scrollbar">
 		
 	</div>
 	

@@ -9,4 +9,6 @@ function changeTownArea() {
         list.style.display = 'none';
         insert.style.display = 'block';
     }
+    
+    resetCommunityDiv();
 }
