@@ -70,12 +70,31 @@
 				 tb_qna
 			set   qna_title = #{qnaTitle}
 				, qna_content = #{boardContent}
+				, qna_type
 				, qna_modify_date = sysdate
 			where qna_no = #{qnaNo}	
 	
 	</update>
 	
-	
+	<insert id="insertQna">
+		insert
+		  into tb_qna
+		  	 (
+		  	   qna_no
+		  	 , qna_writer
+		  	 , qna_title
+		  	 , qna_content
+		  	 , qna_type
+		  	 )
+		values
+			 (
+			   seq_qna_no.nextval
+			 , #{impReplyWriter}
+			 , #{qnaTitle}
+			 , #{qnaContent}
+			 , #{qnaType}
+			 )
+	</insert>
 	
 	
 	

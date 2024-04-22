@@ -58,4 +58,5 @@ function showQnaDetail(qnaNo) {
 function showQnaInsert() {
     $("#qnaList").hide(); // 리스트 숨기기
     $("#qnaInsert").show(); // 글쓰기 열기
+    //$("#qna-writer-nickname").val(result.qnaWriter);
 }

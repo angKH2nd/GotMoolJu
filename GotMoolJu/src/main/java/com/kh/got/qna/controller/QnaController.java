@@ -73,5 +73,15 @@ public String updateQna(@RequestParam("qno") int qno, @RequestParam ("Qna q")Qna
    
 	return new Gson().toJson(q);
     }
+
+@ResponseBody
+@RequestMapping(value="insert.qna")
+public String insertQna(Qna q) {
+	int result = qService.insertQna(q);
+	System.out.println(q);
+	return result >0 ? "success" : "fail";
+	
+	}
+
 }
 
