@@ -62,15 +62,16 @@ public String selectQna(@RequestParam("qno") int qno) {
 @RequestMapping(value = "delete.qna")
 public int deleteQna(@RequestParam("qno") int qno) {
     int result = qService.deleteQna(qno);
-        return result;
+    return result;
+        
     }
 
 
 @ResponseBody
 @RequestMapping(value = "update.qna")
-public int updateQna(@RequestParam("qno") int qno, @RequestParam ("Qna q")Qna q) {
+public String updateQna(@RequestParam("qno") int qno, @RequestParam ("Qna q")Qna q) {
    
-        return qService.updateQna(qno, q);
+	return new Gson().toJson(q);
     }
 }
 

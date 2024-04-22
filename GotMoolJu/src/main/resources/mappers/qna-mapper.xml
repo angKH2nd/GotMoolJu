@@ -57,15 +57,6 @@
 	
 	</select>
 	
-	<update id="updateQna">
-		update 	
-				 tb_qna
-			set   qna_title = #{qnaTitle}
-				, qna_content = #{boardContent}
-			where qna_no = #{qnaNo}	
-	
-	</update>
-	
 	<update id="deleteQna">
 		update	
 				tb_qna
@@ -73,6 +64,17 @@
 		  where qna_no = #{qnaNo}		
 	
 	</update>
+	
+	<update id="updateQna">
+		update 	
+				 tb_qna
+			set   qna_title = #{qnaTitle}
+				, qna_content = #{boardContent}
+				, qna_modify_date = sysdate
+			where qna_no = #{qnaNo}	
+	
+	</update>
+	
 	
 	
 	

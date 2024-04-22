@@ -43,6 +43,7 @@ function showQnaDetail(qnaNo) {
 					$(".qna-detail-area tbody td").html(비밀글입니다);
 				}else{
 					$(".qna-detail-area tbody td").html(result.qnaContent);
+					$("#qna-number").val(result.qnaNo);
 				}
 			}, error: function(){
 				console.log('error');
