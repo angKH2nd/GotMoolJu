@@ -89,7 +89,7 @@
 		values
 			 (
 			   seq_qna_no.nextval
-			 , #{impReplyWriter}
+			 , #{qnaWriter}
 			 , #{qnaTitle}
 			 , #{qnaContent}
 			 , #{qnaType}
