@@ -252,12 +252,6 @@
     "emd_nm": "소격동"
   },
   {
-    "center_long": 126.9827311,
-    "center_lati": 37.58069151,
-    "sgg_nm": "종로구",
-    "emd_nm": "화동"
-  },
-  {
     "center_long": 126.9804003,
     "center_lati": 37.57726223,
     "sgg_nm": "종로구",
@@ -274,18 +268,6 @@
     "center_lati": 37.58268347,
     "sgg_nm": "종로구",
     "emd_nm": "가회동"
-  },
-  {
-    "center_long": 126.9852843,
-    "center_lati": 37.57832853,
-    "sgg_nm": "종로구",
-    "emd_nm": "재동"
-  },
-  {
-    "center_long": 126.9869298,
-    "center_lati": 37.58235185,
-    "sgg_nm": "종로구",
-    "emd_nm": "계동"
   },
   {
     "center_long": 126.9882633,

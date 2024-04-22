@@ -57,4 +57,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@Override
+	public int insertSocial(Member m) {
+		
+		return mDao.insertSocial(sqlSession, m);
+	}
+
+
 }
