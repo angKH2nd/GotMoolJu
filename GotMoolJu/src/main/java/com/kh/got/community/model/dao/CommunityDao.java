@@ -56,6 +56,18 @@ public class CommunityDao {
 	public ArrayList<Town> selectTownStarList(SqlSessionTemplate sqlSession, int userNo) {
 		return (ArrayList)sqlSession.selectList("communityMapper.selectTownStarList", userNo);
 	}
+
+	public int selectMyStarCount(SqlSessionTemplate sqlSession, String userNickname) {
+		int result = 0;
+		if(sqlSession.selectOne("communityMapper.selectMyStarCount", userNickname) != null) {
+			result = sqlSession.selectOne("communityMapper.selectMyStarCount", userNickname);
+		}
+		return result;
+	}
+
+	public int insertTown(SqlSessionTemplate sqlSession, Town t) {
+		return sqlSession.insert("communityMapper.insertTown", t);
+	}
 	
 	
 

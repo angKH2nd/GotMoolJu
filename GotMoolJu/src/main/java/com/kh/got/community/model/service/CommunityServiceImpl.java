@@ -49,6 +49,16 @@ public class CommunityServiceImpl implements CommunityService {
 	public ArrayList<Town> selectTownStarList(int userNo) {
 		return cDao.selectTownStarList(sqlSession, userNo);
 	}
+
+	@Override
+	public int selectMyStarCount(String userNickname) {
+		return cDao.selectMyStarCount(sqlSession, userNickname);
+	}
+
+	@Override
+	public int insertTown(Town t) {
+		return cDao.insertTown(sqlSession, t);
+	}
 	
 	
 }

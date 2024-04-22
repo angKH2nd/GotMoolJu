@@ -13,10 +13,10 @@
 		<div class="town-main">
 			<div class="town-main-header centerY">내가 알고있는 <span style="color: #4373f4"> &nbsp;지역 소식, 꿀팁&nbsp; </span> 을 나눠보세요 😘</div>
 			<div class="town-main-content no-scrollbar">
-				<div class="town-main-list">
+				<div class="town-main-list no-scrollbar">
 					<%@ include file="./communityTownList.jsp" %>
 				</div>
-				<div class="town-main-insert">
+				<div class="town-main-insert no-scrollbar">
 					<%@ include file="./communityTownInsertForm.jsp" %>
 				</div>
 			</div>

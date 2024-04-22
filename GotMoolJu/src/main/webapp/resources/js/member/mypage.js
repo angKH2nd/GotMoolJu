@@ -23,6 +23,7 @@ function cancelMypageDiv() {
 function openMyStar() {
 	toggleDiv('member');
 	toggleDiv('community');
+	toggleCommunity('town');
 }
 
 function openCommunityEnrollForm() {
@@ -47,6 +48,19 @@ $(document).ready(function() {
 												<div class="mh" style="color: #434d68;" onclick="openCommunityEnrollForm();"><i class="fa-solid fa-pencil"></i> 글 작성하기</div>
 											</div>`;
 					$(".mypage-star-popular-community").html(mypagePopularHtml);
+				}
+			}, error: function() {
+				console.log('조회실패');
+			}
+		})
+		
+		$.ajax({
+			url: "selectMyStarCount.cm",
+			success: function(data) {
+				if(data > 0){
+					$(".mypage-star-count").html(data);
+				}else {
+					$(".mypage-star-count").html(0);
 				}
 			}, error: function() {
 				console.log('조회실패');

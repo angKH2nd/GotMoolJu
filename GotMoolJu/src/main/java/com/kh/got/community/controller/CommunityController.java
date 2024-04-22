@@ -10,8 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
+import com.kh.got.common.template.UploadFile;
 import com.kh.got.community.model.service.CommunityService;
 import com.kh.got.community.model.vo.Town;
 import com.kh.got.member.model.vo.Member;
@@ -70,4 +72,47 @@ public class CommunityController {
 		return jObj.toJSONString();
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="selectMyStarCount.cm")
+	public int selectMyStarCount(HttpSession session) {
+		return cService.selectMyStarCount(((Member)session.getAttribute("loginUser")).getUserNickname());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="insertTown.cm")
+	public int insertTown(@RequestParam("townTitle") String townTitle,
+				             @RequestParam("townContent") String townContent,
+				             HttpSession session,
+				             @RequestParam(value = "insertTownImgFile0", required = false) MultipartFile file0,
+				             @RequestParam(value = "insertTownImgFile1", required = false) MultipartFile file1,
+				             @RequestParam(value = "insertTownImgFile2", required = false) MultipartFile file2,
+				             @RequestParam(value = "insertTownImgFile3", required = false) MultipartFile file3,
+				             @RequestParam(value = "insertTownImgFile4", required = false) MultipartFile file4) {
+		Town t = new Town();
+		t.setTownTitle(townTitle);
+		t.setTownContent(townContent);
+		t.setTownWriter(((Member)session.getAttribute("loginUser")).getUserNickname());
+		t.setTownWriterImg(((Member)session.getAttribute("loginUser")).getUserUpdateName());
+		
+		String uploadDir = "resources/uploadFiles/town/";
+
+	    MultipartFile[] files = {file0, file1, file2, file3, file4};
+	    for (int i = 0; i < files.length; i++) {
+	        MultipartFile file = files[i];
+	        if (file != null) {
+	            String beforeName = UploadFile.saveTownFile(file, session);
+	            String updateName = uploadDir + beforeName;
+	            switch (i) {
+	                case 0: t.setTownThumbnail(updateName); break;
+	                case 1: t.setTownDetailImg2(updateName); break;
+	                case 2: t.setTownDetailImg3(updateName); break;
+	                case 3: t.setTownDetailImg4(updateName); break;
+	                case 4: t.setTownDetailImg5(updateName); break;
+	            }
+	        }
+	    }
+
+	    System.out.println(t);
+	    return cService.insertTown(t);
+	}
 }

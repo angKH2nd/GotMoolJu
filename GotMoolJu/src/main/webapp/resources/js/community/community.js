@@ -23,4 +23,12 @@ function toggleCommunity(divClass) {
     if (selectedButton) {
         selectedButton.style.color = 'black';
     }
+    
+    resetCommunityDiv();
+}
+
+function resetCommunityDiv(){
+	$(".town-insert-title-input").val('');
+	$(".town-insert-content-text").val('');
+	$(".town-insert-bottom>input").val('');
 }

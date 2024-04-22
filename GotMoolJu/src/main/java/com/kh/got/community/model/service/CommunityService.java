@@ -24,4 +24,10 @@ public interface CommunityService {
 	// 5. 커뮤니티 즐겨찾기 목록 조회 서비스
 	ArrayList<Town> selectTownStarList(int userNo);
 	
+	// 6. 커뮤니티 내가 받은 별 조회 서비스
+	int selectMyStarCount(String userNickname);
+	
+	// 7. 커뮤니티 글 작성 서비스
+	int insertTown(Town t);
+	
 }
