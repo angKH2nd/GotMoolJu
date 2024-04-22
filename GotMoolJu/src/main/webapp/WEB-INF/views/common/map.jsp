@@ -78,7 +78,7 @@
                                 '<span class="map-name">' + locations[i].name + '</span>',
                                 '</div>',
                                 '</div>'
-                            ].join(''),
+                            ].join(''), 
                             size: new naver.maps.Size(25, 34),
                             scaledSize: new naver.maps.Size(25, 34),
                             origin: new naver.maps.Point(0, 0),
