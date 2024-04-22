@@ -79,7 +79,7 @@
         	 --%>
 	        <li onclick="toggleDiv('rank')" data-target="rank">
 	        	<div class="icon-area hoverZ"><i class="fa-solid fa-chart-line fa-xl"></i></div>
-	        	<div class="text-area">차트</div>
+	        	<div class="text-area">랭킹</div>
 	        </li>
 	        <li onclick="toggleDiv('loan')" data-target="loan">
 	        	<div class="icon-area hoverZ" style="margin: 0;"><img style="margin: 10px 0 0 0;" class="brc" width=40 height=40 src="resources/images/etc/money.png"></div>
