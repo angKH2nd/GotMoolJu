@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.qna.model.vo.Qna;
+import com.kh.got.qna.model.vo.QnaAnswer;
 
 @Repository
 public class AdminQnaDao {
@@ -23,9 +24,22 @@ public class AdminQnaDao {
 		return (ArrayList) sqlSession.selectList("qnaMapper.selectQnaList", null, rowBounds);
 	}
 
+	// qna 개수
 	public int selectQnaListCount(SqlSessionTemplate sqlSession) {
 
 		return sqlSession.selectOne("qnaMapper.selectQnaListCount");
 	}
 
+	// qna answer list
+	public ArrayList<QnaAnswer> selectQnaAnswerList(SqlSessionTemplate sqlSession) {
+		return (ArrayList) sqlSession.selectList("qnaMapper.selectQnaAnswerList");
+	}
+
+	// qna 리스트 삭제
+	public int adminDeleteQnaList(SqlSessionTemplate sqlSession, int adminQno) {
+		return sqlSession.update("qnaMapper.selectQnaAnswerList", adminQno);
+	}
+
+	
+	
 }

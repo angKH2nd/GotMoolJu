@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.kh.got.admin.model.dao.AdminQnaDao;
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.qna.model.vo.Qna;
+import com.kh.got.qna.model.vo.QnaAnswer;
 
 
 @Service
@@ -33,6 +34,21 @@ public class AdminQnaServiceImpl implements AdminQnaService {
 		return adminQDao.selectQnaListCount(sqlSession);
 	}
 
+	// qna answer list
+	@Override
+	public ArrayList<QnaAnswer> selectQnaAnswerList() {
+		return adminQDao.selectQnaAnswerList(sqlSession);
+	}
+
+	// qna 리스트 삭제
+	@Override
+	public int adminDeleteQnaList(int adminQno) {
+		return adminQDao.adminDeleteQnaList(sqlSession, adminQno);
+	}
+
+	
+	
+	
 	
 	
 }

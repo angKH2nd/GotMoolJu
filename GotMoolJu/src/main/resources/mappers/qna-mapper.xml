@@ -13,6 +13,18 @@
 		<result column="qna_type" property="qnaType"/>
 		<result column="qna_status" property="qnaStatus"/>
 	</resultMap>
+	
+	<resultMap id="qnaAnswerResult" type="QnaAnswer">
+		<result column="qna_answer_no" property="qnaAnswerNo"/>
+		<result column="qna_answer_ref_no" property="qnaAnswerRefNo"/>
+		<result column="qna_answer_content" property="qnaAnswerContent"/>
+		<result column="qna_answer_writer" property="qnaAnswerWriter"/>
+		<result column="qna_answer_create_date" property="qnaAnswerCreateDate"/>
+		<result column="qna_answer_modify_date" property="qnaAnswerModifyDate"/>
+		<result column="qna_answer_type" property="qnaAnswerType"/>
+		<result column="qna_answer_status" property="qnaAnswerStatus"/>
+	</resultMap>
+	
 
 	<!-- admin qna 리스트 -->
 	<select id="selectQnaList" resultMap="qnaResult">
@@ -28,7 +40,8 @@
 	         , qna_status
 	      from tb_qna
 	      join tb_member on (qna_writer = user_no)
-	
+		 order
+            by qna_no desc
 	</select>
 
 	<!-- qna 개수 -->
@@ -38,8 +51,30 @@
       from tb_qna
 	
 	</select>
+	
+	<!-- qna 답변 리스트 -->
+	<select id="selectQnaAnswerList" resultMap="qnaAnswerResult">
+	    select 
+	           qna_answer_no
+	         , qna_answer_ref_no
+	         , qna_answer_content
+	         , user_nickname as QNA_ANSWER_WRITER
+	         , qna_answer_create_date
+	         , qna_answer_modify_date
+	      from tb_qna_answer
+	      join tb_member on (user_no = qna_answer_writer)
+	      join tb_qna on (qna_answer_ref_no = qna_no)
+	</select>
 
-
+	<!-- qna 리스트 삭제 -->
+	<update id="adminDeleteQnaList">
+	update 
+           tb_qna
+       set qna_status = 'N'
+     where qna_no = #{ qnaNo }
+       and qna_status = 'Y'
+       
+	</update>
 
 
 
