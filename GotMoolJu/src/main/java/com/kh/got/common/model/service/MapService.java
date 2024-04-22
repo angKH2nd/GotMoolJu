@@ -20,4 +20,8 @@ public interface MapService {
 	
 	int selectAptCount();
 	
+	ArrayList<MapVO> selectTopAptList();
+	
+	ArrayList<MapVO> selectTopPrice();
+	
 }

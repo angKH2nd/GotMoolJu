@@ -50,4 +50,14 @@ public class MapDao {
 		return sqlSession.selectOne("mapMapper.selectAptCount");
 	}
 
+	public ArrayList<MapVO> selectTopAptList(SqlSessionTemplate sqlSession){
+		
+		return (ArrayList)sqlSession.selectList("mapMapper.selectTopAptList");
+	}
+
+	public ArrayList<MapVO> selectTopPrice(SqlSessionTemplate sqlSession) {
+		return (ArrayList)sqlSession.selectList("mapMapper.selectTopPrice");
+	}
+	
 }
+

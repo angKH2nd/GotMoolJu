@@ -68,4 +68,20 @@ public class MapController {
 		return new Gson().toJson(mService.selectAptDetail(aptNo));
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "rank.do", produces = "application/json; charset=utf-8")
+	public String selectTopAptList() {
+		
+		ArrayList<MapVO> list = mService.selectTopAptList();
+		
+		return new Gson().toJson(list);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="rank2.do", produces = "application/json; charset=utf-8")
+	public String selectTopPrice() {
+		ArrayList<MapVO> list = mService.selectTopPrice();
+		
+		return new Gson().toJson(list);
+	}
 }

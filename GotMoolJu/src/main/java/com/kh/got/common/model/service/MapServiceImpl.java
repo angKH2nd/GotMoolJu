@@ -54,6 +54,16 @@ public class MapServiceImpl implements MapService {
 		return mDao.selectAptCount(sqlSession);
 	}
 
-	
+	@Override
+	public ArrayList<MapVO> selectTopAptList() {
+		
+		return mDao.selectTopAptList(sqlSession);
+	}
+
+	@Override
+	public ArrayList<MapVO> selectTopPrice() {
+		
+		return mDao.selectTopPrice(sqlSession);
+	}
 	
 }

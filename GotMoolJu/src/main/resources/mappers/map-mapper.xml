@@ -137,5 +137,26 @@
 		select count(*)
   		  from tb_apt
 	</select>
+	
+	<select id="selectTopAptList" resultMap="mapResult">
+		select *
+		  from (SELECT apt_name, TO_NUMBER(SUBSTR(apt_price, 1, INSTR(apt_price, '억') - 1)) as "apt_price"
+				FROM tb_apt
+				WHERE INSTR(apt_price, '억') > 0 AND
+					  SUBSTR(apt_price, 1, INSTR(apt_price, '억') - 1) IS NOT NULL
+					  and APT_SELLING_TYPE = '매매'
+					  order by "apt_price" desc)
+		  where rownum between 1 and 6
+	</select>
 
+	<select id="selectTopPrice" resultMap="mapResult">
+		SELECT *
+		  FROM (SELECT APT_ADDRESS, ROUND(AVG(TO_NUMBER(SUBSTR(apt_price, 1, INSTR(apt_price, '억') - 1))), 1) AS "APT_PRICE"
+		        FROM TB_APT
+		        WHERE APT_SELLING_TYPE = '매매'
+		        GROUP BY APT_ADDRESS
+		        ORDER BY "APT_PRICE" DESC)
+		 WHERE "APT_PRICE" IS NOT NULL
+		   AND ROWNUM BETWEEN 1 AND 10
+	</select>
 </mapper>
