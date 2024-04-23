@@ -51,4 +51,19 @@ public class MemberDao {
 		return sqlSession.update("memberMapper.searchNewPwd", searchNewPwdParameters);
 	}
 	
+	
+	public int insertSocial(SqlSessionTemplate sqlSession, Member m) {
+		
+		return sqlSession.insert("memberMapper.insertSocial", m);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

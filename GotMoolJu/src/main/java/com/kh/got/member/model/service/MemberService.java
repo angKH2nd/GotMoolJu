@@ -28,4 +28,11 @@ public interface MemberService {
 	// 비밀번호 찾기 서비스 (update)
 	int searchNewPwd(String searchNewPwd, String searchNewPwdUserId);
 	
+	
+	// 소셜 회원가입
+	int insertSocial(Member m);
+	
+	
+	
+	
 }

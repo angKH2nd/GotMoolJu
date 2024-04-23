@@ -5,11 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<style>
-
-</style>
 <link rel="stylesheet" href="resources/css/common/map.css">
-<script src="./resources/js/MarkerClustering.js"></script>
+<!-- <script src="./resources/js/MarkerClustering.js"></script> -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=9165mfbte9"></script>
 	<script src="resources/assets/js/dong_coords.json" type="text/javascript"></script>	
@@ -78,7 +75,7 @@
                                 '<span class="map-name">' + locations[i].name + '</span>',
                                 '</div>',
                                 '</div>'
-                            ].join(''),
+                            ].join(''), 
                             size: new naver.maps.Size(25, 34),
                             scaledSize: new naver.maps.Size(25, 34),
                             origin: new naver.maps.Point(0, 0),

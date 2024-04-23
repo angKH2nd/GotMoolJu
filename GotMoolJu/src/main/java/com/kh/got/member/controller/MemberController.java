@@ -1,6 +1,7 @@
 package com.kh.got.member.controller;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,10 +23,21 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.util.FileCopyUtils;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.kh.got.common.model.vo.SmsConfig;
 import com.kh.got.common.template.FileConverter;
 import com.kh.got.common.template.MailSendService;
@@ -382,5 +395,238 @@ public class MemberController {
     public String sendUpdateEmailSms(@RequestParam("updateName") String updateName, @RequestParam("updateEmail") String updateEmail) {
 		return mailService.updateEmail(updateName, updateEmail);
     }
+	
+	// ---------------------- 소셜 로그인 ----------------------------
+	
+	
+
+	@RequestMapping(value = "login/getKakaoAuthUrl")
+	@ResponseBody
+	public String getKakaoAuthUrl(HttpServletRequest request) throws Exception {
+		String url = 
+				"https://kauth.kakao.com/oauth/authorize"
+				+ "?client_id=a07a1d3336ad0e46b650f0614d3df7c7"
+				+ "&redirect_uri=http://localhost:8222/got/login.ka"
+				+ "&response_type=code";
+		
+		return url;
+	}
+	
+	// 카카오 연동정보 조회
+	@RequestMapping(value = "login.ka")
+	public String oauthKakao(
+			@RequestParam(value = "code", required = false) String code
+			, Model model, HttpSession session) throws Exception {
+
+        String access_Token = getAccessToken(code);
+        
+        
+        HashMap<String, Object> userInfo = getUserInfo(access_Token);
+       
+        JSONObject kakaoInfo =  new JSONObject(userInfo);
+        model.addAttribute("kakaoInfo", kakaoInfo);
+        
+        if(access_Token != "") {
+        	
+        	Member kakaoM = new Member();
+        	kakaoM.setUserName((String)userInfo.get("nickname"));
+        	kakaoM.setUserId((String)userInfo.get("email")+"(kakao)");
+        	
+        	Member loginUser = mService.loginMember(kakaoM);
+        	
+        	if(loginUser == null) {
+        		
+        		int insertKakao = mService.insertSocial(kakaoM);
+        		
+        		if(insertKakao > 0) {
+        			
+        			Member loginUser1 = mService.loginMember(kakaoM);
+        			session.setAttribute("loginUser", loginUser1);
+        			session.setAttribute("swalMsg1", "로그인 성공!");
+        			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+        			session.setAttribute("swalMsg3", "success");
+        			
+        		}
+        		
+        	}else {
+        		session.setAttribute("loginUser", loginUser);
+        		session.setAttribute("swalMsg1", "로그인 성공!");
+    			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+    			session.setAttribute("swalMsg3", "success");
+        		
+        	}
+        	    	
+        }else {
+        	session.setAttribute("swalMsg1", "로그인 실패!");
+			session.setAttribute("swalMsg2", "아이디, 비밀번호를 확인해주세요.");
+			session.setAttribute("swalMsg3", "warning");
+        }
+        
+        
+        return "redirect:/home.got"; //본인 원하는 경로 설정
+	}
+	
+    //토큰발급
+	public String getAccessToken (String authorize_code) {
+        String access_Token = "";
+        String refresh_Token = "";
+        String reqURL = "https://kauth.kakao.com/oauth/token";
+
+        try {
+            URL url = new URL(reqURL);
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            //  URL연결은 입출력에 사용 될 수 있고, POST 혹은 PUT 요청을 하려면 setDoOutput을 true로 설정해야함.
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+
+            //	POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+            StringBuilder sb = new StringBuilder();
+            sb.append("grant_type=authorization_code");
+            sb.append("&client_id=a07a1d3336ad0e46b650f0614d3df7c7");  //본인이 발급받은 key
+            sb.append("&redirect_uri=http://localhost:8222/got/login.ka");     // 본인이 설정해 놓은 경로
+            sb.append("&code=" + authorize_code);
+            bw.write(sb.toString());
+            bw.flush();
+
+            //    결과 코드가 200이라면 성공
+            int responseCode = conn.getResponseCode();
+
+            //    요청을 통해 얻은 JSON타입의 Response 메세지 읽어오기
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = "";
+            String result = "";
+
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+
+            //    Gson 라이브러리에 포함된 클래스로 JSON파싱 객체 생성
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(result);
+
+            access_Token = element.getAsJsonObject().get("access_token").getAsString();
+            refresh_Token = element.getAsJsonObject().get("refresh_token").getAsString();
+
+
+            br.close();
+            bw.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return access_Token;
+    }
+	
+    //유저정보조회
+    public HashMap<String, Object> getUserInfo (String access_Token) {
+
+        //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
+        HashMap<String, Object> userInfo = new HashMap<String, Object>();
+        String reqURL = "https://kapi.kakao.com/v2/user/me";
+        try {
+            URL url = new URL(reqURL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+
+            //    요청에 필요한 Header에 포함될 내용
+            conn.setRequestProperty("Authorization", "Bearer " + access_Token);
+
+            int responseCode = conn.getResponseCode();
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            String line = "";
+            String result = "";
+
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(result);
+
+            JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
+            JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
+            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+            String email = kakao_account.getAsJsonObject().get("email").getAsString();
+            
+            userInfo.put("accessToken", access_Token);
+            userInfo.put("nickname", nickname);
+            userInfo.put("email", email);
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return userInfo;
+    }
+ 
+	// ----------------- 네이버 로그인 --------------------
+    @RequestMapping(value="naver.me", method=RequestMethod.GET)
+    public String callBack(){
+        return "member/callback";
+    }
+	
+	
+    @RequestMapping(value="login.na", produces = "applicaiont/html; charset=utf-8")
+    @ResponseBody
+	public String naverLogin(String name, String email, String gender, HttpSession session) {
+    	
+    	
+    	if(name != null && email != null) {
+        	
+        	Member naverM = new Member();
+        	naverM.setUserName(name);
+        	naverM.setUserId(email+"(naver)");
+        	
+        	Member loginUser = mService.loginMember(naverM);
+        	
+        	
+        	if(loginUser == null) {
+        		
+        		int insertNaver = mService.insertSocial(naverM);
+        		
+        		if(insertNaver > 0) {
+        			
+        			Member loginUser1 = mService.loginMember(naverM);
+        			session.setAttribute("loginUser", loginUser1);
+        			session.setAttribute("swalMsg1", "로그인 성공!");
+        			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+        			session.setAttribute("swalMsg3", "success");
+        			
+        		}
+        		
+        	}else {
+        		session.setAttribute("loginUser", loginUser);
+        		session.setAttribute("swalMsg1", "로그인 성공!");
+    			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+    			session.setAttribute("swalMsg3", "success");
+        		
+        	}
+        	    	
+        }else {
+        	session.setAttribute("swalMsg1", "로그인 실패!");
+			session.setAttribute("swalMsg2", "아이디, 비밀번호를 확인해주세요.");
+			session.setAttribute("swalMsg3", "warning");
+        }
+    	
+    	String result = "no";
+    	
+    	if(session.getAttribute("loginUser") != null) {
+    		
+    		result = "yes";
+    		
+    	}
+    	
+    	return result;
+    	
+    }
+    
+	
 	
 }
