@@ -26,7 +26,7 @@
           "user : \n" + "email : "
           + data['email']  
           + "\n nickname : " 
-          + data['nickname']);
+          + data['nickname']);  
       }
   });  
 
