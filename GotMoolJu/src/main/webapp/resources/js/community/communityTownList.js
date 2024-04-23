@@ -18,7 +18,7 @@ function selectTownList() {
 			
             $(townList).each(function(index, town) {
             	townListHtml += `
-                    <div class="town-main-post pd15" id="${town.townNo}">
+                    <div class="town-main-post pd15" id="${town.townNo}" onclick="changeTownDetail(${town.townNo});">
                         <div class="town-post-profile">
                             <div class="town-post-profile-img centerXY fl"><img class="brc" width=45 height=45 src="${town.townWriterImg}"></div>
                             <div class="town-post-profile-nickname centerY fl">${town.townWriter}</div>
@@ -30,7 +30,7 @@ function selectTownList() {
                 // town.townThumbnail이 null이 아닌 경우에만 이미지를 표시
                 if (town.townThumbnail !== undefined) {
                     townListHtml += `
-                        <div class="town-post-thumbnail mh br5"><img width=419 height=230 src="${town.townThumbnail}"></div>
+                        <div class="town-post-thumbnail mh br5"><img width=419 height=230 class="br5" src="${town.townThumbnail}"></div>
                     `;
                 }
                 

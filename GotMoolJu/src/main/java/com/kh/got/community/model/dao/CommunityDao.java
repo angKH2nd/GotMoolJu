@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownReply;
 import com.kh.got.community.model.vo.TownStar;
 
 @Repository
@@ -68,7 +69,38 @@ public class CommunityDao {
 	public int insertTown(SqlSessionTemplate sqlSession, Town t) {
 		return sqlSession.insert("communityMapper.insertTown", t);
 	}
-	
-	
+
+	public int increaseTownClick(SqlSessionTemplate sqlSession, int townNo) {
+		return sqlSession.update("communityMapper.increaseTownClick", townNo);
+	}
+
+	public boolean isMyStarTown(SqlSessionTemplate sqlSession, int userNo, int townNo) {
+		Map<String, Object> isMyStarTownParameters = new HashMap<>();
+		isMyStarTownParameters.put("userNo", userNo);
+		isMyStarTownParameters.put("townNo", townNo);
+		
+		if(sqlSession.selectOne("communityMapper.isMyStarTown", isMyStarTownParameters) != null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public Town selectTownDetail(SqlSessionTemplate sqlSession, int townNo) {
+		return sqlSession.selectOne("communityMapper.selectTownDetail", townNo);
+	}
+
+	public ArrayList<TownReply> selectTownReplyList(SqlSessionTemplate sqlSession, int townNo) {
+		return (ArrayList)sqlSession.selectList("communityMapper.selectTownReplyList", townNo);
+	}
+
+	public int insertTownReply(SqlSessionTemplate sqlSession, TownReply tr) {
+		int result = sqlSession.insert("communityMapper.insertTownReply", tr);
+		if(result > 0) {
+			int townNo = tr.getTownReplyRefNo();
+			result = sqlSession.update("communityMapper.updateTownReplyCount", townNo);
+		}
+		return result;
+	}
 
 }

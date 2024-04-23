@@ -43,9 +43,9 @@
 		<div class="etc-menu3">
 			<div class="bgh mh pd15 centerY">빠른 조회</div>
 			<div class="bgh mh pd15 centerY">인기 검색어</div>
-			<div class="bgh mh pd15 centerY">세금계산기</div>
-			<div class="bgh mh pd15 centerY">???????</div>
+			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('calculateTax');">세금계산기</div>
 			<div class="bgh mh pd15 centerY" onclick="openCommunityHot();">핫이슈 모아보기</div>
+			<div class="bgh mh pd15 centerY">???????</div>
 		</div>
 		<div class="etc-menu4">
 			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('insertImprovementIdeation');">개선의견 등록</div>
