@@ -11,6 +11,11 @@ function uploadCommunityFiles() {
     }
 }
 
+function calTownContentLength() {
+	var textLength = document.querySelector('.town-insert-content-text').value.length;
+    document.getElementById('town-insert-textarea-count').textContent = textLength;
+}
+
 // 파일을 선택할 때 이벤트 처리
 function handleFileInputChange(inputIndex) {
     const fileInput = document.getElementById('uploadCommunityFileInput' + inputIndex);
@@ -73,12 +78,12 @@ function insertTown() {
 			processData: false, // processData를 false로 설정하여 FormData를 변환하지 않도록
             contentType: false, // contentType을 false로 설정하여 기본 contentType을 사용하지 않도록
 			success: function(result){
-				console.log(result);
 				if(result > 0){
 					swal("동네소식 작성 성공!", "작성해주셔서 감사합니다", 'success');
 				}else {
 					swal("동네소식 작성 실패!", "관리자에게 문의해주세요", 'warning');
 				}
+				selectMemberMypageStar();
 				changeTownArea();
 				$(".town-btn").click();
 			}, error: function(){

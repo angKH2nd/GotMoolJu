@@ -31,4 +31,6 @@ function resetCommunityDiv(){
 	$(".town-insert-title-input").val('');
 	$(".town-insert-content-text").val('');
 	$(".town-insert-bottom>input").val('');
+	document.getElementById('town-insert-textarea-count').textContent = 0;
+	$(".town-detail-reply-insert-input>input").val('');
 }

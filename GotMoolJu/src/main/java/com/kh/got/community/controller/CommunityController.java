@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.kh.got.common.template.UploadFile;
 import com.kh.got.community.model.service.CommunityService;
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownReply;
 import com.kh.got.member.model.vo.Member;
 
 @Controller
@@ -111,8 +112,40 @@ public class CommunityController {
 	            }
 	        }
 	    }
-
-	    System.out.println(t);
 	    return cService.insertTown(t);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="increaseTownClick.cm")
+	public int increaseTownClick(@RequestParam("townNo") int townNo) {
+		return cService.increaseTownClick(townNo);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="selectTownDetail.cm", produces = "application/json; charset=utf-8")
+	public String selectTownDetail(@RequestParam("townNo") int townNo, HttpSession session) {
+		Member loginUser = null;
+		JSONObject jObj = new JSONObject();
+		
+		if((Member)session.getAttribute("loginUser") != null) {
+			loginUser = (Member)session.getAttribute("loginUser");
+			jObj.put("isMyStarTown", new Gson().toJson(cService.isMyStarTown(loginUser.getUserNo(), townNo)));
+		}
+		jObj.put("townDetail", new Gson().toJson(cService.selectTownDetail(townNo)));
+		jObj.put("townReplyList", new Gson().toJson(cService.selectTownReplyList(townNo)));
+		
+		return jObj.toJSONString();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="insertTownReply.cm")
+	public int insertTownReply(@RequestParam("townNo") int townNo, @RequestParam("townReplyContent") String townReplyContent, HttpSession session) {
+		Member loginUser = (Member)session.getAttribute("loginUser");
+		TownReply tr = new TownReply();
+		tr.setTownReplyRefNo(townNo);
+		tr.setTownReplyWriter(loginUser.getUserNickname());
+		tr.setTownReplyWriterImg(loginUser.getUserUpdateName());
+		tr.setTownReplyContent(townReplyContent);
+		return cService.insertTownReply(tr);
 	}
 }

@@ -180,6 +180,7 @@
 	
 	<%-- 기타 관련 토글 --%>
 	<div class="etc-toggle">
+		<div class="calculateTax"><%@ include file="../etc/calculateTax.jsp" %></div>
 		<div class="insertImprovementIdeation"><%@ include file="../etc/insertImprovementIdeation.jsp" %></div>
 		<div class="introduceHowToUseGot"><%@ include file="../etc/introduceHowToUseGot.jsp" %></div>
 	</div>

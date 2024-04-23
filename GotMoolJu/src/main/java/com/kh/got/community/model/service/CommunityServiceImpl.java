@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.google.gson.JsonElement;
 import com.kh.got.community.model.dao.CommunityDao;
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownReply;
 import com.kh.got.community.model.vo.TownStar;
 
 @Service
@@ -58,6 +59,31 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public int insertTown(Town t) {
 		return cDao.insertTown(sqlSession, t);
+	}
+
+	@Override
+	public int increaseTownClick(int townNo) {
+		return cDao.increaseTownClick(sqlSession, townNo);
+	}
+
+	@Override
+	public boolean isMyStarTown(int userNo, int townNo) {
+		return cDao.isMyStarTown(sqlSession, userNo, townNo);
+	}
+
+	@Override
+	public Town selectTownDetail(int townNo) {
+		return cDao.selectTownDetail(sqlSession, townNo);
+	}
+
+	@Override
+	public ArrayList<TownReply> selectTownReplyList(int townNo) {
+		return cDao.selectTownReplyList(sqlSession, townNo);
+	}
+
+	@Override
+	public int insertTownReply(TownReply tr) {
+		return cDao.insertTownReply(sqlSession, tr);
 	}
 	
 	

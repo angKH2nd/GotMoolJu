@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.town-detail-form {
+	width: 100%;
+	height: 100%;
+}
+
+.town-detail-form>div {
+	width: 100%;
+}
+
+.town-detail-title {
+	height: 45px;
+}
+
+.town-detail-member {
+	height: 60px;
+}
+
+.town-detail-member>div {
+	height: 100%;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.town-detail-member-img {
+	width: 30px;
+}
+
+.town-detail-member-click {
+	width: 60px;
+}
+
+.town-detail-member-nickname {
+	width: calc(100% - 90px);
+}
+
+.town-detail-content {
+	height: 100px;
+}
+
+.town-detail-content>textarea {
+	width: 98%;
+	height: 100%;
+	resize: none;
+	border: none;
+}
+
+.town-detail-content>textarea:focus {
+	border: none;
+	outline: none;
+}
+
+.town-detail-picture {
+	height: auto;
+}
+
+.town-detail-bottom {
+	height: 55px;
+	border-top: 0.5px solid lightgray;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.town-detail-bottom-star {
+	width: 32%;
+	height: 100%;
+}
+
+.town-detail-bottom-likes, .town-detail-bottom-reply {
+	width: 27%;
+	height: 100%;
+}
+
+.town-detail-bottom-blank {
+	width: 7%;
+	height: 100%;
+}
+
+.town-detail-bottom-star>div, .town-detail-bottom-likes>div, .town-detail-bottom-reply>div {
+	height: 100%;
+}
+
+.town-detail-bottom-star-icon, .town-detail-bottom-likes-icon, .town-detail-bottom-reply-icon {
+	width: 20px;
+}
+
+.town-detail-bottom-star-text {
+	width: 60px;
+}
+
+.town-detail-bottom-likes-text {
+	width: 45px;
+}
+
+.town-detail-bottom-reply-text {
+	width: 35px;
+}
+
+.town-detail-bottom-star-count, .town-detail-bottom-likes-count, .town-detail-bottom-reply-count {
+	width: 25px;
+}
+
+.town-detail-reply {
+	height: 200px;
+}
+
+.town-detail-reply>div {
+	width: 100%;
+}
+
+.town-detail-reply-head {
+	height: 5px;
+	background-color: #f5f5f5;
+}
+
+.town-detail-reply-insert {
+	height: 80px;
+	border-top: 0.5px solid lightgray;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.town-detail-reply-insert>div {
+	height: 100%;
+}
+
+.town-detail-reply-insert-icon {
+	width: 35px;
+}
+
+.town-detail-reply-insert-input {
+	width: calc(100% - 45px);
+	margin-right: 10px;
+}
+
+.town-detail-reply-insert-input>input {
+	width: calc(100% - 15px);
+	height: 100%;
+	padding-left: 15px;
+	background-color: #f5f5f5;
+	border: 0.5px solid #f5f5f5;
+}
+
+.town-detail-reply-insert-input>input:focus {
+	border: 0.5px solid #f5f5f5;
+	outline: none;
+}
+
+.town-detail-reply-insert-icon {
+	color: gray;
+}
+
+.town-detail-reply-content {
+	min-height: 250px;
+	height: auto;
+}
+
+.town-detail-reply-content-no-reply {
+	width: 100%;
+	height: 250px;
+}
+
+.town-detail-reply-thing {
+	width: 100%;
+	height: 110px;
+	border-top: 0.5px solid lightgray;
+	border-bottom: 0.5px solid lightgray;
+}
+
+.town-detail-reply-thing>div {
+	width: 100%;
+}
+
+.town-detail-reply-thing-head {
+	height: 35px;
+}
+
+.town-detail-reply-thing-head>div {
+	height: 100%;
+}
+
+.town-detail-reply-thing-img {
+	width: 35px;
+}
+
+.town-detail-reply-thing-date {
+	width: 100px;
+	text-align: right;
+}
+
+.town-detail-reply-thing-nickname {
+	width: calc(100% - 135px);
+}
+
+.town-detail-reply-thing-content {
+	height: calc(100% - 35px);
+	padding-left: 10px;
+}

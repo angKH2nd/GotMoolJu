@@ -21,6 +21,7 @@
 		
 		<typeAlias type="com.kh.got.community.model.vo.Town" alias="Town"/>
 		<typeAlias type="com.kh.got.community.model.vo.TownStar" alias="TownStar"/>
+		<typeAlias type="com.kh.got.community.model.vo.TownReply" alias="TownReply"/>
 	</typeAliases>
 	
 	<mappers>

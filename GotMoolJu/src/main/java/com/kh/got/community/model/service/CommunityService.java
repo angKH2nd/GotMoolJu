@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.google.gson.JsonElement;
 import com.kh.got.community.model.vo.Town;
+import com.kh.got.community.model.vo.TownReply;
 import com.kh.got.community.model.vo.TownStar;
 
 public interface CommunityService {
@@ -29,5 +30,16 @@ public interface CommunityService {
 	
 	// 7. 커뮤니티 글 작성 서비스
 	int insertTown(Town t);
+	
+	// 8. 커뮤니티 조회수 증가 서비스
+	int increaseTownClick(int townNo);
+	
+	// 9. 커뮤니티 상세조회서비스
+	boolean isMyStarTown(int userNo, int townNo);
+	Town selectTownDetail(int townNo);
+	ArrayList<TownReply> selectTownReplyList(int townNo);
+	
+	// 10. 커뮤니티 댓글 등록 서비스
+	int insertTownReply(TownReply tr);
 	
 }
