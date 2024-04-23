@@ -303,7 +303,7 @@
 					});
 				};
 				
-		getData();
+		getData(); 
 
 			}else if(zoomLevel >= 15){
 				// 마커 제거
