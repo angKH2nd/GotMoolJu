@@ -100,7 +100,7 @@ public class CommunityDao {
 			int townNo = tr.getTownReplyRefNo();
 			result = sqlSession.update("communityMapper.updateTownReplyCount", townNo);
 		}
-		return result;
+		return result; 
 	}
 
 }
