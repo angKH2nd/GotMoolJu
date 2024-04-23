@@ -42,4 +42,7 @@ public interface CommunityService {
 	// 10. 커뮤니티 댓글 등록 서비스
 	int insertTownReply(TownReply tr);
 	
+	// 11. 커뮤니티 인기 동네소식 사진 조회 서비스
+	Town selectBestTownPicture();
+	
 }

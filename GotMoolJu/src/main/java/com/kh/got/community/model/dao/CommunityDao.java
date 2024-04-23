@@ -103,4 +103,8 @@ public class CommunityDao {
 		return result; 
 	}
 
+	public Town selectBestTownPicture(SqlSessionTemplate sqlSession) {
+		return sqlSession.selectOne("communityMapper.selectBestTownPicture");
+	}
+
 }

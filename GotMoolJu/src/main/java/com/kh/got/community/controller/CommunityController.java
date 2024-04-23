@@ -148,4 +148,10 @@ public class CommunityController {
 		tr.setTownReplyContent(townReplyContent);
 		return cService.insertTownReply(tr);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="selectBestTownPicture.cm")
+	public Town selectBestTownPicture() {
+		return cService.selectBestTownPicture();
+	}
 }

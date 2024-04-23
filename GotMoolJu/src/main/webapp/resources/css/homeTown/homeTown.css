@@ -118,6 +118,106 @@
 	line-height: 50px;
 }
 
+.homeTown-town {
+	height: 270px;
+}
+
+.homeTown-town>div {
+	width: 100%;
+}
+
+.homeTown-town-title {
+	height: 30px;
+}
+
+.homeTown-town-title>div {
+	height: 100%;
+}
+
+.homeTown-town-title-text {
+	width: calc(100% - 20px);
+}
+
+.homeTown-town-title-link {
+	width: 20px;
+}
+
+.homeTown-town-pictures {
+	height: calc(100% - 30px);
+}
+
+.homeTown-town-pictures>div {
+	width: 100%;
+}
+
+.homeTown-town-pictures-top {
+	height: 15px;
+}
+
+.homeTown-town-pictures-img {
+	height: calc(100% - 15px);
+}
+
+.homeTown-news {
+	height: 140px;
+}
+
+.homeTown-news>div {
+	width: 100%;
+}
+
+.homeTown-news-title {
+	height: 30px;
+}
+
+.homeTown-news-content {
+	height: calc(100% - 30px);
+    position: relative;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.news-list li {
+    width: 70px;
+    margin-right: 25px;
+    display: inline-block;
+}
+
+.news-list li img {
+	border: 0.5px solid lightgray;
+}
+
+.news-slide-buttons {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.news-prev-btn {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.news-next-btn {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
 /* --------------- 홈 타운 토글 관련 시작 --------------- */
 .homeTown-toggle {
     position: relative;

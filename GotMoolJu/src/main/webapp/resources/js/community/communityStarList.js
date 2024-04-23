@@ -9,7 +9,7 @@ function selectTownStarList() {
 				noStarHtml = `
 							  <div class="centerXY" style="display: flex; flex-direction: column;">
 							  	  <br><br>
-							  	  아직 즐겨찾기한 게시물이 소식이 없어요 😥 <br>
+							  	  아직 즐겨찾기한 소식이 없어요 😥 <br>
 							  	  마음에 드는 소식을 즐겨찾기 해 보아요! <br><br>
 							  	  
 							  	  <span class="mh fb" onclick="toggleCommunity('town');" style="color: #434d68">동네소식 둘러보기</span>

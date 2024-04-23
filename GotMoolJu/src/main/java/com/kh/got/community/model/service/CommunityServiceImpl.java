@@ -85,6 +85,11 @@ public class CommunityServiceImpl implements CommunityService {
 	public int insertTownReply(TownReply tr) {
 		return cDao.insertTownReply(sqlSession, tr);
 	}
+
+	@Override
+	public Town selectBestTownPicture() {
+		return cDao.selectBestTownPicture(sqlSession);
+	}
 	
 	
 }

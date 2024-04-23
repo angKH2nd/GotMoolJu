@@ -280,4 +280,22 @@
 		 where town_no = #{townNo}
 	</update>
 	
+	<select id="selectBestTownPicture" resultMap="townResult">
+		select *
+		  from (
+				select
+					   town_no
+					 , town_thumbnail
+				  from tb_town
+				 where town_thumbnail is not null
+				   and town_status = 'Y'
+				 order
+				    by town_star desc
+				     , town_likes desc
+				     , town_click desc
+				     , town_reply_count desc
+			   )
+		 where rownum = 1
+	</select>
+	
 </mapper>
