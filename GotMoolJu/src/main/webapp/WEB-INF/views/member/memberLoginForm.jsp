@@ -13,6 +13,7 @@
 </style>
 <link rel="stylesheet" href="resources/css/member/memberLoginForm.css">
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
@@ -44,7 +45,6 @@
     <div class="login-body">
     	<div style="padding-top: 80px;" align="center">
 			<div id="naver_id_login"></div>
-			<img width=200 height=42.5 src="resources/images/social/btnG_완성형.png" onclick="naverLogin();" class="socialLogin">			
     		<img width=200 height=42.5 src="resources/images/social/kakao.png" onclick="kakaoLogin();" class="socialLogin">
     	</div>
     </div>
@@ -75,11 +75,12 @@
 	
   	var naver_id_login = new naver_id_login("opjzzdCNjEas6y2mkSia", "http://localhost:8222/got/naver.me");
   	var state = naver_id_login.getUniqState();
-  	naver_id_login.setButton("white", 2,40);
-  	naver_id_login.setDomain("http://localhost:8222/got");
+  	naver_id_login.setButton("white", 3,45);
+  	naver_id_login.setDomain("http://localhost:8222/got/");
   	naver_id_login.setState(state);
-  	naver_id_login.setPopup();
   	naver_id_login.init_naver_id_login();
+
+	
   
     </script>
 </body>

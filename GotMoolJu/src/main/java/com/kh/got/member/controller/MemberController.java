@@ -430,7 +430,7 @@ public class MemberController {
         	
         	Member kakaoM = new Member();
         	kakaoM.setUserName((String)userInfo.get("nickname"));
-        	kakaoM.setUserId((String)userInfo.get("email"));
+        	kakaoM.setUserId((String)userInfo.get("email")+"(kakao)");
         	
         	Member loginUser = mService.loginMember(kakaoM);
         	
@@ -573,22 +573,60 @@ public class MemberController {
     }
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    @RequestMapping(value="login.na", produces = "applicaiont/html; charset=utf-8")
+    @ResponseBody
+	public String naverLogin(String name, String email, String gender, HttpSession session) {
+    	
+    	
+    	if(name != null && email != null) {
+        	
+        	Member naverM = new Member();
+        	naverM.setUserName(name);
+        	naverM.setUserId(email+"(naver)");
+        	
+        	Member loginUser = mService.loginMember(naverM);
+        	
+        	
+        	if(loginUser == null) {
+        		
+        		int insertNaver = mService.insertSocial(naverM);
+        		
+        		if(insertNaver > 0) {
+        			
+        			Member loginUser1 = mService.loginMember(naverM);
+        			session.setAttribute("loginUser", loginUser1);
+        			session.setAttribute("swalMsg1", "로그인 성공!");
+        			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+        			session.setAttribute("swalMsg3", "success");
+        			
+        		}
+        		
+        	}else {
+        		session.setAttribute("loginUser", loginUser);
+        		session.setAttribute("swalMsg1", "로그인 성공!");
+    			session.setAttribute("swalMsg2", "갓물주에 오신 것을 환영합니다!");
+    			session.setAttribute("swalMsg3", "success");
+        		
+        	}
+        	    	
+        }else {
+        	session.setAttribute("swalMsg1", "로그인 실패!");
+			session.setAttribute("swalMsg2", "아이디, 비밀번호를 확인해주세요.");
+			session.setAttribute("swalMsg3", "warning");
+        }
+    	
+    	String result = "no";
+    	
+    	if(session.getAttribute("loginUser") != null) {
+    		
+    		result = "yes";
+    		
+    	}
+    	
+    	return result;
+    	
+    }
+    
 	
 	
 }
