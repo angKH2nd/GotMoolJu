@@ -60,9 +60,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="#">
-                <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>nonono</p>
+              <a href="aptList.ad">
+                <i class="now-ui-icons travel_istanbul"></i>
+                <p>부동산</p>
               </a>
             </li>
             <li>

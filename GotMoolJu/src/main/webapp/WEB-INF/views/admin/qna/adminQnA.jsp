@@ -172,7 +172,11 @@ pageEncoding="UTF-8"%>
 	                 		<td>
 	                 			<textarea readonly id="qnaAnswerContent${ad.qnaNo}" name="qnaAnswerContent" style="resize:none; width: 600px; height: 100px; background-color: #f3f3f3">${ adA.qnaAnswerContent }</textarea>
 	                 		</td>
-	                 		<td colspan=3>${ adA.qnaAnswerCreateDate } <br> (수정: ${ adA.qnaAnswerModifyDate })</td>
+	                 		<td colspan=3>${ adA.qnaAnswerCreateDate }
+		                 		<c:if test="${ adA.qnaAnswerModifyDate ne null}">
+		                 			 <br> (수정: ${ adA.qnaAnswerModifyDate })
+		                 		</c:if>
+	                 		</td>
 	                 	</c:if>
 	                 	<c:if test="${ ad.qnaStatus eq 'N' }">
 	                 		<td></td>

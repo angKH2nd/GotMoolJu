@@ -91,10 +91,10 @@ public class AdminQnaController {
 	// qna 답글 수정
 	@RequestMapping("qnaAnswerUpdate.ad")
 	public String openAdminQnaAnswerUpdate(@RequestParam("qno") int qno, String qnaAnswerContent, HttpSession session, Model model) {
-		System.out.println("qno = " + qno + ", qnaAnswerContent = " + qnaAnswerContent);
+//		System.out.println("qno = " + qno + ", qnaAnswerContent = " + qnaAnswerContent);
 		
 		int result = adminQService.adminUpdateQnaAnswer(qnaAnswerContent, qno); // 답글 수정
-		System.out.println(result);
+//		System.out.println(result);
 		
 		if(result > 0) {
 			
