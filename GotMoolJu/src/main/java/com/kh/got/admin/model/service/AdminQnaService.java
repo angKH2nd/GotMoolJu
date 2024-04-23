@@ -14,7 +14,13 @@ public interface AdminQnaService {
 	ArrayList<QnaAnswer> selectQnaAnswerList(); // qna answer list
 	
 	// qna 리스트 삭제
-	int adminDeleteQnaList(int adminQno);
+	int adminDeleteQnaList(int qnaNo);
 	
+	// qna 답글 등록
+	int adminEnrollQnaAnswer(String qnaAnswerContent, int qnaNo, int qnaType);
+	int adminEnrollQnaAnswerQnaUpdate(int qnaNo); // qna 답글 등록 시 qna 답변 완료로 수정
+	
+	// qna 답글 수정
+	int adminUpdateQnaAnswer(String qnaAnswerContent, int qnaNo);
 
 }

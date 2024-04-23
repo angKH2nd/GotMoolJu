@@ -14,7 +14,13 @@ pageEncoding="UTF-8"%>
     <style>
 	    #adminQnAListClick1:hover {
 		  cursor: pointer;
+		  
 		}
+		#statusNcolor{
+			color: lightgray;
+		}
+			
+		
     </style>
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
@@ -59,7 +65,7 @@ pageEncoding="UTF-8"%>
                 <div class="card-header">
                   <h4 class="card-title">Q & A</h4>
                   <p class="category">
-		             <h6 style="margin-left: 86%; color: rightgray"> &lt; Q & A 개수 : ${ adminPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 86%; color:#12192c"> &lt; Q & A 개수 : ${ adminPi.listCount } &gt;</h6>
 		           </p>
                 </div>
                  <div
@@ -83,32 +89,50 @@ pageEncoding="UTF-8"%>
                       <tbody id="adminQnAListClick1">
                       <c:forEach var="ad" items="${ admQnaList }">
 		                 <tr name="adminQnAListClick2">
-	                        <td class="adminQno" id="adminQ">${ ad.qnaNo }</td>
-	                        <td>${ ad.qnaWriter }</td>
-	                        <td>${ ad.qnaTitle }</td>
-	                        <td style="width:45%">${ ad.qnaContent }</td>
+		                 	<c:if test="${ ad.qnaStatus eq 'Y' }">
+	                        	<td class="qno" id="adminQ" name="qnaNo">${ ad.qnaNo }</td>
+	                        	<td>${ ad.qnaWriter }</td>
+	                        	<td>${ ad.qnaTitle }</td>
+	                        	<td style="width:45%">${ ad.qnaContent }</td>
+	                        </c:if>
+	                        <c:if test="${ ad.qnaStatus eq 'N' }">
+	                        	<td class="qno" id="adminQ" style="color:lightgray">${ ad.qnaNo }</td>
+	                        	<td id="statusNcolor">${ ad.qnaWriter }</td>
+	                        	<td id="statusNcolor">${ ad.qnaTitle }</td>
+	                        	<td style="width:45%;" id="statusNcolor">${ ad.qnaContent }</td>
+	                        </c:if>
 	                        <c:choose>
 	                        	<c:when test="${ ad.qnaModifyDate eq null }">
 	                        		<td>${ ad.qnaCreateDate }</td>
 	                        	</c:when>
 	                        	<c:otherwise>
-	                        		<td>${ ad.qnaCreateDate } <br> (수정: ${ ad.qnaModifyDate })</td>
+	                        		<c:if test="${ ad.qnaStatus eq 'Y' }">
+	                        			<td>${ ad.qnaCreateDate } <br> (수정: ${ ad.qnaModifyDate })</td>
+	                        		</c:if>
+	                        		<c:if test="${ ad.qnaStatus eq 'N' }">
+	                        			<td id="statusNcolor">${ ad.qnaCreateDate } <br> (수정: ${ ad.qnaModifyDate })</td>
+	                        		</c:if>
 	                        	</c:otherwise>
 	                        </c:choose>
 	                        <c:choose>
 	                        	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
-	                        		<td style="color:red">답변대기</td>
+	                        		<c:if test="${ ad.qnaStatus eq 'Y' }">
+	                        			<td style="color:red">답변대기</td>
+	                        		</c:if>
+	                        		<c:if test="${ ad.qnaStatus eq 'N' }">
+	                        			<td id="statusNcolor">답변대기</td>
+	                        		</c:if>
 	                        	</c:when>
 	                        	<c:otherwise>
-	                        		<td style="color:lightgray">답변완료</td>
+	                        		<td id="statusNcolor">답변완료</td>
 	                        	</c:otherwise>
 	                        </c:choose>
 	                        <c:choose>
 	                        	<c:when test="${ ad.qnaType eq 1 }">
-	                        		<td>🔓</td> <%-- 일반 --%> 
+	                        		<td name="qnaType">🔓</td> <%-- 일반 --%> 
 	                        	</c:when>
 	                        	<c:otherwise>
-	                        		<td>🔒</td> <%-- 비밀 --%>
+	                        		<td name="qnaType">🔒</td> <%-- 비밀 --%>
 	                        	</c:otherwise>
 	                        </c:choose>
 	                        <c:choose>
@@ -119,45 +143,123 @@ pageEncoding="UTF-8"%>
 	                        		<td style="color: red" align="center">N</td>
 	                        	</c:otherwise>
 	                        </c:choose>
-	                        <%-- 휴지통 / 삭제하기 --%>
-	                        <td class="text-right" onclick="moveToDeleteQna();"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
+	                        <%-- 휴지통 아이콘 / 삭제하기 --%>
+	                        <c:if test="${ ad.qnaStatus eq 'Y' }">
+	                        	<td class="text-right" onclick="moveToDeleteQna(${ ad.qnaNo });"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
+	                        </c:if>
+	                        <c:if test="${ ad.qnaStatus eq 'N' }">
+	                        	<td class="text-right"></td>
+	                        </c:if>
+	                        
 	                        <script>
-	                        	function moveToDeleteQna(){
-	                        		location.href = "qnaListDelete.ad?adminQno=" + ${ ad.qnaNo };
+		                        function moveToDeleteQna(qno){
+		                        	if (confirm("Q&A를 삭제하시겠습니까?")) {
+	                        			location.href = "qnaListDelete.ad?qno=" + qno;
+		                        	}else{
+		                        		
+		                        	}
 	                        	}
 	                        </script>
 		                 </tr>
 		                 
-					    <tr name="adminQnAanswer" style="height:130px; background-color:rgb(246, 245, 255)">
-						<c:forEach var="adA" items="${ admQnaAnswerList }">
-							<c:if test="${ ad.qnaNo eq adA.qnaAnswerRefNo && ad.qnaAnswerStatus eq 'Y'}">
-								<td></td>
-			                 	<td colspan=2>${ adA.qnaAnswerWriter }</td>
-			                 	<td>${ adA.qnaAnswerContent }</td>
-			                 	<td colspan=3>${ adA.qnaAnswerCreateDate } <br> (수정: ${ adA.qnaAnswerModifyDate })</td>
-					         </c:if>        
-			            </c:forEach>
-			                <c:if test="${ ad.qnaAnswerStatus eq 'N'}">
-			                	<td name="qnaAnswerNo"></td>
-				                <td colspan=2 name="qnaAnswerWriter"></td>
-				                <td name="qnaAnswerContent">
-				                	<textarea style="resize:none; width: 600px; height: 100px;"></textarea>
-				                </td>
-				                <td colspan="3" name="qnaAnswerCreateDate"></td>
+                <%-- 답글 --%> 
+			    <tr name="adminQnAanswer" style="height:130px; background-color:rgb(246, 245, 255)">
+				<c:forEach var="adA" items="${ admQnaAnswerList }">
+					<c:if test="${ ad.qnaNo eq adA.qnaAnswerRefNo && ad.qnaAnswerStatus eq 'Y'}">
+						<c:if test="${ ad.qnaStatus eq 'Y' }">
+							<td></td>
+	                 		<td colspan=2>${ adA.qnaAnswerWriter }</td>
+	                 		<td>
+	                 			<textarea readonly id="qnaAnswerContent${ad.qnaNo}" name="qnaAnswerContent" style="resize:none; width: 600px; height: 100px; background-color: #f3f3f3">${ adA.qnaAnswerContent }</textarea>
+	                 		</td>
+	                 		<td colspan=3>${ adA.qnaAnswerCreateDate } <br> (수정: ${ adA.qnaAnswerModifyDate })</td>
+	                 	</c:if>
+	                 	<c:if test="${ ad.qnaStatus eq 'N' }">
+	                 		<td></td>
+	                 		<td id="statusNcolor" colspan=2>${ adA.qnaAnswerWriter }</td>
+	                 		<td id="statusNcolor">${ adA.qnaAnswerContent }  <br> (삭제된 문의글입니다.)</td>
+	                 		<td id="statusNcolor" colspan=3>${ adA.qnaAnswerCreateDate } <br> (수정: ${ adA.qnaAnswerModifyDate })</td>
+	                 	</c:if>
+			         </c:if>        
+	            </c:forEach>
+	                <c:if test="${ ad.qnaAnswerStatus eq 'N'}">
+	                	<td name="qno"></td>
+	                	<%-- 답글 작성자, 안 보임 --%>
+		                <td colspan=2 name="qnaAnswerWriter"></td>
+		                
+		                <%-- 답글 내용 / 작성해주세요. --%>
+		                <td> 
+		                	<c:if test="${ ad.qnaStatus eq 'Y' }">
+		                		<textarea id="qnaAnswerContent${ad.qnaNo}" name="qnaAnswerContent" style="resize:none; width: 600px; height: 100px;" placeholder="댓글을 입력해 주세요."></textarea>
 		                	</c:if>
-		                 	<td colspan=2 align="center"> 
-				                <c:choose>
-				                 	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
-				                 		<%-- 작성하기 --%>
-				                 		<a style="float:right; color:blue; border-radius: 20px"><i class="fa-solid fa-paper-plane"></i></a>
-				                	</c:when>
-				                	<c:otherwise>
-					                	<%-- 수정하기 --%>
-				                		<a style="float:right; border-radius: 20px"><i class="fa-regular fa-pen-to-square"></i></a>
-				                	</c:otherwise>
-				                </c:choose>
-		                 	</td>
-					   </tr>
+		                	<c:if test="${ ad.qnaStatus eq 'N' }">
+		                		<textarea id="statusNcolor" style="resize:none; width: 600px; height: 100px; border: 1px solid darkgray; background-color: f3f3f3; readonly">삭제된 문의글입니다.</textarea>
+		                	</c:if>
+		                </td>
+		                <td colspan="3" name="qnaAnswerCreateDate"></td>
+                	</c:if>
+                		<input type="hidden" id="qnaTypeValue" value="${ad.qnaType}">
+		                <c:choose>
+		                 	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
+		                 		<%-- 작성하기 이모지, 아이콘 --%>
+		                 		<c:if test="${ ad.qnaStatus eq 'Y' }">
+		                 			<td colspan=2 align="center" onclick="moveToEnrollQna(${ ad.qnaNo });"> 
+		                 				<a style="float:right; color:blue; border-radius: 20px"><i class="fa-solid fa-paper-plane"></i></a>
+									</td> 
+									<script>
+										function moveToEnrollQna(qno){
+				                        	if (confirm("등록하시겠습니까?")) {
+				                        		var contentId = "#qnaAnswerContent" + qno;
+				                        	    var content = $(contentId).val();
+			                        			location.href = "qnaAnswerEnroll.ad?qno=" + qno + "&qnaAnswerContent=" + content + "&qnaType=" + $("#qnaTypeValue").val();
+				                        	}else{
+				                        		
+				                        	}
+			                        	}
+									</script>
+		                		</c:if>
+		                		<c:if test="${ ad.qnaStatus eq 'N' }">
+		                			<td colspan=2 align="center"> 
+		                 				<a style="float:right; color:blue; border-radius: 20px"></a>
+		                			</td>
+		                		</c:if>
+		                	</c:when>
+		                	<c:otherwise>
+			                	<%-- 수정하기 이모지, 아이콘 --%>
+			                	<c:if test="${ ad.qnaStatus eq 'Y' }">
+			                		<td colspan=2 align="center" id="updateChangeQnaArea">
+		                				<a style="float:right; border-radius: 20px" onclick="moveToUpdateQna(${ ad.qnaNo })"><i class="fa-regular fa-pen-to-square"></i></a>
+		                			</td>
+		                			<script>
+			                			function moveToUpdateQna(qno) {
+			                		        var contentId = "#qnaAnswerContent" + qno;
+	
+			                		        $(contentId).prop("readonly", false);
+	
+			                		        $(contentId).css("background-color", "white");
+	
+			                		        changeUpdateQnaIcon(qno);
+			                		    }
+			                		    
+			                		    function changeUpdateQnaIcon(qno) {
+			                		        var qnaHtml = `
+			                		            <a style="float:right; border-radius: 20px" onclick="moveToRealUpdateQna(${ ad.qnaNo })"><i class="fa-solid fa-floppy-disk"></i></a>
+			                		        `;
+			                		        $("#updateChangeQnaArea").html(qnaHtml);
+			                		    }
+			                		    
+			                		    function moveToRealUpdateQna(qno) {
+			                		        var contentId = "#qnaAnswerContent" + qno;
+			                		        location.href = "qnaAnswerUpdate.ad?qno=" + qno + "&qnaAnswerContent=" + $(contentId).val();
+			                		    }
+		                			</script>
+		                		</c:if>
+	                			<c:if test="${ ad.qnaStatus eq 'N' }">
+	                				<td colspan=2 align="center" ></td>
+	                			</c:if>
+		                	</c:otherwise>
+		                </c:choose>
+					 </tr>
 					</c:forEach>  			
                       </tbody>
                     </table>
@@ -217,7 +319,6 @@ pageEncoding="UTF-8"%>
     </div>
   </div>
  </div>  
-    
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>

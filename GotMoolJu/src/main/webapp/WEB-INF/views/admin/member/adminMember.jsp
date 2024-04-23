@@ -59,7 +59,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <h4 class="card-title">회원정보</h4>
                   <p class="category">
 		             <h6 style="margin-left: 89%; color: rightgray"> &lt; 총 회원 :  ${ adminPi.listCount } &gt;</h6>
-		           </p>
+		          </p>
                 </div>
                  <div
 		            class="card-body all-icons"

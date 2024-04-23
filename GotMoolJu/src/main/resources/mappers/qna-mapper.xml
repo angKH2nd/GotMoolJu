@@ -68,13 +68,62 @@
 
 	<!-- qna 리스트 삭제 -->
 	<update id="adminDeleteQnaList">
-	update 
-           tb_qna
-       set qna_status = 'N'
-     where qna_no = #{ qnaNo }
-       and qna_status = 'Y'
+		update 
+	           tb_qna
+	       set qna_status = 'N'
+	     where qna_no = #{ qnaNo }
+	       and qna_status = 'Y'
        
 	</update>
+
+	<!-- qna 답글 등록 -->
+	<insert id="adminEnrollQnaAnswer">
+	   insert
+		 into tb_qna_answer
+			(
+	          qna_answer_no
+	        , qna_answer_ref_no
+	        , qna_answer_content
+	        , qna_answer_writer
+	        , qna_answer_create_date
+	        , qna_answer_type
+	        , qna_answer_status
+	        ) 
+	   values
+	        (
+	          seq_qna_answer_no.nextval
+	        , #{qnaNo}
+	        , #{qnaAnswerContent}
+	        , 0
+	        , sysdate
+	        , #{qnaType}
+	        , 'Y'
+	        )
+			
+	</insert>
+	
+	<!-- qna 답글 등록 시 qna 답변 완료로 수정 -->
+	<update id="adminEnrollQnaAnswerQnaUpdate">
+	    update 
+	    	   tb_qna
+	       set qna_answer_status = 'Y'
+	     where qna_no = #{qnaNo}
+	       and qna_status = 'Y'
+	       
+	</update>
+
+
+	<!-- qna 답글 수정 -->
+	<update id="adminUpdateQnaAnswer">
+	     update 
+	     		tb_qna_answer
+	        set qna_answer_content = #{qnaAnswerContent}
+	          , qna_answer_modify_date = sysdate
+	      where qna_answer_ref_no = #{qnaNo}
+	
+	</update>
+
+
 
 
 

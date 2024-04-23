@@ -42,8 +42,26 @@ public class AdminQnaServiceImpl implements AdminQnaService {
 
 	// qna 리스트 삭제
 	@Override
-	public int adminDeleteQnaList(int adminQno) {
-		return adminQDao.adminDeleteQnaList(sqlSession, adminQno);
+	public int adminDeleteQnaList(int qnaNo) {
+		return adminQDao.adminDeleteQnaList(sqlSession, qnaNo);
+	}
+
+	// qna 답글 등록
+	@Override
+	public int adminEnrollQnaAnswer(String qnaAnswerContent, int qnaNo, int qnaType) {
+		return adminQDao.adminEnrollQnaAnswer(sqlSession, qnaAnswerContent, qnaNo, qnaType);
+	}
+
+	// qna 답글 등록 시 qna 답변 완료로 수정
+	@Override
+	public int adminEnrollQnaAnswerQnaUpdate(int qnaNo) {
+		return adminQDao.adminEnrollQnaAnswerQnaUpdate(sqlSession, qnaNo);
+	}
+
+	// qna 답글 수정
+	@Override
+	public int adminUpdateQnaAnswer(String qnaAnswerContent, int qnaNo) {
+		return adminQDao.adminUpdateQnaAnswer(sqlSession, qnaAnswerContent, qnaNo);
 	}
 
 	
