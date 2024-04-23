@@ -16,8 +16,8 @@
 				    <ul>
 				        <li class="mh town-btn" onclick="toggleCommunity('town'); selectTownList();">동네소식</li>
 				        <li class="mh communityStar-btn" onclick="toggleCommunity('communityStar'); selectTownStarList();">즐겨찾기</li>
-				        <li class="mh communityHot-btn" onclick="toggleCommunity('communityHot')">핫이슈</li>
-				        <li class="mh communityRank-btn" onclick="toggleCommunity('communityRank')">명예의 전당</li>
+				        <li class="mh communityHot-btn" onclick="toggleCommunity('communityHot'); selectTownHotList();">핫이슈</li>
+				        <li class="mh communityRank-btn" onclick="toggleCommunity('communityRank'); selectTownRankList();">명예의 전당</li>
 				    </ul>
 				</div>
 			</div>

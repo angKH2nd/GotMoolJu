@@ -11,6 +11,14 @@
 <body>
 	<div class="town-detail-form no-scrollbar">
 		<input type="hidden" id="town-detail-form-townNo">
+		<c:choose>
+			<c:when test="${not empty loginUser}">
+				<input type="hidden" id="townDetailLoginCheck" value="${loginUser.userNickname}">
+			</c:when>
+			<c:otherwise>
+				<input type="hidden" id="townDetailLoginCheck" value="n">
+			</c:otherwise>
+		</c:choose>
 		<div class="town-detail-member pd15">
 			<div class="town-detail-member-img centerY fl"></div>
 			<div class="town-detail-member-nickname centerY fl"></div>
@@ -20,7 +28,7 @@
 		<div class="town-detail-content pd15">
 			<textarea class="fb" readonly></textarea>
 		</div>
-		<div class="town-detail-picture pd15">사진자리임</div>
+		<div class="town-detail-picture pd15"></div>
 		<div class="town-detail-bottom">
 			<div class="town-detail-bottom-star pd15 mh fl" onclick="moveUpdateTownStar();">
 				<div class="town-detail-bottom-star-icon centerXY fl"><i class="fa-regular fa-star"></i></div>

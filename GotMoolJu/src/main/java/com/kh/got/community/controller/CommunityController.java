@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -105,10 +106,10 @@ public class CommunityController {
 	            String updateName = uploadDir + beforeName;
 	            switch (i) {
 	                case 0: t.setTownThumbnail(updateName); break;
-	                case 1: t.setTownDetailImg2(updateName); break;
-	                case 2: t.setTownDetailImg3(updateName); break;
-	                case 3: t.setTownDetailImg4(updateName); break;
-	                case 4: t.setTownDetailImg5(updateName); break;
+	                case 1: t.setTownDetailImg1(updateName); break;
+	                case 2: t.setTownDetailImg2(updateName); break;
+	                case 3: t.setTownDetailImg3(updateName); break;
+	                case 4: t.setTownDetailImg4(updateName); break;
 	            }
 	        }
 	    }
@@ -154,4 +155,76 @@ public class CommunityController {
 	public Town selectBestTownPicture() {
 		return cService.selectBestTownPicture();
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="decreaseTownClick.cm")
+	public int decreaseTownClick(@RequestParam("townNo") int townNo) {
+		return cService.decreaseTownClick(townNo);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="deleteTown.cm")
+	public int deleteTown(@RequestParam("townNo") int townNo) {
+		return cService.deleteTown(townNo);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="updateTown.cm")
+	public int updateTown(@RequestParam("townTitle") String townTitle,
+		            	  @RequestParam("townContent") String townContent,
+		            	  @RequestParam("townNo") int townNo,
+		            	  HttpSession session,
+		            	  @RequestParam(value = "updateTownImgFile0", required = false) MultipartFile file0,
+		            	  @RequestParam(value = "updateTownImgFile1", required = false) MultipartFile file1,
+		            	  @RequestParam(value = "updateTownImgFile2", required = false) MultipartFile file2,
+		            	  @RequestParam(value = "updateTownImgFile3", required = false) MultipartFile file3,
+		            	  @RequestParam(value = "updateTownImgFile4", required = false) MultipartFile file4) {
+		Town t = new Town();
+		t.setTownNo(townNo);
+		t.setTownTitle(townTitle);
+		t.setTownContent(townContent);
+		t.setTownWriter(((Member)session.getAttribute("loginUser")).getUserNickname());
+		t.setTownWriterImg(((Member)session.getAttribute("loginUser")).getUserUpdateName());
+		
+		String uploadDir = "resources/uploadFiles/town/";
+		
+		MultipartFile[] files = {file0, file1, file2, file3, file4};
+		for (int i = 0; i < files.length; i++) {
+			MultipartFile file = files[i];
+			if (file != null) {
+				String beforeName = UploadFile.saveTownFile(file, session);
+				String updateName = uploadDir + beforeName;
+				switch (i) {
+				   case 0: t.setTownThumbnail(updateName); break;
+				   case 1: t.setTownDetailImg1(updateName); break;
+				   case 2: t.setTownDetailImg2(updateName); break;
+				   case 3: t.setTownDetailImg3(updateName); break;
+				   case 4: t.setTownDetailImg4(updateName); break;
+				}
+			}
+		}
+		return cService.updateTown(t);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="townHotList.cm", produces = "application/json; charset=utf-8")
+	public String selectHotTownList(HttpSession session) {
+		Member loginUser = null;
+		JSONObject jObj = new JSONObject();
+		
+		if((Member)session.getAttribute("loginUser") != null) {
+			loginUser = (Member)session.getAttribute("loginUser");
+			jObj.put("myTownStarList", new Gson().toJson(cService.isMyTown(loginUser.getUserNo())));
+		}
+		jObj.put("townList", new Gson().toJson(cService.selectTownHotList()));
+		
+		return jObj.toJSONString();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="townRankList.cm", produces = "application/json; charset=utf-8")
+	public String selectTownRankList() {
+	    return new Gson().toJson(cService.selectTownRankCount());
+	}
+	
 }

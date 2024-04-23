@@ -58,6 +58,7 @@
 			 , town_detail_img5
 		  from tb_town
 		  join tb_member on (town_writer = user_nickname)
+		 where town_status = 'Y'
 		 order
 		    by town_no desc
 	</select>
@@ -138,7 +139,7 @@
 		         where town_status = 'Y'
 		           and town_writer = #{userNickname}
 		         order
-		            by town_star desc, town_likes, town_click
+		            by town_star desc, town_likes desc, town_click desc
 		       )
 		 where rownum = 1
 	</select>
@@ -161,6 +162,7 @@
 		  join tb_member m on t.town_writer = m.user_nickname
 		  join tb_town_star on town_star_ref_no = town_no
          where town_star_user_no = #{userNo}
+           and town_status = 'Y'
 		 order
 		    by t.town_no desc
 	</select>
@@ -170,6 +172,7 @@
 		       sum(town_star) as "count"
 		  from tb_town
 		 where town_writer = #{userNickname}
+		   and town_status = 'Y'
 	</select>
 	
 	<insert id="insertTown">
@@ -182,10 +185,10 @@
 		  	 , town_title
 		  	 , town_content
 		  	 , town_thumbnail
+		  	 , town_detail_img1
 		  	 , town_detail_img2
 		  	 , town_detail_img3
 		  	 , town_detail_img4
-		  	 , town_detail_img5
 		  	 )
 		values
 			 (
@@ -195,10 +198,10 @@
 			 , #{townTitle}
 			 , #{townContent}
 			 , #{townThumbnail}
+			 , #{townDetailImg1}
 			 , #{townDetailImg2}
 			 , #{townDetailImg3}
 			 , #{townDetailImg4}
-			 , #{townDetailImg5}
 			 )
 	</insert>
 	
@@ -296,6 +299,72 @@
 				     , town_reply_count desc
 			   )
 		 where rownum = 1
+	</select>
+	
+	<update id="decreaseTownClick">
+		update tb_town
+		   set town_click = town_click - 1
+		 where town_no = #{townNo}
+	</update>
+	
+	<update id="deleteTown">
+		update tb_town
+		   set town_status = 'N'
+		 where town_no = #{townNo}
+	</update>
+	
+	<update id="updateTown">
+		update tb_town
+		   set town_title = #{townTitle}
+		     , town_content = #{townContent}
+		     , town_thumbnail = #{townThumbnail}
+		     , town_detail_img1 = #{townDetailImg1}
+		     , town_detail_img2 = #{townDetailImg2}
+		     , town_detail_img3 = #{townDetailImg3}
+		     , town_detail_img4 = #{townDetailImg4}
+		     , town_modify_date = sysdate
+		 where town_no = #{townNo}
+	</update>
+	
+	<select id="selectTownHotList" resultMap="townResult">
+		select *
+		  from (
+				select 
+					   t.town_no
+					 , t.town_writer
+					 , m.user_update_name AS town_writer_img
+					 , t.town_title
+					 , t.town_content
+					 , t.town_star
+					 , t.town_likes
+					 , t.town_reply_count
+					 , t.town_click
+					 , t.town_create_date
+					 , to_char(t.town_modify_date, 'RRRR.MM.DD') as "town_modify_date"
+					 , t.town_thumbnail
+				  from tb_town t
+				  join tb_member m on t.town_writer = m.user_nickname
+		         where town_status = 'Y'
+				 order
+				    by t.town_star desc, t.town_likes desc, t.town_click desc, t.town_reply_count desc
+		       ) 
+		 where rownum between 1 and 3
+	</select>
+	
+	<select id="selectTownRankCount" resultMap="townResult">
+	    select *
+		  from 
+		       (
+		        select 
+		                   count(town_star) + count(town_likes) + count(town_click) + count(town_reply_count) as "town_star"
+		                 , town_writer
+		                 , town_writer_img
+		              from tb_town
+		             where town_status = 'Y'
+		             group by town_writer, town_writer_img
+		             order by count(town_star) + count(town_likes) + count(town_click) + count(town_reply_count) desc
+		       )
+		 where rownum between 1 and 5
 	</select>
 	
 </mapper>

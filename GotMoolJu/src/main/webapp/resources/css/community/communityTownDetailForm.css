@@ -194,3 +194,31 @@
 	height: calc(100% - 35px);
 	padding-left: 10px;
 }
+
+.community-update-button {
+    position: fixed;
+    bottom: 80px;
+    left: 24.5%; 
+    transform: translateX(-24.5%);
+    z-index: 1010;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #434d68;
+    border: none;
+    color: white;
+}
+
+.community-delete-button {
+    position: fixed;
+    bottom: 140px;
+    left: 24.5%; 
+    transform: translateX(-24.5%);
+    z-index: 1010;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #434d68;
+    border: none;
+    color: white;
+}

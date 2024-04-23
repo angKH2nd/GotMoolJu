@@ -18,19 +18,19 @@ function selectTownList() {
 			
             $(townList).each(function(index, town) {
             	townListHtml += `
-                    <div class="town-main-post pd15" id="${town.townNo}" onclick="changeTownDetail(${town.townNo});">
+                    <div class="town-main-post pd15" id="${town.townNo}">
                         <div class="town-post-profile">
                             <div class="town-post-profile-img centerXY fl"><img class="brc" width=45 height=45 src="${town.townWriterImg}"></div>
                             <div class="town-post-profile-nickname centerY fl">${town.townWriter}</div>
                         </div>
-                        <div class="town-post-title mh centerY">${town.townTitle}</div>
-                        <div class="town-post-content mh">${town.townContent}</div>
+                        <div class="town-post-title mh centerY" onclick="changeTownDetail(${town.townNo});">${town.townTitle}</div>
+                        <div class="town-post-content mh" onclick="changeTownDetail(${town.townNo});">${town.townContent}</div>
                 `;
                 
                 // town.townThumbnail이 null이 아닌 경우에만 이미지를 표시
                 if (town.townThumbnail !== undefined) {
                     townListHtml += `
-                        <div class="town-post-thumbnail mh br5"><img width=419 height=230 class="br5" src="${town.townThumbnail}"></div>
+                        <div class="town-post-thumbnail mh br5" onclick="changeTownDetail(${town.townNo});"><img width=419 height=230 class="br5" src="${town.townThumbnail}"></div>
                     `;
                 }
                 
@@ -55,11 +55,11 @@ function selectTownList() {
                                 <div class="town-post-likes-i centerY fl"><i class="fa-regular fa-thumbs-up"></i></div>
                                 <div class="town-post-likes-num centerY fl">${town.townLikes}</div>
                             </div>
-                            <div class="town-post-reply fl">
+                            <div class="town-post-reply fl mh" onclick="changeTownDetail(${town.townNo});">
                                 <div class="town-post-reply-i centerY fl"><i class="fa-solid fa-comment-dots"></i></div>
                                 <div class="town-post-reply-num centerY fl">${town.townReplyCount}</div>
                             </div>
-                            <div class="town-post-count fl">
+                            <div class="town-post-count fl mh" onclick="changeTownDetail(${town.townNo});">
                                 <div class="town-post-count-i centerY fl"><i class="fa-solid fa-arrow-pointer"></i></div>
                                 <div class="town-post-count-num centerY fl">${town.townClick}</div>
                             </div>

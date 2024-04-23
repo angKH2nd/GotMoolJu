@@ -2,6 +2,7 @@ package com.kh.got.community.model.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -105,6 +106,26 @@ public class CommunityDao {
 
 	public Town selectBestTownPicture(SqlSessionTemplate sqlSession) {
 		return sqlSession.selectOne("communityMapper.selectBestTownPicture");
+	}
+
+	public int decreaseTownClick(SqlSessionTemplate sqlSession, int townNo) {
+		return sqlSession.update("communityMapper.decreaseTownClick", townNo);
+	}
+
+	public int deleteTown(SqlSessionTemplate sqlSession, int townNo) {
+		return sqlSession.update("communityMapper.deleteTown", townNo);
+	}
+
+	public int updateTown(SqlSessionTemplate sqlSession, Town t) {
+		return sqlSession.update("communityMapper.updateTown", t);
+	}
+
+	public ArrayList<Town> selectTownHotList(SqlSessionTemplate sqlSession) {
+		return (ArrayList)sqlSession.selectList("communityMapper.selectTownHotList");
+	}
+
+	public ArrayList<Town> selectTownRankCount(SqlSessionTemplate sqlSession) {
+	    return (ArrayList)sqlSession.selectList("communityMapper.selectTownRankCount");
 	}
 
 }

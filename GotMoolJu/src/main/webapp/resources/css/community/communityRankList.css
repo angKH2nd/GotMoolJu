@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.town-rank-main-rank-list-area {
+	width: 100%;
+	height: 100%;
+}
+
+.town-rank-main-rank-list-area>div {
+	width: 100%;
+	height: 80px;
+}
+
+.town-rank-thing>div{
+	height: 100%;
+}
+
+.town-rank-icon {
+	width: 25px;
+}
+
+.town-rank-img {
+	width: 50px;
+}
+
+.town-rank-nickname {
+	width: 180px;
+}
+
+.town-rank-count {
+	width: 20px;
+}
+
+.town-rank-text {
+	width: 20px;
+}
+
+.town-rank-blank {
+	width: calc(100% - 295px);
+}

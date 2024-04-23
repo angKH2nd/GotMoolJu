@@ -45,4 +45,19 @@ public interface CommunityService {
 	// 11. 커뮤니티 인기 동네소식 사진 조회 서비스
 	Town selectBestTownPicture();
 	
+	// 12. 커뮤니티 조회수 감소 서비스
+	int decreaseTownClick(int townNo);
+	
+	// 13. 커뮤니티 삭제 서비스
+	int deleteTown(int townNo);
+	
+	// 14. 커뮤니티 수정 서비스
+	int updateTown(Town t);
+	
+	// 15. 핫이슈 조회 서비스
+	ArrayList<Town> selectTownHotList();
+	
+	// 16. 명예의 전당 조회 서비스
+	ArrayList<Town> selectTownRankCount();
+	
 }

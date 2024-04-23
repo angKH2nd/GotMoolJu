@@ -36,7 +36,6 @@
 			</div>
 		</div>
 		<div class="etc-menu2">
-			<div class="bgh mh pd15 centerY">구해줘 마이 홈!</div>
 			<div class="bgh mh pd15 centerY">지금 핫한 단지는?</div>
 			<div class="bgh mh pd15 centerY" onclick="openRank();">아파트 랭킹</div>
 		</div>
@@ -45,7 +44,6 @@
 			<div class="bgh mh pd15 centerY">인기 검색어</div>
 			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('calculateTax');">세금계산기</div>
 			<div class="bgh mh pd15 centerY" onclick="openCommunityHot();">핫이슈 모아보기</div>
-			<div class="bgh mh pd15 centerY">???????</div>
 		</div>
 		<div class="etc-menu4">
 			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('insertImprovementIdeation');">개선의견 등록</div>
