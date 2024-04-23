@@ -193,45 +193,59 @@
 					]
 				}
 
+				var promises = [];
+
 				for (let i = 0; i < SeoulDistricts.length; i++) {
-					(function(i) {
-						$.ajax({
-							url: "countJachi.ma",
-							data: {jachi : SeoulDistricts[i].name_kr},
-							success: function(count){
+					// Create a promise for each AJAX request and push to the promises array
+					var request = $.ajax({
+						url: "countJachi.ma",
+						data: { jachi: SeoulDistricts[i].name_kr },
+						success: function(count) {
+							
+								SeoulDistricts[i].count = count;
+							
+						},
+						error: function() {
+							console.log("Failed to fetch data for", SeoulDistricts[i].name_kr);
+						}
+					});
 
-								if(count != 0){
+					promises.push(request);
+				}
 
-									var marker = new naver.maps.Marker({
-										position: new naver.maps.LatLng(SeoulDistricts[i].coordinates.latitude, SeoulDistricts[i].coordinates.longitude),
-										map: map,
-										icon: {
-											content: [
-												'<div class="jachi-outer">',
-													'<div>',
-														'<span class="jachi-inner">' + count + '</span>',
-														'</div>',
-														SeoulDistricts[i].name_kr + '</div>'
-													].join(''),
-													size: new naver.maps.Size(25, 34),
-													scaledSize: new naver.maps.Size(25, 34),
-													origin: new naver.maps.Point(0, 0),
-													anchor: new naver.maps.Point(12, 34)
-												}
-											});
-									markers.push(marker);
-									naver.maps.Event.addListener(marker, 'click', function (e) {
-										// Smoothly move the map to the clicked position and adjust zoom level
-										map.morph(e.coord, map.getZoom() + 1);
-									});
-								}
-							},
-							error: function(){
-								console.log("실패")
+				// Wait for all AJAX requests to finish
+				$.when.apply($, promises).then(function() {
+					// All AJAX requests are complete, now create markers
+					for (let i = 0; i < SeoulDistricts.length; i++) {
+
+						if(SeoulDistricts[i].count != 0){
+							
+							var marker = new naver.maps.Marker({
+							position: new naver.maps.LatLng(SeoulDistricts[i].coordinates.latitude, SeoulDistricts[i].coordinates.longitude),
+							map: map,
+							icon: {
+								content: [
+									'<div class="jachi-outer">',
+										'<div>',
+											'<span class="jachi-inner">' + SeoulDistricts[i].count + '</span>',
+											'</div>',
+											SeoulDistricts[i].name_kr + '</div>'
+										].join(''),
+										size: new naver.maps.Size(25, 34),
+								scaledSize: new naver.maps.Size(25, 34),
+								origin: new naver.maps.Point(0, 0),
+								anchor: new naver.maps.Point(12, 34)
 							}
 						});
-					})(i);
-				}
+						markers.push(marker);
+						naver.maps.Event.addListener(marker, 'click', function (e) {
+							map.morph(e.coord, map.getZoom() + 1);
+						});
+					}
+					}
+				});
+
+				
 			}else if(zoomLevel == 13 || zoomLevel == 14){
 
 				// 마커 제거
@@ -240,56 +254,57 @@
 				}
 
 				let dongCoords = load();
+				var promises = [];
 
 				const getData = () => {
 					dongCoords.then((appData) => {
-						// console.log(appData[1].center_lati);
-						// console.log(appData[1].emd_nm);
 						for (let i = 0; i < appData.length; i++) {
-							(function(i) {
-								$.ajax({
-									url: "countDong.ma",
-									data: {dong : appData[i].emd_nm},
-									success: function(count){
-				
-										if(count != 0){
-				
-											var marker = new naver.maps.Marker({
-												position: new naver.maps.LatLng(appData[i].center_lati, appData[i].center_long),
-												map: map,
-												icon: {
-													content: [
-														'<div class="jachi-outer">',
-															'<div>',
-																'<span class="jachi-inner">' + count + '</span>',
-																'</div>',
-																appData[i].emd_nm+ '</div>'
-															].join(''),
-															size: new naver.maps.Size(25, 34),
-															scaledSize: new naver.maps.Size(25, 34),
-															origin: new naver.maps.Point(0, 0),
-															anchor: new naver.maps.Point(12, 34)
-														}
-													});
-											markers.push(marker);
-											naver.maps.Event.addListener(marker, 'click', function (e) {
-												// Smoothly move the map to the clicked position and adjust zoom level
-												map.morph(e.coord, map.getZoom() + 1);
-											});
-				
-										}
-									
-										},
-										error: function(){
-											console.log("실패")
+							let request = $.ajax({
+								url: "countDong.ma",
+								data: { dong: appData[i].emd_nm },
+								success: function (count) {
+									appData[i].count = count;
+								},
+								error: function () {
+									console.log("Failed to fetch data for", appData[i].emd_nm);
+								}
+							});
+							promises.push(request);
+						}
+
+						// Ensure all requests are complete before proceeding
+						$.when.apply($, promises).then(function () {
+							for (let i = 0; i < appData.length; i++) {
+								if (appData[i].count != 0) { // Ensure count is defined
+									var marker = new naver.maps.Marker({
+										position: new naver.maps.LatLng(appData[i].center_lati, appData[i].center_long),
+										map: map,
+										icon: {
+											content: [
+												'<div class="jachi-outer">',
+													'<div>',
+														'<span class="jachi-inner">' + appData[i].count + '</span>',
+													'</div>',
+													appData[i].emd_nm + '</div>'
+											].join(''),
+											size: new naver.maps.Size(25, 34),
+											scaledSize: new naver.maps.Size(25, 34),
+											origin: new naver.maps.Point(0, 0),
+											anchor: new naver.maps.Point(12, 34)
 										}
 									});
-								})(i);
+									markers.push(marker);
+									naver.maps.Event.addListener(marker, 'click', function (e) {
+										map.morph(e.coord, map.getZoom() + 1);
+									});
+								}
 							}
 						});
-					};
-
+					});
+				};
+				
 		getData();
+
 			}else if(zoomLevel >= 15){
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
@@ -298,7 +313,7 @@
 
 				setTimeout(() => {
 					detailMakers();
-				}, 300);
+				}, 100);
 			}
 		});
 
