@@ -46,14 +46,20 @@
             
                    <div id ="qna-sample"><button id="closeQnaDetailBtn">qna 상세 정보 닫기</button></div>
                 
-                 <div class="qna-detail-head-area"></div>
-                 <c:if test="${loginUser.userNickname eq qnaWriter }">
-                 </c:if>
-                 
-                 <div>
-                    <a class="qna-btn btn-primary" onclick="updateForm($('#qna-number').val())">qna 수정하기</a>
-                    <a class="qna-btn btn-danger" onclick="deleteQna($('#qna-number').val());">qna 삭제하기</a>
-                </div>
+               <div class="qna-detail-head-area">
+		                 <script>
+						
+							let qnaWriter = $("#qna-writer").val();
+						
+						</script>
+						
+		                 <c:if test="${loginUser.userNickname eq qnaWriter }"> </c:if>
+			                 <div>
+			                    <a class="qna-btn btn-primary" onclick="updateForm($('#qna-number').val())">qna 수정하기</a>
+			                    <a class="qna-btn btn-danger" onclick="deleteQna($('#qna-number').val());">qna 삭제하기</a>
+			                </div>
+		               
+                 </div>
                  
                  <script>
                  function deleteQna(){
@@ -104,7 +110,7 @@
                </script>
           
           </div>
-             <br>    
+          <br>    
       
     </div>
       
