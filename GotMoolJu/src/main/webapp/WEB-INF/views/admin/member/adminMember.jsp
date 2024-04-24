@@ -58,8 +58,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="card-header">
                   <h4 class="card-title">회원정보</h4>
                   <p class="category">
-		             <h6 style="margin-left: 90%; color: rightgray"> &lt; 총 회원 :  ${ pi.listCount } &gt;</h6>
-		           </p>
+		             <h6 style="margin-left: 89%; color: rightgray"> &lt; 총 회원 :  ${ adminPi.listCount } &gt;</h6>
+		          </p>
                 </div>
                  <div
 		            class="card-body all-icons"
@@ -78,7 +78,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <th class="text-right">Status</th>
                       </thead>
                       <tbody id="memberlistClick1">
-                        <c:forEach var="ad" items="${ list }">
+                        <c:forEach var="ad" items="${ admMemberList }">
 	                      <tr>
 	                        <td class="mno">${ ad.userNo }</td>
 	                        <td>${ ad.userId }</td>
@@ -109,7 +109,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <script>
 				$(function(){
 					$("#memberlistClick1>tr").click(function(){
-						console.log("눌림")
+						// console.log("눌림")
 		                  location.href = 'memberDetail.ad?mno=' + $(this).children(".mno").text();
 		               })
 				})
@@ -120,24 +120,24 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <ul class="pagination">
                 	
                 	<c:choose>
-                		<c:when test="${ pi.currentPage eq 1 }">
+                		<c:when test="${ adminPi.currentPage eq 1 }">
                    			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
                    		</c:when> 
                    		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="list.bo?cpage=${ pi.currentPage -1 }">Previous</a></li>
+                   			<li class="page-item"><a class="page-link" href="memberList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
                    		</c:otherwise>
                    	</c:choose>
                    	
-                   	<c:forEach var="p" begin="${ pi.startPage }" end="${ pi.endPage }">
-                   		<li class="page-item"><a class="page-link" href="list.bo?cpage=${ p }">${ p }</a></li>
+                   	<c:forEach var="p" begin="${ adminPi.startPage }" end="${ adminPi.endPage }">
+                   		<li class="page-item"><a class="page-link" href="memberList.ad?cpage=${ p }">${ p }</a></li>
                     </c:forEach>
                     
                     <c:choose>
-                    	<c:when test="${ pi.currentPage eq pi.maxPage }">
+                    	<c:when test="${ adminPi.currentPage eq adminPi.maxPage }">
 							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
         				</c:when>
         				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="list.bo?cpage=${ pi.currentPage + 1 }">Next</a></li>
+        					<li class="page-item"><a class="page-link" href="memberList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
         				</c:otherwise>
         			</c:choose>
                 </ul>

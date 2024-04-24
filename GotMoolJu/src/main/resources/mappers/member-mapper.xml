@@ -135,14 +135,14 @@
 	
 	<!-- ad. 회원 리스트 조회 서비스 (select) -->	
 	<!-- ad. 회원 전체 숫자 조회용 -->	  
-	<select id="selectMemberCount" resultType="_int">
+	<select id="adminSelectMemberCount" resultType="_int">
 		select
 		       count(*)
 		  from tb_member
 	</select>
 	
 	<!-- ad. 회원 전체 리스트 조회용 -->
-	<select id="selectMemberList" resultMap="memberResult">
+	<select id="adminSelectMemberList" resultMap="memberResult">
 		 select
 		        user_no
 		      , user_id
@@ -157,20 +157,25 @@
 	</select>
 	
 	<!-- ad. 메인 화면, 회원 5명 정도 조회용 -->
-	<select id="selectMemberMiniList" resultMap="memberResult">
- 		 select
-		        user_no
-		      , user_id
-		      , user_nickname
-		      , user_phone
-		   from tb_member
-          where user_status = 'Y'
-		  order 
-     		 by user_no
+	<select id="adminSelectMemberMiniList" resultMap="memberResult">
+		 select *
+		   from 
+		      (
+		 		select
+				        user_no
+				      , user_id
+				      , user_nickname
+				      , user_phone
+				   from tb_member
+		          where user_status = 'Y'
+				  order 
+		     		 by user_no
+		      )
+		 where rownum between 1 and 5 
 	</select>
 	 
 	 <!-- ad. 회원 상세 정보 조회 페이지, detailForm, 사진 o -->
-	 <select id="selectMemberDetail" resultMap="memberResult">
+	 <select id="adminSelectMemberDetail" resultMap="memberResult">
 	   select
 	          user_no
 	        , user_id
@@ -189,7 +194,7 @@
 	 </select>
 	 
 	 <!-- ad. 회원 디테일 폼 status 변경 -->
-	<update id="updateMemberDetail">
+	<update id="adminUpdateMemberDetail">
 	    update
 	           tb_member
 	       set user_status = #{userStatus}

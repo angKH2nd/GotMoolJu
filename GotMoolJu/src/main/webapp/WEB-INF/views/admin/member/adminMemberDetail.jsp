@@ -47,7 +47,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <jsp:include page="../common/adminThinHeader.jsp" />
 
      	<form id="adminDetailForm" method="post" action="memberDetail.ad" enctype="multipart/form-data">
-		<input type="hidden" name="mno" value="${ m.userNo }">
+		<input type="hidden" name="mno" value="${ adminM.userNo }">
     <div class="wrapper" style="height:auto">
       <div class="main-panel" id="main-panel">
         <div class="content">
@@ -65,7 +65,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="text"
 	                            class="form-control"
-	                            value="${ m.userNickname }"
+	                            value="${ adminM.userNickname }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -77,7 +77,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="text"
 	                            class="form-control"
-	                            value="${ m.userName }"
+	                            value="${ adminM.userName }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -89,7 +89,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="text"
 	                            class="form-control"
-	                            value="${ m.userId }"
+	                            value="${ adminM.userId }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -103,7 +103,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="text"
 	                            class="form-control"
-	                            value="${ m.userPhone }"
+	                            value="${ adminM.userPhone }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -115,7 +115,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="email"
 	                            class="form-control"
-	                            value="${ m.userEmail }"
+	                            value="${ adminM.userEmail }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -130,7 +130,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                            type="text"
 	                            class="form-control"
 	                            placeholder="Home Address"
-	                            value="${ m.userAddress }"
+	                            value="${ adminM.userAddress }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -158,7 +158,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                          <input
 	                            type="text"
 	                            class="form-control"
-	                            value="${ m.userGender }"
+	                            value="${ adminM.userGender }"
 	                            readonly
 	                            style="background-color: whitesmoke"
 	                          />
@@ -207,7 +207,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 								                    
 	                     <script>
 							  window.onload = function() {
-							    var userStatus = '${ m.userStatus }'; // 현재 고객의 status 값
+							    var userStatus = '${ adminM.userStatus }'; // 현재 고객의 status 값
 							    document.querySelector('#statusSelect').value = userStatus;
 							  }
 						  </script>
@@ -232,7 +232,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                            class="form-control"
 	                            readonly
 	                            style="background-color: white"
-	                          >${ m.userEnrollDate }</textarea>
+	                          >${ adminM.userEnrollDate }</textarea>
 	                        </div>
 	                        <div style="width: 48%; height: 48%">
 	                          <label>회원정보 수정일</label>
@@ -242,7 +242,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                            class="form-control"
 	                            readonly
 	                            style="background-color: white"
-	                          >${ m.userModifyDate }</textarea>
+	                          >${ adminM.userModifyDate }</textarea>
 	                        </div>
 	                      </div>
 	                    </div>
@@ -253,13 +253,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	            <div class="col-md-4">
 	              <div class="card card-user">
 	              	<c:choose>
-	              	 <c:when test="${ m.userStatus eq 'A' }">
+	              	 <c:when test="${ adminM.userStatus eq 'A' }">
 	                	<div class="image" style="background-color: darkgreen">
 		             </c:when>
-		             <c:when test="${ m.userStatus eq 'B' }">
+		             <c:when test="${ adminM.userStatus eq 'B' }">
 	                	<div class="image" style="background-color: darkgray">
 		             </c:when>
-		             <c:when test="${ m.userStatus eq 'N' }">
+		             <c:when test="${ adminM.userStatus eq 'N' }">
 	                	<div class="image" style="background-color: darkred">
 		             </c:when>
 		             <c:otherwise>
@@ -272,14 +272,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <img
 	                      	style="background-color: white"
 	                        class="avatar border-gray"
-	                        src="${ m.userUpdateName }"
+	                        src="${ adminM.userUpdateName }"
 	                        alt="..."
 	                      />
-	                      <h5 class="title">${ m.userNickname }</h5>
-	                    <p class="description">${ m.userId }</p>
+	                      <h5 class="title">${ adminM.userNickname }</h5>
+	                    <p class="description">${ adminM.userId }</p>
 	                  </div>
-	                  <p class="description text-center">${ m.userEmail }</p>
-	                  <p class="description text-center">${ m.userEnrollDate }</p>
+	                  <p class="description text-center">${ adminM.userEmail }</p>
+	                  <p class="description text-center">${ adminM.userEnrollDate }</p>
 	                </div>
 	                <hr />
 	                <div class="button-container">
@@ -320,14 +320,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 					 -->
 	                <button
 	                  id="detailFormUp"
-	                  style="background-color: #12192c; color: whitesmoke;
+	                  class="btn btn-round btn-primary"
+	                  style="background-color: #12192c; color: whitesmoke; width: 95px; float:right;
 	                  text-align: center;
-	                  width:350px;
 	                  text-decoration: none !important"
 	                  onclick="updateLink();" 
 	                  type="button"
 	                  >저장</button>
-	                   <input type="hidden" id="admUpdateUserNo" value=${ m.userNo }>
+	                   <input type="hidden" id="admUpdateUserNo" value=${ adminM.userNo }>
 	                    
 	              </div>
 	              

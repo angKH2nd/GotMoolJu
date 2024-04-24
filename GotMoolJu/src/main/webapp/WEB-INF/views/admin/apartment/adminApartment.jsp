@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> 
 <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +13,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>갓물주</title>
     <style>
-	    #announcementListClick1:hover {
+	    #aptListClick1:hover {
 		  cursor: pointer;
 		}
     </style>
@@ -56,10 +57,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">공지사항</h4>
+                  <h4 class="card-title">부동산정보</h4>
                   <p class="category">
-		             <h6 style="margin-left: 86%; color: rightgray"> &lt; 공지사항 개수 : ${ adminPi.listCount } &gt;</h6>
-		           </p>
+		             <h6 style="margin-left: 89%; color: rightgray"> &lt; 총 개수 :  # &gt;</h6>
+		          </p>
                 </div>
                  <div
 		            class="card-body all-icons"
@@ -67,62 +68,59 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		          >
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="announcementList">
+                    <table class="table" id="admAptList">
                       <thead class="text-primary">
 	                      <th>No</th>
-	                      <th>Writer</th>
-	                      <th style="width:45%">Title</th>
-	                      <th>Views</th>
-	                      <th>Created Date</th>
-	                      <th class="text-right">Status</th>
+	                      <th>Image</th>
+	                      <th>Apt Name</th>
+	                      <th>Ex</th>
+	                      <th>Payment</th>
+	                      <th>Price</th>
+	                      <th>Ex2</th>
+	                      <th>Status</th>
+	                      <th class="text-right"></th>
                       </thead>
-                      <tbody id="announcementListClick1">
-	                      <c:forEach var="ad" items="${ admAnnouncementList }">
-		                      <tr>
-		                        <td class="ano">${ ad.announcementNo }</td>
-		                        <td>${ ad.announcementWriter }</td>
-		                        <td>${ ad.announcementTitle }</td>
-		                        <td>${ ad.announcementCount }</td>
-		                        <td>${ ad.announcementCreateDate }</td>
-		                        
-		                        <c:choose>
-			                        <c:when test="${ ad.announcementStatus eq 'Y' }">
-			                        	<td class="text-right" style="color: blue">${ ad.announcementStatus }</td>
-			                     	</c:when>
-			                     	<c:otherwise>
-			                     		<td class="text-right" style="color: red">${ ad.announcementStatus }</td>
-			                     	</c:otherwise>
-		                     	</c:choose>
-		                      </tr>
-	                      </c:forEach>
-
-	                     <%--
-	                      <script>
-	                      $(function(){
-	                    	    $("#dd").click(function(){ // 클릭 이벤트가 발생했을 때
-	                    	        console.log(list); // 콘솔에 메시지 출력
-	                    	    });
-	                    	});
-	                      
-	                      </script>
-	                       --%>
+                      <tbody id="aptListClick1">
+	                      <tr>
+	                        <td class="pno">1000</td>
+	                        <td>
+                            	<img style="width: 100px; height: 100px;" src="https://d1774jszgerdmk.cloudfront.net/512/acef62d1-6d73-46f7-bb3a-0ef26c9e3157" alt="">
+                          	</td>
+	                        <td>목동우성2차</td>
+	                        <td>고층, 106.16m², 관리비 26만</td>
+	                        <td>매매</td>
+	                        <td>12억</td>
+	                        <td>입구동 편의시설접근 좋음 로얄동 로얄층 거실확장 주인거주상태좋음</td>
+	                        <td>Y</td>
+                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
+	                      </tr>
+	                      <tr>
+	                        <td class="pno">1001</td>
+	                        <td>
+                            	<img style="width: 100px; height: 100px;" src="https://d1774jszgerdmk.cloudfront.net/512/438410c9-11f1-48b6-8747-458d9b0a7fc0" alt="">
+                          	</td>
+	                        <td>목동우성2차</td>
+	                        <td>18층, 106.16m², 관리비 26만</td>
+	                        <td>매매</td>
+	                        <td>10억9000</td>
+	                        <td>최선호동 세안고매매, 구수리 목동학군 봉영중 목동고</td>
+	                        <td>Y</td>
+                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
+	                      </tr>
                       </tbody>
                     </table>
-                    <td class="text-center">
-                       <a href="announcementEnrollForm.ad" class="btn btn-round btn-primary" style="background-color: #12192c; float: right; color:whitesmoke">등록하기</a>
-                    </td>
                   </div>
-                  <br>
-                  
+                
+                <%--
                 <script>
 				$(function(){
-					$("#announcementListClick1>tr").click(function(){
+					$("#aptListClick1>tr").click(function(){
 						// console.log("눌림")
-		                  location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
+		                  location.href = 'AptDetail.ad?pno=' + $(this).children(".pno").text();
 		               })
 				})
 				</script>
-				
+                 --%>
                 
             <div id="pagingArea" style="float:right">
                 <ul class="pagination">
@@ -132,12 +130,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                    			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
                    		</c:when> 
                    		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
+                   			<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
                    		</c:otherwise>
                    	</c:choose>
                    	
                    	<c:forEach var="p" begin="${ adminPi.startPage }" end="${ adminPi.endPage }">
-                   		<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ p }">${ p }</a></li>
+                   		<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ p }">${ p }</a></li>
                     </c:forEach>
                     
                     <c:choose>
@@ -145,12 +143,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
         				</c:when>
         				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="announcementList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
+        					<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
         				</c:otherwise>
         			</c:choose>
                 </ul>
             </div>
-             
             
               </div>
             </div>
@@ -158,9 +155,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
       </div>
     </div>
-  </div>
- </div>  
-    
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>

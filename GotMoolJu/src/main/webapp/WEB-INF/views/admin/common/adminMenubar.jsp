@@ -60,15 +60,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="announcementDetailList.ad">
-                <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>잠깐 공지사항 디테일</p>
+              <a href="aptList.ad">
+                <i class="now-ui-icons travel_istanbul"></i>
+                <p>부동산</p>
               </a>
             </li>
             <li>
-              <a href="./notifications.html">
-                <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>Notifications</p>
+              <a href="qnaList.ad">
+                <i class="now-ui-icons ui-1_send"></i>
+                <p>Q&A</p>
               </a>
             </li>
             <li>

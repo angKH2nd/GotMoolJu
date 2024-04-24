@@ -48,7 +48,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
 <!-- 여기서부터 -->
-   <div class="wrapper ">
+ <form id="adminAnnoEnrollForm" method="post" action="announcementEnroll.ad">
+   <div class="wrapper">
     <div class="main-panel" id="main-panel" >
       <!-- End Navbar -->
       <div class="content"">
@@ -64,21 +65,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <table class="table" >
                     <thead>
                       <th>Title</th>
-                      <th><input id="anno-content" class="anno-content" type="text" placeholder="제목을 입력해 주세요." style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px;"></th>
+                      <th><input id="anno-content" name="announcementTitle" class="anno-content" type="text" placeholder="제목을 입력해 주세요." style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px;"></th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Content</td>
                          <td>
-						   <textarea id="anno-content" class="anno-content" placeholder="내용을 입력해 주세요." style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none;"></textarea>
+						   <textarea id="anno-content" name="announcementContent" class="anno-content" placeholder="내용을 입력해 주세요." style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none;"></textarea>
 						 </td>
                       </tr>
                       <tr>
                         <td>
-                          <a href="#" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">뒤로가기</a>
+                          <a href="announcementList.ad" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">뒤로가기</a>
                         </td>
                         <td>
-                          <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">등록하기</a>
+                          <button type="submit" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">등록하기</a>
                         </td>
                       </tr>
                     </tbody>
@@ -91,7 +92,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
   </div>
-    
+ </form>   
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>

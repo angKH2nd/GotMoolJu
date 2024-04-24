@@ -123,5 +123,36 @@
 			 , #{impReplyType}
 			 )
 	</insert>
+	
+	<!-- admin -->
+	<!-- 개선사항 3개 정도 조회용 -->
+	<select id="adminImprovementMiniList" resultMap="impReplyResult">
+	    select *
+	      from (
+	             select
+	                    imp_reply_no
+	                  , imp_reply_content
+	                  , user_id as IMP_REPLY_WRITER
+	                  , imp_reply_create_date
+	                  , imp_reply_type
+	               from 
+	                    tb_improvement
+	               join 
+	                    tb_member on (imp_reply_writer = user_nickname)
+	              where imp_reply_status = 'Y'
+	              order
+	                 by imp_reply_no desc
+	            )
+	      where rownum between 1 and 3	  
+	
+	
+	</select>
+	
+	
+	
+	
+	
+	
+	
 	 
 </mapper>

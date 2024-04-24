@@ -47,8 +47,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <jsp:include page="../common/adminMenubar.jsp" />
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
+    
 <!-- 여기서부터 -->
-   <div class="wrapper ">
+ <form id="adminAnnouncementUpdateForm" method="post" action="announcementUpdate.ad">
+  <input type="hidden" name="announcementNo" value="${ adminA.announcementNo }">
+   <div class="wrapper">
     <div class="main-panel" id="main-panel" >
       <!-- End Navbar -->
       <div class="content"">
@@ -64,21 +67,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <table class="table" >
                     <thead>
                       <th>Title</th>
-              		  <th><input id="anno-content" class="anno-content" type="text" placeholder="기존 입력했던 제목" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px;"></th>
+              		  <th><input id="anno-content" name="announcementTitle" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px;"></th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Content</td>
                         <td>
-                        	<textarea id="anno-content" class="anno-content" placeholder="기존 입력했던 내용" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none;"></textarea>
+                        	<textarea id="anno-content" name="announcementContent" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none;">${ adminA.announcementContent }</textarea>
                      	</td>
                       </tr>
                       <tr>
                         <td>
-                          <a href="#" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">뒤로가기</a>
+                          <a href="announcementList.ad" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 125px; background-color:#12192c; color:whitesmoke;">뒤로가기</a>
                         </td>
                         <td>
-                          <a target="_blank" href="#" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">수정하기</a>
+                          <button type="submit" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">수정하기</button>
                         </td>
                       </tr>
                     </tbody>
@@ -91,6 +94,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
   </div>
+ </form>
     
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>

@@ -3,24 +3,156 @@
 <mapper namespace="qnaMapper">
 
 	<resultMap id="qnaResult" type="Qna">
-       <result column="qna_no" property="qnaNo"/>
-       <result column="qna_writer" property="qnaWriter"/>
-       <result column="qna_title" property="qnaTitle"/>
-       <result column="qna_content" property="qnaContent"/>
-       <result column="qna_date" property="qnaCreateDate"/>
-       <result column="qna_answer_status" property="qnaAnswerStatus"/>
-       <result column="qna_type" property="qnaType"/>
-       
-    </resultMap>
-    
-    <resultMap id="replyResult" type="QnaAnswer">
+		<result column="qna_no" property="qnaNo"/>
+		<result column="qna_writer" property="qnaWriter"/>
+		<result column="qna_title" property="qnaTitle"/>
+		<result column="qna_content" property="qnaContent"/>
+		<result column="qna_create_date" property="qnaCreateDate"/>
+		<result column="qna_modify_date" property="qnaModifyDate"/>
+		<result column="qna_answer_status" property="qnaAnswerStatus"/>
+		<result column="qna_type" property="qnaType"/>
+		<result column="qna_status" property="qnaStatus"/>
+	</resultMap>
+	
+	<resultMap id="qnaAnswerResult" type="QnaAnswer">
+		<result column="qna_answer_no" property="qnaAnswerNo"/>
+		<result column="qna_answer_ref_no" property="qnaAnswerRefNo"/>
+		<result column="qna_answer_content" property="qnaAnswerContent"/>
+		<result column="qna_answer_writer" property="qnaAnswerWriter"/>
+		<result column="qna_answer_create_date" property="qnaAnswerCreateDate"/>
+		<result column="qna_answer_modify_date" property="qnaAnswerModifyDate"/>
+		<result column="qna_answer_type" property="qnaAnswerType"/>
+		<result column="qna_answer_status" property="qnaAnswerStatus"/>
+	</resultMap>
+	
+	<resultMap id="replyResult" type="QnaAnswer">
     	<result column="answer_content" property="qnaAnswerContent"/>
      	<result column="answer_date" property="qnaAnswerCreateDate"/>
     
     </resultMap>
-    
-    
-    <select id="selectListCount" resultType="_int">
+
+	<!-- admin -->
+	<!-- qna 미니 리스트 -->
+	<select id="adminSelectQnaMiniList" resultMap="qnaResult">
+		select *
+		  from (
+		         select
+		                qna_no
+		              , user_id as QNA_WRITER
+		              , qna_title
+		              , qna_create_date
+		              , qna_type
+		           from 
+		           		tb_qna
+                   join 
+                        tb_member on (qna_writer = user_no)
+		          where qna_status = 'Y'
+		          order
+		             by qna_no desc
+		        )
+		  where rownum between 1 and 3	
+	
+	</select>
+	
+	<!-- qna 리스트 -->
+	<select id="adminSelectQnaList" resultMap="qnaResult">
+	    select 
+	           qna_no
+	         , user_id as QNA_WRITER
+	         , qna_title
+	         , qna_content
+	         , qna_create_date
+	         , qna_modify_date
+	         , qna_answer_status
+	         , qna_type
+	         , qna_status
+	      from tb_qna
+	      join tb_member on (qna_writer = user_no)
+		 order
+            by qna_no desc
+	</select>
+
+	<!-- qna 개수 -->
+	<select id="adminSelectQnaListCount" resultType="_int">
+		    select
+           count(*)
+      from tb_qna
+	
+	</select>
+	
+	<!-- qna 답변 리스트 -->
+	<select id="adminSelectQnaAnswerList" resultMap="qnaAnswerResult">
+	    select 
+	           qna_answer_no
+	         , qna_answer_ref_no
+	         , qna_answer_content
+	         , user_nickname as QNA_ANSWER_WRITER
+	         , qna_answer_create_date
+	         , qna_answer_modify_date
+	      from tb_qna_answer
+	      join tb_member on (user_no = qna_answer_writer)
+	      join tb_qna on (qna_answer_ref_no = qna_no)
+	</select>
+
+	<!-- qna 리스트 삭제 -->
+	<update id="adminDeleteQnaList">
+		update 
+	           tb_qna
+	       set qna_status = 'N'
+	     where qna_no = #{ qnaNo }
+	       and qna_status = 'Y'
+       
+	</update>
+
+	<!-- qna 답글 등록 -->
+	<insert id="adminEnrollQnaAnswer">
+	   insert
+		 into tb_qna_answer
+			(
+	          qna_answer_no
+	        , qna_answer_ref_no
+	        , qna_answer_content
+	        , qna_answer_writer
+	        , qna_answer_create_date
+	        , qna_answer_type
+	        , qna_answer_status
+	        ) 
+	   values
+	        (
+	          seq_qna_answer_no.nextval
+	        , #{qnaNo}
+	        , #{qnaAnswerContent}
+	        , 0
+	        , sysdate
+	        , #{qnaType}
+	        , 'Y'
+	        )
+			
+	</insert>
+	
+	<!-- qna 답글 등록 시 qna 답변 완료로 수정 -->
+	<update id="adminEnrollQnaAnswerQnaUpdate">
+	    update 
+	    	   tb_qna
+	       set qna_answer_status = 'Y'
+	     where qna_no = #{qnaNo}
+	       and qna_status = 'Y'
+	       
+	</update>
+
+
+	<!-- qna 답글 수정 -->
+	<update id="adminUpdateQnaAnswer">
+	     update 
+	     		tb_qna_answer
+	        set qna_answer_content = #{qnaAnswerContent}
+	          , qna_answer_modify_date = sysdate
+	      where qna_answer_ref_no = #{qnaNo}
+	
+	</update>
+
+
+	    <select id="selectListCount" resultType="_int">
     	select
     			count(*) as "count"
     		from tb_qna
@@ -95,5 +227,5 @@
 			 , #{qnaType}
 			 )
 	</insert>
-
+	
 </mapper>
