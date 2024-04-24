@@ -83,37 +83,34 @@ if(!Kakao.isInitialized()) { // init 체크
 	Kakao.init('4c522fb47a87ee4e17b005d7a33f1f99');
 }
 
-var sendKakao = function() {
-    // 메시지 공유 함수
+function kakaoShare() {
+	var baseUrl = '192.168.20.37:8222';
+    var gotUrl = baseUrl + '/got';
+
     Kakao.Link.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '제목을 여기에 씁니다.',
-      description: '내용을 여기에 씁니다',
-      imageUrl:
-        'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeB1Yj7%2Fbtrn8HKdp01%2FlZMtAuvo986os4dCkVoAOk%2Fimg.png',
-      imageWidth: 1200,
-      imageHeight: 630,
-      link: {
-        mobileWebUrl: 'https://developers.kakao.com',
-        androidExecutionParams: 'test',
-      },
-    },
-    itemContent: {
-      profileText: '송송',
-      profileImageUrl:
-        'https://tistory1.daumcdn.net/tistory/373748/attach/af0ef0205e234b4f9f09d7bce27dd237',
-    },
-    buttons: [
-      {
-        title: '블로그 둘러보기',
-        link: {
-          mobileWebUrl: 'https://songsong.dev',
-          webUrl: 'https://songsong.dev',
+        objectType: 'feed',
+        content: {
+        	title: '갓물주와 함께 내집마련을!',
+        	description: '우리는 사람과 집을 연결하고, 더 나은 삶의 방식을 만듭니다.',
+        	imageUrl: 'resources/images/got/got_logo_big.jpg',
+        	link: {
+	            mobileWebUrl: gotUrl,
+	            webUrl: gotUrl,
+        	},
         },
-      },
-    ],
-  });
-};
+      	buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+              mobileWebUrl: gotUrl,
+              webUrl: gotUrl,
+          },
+        },
+      	],
+        // 카카오톡 미설치 시 카카오톡 설치 경로이동
+        installTalk: true,
+    })
+}
+
 
 /* ----------------- SNS ----------------- */
