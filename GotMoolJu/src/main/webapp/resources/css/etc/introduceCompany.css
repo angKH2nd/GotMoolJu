@@ -1,1 +1,61 @@
 @charset "UTF-8";
+
+.introduce-form>div {
+	width: 100%;
+}
+
+.introduce-title {
+	height: 200px;
+}
+
+.introduce-center {
+	height: 50px;
+	margin-top: 15px;
+}
+
+.introduce-bottom {
+	height: 400px;
+	margin-top: 15px;
+}
+
+.introduce-bottom>div {
+	width: 100%;
+}
+
+.introduce-bottom-title {
+	height: 50px;
+}
+
+.introduce-bottom-member {
+	height: calc(100% - 50px);
+}
+
+.introduce-bottom-member>div {
+	width: 100%;
+	height: 60px;
+}
+
+.introduce-bottom-member>div>div {
+	height: 100%;
+}
+
+.introduce-member-img {
+	width: 45px;
+	padding-left: 10px;
+}
+
+.introduce-member-name {
+	width: 70px;
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+.introduce-member-sns {
+	width: 45px;
+}
+
+.introduce-member-link {
+	width: calc(100% - 170px);
+	padding-right: 10px;
+}
+

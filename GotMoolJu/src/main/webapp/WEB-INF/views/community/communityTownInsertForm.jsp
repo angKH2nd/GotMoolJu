@@ -15,7 +15,7 @@
 				<input class="town-insert-title-input fb" placeholder="제목을 입력해주세요." required>
 			</div>
 			<div class="town-insert-content">
-				<textarea class="town-insert-content-text fb" placeholder="내용을 입력해주세요." required onkeyup="calTownContentLength();"></textarea>
+				<textarea class="town-insert-content-text fb" placeholder="내용을 입력해주세요." required onkeyup="calTownContentLength();" maxlength=300></textarea>
 			</div>
 			<div class="town-insert-count"><span id="town-insert-textarea-count">0</span>/300</div>
 			<div class="town-insert-picture">

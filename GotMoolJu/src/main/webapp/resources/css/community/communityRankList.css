@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+.town-rank-main-rank-list-area {
+	width: 100%;
+	height: 100%;
+}
+
+.town-rank-main-rank-list-area>div {
+	width: 100%;
+	height: 80px;
+	animation: colorful-border 5s infinite;
+	border: 0.5px solid transparent;
+	margin-bottom: 15px;
+}
+
+.town-rank-thing>div{
+	height: 100%;
+}
+
+.town-rank-icon {
+	width: 35px;
+}
+
+.town-rank-img {
+	width: 50px;
+}
+
+.town-rank-nickname {
+	width: 210px;
+}
+
+.town-rank-count {
+	width: 20px;
+}
+
+.town-rank-text {
+	width: 20px;
+}
+
+.town-rank-blank {
+	width: calc(100% - 335px);
+}
+
+.crown0 {
+	color: red;
+}
+
+.crown1 {
+	color: orange;
+}
+
+.crown2 {
+	color: green;
+}
+
+.crown3 {
+	color: blue;
+}
+
+.crown4 {
+	color: purple;
+}
+
+@keyframes colorful-border {
+    0% { border-color: #ff0000; }
+    25% { border-color: #00ff00; }
+    50% { border-color: #0000ff; }
+    75% { border-color: #ffff00; }
+    100% { border-color: #ff00ff; }
+}
+
+.town-rank-thing:nth-child(1) {animation: colorful-border 5s infinite 0s;}
+.town-rank-thing:nth-child(2) {animation: colorful-border 5s infinite 1s;}
+.town-rank-thing:nth-child(3) {animation: colorful-border 5s infinite 2s;}
+.town-rank-thing:nth-child(4) {animation: colorful-border 5s infinite 3s;}
+.town-rank-thing:nth-child(5) {animation: colorful-border 5s infinite 4s;}
+
+.town-rank-main-line {
+	width: 100%;
+	height: 5px;
+	background-color: #f3f3f3;
+	
+}

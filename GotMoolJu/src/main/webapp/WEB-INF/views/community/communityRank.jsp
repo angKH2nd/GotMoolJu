@@ -9,7 +9,16 @@
 <link rel="stylesheet" href="resources/css/community/communityRank.css">
 </head>
 <body>
-	여기 communityRank.jsp임
+	<div class="town-rank-form">
+		<div class="town-rank-main">
+			<div class="town-rank-main-header centerY"><span style="color: purple"> &nbsp;명예의 전당&nbsp; </span> 에 등록된 유저들이에요 😎</div>
+			<div class="town-rank-main-content no-scrollbar">
+				<div class="town-rank-main-list">
+					<%@ include file="./communityRankList.jsp" %>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="resources/js/community/communityRank.js"></script>
 </body>
 </html>

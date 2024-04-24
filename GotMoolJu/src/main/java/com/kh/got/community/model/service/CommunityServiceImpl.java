@@ -85,6 +85,36 @@ public class CommunityServiceImpl implements CommunityService {
 	public int insertTownReply(TownReply tr) {
 		return cDao.insertTownReply(sqlSession, tr);
 	}
+
+	@Override
+	public Town selectBestTownPicture() {
+		return cDao.selectBestTownPicture(sqlSession);
+	}
+
+	@Override
+	public int decreaseTownClick(int townNo) {
+		return cDao.decreaseTownClick(sqlSession, townNo);
+	}
+
+	@Override
+	public int deleteTown(int townNo) {
+		return cDao.deleteTown(sqlSession, townNo);
+	}
+
+	@Override
+	public int updateTown(Town t) {
+		return cDao.updateTown(sqlSession, t);
+	}
+
+	@Override
+	public ArrayList<Town> selectTownHotList() {
+		return cDao.selectTownHotList(sqlSession);
+	}
+
+	@Override
+	public ArrayList<Town> selectTownRankCount() {
+		return cDao.selectTownRankCount(sqlSession);
+	}
 	
 	
 }

@@ -22,6 +22,9 @@
 				<div class="town-main-detail no-scrollbar">
 					<%@ include file="./communityTownDetailForm.jsp" %>
 				</div>
+				<div class="town-main-update no-scrollbar">
+					<%@ include file="./communityTownUpdateForm.jsp" %>
+				</div>
 			</div>
 		</div>
 	</div>

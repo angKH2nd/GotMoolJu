@@ -49,6 +49,22 @@ function changeTownDetail(no) {
     }
 }
 
+function decreaseTownClick(no){
+	$.ajax({ // 조회수 감소
+		url: "decreaseTownClick.cm",
+		data: {townNo:no},
+		success: function(result){
+			if(result > 0){
+				
+			}else {
+				swal("동네소식 상세조회 실패!", "관리자에게 문의해주세요", 'warning');
+			}
+		}, error: function(){
+			swal("동네소식 상세조회 실패!", "관리자에게 문의해주세요", 'warning');
+		}
+	})
+}
+
 function selectTownDetail(no){
 	$.ajax({
 		url: "selectTownDetail.cm",
@@ -62,6 +78,20 @@ function selectTownDetail(no){
 			}else { // 즐겨찾기 아닌 경우
 				$(".town-detail-bottom-star-icon").html(`<i class="fa-regular fa-star"></i>`);
 			}
+			
+			let townDetailImg = "";
+			if(townDetail.townThumbnail !== undefined){
+				townDetailImg += `
+								   <img width=419 height=200 src="${townDetail.townThumbnail}">
+								 `;
+			}
+			if(townDetail.townDetailImg1 !== undefined){
+				townDetailImg += `
+								   <img width=419 height=200 src="${townDetail.townDetailImg1}">
+								 `;
+			}
+			
+			$(".town-detail-picture").html(townDetailImg);
 			
 			var value = "";
 			if(townReplyList.length > 0){ // 댓글 있는 경우
@@ -89,6 +119,18 @@ function selectTownDetail(no){
 			$(".town-detail-reply-content").html(value);
 			
 			$("#town-detail-form-townNo").val(townDetail.townNo);
+			
+			if($("#townDetailLoginCheck").val() !== 'n' && $("#townDetailLoginCheck").val() === townDetail.townWriter){
+				// delete 버튼 추가
+			    var deleteButtonHtml = `<button type="button" class="community-delete-button mh" onclick="changeTownDelete(${townDetail.townNo});"><i class="fa-solid fa-trash hoverZ"></i></button>`;
+			    
+			    // update 버튼 추가
+			    var updateButtonHtml = `<button type="button" class="community-update-button mh" onclick="changeTownUpdate(${townDetail.townNo});"><i class="fa-solid fa-pen-to-square hoverZ"></i></button>`;
+			    
+			    // back 버튼 앞에 delete 버튼과 update 버튼 추가
+			    $(".community-back-button").before(deleteButtonHtml);
+			    $(".community-back-button").before(updateButtonHtml);
+			}
 			
 			$(".town-detail-title").html(townDetail.townTitle);
 			$(".town-detail-member-img").html(`<img width=25 height=25 class="brc" src="${townDetail.townWriterImg}">`);

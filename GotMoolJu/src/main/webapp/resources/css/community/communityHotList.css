@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+.town-hot-main-hot-list-area {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: #f3f3f3;
+}
+
+.town-hot-main-hot-list-area>div {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	background-color: white;
+}
+
+.town-hot-main-post>div {
+	width: 100%;
+}
+
+.town-hot-post-profile {
+	height: 50px;
+}
+
+.town-hot-post-profile>div {
+	height: 100%;
+}
+
+.town-hot-post-profile-img {
+	width: 50px;
+}
+
+.town-hot-post-profile-nickname {
+	width: calc(100% - 80px);
+	padding-left: 10px;
+}
+
+.town-hot-post-profile-hot {
+	width: 30px;
+	color: red;
+}
+
+.town-hot-post-title {
+	height: 35px;
+}
+
+.town-hot-post-content {
+	height: auto;
+	min-height: 100px;
+	padding-top: 5px;
+}
+
+.town-hot-post-thumbnail {
+	height: 235px;
+	padding-top: 5px;
+}
+
+.town-hot-post-bottom {
+	height: 30px;
+	color: gray;
+}
+
+.town-hot-post-bottom>div {
+	height: 100%;
+}
+
+.town-hot-post-hot {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-hot-post-hot>div {
+	height: 100%;
+}
+
+.town-hot-post-hot-i {
+	width: 20px;
+}
+
+.town-hot-post-hot-num {
+	width: calc(100% - 20px);
+}
+
+.town-hot-post-likes {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-hot-post-likes>div {
+	height: 100%;
+}
+
+.town-hot-post-likes-i {
+	width: 20px;
+}
+
+.town-hot-post-likes-num {
+	width: calc(100% - 20px);
+}
+
+.town-hot-post-reply {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-hot-post-reply>div {
+	height: 100%;
+}
+
+.town-hot-post-reply-i {
+	width: 20px;
+}
+
+.town-hot-post-reply-num {
+	width: calc(100% - 20px);
+}
+
+.town-hot-post-count {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.town-hot-post-count>div {
+	height: 100%;
+}
+
+.town-hot-post-count-i {
+	width: 20px;
+}
+
+.town-hot-post-count-num {
+	width: calc(100% - 20px);
+}
+
+.town-hot-post-date {
+	width: 100px;
+}
+
+.town-hot-post-date>div {
+	height: 100%;
+}
+
+.town-hot-post-date-i {
+	width: 20px;
+}
+
+.town-hot-post-date-num {
+	width: calc(100% - 20px);
+}
+
+.town-hot-post-blank {
+	width: calc(100% - 300px);
+}
