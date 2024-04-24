@@ -11,7 +11,6 @@
 		<result column="announcement_status" property="announcementStatus" />
 	</resultMap>
 
-
 <!-- 메인화면, 공지글 5개 정도 조회용 -->
 	<select id="adminSelectAnnouncementMiniList" resultMap="announcementResult" >
 		select *
@@ -144,7 +143,7 @@
 		     , announcement_writer
 		     , announcement_count
 		     , announcement_content	
-		     , to_char(announcement_create_date, 'YYYY-MM-DD') as "create_date"
+		     , to_char(announcement_create_date, 'YYYY-MM-DD') as "announcement_create_date"
 		  from tb_announcement
 		 where announcement_status = 'Y'
 		 order

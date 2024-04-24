@@ -28,7 +28,6 @@
 	<resultMap id="replyResult" type="QnaAnswer">
     	<result column="answer_content" property="qnaAnswerContent"/>
      	<result column="answer_date" property="qnaAnswerCreateDate"/>
-    
     </resultMap>
 
 	<!-- admin -->
