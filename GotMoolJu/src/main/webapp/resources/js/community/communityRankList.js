@@ -3,22 +3,22 @@ function selectTownRankList() {
 		url: "townRankList.cm",
 		dataType: "json",
 		success: function(response) {
-			console.log(response);
 			if(response.length > 0){
 				var rankHtml = '';
 				for(let i = 0; i < response.length; i++){
+					var crown = 'crown' + i;
 					rankHtml += `
-								 <div class="town-rank-thing pd15">
-								 	<div class="town-rank-icon centerY fl">1</div>
+								 <div class="town-rank-thing pd15 br5">
+								 	<div class="town-rank-icon centerY fl"><i class="fa-solid fa-crown ${crown}"></i></div>
 								 	<div class="town-rank-img centerY fl"><img width=40 height=40 class="brc" src="${response[i].townWriterImg}"></div>
 								 	<div class="town-rank-nickname centerY fl">${response[i].townWriter}</div>
 								 	<div class="town-rank-blank centerY fl"></div>
-								 	<div class="town-rank-count centerY fl">5</div>
-								 	<div class="town-rank-text centerY fl">개</div>
+								 	<div class="town-rank-count centerY fl">${response[i].townStar}</div>
+								 	<div class="town-rank-text centerY fl">점</div>
 								 </div>
 								`
-					$(".town-rank-main-rank-list-area").html(rankHtml);
 				}
+				$(".town-rank-main-rank-list-area").html(rankHtml);
 			}else {
 				var noRankHtml = '';
 				

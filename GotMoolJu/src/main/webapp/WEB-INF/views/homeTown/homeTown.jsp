@@ -36,7 +36,7 @@
 					<div class="homeTown-count-comment" id="currentTime"></div>
 				</div>
 				<div class="homeTown-blank fl"></div>
-				<div class="homeTown-find fl mh"><img width=70 height=60 src="resources/images/got/got_logo_big.jpg"></div>
+				<div class="homeTown-find fl mh" onclick="openGot();"><img width=70 height=60 src="resources/images/got/got_logo_big.jpg"></div>
 			</div>
 			<div class="homeTown-search pd15" onclick="toggleHomeTownDiv('searchApt');"><input class="home-search-bar-design br5 mh" type="text" value="찾으시는 매물이 있으신가요?" readonly><i class="fa-solid fa-magnifying-glass" id="home-search-bar-design-i"></i></div>
 			<div class="homeTown-weather pd15"><%@ include file="./weather.jsp" %></div> 

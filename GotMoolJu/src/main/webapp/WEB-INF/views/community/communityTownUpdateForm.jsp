@@ -51,7 +51,7 @@
 			<input type="file" id="uploadCommunityUpdateFileInput4" class="uploadCommunityUpdateFileInput" onchange="handleUpdateFileInputChange(4)">
 			<input type="file" id="uploadCommunityUpdateFileInput5" class="uploadCommunityUpdateFileInput" onchange="handleUpdateFileInputChange(5)">
 			<div class="town-update-bottom-left fl mh">
-				<i class="fa-solid fa-image fa-xl" id="uploadCommunityFileIcon" onclick="uploadCommunityFiles();"></i>
+				<i class="fa-solid fa-image fa-xl" id="uploadCommunityFileIcon" onclick="uploadCommunityUpdateFiles();"></i>
 			</div>
 			<div class="town-update-bottom-right fl mh" onclick="updateTown();">
 				등록 <i class="fa-solid fa-paper-plane fa-xl"></i>

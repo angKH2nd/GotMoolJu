@@ -1,5 +1,5 @@
 // 파일 업로드 및 미리보기 기능 구현
-function uploadCommunityFiles() {
+function uploadCommunityUpdateFiles() {
     const fileInputs = document.querySelectorAll('.uploadCommunityUpdateFileInput');
 
     // 파일 입력 상자가 비어 있는지 확인
