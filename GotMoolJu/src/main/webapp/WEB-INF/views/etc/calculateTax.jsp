@@ -25,7 +25,124 @@
 		</div>
 		<div class="calculate-body no-scrollbar">
 			<div class="calculate-form pd15">
-				
+				<table>
+					<tr>
+						<th>취득세 계산(매매)</th>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="realEstateType" value="house"> 주택
+							<input type="radio" name="realEstateType" value="officetel"> 오피스텔
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="areaType" value="40"> 40㎡▾
+							<input type="radio" name="areaType" value="60"> 60㎡▾
+							<input type="radio" name="areaType" value="85"> 85㎡▾
+							<input type="radio" name="areaType" value="big"> 85㎡▴
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="own" value="one"> 1주택
+							<input type="radio" name="own" value="two"> 2주택
+							<input type="radio" name="own" value="three"> 3주택
+						</td>
+					</tr>
+					<tr>
+						<td>
+							취득가액 <input type="number" name="amount"> 만원
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button onclick="taxCalculate();">취득세 계산</button>
+						</td>
+					</tr>
+				</table>
+
+				<hr>
+
+				계산결과
+
+				<table border="1" id="taxResult">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>적요</th>
+							<th>값</th>
+							<th>비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+					</tbody>
+					</table>
+
+				<script>
+					function taxCalculate(){
+
+						console.log($("input[name=own]:checked").val())
+
+						$.ajax({
+							url:"tax.et",
+							data:{
+								realEstateType:$("input[name=realEstateType]:checked").val(),
+								areaType:$("input[name=areaType]:checked").val(),
+								own:$("input[name=own]:checked").val(),
+								amount:$("input[name=amount]").val()
+
+							},
+							success:function(data){
+								console.log(data)
+								let value = "";
+
+								for(let i in data.data){
+
+									value += "<tr>"
+										   + "<td>" + i + "</td>"
+										   + "<td>" + data.data[i]['적요'] + "</td>"
+										   + "<td>" + data.data[i]['값'] + "</td>"
+										   + "<td>" + data.data[i]['비고'] + "</td>"
+										   + "</tr>"
+								}
+
+								$("#taxResult tbody").html(value);
+
+							},
+							error:function(){
+								console.log("ajax 실패")
+							}
+
+
+
+
+						})
+
+
+
+
+
+
+
+					}
+
+
+
+
+
+
+				</script>	
+
+
+
 				<br><br><br><br><br>
 				<img src="resources/images/etc/taxImage.png" style="width: 100%; height: 20%;" alt="">
 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

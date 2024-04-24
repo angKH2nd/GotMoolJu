@@ -78,37 +78,6 @@ $(function(){
  
     }
 
-        // 클릭된 좌표로 줌 + 1 해서 이동
-    //     for (var i = 0, ii = markers.length; i < ii; i++) {
-    //       (function (index) {
-    //           naver.maps.Event.addListener(markers[index], 'click', function (e) {
-    //               // Smoothly move the map to the clicked position and adjust zoom level
-    //               map.morph(e.coord, map.getZoom() + 1);
-    //           });
-    //       })(i);
-    //   }
-
 })
 
 
-
-// var marker = new naver.maps.Marker({
-//     position: new naver.maps.LatLng(SeoulDistricts[i].coordinates.latitude, SeoulDistricts[i].coordinates.longitude),
-//     map: map,
-//     icon: {
-//         content: [
-//             '<div class="jachi-outer">',
-//                 '<div>',
-//                     '<span class="jachi-inner">' + 123 + '</span>',
-//                     '</div>',
-//                     SeoulDistricts[i].name_kr + '</div>'
-//                 ].join(''),
-//                 size: new naver.maps.Size(25, 34),
-//                 scaledSize: new naver.maps.Size(25, 34),
-//                 origin: new naver.maps.Point(0, 0),
-//                 anchor: new naver.maps.Point(12, 34)
-//             }
-//         });
-// markers.push(marker);
-
-// }
