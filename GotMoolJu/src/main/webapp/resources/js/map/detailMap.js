@@ -122,11 +122,48 @@ function toggleAptDetailDiv(className, no){
             saveRecentPropertyToCookie(data);
             
             showRecentProperties();
+            
+            test(no);
         },
         error : function(){
             swal("부동산 조회 실패!", "관리자에게 문의해주세요", 'warning');
         }
     });
+}
+
+
+function test(no){
+
+	let icon = document.getElementById('heartIcon');
+
+    $.ajax({
+        url:"selectLike.ma",
+        data:{
+            userNo : $("#userNo").val(),
+            aptNo: no
+        },
+        success:function(result){
+            console.log(result)
+            if(result > 0){
+                // 꽉찬 하트로 바꿔주고, 빨강
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                $("#heartIcon").css("color", "#ea0b2c");
+
+                // icon.classList.toggle('fa-regular');
+                // icon.classList.toggle('fa-solid');
+                // $("#heartIcon").css("color", "#ea0b2c");                
+            }else{ 
+                // 원본 유지 빈 하트
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                $("#heartIcon").css("color", "");
+            }
+        },
+        error:function(){
+            console.log("좋아요 조회 통신 실패");
+        }
+    })
 }
 
 function saveRecentPropertyToCookie(propertyData) {

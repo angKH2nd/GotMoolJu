@@ -229,6 +229,45 @@
 	
 	
 	
+	<insert id="insertSocial">
+		insert
+		  into tb_member
+		  (
+		    user_no
+		  ,	user_id
+		  , user_pwd
+		  , user_name
+		  , user_nickname
+		  , user_phone
+		  , user_email
+		  , user_address
+		  , user_area_no
+		  )
+		  values
+		  ( 
+		    seq_user_no.nextval
+		  , #{userId}
+		  , '1111'
+		  , #{userName}
+		  , #{userName}
+		  , '010-0000-0000'
+		  , #{userId}
+		  , '주소를 입력해주세요'
+		  , 1
+		  )
+	</insert>
 	
+	
+	
+	
+	
+	<!-- ad. 상세페이지 열었을때 좋아요 확인 -->
+	<select id="selectLikeYN" resultType="_int">
+		select count(*)
+		  from tb_dibs
+		 where dibs_user_no = #{dibsUserNo}
+		   and dibs_apt_no = #{dibsAptNo}
+		
+	</select>
 	
 </mapper>
