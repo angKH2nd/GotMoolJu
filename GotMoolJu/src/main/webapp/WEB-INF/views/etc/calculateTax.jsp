@@ -20,13 +20,15 @@
 				<img width=419 height=140 src="resources/images/advertisement/adv3.png">
 			</div>
 			<div class="calculate-text fs16 centerY">
-				민규(여)가 만들어주는 세금계산기
+				민규(남)가 만들어주는 세금계산기
 			</div>
 		</div>
 		<div class="calculate-body no-scrollbar">
 			<div class="calculate-form pd15">
-				여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기여기
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				
+				<br><br><br><br><br>
+				<img src="resources/images/etc/taxImage.png" style="width: 100%; height: 20%;" alt="">
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 		</div>

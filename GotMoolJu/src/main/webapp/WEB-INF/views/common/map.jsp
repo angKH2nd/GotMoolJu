@@ -62,7 +62,6 @@
 			{ name: "제주특별자치도", latitude: 33.4986, longitude: 126.5312 }
 			];
 			
-			var markers = [];
 
 		for (let i = 0; i < locations.length; i++) {
 		    var marker = new naver.maps.Marker({
@@ -303,7 +302,7 @@
 					});
 				};
 				
-		getData(); 
+		getData();
 
 			}else if(zoomLevel >= 15){
 				// 마커 제거
