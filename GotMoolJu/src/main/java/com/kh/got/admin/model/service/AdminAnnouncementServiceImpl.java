@@ -22,20 +22,20 @@ public class AdminAnnouncementServiceImpl implements AdminAnnouncementService {
 
 	// 메인 화면, 공지글 5개 정도 조회용
 	@Override
-	public ArrayList<Announcement> selectAnnouncementMiniList() {
-		return adminADao.selectAnnouncementMiniList(sqlSession);
+	public ArrayList<Announcement> adminSelectAnnouncementMiniList() {
+		return adminADao.adminSelectAnnouncementMiniList(sqlSession);
 	}
 
 	// 공지사항 전체 리스트 개수 / count
 	@Override
-	public int selectAnnouncementCount() {
-		return adminADao.selectAnnouncementCount(sqlSession);
+	public int adminSelectAnnouncementCount() {
+		return adminADao.adminSelectAnnouncementCount(sqlSession);
 	}
 
 	// 공지사항 전체 리스트
 	@Override
-	public ArrayList<Announcement> selectAnnouncementList(PageInfo adminPi) {
-		return adminADao.selectAnnouncementList(sqlSession, adminPi);
+	public ArrayList<Announcement> adminSelectAnnouncementList(PageInfo adminPi) {
+		return adminADao.adminSelectAnnouncementList(sqlSession, adminPi);
 	}
 
 	// 공지사항 디테일

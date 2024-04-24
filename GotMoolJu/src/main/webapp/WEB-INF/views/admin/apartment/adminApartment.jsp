@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> 
 <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,7 +77,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <th>Payment</th>
 	                      <th>Price</th>
 	                      <th>Ex2</th>
-	                      <th class="text-right">Status</th>
+	                      <th>Status</th>
+	                      <th class="text-right"></th>
                       </thead>
                       <tbody id="aptListClick1">
 	                      <tr>
@@ -89,7 +91,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                        <td>매매</td>
 	                        <td>12억</td>
 	                        <td>입구동 편의시설접근 좋음 로얄동 로얄층 거실확장 주인거주상태좋음</td>
-                        	<td class="text-right"> Y </td>
+	                        <td>Y</td>
+                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
 	                      </tr>
 	                      <tr>
 	                        <td class="pno">1001</td>
@@ -101,7 +104,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                        <td>매매</td>
 	                        <td>10억9000</td>
 	                        <td>최선호동 세안고매매, 구수리 목동학군 봉영중 목동고</td>
-                        	<td class="text-right"> Y </td>
+	                        <td>Y</td>
+                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
 	                      </tr>
                       </tbody>
                     </table>

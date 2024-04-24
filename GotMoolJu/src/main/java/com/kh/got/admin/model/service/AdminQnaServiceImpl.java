@@ -22,22 +22,28 @@ public class AdminQnaServiceImpl implements AdminQnaService {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
+	// qna 미니 리스트
+	@Override
+	public ArrayList<Qna> adminSelectQnaMiniList() {
+		return adminQDao.adminSelectQnaMiniList(sqlSession);
+	}
+	
 	// qna 리스트
 	@Override
-	public ArrayList<Qna> selectQnaList(PageInfo adminPi) {
-		return adminQDao.selectQnaList(sqlSession, adminPi);
+	public ArrayList<Qna> adminSelectQnaList(PageInfo adminPi) {
+		return adminQDao.adminSelectQnaList(sqlSession, adminPi);
 	}
 
 	// qna 개수
 	@Override
-	public int selectQnaListCount() {
-		return adminQDao.selectQnaListCount(sqlSession);
+	public int adminSelectQnaListCount() {
+		return adminQDao.adminSelectQnaListCount(sqlSession);
 	}
 
 	// qna answer list
 	@Override
-	public ArrayList<QnaAnswer> selectQnaAnswerList() {
-		return adminQDao.selectQnaAnswerList(sqlSession);
+	public ArrayList<QnaAnswer> adminSelectQnaAnswerList() {
+		return adminQDao.adminSelectQnaAnswerList(sqlSession);
 	}
 
 	// qna 리스트 삭제
@@ -63,6 +69,8 @@ public class AdminQnaServiceImpl implements AdminQnaService {
 	public int adminUpdateQnaAnswer(String qnaAnswerContent, int qnaNo) {
 		return adminQDao.adminUpdateQnaAnswer(sqlSession, qnaAnswerContent, qnaNo);
 	}
+
+	
 
 	
 	

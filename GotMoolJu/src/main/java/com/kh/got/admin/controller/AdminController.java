@@ -20,12 +20,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.kh.got.admin.model.service.AdminAnnouncementService;
+import com.kh.got.admin.model.service.AdminEtcService;
 import com.kh.got.admin.model.service.AdminMemberService;
+import com.kh.got.admin.model.service.AdminQnaService;
 import com.kh.got.announcement.model.vo.Announcement;
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.common.template.FileConverter;
 import com.kh.got.common.template.Pagination;
+import com.kh.got.etc.model.vo.Improvement;
 import com.kh.got.member.model.vo.Member;
+import com.kh.got.qna.model.vo.Qna;
 
 @Controller
 public class AdminController {
@@ -36,16 +40,29 @@ public class AdminController {
 	@Autowired
 	private AdminAnnouncementService adminAService;
 	
+	@Autowired
+	private AdminQnaService adminQService;
+	
+	@Autowired
+	private AdminEtcService adminEService; // Improvement
+	
 	// 메인 페이지
 	@RequestMapping("main.ad")
     public ModelAndView openHome(ModelAndView mv) {
 		// 회원 5명 정도 조회용
-		ArrayList<Member> admMemberList = adminMService.selectMemberMiniList();
+		ArrayList<Member> admMemberList = adminMService.adminSelectMemberMiniList();
 		// 공지글 5개 정도 조회용
-		ArrayList<Announcement> admAnnouncementList = adminAService.selectAnnouncementMiniList();
+		ArrayList<Announcement> admAnnouncementList = adminAService.adminSelectAnnouncementMiniList();
+		// qna 3개 정도 조회용
+		ArrayList<Qna> admQnaList = adminQService.adminSelectQnaMiniList();
+		// 개선사항 3개 정도 조회용
+		ArrayList<Improvement> admImprovementList = adminEService.adminImprovementMiniList();
+		
 		
         mv.addObject("admMemberList", admMemberList)
           .addObject("admAnnouncementList", admAnnouncementList)
+          .addObject("admQnaList", admQnaList)
+          .addObject("admImprovementList", admImprovementList)
 		  .setViewName("admin/adminMain");
 
         return mv;
@@ -56,11 +73,11 @@ public class AdminController {
 	@RequestMapping("memberList.ad")
     public ModelAndView openMemberList(@RequestParam (value = "cpage", defaultValue = "1") int currentPage, ModelAndView mv) {
 		
-		int listCount = adminMService.selectMemberCount();
+		int listCount = adminMService.adminSelectMemberCount();
 		
 		PageInfo adminPi = Pagination.getPageInfo(listCount, currentPage, 5/*pageLimit*/, 10/*boardLimit*/);
 
-		ArrayList<Member> admMemberList = adminMService.selectMemberList(adminPi);
+		ArrayList<Member> admMemberList = adminMService.adminSelectMemberList(adminPi);
 		
 //		System.out.println(listCount);
 //		System.out.println(list);
@@ -76,7 +93,7 @@ public class AdminController {
 	// 회원 상세 정보 조회 페이지, detailForm
 	@RequestMapping("memberDetail.ad")
 	public String openMemberDetail(@RequestParam("mno") int mno, Model model) {
-		Member adminM = adminMService.selectMemberDetail(mno);
+		Member adminM = adminMService.adminSelectMemberDetail(mno);
 		
 		
 		model.addAttribute("adminM", adminM);
@@ -92,7 +109,7 @@ public class AdminController {
 		adminM.setUserNo(mno);
 		adminM.setUserStatus(mStatus);
 //		System.out.println(mStatus);
-		int result = adminMService.updateMemberDetail(adminM);
+		int result = adminMService.adminUpdateMemberDetail(adminM);
 		
 //		System.out.println(adminM.getUserStatus());
 //		System.out.println(result); // 1 => 성공

@@ -14,7 +14,7 @@
 	
 	
 	<!-- 메인화면, 공지글 5개 정도 조회용 -->
-	<select id="selectAnnouncementMiniList" resultMap="announcementResult" >
+	<select id="adminSelectAnnouncementMiniList" resultMap="announcementResult" >
 		select *
 		  from
 			 (
@@ -35,14 +35,14 @@
 	</select>
 
 	<!-- 공지사항 전체 리스트 개수 -->
-	<select id="selectAnnouncementCount" resultType="_int">
+	<select id="adminSelectAnnouncementCount" resultType="_int">
     select
            count(*)
       from tb_announcement
 	</select>
 
 	<!--  공지사항 전체 리스트  -->
-	<select id="selectAnnouncementList" resultMap="announcementResult">
+	<select id="adminSelectAnnouncementList" resultMap="announcementResult">
     select 
            announcement_no
          , announcement_title

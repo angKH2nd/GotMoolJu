@@ -80,10 +80,10 @@ pageEncoding="UTF-8"%>
 	                      <th>Writer</th>
 	                      <th>Title</th>
 	                      <th style="width:45%">Content</th>
-	                      <th>작성일</th>
-	                      <th>답변</th>
-	                      <th>공개</th> <%-- 🔒, 🔓 --%>
-	                      <th>게시</th>
+	                      <th>Date</th>
+	                      <th>Answer</th>
+	                      <th>Public</th>
+	                      <th>Status</th>
 	                      <th class="text-right"></th>
                       </thead>
                       <tbody id="adminQnAListClick1">
@@ -129,10 +129,10 @@ pageEncoding="UTF-8"%>
 	                        </c:choose>
 	                        <c:choose>
 	                        	<c:when test="${ ad.qnaType eq 1 }">
-	                        		<td name="qnaType">🔓</td> <%-- 일반 --%> 
+	                        		<td name="qnaType"><i class="fa-solid fa-lock-open"></i></td> <%-- 일반 --%> 
 	                        	</c:when>
 	                        	<c:otherwise>
-	                        		<td name="qnaType">🔒</td> <%-- 비밀 --%>
+	                        		<td name="qnaType"><i class="fa-solid fa-lock"></i></td> <%-- 비밀 --%>
 	                        	</c:otherwise>
 	                        </c:choose>
 	                        <c:choose>

@@ -28,11 +28,11 @@ public class AdminAnnouncementController {
 	@RequestMapping("announcementList.ad")
     public ModelAndView openAnnouncementList(@RequestParam (value = "cpage", defaultValue = "1") int currentPage, ModelAndView mv) {
 		
-		int listCount = adminAService.selectAnnouncementCount(); // 공지사항 총 개수
+		int listCount = adminAService.adminSelectAnnouncementCount(); // 공지사항 총 개수
 		
 		PageInfo adminPi = Pagination.getPageInfo(listCount, currentPage, 5/*pageLimit*/, 10/*boardLimit*/);
 
-		ArrayList<Announcement> admAnnouncementList = adminAService.selectAnnouncementList(adminPi); // 공지사항 전체 리스트
+		ArrayList<Announcement> admAnnouncementList = adminAService.adminSelectAnnouncementList(adminPi); // 공지사항 전체 리스트
 //		System.out.println(listCount); - good
 //		System.out.println(pi);
 //		System.out.println(list); - good

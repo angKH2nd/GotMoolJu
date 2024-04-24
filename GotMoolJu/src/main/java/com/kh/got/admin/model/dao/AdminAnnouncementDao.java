@@ -13,24 +13,24 @@ import com.kh.got.common.model.vo.PageInfo;
 public class AdminAnnouncementDao {
 
 	// 메인 화면, 공지글 5개 정도 조회용
-	public ArrayList<Announcement> selectAnnouncementMiniList(SqlSessionTemplate sqlSession) {
-		return (ArrayList) sqlSession.selectList("announcementMapper.selectAnnouncementMiniList");
+	public ArrayList<Announcement> adminSelectAnnouncementMiniList(SqlSessionTemplate sqlSession) {
+		return (ArrayList) sqlSession.selectList("announcementMapper.adminSelectAnnouncementMiniList");
 	}
 
 	// 공지사항 전체 리스트 개수
-	public int selectAnnouncementCount(SqlSessionTemplate sqlSession) {
-		return sqlSession.selectOne("announcementMapper.selectAnnouncementCount");
+	public int adminSelectAnnouncementCount(SqlSessionTemplate sqlSession) {
+		return sqlSession.selectOne("announcementMapper.adminSelectAnnouncementCount");
 	}
 
 	// 공지사항 전체 리스트 
-	public ArrayList<Announcement> selectAnnouncementList(SqlSessionTemplate sqlSession, PageInfo adminPi) {
+	public ArrayList<Announcement> adminSelectAnnouncementList(SqlSessionTemplate sqlSession, PageInfo adminPi) {
 	
 		int offset = (adminPi.getCurrentPage() - 1) * adminPi.getBoardLimit();
 		int limit = adminPi.getBoardLimit();
 
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		
-		return (ArrayList) sqlSession.selectList("announcementMapper.selectAnnouncementList", null, rowBounds);
+		return (ArrayList) sqlSession.selectList("announcementMapper.adminSelectAnnouncementList", null, rowBounds);
 	}
 	
 	// 공지사항 디테일

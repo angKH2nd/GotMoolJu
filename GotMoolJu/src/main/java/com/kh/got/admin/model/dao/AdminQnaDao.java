@@ -15,26 +15,31 @@ import com.kh.got.qna.model.vo.QnaAnswer;
 @Repository
 public class AdminQnaDao {
 
+	// qna 미니 리스트
+	public ArrayList<Qna> adminSelectQnaMiniList(SqlSessionTemplate sqlSession) {
+		return (ArrayList) sqlSession.selectList("qnaMapper.adminSelectQnaMiniList");
+	}
+	
 	// qna 리스트
-	public ArrayList<Qna> selectQnaList(SqlSessionTemplate sqlSession, PageInfo adminPi) {
+	public ArrayList<Qna> adminSelectQnaList(SqlSessionTemplate sqlSession, PageInfo adminPi) {
 		
 		int offset = (adminPi.getCurrentPage() - 1) * adminPi.getBoardLimit();
 		int limit = adminPi.getBoardLimit();
 
 		RowBounds rowBounds = new RowBounds(offset, limit);
 
-		return (ArrayList) sqlSession.selectList("qnaMapper.selectQnaList", null, rowBounds);
+		return (ArrayList) sqlSession.selectList("qnaMapper.adminSelectQnaList", null, rowBounds);
 	}
 
 	// qna 개수
-	public int selectQnaListCount(SqlSessionTemplate sqlSession) {
+	public int adminSelectQnaListCount(SqlSessionTemplate sqlSession) {
 
-		return sqlSession.selectOne("qnaMapper.selectQnaListCount");
+		return sqlSession.selectOne("qnaMapper.adminSelectQnaListCount");
 	}
 
 	// qna answer list
-	public ArrayList<QnaAnswer> selectQnaAnswerList(SqlSessionTemplate sqlSession) {
-		return (ArrayList) sqlSession.selectList("qnaMapper.selectQnaAnswerList");
+	public ArrayList<QnaAnswer> adminSelectQnaAnswerList(SqlSessionTemplate sqlSession) {
+		return (ArrayList) sqlSession.selectList("qnaMapper.adminSelectQnaAnswerList");
 	}
 
 	// qna 리스트 삭제
@@ -68,6 +73,7 @@ public class AdminQnaDao {
 
 		
 	}
+
 
 	
 }

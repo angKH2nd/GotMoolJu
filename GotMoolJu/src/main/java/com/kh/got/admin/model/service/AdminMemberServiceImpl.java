@@ -21,32 +21,32 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 	
 	// 메인 화면, 회원 5명 정도 조회용
 	@Override
-	public ArrayList<Member> selectMemberMiniList() {
-		return adminMDao.selectMemberMiniList(sqlSession);
+	public ArrayList<Member> adminSelectMemberMiniList() {
+		return adminMDao.adminSelectMemberMiniList(sqlSession);
 	}
 	
 	// 회원 전체 숫자 조회용
 	@Override
-	public int selectMemberCount() {
-		return adminMDao.selectMemberCount(sqlSession);
+	public int adminSelectMemberCount() {
+		return adminMDao.adminSelectMemberCount(sqlSession);
 	}
 
 	// 회원 전체 리스트 조회용
 	@Override
-	public ArrayList<Member> selectMemberList(PageInfo adminPi) {
-		return adminMDao.selectMemberList(sqlSession, adminPi);
+	public ArrayList<Member> adminSelectMemberList(PageInfo adminPi) {
+		return adminMDao.adminSelectMemberList(sqlSession, adminPi);
 	}
 
 	// 회원 상세 정보 조회 페이지, detailForm
 	@Override
-	public Member selectMemberDetail(int userNo) {
-		return adminMDao.selectMemberDetail(sqlSession, userNo);
+	public Member adminSelectMemberDetail(int userNo) {
+		return adminMDao.adminSelectMemberDetail(sqlSession, userNo);
 	}
 
 	// 회원 디테일 폼 status 변경
 	@Override
-	public int updateMemberDetail(Member adminM) {
-		return adminMDao.updateMemberDetail(sqlSession, adminM);
+	public int adminUpdateMemberDetail(Member adminM) {
+		return adminMDao.adminUpdateMemberDetail(sqlSession, adminM);
 	}
 
 

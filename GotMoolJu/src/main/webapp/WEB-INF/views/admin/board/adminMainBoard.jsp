@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,50 +55,144 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
     --%>
-	<!-- 여기부터 -->
-	
+    
+	<%-- 여기부터 --%>
     <div class="main-panel" id="main-panel">
-      <!-- End Navbar -->
+      <%-- End Navbar --%>
       <div class="content">
         <div class="row">
           <div class="col-lg-4">
-            <!-- 1번 card title-->
+            <%-- 1번 card title --%>
+            <%-- Q & A 시작 --%>
             <div class="card card-chart">
+            <div id="miniQnaDivOpen">
               <div class="card-header">
-                <h5 class="card-category">Global Sales</h5>
-                <h4 class="card-title">Shipped Products</h4>
+			    <a href="#" id="miniImpDivOpenBtn" class="card-category" style="text-decoration: none !important"> <i class="now-ui-icons arrows-1_refresh-69"></i> 개선의견</a>
+                <h4 class="card-title">Q & A</h4>
+                
+               	<%-- 리스트 버튼 --%>
                 <div class="dropdown">
-                  <button
-                    type="button"
+                  <a
+                    href="qnaList.ad"
                     class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret"
-                    data-toggle="dropdown"
-                  >
-                    <i class="now-ui-icons loader_gear"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <a class="dropdown-item text-danger" href="#"
-                      >Remove Data</a
                     >
+                    <i class="now-ui-icons design_bullet-list-67"></i>
+                  </a>
+                  <%-- 실질적 작동 x --%>
+                 <div class="dropdown-menu dropdown-menu-right" id="admQnaListgogo" onclick="">
+                    <a class="dropdown-item" href="#">Q & A 더보기</a>
                   </div>
                 </div>
               </div>
               <!-- 1번 card content -->
-              <div class="card-body">
+              <div class="card-body" style="margin: 15px 15px 10px 15px">
                 <div class="chart-area">
-                  <canvas id="lineChartExample"></canvas>
+                	<table class="table" id="miniQnaArea">
+                    <thead class="text-primary">
+                      <th style="width: 5%">No</th>
+                      <th style="width: 5%">ID</th>
+                      <th style="width: 30%">Title</th>
+                      <th style="width: 30%">Date</th>
+                      <th style="width: 5%" class="text-right">Secret</th>
+                    </thead>
+                    <tbody id="admQnalistClick">
+	                    <c:forEach var="adQ" items="${ admQnaList }">
+	                      <tr>
+	                        <td class="qno">${ adQ.qnaNo }</td>
+	                        <td>${ adQ.qnaWriter }</td>
+	                        <td>${ adQ.qnaTitle }</td>
+	                        <td>${ adQ.qnaCreateDate }</td>
+	                        <td class="text-right">
+	                        <c:if test="${ adQ.qnaType eq 1 }">
+		                        <i class="fa-solid fa-lock-open"></i>
+		                    </c:if>
+		                    <c:if test="${ adQ.qnaType eq 2 }">   
+		                        <i class="fa-solid fa-lock"></i>
+		                    </c:if>
+	                        </td>
+	                      </tr>
+	                    </c:forEach>
+                    </tbody>
+                  </table>
+                	
                 </div>
               </div>
+            </div>
+	   	    <%-- Q & A 끝 --%>
+	   	    
+            <%-- 개선의견 시작 --%>
+            <div id="miniImplDivOpen" style="display:none">
+          	  <div class="card-header">
+                <a href="#" id="miniQnaDivOpenBtn" class="card-category" style="text-decoration: none !important"> <i class="now-ui-icons arrows-1_refresh-69"></i> Q & A</a> &nbsp; &nbsp;
+			    <h4 class="card-title">개선의견</h4>
+                
+               	<%-- 리스트 버튼 --%>
+                <div class="dropdown">
+                  <a href=""
+                    class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret"
+                    <%-- data-toggle="dropdown" --%>
+                    >
+                    <i class="now-ui-icons design_bullet-list-67"></i>
+                  </a>
+                  <%-- 실질적 작동 x --%>
+                 <div class="dropdown-menu dropdown-menu-right" id="admQnaListgogo" onclick="">
+                    <a class="dropdown-item" href="#">Q & A 더보기</a>
+                  </div>
+                </div>
+              </div>
+              <!-- 1번 card content -->
+              <div class="card-body" style="margin: 15px 15px 10px 15px">
+                <div class="chart-area">
+                	<table class="table" id="miniImpArea">
+	                    <thead class="text-primary">
+	                      <th style="width: 5%">No</th>
+	                      <th style="width: 5%">ID</th>
+	                      <th style="width: 75%">Content</th>
+	                      <th style="width: 5%" class="text-right">Secret</th>
+	                    </thead>
+	                    <tbody id="admImplistClick">
+		                    <c:forEach var="adI" items="${ admImprovementList }">
+		                      <tr>
+		                        <td class="ino">${ adI.impReplyNo }</td>
+		                        <td>${ adI.impReplyWriter }</td>
+		                        <td>${ adI.impReplyContent }</td>
+		                        <td class="text-right">
+		                        <c:if test="${ adI.impReplyType eq 'O' }">
+			                        <i class="fa-solid fa-lock-open"></i>
+			                    </c:if>
+			                    <c:if test="${ adI.impReplyType eq 'S' }">   
+			                        <i class="fa-solid fa-lock"></i>
+			                    </c:if>
+								</td>
+		                      </tr>
+		                    </c:forEach>
+	                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          	<%-- 개선의견 끝 --%>
               <!-- 1번 card footer-->
               <div class="card-footer">
                 <div class="stats">
-                  <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                  <%-- <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated --%>
                 </div>
               </div>
             </div>
           </div>
+			<script>
+		      // A 버튼 클릭 이벤트
+		      document.getElementById("miniImpDivOpenBtn").addEventListener("click", function () {
+		        document.getElementById("miniImplDivOpen").style.display = "block";
+		        document.getElementById("miniQnaDivOpen").style.display = "none";
+		      });
+		
+		      // B 버튼 클릭 이벤트
+		      document.getElementById("miniQnaDivOpenBtn").addEventListener("click", function () {
+		        document.getElementById("miniQnaDivOpen").style.display = "block";
+		        document.getElementById("miniImplDivOpen").style.display = "none";
+		      });
+		    </script>
           <div class="col-lg-4 col-md-6">
             <!-- 2번 card title-->
             <div class="card card-chart">

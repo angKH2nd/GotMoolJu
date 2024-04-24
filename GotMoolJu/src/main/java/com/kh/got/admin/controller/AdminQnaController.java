@@ -28,15 +28,15 @@ public class AdminQnaController {
 	// qna 리스트
 	@RequestMapping("qnaList.ad")
 	public ModelAndView openAdminQnaList(@RequestParam (value = "cpage", defaultValue = "1") int currentPage, ModelAndView mv){
-		int listCount = adminQService.selectQnaListCount(); // qna 개수
+		int listCount = adminQService.adminSelectQnaListCount(); // qna 개수
 
 		PageInfo adminPi = Pagination.getPageInfo(listCount, currentPage, 5/*pageLimit*/, 10/*boardLimit*/);
 //		System.out.println(adminPi);
 				
-		ArrayList<Qna> admQnaList = adminQService.selectQnaList(adminPi); // qna 리스트
+		ArrayList<Qna> admQnaList = adminQService.adminSelectQnaList(adminPi); // qna 리스트
 //		System.out.println(admQnaList); - 나옴
 		
-		ArrayList<QnaAnswer> admQnaAnswerList = adminQService.selectQnaAnswerList(); // qna 답변 리스트
+		ArrayList<QnaAnswer> admQnaAnswerList = adminQService.adminSelectQnaAnswerList(); // qna 답변 리스트
 //		System.out.println(admQnaList);
 //		System.out.println(admQnaAnswerList);
 
