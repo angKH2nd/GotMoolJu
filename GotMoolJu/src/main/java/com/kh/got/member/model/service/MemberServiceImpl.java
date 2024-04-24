@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.got.member.model.dao.MemberDao;
+import com.kh.got.member.model.vo.LikeVO;
 import com.kh.got.member.model.vo.Member;
 
 @Service
@@ -54,6 +55,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int searchNewPwd(String searchNewPwd, String searchNewPwdUserId) {
 		return mDao.searchNewPwd(sqlSession, searchNewPwd, searchNewPwdUserId);
+	}
+
+	@Override
+	public int selectLikeYN(LikeVO lvo) {
+		return mDao.selectLikeYN(sqlSession, lvo);
 	}
 
 

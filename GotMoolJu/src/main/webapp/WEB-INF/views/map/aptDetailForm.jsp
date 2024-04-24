@@ -13,7 +13,10 @@
 		<div class="apt-detail-form-outer-top pd15">
 			<div class="apt-detail-form-top-previous centerY mh fl" onclick="cancelAptDetailDiv();"><i class="fa-solid fa-angle-left fa-lg"></i></div>
 			<div class="apt-detail-form-top-title centerXY fl"></div>
-			<div class="apt-detail-form-top-cancel centerY mh fl"><i class="fa-solid fa-heart"></i></div>
+			<c:if test="${ not empty loginUser }">
+				<input type="hidden" id="userNo" name="userNo" value="${loginUser.userNo}">
+				<div class="apt-detail-form-top-cancel centerY mh fl" onclick="dips();"><i id="heartIcon" class="fa-regular fa-heart"></i></div>
+			</c:if>
 			<div class="apt-detail-form-top-cancel centerY mh fl"><i class="fa-regular fa-share-from-square"></i></div>
 			<div class="apt-detail-form-top-cancel centerY mh fl" onclick="cancelApt();"><i class="fa-solid fa-xmark fa-lg"></i></div>
 		</div>

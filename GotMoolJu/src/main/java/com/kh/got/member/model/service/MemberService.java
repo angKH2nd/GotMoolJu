@@ -1,5 +1,6 @@
 package com.kh.got.member.model.service;
 
+import com.kh.got.member.model.vo.LikeVO;
 import com.kh.got.member.model.vo.Member;
 
 public interface MemberService {
@@ -28,4 +29,6 @@ public interface MemberService {
 	// 비밀번호 찾기 서비스 (update)
 	int searchNewPwd(String searchNewPwd, String searchNewPwdUserId);
 	
+	// 좋아요가 되어있는지 확인용
+	int selectLikeYN(LikeVO lvo);
 }

@@ -32,6 +32,7 @@ import com.kh.got.common.template.PhoneNumber;
 import com.kh.got.common.template.RandomNumber;
 import com.kh.got.common.template.UploadFile;
 import com.kh.got.member.model.service.MemberService;
+import com.kh.got.member.model.vo.LikeVO;
 import com.kh.got.member.model.vo.Member;
 
 import net.nurigo.sdk.NurigoApp;
@@ -383,4 +384,18 @@ public class MemberController {
 		return mailService.updateEmail(updateName, updateEmail);
     }
 	
+	@ResponseBody
+	@RequestMapping(value="selectLike.ma")
+	public int selectLikeYN(int userNo, int aptNo) {
+		
+		LikeVO lvo = new LikeVO();
+		
+		lvo.setDibsUserNo(userNo);
+		lvo.setDibsAptNo(aptNo);
+		
+		int result = mService.selectLikeYN(lvo);
+		
+		return result;
+		
+	}
 }

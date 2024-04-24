@@ -6,6 +6,7 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.kh.got.member.model.vo.LikeVO;
 import com.kh.got.member.model.vo.Member;
 
 @Repository
@@ -49,6 +50,11 @@ public class MemberDao {
 		searchNewPwdParameters.put("searchNewPwdUserId", searchNewPwdUserId);
 		
 		return sqlSession.update("memberMapper.searchNewPwd", searchNewPwdParameters);
+	}
+	
+	public int selectLikeYN(SqlSessionTemplate sqlSession, LikeVO lvo) {
+		
+		return sqlSession.selectOne("memberMapper.selectLikeYN", lvo);
 	}
 	
 }
