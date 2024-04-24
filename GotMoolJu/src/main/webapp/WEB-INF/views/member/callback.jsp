@@ -31,7 +31,7 @@
         error:function(){
           console.log("네이버 로그인 실패");
         }
-
+ 
 
       })
 
