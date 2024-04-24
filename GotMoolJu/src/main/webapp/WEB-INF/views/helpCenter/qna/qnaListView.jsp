@@ -42,6 +42,10 @@
    <div id="qnaInsert">
       <%@ include file="qnaInsertForm.jsp" %>
    </div>
+   
+   <div id="qnaUpdate">
+   		<%@ include file="qnaUpdateForm.jsp" %>
+   </div>
       
    <script src="resources/js/helpCenter/qna/qnaListView.js"></script>
 </body>

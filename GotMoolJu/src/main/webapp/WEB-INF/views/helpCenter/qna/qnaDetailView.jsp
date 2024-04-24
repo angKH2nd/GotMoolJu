@@ -78,9 +78,28 @@
                  }
                  
                  function updateForm(){
-                    $("#qnaDetail").hide();
-                    $("#qnaUpdate").show();
-                 }
+                	    $("#qnaDetail").hide();
+                	    $("#qnaUpdate").show();
+                	    let qnaNo = $("#qna-number").val();
+                	    $.ajax({
+                	        url: "detail.qna",
+                	        data: { qno: qnaNo },
+                	        success: function(response){
+                	            console.log("다시 한조한 결과:", response);
+                	            $("#qna-update-title-input").val(response.qnaTitle);
+                	            $("#qna-update-content-input").val(response.qnaContent);
+                	            $("#qna-update-no").val(response.qnaNo);
+                	           // $("input[name='visibility']").prop("checked", false);
+                	            if(response.qnaType == "2"){
+                	            	$("#secret").prop("checked", true).val("secret");
+                	            } else {
+                	                // qnaType "2" 아닐 때
+                	                $("#non-secret").prop("checked", true).val("non-secret");
+                	            }
+                	        }
+                	    });
+                	}
+
                  
                </script>
           
@@ -88,10 +107,6 @@
              <br>    
       
     </div>
-       
-       <div id="qnaUpdate">
-             <%@ include file="qnaUpdateForm.jsp" %>
-       </div>
-    
+      
 </body>
 </html>
