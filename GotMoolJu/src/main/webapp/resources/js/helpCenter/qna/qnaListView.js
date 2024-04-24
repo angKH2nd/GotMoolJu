@@ -32,21 +32,27 @@ $(document).ready(function() {
 // 상세 정보를 보여주는 함수 정의
 function showQnaDetail(qnaNo) {
     // qnaNo에 해당하는 상세 정보를 가져오는 AJAX 호출
-	let qnaDetailInfo = qnaNo;
-	/*
+	//let qnaDetailInfo = qnaNo;
 		$.ajax({
-			url: "",
-			data: {},
+			url: "detail.qna",
+			data: {qno:qnaNo},
 			success: function(result){
 				console.log(result);
-				
 				// 성공한 경우 => qnaDetailView.jsp 내에 해당 ajax 조회 결과 (qna 상세정보) 기입해주기 (qna-detail-area 는 예시)
-				$(".qna-detail-area").html(qnaDetailInfo);
+				if(result.qnaType == "2"){
+					$(".qna-detail-area tbody td").html("비밀글입니다");
+					$("#qna-number").val(result.qnaNo);
+					$("#qna-writer").val(result.qnaWriter);
+				}else{
+					$(".qna-detail-area tbody td").html(result.qnaContent);
+					$("#qna-number").val(result.qnaNo);
+					$("#qna-writer").val(result.qnaWriter);
+				}
 			}, error: function(){
 				console.log('error');
 			}
-		})
-	*/
+		});
+	
     $("#qnaList").hide(); // 리스트 숨기기
     $("#qnaDetail").show(); // 상세보기 열기
 }
@@ -55,4 +61,5 @@ function showQnaDetail(qnaNo) {
 function showQnaInsert() {
     $("#qnaList").hide(); // 리스트 숨기기
     $("#qnaInsert").show(); // 글쓰기 열기
+    //$("#qna-writer-nickname").val(result.qnaWriter);
 }

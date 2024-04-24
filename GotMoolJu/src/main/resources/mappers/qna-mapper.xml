@@ -10,9 +10,23 @@
        <result column="qna_date" property="qnaCreateDate"/>
        <result column="qna_answer_status" property="qnaAnswerStatus"/>
        <result column="qna_type" property="qnaType"/>
-       <result column="answer_content" property="qnaAnswerContent"/>
-       <result column="answer_date" property="qnaAnswerCreateDate"/>
+       
     </resultMap>
+    
+    <resultMap id="replyResult" type="QnaAnswer">
+    	<result column="answer_content" property="qnaAnswerContent"/>
+     	<result column="answer_date" property="qnaAnswerCreateDate"/>
+    
+    </resultMap>
+    
+    
+    <select id="selectListCount" resultType="_int">
+    	select
+    			count(*) as "count"
+    		from tb_qna
+    		where qna_status = 'Y' 
+    
+    </select>
 
 	<select id="selectQnaList" resultMap="qnaResult">
 	      select  
@@ -23,12 +37,63 @@
 	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_date"
 	           , q.qna_answer_status
 	           , q.qna_type
-	           , a.qna_answer_content as "answer_content"
-	           , to_char(a.qna_answer_create_date, 'YYYY-MM-DD') as "answer_date"
 	       from tb_qna q
-	       left join tb_qna_answer a on q.qna_no = a.qna_answer_ref_no
 	       left join tb_member m on q.qna_writer = m.user_no
 	      where q.qna_status = 'Y'
 	</select>
+	
+	<select id="selectQna" resultMap="qnaResult">
+	
+		select  
+	             q.qna_no
+	           , m.user_nickname as "qna_writer"
+	           , q.qna_title
+	           , q.qna_content
+	           , q.qna_type
+	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_date"
+	       from tb_qna q
+	       left join tb_member m on q.qna_writer = m.user_no
+	      where q.qna_no = #{qnaNo} and q.qna_status = 'Y'
+	
+	</select>
+	
+	<update id="deleteQna">
+		update	
+				tb_qna
+			set qna_status = 'N'
+		  where qna_no = #{qnaNo}		
+	
+	</update>
+	
+	<update id="updateQna">
+		update 	
+				 tb_qna
+			set   qna_title = #{qnaTitle}
+				, qna_content = #{qnaContent}
+				, qna_type = #{qnaType}
+				, qna_modify_date = sysdate
+			where qna_no = #{qnaNo}	
+	
+	</update>
+	
+	<insert id="insertQna">
+		insert
+		  into tb_qna
+		  	 (
+		  	   qna_no
+		  	 , qna_writer
+		  	 , qna_title
+		  	 , qna_content
+		  	 , qna_type
+		  	 )
+		values
+			 (
+			   seq_qna_no.nextval
+			 , #{qnaWriter}
+			 , #{qnaTitle}
+			 , #{qnaContent}
+			 , #{qnaType}
+			 )
+	</insert>
 
 </mapper>

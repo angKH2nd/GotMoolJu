@@ -46,47 +46,51 @@ function formatWriterName(name) {
 }
 
 //QNA invoke function
-function loadQna(){
+function loadQna(pageNumber) {
     $.ajax({
         url: "list.qna",
-        success: function(response){
-            // console.log("Data AJAX:", response);
+        data: { cpage: pageNumber },
+        success: function(response) {
+            console.log("Data AJAX: pagination and list", response);
 
-            let qnaHtml = ""; 
-            for (let i = 0; i < response.length; i++) { 
-                qnaHtml += `<tr id="${response[i].qnaNo}" class="bgh mh">`;
-                
-                // qnaWriter를 포맷하여 가져오기
-                let formattedWriter = formatWriterName(response[i].qnaWriter);
-                
-                if (response[i].qnaType == 2) {
-                	// 비밀글
-                	qnaHtml += "<td style=\"text-align: left; padding-left: 5px;\">" + "<i class=\"fa-solid fa-lock\"></i> " + response[i].qnaTitle + "</td>"
-                        	+ "<td>" + formattedWriter + "</td>"
-                        	+ "<td>" + response[i].qnaCreateDate + "</td>";
-                } else {
-                	// 일반글
-                	qnaHtml += "<td style=\"text-align: left; padding-left: 5px;\">" + response[i].qnaTitle + "</td>"
-                        	+ "<td>" + formattedWriter + "</td>"
-                        	+ "<td>" + response[i].qnaCreateDate + "</td>";
-                }
-                            
-                if (response[i].qnaAnswerStatus === 'N') {
-                    qnaHtml += "<th>대기</th>"; // 답변완료전
-                } else {		
-                    qnaHtml += "<th>완료</th>"; // 답변완료
-                }
-                
-                qnaHtml += "</tr>";
-            }
-
-            $("#qnaList tbody").html(qnaHtml); // tbody에다 데이터 삽입
+            let qna = response.qnaList;
+            let pageInfo = response.qnaPageInfo;
+           
+            updateTable(qna);
+            createPagination(pageInfo);
         },
         error: function(xhr, status, error) {
             console.error("AJAX failed:", status, error);
         }
     });
 }
+
+function updateTable(qna) {
+    let qnaHtml = "";
+    for (let i in qna) {
+        let formattedWriter = formatWriterName(qna[i].qnaWriter);
+	        qnaHtml += `<tr id="${qna[i].qnaNo}" class="bgh mh">`;
+	        qnaHtml += `<td>${qna[i].qnaType == 2 ? '<i class="fa-solid fa-lock"></i> ' : ''}${qna[i].qnaTitle}</td>`;
+	        qnaHtml += `<td>${formattedWriter}</td>`;
+	        qnaHtml += `<td>${qna[i].qnaCreateDate}</td>`;
+	        qnaHtml += `<td>${qna[i].qnaAnswerStatus === 'N' ? '대기' : '완료'}</td></tr>`;
+    }
+    $("#qnaList tbody").html(qnaHtml);
+}
+
+function createPagination(pageInfo) {
+        let paginationHTML = "";
+        if (pageInfo.currentPage > 1) {
+            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage - 1) + ')">Previous</a></li>';
+        }
+        for (let p = pageInfo.startPage; p <= pageInfo.endPage; p++) {
+            paginationHTML += '<li class="qpage-item ' + (p === pageInfo.currentPage ? 'active' : '') + '"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + p + ')">' + p + '</a></li>';
+        }
+        if (pageInfo.currentPage < pageInfo.maxPage) {
+            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage + 1) + ')">Next</a></li>';
+        }
+        $(".qna-pagination").html(paginationHTML);
+    }
 
 function toggleHelpCenter(divClass) {
     var divs = document.querySelectorAll('.helpCenter-bar-toggle > div');
