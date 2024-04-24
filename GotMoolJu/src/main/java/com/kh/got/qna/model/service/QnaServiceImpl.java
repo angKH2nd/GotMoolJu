@@ -45,14 +45,16 @@ public class QnaServiceImpl implements QnaService {
 		return qDao.deleteQna(sqlSession, qnaNo);
 	}
 
-	@Override
-	public int updateQna(int qnaNo, Qna q) {
-	    return qDao.updateQna(sqlSession, qnaNo, q);
-	}
 
 	@Override
 	public int insertQna(Qna q) {
 		return qDao.insertQna(sqlSession, q);
+	}
+
+	@Override
+	public int updateQna(Qna q) {
+		return qDao.updateQna(sqlSession, q);
+		
 	}
 	
 

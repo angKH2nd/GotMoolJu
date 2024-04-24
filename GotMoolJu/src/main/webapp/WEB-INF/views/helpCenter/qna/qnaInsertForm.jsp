@@ -6,14 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="resources/css/helpCenter/qna/qnaInsertForm.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- 부트스트랩에서 제공하고 있는 스타일 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- 부트스트랩에서 제공하고 있는 스크립트 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- JavaScript -->
 	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-<link rel="stylesheet" href="resources/css/helpCenter/qna/qnaInsertForm.css">
 </head>
 <body>
 	<div class="qna-insert-form">
@@ -41,7 +40,6 @@
 			</div>
 			
 					<script>
-					
 						$(document).on("click", ".qna-insert-btn", function(){
 							var visibility = $("input[name='visibility']:checked").val();
 							var qnaType = (visibility == "secret") ? 2 : 1;

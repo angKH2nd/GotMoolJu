@@ -42,7 +42,8 @@ public class QnaDao {
 		return sqlSession.update("qnaMapper.deleteQna", qnaNo);
 	}
 	
-	public int updateQna(SqlSessionTemplate sqlSession, int qnaNo, Qna q) {
-		return sqlSession.update("qnaMapper.updateQna", q);
+	public int updateQna(SqlSessionTemplate sqlSession, Qna q) {
+		int result = sqlSession.update("qnaMapper.updateQna", q);
+		return result;		
 	}
 }	

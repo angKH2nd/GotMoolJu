@@ -22,8 +22,7 @@ public interface QnaService {
 	int deleteQna(int qnaNo);
 	
 	//q수정하기
-
-	int updateQna(int qnaNo, Qna q);
+	int updateQna(Qna q);
 	
 
 }

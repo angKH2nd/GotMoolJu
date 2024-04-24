@@ -69,8 +69,8 @@
 		update 	
 				 tb_qna
 			set   qna_title = #{qnaTitle}
-				, qna_content = #{boardContent}
-				, qna_type
+				, qna_content = #{qnaContent}
+				, qna_type = #{qnaType}
 				, qna_modify_date = sysdate
 			where qna_no = #{qnaNo}	
 	
@@ -95,9 +95,5 @@
 			 , #{qnaType}
 			 )
 	</insert>
-	
-	
-	
-	
 
 </mapper>

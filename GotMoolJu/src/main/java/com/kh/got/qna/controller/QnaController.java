@@ -68,13 +68,6 @@ public int deleteQna(@RequestParam("qno") int qno) {
 
 
 @ResponseBody
-@RequestMapping(value = "update.qna")
-public String updateQna(@RequestParam("qno") int qno, @RequestParam ("Qna q")Qna q) {
-   
-	return new Gson().toJson(q);
-    }
-
-@ResponseBody
 @RequestMapping(value="insert.qna")
 public String insertQna(Qna q) {
 	int result = qService.insertQna(q);
@@ -83,5 +76,14 @@ public String insertQna(Qna q) {
 	
 	}
 
+@ResponseBody
+@RequestMapping(value = "update.qna", produces= "application/json; charset=utf-8")
+public String updateQna(Qna q) {
+	
+	int result =  qService.updateQna( q);
+	System.out.println(q);	
+	return result >0 ? "success" : "fail";
+	
+	}
 }
 
