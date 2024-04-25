@@ -631,7 +631,7 @@ public class MemberController {
 	
 	
 	@ResponseBody
-	@RequestMapping(value="selectLike.ma")
+	@RequestMapping(value="selectLike.me")
 	public int selectLikeYN(int userNo, int aptNo) {
 		
 		LikeVO lvo = new LikeVO();
@@ -644,4 +644,29 @@ public class MemberController {
 		return result;
 		
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="checkLike.me")
+	public int checkLike(LikeVO lvo) {
+		
+		return mService.selectLikeYN(lvo);
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="insertLike.me")
+	public int insertLike(LikeVO lvo) {
+		
+		return mService.insertLike(lvo);
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="deleteLike.me")
+	public int deleteLike(LikeVO lvo) {
+		
+		return mService.deleteLike(lvo);
+		
+	}
+	
 }

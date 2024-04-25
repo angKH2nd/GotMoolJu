@@ -59,17 +59,19 @@ public class MemberDao {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	public int selectLikeYN(SqlSessionTemplate sqlSession, LikeVO lvo) {
 		
 		return sqlSession.selectOne("memberMapper.selectLikeYN", lvo);
 	}
 	
+	public int insertLike(SqlSessionTemplate sqlSession, LikeVO lvo) {
+		
+		return sqlSession.insert("memberMapper.insertLike", lvo);
+		
+	}
+	
+	public int deleteLike(SqlSessionTemplate sqlSession, LikeVO lvo) {
+		
+		return sqlSession.delete("memberMapper.deleteLike", lvo);
+	}
 }
