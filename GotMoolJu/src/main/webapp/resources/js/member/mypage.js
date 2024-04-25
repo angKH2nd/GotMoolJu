@@ -11,6 +11,11 @@ function toggleMypageDiv(className){
     });
 }
 
+function openCalFromMem() {
+	toggleDiv('etc');
+	toggleEtcDiv('calculateTax');
+}
+
 function cancelMypageDiv() {
     var divs = document.querySelectorAll('.mypage-toggle > div');
 

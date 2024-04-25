@@ -87,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mypage-body3 pd15">뭘넣지..? 바디3</div>
+		<div class="mypage-body3 pd15"><img width=419 height=170 class="br5 mh" src="resources/images/advertisement/adv9.png" onclick="openCalFromMem();"></div>
 	</div>
 	
 	<script src="resources/js/member/mypage.js"></script>

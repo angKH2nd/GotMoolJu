@@ -4,6 +4,12 @@ var modalEnroll = $('.modal-enroll-wrap');
 var modalSearchIdPwd = $('.modal-searchIdPwd-wrap');
 var modalSearchNewPwd = $('.modal-searchNewPwd-wrap');
 var modalBg = $('.modal-bg');
+var modalRef = $('.modal-ref-wrap');
+
+function openRef() {
+	$(modalRef).show();
+	openBg();
+}
 
 function openEnrollForm() {
 	closeLoginForm();
@@ -90,6 +96,7 @@ function openBg() {
 
 /* 공용 모달 배경 닫기 */
 function closeBg() {
+	$(modalRef).hide();
 	$(modalLogin).hide();
 	$(modalEnroll).hide();
 	$(modalSearchIdPwd).hide();

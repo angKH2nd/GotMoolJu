@@ -54,6 +54,19 @@
 		box-shadow: 0 0.5em 0.5em -0.4em #636161;
 		scale: 1.1;
 	}
+	#taxRefBtn{
+		background-color: #434d68;
+		color: white;
+		width: 120px;
+		height: 30px;
+		border-radius: 5px;
+		border: 0px;
+	}
+	.tax-ref-btn-hover:hover{
+		cursor: pointer;
+		box-shadow: 0 0.5em 0.5em -0.4em #636161;
+		scale: 1.1;
+	}
 </style>
 <link rel="stylesheet" href="resources/css/etc/calculateTax.css">
 </head>
@@ -66,14 +79,17 @@
 		</div>
 		<div class="calculate-center">
 			<div class="calculate-img pd15">
-				<img width=419 height=140 src="resources/images/advertisement/adv3.png">
+				<img class="mh" width=419 height=140 src="resources/images/advertisement/adv1.png" onclick="openImp();">
 			</div>
-			<div class="calculate-text fs16 centerY">
-				민규(남)가 만들어주는 세금계산기
+			<div class="calculate-text fs14 centerY" style="font-size: 12px;">
+				<i class="fa-solid fa-circle-exclamation"></i> &nbsp; 본 자료는 참고사항입니다.
+			</div>
+			<div class="calculate-text fs14 centerY" style="border-bottom: 0.5px solid lightgray; font-size: 12px;">
+				<i class="fa-solid fa-circle-exclamation"></i> &nbsp; 투자의 책임은 본인에게 있습니다.
 			</div>
 		</div>
 		<div class="calculate-body no-scrollbar">
-			<div class="calculate-form pd15">
+			<div class="calculate-form" style="padding: 0 15px 15px 15px;">
 				<table id="tax-area">
 					<tr>
 						<th height="50" style="font-size: 25px;">취득세 계산(매매)</th>
@@ -108,6 +124,7 @@
 					<tr>
 						<td>
 							<button onclick="taxCalculate();" id="taxCalculateBtn" class="tax-btn-hover">취득세 계산</button>
+							<button class="tax-explanation tax-ref-btn-hover" id="taxRefBtn" onclick="openRef();">참고사항</button>
 						</td>
 					</tr>
 				</table>
@@ -116,15 +133,12 @@
 
 				<div id="tax-result-area" style="display: none;">
 
-				
-				계산결과
-
-				<table border="1" id="taxResult">
+				<table id="taxResult">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>적요</th>
-							<th>값</th>
+							<th width=15>#</th>
+							<th width=90>적요</th>
+							<th width=105>값</th>
 							<th>비고</th>
 						</tr>
 					</thead>
@@ -135,19 +149,21 @@
 				</div>
 
 				<script>
+					function openImp(){
+						toggleEtcDiv('calculateTax');
+						toggleEtcDiv('insertImprovementIdeation');
+					}
+				
 					function taxCalculate(){
-
-						console.log($("input[name=realEstateType]:checked").val())
-						console.log($("input[name=areaType]:checked").val())
-						console.log($("input[name=own]:checked").val())
-						console.log($("input[name=amount]").val())
+						// console.log($("input[name=realEstateType]:checked").val())
+						// console.log($("input[name=areaType]:checked").val())
+						// console.log($("input[name=own]:checked").val())
+						// console.log($("input[name=amount]").val())
 
 						if($("input[name=realEstateType]:checked").val() != undefined &&
 						   $("input[name=areaType]:checked").val() != undefined &&
 						   $("input[name=own]:checked").val() != undefined &&
 						   $("input[name=amount]").val() != ""){
-							
-						   
 
 						$("#tax-result-area").css("display","block");
 
@@ -158,14 +174,11 @@
 								areaType:$("input[name=areaType]:checked").val(),
 								own:$("input[name=own]:checked").val(),
 								amount:$("input[name=amount]").val()
-
 							},
 							success:function(data){
-								console.log(data)
+								// console.log(data)
 								let value = "";
-
 								for(let i in data.data){
-
 									value += "<tr>"
 										   + "<td>" + i + "</td>"
 										   + "<td>" + data.data[i]['적요'] + "</td>"
@@ -173,38 +186,29 @@
 										   + "<td>" + data.data[i]['비고'] + "</td>"
 										   + "</tr>"
 								}
-
 								$("#taxResult tbody").html(value);
-
 							},
 							error:function(){
 								console.log("ajax 실패")
 							}
-
 						})
 						}else{
-							alert("선택사항을 전부 작성해주세요")
+							swal("취득세 계산 실패!", "선택사항을 전부 작성해주세요!", 'warning');
 						}
 					}
 
 				$(function(){
-
 					$(".realEstateType-radio").click(function(){
-
-						
-						console.log($("input[name=realEstateType]:checked").val())
+						// console.log($("input[name=realEstateType]:checked").val())
 						if($("input[name=realEstateType]:checked").val() == "officetel"){
 							$("#own-area").css("display", "none");
 						}else{
 							$("#own-area").css("display", "block");
 						}
-						
 					})
-
 				
 				$("#amount-value").keyup(function(){
-
-					console.log($("#amount-value").val())
+					// console.log($("#amount-value").val())
 
 					var target = $("#amount-value").val()*10000;
 					var unitWords    = ['', '만', '억', '조', '경'];
@@ -235,28 +239,11 @@
 						$("#amount-value-result").html("숫자가 너무 큽니다!");
 						$("#taxCalculateBtn").attr("disabled", true);
 						$("#taxCalculateBtn").removeClass("tax-btn-hover");
-
 					}
 				})
 				
 			})
-
-
 				</script>	
-
-
-
-				<br><br><br><br><br>
-				<button class="tax-explanation">참고사항</button>
-
-				<div class="tax-explanation-modal">
-					<img src="resources/images/etc/taxImage.png" alt="">
-				</div>
-
-				<img src="resources/images/etc/taxImage.png" style="width: 100%; height: 20%;" alt="">
-
-				
-				
 			</div>
 		</div>
 	</div>
