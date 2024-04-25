@@ -6,7 +6,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
-
     <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta charset="UTF-8" />
@@ -77,39 +76,38 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <th>Payment</th>
 	                      <th>Price</th>
 	                      <th>Ex2</th>
-	                      <th>Status</th>
 	                      <th class="text-right"></th>
                       </thead>
                       <tbody id="aptListClick1">
-	                      <tr>
-	                        <td class="pno">1000</td>
-	                        <td>
-                            	<img style="width: 100px; height: 100px;" src="https://d1774jszgerdmk.cloudfront.net/512/acef62d1-6d73-46f7-bb3a-0ef26c9e3157" alt="">
-                          	</td>
-	                        <td>목동우성2차</td>
-	                        <td>고층, 106.16m², 관리비 26만</td>
-	                        <td>매매</td>
-	                        <td>12억</td>
-	                        <td>입구동 편의시설접근 좋음 로얄동 로얄층 거실확장 주인거주상태좋음</td>
-	                        <td>Y</td>
-                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
-	                      </tr>
-	                      <tr>
-	                        <td class="pno">1001</td>
-	                        <td>
-                            	<img style="width: 100px; height: 100px;" src="https://d1774jszgerdmk.cloudfront.net/512/438410c9-11f1-48b6-8747-458d9b0a7fc0" alt="">
-                          	</td>
-	                        <td>목동우성2차</td>
-	                        <td>18층, 106.16m², 관리비 26만</td>
-	                        <td>매매</td>
-	                        <td>10억9000</td>
-	                        <td>최선호동 세안고매매, 구수리 목동학군 봉영중 목동고</td>
-	                        <td>Y</td>
-                        	<td class="text-right"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
-	                      </tr>
+	                      
+	                      <c:forEach var="aapt" items="${ admAptList }">
+		                      <tr>
+		                        <td class="pno">${ aapt.aptNo }</td>
+		                        <td>
+	                            	<img style="width: 100px; height: 100px;" style="border-radius: 5px;" src="${ aapt.aptImgUrl }" alt="">
+	                          	</td>
+		                        <td>${ aapt.aptName }</td>
+		                        <td>${ aapt.aptDesc }</td>
+		                        <td>${ aapt.aptSellingType }</td>
+		                        <td>${ aapt.aptPrice }</td>
+		                        <td>${ aapt.aptIntroduce }</td>
+	                        	<td class="text-right"><a style="color:red; border-radius: 20px" onclick="confirmAptDelete(${aapt.aptNo})"><i class="fa-solid fa-trash-can"></i></a></td>
+		                      </tr>
+	                      </c:forEach>
+	                      
                       </tbody>
                     </table>
                   </div>
+                  
+                  <script>
+                  	  function confirmAptDelete(no){
+                  		var confirmDelete = confirm("삭제하시겠습니까?");
+                        if (confirmDelete) {
+                            // 확인을 눌렀을 때 컨트롤러에 삭제 요청을 보낼 수 있도록 구현
+                            location.href = "deleteApt.ad?aptNo=" + no;
+                        }
+                  	  }
+                  </script>
                 
                 <%--
                 <script>
@@ -126,24 +124,24 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <ul class="pagination">
                 	
                 	<c:choose>
-                		<c:when test="${ adminPi.currentPage eq 1 }">
+                		<c:when test="${ adminAptPi.currentPage eq 1 }">
                    			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
                    		</c:when> 
                    		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminPi.currentPage -1 }">Previous</a></li>
+                   			<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminAptPi.currentPage -1 }">Previous</a></li>
                    		</c:otherwise>
                    	</c:choose>
                    	
-                   	<c:forEach var="p" begin="${ adminPi.startPage }" end="${ adminPi.endPage }">
+                   	<c:forEach var="p" begin="${ adminAptPi.startPage }" end="${ adminAptPi.endPage }">
                    		<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ p }">${ p }</a></li>
                     </c:forEach>
                     
                     <c:choose>
-                    	<c:when test="${ adminPi.currentPage eq adminPi.maxPage }">
+                    	<c:when test="${ adminAptPi.currentPage eq adminAptPi.maxPage }">
 							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
         				</c:when>
         				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminPi.currentPage + 1 }">Next</a></li>
+        					<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminAptPi.currentPage + 1 }">Next</a></li>
         				</c:otherwise>
         			</c:choose>
                 </ul>

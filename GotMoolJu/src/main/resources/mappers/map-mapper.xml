@@ -159,4 +159,27 @@
 		 WHERE "APT_PRICE" IS NOT NULL
 		   AND ROWNUM BETWEEN 1 AND 10
 	</select>
+	
+	<select id="selectAdminAptList" resultMap="mapResult">
+		select 
+		       apt_no
+		     , apt_img_url
+		     , apt_name
+		     , apt_desc
+		     , apt_selling_type
+		     , apt_price
+		     , apt_introduce
+		  from tb_apt
+		 where apt_status is null 
+		 order
+		    by apt_no desc
+	</select>
+	
+	<update id="deleteAdminApt">
+		update tb_apt
+		   set apt_status = 'N'
+		 where apt_no = #{aptNo}
+	</update>
+	
+	
 </mapper>
