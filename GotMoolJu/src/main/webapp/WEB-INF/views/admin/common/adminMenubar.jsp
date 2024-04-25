@@ -72,9 +72,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </a>
             </li>
             <li>
-              <a href="./user.html">
+              <a href="impList.ad">
                 <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>User Profile</p>
+                <p>개선의견</p>
               </a>
             </li>
             <li>
