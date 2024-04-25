@@ -81,5 +81,11 @@ public class MemberServiceImpl implements MemberService {
 		return mDao.deleteLike(sqlSession, lvo);
 	}
 
+	@Override
+	public int countLike(int userNo) {
+		
+		return mDao.countLike(sqlSession, userNo);
+	}
+
 
 }

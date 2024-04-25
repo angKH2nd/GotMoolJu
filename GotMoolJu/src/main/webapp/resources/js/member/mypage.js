@@ -32,10 +32,29 @@ function openCommunityEnrollForm() {
 }
 
 $(document).ready(function() {
+
+	$.ajax({
+		url:"countLike.me",
+		data:{
+			userNo:$("#userNo").val()
+		},
+		success:function(result){
+			if(result > 0){
+				$(".mypage-dibs-count").html(result);
+			}else{
+				$(".mypage-dibs-count").html(0);
+			}
+		},
+		error:function(){
+			console.log("좋아요 카운트 오류")
+		}
+	})
+
 	if($(".mypage-name").html() !== ''){
 		selectMemberMypageStar();
 	}
 })
+
 
 function selectMemberMypageStar() {
 	$.ajax({

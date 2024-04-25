@@ -40,4 +40,7 @@ public interface MemberService {
 	
 	// 이미 하트가 있으면 다시 db 지우고 빈하트로 바꾸는 delete
 	int deleteLike(LikeVO lvo);
+	
+	// 마이페이지 좋아요 갯수 select
+	int countLike(int userNo);
 }

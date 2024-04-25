@@ -263,4 +263,11 @@
 		   AND DIBS_APT_NO = #{dibsAptNo}
 	</delete>
 	
+	<!-- 좋아요 카운트 -->
+	<select id="countLike" resultType="_int">
+		SELECT COUNT(*)
+		  FROM TB_DIBS
+		 WHERE DIBS_USER_NO = #{userNo}
+	</select>
+	
 </mapper>
