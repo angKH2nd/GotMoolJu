@@ -137,13 +137,12 @@ function test(no){
 	let icon = document.getElementById('heartIcon');
 
     $.ajax({
-        url:"selectLike.ma",
+        url:"selectLike.me",
         data:{
             userNo : $("#userNo").val(),
             aptNo: no
         },
         success:function(result){
-            console.log(result)
             if(result > 0){
                 // 꽉찬 하트로 바꿔주고, 빨강
                 icon.classList.remove('fa-regular');

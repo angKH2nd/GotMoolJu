@@ -65,6 +65,7 @@ public class MapController {
 	@ResponseBody
 	@RequestMapping(value = "selectAptDetail.ma", produces = "application/json; charset=utf-8")
 	public String selectAptDetail(String aptNo, HttpServletRequest request) {
+		
 		return new Gson().toJson(mService.selectAptDetail(aptNo));
 	}
 	

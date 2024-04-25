@@ -235,4 +235,27 @@
 		
 	</select>
 	
+	<!-- ad. 찜 클릭시 db에 저장 -->
+	<insert id="insertLike">
+		INSERT
+		  INTO TB_DIBS
+		  (
+		    DIBS_USER_NO
+		  , DIBS_APT_NO 
+		  )
+		  VALUES
+		  (
+		    #{dibsUserNo}
+		  , #{dibsAptNo}  
+		  )
+	</insert>
+	
+	<!-- ad. 빨간 하트일 경우 db 삭제 -->
+	<delete id="deleteLike">
+		DELETE 
+		  FROM TB_DIBS
+		 WHERE DIBS_USER_NO = #{dibsUserNo}
+		   AND DIBS_APT_NO = #{dibsAptNo}
+	</delete>
+	
 </mapper>

@@ -69,5 +69,17 @@ public class MemberServiceImpl implements MemberService {
 		return mDao.insertSocial(sqlSession, m);
 	}
 
+	@Override
+	public int insertLike(LikeVO lvo) {
+		
+		return mDao.insertLike(sqlSession, lvo);
+	}
+
+	@Override
+	public int deleteLike(LikeVO lvo) {
+		
+		return mDao.deleteLike(sqlSession, lvo);
+	}
+
 
 }

@@ -29,13 +29,15 @@ public interface MemberService {
 	// 비밀번호 찾기 서비스 (update)
 	int searchNewPwd(String searchNewPwd, String searchNewPwdUserId);
 	
-	
 	// 소셜 회원가입
 	int insertSocial(Member m);
 	
-	
-	
-	
 	// 좋아요가 되어있는지 확인용
 	int selectLikeYN(LikeVO lvo);
+	
+	// 좋아요 클릭시 db에 저장하는 insert
+	int insertLike(LikeVO lvo);
+	
+	// 이미 하트가 있으면 다시 db 지우고 빈하트로 바꾸는 delete
+	int deleteLike(LikeVO lvo);
 }
