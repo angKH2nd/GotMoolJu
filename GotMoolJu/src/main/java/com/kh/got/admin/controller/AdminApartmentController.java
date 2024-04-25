@@ -25,7 +25,7 @@ public class AdminApartmentController {
 		
 		return "admin/apartment/adminApartment";
 			
-			
 	}
+	
 	
 }
