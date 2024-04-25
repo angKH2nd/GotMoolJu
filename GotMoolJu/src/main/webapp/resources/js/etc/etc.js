@@ -83,37 +83,9 @@ if(!Kakao.isInitialized()) { // init 체크
 	Kakao.init('4c522fb47a87ee4e17b005d7a33f1f99');
 }
 
-var sendKakao = function() {
-    // 메시지 공유 함수
-    Kakao.Link.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '제목을 여기에 씁니다.',
-      description: '내용을 여기에 씁니다',
-      imageUrl:
-        'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeB1Yj7%2Fbtrn8HKdp01%2FlZMtAuvo986os4dCkVoAOk%2Fimg.png',
-      imageWidth: 1200,
-      imageHeight: 630,
-      link: {
-        mobileWebUrl: 'https://developers.kakao.com',
-        androidExecutionParams: 'test',
-      },
-    },
-    itemContent: {
-      profileText: '송송',
-      profileImageUrl:
-        'https://tistory1.daumcdn.net/tistory/373748/attach/af0ef0205e234b4f9f09d7bce27dd237',
-    },
-    buttons: [
-      {
-        title: '블로그 둘러보기',
-        link: {
-          mobileWebUrl: 'https://songsong.dev',
-          webUrl: 'https://songsong.dev',
-        },
-      },
-    ],
-  });
-};
-
+function kakaoShare() {
+	Kakao.Link.sendCustom({
+	    templateId: 107255,
+	})
+}
 /* ----------------- SNS ----------------- */

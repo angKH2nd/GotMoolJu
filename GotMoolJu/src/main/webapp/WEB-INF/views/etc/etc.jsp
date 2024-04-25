@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>갓물주</title>
 <link rel="stylesheet" href="resources/css/etc/etc.css">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
 	<div class="etc-outer">
@@ -60,7 +61,7 @@
 				<div class="etc-sns fl mh centerXY hoverZ" onclick="openGithub();"><img width=30 height=30 src="resources/images/etc/github-logo.png"></div>
 				<div class="etc-sns fl mh centerXY hoverZ" onclick="openNotion();"><img width=30 height=30 src="resources/images/etc/notion-logo.png"></div>
 				<div class="etc-sns fl mh centerXY hoverZ" onclick="openYoutube();"><img width=45 height=45 src="resources/images/etc/youtube-logo.jpg"></div>
-				<div class="etc-sns fl mh centerXY hoverZ" onclick="openKakao();"><img width=30 height=30 src="resources/images/etc/kakaotalk-logo.png"></div>
+				<div class="etc-sns fl mh centerXY hoverZ" id="kakao-link-btn" onclick="kakaoShare();"><img width=30 height=30 src="resources/images/etc/kakaotalk-logo.png"></div>
 				<div class="etc-sns fl mh centerXY hoverZ" onclick="openGot();"><img width=30 height=30 src="resources/images/got/got_logo_big.jpg"></div>
 			</div>
 		</div>
