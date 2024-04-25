@@ -110,11 +110,6 @@ public class EtcController {
 	@RequestMapping(value = "tax.et", produces = "application/json; charset=utf-8")
 	public String taxCalculate(String realEstateType, String areaType, String own ,String amount) throws IOException {
 		
-		// System.out.println(realEstateType);
-		// System.out.println(areaType);
-		// System.out.println(own);
-		// System.out.println(amount);
-		
 		String url = "https://calcapi.fran.kr/v1/acquisition?clientID=tkfkaksek97&clientSecret=3a00E884A2998975f9f1fD67b738D84fb2";
 		
 		url += "&realEstateType=" + realEstateType;
