@@ -84,33 +84,8 @@ if(!Kakao.isInitialized()) { // init 체크
 }
 
 function kakaoShare() {
-	var baseUrl = '192.168.20.37:8222';
-    var gotUrl = baseUrl + '/got';
-
-    Kakao.Link.sendDefault({
-        objectType: 'feed',
-        content: {
-        	title: '갓물주와 함께 내집마련을!',
-        	description: '우리는 사람과 집을 연결하고, 더 나은 삶의 방식을 만듭니다.',
-        	imageUrl: 'resources/images/got/got_logo_big.jpg',
-        	link: {
-	            mobileWebUrl: gotUrl,
-	            webUrl: gotUrl,
-        	},
-        },
-      	buttons: [
-        {
-          title: '웹으로 보기',
-          link: {
-              mobileWebUrl: gotUrl,
-              webUrl: gotUrl,
-          },
-        },
-      	],
-        // 카카오톡 미설치 시 카카오톡 설치 경로이동
-        installTalk: true,
-    })
+	Kakao.Link.sendCustom({
+	    templateId: 107255,
+	})
 }
-
-
 /* ----------------- SNS ----------------- */
