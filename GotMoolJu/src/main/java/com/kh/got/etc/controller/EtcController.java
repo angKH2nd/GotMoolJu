@@ -1,5 +1,11 @@
 package com.kh.got.etc.controller;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
@@ -99,6 +105,50 @@ public class EtcController {
 		
 		return result;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "tax.et", produces = "application/json; charset=utf-8")
+	public String taxCalculate(String realEstateType, String areaType, String own ,String amount) throws IOException {
+		
+		String url = "https://calcapi.fran.kr/v1/acquisition?clientID=tkfkaksek97&clientSecret=3a00E884A2998975f9f1fD67b738D84fb2";
+		
+		url += "&realEstateType=" + realEstateType;
+		url += "&areaType=" + areaType;
+		url += "&own=" + own;
+		url += "&amount=" + amount;
+		
+		URL requestUrl = new URL(url);
+		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
+		urlConnection.setRequestMethod("GET");
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+		
+		String responseText = "";
+		String line;
+		while((line = br.readLine()) != null) {
+			responseText += line;
+		}
+		
+		br.close();
+		urlConnection.disconnect();
+
+		System.out.println(responseText);
+		
+		return responseText;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
