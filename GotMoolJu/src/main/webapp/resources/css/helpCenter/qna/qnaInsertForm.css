@@ -1,1 +1,27 @@
 @charset "UTF-8";
+
+#qnaInsert {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-insert-form {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-insert-form>div {
+	width: 100%;
+}
+
+.qna-insert-head-area {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 15px;
+	border-bottom: 0.5px solid lightgray
+}
+
+.qna-insert-area {
+	height: calc(100% - 45px);
+	padding: 15px;
+}

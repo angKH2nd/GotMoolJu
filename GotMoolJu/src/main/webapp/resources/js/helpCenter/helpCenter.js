@@ -51,8 +51,6 @@ function loadQna(pageNumber) {
         url: "list.qna",
         data: { cpage: pageNumber },
         success: function(response) {
-            console.log("Data AJAX: pagination and list", response);
-
             let qna = response.qnaList;
             let pageInfo = response.qnaPageInfo;
            
@@ -81,13 +79,13 @@ function updateTable(qna) {
 function createPagination(pageInfo) {
         let paginationHTML = "";
         if (pageInfo.currentPage > 1) {
-            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage - 1) + ')">Previous</a></li>';
+            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage - 1) + ')"><i class="fa-solid fa-angle-left"></i></a></li>';
         }
         for (let p = pageInfo.startPage; p <= pageInfo.endPage; p++) {
             paginationHTML += '<li class="qpage-item ' + (p === pageInfo.currentPage ? 'active' : '') + '"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + p + ')">' + p + '</a></li>';
         }
         if (pageInfo.currentPage < pageInfo.maxPage) {
-            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage + 1) + ')">Next</a></li>';
+            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage + 1) + ')"><i class="fa-solid fa-angle-right"></i></a></li>';
         }
         $(".qna-pagination").html(paginationHTML);
     }
