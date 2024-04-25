@@ -27,7 +27,8 @@
 					<div class="mypage-dibs-icon centerXY fl"><i class="fa-solid fa-heart fa-lg"></i></div>
 					<div class="mypage-dibs-title centerY fl">찜 목록</div>
 					<div class="mypage-dibs-content fl">
-						<div class="mypage-dibs-count centerXY fl">6</div>
+						<input type="hidden" id="userNo" name="userNo" value="${loginUser.userNo}">
+						<div class="mypage-dibs-count centerXY fl"></div>
 						<div class="mypage-dibs-count-name centerXY fl"> 건</div>
 					</div>
 					<div class="mypage-dibs-more centerXY fl"><i class="fa-solid fa-angles-right fa-lg"></i></div>

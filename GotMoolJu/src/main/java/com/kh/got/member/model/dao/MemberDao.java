@@ -74,4 +74,8 @@ public class MemberDao {
 		
 		return sqlSession.delete("memberMapper.deleteLike", lvo);
 	}
+	
+	public int countLike(SqlSessionTemplate sqlSession, int userNo) {
+		return sqlSession.selectOne("memberMapper.countLike", userNo);
+	}
 }

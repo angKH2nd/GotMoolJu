@@ -669,4 +669,11 @@ public class MemberController {
 		
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="countLike.me")
+	public int countingLike(int userNo) {
+		
+		return mService.countLike(userNo);
+		
+	}
 }
