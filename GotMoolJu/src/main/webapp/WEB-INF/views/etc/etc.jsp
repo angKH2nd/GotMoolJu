@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="etc-menu2">
-			<div class="bgh mh pd15 centerY">지금 핫한 단지는?</div>
+			<div class="bgh mh pd15 centerY" onclick="toggleEtcDiv('hotApt');">지금 핫한 단지는?</div>
 			<div class="bgh mh pd15 centerY" onclick="openRank();">아파트 랭킹</div>
 		</div>
 		<div class="etc-menu3">
