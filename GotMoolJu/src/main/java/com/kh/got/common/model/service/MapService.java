@@ -24,4 +24,6 @@ public interface MapService {
 	
 	ArrayList<MapVO> selectTopPrice();
 	
+	ArrayList<MapVO> selectDibsList(int userNo);
+	
 }

@@ -9,6 +9,45 @@ function toggleMypageDiv(className){
             div.style.display = 'none';
         }
     });
+    
+    if(className === 'memberDibsList'){
+    	selectDibsList();
+    }
+}
+
+function selectDibsList(){
+
+	let dibsList = "";
+	$.ajax({
+		url:"selectDibsList.ma",
+		success:function(data){
+
+			for(let i=0; i<data.length; i++){
+				dibsList += `
+						    <div class='detailMap-apt' onclick="toggleAptDetailDiv('aptDetailForm', ${data[i].dibsAptNo});">
+						        <div class='detailMap-apt-img centerXY hoverZ'>
+						            <img src='${data[i].aptImgUrl}'>
+						        </div>
+						        <div class='detailMap-apt-content'>
+						            <div><i class="fa-brands fa-bandcamp"></i> 매물번호 <span style="color: blue;">${data[i].dibsAptNo}</span></div>
+						            <ul>
+						                <li><i class="fa-solid fa-sack-dollar"></i> ${data[i].aptSellingType}${data[i].aptPrice}</li>
+						                <li><i class="fa-solid fa-building"></i> &nbsp;${data[i].aptName}</li>
+						                <li><i class="fa-solid fa-tag"></i> <span style="color: gray;">${data[i].aptDesc}</span></li>
+						            </ul>
+						        </div>
+						    </div>
+						   `;
+			}
+
+
+			$(".member-dibs-form-content").html(dibsList);
+
+		},
+		error:function(){
+
+		}
+	})
 }
 
 function cancelMypageDiv() {
@@ -44,6 +83,7 @@ $(document).ready(function() {
 			}else{
 				$(".mypage-dibs-count").html(0);
 			}
+			
 		},
 		error:function(){
 			console.log("좋아요 카운트 오류")
@@ -54,7 +94,6 @@ $(document).ready(function() {
 		selectMemberMypageStar();
 	}
 })
-
 
 function selectMemberMypageStar() {
 	$.ajax({

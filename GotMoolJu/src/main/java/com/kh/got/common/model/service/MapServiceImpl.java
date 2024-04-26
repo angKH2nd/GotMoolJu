@@ -65,5 +65,10 @@ public class MapServiceImpl implements MapService {
 		
 		return mDao.selectTopPrice(sqlSession);
 	}
+
+	@Override
+	public ArrayList<MapVO> selectDibsList(int userNo) {
+		return mDao.selectDibsList(sqlSession, userNo);
+	}
 	
 }

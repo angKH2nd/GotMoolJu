@@ -38,6 +38,7 @@
 		<result column="apt_beds" property="aptBeds"/>
 		<result column="apt_bath" property="aptBath"/>
 		<result column="apt_entrance_type" property="aptEntranceType"/>
+		<result column="dibs_apt_no" property="dibsAptNo"/>
 	</resultMap>
 	<!--  
 	<select id="selectAllList" resultMap="mapResult"> 
@@ -159,4 +160,18 @@
 		 WHERE "APT_PRICE" IS NOT NULL
 		   AND ROWNUM BETWEEN 1 AND 10
 	</select>
+	
+	<select id="selectDibsList" resultMap="mapResult">
+		select 
+	           DIBS_APT_NO 
+	         , APT_SELLING_TYPE
+	         , APT_NAME        
+	         , APT_PRICE
+	         , APT_IMG_URL
+	         , APT_DESC
+	      from tb_apt
+	      join tb_dibs on (APT_NO = DIBS_APT_NO)
+	    where dibs_user_no = #{userNo}
+	</select>
+	
 </mapper>
