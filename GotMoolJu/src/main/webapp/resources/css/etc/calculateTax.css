@@ -32,7 +32,7 @@
 }
 
 .calculate-center {
-	height: 240px;
+	height: 220px;
 }
 
 .calculate-center>div {
@@ -44,14 +44,13 @@
 }
 
 .calculate-text {
-	height: 40px;
-	color: #434d68;
-	border-bottom: 0.5px solid lightgray;
+	height: 15px;
+	color: gray;
 	padding: 0 15px 15px 15px;
 }
 
 .calculate-body {
-	height: 550px;
+	height: 620px;
 	overflow-y: auto;
 }
 
@@ -59,3 +58,23 @@
 	width: 100%;
 	height: auto;
 }
+
+#taxResult {
+	width: 419px;
+	border-collapse: collapse;
+}
+
+#taxResult>thead>tr {
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+
+#taxResult>tbody>tr {
+	border-bottom: 0.5px solid lightgray;
+	height: 45px;
+}
+
+
+
+
+

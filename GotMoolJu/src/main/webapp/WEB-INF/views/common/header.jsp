@@ -98,6 +98,11 @@
     	<%@ include file="../member/memberUpdatePwdForm.jsp" %>
 	</div>
 	
+	<%-- 세금계산기 영역 --%>
+	<div class="modal-ref-wrap no-scrollbar">
+		<img style="border-radius: 20px;" class="pd15" width=770 height=520 src="resources/images/etc/taxImage.png">
+	</div>
+	
 	<script src="resources/js/common/header.js"></script>
 </body>
 </html>

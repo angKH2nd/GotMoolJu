@@ -132,21 +132,8 @@ public class EtcController {
 		br.close();
 		urlConnection.disconnect();
 
-		System.out.println(responseText);
-		
 		return responseText;
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

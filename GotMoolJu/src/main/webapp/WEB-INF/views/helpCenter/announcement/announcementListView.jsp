@@ -14,8 +14,8 @@
         <div class="announcement-innerOuter pd15">
             <!-- 로그인후 상태일 경우만 보여지는 글쓰기 버튼-->
             <c:if test="${loginUser.userId == 'admin'  }">
-               <a class="announcement-btn btn-secondary btn-sm" style="float: right" href="enrollForm.an">글쓰기</a>
-              </c:if>
+                <a class="announcement-btn btn-secondary btn-sm" style="float: right" href="enrollForm.an">글쓰기</a>
+            </c:if>
             
             <table id="announcementList" class="announcement-table table-hover" align="center">
                 <thead>

@@ -165,7 +165,7 @@
 	           , m.user_nickname as "qna_writer"
 	           , q.qna_title
 	           , q.qna_content
-	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_date"
+	           , to_char(qna_create_date, 'YYYY-MM-DD') as "qna_create_date"
 	           , q.qna_answer_status
 	           , q.qna_type
 	       from tb_qna q

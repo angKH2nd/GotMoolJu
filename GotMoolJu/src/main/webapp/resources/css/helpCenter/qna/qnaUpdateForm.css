@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+#qnaUpdate {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-update-form {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-update-form>div {
+	width: 100%;
+}
+
+.qna-update-head-area {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 15px;
+	border-bottom: 0.5px solid lightgray
+}
+
+.qna-update-area {
+	height: calc(100% - 45px);
+	padding: 15px;
+}
+
+.qna-update-area>div {
+	width: 100%;
+}
+
+.qna-update-area-icon {
+	height: 45px;
+	margin-bottom: 15px;
+}
+
+.qna-update-area-icon>div {
+	height: 100%;
+}
+
+.icon-i-notice-area {
+	width: 350px;
+	color: gray;
+	font-size: 12px;
+	line-height: 25px;
+}
+
+.update-visibility-toggle {
+	text-align: right;
+	width: calc(100% - 405px);
+    margin-bottom: 10px;
+}
+
+.update-visibility-text {
+	width: 45px;
+    margin-left: 10px;
+}
+
+.qna-update-area-title {
+	height: 80px;
+}
+
+.qna-update-area-title>div {
+	width: 100%;
+}
+
+.qna-title-update {
+	height: 35px;
+	text-align: left;
+}
+
+.qna-title-input-update {
+	height: calc(100% - 35px);
+}
+
+.qna-title-input-update>input {
+	width: calc(100% - 5px);
+	height: calc(100% - 10px);
+	border: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-title-input-update>input:focus {
+	border: none;
+	outline: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-update-area-content {
+	height: 110px;
+}
+
+.qna-update-area-content>div {
+	width: 100%;
+}
+
+.qna-content-update {
+	height: 35px;
+	margin-top: 25px;
+}
+
+.qna-content-input-update {
+	height: calc(100% - 35px);
+}
+
+.qna-content-input-update>textarea {
+	width: calc(100% - 5px);
+	height: calc(100% - 10px);
+	border: none;
+	border-bottom: 0.5px solid #434d68;
+	resize: none;
+}
+
+.qna-content-input-update>textarea:focus {
+	border: none;
+	outline: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-update-btn, .qna-update-close-btn {
+	margin: 12px 0;
+	background-color: #4CAF50; 
+	color: white; 
+	padding: 10px 24px; 
+	border: none; 
+	text-align: center;
+}
+
+.qna-update-btn {
+	margin-top: 25px;
+}
+
+.qna-update-btn button {
+	background-color: #4caf50;
+	border: none;
+}
+
+.qna-update-close-btn button, .qna-update-close-btn {
+	color: white;
+	background-color: #434d68;
+	border: none;
+}

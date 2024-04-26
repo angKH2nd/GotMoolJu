@@ -1,1 +1,137 @@
 @charset "UTF-8";
+
+#qnaInsert {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-insert-form {
+	width: 100%;
+	height: 100%;
+}
+
+.qna-insert-form>div {
+	width: 100%;
+}
+
+.qna-insert-head-area {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 15px;
+	border-bottom: 0.5px solid lightgray
+}
+
+.qna-insert-area {
+	height: calc(100% - 45px);
+	padding: 15px;
+}
+
+.qna-insert-area>div {
+	width: 100%;
+}
+
+.qna-insert-area-icon {
+	height: 45px;
+	margin-bottom: 15px;
+}
+
+.qna-insert-area-icon>div {
+	height: 100%;
+}
+
+.icon-i-notice-area {
+	width: 350px;
+	color: gray;
+	font-size: 12px;
+	line-height: 25px;
+}
+
+.visibility-toggle {
+	text-align: right;
+	width: calc(100% - 405px);
+    margin-bottom: 10px;
+}
+
+.visibility-text {
+	width: 45px;
+    margin-left: 10px;
+}
+
+.qna-insert-area-title {
+	height: 80px;
+}
+
+.qna-insert-area-title>div {
+	width: 100%;
+}
+
+.qna-title {
+	height: 35px;
+	text-align: left;
+}
+
+.qna-title-input {
+	height: calc(100% - 35px);
+}
+
+.qna-title-input>input {
+	width: calc(100% - 5px);
+	height: calc(100% - 10px);
+	border: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-title-input>input:focus {
+	border: none;
+	outline: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-insert-area-content {
+	height: 110px;
+}
+
+.qna-insert-area-content>div {
+	width: 100%;
+}
+
+.qna-content {
+	height: 35px;
+	margin-top: 25px;
+}
+
+.qna-content-input {
+	height: calc(100% - 35px);
+}
+
+.qna-content-input>textarea {
+	width: calc(100% - 5px);
+	height: calc(100% - 10px);
+	border: none;
+	border-bottom: 0.5px solid #434d68;
+	resize: none;
+}
+
+.qna-content-input>textarea:focus {
+	border: none;
+	outline: none;
+	border-bottom: 0.5px solid #434d68;
+}
+
+.qna-insert-btn, .qna-insert-close-btn {
+	margin: 12px 0;
+	background-color: #4CAF50; 
+	color: white; 
+	padding: 10px 24px; 
+	border: none; 
+	text-align: center;
+}
+
+.qna-insert-btn {
+	margin-top: 25px;
+}
+
+.qna-insert-close-btn button, .qna-insert-close-btn {
+	color: white;
+	background-color: #434d68;
+}

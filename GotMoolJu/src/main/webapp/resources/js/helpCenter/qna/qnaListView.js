@@ -37,7 +37,6 @@ function showQnaDetail(qnaNo) {
 			url: "detail.qna",
 			data: {qno:qnaNo},
 			success: function(result){
-				console.log(result);
 				// 성공한 경우 => qnaDetailView.jsp 내에 해당 ajax 조회 결과 (qna 상세정보) 기입해주기 (qna-detail-area 는 예시)
 				if(result.qnaType == "2"){
 					$(".qna-detail-area tbody td").html("비밀글입니다");

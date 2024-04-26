@@ -51,8 +51,6 @@ function loadQna(pageNumber) {
         url: "list.qna",
         data: { cpage: pageNumber },
         success: function(response) {
-            console.log("Data AJAX: pagination and list", response);
-
             let qna = response.qnaList;
             let pageInfo = response.qnaPageInfo;
            
@@ -70,7 +68,7 @@ function updateTable(qna) {
     for (let i in qna) {
         let formattedWriter = formatWriterName(qna[i].qnaWriter);
 	        qnaHtml += `<tr id="${qna[i].qnaNo}" class="bgh mh">`;
-	        qnaHtml += `<td>${qna[i].qnaType == 2 ? '<i class="fa-solid fa-lock"></i> ' : ''}${qna[i].qnaTitle}</td>`;
+	        qnaHtml += `<td style="text-align: left;">${qna[i].qnaType == 2 ? '<i class="fa-solid fa-lock"></i> ' : ''}${qna[i].qnaTitle}</td>`;
 	        qnaHtml += `<td>${formattedWriter}</td>`;
 	        qnaHtml += `<td>${qna[i].qnaCreateDate}</td>`;
 	        qnaHtml += `<td>${qna[i].qnaAnswerStatus === 'N' ? '대기' : '완료'}</td></tr>`;
@@ -79,18 +77,18 @@ function updateTable(qna) {
 }
 
 function createPagination(pageInfo) {
-        let paginationHTML = "";
-        if (pageInfo.currentPage > 1) {
-            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage - 1) + ')">Previous</a></li>';
-        }
-        for (let p = pageInfo.startPage; p <= pageInfo.endPage; p++) {
-            paginationHTML += '<li class="qpage-item ' + (p === pageInfo.currentPage ? 'active' : '') + '"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + p + ')">' + p + '</a></li>';
-        }
-        if (pageInfo.currentPage < pageInfo.maxPage) {
-            paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage + 1) + ')">Next</a></li>';
-        }
-        $(".qna-pagination").html(paginationHTML);
+    let paginationHTML = "";
+    if (pageInfo.currentPage > 1) {
+        paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage - 1) + ')"><i class="fa-solid fa-angle-left"></i></a></li>';
     }
+    for (let p = pageInfo.startPage; p <= pageInfo.endPage; p++) {
+        paginationHTML += '<li class="qpage-item ' + (p === pageInfo.currentPage ? 'active' : '') + '"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + p + ')">' + p + '</a></li>';
+    }
+    if (pageInfo.currentPage < pageInfo.maxPage) {
+        paginationHTML += '<li class="qpage-item"><a class="page-link" href="#" onclick="event.preventDefault(); loadQna(' + (pageInfo.currentPage + 1) + ')"><i class="fa-solid fa-angle-right"></i></a></li>';
+    }
+    $(".qna-pagination").html(paginationHTML);
+}
 
 function toggleHelpCenter(divClass) {
     var divs = document.querySelectorAll('.helpCenter-bar-toggle > div');
