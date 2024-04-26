@@ -123,7 +123,9 @@ function toggleAptDetailDiv(className, no){
             
             showRecentProperties();
             
-            test(no);
+            if($(".mypage-name").html() !== ''){
+            	test(no);
+            }
         },
         error : function(){
             swal("부동산 조회 실패!", "관리자에게 문의해주세요", 'warning');
