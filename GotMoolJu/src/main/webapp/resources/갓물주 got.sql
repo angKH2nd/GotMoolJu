@@ -99,6 +99,36 @@ INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user02', '$2a$10$aY0LWsAmndg
 INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user03', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '박민규', '기사식당명함도둑', '010-7513-1513', 'park@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_kyuu.jpg', 'resources/uploadFiles/member/2024032609000082223.jpg');
 INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user04', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '신나리', '휴게소컵도둑', '010-5238-1728', 'shin@kh.or.kr', 'F', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_berry.jpg', 'resources/uploadFiles/member/2024032609000082224.jpg');
 INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user05', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '이상용', '주호민이알려주는고데기사용법', '010-4215-9178', 'leessang@kh.or.kr', 'M', '서울시 강동구 천호동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_lee.jpeg', 'resources/uploadFiles/member/2024032609000082225.jpg');
+
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user06', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '임하리', '주인', '010-1721-8432', 'eiwq145@kh.or.kr', 'F', '서울시 영등포구 당산동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082226.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user07', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '유재섬', '사쿠라', '010-1547-1513', 'mpkm046@kh.or.kr', 'M', '서울시 영등포구 대림동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082227.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user08', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '나경운', '저는김치입니다', '010-9764-5286', 'mipmw04@kh.or.kr', 'M', '서울시 영등포구 도림동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082228.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user09', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '권상오', '저는돼지입니다', '010-3162-6134', 'msdh53@kh.or.kr', 'M', '서울시 영등포구 신길동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082229.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user10', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '손태양', '저는해병입니다', '010-4451-8765', 'mkls18@kh.or.kr', 'M', '서울시 영등포구 양화동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082230.png');
+
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user11', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '강혜양', '개털알레르기', '010-4845-1411', 'qwe048@kh.or.kr', 'M', '서울시 종로구 계동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082231.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user12', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '이산균', '빗자루', '010-1172-4487', 'hrww504@kh.or.kr', 'M', '서울시 종로구 가회동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082232.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user13', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '난혜진', '무지개', '010-0531-9204', 'zmuvs68@kh.or.kr', 'M', '서울시 종로구 공평동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082233.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user14', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '나준상', '솜사탕', '010-9174-1840', 'miop0qw@kh.or.kr', 'M', '서울시 종로구 경운동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082234.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user15', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '홍은하', '기부가좋아', '010-7841-1230', 'nmhr50@kh.or.kr', 'M', '서울시 종로구 교남동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082235.png');
+
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user16', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '윤중신', '총학생회회장', '010-8415-1510', 'qq9ewq9@kh.or.kr', 'M', '서울시 용산구 동빙고동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082236.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user17', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '전나라', '레스토랑포크도둑', '010-9798-2310', 'mksk045@kh.or.kr', 'M', '서울시 용산구 갈월동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082237.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user18', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '여성진', '아쿠아리움이끼도둑', '010-7812-1045', 'q0546@kh.or.kr', 'M', '서울시 용산구 문배동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082238.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user19', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '강지영', '스타벅스전기도둑', '010-9963-1520', 'ngd05@kh.or.kr', 'M', '서울시 용산구 이촌동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082239.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user20', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '이소근', '와이파이비번주세요', '010-2475-1723', 'zxc504@kh.or.kr', 'M', '서울시 용산구 청암동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082240.png');
+
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user21', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '감병지', '커튼사주세요', '010-7748-5176', 'e045q@kh.or.kr', 'M', '서울시 중랑구 망우동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082241.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user22', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김민경', '메N괌', '010-1547-7021', 'wqe142a@kh.or.kr', 'M', '서울시 중랑구 면목동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082242.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user23', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김호동', '민족전통놀이맞고', '010-0985-2361', 'qwrq1a@kh.or.kr', 'M', '서울시 중랑구 중화동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082243.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user24', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김수연', '아뇨뚱인데요', '010-2049-8365', 'nqwe05@kh.or.kr', 'M', '서울시 중랑구 상봉동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082244.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user25', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '하지운', '언제까지일까', '010-0784-5956', 'qmip@kh.or.kr', 'M', '서울시 중랑구 묵동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082245.png');
+
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user26', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '온조완', '집가고싶다', '010-0524-1504', 'zxna@kh.or.kr', 'M', '서울시 성북구 상월곡동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082246.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user27', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '양현심', '알빠누', '010-8142-2042', 'qnwi@kh.or.kr', 'M', '서울시 성북구 석관동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082247.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user28', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '박철영', '초코브라우니', '010-7402-0351', 'wmqui@kh.or.kr', 'M', '서울시 성북구 성북동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082248.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user29', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '김아연', '맘모스커피사랑해', '010-0152-0429', 'nonus@kh.or.kr', 'M', '서울시 성북구 돈암동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082249.png');
+INSERT INTO TB_MEMBER VALUES (SEQ_USER_NO.NEXTVAL, 'user30', '$2a$10$aY0LWsAmndgyE8oRH4Tneu5eAQC7UdlVXj2rk.Ob9cchdtqY/hbg.', '오윤서', '도장', '010-0875-0142', 'tpq2@kh.or.kr', 'M', '서울시 성북구 길음동', 1, '2024-03-26', '2024-03-26', 'Y', 'got_mem.png', 'resources/uploadFiles/member/2024032609000082250.png');
 --------------------------------------------------
 -------------- ANNOUNCEMENT 관련 ------------------	
 --------------------------------------------------
@@ -175,15 +205,15 @@ CREATE SEQUENCE SEQ_FAQ_NO
 NOCACHE;
 
 INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '회원 정보 변경은 어떻게 하나요?', '마이페이지 내 회원정보수정에서 언제든 변경할 수 있어요.', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문2', '답변2', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문3', '답변3', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문4', '답변4', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문5', '답변5', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문6', '답변6', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문7', '답변7', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문8', '답변8', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문9', '답변9', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
-INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문10', '답변10', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '갓물주는 어떤 서비스인가요?', '국내 최고 오픈형 부동산 플랫폼입니다!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '회원가입을 하면 어떤 점이 좋나요?', '찜하기와 게시 및 기타 서비스를 제공합니다.', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '갓물주에 등록된 방은 믿을 수 있나요?', '갓물주는 믿을 수 있는 정보만을 제공합니다.', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '취득세도 계산하고 싶어요', '기타의 세금계산기를 이용해주세요!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '이용 시간은 어떻게 되나요?', '24시간 이용 가능합니다!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '유료서비스도 있나요?', '갓물주는 모두 무료로 제공됩니다!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '질문은 어디에 남길 수 있나요?', '고객센터 메뉴를 이용해주세요!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '마음에 드는 부동산 저장하고 싶어요', '찜하기를 이용해주시면 됩니다!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
+INSERT INTO TB_FAQ VALUES (SEQ_FAQ_NO.NEXTVAL, '우리 동네 사진을 자랑하고 싶어요', '커뮤니티에 등록해주세요!', 0, DEFAULT, '2024-03-26', '2024-03-26', DEFAULT);
 --------------------------------------------------
 ----------------- QNA 게시판 관련 ------------------	
 --------------------------------------------------
@@ -214,19 +244,19 @@ CREATE SEQUENCE SEQ_QNA_NO
 NOCACHE;
 
 INSERT INTO TB_QNA(QNA_NO, QNA_WRITER, QNA_TITLE, QNA_CONTENT, QNA_CREATE_DATE, QNA_ANSWER_STATUS, QNA_TYPE, QNA_STATUS) 
-VALUES(SEQ_QNA_NO.NEXTVAL, 2, '문의 제목1', '문의 내용1', '2024-03-26', 'N', 1, 'Y');
+VALUES(SEQ_QNA_NO.NEXTVAL, 2, '이용 문의 드립니다.', '회원 신고기능도 추가예정인가요?', '2024-03-26', 'N', 1, 'Y');
 
 INSERT INTO TB_QNA(QNA_NO, QNA_WRITER, QNA_TITLE, QNA_CONTENT, QNA_CREATE_DATE, QNA_ANSWER_STATUS, QNA_TYPE, QNA_STATUS) 
-VALUES(SEQ_QNA_NO.NEXTVAL, 3, '문의 제목2', '문의 내용2', '2024-03-27', 'N', 1, 'Y');
+VALUES(SEQ_QNA_NO.NEXTVAL, 3, '격리 요청', '주호민이라는 회원 차단좀 해주세요', '2024-03-27', 'N', 2, 'Y');
 
 INSERT INTO TB_QNA(QNA_NO, QNA_WRITER, QNA_TITLE, QNA_CONTENT, QNA_CREATE_DATE, QNA_ANSWER_STATUS, QNA_TYPE, QNA_STATUS) 
-VALUES(SEQ_QNA_NO.NEXTVAL, 4, '문의 제목3', '문의 내용3', '2024-03-28', 'N', 1, 'Y');
+VALUES(SEQ_QNA_NO.NEXTVAL, 4, '이용 문의', '사이트에 광고 게시 문의드리고자합니다. 담당자 알려주세요.', '2024-03-28', 'N', 1, 'Y');
 
 INSERT INTO TB_QNA(QNA_NO, QNA_WRITER, QNA_TITLE, QNA_CONTENT, QNA_CREATE_DATE, QNA_ANSWER_STATUS, QNA_TYPE, QNA_STATUS) 
-VALUES(SEQ_QNA_NO.NEXTVAL, 5, '문의 제목4', '문의 내용4', '2024-03-29', 'N', 1, 'Y');
+VALUES(SEQ_QNA_NO.NEXTVAL, 5, '기능 문의', '추가 예정인 기능이 어떤 것이 있을까요?', '2024-03-29', 'N', 1, 'Y');
 
 INSERT INTO TB_QNA(QNA_NO, QNA_WRITER, QNA_TITLE, QNA_CONTENT, QNA_CREATE_DATE, QNA_ANSWER_STATUS, QNA_TYPE, QNA_STATUS) 
-VALUES(SEQ_QNA_NO.NEXTVAL, 2, '문의 제목5', '문의 내용5', '2024-03-30', 'N', 1, 'Y');
+VALUES(SEQ_QNA_NO.NEXTVAL, 2, '제안드립니다.', '파트너십 관련 문의는 어디에 남기면 좋을까요?', '2024-03-30', 'N', 2, 'Y');
 --------------------------------------------------
 ----------------- QNA 답변 관련 ------------------	
 --------------------------------------------------
@@ -282,6 +312,7 @@ COMMENT ON COLUMN TB_APT.APT_TAGS IS '아파트 단기/주차/풀옵션/보안 등';
 COMMENT ON COLUMN TB_APT.APT_BEDS IS '아파트 방 수';
 COMMENT ON COLUMN TB_APT.APT_BATH IS '아파트 화장실 수';
 COMMENT ON COLUMN TB_APT.APT_ENTRANCE_TYPE IS '아파트 계단식/복도식';
+COMMENT ON COLUMN TB_APT.APT_SEARCH IS '아파트 검색 수';
 --------------------------------------------------
 -------------------- TOWN 관련 --------------------	
 --------------------------------------------------
@@ -328,12 +359,12 @@ COMMENT ON COLUMN TB_TOWN.TOWN_DETAIL_IMG5 IS '동네소식 상세이미지';
 CREATE SEQUENCE SEQ_TOWN_NO
 NOCACHE;
 
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목1', '동네소식 내용1', 1, 10, 15, 3);
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목2', '동네소식 내용2', 1, 7, 3, 0);
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목3', '동네소식 내용3', 0, 8, 5, 2);
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목4', '동네소식 내용4', 2, 13, 20, 1);
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목5', '동네소식 내용5', 2, 15, 17, 0);
-INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목6', '동네소식 내용6', 0, 21, 26, 0);
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목1', '동네소식 내용1', 1, 10, 15, 3, 'resources/uploadFiles/town/2024032609000050001.jpg');
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '공중화장실휴지도둑', 'resources/uploadFiles/member/2024032609000082222.png', '무료하네요', '너무 심심한 하루에요', 1, 7, 3, 0, 'resources/uploadFiles/town/2024032609000050002.jpg');
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '기사식당명함도둑', 'resources/uploadFiles/member/2024032609000082223.jpg', '동네소식 제목3', '동네소식 내용3', 0, 8, 5, 2, 'resources/uploadFiles/town/2024032609000050003.jpg');
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '휴게소컵도둑', 'resources/uploadFiles/member/2024032609000082224.jpg', '동네소식 제목4', '동네소식 내용4', 2, 13, 20, 1, 'resources/uploadFiles/town/2024032609000050004.jpg');
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '주호민이알려주는고데기사용법', 'resources/uploadFiles/member/2024032609000082225.jpg', '동네소식 제목5', '동네소식 내용5', 2, 15, 17, 0, 'resources/uploadFiles/town/2024032609000050005.jpg');
+INSERT INTO TB_TOWN (TOWN_NO, TOWN_WRITER, TOWN_WRITER_IMG, TOWN_TITLE, TOWN_CONTENT, TOWN_STAR, TOWN_LIKES , TOWN_CLICK, TOWN_REPLY_COUNT, TOWN_THUMBNAIL) VALUES (SEQ_TOWN_NO.NEXTVAL, '돼지불백집이쑤시개도둑', 'resources/uploadFiles/member/2024032609000082221.png', '동네소식 제목6', '동네소식 내용6', 0, 21, 26, 0, 'resources/uploadFiles/town/2024032609000050006.jpg');
 --------------------------------------------------
 ----------------- TOWN-REPLY 관련 -----------------	
 --------------------------------------------------

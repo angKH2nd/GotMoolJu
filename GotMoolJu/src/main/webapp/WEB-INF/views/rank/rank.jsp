@@ -27,7 +27,7 @@
 		    	<canvas id="myRank2" width="500" height="370"></canvas>
             </div>
         </div>
-        <div class="rank-adv">
+        <div class="rank-adv mh" onclick="toggleDiv('loan')">
         	<img width=451 height=165 src="resources/images/advertisement/adv10.png">
         </div>
 	</div>
