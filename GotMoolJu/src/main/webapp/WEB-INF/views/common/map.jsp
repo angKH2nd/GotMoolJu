@@ -97,7 +97,8 @@
 		// 줌 변경 이벤트
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
-			
+			var mapCenter = map.getCenter();
+			console.log(mapCenter);
 			handleZoomChange(zoomLevel);
 
 			if (zoomLevel <= 10) {

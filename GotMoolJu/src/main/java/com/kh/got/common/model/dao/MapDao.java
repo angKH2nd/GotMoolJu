@@ -63,5 +63,30 @@ public class MapDao {
 		return (ArrayList)sqlSession.selectList("mapMapper.selectDibsList", userNo);
 	}
 	
+	public ArrayList<MapVO> searchEx(SqlSessionTemplate sqlSession, String searchType, String searchInput){
+		
+		if(searchType.equals("apt")) {
+			return (ArrayList)sqlSession.selectList("mapMapper.searchExApt", searchInput);
+			
+		}else {
+			
+			return (ArrayList)sqlSession.selectList("mapMapper.searchExAddress", searchInput);
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

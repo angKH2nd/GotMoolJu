@@ -197,4 +197,22 @@
 	    where dibs_user_no = #{userNo}
 	</select>
 	
+	<select id="searchExApt" resultMap="mapResult">
+		  SELECT distinct SUBSTR(APT_LOCATION, 1, INSTR(APT_LOCATION, ',') - 1) AS apt_location_y,
+		  		 SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) AS apt_location_x,
+        		 apt_name
+		    FROM tb_apt
+		   WHERE apt_name LIKE '%'||#{searchInput}||'%'
+	</select>
+	
+	<select id="searchExAddress" resultMap="mapResult">
+	
+	
+	</select>
+	
+	
+	
+	
+	
+	
 </mapper>

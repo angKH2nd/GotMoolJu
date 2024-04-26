@@ -98,5 +98,21 @@ public class MapController {
 		return new Gson().toJson(list);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value ="searchEx.ma" , produces = "application/json; charset=utf-8")
+	public String searchEx(String searchType, String searchInput) {
+		
+		ArrayList<MapVO> list = mService.searchEx(searchType, searchInput);
+		
+		return new Gson().toJson(list);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

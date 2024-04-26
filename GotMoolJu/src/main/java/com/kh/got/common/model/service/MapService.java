@@ -26,4 +26,10 @@ public interface MapService {
 	
 	ArrayList<MapVO> selectDibsList(int userNo);
 	
+	ArrayList<MapVO> searchEx(String searchType, String searchInput);
+	
+	
+	
+	
+	
 }
