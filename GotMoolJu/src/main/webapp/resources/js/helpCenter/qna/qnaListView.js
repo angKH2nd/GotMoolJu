@@ -31,6 +31,7 @@ $(document).ready(function() {
 
 // 상세 정보를 보여주는 함수 정의
 function showQnaDetail(qnaNo) {
+	let nickName = $("#nickName").val();
     // qnaNo에 해당하는 상세 정보를 가져오는 AJAX 호출
 	//let qnaDetailInfo = qnaNo;
 		$.ajax({
@@ -42,11 +43,21 @@ function showQnaDetail(qnaNo) {
 					$(".qna-detail-area tbody td").html("비밀글입니다");
 					$("#qna-number").val(result.qnaNo);
 					$("#qna-writer").val(result.qnaWriter);
+					
 				}else{
 					$(".qna-detail-area tbody td").html(result.qnaContent);
 					$("#qna-number").val(result.qnaNo);
 					$("#qna-writer").val(result.qnaWriter);
+					
 				}
+           			var qnaWriter=$("#qna-writer").val();
+           			
+	           		if(nickName == qnaWriter){
+	           			$(".qna-detail-btn-update").show();
+	           		}else{
+	           			$(".qna-detail-btn-update").hide();
+	           		}
+				
 			}, error: function(){
 				console.log('error');
 			}

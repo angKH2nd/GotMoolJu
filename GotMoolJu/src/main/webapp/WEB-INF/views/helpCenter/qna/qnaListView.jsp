@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="resources/css/helpCenter/qna/qnaListView.css">
 </head>
 <body>
+	<input type="hidden" id="nickName" value="${loginUser.userNickname }">
+    <div class="qna-top-area pd15"><button type="button" class="btn-format fb mh" id="insertQnaFormBtn">글쓰기</button></div>
    <div id="qnaList">
-      <div class="qna-top-area pd15"><button type="button" class="btn-format fb mh" id="insertQnaFormBtn">글쓰기</button></div>
       <div class="qna-table-area pd15">
          <table class="qna_list_area">
             <thead>
