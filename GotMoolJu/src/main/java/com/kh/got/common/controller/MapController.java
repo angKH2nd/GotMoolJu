@@ -3,6 +3,7 @@ package com.kh.got.common.controller;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.kh.got.common.model.service.MapServiceImpl;
 import com.kh.got.common.model.vo.MapVO;
+import com.kh.got.member.model.vo.Member;
 
 @Controller
 public class MapController {
@@ -83,6 +85,16 @@ public class MapController {
 	public String selectTopPrice() {
 		ArrayList<MapVO> list = mService.selectTopPrice();
 		
+		return new Gson().toJson(list);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="selectDibsList.ma", produces="application/json; charset=utf-8")
+	public String selectDibsList(HttpSession session) {
+		int userNo = ((Member)session.getAttribute("loginUser")).getUserNo();
+		
+		ArrayList<MapVO> list = mService.selectDibsList(userNo);
+
 		return new Gson().toJson(list);
 	}
 	

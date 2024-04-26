@@ -10,8 +10,6 @@ function dips(){
 	let userNo = $("#userNo").val();
 	let aptNo = $(".apt-detail-info1").text();
 
-	console.log(userNo);
-	console.log(aptNo);
 
 	$.ajax({
 		url:"checkLike.me",
@@ -27,6 +25,8 @@ function dips(){
 				deleteLike(userNo, aptNo, icon);
 			}
 
+			countingDdibs();
+
 		},
 		error:function(){
 			console.log("좋아요 하트 클릭 함수 실패 ㅋ ㅠ")
@@ -34,6 +34,29 @@ function dips(){
 
 	})
 }
+
+function countingDdibs(){
+
+	$.ajax({
+		url:"countLike.me",
+		data:{
+			userNo:$("#userNo").val()
+		},
+		success:function(result){
+			if(result > 0){
+				$(".mypage-dibs-count").html(result);
+			}else{
+				$(".mypage-dibs-count").html(0);
+			}
+			
+		},
+		error:function(){
+			console.log("좋아요 카운트 오류")
+		}
+	})
+
+}
+
 
 
 function insertLike(userNo, aptNo, icon){

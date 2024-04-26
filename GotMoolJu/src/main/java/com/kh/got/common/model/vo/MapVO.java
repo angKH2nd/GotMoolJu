@@ -50,4 +50,6 @@ public class MapVO {
 	private String AptBath; // 화장실 수
 	private String AptEntranceType; // 계단식 복도식
 	
+	private int dibsAptNo;
+	
 }

@@ -15,6 +15,7 @@
 			<div class="member-dibs-form-title fl">찜 목록</div>
 			<div class="member-dibs-form-blank fl mh"></div>
 		</div>
+		<div class="member-dibs-form-content"></div>
 	</div>
 	
 	<script src="resources/js/member/memberDibsList.js"></script>

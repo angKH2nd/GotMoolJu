@@ -58,6 +58,10 @@ public class MapDao {
 	public ArrayList<MapVO> selectTopPrice(SqlSessionTemplate sqlSession) {
 		return (ArrayList)sqlSession.selectList("mapMapper.selectTopPrice");
 	}
+
+	public ArrayList<MapVO> selectDibsList(SqlSessionTemplate sqlSession, int userNo){
+		return (ArrayList)sqlSession.selectList("mapMapper.selectDibsList", userNo);
+	}
 	
 }
 
