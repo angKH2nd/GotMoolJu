@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="card-header">
                   <h4 class="card-title">공지사항</h4>
                   <p class="category">
-		             <h6 style="margin-left: 86%; color: rightgray"> &lt; 공지사항 개수 : ${ adminPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 90%; color: rightgray"> &lt; <i style="color:darkblue" class="fa-solid fa-bullhorn"></i> : ${ adminPi.listCount } &gt;</h6>
 		           </p>
                 </div>
                  <div

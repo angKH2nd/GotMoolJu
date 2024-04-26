@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -128,7 +127,7 @@ pageEncoding="UTF-8"%>
                 
                	<%-- 리스트 버튼 --%>
                 <div class="dropdown">
-                  <a href=""
+                  <a href="impList.ad"
                     class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret"
                     <%-- data-toggle="dropdown" --%>
                     >
@@ -193,20 +192,53 @@ pageEncoding="UTF-8"%>
 		        document.getElementById("miniImplDivOpen").style.display = "none";
 		      });
 		    </script>
+
+          <%-- 2번 card title--%>
           <div class="col-lg-4 col-md-6">
-            <!-- 2번 card title-->
+            <div class="card card-chart">
+            <%--  <div class="card-header"> --%>
+            <%-- <h5 class="card-category">Email Statistics</h5> --%>
+                <h6 class="card-title" style="color: #12192c; margin: 2%"><i style="color: #12192c;" class="fa-solid fa-house-chimney"></i> 갓물주 임직원</h6>
+           <%-- </div> --%>
+              <%-- 2번 card content--%>
+              <div class="card-body">
+                <div class="chart-area">
+                  <div align="center">
+                  	<a target="_blank" href="https://github.com/angKH2nd">
+                  		<img width=150 height=150 src="resources/images/got/got_logo_big.jpg"></div>
+                  	</a>
+                </div>
+				<div style="margin-left:11%">
+				  <a target="_blank" href="https://github.com/nanokim"><img width=70 height=70 style="border-radius:25px; border: 2px solid #5d6faaaf" src="resources/images/member/got_nano.png"></a>
+				  <a target="_blank" href="https://github.com/Resong123456"><img width=70 height=70 style="border-radius:25px; border: 2px solid #5d6faaaf";" src="resources/images/member/got_eunsong.png"></a>
+				  <a target="_blank" href="https://github.com/minkyuu98"><img width=70 height=70 style="border-radius:25px; border: 2px solid #5d6faaaf;" src="resources/images/member/got_kyuu.jpg"></a>
+				  <a target="_blank" href="https://github.com/berrykiss"><img width=70 height=70 style="border-radius:25px; border: 2px solid #5d6faaaf;" src="resources/images/member/got_berry.jpg"></a>
+				  <a target="_blank" href="https://github.com/leessang96"><img width=70 height=70 style="border-radius:25px; border: 2px solid #5d6faaaf;" src="resources/images/member/got_lee.jpeg"></a>
+				</div>                
+              </div>
+              <%-- 2번 card footer--%>
+              <div class="card-footer">
+               <%-- <div class="stats">
+              	  <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days 
+                </div> --%>
+              </div>
+            </div>
+          </div>
+          
+         <div class="col-lg-4 col-md-6" >
+            <%-- 3번 card title / 아파트 정보--%>
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">2018 Sales</h5>
-                <h4 class="card-title">All products</h4>
+                <h5 class="card-category">2024</h5>
+                <h4 class="card-title">아파트</h4>
                 <div class="dropdown">
-                  <button
-                    type="button"
+                  <a 
+                  	href="aptList.ad"
                     class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret"
-                    data-toggle="dropdown"
                   >
-                    <i class="now-ui-icons loader_gear"></i>
-                  </button>
+                    <i class="now-ui-icons design_bullet-list-67"></i>
+                  </a>
+                  <%-- 실질작동x --%>
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
@@ -217,57 +249,54 @@ pageEncoding="UTF-8"%>
                   </div>
                 </div>
               </div>
-              <!-- 2번 card content -->
-              <div class="card-body">
+              <%-- 3번 card content --%>
+              <div class="card-body" style="margin: 15px 15px 10px 15px">
                 <div class="chart-area">
-                  <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
+                   <table class="table" id="miniApartArea">
+	                    <thead class="text-primary">
+	                      <th style="width: 5%">Img</th>
+	                      <th style="width: 50%">Name</th>
+	                      <th style="width: 35%">Add</th>
+	                      <th style="width: 5%" class="text-right">Pay</th>
+	                    </thead>
+	                    <tbody id="admAptlistClick">
+		                  <c:forEach var="adApt" items="${ admArtList }"> 
+		                    <input type="hidden" name="aptNo" value="${ adApt.aptNo }">
+		                      <tr>
+		                        <td style="width:30px; height:30px"><img src="${ adApt.aptImgUrl }"></td>
+		                        <td>${ adApt.aptName }</td>
+		                        <td>${ adApt.aptAddress }</td>
+		                        <td class="text-right">${ adApt.aptSellingType }</td>
+		                      </tr>
+		                  </c:forEach>
+	                    </tbody>
+	                 </table>
                 </div>
               </div>
-              <!-- 2번 card footer-->
+              <%-- 3번 card footer --%>
               <div class="card-footer">
                 <div class="stats">
-                  <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+             <%-- <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated --%>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- 3번 card title-->
-          <div class="col-lg-4 col-md-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Email Statistics</h5>
-                <h4 class="card-title">24 Hours Performance</h4>
-              </div>
-              <!-- 3번 card content-->
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="barChartSimpleGradientsNumbers"></canvas>
-                </div>
-              </div>
-              <!-- 3번 card footer-->
-              <div class="card-footer">
-                <div class="stats">
-                  <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
-        <!-- 하단 보드 2개 뭉친 div-->
+        <%-- 하단 보드 2개 뭉친 div --%>
         <div class="row">
-          <!-- 4번 보드 감싸고 있는 div, 패딩 o-->
+          <%-- 4번 보드 감싸고 있는 div, 패딩 o --%> 
           <div class="col-md-6">
-            <!-- 4번 보드-->
+            <%-- 4번 보드--%>
             <div class="card" style="height: 441px">
-              <!-- 4번 card title -->
+              <%-- 4번 card title --%>
               <div class="card-header">
-                <h4 class="card-title">회원조회</h4>
+                <h4 class="card-title">회원</h4>
                 <a href="memberList.ad" class="card-category" style="float:right; text-decoration: none !important" >
                  &lt; 더보기 &gt;
                 </a>
               </div>
-              <!-- 4번 card content-->
+              <%-- 4번 card content--%>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table" id="miniMemberArea">

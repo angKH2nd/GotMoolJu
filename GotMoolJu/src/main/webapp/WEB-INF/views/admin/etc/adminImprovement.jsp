@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> 
-<%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,9 +54,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">부동산정보</h4>
+                  <h4 class="card-title">개선의견</h4>
                   <p class="category">
-		             <h6 style="margin-left: 89%; color: rightgray"> &lt; 총 개수 :  ${ adminImpPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 91%; color: rightgray"> &lt; <i style="color: darkgoldenrod" class="fa-solid fa-comments"></i> :  ${ adminImpPi.listCount } &gt;</h6>
 		          </p>
                 </div>
                  <div
@@ -75,8 +73,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	                      <th>Ex</th>
 	                      <th>Payment</th>
 	                      <th>Price</th>
-	                      <th>좋아요</th>
-	                      <th>싫어요</th>
+	                      <th><i style="color:red" class="fa-regular fa-thumbs-up"></i></th>
+	                      <th><i style="color:blue" class="fa-regular fa-thumbs-down"></i></th>
 	                      <th class="text-right"></th>
                       </thead>
                       <tbody id="aptListClick1">

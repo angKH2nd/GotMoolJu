@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 
 <html>
@@ -37,11 +37,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         Tip 1: You can change the color of the sidebar using: data-color="gotmoolju | blue | green | orange | red | yellow"
     	  --%> -->
         <div class="logo">
-          <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-            CT
+          <a href="home.got" class="simple-text logo-mini">
+            <img style="width:30px; height: 30px;" src="resources/assets/img/got-white-logo.png">
           </a>
-          <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
+          <a href="home.got" class="simple-text logo-normal">
+            GootMoolJu
           </a>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -75,12 +75,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               <a href="impList.ad">
                 <i class="now-ui-icons ui-2_like"></i>
                 <p>개선의견</p>
-              </a>
-            </li>
-            <li>
-              <a href="./tables.html">
-                <i class="now-ui-icons clothes_tie-bow"></i>
-                <p>Table List</p>
               </a>
             </li>
             <li>

@@ -181,5 +181,22 @@
 		 where apt_no = #{aptNo}
 	</update>
 	
+	<select id="adminAptMiniList" resultMap="mapResult">
+		select *
+	      from (
+	             select
+	                    apt_no
+	                  , apt_selling_type
+	                  , apt_name
+	                  , apt_img_url 
+	                  , SUBSTR(apt_address, INSTR(apt_address, ' ', 1, 1)) as APT_ADDRESS
+	               from tb_apt
+	              order
+	                 by apt_no desc
+	            )
+	      where rownum between 1 and 3	
+	
+	</select>
+	
 	
 </mapper>
