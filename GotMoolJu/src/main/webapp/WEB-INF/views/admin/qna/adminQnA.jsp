@@ -207,19 +207,60 @@ pageEncoding="UTF-8"%>
 		                 	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
 		                 		<%-- 작성하기 이모지, 아이콘 --%>
 		                 		<c:if test="${ ad.qnaStatus eq 'Y' }">
-		                 			<td colspan=2 align="center" onclick="moveToEnrollQna(${ ad.qnaNo });"> 
+		                 			<td colspan=2 align="center" onclick="moveToEnrollQna(${ ad.qnaNo }); connect();"> 
 		                 				<a style="float:right; color:blue; border-radius: 20px"><i class="fa-solid fa-paper-plane"></i></a>
 									</td> 
+									
+									<!-- 알림보내는 메시지 -->
+									<div>
+										<input type="hidden" id="msg" value="회원님 질문에 답변이 등록 되었습니다" class="form-control"/>
+									
+									</div>
+									
 									<script>
 										function moveToEnrollQna(qno){
 				                        	if (confirm("등록하시겠습니까?")) {
 				                        		var contentId = "#qnaAnswerContent" + qno;
 				                        	    var content = $(contentId).val();
-			                        			location.href = "qnaAnswerEnroll.ad?qno=" + qno + "&qnaAnswerContent=" + content + "&qnaType=" + $("#qnaTypeValue").val();
+				                        	   
+				                        	    let msg= $('input#msg').val();
+				                        	    socket.send(msg);
+			                        			
+				                        	    location.href = "qnaAnswerEnroll.ad?qno=" + qno + "&qnaAnswerContent=" + content + "&qnaType=" + $("#qnaTypeValue").val();
 				                        	}else{
 				                        		
 				                        	}
 			                        	}
+									</script>
+									
+									<script>
+									var socket = null;
+									function connect(){
+										console.log("tttttt")
+										var ws = new WebSocket("ws://localhost:8222/qnaAnswerEnroll.ad?qno=" + qno);
+										socket = ws;
+										
+										ws.onopen = function(){
+											console.log('info: connection opened.');
+										};
+										
+										ws.onmessage = function(event){
+											console.log("RecieveMessage:",event.data+'\n');
+										};
+										
+										ws.onclose = function (event){
+											console.log('Info: connection closed.');
+										};
+										
+										ws.onerror = function(err){
+											console.log('Error:', err);
+										};
+									}
+									
+									
+									
+									
+									
 									</script>
 		                		</c:if>
 		                		<c:if test="${ ad.qnaStatus eq 'N' }">
