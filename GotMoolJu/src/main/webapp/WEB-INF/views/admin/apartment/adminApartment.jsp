@@ -45,7 +45,7 @@ pageEncoding="UTF-8"%>
       <jsp:include page="../common/adminMenubar.jsp" />
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
-<!-- 여기서부터 -->
+	<%-- 여기서부터 --%>
      <div class="wrapper">
       <div class="main-panel" id="main-panel">
         <!-- End Navbar -->
@@ -107,16 +107,13 @@ pageEncoding="UTF-8"%>
                   	  }
                   </script>
                 
-                <%--
                 <script>
 				$(function(){
 					$("#aptListClick1>tr").click(function(){
-						// console.log("눌림")
-		                  location.href = 'AptDetail.ad?pno=' + $(this).children(".pno").text();
+		                  location.href = 'aptDetail.ad?pno=' + $(this).children(".aptNo").text();
 		               })
 				})
 				</script>
-                 --%>
                 
             <div id="pagingArea" style="float:right">
                 <ul class="pagination">
