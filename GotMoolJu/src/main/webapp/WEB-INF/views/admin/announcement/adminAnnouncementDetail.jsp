@@ -42,113 +42,108 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body>
     <%-- 메뉴바 삽입 --%>
-
-    <div style="float: left">
-      <jsp:include page="../common/adminMenubar.jsp" />
-    </div>
-    <jsp:include page="../common/adminThinHeader.jsp" />
+     <div style="float: left">
+       <jsp:include page="../common/adminMenubar.jsp" />
+     </div>
+     <jsp:include page="../common/adminThinHeader.jsp" />
     
- <form id="adminAnnoDetailForm" method="post" action="announcementDetail.ad">
-  <input type="hidden" name="ano" value="${ adminA.announcementNo }">
-<!-- 여기서부터 -->
-   <div class="wrapper">
-    <div class="main-panel" id="main-panel" >
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <div class="card card-upgrade">
-              <div class="card-header text-center">
-                <h4 class="card-title">공지사항</h3>
-                  <p class="card-category">${ adminA.announcementCreateDate }<br>조회수: ${ adminA.announcementCount }</p>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive table-upgrade" style="height:600px">
-                  <table class="table" >
-                    <thead>
-                      <th>Title</th>
-                      <th>
-                      	<c:choose>
-                      		<c:when test="${ adminA.announcementStatus eq 'Y' }">
-                      			<input id="anno-content" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px; border: 2px solid #12192c;" readonly>
-                      		</c:when>
-                      		<c:otherwise>
-                      			<input id="anno-content" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px; background-color: #f1f1f1; border: 2px solid #12192c;" readonly>
-                      		</c:otherwise>
-                      	</c:choose>
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Content</td>
-                         <td>
-	                         <c:choose>
+	 <form id="adminAnnoDetailForm" method="post" action="announcementDetail.ad">
+	 <input type="hidden" name="ano" value="${ adminA.announcementNo }">
+	  <!-- 여기서부터 -->
+	   <div class="wrapper">
+	    <div class="main-panel" id="main-panel" >
+	      <!-- End Navbar -->
+	      <div class="content">
+	        <div class="row">
+	          <div class="col-md-8 ml-auto mr-auto">
+	            <div class="card card-upgrade">
+	              <div class="card-header text-center">
+	                <h4 class="card-title">공지사항</h3>
+	                <p class="card-category">${ adminA.announcementCreateDate }<br>조회수: ${ adminA.announcementCount }</p>
+	              </div>
+	              <div class="card-body">
+	                <div class="table-responsive table-upgrade" style="height:600px">
+	                  <table class="table" >
+	                    <thead>
+	                      <th>Title</th>
+	                      <th>
+	                      	<c:choose>
 	                      		<c:when test="${ adminA.announcementStatus eq 'Y' }">
-							  		<textarea id="anno-content" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none; border: 2px solid #12192c;" readonly> ${ adminA.announcementContent } </textarea>
-								</c:when>
-								<c:otherwise>
-									<textarea id="anno-content" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none; background-color: #f1f1f1; border: 2px solid #12192c;" readonly> ${ adminA.announcementContent } </textarea>
-								</c:otherwise>
-							 </c:choose>
-								
-						 </td>
-                      </tr>
-                      <tr>
-                      	<td>
-                      		<a href="announcementList.ad" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 475px; background-color:#12192c; color:whitesmoke;">목록가기</a>
-                      	</td>
-	                    <td>
-    		              <c:if test="${ adminA.announcementStatus eq 'Y' }">
-            		         <a onclick="adminPostFormSubmit(1)" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 580px; background-color:#12192c; color:whitesmoke;">수정하기</a>
-                     	  </c:if>  
-                        </td>
-	                    <td>
-                   		  <c:choose>
-	   	                   	<c:when test="${ adminA.announcementStatus eq 'Y' }">
-		                       <a onclick="adminPostFormSubmit(2)" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 370px;">삭제하기</a>
-		                    </c:when>
-		                    <c:otherwise>
-		                   	 	 <a onclick="adminPostFormSubmit(3)" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 370px;">복구하기</a>
-		                   	  	<!--
-		                       <a onclick="adminPostFormSubmit(3)" class="btn btn-round btn-primarys" style="background-color:#ffffff; border: 2px solid rgb(0, 12, 0); color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">
-	                          	 <img width="40px" height="40px" src="resources/images/admin/revive2.png" alt="">
-	                           </a>
-	                           -->
-	                       	</c:otherwise>
-       		              </c:choose>
-		                 </td>
-                      </tr>
-                    </tbody>
-                  </table>
-	 				<script>
-		            	function adminPostFormSubmit(num){
-		            		if(num == 1){ // 수정하기 클릭 시 
-		            			$("#adminAnnoDetailForm").attr("action", "announcementUpdateForm.ad").submit();
-		            		}else if(num == 2){ // 삭제하기 클릭 시
-		            			if(confirm('삭제하시겠습니까?')){ // 사용자에게 삭제 여부를 묻는 confirm 대화상자 표시
-		            	            $("#adminAnnoDetailForm").attr("action", "announcementDelete.ad").submit();
-			            			alert("정상적으로 삭제되었습니다.")
-		            	        }
-		            		}else if(num == 3){ // 복구
-		            			if(confirm('복구하시겠습니까?')){
-		            				$("#adminAnnoDetailForm").attr("action", "announcementRevive.ad").submit();
-		            				alert("정상적으로 복구되었습니다.")
-		            			}
-		            		}
-		            	}	
-		            </script>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- </form>
-
-    		
-	         		
+	                      			<input id="anno-content" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px; border: 2px solid #12192c;" readonly>
+	                      		</c:when>
+	                      		<c:otherwise>
+	                      			<input id="anno-content" class="anno-content" type="text" value="${ adminA.announcementTitle }" style="width:80%; border-radius: 40px; font-size: 18px; padding-left: 15px; background-color: #f1f1f1; border: 2px solid #12192c;" readonly>
+	                      		</c:otherwise>
+	                      	</c:choose>
+	                      </th>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <td>Content</td>
+	                        <td>
+	                          <c:choose>
+	                            <c:when test="${ adminA.announcementStatus eq 'Y' }">
+	                              <textarea id="anno-content" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none; border: 2px solid #12192c;" readonly> ${ adminA.announcementContent } </textarea>
+	                            </c:when>
+	                            <c:otherwise>
+	                              <textarea id="anno-content" class="anno-content" style="width:80%; height: 380px; border-radius: 25px; font-size: 15px; padding: 15px; resize: none; background-color: #f1f1f1; border: 2px solid #12192c;" readonly> ${ adminA.announcementContent } </textarea>
+	                            </c:otherwise>
+	                          </c:choose>
+	                        </td>
+	                      </tr>
+	                      <tr>
+	                      	<td>
+	                      		<a href="announcementList.ad" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 475px; background-color:#12192c; color:whitesmoke;">목록가기</a>
+	                      	</td>
+	                        <td>
+	                          <c:if test="${ adminA.announcementStatus eq 'Y' }">
+	                            <a onclick="adminPostFormSubmit(1)" class="btn btn-round btn-default" style="position: absolute; bottom: -50px; right: 580px; background-color:#12192c; color:whitesmoke;">수정하기</a>
+	                          </c:if>  
+	                        </td>
+	                        <td>
+	                          <c:choose>
+	                            <c:when test="${ adminA.announcementStatus eq 'Y' }">
+	                              <a onclick="adminPostFormSubmit(2)" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 370px;">삭제하기</a>
+	                            </c:when>
+	                            <c:otherwise>
+	                              <a onclick="adminPostFormSubmit(3)" class="btn btn-round btn-primary" style="background-color:#12192c; color:whitesmoke; position: absolute; bottom: -50px; right: 370px;">복구하기</a>
+	                                <!--
+	                                <a onclick="adminPostFormSubmit(3)" class="btn btn-round btn-primarys" style="background-color:#ffffff; border: 2px solid rgb(0, 12, 0); color:whitesmoke; position: absolute; bottom: -50px; right: 15px;">
+	                                  <img width="40px" height="40px" src="resources/images/admin/revive2.png" alt="">
+	                                </a>
+	                                -->
+	                            </c:otherwise>
+	                          </c:choose>
+	                        </td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
+	                  <script>
+	                    function adminPostFormSubmit(num){
+	                      if(num == 1){ // 수정하기 클릭 시 
+	                        $("#adminAnnoDetailForm").attr("action", "announcementUpdateForm.ad").submit();
+	                      }else if(num == 2){ // 삭제하기 클릭 시
+	                        if(confirm('삭제하시겠습니까?')){ // 사용자에게 삭제 여부를 묻는 confirm 대화상자 표시
+	                                $("#adminAnnoDetailForm").attr("action", "announcementDelete.ad").submit();
+	                          alert("정상적으로 삭제되었습니다.")
+	                            }
+	                      }else if(num == 3){ // 복구
+	                        if(confirm('복구하시겠습니까?')){
+	                          $("#adminAnnoDetailForm").attr("action", "announcementRevive.ad").submit();
+	                          alert("정상적으로 복구되었습니다.")
+	                        }
+	                      }
+	                    }	
+	                  </script>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	 </form>
     
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>

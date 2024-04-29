@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <div class="card-header">
                   <h4 class="card-title">회원정보</h4>
                   <p class="category">
-		             <h6 style="margin-left: 89%; color: rightgray"> &lt; 총 회원 :  ${ adminPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 90.5%; color: rightgray"> &lt; <i style="color:lightblue" class="fa-solid fa-users"></i> :  ${ adminPi.listCount } &gt;</h6>
 		          </p>
                 </div>
                  <div

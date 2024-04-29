@@ -52,5 +52,16 @@ public class AdminApartmentController {
 		}
 	}
 	
+	@RequestMapping("aptDetail.ad")
+	public String detailAdminApt() {
+//		int result = adminAptService.detailAdminApt(aptNo);
+		
+		
+		return "admin/apartment/adminApartDetail";
+		
+	}
+	
+	
+	
 	
 }
