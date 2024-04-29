@@ -86,12 +86,6 @@ public class MapDao {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 	public ArrayList<MapVO> selectHotAptList(SqlSessionTemplate sqlSession){
 		return (ArrayList)sqlSession.selectList("mapMapper.selectHotAptList");
 	}

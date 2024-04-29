@@ -135,9 +135,6 @@ public class MapController {
 	}
 	
 	
-	
-	
-	
 	@ResponseBody
 	@RequestMapping(value="selectHotList.ma", produces="application/json; charset=utf-8")
 	public String selectHotAptList() {
