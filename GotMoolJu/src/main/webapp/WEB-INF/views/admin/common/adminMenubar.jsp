@@ -3,17 +3,15 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
 <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <style>
+
+/* 활성화된 메뉴 항목의 아이콘 색상 */
 .sidebar-wrapper .nav li.active {
-  background-color: white;
-  color: #2CA8FF;
+  background-color: #2CA8FF;
+  color: light;
 }
 
 .sidebar-wrapper .nav li.active i {
-  color: #2CA8FF;
-}
-
-.sidebar-wrapper .nav li:hover {
-  background-color: #f1f1f1;
+  color: light;
 }
 </style>
 
@@ -67,13 +65,13 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
                 <p>메인화면</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo2">
               <a href="memberList.ad">
                 <i class="now-ui-icons business_badge"></i>
                 <p>회원</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo3">
               <a href="aptList.ad">
                 <i class="now-ui-icons travel_istanbul"></i>
                 <p>부동산</p>
@@ -85,7 +83,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
                 <p>Q&A</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo5">
               <a href="impList.ad">
                 <i class="now-ui-icons ui-2_like"></i>
                 <p>개선의견</p>
@@ -97,7 +95,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
                 <p>공지사항</p>
               </a>
             </li>
-            <li class="active-pro">
+            <li class="active-pro" id="gotmoolju-sidebar-gogo7">
               <a href="logout.me">
                 <i class="now-ui-icons media-1_button-power"></i>
                 <p>로그아웃</p>
@@ -127,35 +125,38 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
     <!-- <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%> -->
     <script src="resources/assets/demo/demo.js"></script>
     
- <script>
-$(document).ready(function() {
-  // 현재 URL에 따라 해당 메뉴 항목 활성화
-  var currentUrl = window.location.href;
-  $(".sidebar-wrapper .nav li a").each(function() {
-    if ($(this).attr("href") === currentUrl) {
-      $(this).parent().addClass("active");
-      $(this).parent().css("background-color", "white");
-    }
-  });
+    <script>
+    $(document).ready(function() {
+    	  // 초기 상태 설정
+    	  $(".sidebar-wrapper .nav li:first-child").addClass("active");
+    	  $(".sidebar-wrapper .nav li:first-child").css("background-color", "#2CA8FF");
+    	  $(".sidebar-wrapper .nav li:first-child i").css("color", "white");
 
-  // 메뉴 항목 클릭 이벤트 처리
-  $(".sidebar-wrapper .nav li").click(function() {
-    // 모든 메뉴 항목의 active 클래스 제거
-    $(".sidebar-wrapper .nav li").removeClass("active");
+    	  // 사이드바 메뉴 항목 클릭 이벤트 처리
+    	  $(".sidebar-wrapper .nav li").click(function() {
+    	    // 모든 메뉴 항목의 active 클래스 제거
+    	    $(".sidebar-wrapper .nav li").removeClass("active");
+    	    $(".sidebar-wrapper .nav li").css("background-color", "");
+    	    $(".sidebar-wrapper .nav li i").css("color", "");
+
+    	    // 클릭된 메뉴 항목에 active 클래스 추가
+    	    $(this).addClass("active");
+    	    $(this).css("background-color", "#2CA8FF");
+    	    $(this).find("i").css("color", "white");
+    	  });
+    	});
     
-    // 클릭된 메뉴 항목에 active 클래스 추가
-    $(this).addClass("active");
-    
-    // 모든 메뉴 항목의 백그라운드 색상 제거
-    $(".sidebar-wrapper .nav li").css("background-color", "");
-    
-    // 클릭된 메뉴 항목의 백그라운드 색상을 유지
-    $(this).css("background-color", "white");
-    
-    // 현재 URL 업데이트
-    window.history.pushState({}, "", $(this).find("a").attr("href"));
-  });
-});
-</script>
+    $(document).ready(function() {
+    	  // 현재 URL에 따라 해당 메뉴 항목 활성화
+    	  var currentUrl = window.location.href;
+    	  $(".sidebar-wrapper .nav li a").each(function() {
+    	    if ($(this).attr("href") === currentUrl) {
+    	      $(this).parent().addClass("active");
+    	      $(this).parent().css("background-color", "#2CA8FF");
+    	      $(this).find("i").css("color", "white");
+    	    }
+    	  });
+    	});
+    </script>
   </body>
 </html>
