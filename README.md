@@ -200,35 +200,51 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 ### ❤ 김재영
 
-#### 🔴 회원가입, 회원정보수정 및 로그인
-
-&nbsp;&nbsp;&nbsp; - 회원가입
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 로그인
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 회원정보수정
-
-GIF 추가예정
-
-<br><br>
-
 #### 🔴 메인페이지
 
 &nbsp;&nbsp;&nbsp; - 메인페이지
 
+![nano_main](https://github.com/angKH2nd/GotMoolJu/assets/151509995/cbc2c3fa-9205-42ac-b982-ea8f0b63457d)
+
+<br><br>
+
+#### 🔴 회원가입 및 로그인, 로그인 정보 기억
+
+&nbsp;&nbsp;&nbsp; - 회원가입
+
+![nano_enroll_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/25842084-597c-4fb6-8d48-baedcf865103)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 로그인
+
+![nano_login_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/5ba8c568-c572-4f6b-b6d1-e19c6b62af23)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 로그인 정보 기억
+
+![nano_remember_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/a2be215e-adb1-434e-9636-31902e9207a3)
+
+<br><br>
+
+#### 🔴 도로명 주소 API, SMS API, 이메일 API 를 이용한 인증
+
+&nbsp;&nbsp;&nbsp; - 도로명 주소 API, SMS API, 이메일 API 를 이용한 인증
+
+![nano_enroll_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/dc2d2f94-2282-4a40-92bc-7ffa06eba867)
+
+<br><br>
+
+#### 🔴 아이디, 비밀번호 찾기
+
+&nbsp;&nbsp;&nbsp; - 아이디 찾기
+
 GIF 추가예정
 
 <br><br>
 
-#### 🔴 마이페이지
-
-&nbsp;&nbsp;&nbsp; - 마이페이지
+&nbsp;&nbsp;&nbsp; - 비밀번호 찾기
 
 GIF 추가예정
 
