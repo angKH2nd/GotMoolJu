@@ -6,8 +6,6 @@
 
 **GotMoolJu 갓물주 : 아파트, 주택 및 기타 부동산 자산과 관련된 중요한 정보를 쉽게 공유할 수 있는 사용자 친화적인 플랫폼**
 
-간단히 2줄 슬로건 추가 예정 TBD
-
 <br><br>
 
 ## 📆 개발 기간
@@ -94,6 +92,10 @@
 
 &nbsp; - 세금계산기 API
 
+&nbsp; - 네이버/카카오 소셜 로그인 API
+
+&nbsp; - 부동산 데이터 웹 크롤링
+
 💙 신나리
 
 &nbsp; - 공지사항 조회
@@ -112,7 +114,7 @@
 
 &nbsp; - 찜 등록, 해제, 찜 목록 조회
 
-&nbsp; - 서울시 아파트 가격 API 통한 아파트 가격 Top 5, '구'별 아파트 평균 가격 Top 10
+&nbsp; - 서울시 아파트 가격 Top 5, '구'별 아파트 평균 가격 Top 10
 
 &nbsp; - 지금 핫한 단지 Top 10 조회
 
@@ -140,7 +142,7 @@
 
 ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
-ERD 사진 첨부예정 TBD
+![image](https://github.com/angKH2nd/GotMoolJu/assets/151509995/88d4e68c-b39f-4fab-8012-3d4337db7cf0)
 
 <br><br>
 
@@ -149,14 +151,18 @@ ERD 사진 첨부예정 TBD
 #### ❓ 프로젝트 기획 의도
 
 <div>
-  갓물주 소개 문구 추가 예정 TBD
+  Got물주는 아파트, 주택 및 기타 부동산 자산과 관련된 중요한 정보를 쉽게 공유할 수 있는 사용자 친화적인 플랫폼입니다. 정보 교환을 위한 중앙 집중식 허브를 제공함으로써 개인이 부동산 거래, 투자 및 임대에 관해 정보에 기초한 결정을 내릴 수 있도록 힘을 실어주고자 합니다.
 </div>
 
 <br><br>
 
 #### 🎀 프로젝트 특징
 
-&nbsp; - 특징 3개 추가예정
+&nbsp; - 쉽게 공유 가능한 부동산 정보
+
+&nbsp; - 커뮤니티 활성화를 통한 의견 공유
+
+&nbsp; - 사용자 친화적인 플랫폼
 
 <br><br>
 
@@ -182,7 +188,7 @@ ERD 사진 첨부예정 TBD
 
 💙 신나리
 
-&nbsp; - 느낀점 추가예정 TBD
+&nbsp; - 수업 때 배운 내용을 프로잭트 통해서 학습할 수 있어서 너무 좋았고, 세미프로젝트 때 써보지 않았던 개념들을 적용 할 수 있어서 학습에 효과적이었고 재밌게 참여할수 있었습니다. 처음으로 환경 구성, 프로젝트 구조 이해에 어려움을 겪었으나 귀중한 학습 기회가 되었고, 발전하고 극복하면서 성취감도 느꼈습니다. 팀원들과 협력할 수 있어 감사하게 생각하며 지식 공유, 코드 검토를 통해 프로젝트 품질과 지식 향상에 도움이 많이 되었습니다. 감사합니다.
 
 💜 이상용
 
@@ -225,6 +231,148 @@ GIF 추가예정
 &nbsp;&nbsp;&nbsp; - 마이페이지
 
 GIF 추가예정
+
+<br><br>
+
+### 💛 류은송
+
+#### 🟡 기능1
+
+&nbsp;&nbsp;&nbsp; - 기능1-1
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-2
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-3
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟡 기능2
+
+&nbsp;&nbsp;&nbsp; - 기능2-1
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟡 기능3
+
+&nbsp;&nbsp;&nbsp; - 기능3-1
+
+GIF 추가예정
+
+<br><br>
+
+### 💚 박민규
+
+#### 🟢 기능1
+
+&nbsp;&nbsp;&nbsp; - 기능1-1
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-2
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-3
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 기능2
+
+&nbsp;&nbsp;&nbsp; - 기능2-1
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 기능3
+
+&nbsp;&nbsp;&nbsp; - 기능3-1
+
+GIF 추가예정
+
+<br><br>
+
+### 💙 신나리
+
+#### 🔵 기능1
+
+&nbsp;&nbsp;&nbsp; - 기능1-1
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-2
+
+GIF 추가예정
+
+<br><br>
+&nbsp;&nbsp;&nbsp; - 기능1-3
+
+GIF 추가예정
+
+<br><br>
+
+#### 🔵 기능2
+
+&nbsp;&nbsp;&nbsp; - 기능2-1
+
+GIF 추가예정
+
+<br><br>
+
+#### 🔵 기능3
+
+&nbsp;&nbsp;&nbsp; - 기능3-1
+
+GIF 추가예정
+
+<br><br>
+
+### 💜 이상용
+
+#### 🟣 오늘의 날씨
+
+&nbsp;&nbsp;&nbsp; - 날씨 API 통한 오늘의 날씨 조회
+
+![lee_weather](https://github.com/angKH2nd/GotMoolJu/assets/151509995/0aa90c5a-ee29-42d5-914c-35b279b6e475)
+
+<br><br>
+
+#### 🟣 부동산 찜
+
+&nbsp;&nbsp;&nbsp; - 부동산 찜 등록, 해제, 목록 조회
+
+![lee_insert_dibs_delete_dibs](https://github.com/angKH2nd/GotMoolJu/assets/151509995/f2c67363-a667-4762-b5a3-4185125b1c58)
+
+<br><br>
+
+#### 🟣 아파트 랭킹
+
+&nbsp;&nbsp;&nbsp; - 서울시 아파트 가격 Top 5, '구'별 아파트 평균 가격 Top 10
+
+![lee_chart](https://github.com/angKH2nd/GotMoolJu/assets/151509995/4e3aebb7-db03-488f-a908-1e1b35ad7b54)
+
+<br><br>
+
+#### 🟣 지금 핫한 단지
+
+&nbsp;&nbsp;&nbsp; - 지금 핫한 단지 Top 10
+
+![lee_select_apt_list_top10](https://github.com/angKH2nd/GotMoolJu/assets/151509995/47649883-1c09-4429-ba00-72a311139d9b)
 
 <br><br>
 
