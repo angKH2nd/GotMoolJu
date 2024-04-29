@@ -97,45 +97,7 @@ public class MapController {
 
 		return new Gson().toJson(list);
 	}
-	
-	@ResponseBody
-	@RequestMapping(value ="searchEx.ma" , produces = "application/json; charset=utf-8")
-	public String searchEx(String searchType, String searchInput) {
-		
-		ArrayList<MapVO> list = mService.searchEx(searchType, searchInput);
-		
-		return new Gson().toJson(list);
-		
-	}
-	
-	@RequestMapping("searchCountUp.ma")
-	@ResponseBody
-	public String searchCountUp(String aptName) {
-		
-		int result = mService.searchCountUp(aptName);
-		
-		if(result > 0) { // 성공
-			return "NNNNY";
-		}else { // 실패
-			return "NNNNN";
-		}
-		
-		
-	}
-	
-	@RequestMapping(value = "popularTitle.ap", produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String popularTitle() {
-		
-		ArrayList<MapVO> list = mService.popularTitle();
-		
-		return new Gson().toJson(list);
-		
-	}
-	
-	
-	
-	
+
 	
 	@ResponseBody
 	@RequestMapping(value ="searchEx.ma" , produces = "application/json; charset=utf-8")
@@ -180,7 +142,7 @@ public class MapController {
 	@RequestMapping(value="selectHotList.ma", produces="application/json; charset=utf-8")
 	public String selectHotAptList() {
 		ArrayList<MapVO> list = mService.selectHotAptList();
-		
+
 		return new Gson().toJson(list);
 	}
 	
