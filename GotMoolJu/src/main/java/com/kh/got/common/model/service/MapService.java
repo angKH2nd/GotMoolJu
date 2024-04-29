@@ -26,4 +26,11 @@ public interface MapService {
 	
 	ArrayList<MapVO> selectDibsList(int userNo);
 	
+	ArrayList<MapVO> searchEx(String searchType, String searchInput);
+	
+	int searchCountUp(String aptName);
+	
+	ArrayList<MapVO> popularTitle();
+	
+	ArrayList<MapVO> selectHotAptList();
 }

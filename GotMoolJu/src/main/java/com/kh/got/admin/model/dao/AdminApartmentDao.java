@@ -25,5 +25,15 @@ public class AdminApartmentDao {
 	public int deleteAdminApt(SqlSessionTemplate sqlSession, int aptNo) {
 		return sqlSession.update("mapMapper.deleteAdminApt", aptNo);
 	}
+
+	// 미니 리스트
+	public ArrayList<MapVO> adminAptMiniList(SqlSessionTemplate sqlSession) {
+		return (ArrayList)sqlSession.selectList("mapMapper.adminAptMiniList");
+	}
+
+	// 아파트 디테일
+	public MapVO detailAdminApt(SqlSessionTemplate sqlSession, int aptNo) {
+		return sqlSession.selectOne("mapMapper.detailAdminApt", aptNo) ;
+	}
 	
 }

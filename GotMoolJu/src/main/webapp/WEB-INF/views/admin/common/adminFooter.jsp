@@ -1,73 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>갓물주</title>
-    <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-      name="viewport"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
-      rel="stylesheet"
-    />
-    <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-      href="resources/assets/css/now-ui-dashboard.css?v=1.5.0"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="main-panel" id="main-panel">
-        <!-- Navbar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>갓물주</title>
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    name="viewport"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+    rel="stylesheet"
+  />
+  <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="resources/assets/css/now-ui-dashboard.css?v=1.5.0"
+    rel="stylesheet"
+  />
+</head>
+<body>
+	<div class="wrapper">
+  		<div class="main-panel" id="main-panel">
+    		<!-- Navbar -->
 
-        <footer class="footer">
-          <div class="container-fluid">
-            <nav>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1"
-                  >
-                    Creative Tim
-                  </a>
-                </li>
-                <li>
-                  <a href="http://presentation.creative-tim.com"> About Us </a>
-                </li>
-                <li>
-                  <a href="http://blog.creative-tim.com"> Blog </a>
-                </li>
-              </ul>
-            </nav>
-            <!-- 주소값 -->
-            <div class="copyright" id="copyright">
-              &copy;
-              <script>
-                document
-                  .getElementById("copyright")
-                  .appendChild(
-                    document.createTextNode(new Date().getFullYear())
-                  );
-              </script>
-              , Designed by
-              <a href="https://www.invisionapp.com" target="_blank">Invision</a
-              >. Coded by
-              <a
-                href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1"
-                target="_blank"
-                >Creative Tim</a
-              >.
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
+   			<footer class="footer">
+     			<div class="container-fluid">
+       				<nav>
+         				<ul>
+           					<li>
+             					<a href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1">Creative Tim</a>
+       						</li>
+           					<li>
+             					<a href="http://presentation.creative-tim.com"> About Us </a>
+           					</li>
+           					<li>
+             					<a href="http://blog.creative-tim.com"> Blog </a>
+				            </li>
+       					</ul>
+   					</nav>
+       				<!-- 주소값 -->
+       				<div class="copyright" id="copyright"> &copy;
+			        	<script>
+			           		document
+			             		.getElementById("copyright")
+			             		.appendChild(
+			               		document.createTextNode(new Date().getFullYear())
+			             	);
+			         	</script>
+          				, Designed by
+          				<a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+          				<a href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1" target="_blank">Creative Tim</a>.
+					</div>
+   				</div>
+   			</footer>
+		</div>
+	</div>
     <!--   Core JS Files   -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -92,5 +82,5 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         demo.initGoogleMaps();
       });
     </script>
-  </body>
+</body>
 </html>

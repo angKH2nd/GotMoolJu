@@ -8,6 +8,7 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.kh.got.common.model.vo.MapVO;
 import com.kh.got.etc.model.vo.ImpChoose;
 import com.kh.got.etc.model.vo.Improvement;
 
@@ -49,5 +50,6 @@ public class EtcDao {
 	public int insertImpReply(SqlSessionTemplate sqlSession, Improvement imp) {
 		return sqlSession.insert("etcMapper.insertImpReply", imp);
 	}
+
 	
 }

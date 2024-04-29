@@ -20,10 +20,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.kh.got.admin.model.service.AdminAnnouncementService;
+import com.kh.got.admin.model.service.AdminApartmentService;
 import com.kh.got.admin.model.service.AdminEtcService;
 import com.kh.got.admin.model.service.AdminMemberService;
 import com.kh.got.admin.model.service.AdminQnaService;
 import com.kh.got.announcement.model.vo.Announcement;
+import com.kh.got.common.model.vo.MapVO;
 import com.kh.got.common.model.vo.PageInfo;
 import com.kh.got.common.template.FileConverter;
 import com.kh.got.common.template.Pagination;
@@ -46,6 +48,9 @@ public class AdminController {
 	@Autowired
 	private AdminEtcService adminEService; // Improvement
 	
+	@Autowired
+	private AdminApartmentService adminAptService;
+	
 	// 메인 페이지
 	@RequestMapping("main.ad")
     public ModelAndView openHome(ModelAndView mv) {
@@ -57,12 +62,14 @@ public class AdminController {
 		ArrayList<Qna> admQnaList = adminQService.adminSelectQnaMiniList();
 		// 개선사항 3개 정도 조회용
 		ArrayList<Improvement> admImprovementList = adminEService.adminImprovementMiniList();
-		
+		// 아파트 3개 정도 조회용
+		ArrayList<MapVO> admAptList = adminAptService.adminAptMiniList();
 		
         mv.addObject("admMemberList", admMemberList)
           .addObject("admAnnouncementList", admAnnouncementList)
           .addObject("admQnaList", admQnaList)
           .addObject("admImprovementList", admImprovementList)
+          .addObject("admAptList", admAptList)
 		  .setViewName("admin/adminMain");
 
         return mv;

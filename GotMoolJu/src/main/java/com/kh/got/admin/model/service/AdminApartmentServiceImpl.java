@@ -29,8 +29,20 @@ public class AdminApartmentServiceImpl implements AdminApartmentService{
 	public int deleteAdminApt(int aptNo) {
 		return adminAptDao.deleteAdminApt(sqlSession, aptNo);
 	}
+
+	// 아파트 미니 리스트
+	@Override
+	public ArrayList<MapVO> adminAptMiniList() {
+		return adminAptDao.adminAptMiniList(sqlSession);
+	}
+
+	// 아파트 디테일
+	@Override
+	public MapVO detailAdminApt(int aptNo) {
+		return adminAptDao.detailAdminApt(sqlSession, aptNo);
+	}
+
 	
-	//@Override
 	
 	
 }

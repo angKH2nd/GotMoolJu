@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="faq-form">
-		<div class="faq-title pd15" id="faqTitle">TBD 작업</div>
 		<div class="faq-list pd15" id="faqList"></div>
 	</div>
 	

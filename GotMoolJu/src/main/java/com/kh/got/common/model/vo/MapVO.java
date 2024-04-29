@@ -51,5 +51,6 @@ public class MapVO {
 	private String AptEntranceType; // 계단식 복도식
 	
 	private int dibsAptNo;
+	private int aptSearch;
 	
 }

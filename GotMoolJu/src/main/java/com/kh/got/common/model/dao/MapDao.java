@@ -43,6 +43,10 @@ public class MapDao {
 	}
 
 	public MapVO selectAptDetail(SqlSessionTemplate sqlSession, String aptNo) {
+		
+		if(!aptNo.equals(null)) {
+			sqlSession.update("mapMapper.updateAptCount", aptNo);
+		}
 		return sqlSession.selectOne("mapMapper.selectAptDetail", aptNo);
 	}
 
@@ -61,6 +65,29 @@ public class MapDao {
 
 	public ArrayList<MapVO> selectDibsList(SqlSessionTemplate sqlSession, int userNo){
 		return (ArrayList)sqlSession.selectList("mapMapper.selectDibsList", userNo);
+	}
+	
+	public ArrayList<MapVO> searchEx(SqlSessionTemplate sqlSession, String searchType, String searchInput){
+		
+			return (ArrayList)sqlSession.selectList("mapMapper.searchExApt", searchInput);
+			
+	}
+	
+	public int searchCountUp(SqlSessionTemplate sqlSession, String aptName) {
+		
+		return sqlSession.update("mapMapper.searchCountUp", aptName);
+		
+	}
+	
+	public ArrayList<MapVO> popularTitle(SqlSessionTemplate sqlSession){
+		
+		return (ArrayList)sqlSession.selectList("mapMapper.popularTitle");
+	}
+	
+	
+	
+	public ArrayList<MapVO> selectHotAptList(SqlSessionTemplate sqlSession){
+		return (ArrayList)sqlSession.selectList("mapMapper.selectHotAptList");
 	}
 	
 }

@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <div style="float: left">
       <jsp:include page="common/adminMenubar.jsp" />
     </div>
-      <jsp:include page="common/adminBigHeader.jsp" />
+    <jsp:include page="common/adminBigHeader.jsp" />
     <jsp:include page="board/adminMainBoard.jsp" />
 
     <!--   Core JS Files   -->

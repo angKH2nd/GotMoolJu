@@ -123,7 +123,10 @@ function toggleAptDetailDiv(className, no){
             
             showRecentProperties();
             
-            test(no);
+            if($(".mypage-name").html() !== ''){
+            	checkLike(no);
+            }
+         
         },
         error : function(){
             swal("부동산 조회 실패!", "관리자에게 문의해주세요", 'warning');
@@ -131,8 +134,7 @@ function toggleAptDetailDiv(className, no){
     });
 }
 
-
-function test(no){
+function checkLike(no){
 
 	let icon = document.getElementById('heartIcon');
 
