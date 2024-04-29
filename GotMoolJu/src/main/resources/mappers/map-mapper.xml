@@ -236,6 +236,28 @@
 		         order 
 		         by apt_search desc)
 		   where rownum between 1 and 10
+	<select id="detailAdminApt" resultMap="mapResult">
+		select 
+	       apt_no
+	     , apt_selling_type
+	     , apt_name
+	     , apt_introduce
+	     , apt_price
+	     , apt_img_url
+	     , apt_img_urls
+	     , apt_desc
+	     , apt_memo
+	     , apt_room_size
+	     , apt_provision_size
+	     , apt_address
+	     , apt_dong
+	     , apt_ho
+	     , apt_tags
+	     , apt_beds
+	     , apt_bath
+	     , apt_entrance_type
+	  from tb_apt
+	 where apt_no = #{aptNo}
 	</select>
 	
 	

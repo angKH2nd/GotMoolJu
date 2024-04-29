@@ -35,6 +35,13 @@ public class AdminApartmentServiceImpl implements AdminApartmentService{
 	public ArrayList<MapVO> adminAptMiniList() {
 		return adminAptDao.adminAptMiniList(sqlSession);
 	}
+
+	// 아파트 디테일
+	@Override
+	public MapVO detailAdminApt(int aptNo) {
+		return adminAptDao.detailAdminApt(sqlSession, aptNo);
+	}
+
 	
 	
 	

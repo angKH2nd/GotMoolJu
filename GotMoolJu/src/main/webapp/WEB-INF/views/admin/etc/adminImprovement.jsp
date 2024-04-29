@@ -3,156 +3,125 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>갓물주</title>
-    <style>
-	    #aptListClick1:hover {
-		  cursor: pointer;
-		}
-    </style>
-    <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
-      name="viewport"
-    />
-    <%-- Fonts and icons --%>
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
-    <%-- CSS Files --%>
-    <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-      href="resources/assets/css/now-ui-dashboard.css?v=1.5.0"
-      rel="stylesheet"
-    />
-    <%-- CSS Just for demo purpose, don't include it in your project --%>
-    <link href="resources/assets/demo/demo.css" rel="stylesheet" />
-  </head>
-  <body>
-    <%-- 메뉴바 삽입 --%>
-
-    <div style="float: left">
-      <jsp:include page="../common/adminMenubar.jsp" />
+<head>
+  <link rel="icon" sizes="32x32" type="image/png" href="resources/images/got/got_logo.ico">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>갓물주</title>
+  <style>
+  	#aptListClick1:hover {
+  		cursor: pointer;
+	}
+  </style>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport"/>
+<%-- Fonts and icons --%>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+<%-- CSS Files --%>
+<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="resources/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet"/>
+<%-- CSS Just for demo purpose, don't include it in your project --%>
+<link href="resources/assets/demo/demo.css" rel="stylesheet" />
+</head>
+<body>
+	<%-- 메뉴바 삽입 --%>
+	<div style="float: left">
+    	<jsp:include page="../common/adminMenubar.jsp" />
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
-<!-- 여기서부터 -->
-     <div class="wrapper">
-      <div class="main-panel" id="main-panel">
-        <!-- End Navbar -->
-        <div class="content">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">개선의견</h4>
-                  <p class="category">
-		             <h6 style="margin-left: 91%; color: rightgray"> &lt; <i style="color: darkgoldenrod" class="fa-solid fa-comments"></i> :  ${ adminImpPi.listCount } &gt;</h6>
-		          </p>
-                </div>
-                 <div
-		            class="card-body all-icons"
-		            style="margin-right: 4%; margin-left: 4%"
-		          >
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table" id="admAptList">
-                      <thead class="text-primary">
-	                      <th>No</th>
-	                      <th>Image</th>
-	                      <th>Apt Name</th>
-	                      <th>Ex</th>
-	                      <th>Payment</th>
-	                      <th>Price</th>
-	                      <th><i style="color:red" class="fa-regular fa-thumbs-up"></i></th>
-	                      <th><i style="color:blue" class="fa-regular fa-thumbs-down"></i></th>
-	                      <th class="text-right"></th>
-                      </thead>
-                      <tbody id="aptListClick1">
-	                      
-	                      <c:forEach var="aimp" items="${ admImpList }">
-		                      <tr>
-		                        <td class="pno">${ aimp.impReplyNo }</td>
-		                        <td>
-	                            	<img style="width: 65px; height: 65px; border-radius: 50%;" src="${ aimp.impReplyProfile }" alt="">
-	                          	</td>
-		                        <td>${ aimp.impReplyWriter }</td>
-		                        <td>${ aimp.impReplyContent }</td>
-		                        <td>${ aimp.impReplyType }</td>
-		                        <td>${ aimp.impReplyCreateDate }</td>
-		                        <td>${ aimp.impReplyLikes }</td>
-		                        <td>${ aimp.impReplyDislikes }</td>
-	                        	<td class="text-right"><a style="color:red; border-radius: 20px" onclick="confirmImpDelete(${aimp.impReplyNo})"><i class="fa-solid fa-trash-can"></i></a></td>
-		                      </tr>
-	                      </c:forEach>
-	                      
-                      </tbody>
-                    </table>
-                  </div>
-                  
-                  <script>
-                  	  function confirmImpDelete(no){
-                  		var confirmDelete = confirm("삭제하시겠습니까?");
-                        if (confirmDelete) {
-                            // 확인을 눌렀을 때 컨트롤러에 삭제 요청을 보낼 수 있도록 구현
-                            location.href = "deleteImp.ad?impNo=" + no;
-                        }
-                  	  }
-                  </script>
-                
-                <%--
-                <script>
-				$(function(){
-					$("#aptListClick1>tr").click(function(){
-						// console.log("눌림")
-		                  location.href = 'AptDetail.ad?pno=' + $(this).children(".pno").text();
-		               })
-				})
-				</script>
-                 --%>
-                
-            <div id="pagingArea" style="float:right">
-                <ul class="pagination">
-                	
-                	<c:choose>
-                		<c:when test="${ adminImpPi.currentPage eq 1 }">
-                   			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
-                   		</c:when> 
-                   		<c:otherwise>
-                   			<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminImpPi.currentPage -1 }">Previous</a></li>
-                   		</c:otherwise>
-                   	</c:choose>
-                   	
-                   	<c:forEach var="p" begin="${ adminImpPi.startPage }" end="${ adminImpPi.endPage }">
-                   		<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ p }">${ p }</a></li>
-                    </c:forEach>
-                    
-                    <c:choose>
-                    	<c:when test="${ adminImpPi.currentPage eq adminImpPi.maxPage }">
-							<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
-        				</c:when>
-        				<c:otherwise>
-        					<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminImpPi.currentPage + 1 }">Next</a></li>
-        				</c:otherwise>
-        			</c:choose>
-                </ul>
-            </div>
-            
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	<!-- 여기서부터 -->
+    	<div class="wrapper">
+      		<div class="main-panel" id="main-panel">
+        		<!-- End Navbar -->
+        		<div class="content">
+          			<div class="row">
+            			<div class="col-md-12">
+              				<div class="card">
+                				<div class="card-header">
+                  					<h4 class="card-title">개선의견</h4>
+				                  	<p class="category">
+						            	<h6 style="margin-left: 91%; color: rightgray"> &lt; <i style="color: darkgoldenrod" class="fa-solid fa-comments"></i> :  ${ adminImpPi.listCount } &gt;</h6>
+						          	</p>
+               					</div>
+	               				<div class="card-body all-icons" style="margin-right: 4%; margin-left: 4%">
+	                				<div class="card-body">
+	                  					<div class="table-responsive">
+	                    					<table class="table" id="admAptList">
+	                      						<thead class="text-primary">
+							                    	<th>No</th>
+							                    	<th>Image</th>
+							                      	<th>Apt Name</th>
+							                      	<th>Ex</th>
+							                      	<th>Payment</th>
+							                      	<th>Price</th>
+							                      	<th><i style="color:red" class="fa-regular fa-thumbs-up"></i></th>
+							                      	<th><i style="color:blue" class="fa-regular fa-thumbs-down"></i></th>
+						                      		<th class="text-right"></th>
+					                      		</thead>
+	                      						<tbody id="aptListClick1">
+		                      						<c:forEach var="aimp" items="${ admImpList }">
+			                      						<tr>
+								 	                    	<td class="pno">${ aimp.impReplyNo }</td>
+			                        						<td>
+								                            	<img style="width: 65px; height: 65px; border-radius: 50%;" src="${ aimp.impReplyProfile }" alt="">
+		                         						 	</td>
+									                        <td>${ aimp.impReplyWriter }</td>
+									                        <td>${ aimp.impReplyContent }</td>
+									                        <td>${ aimp.impReplyType }</td>
+									                        <td>${ aimp.impReplyCreateDate }</td>
+									                        <td>${ aimp.impReplyLikes }</td>
+									                        <td>${ aimp.impReplyDislikes }</td>
+								                        	<td class="text-right"><a style="color:red; border-radius: 20px" onclick="confirmImpDelete(${aimp.impReplyNo})"><i class="fa-solid fa-trash-can"></i></a></td>
+		                      							</tr>
+	                      							</c:forEach>
+	                   							</tbody>
+	                   						</table>
+	               						</div>
+					                  	<script>
+					                  		function confirmImpDelete(no){
+					                  			var confirmDelete = confirm("삭제하시겠습니까?");
+						                        	if (confirmDelete) {
+						                            	// 확인을 눌렀을 때 컨트롤러에 삭제 요청을 보낼 수 있도록 구현
+						                            	location.href = "deleteImp.ad?impNo=" + no;
+						                        	}
+					                  	  		}
+			                  			</script>
+	                
+							            <div id="pagingArea" style="float:right">
+							            	<ul class="pagination">
+							                	<c:choose>
+							                		<c:when test="${ adminImpPi.currentPage eq 1 }">
+							                   			<li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
+							                   		</c:when> 
+							                   		<c:otherwise>
+							                   			<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminImpPi.currentPage -1 }">Previous</a></li>
+							                   		</c:otherwise>
+						                   		</c:choose>
+							                   	
+							                   	<c:forEach var="p" begin="${ adminImpPi.startPage }" end="${ adminImpPi.endPage }">
+							                   		<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ p }">${ p }</a></li>
+							                    </c:forEach>
+							                    
+							                    <c:choose>
+							                    	<c:when test="${ adminImpPi.currentPage eq adminImpPi.maxPage }">
+														<li class="page-item disabled"><a class="page-link" href="">Next</a></li>
+							        				</c:when>
+							        				<c:otherwise>
+							        					<li class="page-item"><a class="page-link" href="aptList.ad?cpage=${ adminImpPi.currentPage + 1 }">Next</a></li>
+							        				</c:otherwise>
+							        			</c:choose>
+						                	</ul>
+						            	</div>
+						            	
+									</div>
+	           					</div>
+       						</div>
+       					</div>
+   					</div>
+   				</div>
+			</div>
+		</div>
     <%--   Core JS Files   --%>
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -174,6 +143,6 @@ pageEncoding="UTF-8"%>
 
     <%-- 푸터바 삽입 --%>
 
-    <jsp:include page="../common/adminFooter.jsp" />
-  </body>
+	<jsp:include page="../common/adminFooter.jsp" />
+</body>
 </html>
