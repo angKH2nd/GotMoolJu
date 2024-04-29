@@ -192,7 +192,8 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 💜 이상용
 
-&nbsp; - 느낀점 추가예정 TBD
+&nbsp; - 파이널 프로젝트를 진행하면서 세미 프로젝트에 비해 기간이 짧고, api도 끌어와 보고, 교육원에서 배운 기능도 아니라서 조금 헤맸다. 하지만 새로운 기능들을 구글링, gpt 등 찾아보면서 만들다보니 결국은 교육원에서 배운 내용들이 기초가 된다는 사실을 깨달았다. 프로젝트도 한번 만들어보니 어떤 흐름으로 가는지 조금은 이해를 하게 된것 같아 처음 만든 프로젝트 때 보단 자신감을 가지고 진행했고, 이러한 자신감은 내가 어려운 기능을 맡아 막혔을 때, 처음부터 지레 겁먹지 않고 일단 해보자는 마음가짐으로 바뀌게 되는 계기가 되었다. 자신감이 자만심으로 바뀌지 않게 팀원들이 한 기능들에 대한 코드도 보면서 더욱 열심히 공부해야겠다고 다짐했다. <br><br>
+세미 때와는 다르게 spring도 배우면서 보다 조금 발전했다고 느끼지만 그래봐야 겨우 한걸음 정도 뗐다고 생각한다. 수료하더라도 겨우 뗀 한걸음이 헛되지 않게 배운 과정들을 복기하고 새로운 것들을 더욱 공부해야겠다고 느끼는 과정이었다.
 
 <br><br>
 
@@ -356,35 +357,67 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 ### 💛 류은송
 
-#### 🟡 기능1
+#### 🟡 관리자 페이지
 
-&nbsp;&nbsp;&nbsp; - 기능1-1
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-2
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-3
+&nbsp;&nbsp;&nbsp; - 관리자 페이지
 
 GIF 추가예정
 
 <br><br>
 
-#### 🟡 기능2
-
-&nbsp;&nbsp;&nbsp; - 기능2-1
+&nbsp;&nbsp;&nbsp; - 관리자 회원 조회, 상세 조회, 수정
 
 GIF 추가예정
 
 <br><br>
 
-#### 🟡 기능3
+&nbsp;&nbsp;&nbsp; - 관리자 공지사항 조회, 상세 조회, 등록
 
-&nbsp;&nbsp;&nbsp; - 기능3-1
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 관리자 공지사항 수정, 삭제, 복구
+
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 관리자 Q&A 조회, 답변 리스트 확인
+
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 관리자 Q&A 삭제, 답변 등록, 답변 수정
+
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 관리자 부동산 조회, 상세 조회, 삭제
+
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 관리자 개선의견 조회, 삭제
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟡 이용안내
+
+&nbsp;&nbsp;&nbsp; - 회사소개, 이용약관, 개인정보처리방침
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟡 SNS 공유 API
+
+&nbsp;&nbsp;&nbsp; - SNS 공유 API
 
 GIF 추가예정
 
@@ -392,35 +425,69 @@ GIF 추가예정
 
 ### 💚 박민규
 
-#### 🟢 기능1
+#### 🟢 부동산 지도
 
-&nbsp;&nbsp;&nbsp; - 기능1-1
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-2
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-3
+&nbsp;&nbsp;&nbsp; - 부동산 지도
 
 GIF 추가예정
 
 <br><br>
 
-#### 🟢 기능2
-
-&nbsp;&nbsp;&nbsp; - 기능2-1
+&nbsp;&nbsp;&nbsp; - 부동산 일반 지도, 지형, 위성지도, 겹쳐보기
 
 GIF 추가예정
 
 <br><br>
 
-#### 🟢 기능3
+#### 🟢 부동산 리스트업, 조회
 
-&nbsp;&nbsp;&nbsp; - 기능3-1
+&nbsp;&nbsp;&nbsp; - 부동산 리스트업, 조회
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 부동산 지역별 마킹
+
+&nbsp;&nbsp;&nbsp; - 부동산 지역별 마킹
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 부동산 주소별 목록 조회
+
+&nbsp;&nbsp;&nbsp; - 부동산 주소별 목록 조회
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 부동산 검색
+
+&nbsp;&nbsp;&nbsp; - 부동산 검색
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 세금계산기 API
+
+&nbsp;&nbsp;&nbsp; - 세금계산기 API
+
+GIF 추가예정
+
+<br><br>
+
+#### 🟢 소셜 로그인 API
+
+&nbsp;&nbsp;&nbsp; - 카카오 로그인 API
+
+GIF 추가예정
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 네이버 로그인 API
 
 GIF 추가예정
 
