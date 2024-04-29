@@ -236,7 +236,7 @@ pageEncoding="UTF-8"%>
 									var socket = null;
 									function connect(){
 										console.log("tttttt")
-										var ws = new WebSocket("ws://localhost:8222/qnaAnswerEnroll.ad?qno=" + qno);
+										var ws = new WebSocket("ws://localhost:8222/home.got);
 										socket = ws;
 										
 										ws.onopen = function(){
