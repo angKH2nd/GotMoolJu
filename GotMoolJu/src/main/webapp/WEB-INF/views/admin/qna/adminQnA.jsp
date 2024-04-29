@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -65,7 +64,7 @@ pageEncoding="UTF-8"%>
                 <div class="card-header">
                   <h4 class="card-title">Q & A</h4>
                   <p class="category">
-		             <h6 style="margin-left: 86%; color:#12192c"> &lt; Q & A 개수 : ${ adminPi.listCount } &gt;</h6>
+		             <h6 style="margin-left: 90%; color:#12192c"> &lt; <i style="color:pink" class="fa-solid fa-question"></i> <i style="color:lightblue" class="fa-solid fa-comment-dots"></i> : ${ adminPi.listCount } &gt;</h6>
 		           </p>
                 </div>
                  <div

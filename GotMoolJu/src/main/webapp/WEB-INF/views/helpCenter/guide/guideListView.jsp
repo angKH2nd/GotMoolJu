@@ -17,7 +17,7 @@
 	    padding: 0;
 	  }
 	  #helpMap {
-	    height: 500px; /* Высота карты */
+	    height: 500px;
 	  }
 	</style>
 
@@ -41,8 +41,14 @@
         });
     }
     </script>
+    
+    <div class="pd15">
+    	로드뷰를 참고해서 임장 소모임을 모집해 보는 것은 어떨까요? 😙
+  	</div>
+   	<div class="pd15 mh" onclick="moveToCommunityFromGuide();">
+    	커뮤니티 바로가기
+   	</div>
 
-	여기 guideListView.jsp임
 	<script src="resources/js/helpCenter/guide/guideListView.js"></script>
 </body>
 </html>

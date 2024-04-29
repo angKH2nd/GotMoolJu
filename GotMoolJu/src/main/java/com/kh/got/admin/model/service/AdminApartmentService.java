@@ -13,5 +13,8 @@ public interface AdminApartmentService {
 	// 아파트 삭제
 	int deleteAdminApt(int aptNo);
 
+	// 아파트 미니 리스트
+	ArrayList<MapVO> adminAptMiniList();
+
 	
 }

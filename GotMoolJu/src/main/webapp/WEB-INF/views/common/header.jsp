@@ -15,20 +15,53 @@
 			<div class="popular-title fl"><i class="fa-solid fa-fire"></i> 인기 검색어</div>
 			<div class="block fl">
 			    <ul id="ticker">
-			        <li><button type="button" class="hoverZ"><span>1</span> 리상룡의 내집마련기 </button></li>
-			        <li><button type="button" class="hoverZ"><span>2</span> 조원이 많아서 행복해요 </button></li>
-			        <li><button type="button" class="hoverZ"><span>3</span> 마라탕 먹고싶다 </button></li>
-			        <li><button type="button" class="hoverZ"><span>4</span> 오늘 날씨 아따 좋다잉 </button></li>
-			        <li><button type="button" class="hoverZ"><span>5</span> 위대하신 리상룡 수령동지를 위해</button></li>
-			        <li><button type="button" class="hoverZ"><span>6</span> 학원에 변태가 나타났다 </button></li>
-			        <li><button type="button" class="hoverZ"><span>7</span> 아 더 이상 쓸 말 없는데 </button></li>
-			        <li><button type="button" class="hoverZ"><span>8</span> 대충 인기검색어 8위임 </button></li>
-			        <li><button type="button" class="hoverZ"><span>9</span> 타꼬야끼도 먹고 싶네 </button></li>
-			        <li><button type="button" class="hoverZ"><span>10</span> 근데 떡볶이도 좋은데 어쩌지 </button></li>
+
 			    </ul>
 			</div>
 		</div>
 		<div class="header-blank"></div>
+
+		<script>
+			$(function(){
+				popularTitle();
+
+				function popularTitle(){
+
+					
+					$.ajax({
+						url:"popularTitle.ap",
+						success:function(data){
+
+							let value = "";
+							let popularNum = 1;
+
+							for(let i in data){
+								
+								value += "<li>"
+									   + "<button type='button' class='hoverZ'>"
+									   + "<span>" 
+									   + popularNum++
+									   + "</span>"
+									   + data[i].aptName
+									   + "</button>"
+									   + "</li>"
+
+							}
+
+							$("#ticker").html(value);
+
+						},
+						error:function(){
+							console.log("ajax실패");
+						}
+						
+					})
+				}
+			})
+		</script>
+
+
+
 		<div class="header-member">
 			<c:choose>
             	<c:when test="${ empty loginUser }">         

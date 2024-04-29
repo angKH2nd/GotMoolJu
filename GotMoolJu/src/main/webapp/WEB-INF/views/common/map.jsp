@@ -97,6 +97,7 @@
 		// 줌 변경 이벤트
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
 			var zoomLevel = map.getZoom();
+			var mapCenter = map.getCenter();
 			
 			handleZoomChange(zoomLevel);
 
@@ -156,7 +157,7 @@
 						});
 					})(i);
 				}
-			}else if(zoomLevel == 11 || zoomLevel == 12){
+			}else if(zoomLevel == 11 || zoomLevel == 12 || zoomLevel == 13){
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
@@ -245,7 +246,7 @@
 				});
 
 				
-			}else if(zoomLevel == 13 || zoomLevel == 14){
+			}else if(zoomLevel == 14){
 
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
@@ -273,6 +274,7 @@
 
 						// Ensure all requests are complete before proceeding
 						$.when.apply($, promises).then(function () {
+							
 							for (let i = 0; i < appData.length; i++) {
 								if (appData[i].count != 0) { // Ensure count is defined
 									var marker = new naver.maps.Marker({
@@ -301,8 +303,8 @@
 						});
 					});
 				};
+				getData();
 				
-		getData();
 
 			}else if(zoomLevel >= 15){
 				// 마커 제거
@@ -313,6 +315,7 @@
 				setTimeout(() => {
 					detailMakers();
 				}, 100);
+				naver.maps.Event.addListener(map, 'idle', idleHandler);
 			}
 		});
 
@@ -361,6 +364,60 @@
 				})
 			}
 
+			function idleHandler() {
+
+				
+				if(map.getZoom() >= 15){
+					
+					for(let i=0; i<markers.length; i++){
+						markers[i].setMap(null);
+					}
+				
+			var mapBounds = map.getBounds();
+			$.ajax({
+				url: "detailAptCount.ma",
+				data: {
+					minX: mapBounds._min.x,
+					minY: mapBounds._min.y,
+					maxX: mapBounds._max.x,
+					maxY: mapBounds._max.y
+				},
+				success: function(data) {
+					for (let i = 0; i < data.length; i++) {
+						var marker = new naver.maps.Marker({
+							position: new naver.maps.LatLng(data[i].aptLocationX, data[i].aptLocationY),
+							map: map,
+							icon: {
+								content: [
+									'<div class="aptContent">',
+									'<div class="aptImage">',
+									data[i].aptCount,
+									'</div>',
+									'<div class="aptImageName">' + data[i].aptName + '</div>',
+									'<input type="hidden" value="' + data[i].aptLocationX + '" id="aptLocation">',
+									'</div>'
+								].join(''),
+								size: new naver.maps.Size(25, 34),
+								scaledSize: new naver.maps.Size(25, 34),
+								origin: new naver.maps.Point(0, 0),
+								anchor: new naver.maps.Point(12, 34)
+							}
+						});
+						markers.push(marker);
+						naver.maps.Event.addListener(marker, 'click', function(e) {
+							// Smoothly move the map to the clicked position and adjust zoom level
+							map.morph(e.coord);
+						});
+					}
+				},
+				error: function() {
+					console.log("실패")
+				}
+			});
+			}
+		}
+
+
 		//------------------- 줌인 줌아웃 -------------------------------
 		
 		naver.maps.Event.addListener(map, 'zoom_changed', function() {
@@ -385,22 +442,6 @@
 		    map.setZoom(currentZoom - 1);
 		});
 		
-		// 중심 변경시 이벤트 실행
-		// naver.maps.Event.addListener(map, 'center_changed', function() {
-
-		// 	 var currentZoomLevel = map.getZoom();
-
-		// 	 for(let i=0; i<markers.length; i++){
-		// 			markers[i].setMap(null);
-		// 		}
-				
-		// 	 if(currentZoomLevel >= 15){
-		// 		setTimeout(() => {
-		// 			detailMakers()
-		// 		}, 500);
-		// 		console.log(markers)
-		// 	 }
-		// });	
 			
 		$(document).on('click', '.aptContent', function(e) {
 			var aptNameElement = $(this).find('.aptImageName');
@@ -420,6 +461,7 @@
 			
 			return obj;
 		}
+
 	</script>
 		
 	<script src="./resources/js/common/map.js"></script>

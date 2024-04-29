@@ -39,6 +39,7 @@
 		<result column="apt_bath" property="aptBath"/>
 		<result column="apt_entrance_type" property="aptEntranceType"/>
 		<result column="dibs_apt_no" property="dibsAptNo"/>
+		<result column="apt_search" property="aptSearch"/>
 	</resultMap>
 	<!--  
 	<select id="selectAllList" resultMap="mapResult"> 
@@ -182,6 +183,23 @@
 		 where apt_no = #{aptNo}
 	</update>
 	
+	<select id="adminAptMiniList" resultMap="mapResult">
+		select *
+	      from (
+	             select
+	                    apt_no
+	                  , apt_selling_type
+	                  , apt_name
+	                  , apt_img_url 
+	                  , SUBSTR(apt_address, INSTR(apt_address, ' ', 1, 1)) as APT_ADDRESS
+	               from tb_apt
+	              order
+	                 by apt_no desc
+	            )
+	      where rownum between 1 and 3	
+	
+	</select>
+	
 	
 	
 	<select id="selectDibsList" resultMap="mapResult">
@@ -195,6 +213,53 @@
 	      from tb_apt
 	      join tb_dibs on (APT_NO = DIBS_APT_NO)
 	    where dibs_user_no = #{userNo}
+	</select>
+	
+	<select id="searchExApt" resultMap="mapResult">
+		  SELECT distinct SUBSTR(APT_LOCATION, 1, INSTR(APT_LOCATION, ',') - 1) AS apt_location_y,
+		  		 SUBSTR(APT_LOCATION, INSTR(APT_LOCATION, ',') + 1) AS apt_location_x,
+        		 apt_name
+		    FROM tb_apt
+		   WHERE apt_name LIKE '%'||#{searchInput}||'%'
+	</select>
+	
+	<update id="searchCountUp">
+		update tb_apt
+		   set APT_SEARCH = APT_SEARCH + 1
+		 where apt_name = #{aptName}
+	</update>	
+	
+	<select id="popularTitle" resultMap="mapResult">
+		 select apt_name, apt_search
+		   from (select distinct apt_name, apt_search
+		         from tb_apt
+		         order 
+		         by apt_search desc)
+		   where rownum between 1 and 10
+	</select>
+	
+	
+	
+	
+	<update id="updateAptCount">
+		update tb_apt
+		   set apt_count = apt_count + 1
+		 where apt_no = #{aptNo}
+	</update>
+	
+	<select id="selectHotAptList" resultMap="mapResult">
+		SELECT *
+		  FROM (SELECT 
+		               APT_NAME,
+		               APT_SELLING_TYPE,
+		               APT_PRICE,
+		               APT_ADDRESS,
+		               APT_DESC,
+		               APT_IMG_URL 
+		          FROM TB_APT 
+		         ORDER
+		            BY APT_COUNT DESC)
+		 WHERE ROWNUM BETWEEN 1 AND 10
 	</select>
 	
 </mapper>

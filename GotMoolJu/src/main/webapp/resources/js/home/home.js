@@ -32,6 +32,7 @@ function toggleDiv(divId) {
 	cancelAptDetailDiv();
 	resetCommunityDiv();
 	$(".uwm").remove();
+    countingDdibs();
 
     var divs = document.querySelectorAll('.sidebar-toggle > div');
     var lis = document.querySelectorAll('.sidebar li');
