@@ -215,14 +215,14 @@ demo = {
     gradientStroke.addColorStop(0, '#80b6f4');
     gradientStroke.addColorStop(1, chartColor);
 
-    var gradientFill = ctx.createLinearGradient(0, 200, 0, 50);
+    var gradientFill = ctx.createLinearGradient(0, 3500, 0, 700);
     gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
     gradientFill.addColorStop(1, "rgba(255, 255, 255, 0.24)");
 
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+        labels: ["강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구", "도봉구", "동대문구", "동작구"],
         datasets: [{
           label: "Data",
           borderColor: chartColor,
@@ -237,7 +237,7 @@ demo = {
           fill: true,
           backgroundColor: gradientFill,
           borderWidth: 2,
-          data: [50, 150, 100, 190, 130, 90, 150, 160, 120, 140, 190, 95]
+          data: [2106, 1218, 511, 312, 769, 1595, 1616, 150, 3329, 1507, 1350, 675]
         }]
       },
       options: {

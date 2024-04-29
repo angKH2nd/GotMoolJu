@@ -16,6 +16,10 @@ pageEncoding="UTF-8"%>
 	#announcementlistClick:hover{
 		cursor: pointer;
 	}
+	#admAptlistClick:hover{
+		cursor: pointer;
+	}
+	
 </style>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport"/>
 <!-- <%-- Fonts and icons --%> -->
@@ -42,8 +46,8 @@ pageEncoding="UTF-8"%>
 		<div class="content">
 			<div class="row">
 				<div class="col-lg-4">
-	            <%-- 1번 card title --%>
-	            <%-- Q & A 시작 --%>
+	            	<%-- 1번 card title --%>
+	            	<%-- Q & A 시작 --%>
 					<div class="card card-chart">
 						<div id="miniQnaDivOpen">
 							<div class="card-header">
@@ -230,9 +234,9 @@ pageEncoding="UTF-8"%>
 			                      	<th style="width: 5%" class="text-right">Pay</th>
 			                    </thead>
 	                    		<tbody id="admAptlistClick">
-		                  			<c:forEach var="adApt" items="${ admArtList }"> 
-					                    <input type="hidden" name="aptNo" value="${ adApt.aptNo }">
+		                  			<c:forEach var="adApt" items="${ admAptList }"> 
 					                	<tr>
+					                    	<input type="hidden" class="aptNo" name="aptNo" value="${ adApt.aptNo }">
 					                    	<td style="width:30px; height:30px"><img src="${ adApt.aptImgUrl }"></td>
 					                        <td>${ adApt.aptName }</td>
 					                        <td>${ adApt.aptAddress }</td>
@@ -243,6 +247,15 @@ pageEncoding="UTF-8"%>
                  			</table>
                			</div>
            			</div>
+           			<script>
+					    $(function(){
+					        $("#miniApartArea tbody tr").click(function(){
+					            // find를 사용하여 tr 내부에서 aptNo 클래스를 가진 요소를 찾고 해당 요소의 값을 가져옵니다.
+					            var aptNo = $(this).find(".aptNo").val();
+					            location.href = 'aptDetail.ad?aptNo=' + aptNo;
+					        });
+					    });
+					</script>
               		<%-- 3번 card footer --%>
               		<div class="card-footer">
 	                	<div class="stats">
@@ -254,98 +267,91 @@ pageEncoding="UTF-8"%>
        	</div>
         <%-- 하단 보드 2개 뭉친 div --%>
         <div class="row">
-          <%-- 4번 보드 감싸고 있는 div, 패딩 o --%> 
-          <div class="col-md-6">
-            <%-- 4번 보드--%>
-            <div class="card" style="height: 441px">
-              <%-- 4번 card title --%>
-              <div class="card-header">
-                <h4 class="card-title">회원</h4>
-                <a href="memberList.ad" class="card-category" style="float:right; text-decoration: none !important" >
-                 &lt; 더보기 &gt;
-                </a>
-              </div>
-              <%-- 4번 card content--%>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" id="miniMemberArea">
-                    <thead class="text-primary">
-                      <th>No</th>
-                      <th>ID</th>
-                      <th>NICKNAME</th>
-                      <th>phone</th>
-                    </thead>
-                    <tbody id="memberlistClick">
-	                    <c:forEach var="ad" items="${ admMemberList }">
-		                      <tr>
-		                        <td class="mno">${ ad.userNo }</td>
-		                        <td>${ ad.userId }</td>
-		                        <td>${ ad.userNickname }</td>
-		                        <td>${ ad.userPhone }</td>
-		                      </tr>
-						</c:forEach>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+        	<%-- 4번 보드 감싸고 있는 div, 패딩 o --%> 
+        	<div class="col-md-6">
+            	<%-- 4번 보드--%>
+            	<div class="card" style="height: 441px">
+              		<%-- 4번 card title --%>
+              		<div class="card-header">
+                		<h4 class="card-title">회원</h4>
+                		<a href="memberList.ad" class="card-category" style="float:right; text-decoration: none !important" >&lt; 더보기 &gt;</a>
+					</div>
+              		<%-- 4번 card content--%>
+              		<div class="card-body">
+                		<div class="table-responsive">
+                  			<table class="table" id="miniMemberArea">
+                    			<thead class="text-primary">
+			                    	<th>No</th>
+			                      	<th>ID</th>
+			                      	<th>NICKNAME</th>
+			                      	<th>phone</th>
+			                    </thead>
+                    			<tbody id="memberlistClick">
+	                    			<c:forEach var="ad" items="${ admMemberList }">
+		                      			<tr>
+				                        	<td class="mno">${ ad.userNo }</td>
+					                        <td>${ ad.userId }</td>
+					                        <td>${ ad.userNickname }</td>
+					                        <td>${ ad.userPhone }</td>
+				                    	</tr>
+									</c:forEach>
+                   				</tbody>
+               				</table>
+               			</div>
+           			</div>
+           		</div>
+       		</div>
           
-         <script>
-			$(function(){
-				$("#miniMemberArea>tbody>tr").click(function(){
-	                  location.href = 'memberDetail.ad?mno=' + $(this).children(".mno").text();
-	               })
-			})
-		</script>
+			<script>
+				$(function(){
+					$("#miniMemberArea>tbody>tr").click(function(){
+				    	location.href = 'memberDetail.ad?mno=' + $(this).children(".mno").text();
+				   	})
+				})
+			</script>
 			
-          <!-- 5번 보드 감싸고 있는 div, 패딩 o-->
-          <div class="col-md-6">
-            <!-- 5번 보드-->
-            <div class="card" style="height: 441px">
-              <!-- 5번 card title -->
-              <div class="card-header">
-                <h4 class="card-title">공지사항</h4>
-                <a href="announcementList.ad" class="card-category" style="float:right; text-decoration: none !important" >
-                 &lt; 더보기 &gt;
-                </a>
+          	<!-- 5번 보드 감싸고 있는 div, 패딩 o-->
+          	<div class="col-md-6">
+            	<!-- 5번 보드-->
+            	<div class="card" style="height: 441px">
+              		<!-- 5번 card title -->
+              			<div class="card-header">
+                			<h4 class="card-title">공지사항</h4>
+                			<a href="announcementList.ad" class="card-category" style="float:right; text-decoration: none !important" >&lt; 더보기 &gt;</a>
                 
-              </div>
-              <!-- 5번 card content-->
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" id="miniAnnouncementArea">
-                    <thead class="text-primary">
-                      <th>No</th>
-                      <th>작성자</th>
-                      <th>제목</th>
-                      <th>작성일</th>
-                    </thead>
-                    <tbody id="announcementlistClick">
-           		      <c:forEach var="ad" items="${ admAnnouncementList }">
-		                      <tr>
-		                        <td class="ano">${ ad.announcementNo }</td>
-		                        <td>${ ad.announcementWriter }</td>
-		                        <td>${ ad.announcementTitle }</td>
-		                        <td>${ ad.announcementCreateDate }</td>
-		                      </tr>
-		               </c:forEach>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            
-           
-			         <script>
+       					</div>
+              			<!-- 5번 card content-->
+              			<div class="card-body">
+                			<div class="table-responsive">
+                  				<table class="table" id="miniAnnouncementArea">
+				                    <thead class="text-primary">
+				                    	<th>No</th>
+				                     	<th>작성자</th>
+				                      	<th>제목</th>
+				                     	<th>작성일</th>
+			                    	</thead>
+                    				<tbody id="announcementlistClick">
+           		      					<c:forEach var="ad" items="${ admAnnouncementList }">
+		                      				<tr>
+						                    	<td class="ano">${ ad.announcementNo }</td>
+						                        <td>${ ad.announcementWriter }</td>
+						                        <td>${ ad.announcementTitle }</td>
+						                        <td>${ ad.announcementCreateDate }</td>
+				                     		</tr>
+	               						</c:forEach>
+                   					</tbody>
+               					</table>
+               				</div>
+           				</div>
+           			</div>
+	            	<script>
 						$(function(){
 							$("#miniAnnouncementArea>tbody>tr").click(function(){
-				                  location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
-				               })
+				            	location.href = 'announcementDetail.ad?ano=' + $(this).children(".ano").text();
+				            })
 						})
 					</script>
-		 
-          		</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -363,9 +369,7 @@ pageEncoding="UTF-8"%>
     <script src="resources/assets/js/plugins/bootstrap-notify.js"></script>
     <%-- Control Center for Now Ui Dashboard: parallax effects, scripts for the
     example pages etc --%>
-    <script
-      src="resources/assets/js/now-ui-dashboard.min.js?v=1.5.0"
-      type="text/javascript"
+    <script src="resources/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"
     ></script>
     <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%>
     <script src="resources/assets/demo/demo.js"></script>

@@ -61,15 +61,23 @@
 		                      					<c:forEach var="aapt" items="${ admAptList }">
 			                      					<tr>
 			                        					<td class="pno">${ aapt.aptNo }</td>
-								                        <td>
-							                            	<img style="width: 100px; height: 100px;" style="border-radius: 5px;" src="${ aapt.aptImgUrl }" alt="">
+								                        <td class="aaptPno">
+							                            	<img style="width: 100px; height: 100px; border-radius: 5px;" src="${ aapt.aptImgUrl }" alt="">
 							                          	</td>
-								                        <td>${ aapt.aptName }</td>
-								                        <td>${ aapt.aptDesc }</td>
-								                        <td>${ aapt.aptSellingType }</td>
-								                        <td>${ aapt.aptPrice }</td>
-								                        <td>${ aapt.aptIntroduce }</td>
-							                        	<td class="text-right"><a style="color:red; border-radius: 20px" onclick="confirmAptDelete(${aapt.aptNo})"><i class="fa-solid fa-trash-can"></i></a></td>
+								                        <td class="aaptPno">${ aapt.aptName }</td>
+								                        <td class="aaptPno">${ aapt.aptDesc }</td>
+						                        		<c:if test="${ aapt.aptSellingType eq '매매' }">
+							                        		<td class="aaptPno" style="color:black">${ aapt.aptSellingType }</td>
+						                        		</c:if>
+						                        		<c:if test="${ aapt.aptSellingType eq '전세' }">
+							                        		<td class="aaptPno" style="color:red">${ aapt.aptSellingType }</td>
+						                        		</c:if>
+						                        		<c:if test="${ aapt.aptSellingType eq '월세' }">
+							                        		<td class="aaptPno" style="color:blue">${ aapt.aptSellingType }</td>
+						                        		</c:if>
+								                        <td class="aaptPno">${ aapt.aptPrice }</td>
+								                        <td class="aaptPno">${ aapt.aptIntroduce }</td>
+							                        	<td class="text-right" onclick="confirmAptDelete(${aapt.aptNo})"><a style="color:red; border-radius: 20px"><i class="fa-solid fa-trash-can"></i></a></td>
 			                      					</tr>
 		                      					</c:forEach>
 	                      					</tbody>
@@ -88,8 +96,8 @@
 	                
 				                    <script>
 				                    	$(function(){
-				                        	$("#aptListClick1>tr").click(function(){
-				                        		location.href = 'aptDetail.ad?pno=' + $(this).children(".aptNo").text();
+				                        	$("#aptListClick1>tr .aaptPno").click(function(){
+				                        		location.href = 'aptDetail.ad?aptNo=' + $(this).siblings(".pno").text();
 			                        		})
 		                        		})
 				                    </script>
