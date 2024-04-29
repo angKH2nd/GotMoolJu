@@ -236,6 +236,8 @@
 		         order 
 		         by apt_search desc)
 		   where rownum between 1 and 10
+	</select>
+		   
 	<select id="detailAdminApt" resultMap="mapResult">
 		select 
 	       apt_no

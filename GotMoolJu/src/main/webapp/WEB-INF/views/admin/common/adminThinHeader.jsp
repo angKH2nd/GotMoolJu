@@ -39,7 +39,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                   </button>
                 </div>
-                <a class="navbar-brand" href="#pablo">GotMoolJu</a>
+                <a class="navbar-brand" href="main.ad">GotMoolJu</a>
               </div>
             <button
               class="navbar-toggler"
