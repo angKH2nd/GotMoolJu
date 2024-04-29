@@ -157,7 +157,7 @@
 						});
 					})(i);
 				}
-			}else if(zoomLevel == 11 || zoomLevel == 12){
+			}else if(zoomLevel == 11 || zoomLevel == 12 || zoomLevel == 13){
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
 					markers[i].setMap(null);
@@ -246,7 +246,7 @@
 				});
 
 				
-			}else if(zoomLevel == 13 || zoomLevel == 14){
+			}else if(zoomLevel == 14){
 
 				// 마커 제거
 				for(let i=0; i<markers.length; i++){
@@ -274,6 +274,7 @@
 
 						// Ensure all requests are complete before proceeding
 						$.when.apply($, promises).then(function () {
+							
 							for (let i = 0; i < appData.length; i++) {
 								if (appData[i].count != 0) { // Ensure count is defined
 									var marker = new naver.maps.Marker({
