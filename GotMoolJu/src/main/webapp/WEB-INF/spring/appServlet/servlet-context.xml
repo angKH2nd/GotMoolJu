@@ -27,14 +27,15 @@
 	
 	
 	<!-- websocket handler-->
-	<beans:bean id="replyEchochoHandler" class="com.kh.got.handler.ReplyEchoHandler"/>
+	<beans:bean id="echoHandler" class="com.kh.got.handler.EchoHandler"/>
 		
 	<websocket:handlers>	
-		<websocket:mapping handler="replyEchochoHandler" path="/qnaAnswerEnroll.ad"/>
+		<websocket:mapping handler="echoHandler" path="qnaList.ad"/>
 		<websocket:handshake-interceptors>
 			<beans:bean
 				class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor"/>
 		</websocket:handshake-interceptors>
+		<websocket:sockjs/>
 	</websocket:handlers>
 	
 </beans:beans>
