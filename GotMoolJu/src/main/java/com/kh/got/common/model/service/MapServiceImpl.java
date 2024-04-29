@@ -76,6 +76,18 @@ public class MapServiceImpl implements MapService {
 		
 		return mDao.searchEx(sqlSession, searchType, searchInput);
 	}
+
+	@Override
+	public int searchCountUp(String aptName) {
+		
+		return mDao.searchCountUp(sqlSession, aptName);
+	}
+
+	@Override
+	public ArrayList<MapVO> popularTitle() {
+		
+		return mDao.popularTitle(sqlSession);
+	}
 	
 	
 	

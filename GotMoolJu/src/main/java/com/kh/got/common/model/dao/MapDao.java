@@ -65,20 +65,20 @@ public class MapDao {
 	
 	public ArrayList<MapVO> searchEx(SqlSessionTemplate sqlSession, String searchType, String searchInput){
 		
-		if(searchType.equals("apt")) {
 			return (ArrayList)sqlSession.selectList("mapMapper.searchExApt", searchInput);
 			
-		}else {
-			
-			return (ArrayList)sqlSession.selectList("mapMapper.searchExAddress", searchInput);
-		}
+	}
+	
+	public int searchCountUp(SqlSessionTemplate sqlSession, String aptName) {
 		
+		return sqlSession.update("mapMapper.searchCountUp", aptName);
 		
 	}
 	
-	
-	
-	
+	public ArrayList<MapVO> popularTitle(SqlSessionTemplate sqlSession){
+		
+		return (ArrayList)sqlSession.selectList("mapMapper.popularTitle");
+	}
 	
 	
 	

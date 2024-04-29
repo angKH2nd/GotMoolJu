@@ -28,8 +28,8 @@ public interface MapService {
 	
 	ArrayList<MapVO> searchEx(String searchType, String searchInput);
 	
+	int searchCountUp(String aptName);
 	
-	
-	
+	ArrayList<MapVO> popularTitle();
 	
 }

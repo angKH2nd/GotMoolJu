@@ -39,6 +39,7 @@
 		<result column="apt_bath" property="aptBath"/>
 		<result column="apt_entrance_type" property="aptEntranceType"/>
 		<result column="dibs_apt_no" property="dibsAptNo"/>
+		<result column="apt_search" property="aptSearch"/>
 	</resultMap>
 	<!--  
 	<select id="selectAllList" resultMap="mapResult"> 
@@ -205,12 +206,20 @@
 		   WHERE apt_name LIKE '%'||#{searchInput}||'%'
 	</select>
 	
-	<select id="searchExAddress" resultMap="mapResult">
+	<update id="searchCountUp">
+		update tb_apt
+		   set APT_SEARCH = APT_SEARCH + 1
+		 where apt_name = #{aptName}
+	</update>	
 	
-	
+	<select id="popularTitle" resultMap="mapResult">
+		 select apt_name, apt_search
+		   from (select distinct apt_name, apt_search
+		         from tb_apt
+		         order 
+		         by apt_search desc)
+		   where rownum between 1 and 10
 	</select>
-	
-	
 	
 	
 	

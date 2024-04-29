@@ -8,9 +8,6 @@
 <title>갓물주</title>
 <link rel="stylesheet" href="resources/css/homeTown/searchApt.css">
 <style>
-	div{
-		box-sizing: border-box;
-	}
 	#search-outer{
 		width: 100%;
 		height: 100%;
@@ -138,6 +135,21 @@
 									document.getElementById("search-result").scrollTop=0;
 									$("#search-ex").css("display", "none");
 									$("#search-input").val("");
+									
+									$.ajax({
+										url:"searchCountUp.ma",
+										data:{
+											aptName:$(this).find(".inputAptName").text()
+										},
+										success:function(){
+											
+											popularTitle();
+										},
+										error:function(){
+											console.log("ajax통신 실패")
+										}
+
+									})
 
 								});	
 							
@@ -156,10 +168,41 @@
 
 		})
 
+		function popularTitle(){
+			
+			$.ajax({
+				url:"popularTitle.ap",
+				success:function(data){
+
+					let value = "";
+					let popularNum = 1;
+
+					for(let i in data){
+						
+						value += "<li>"
+							+ "<button type='button' class='hoverZ'>"
+							+ "<span>" 
+							+ popularNum++
+							+ "</span>"
+							+ data[i].aptName
+							+ "</button>"
+							+ "</li>"
+
+					}
+
+					$("#ticker").html(value);
+
+				},
+				error:function(){
+					console.log("ajax실패");
+				}
+				
+			})
+			}
+
 
 
 		function detailAptListSearch(value){
-			console.log(value);
 
 			$.ajax({
 				url:"detailApt.ma",
@@ -169,7 +212,6 @@
 				},
 				success:function(data){
 					let aptData = "";
-					console.log(data);
 
 					for(let i=0; i<data.length; i++){
 						aptData += `
@@ -190,8 +232,6 @@
 					}
 					$("#search-result").html(aptData);
 					$(".detailMap-apt").on('click', function() {	
-						console.log(selectAptLocationX)		
-						console.log(selectAptLocationY)		
 						var currentZoom = map.getZoom();
 		   				 	map.setZoom(17);
 						var selectApt = new naver.maps.LatLng(selectAptLocationX, selectAptLocationY);
