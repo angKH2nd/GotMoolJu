@@ -63,13 +63,13 @@ public class AdminController {
 		// 개선사항 3개 정도 조회용
 		ArrayList<Improvement> admImprovementList = adminEService.adminImprovementMiniList();
 		// 아파트 3개 정도 조회용
-		ArrayList<MapVO> admArtList = adminAptService.adminAptMiniList();
+		ArrayList<MapVO> admAptList = adminAptService.adminAptMiniList();
 		
         mv.addObject("admMemberList", admMemberList)
           .addObject("admAnnouncementList", admAnnouncementList)
           .addObject("admQnaList", admQnaList)
           .addObject("admImprovementList", admImprovementList)
-          .addObject("admArtList", admArtList)
+          .addObject("admAptList", admAptList)
 		  .setViewName("admin/adminMain");
 
         return mv;

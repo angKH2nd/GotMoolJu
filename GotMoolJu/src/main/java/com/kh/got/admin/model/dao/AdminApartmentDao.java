@@ -30,5 +30,10 @@ public class AdminApartmentDao {
 	public ArrayList<MapVO> adminAptMiniList(SqlSessionTemplate sqlSession) {
 		return (ArrayList)sqlSession.selectList("mapMapper.adminAptMiniList");
 	}
+
+	// 아파트 디테일
+	public MapVO detailAdminApt(SqlSessionTemplate sqlSession, int aptNo) {
+		return sqlSession.selectOne("mapMapper.detailAdminApt", aptNo) ;
+	}
 	
 }

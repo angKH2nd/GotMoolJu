@@ -52,12 +52,19 @@ public class AdminApartmentController {
 		}
 	}
 	
+	// 아파트 디테일
 	@RequestMapping("aptDetail.ad")
-	public String detailAdminApt() {
-//		int result = adminAptService.detailAdminApt(aptNo);
+	public ModelAndView detailAdminApt(@RequestParam("aptNo") int aptNo, HttpSession session, ModelAndView mv) {
+		
+//		System.out.println(aptNo);
+		MapVO admApt = adminAptService.detailAdminApt(aptNo);
+		
+//		System.out.println(admApt);
+		mv.addObject("admApt", admApt)
+		  .setViewName("admin/apartment/adminApartDetail");
 		
 		
-		return "admin/apartment/adminApartDetail";
+		return mv;
 		
 	}
 	

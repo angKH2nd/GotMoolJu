@@ -16,5 +16,10 @@ public interface AdminApartmentService {
 	// 아파트 미니 리스트
 	ArrayList<MapVO> adminAptMiniList();
 
+	// 아파트 디테일
+	MapVO detailAdminApt(int aptNo);
+
+	
+
 	
 }

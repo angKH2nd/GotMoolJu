@@ -45,13 +45,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
 
-    <form
-      id="adminAptDetailForm"
-      method="post"
-      action="aptDetail.ad"
-      enctype="multipart/form-data">
-      
-      <input type="hidden" name="aptNo" value="#" />
+    <form id="adminAptDetailForm" method="post" action="aptDetail.ad" enctype="multipart/form-data">
+    <input type="hidden" name="aptNo" value="${ admApt.aptNo }">
       <div class="wrapper" style="height: auto">
         <div class="main-panel" id="main-panel" style="height: 714px">
           <div class="content">
@@ -69,7 +64,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <input
                             type="text"
                             class="form-control"
-                            value="#에스제이팰리스"
+                            value="${ admApt.aptName }"
                             readonly
                             style="background-color: whitesmoke"/>
                         </div>
@@ -80,7 +75,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <input
                             type="text"
                             class="form-control"
-                            value="12층, 32.99m², 관리비 10만"
+                            value="${ admApt.aptDesc }"
                             readonly
                             style="background-color: whitesmoke"/>
                         </div>
@@ -91,7 +86,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <input
                             type="text"
                             class="form-control"
-                            value="3000/100 (월세)"
+                            value="${admApt.aptPrice} ( ${admApt.aptSellingType} )"
                             readonly
                             style="background-color: whitesmoke"/>
                         </div>
@@ -104,7 +99,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                           <input
                             type="text"
                             class="form-control"
-                            value="서울특별시 영등포구 도림동 1동 1203호"
+                            value="${ admApt.aptAddress } ${ admApt.aptDong }동 ${ admApt.aptHo }호"
                             readonly
                             style="background-color: whitesmoke">
                         </div>
@@ -128,7 +123,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             type="text"
                             class="form-control"
                             placeholder="Home Address"
-                            value="실평수11평 인기있는타입 무융자 6월입주 전입가능"
+                            value="${ admApt.aptIntroduce }"
                             readonly
                             style="background-color: whitesmoke">
                         </div>
@@ -137,22 +132,22 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <div class="row">
                       <div class="col-md-4 pr-1">
                         <div class="form-group">
-                          <label>Room size / apt_provision_size</label>
+                          <label>아파트 전용면적 / 공급면적</label>
                           <input
                             type="text"
                             class="form-control"
-                            value="26.16 / 32.99"
+                            value="${ admApt.aptRoomSize } / ${ admApt.aptProvisionSize}"
                             readonly
                             style="background-color: whitesmoke">
                         </div>
                       </div>
                       <div class="col-md-4 px-1">
                         <div class="form-group">
-                          <label>apt_tags</label>
+                          <label>단기/주차/풀옵션/보안 등</label>
                           <input
                             type="text"
                             class="form-control"
-                            value="주차,보안/안전"
+                            value="${ admApt.aptTags }"
                             readonly
                             style="background-color: whitesmoke">
                         </div>
@@ -160,66 +155,29 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
                       <div class="col-md-4 px-1">
                         <div class="form-group">
-                          <label>apt_beds / apt_bath / apt_entrance_type</label>
+                          <label>방 수 / 화장실 수 / 계단식/복도식</label>
                           <input
                             type="text"
                             class="form-control"
-                            value="방: 1 / 화장실: 1 / 계단식"
+                            value="방: ${ admApt.aptBeds } / 화장실: ${ admApt.aptBath } / ${ admApt.aptEntranceType}"
                             readonly
                             style="background-color: whitesmoke">
                         </div>
                       </div>
                     </div>
-
-                    <script>
-                      window.onload = function () {
-                        var userStatus = "${ adminM.userStatus }"; // 현재 고객의 status 값
-                        document.querySelector("#statusSelect").value =
-                          userStatus;
-                      };
-                    </script>
-                    <script>
-                      function changeColor() {
-                        var select = document.getElementById("statusSelect");
-                        var selectedColor =
-                          select.options[select.selectedIndex].style.color;
-                        select.style.color = selectedColor;
-                      }
-                    </script>
-
                     <div class="row">
                       <div class="col-md-12">
                         <div>
                           <%-- #글자 센터로 보내기 --%>
-                          <label>apt_memo</label>
+                          <label>상세설명</label>
                           <textarea
-                            rows="10"
+                            rows="auto"
                             cols="30"
                             class="form-control"
                             readonly
                             align="center"
                             style="background-color: white; text-align: center">
-							"중개로 이윤을 남기기 보단, 사람을 남기길 원하는 박임빈 중개사입니다.
-								거짓없이 중개 할 것을 약속합니다
-							
-							[ 매물특징 ]
-							
-							▶위치는:  신도림역 도보 10분 , 버스정류장 건물바로앞에있어서 버스이용시 역까지 3분거리
-							
-							▶입주는:  6월20일 이후 협의
-							
-							▶주차는: 주차가능(기계식)
-							
-							▶관리비는: 월10만원(전기.가스.수도별도)
-							
-							▶용도는: 오피스텔 (전입가능)
-							
-							▶설 명: 
-							19년 준공된 신축 투룸 오피스텔
-							전입가능 귀한투룸월세
-							대형마트,생활편리시설 다양하게 분포
-							거실사이즈 나오는 귀한투룸
-							해당세대 무융자 안전한건물"
+							${ admApt.aptMemo }
 						  </textarea>
                         </div>
                       </div>
@@ -247,11 +205,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     />
                     --%>
                   </div>
-                  <br />
-                  <p class="description text-center">No.40020304</p>
-                  <p class="description text-center">2022-11-22</p>
+                  <br>
+                  <p class="description text-center">No.${ admApt.aptNo }</p>
+                <hr>
                 </div>
-                <hr />
                 <div class="button-container"></div>
               </div>
             </div>
