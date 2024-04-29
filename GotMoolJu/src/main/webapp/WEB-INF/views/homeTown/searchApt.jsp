@@ -14,13 +14,17 @@
 		overflow-y: auto;
 		border: 1px solid blue;
 	}
+	#search-top{
+		width: 100%;
+		height: 60px;
+	}
 	#search-area{
 		height: 4%;
 		display: flex;
 		
 	}
 	#search-result{
-		height: 857px;
+		height: 797px;
 		position: relative;
 		overflow-y: auto;
 	}
@@ -63,17 +67,26 @@
 	
 
 	<div id="search-outer">
-		<div onclick="cancelHomeTownDiv();">
-			searchApt.jsp 입니다
+		<div id="search-top">
+			<div class="pd15">
+				<div class="fl mh" style="width: 40px;" onclick="cancelHomeTownDiv();">
+					<i class="fa-solid fa-angle-left fa-lg"></i>
+				</div>
+				<div class="fl" style="width: calc(100% - 60px); text-align: center;">
+					검색
+				</div>
+				<div class="fl mh" style="width: 20px;" onclick="cancelSearch();">
+					<i class="fa-solid fa-xmark fa-lg"></i>
+				</div>
+			</div>
 		</div>
-
 		<div id="search-area">
 			<select name="search" id="search-select">
 				<option value="apt" selected>아파트</option>
 				<option value="address">지역</option>
 			</select>
 			<input type="text" style="flex: 1;" id="search-input">
-			<button>검색</button>
+			<button><i class="fa-solid fa-magnifying-glass"></i></button>
 		</div>
 		<div id="search-ex">
 			
@@ -167,6 +180,11 @@
 
 
 		})
+		
+		function cancelSearch(){
+			cancelHomeTownDiv();
+			toggleDiv('home');
+		}
 
 		function popularTitle(){
 			
