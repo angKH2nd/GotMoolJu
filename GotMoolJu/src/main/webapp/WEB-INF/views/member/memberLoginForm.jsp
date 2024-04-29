@@ -39,8 +39,8 @@
     <br>
     <div class="login-body">
     	<div style="padding-top: 80px;" align="center">
-			<div id="naver_id_login"></div>
-    		<img width=200 height=42.5 src="resources/images/social/kakao.png" onclick="kakaoLogin();" class="socialLogin">
+			<div id="naver_id_login" style="margin-bottom: 7px;"></div>
+    		<img width=210 height=47 src="resources/images/social/kakao.png" onclick="kakaoLogin();" class="socialLogin">
     	</div>
     </div>
     <div class="login-bottom">
