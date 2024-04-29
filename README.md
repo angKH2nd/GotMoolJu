@@ -308,35 +308,47 @@ GIF 추가예정
 
 ### 💙 신나리
 
-#### 🔵 기능1
+#### 🔵 공지사항
 
-&nbsp;&nbsp;&nbsp; - 기능1-1
+&nbsp;&nbsp;&nbsp; - 공지사항 조회
 
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-2
-
-GIF 추가예정
-
-<br><br>
-&nbsp;&nbsp;&nbsp; - 기능1-3
-
-GIF 추가예정
+![berry_select_announcement](https://github.com/angKH2nd/GotMoolJu/assets/151509995/7babc18c-9fc4-4eb8-b946-5aff0332ea6c)
 
 <br><br>
 
-#### 🔵 기능2
+#### 🔵 자주묻는질문
 
-&nbsp;&nbsp;&nbsp; - 기능2-1
+&nbsp;&nbsp;&nbsp; - 자주묻는질문 조회
 
-GIF 추가예정
+![berry_select_faq](https://github.com/angKH2nd/GotMoolJu/assets/151509995/29c59212-23dc-452d-bf61-3b763a178573)
 
 <br><br>
 
-#### 🔵 기능3
+#### 🔵 Q&A
 
-&nbsp;&nbsp;&nbsp; - 기능3-1
+&nbsp;&nbsp;&nbsp; - Q&A 조회, 등록
+
+![berry_select_qna_insert_qna](https://github.com/angKH2nd/GotMoolJu/assets/151509995/a4cc8a64-f8f6-4551-a4d9-3c82edb16288)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - Q&A 수정, 삭제
+
+![berry_update_qna_delete_qna](https://github.com/angKH2nd/GotMoolJu/assets/151509995/5948c433-77aa-478c-82c7-2b418cef7aaa)
+
+<br><br>
+
+#### 🔵 가이드
+
+&nbsp;&nbsp;&nbsp; - 로드뷰 API 통한 이용 가이드
+
+![berry_guide](https://github.com/angKH2nd/GotMoolJu/assets/151509995/03215188-9d27-4b2a-bec8-a6eb2cc68e49)
+
+<br><br>
+
+#### 🔵 알림
+
+&nbsp;&nbsp;&nbsp; - 알림
 
 GIF 추가예정
 
