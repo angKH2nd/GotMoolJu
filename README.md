@@ -240,13 +240,117 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 &nbsp;&nbsp;&nbsp; - 아이디 찾기
 
-GIF 추가예정
+![nano_search_id_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/65e65523-2b4b-42b4-8aa1-6365de81518f)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 비밀번호 찾기
 
-GIF 추가예정
+![nano_search_pwd_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/e9c3ec07-44a3-4b9c-9f71-beb170f46d01)
+
+<br><br>
+
+#### 🔴 마이페이지, 회원정보 조회 및 수정, 비밀번호 변경, 회원탈퇴
+
+&nbsp;&nbsp;&nbsp; - 마이페이지
+
+![nano_mypage_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/5d5c9d3e-b768-421c-9a42-0f14ba1a096e)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 회원정보 조회 및 수정
+
+![nano_update_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/3f834b5c-d055-49fb-88ef-762c9ff41500)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 비밀번호 변경
+
+![nano_update_pwd_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/947c6d3f-3f0b-4c5f-a3e1-a0e583ff294f)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 회원탈퇴
+
+![nano_delete_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/26861443-d6ac-4e14-b94b-df44d6d4d40e)
+
+<br><br>
+
+#### 🔴 인기 검색어
+
+&nbsp;&nbsp;&nbsp; - 인기 검색어
+
+![nano_main](https://github.com/angKH2nd/GotMoolJu/assets/151509995/d696534e-c5aa-44a0-9ac7-90bffd801caf)
+
+<br><br>
+
+#### 🔴 대출
+
+&nbsp;&nbsp;&nbsp; - 대출 API 통한 대출 실행금액 Top 10, 은행별 대출금리 현황 리스트업
+
+![nano_select_loan](https://github.com/angKH2nd/GotMoolJu/assets/151509995/5755c55a-d4d7-4be2-9a43-6e22c8f61dc2)
+
+<br><br>
+
+#### 🔴 개선의견
+
+&nbsp;&nbsp;&nbsp; - 개선의견 조회, 등록
+
+![nano_imp_select_imp_insert](https://github.com/angKH2nd/GotMoolJu/assets/151509995/fab4130b-10a3-482e-ab50-9574fc0f44f4)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 개선의견 수정, 삭제
+
+![nano_imp_update_imp_delete](https://github.com/angKH2nd/GotMoolJu/assets/151509995/68ae7157-4920-4e69-8400-50e5211266c8)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 개선의견 비밀 댓글
+
+![nano_imp_secret](https://github.com/angKH2nd/GotMoolJu/assets/151509995/5acd85ee-5b0e-46ca-8f0a-2ea1b093662e)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 개선의견 좋아요 싫어요
+
+![nano_imp_likes](https://github.com/angKH2nd/GotMoolJu/assets/151509995/de587b1f-8134-4721-b56b-77d3ed533c58)
+
+<br><br>
+
+#### 🔴 커뮤니티
+
+&nbsp;&nbsp;&nbsp; - 커뮤니티 동네소식 조회, 등록, 핫이슈, 명예의 전당
+
+![nano_select_community_insert_community](https://github.com/angKH2nd/GotMoolJu/assets/151509995/e836e324-f7c1-4af7-89d5-a00bbfdd38c3)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 커뮤니티 수정, 삭제
+
+![nano_update_community_delete_community](https://github.com/angKH2nd/GotMoolJu/assets/151509995/bfc33281-4a5c-47b1-98e2-e2e775bc8794)
+
+<br><br>
+
+&nbsp;&nbsp;&nbsp; - 커뮤니티 좋아요, 즐겨찾기, 댓글
+
+![nano_star_likes_reply](https://github.com/angKH2nd/GotMoolJu/assets/151509995/60b80084-0476-47f1-8293-bcb410bf0093)
+
+<br><br>
+
+#### 🔴 부동산 상세보기 및 최근 본 부동산
+
+&nbsp;&nbsp;&nbsp; - 부동산 상세보기 및 최근 본 부동산
+
+![nano_apt_detail_recent_apt](https://github.com/angKH2nd/GotMoolJu/assets/151509995/59e691e7-fbf9-4d89-b1c3-06a40766298a)
+
+<br><br>
+
+#### 🔴 부동산 뉴스
+
+&nbsp;&nbsp;&nbsp; - 부동산 뉴스
+
+![nano_news](https://github.com/angKH2nd/GotMoolJu/assets/151509995/7772e879-c5f9-48c8-b5da-31f96b42e4f9)
 
 <br><br>
 
@@ -400,7 +504,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 지금 핫한 단지 Top 10
 
-![lee_select_apt_list_top10](https://github.com/angKH2nd/GotMoolJu/assets/151509995/47649883-1c09-4429-ba00-72a311139d9b)
+![lee_select_apt_list_top10](https://github.com/angKH2nd/GotMoolJu/assets/151509995/15cbbfd8-42c8-499b-a6c1-abed444c656f)
 
 <br><br>
 
