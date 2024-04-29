@@ -26,4 +26,5 @@ public interface MapService {
 	
 	ArrayList<MapVO> selectDibsList(int userNo);
 	
+	ArrayList<MapVO> selectHotAptList();
 }

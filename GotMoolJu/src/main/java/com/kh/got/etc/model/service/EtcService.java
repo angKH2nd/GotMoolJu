@@ -2,6 +2,7 @@ package com.kh.got.etc.model.service;
 
 import java.util.ArrayList;
 
+import com.kh.got.common.model.vo.MapVO;
 import com.kh.got.etc.model.vo.ImpChoose;
 import com.kh.got.etc.model.vo.Improvement;
 
@@ -28,5 +29,6 @@ public interface EtcService {
 	
 	// 7. 개선의견 등록 서비스
 	int insertImpReply(Improvement imp);
+
 	
 }

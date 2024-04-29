@@ -70,5 +70,9 @@ public class MapServiceImpl implements MapService {
 	public ArrayList<MapVO> selectDibsList(int userNo) {
 		return mDao.selectDibsList(sqlSession, userNo);
 	}
-	
+
+	@Override
+	public ArrayList<MapVO> selectHotAptList() {
+		return mDao.selectHotAptList(sqlSession);
+	}
 }

@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.got.common.model.vo.MapVO;
 import com.kh.got.etc.model.dao.EtcDao;
 import com.kh.got.etc.model.vo.ImpChoose;
 import com.kh.got.etc.model.vo.Improvement;
@@ -58,6 +59,8 @@ public class EtcServiceImpl implements EtcService {
 	public int insertImpReply(Improvement imp) {
 		return eDao.insertImpReply(sqlSession, imp);
 	}
+
+	
 	
 	
 }
