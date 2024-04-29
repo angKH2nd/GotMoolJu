@@ -214,4 +214,25 @@
 	    where dibs_user_no = #{userNo}
 	</select>
 	
+	<update id="updateAptCount">
+		update tb_apt
+		   set apt_count = apt_count + 1
+		 where apt_no = #{aptNo}
+	</update>
+	
+	<select id="selectHotAptList" resultMap="mapResult">
+		SELECT *
+		  FROM (SELECT 
+		               APT_NAME,
+		               APT_SELLING_TYPE,
+		               APT_PRICE,
+		               APT_ADDRESS,
+		               APT_DESC,
+		               APT_IMG_URL 
+		          FROM TB_APT 
+		         ORDER
+		            BY APT_COUNT DESC)
+		 WHERE ROWNUM BETWEEN 1 AND 10
+	</select>
+	
 </mapper>

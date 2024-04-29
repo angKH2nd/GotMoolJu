@@ -98,5 +98,12 @@ public class MapController {
 		return new Gson().toJson(list);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="selectHotList.ma", produces="application/json; charset=utf-8")
+	public String selectHotAptList() {
+		ArrayList<MapVO> list = mService.selectHotAptList();
+		
+		return new Gson().toJson(list);
+	}
 	
 }
