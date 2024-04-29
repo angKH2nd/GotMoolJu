@@ -2,6 +2,20 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
+<style>
+.sidebar-wrapper .nav li.active {
+  background-color: white;
+  color: #2CA8FF;
+}
+
+.sidebar-wrapper .nav li.active i {
+  color: #2CA8FF;
+}
+
+.sidebar-wrapper .nav li:hover {
+  background-color: #f1f1f1;
+}
+</style>
 
 <html>
   <head>
@@ -47,7 +61,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
         <div class="sidebar-wrapper" id="sidebar-wrapper">
           <ul class="nav">
             <!-- active임 원래 -->
-            <li class="active1">
+            <li class="active1" id="gotmoolju-sidebar-gogo1">
               <a href="main.ad">
                 <i class="now-ui-icons text_align-left"></i>
                 <p>메인화면</p>
@@ -65,7 +79,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
                 <p>부동산</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo4">
               <a href="qnaList.ad">
                 <i class="now-ui-icons ui-1_send"></i>
                 <p>Q&A</p>
@@ -77,7 +91,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
                 <p>개선의견</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo6">
               <a href="announcementList.ad">
                 <i class="now-ui-icons business_bulb-63"></i>
                 <p>공지사항</p>
@@ -92,8 +106,8 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
           </ul>
         </div>
       </div>
-    </div>
-
+		
+		
     <!-- <%--   Core JS Files   --%> -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -112,5 +126,36 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
     ></script>
     <!-- <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%> -->
     <script src="resources/assets/demo/demo.js"></script>
+    
+ <script>
+$(document).ready(function() {
+  // 현재 URL에 따라 해당 메뉴 항목 활성화
+  var currentUrl = window.location.href;
+  $(".sidebar-wrapper .nav li a").each(function() {
+    if ($(this).attr("href") === currentUrl) {
+      $(this).parent().addClass("active");
+      $(this).parent().css("background-color", "white");
+    }
+  });
+
+  // 메뉴 항목 클릭 이벤트 처리
+  $(".sidebar-wrapper .nav li").click(function() {
+    // 모든 메뉴 항목의 active 클래스 제거
+    $(".sidebar-wrapper .nav li").removeClass("active");
+    
+    // 클릭된 메뉴 항목에 active 클래스 추가
+    $(this).addClass("active");
+    
+    // 모든 메뉴 항목의 백그라운드 색상 제거
+    $(".sidebar-wrapper .nav li").css("background-color", "");
+    
+    // 클릭된 메뉴 항목의 백그라운드 색상을 유지
+    $(this).css("background-color", "white");
+    
+    // 현재 URL 업데이트
+    window.history.pushState({}, "", $(this).find("a").attr("href"));
+  });
+});
+</script>
   </body>
 </html>

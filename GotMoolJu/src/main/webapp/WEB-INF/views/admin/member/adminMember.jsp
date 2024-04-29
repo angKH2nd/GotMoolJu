@@ -44,6 +44,7 @@ pageEncoding="UTF-8"%>
     </div>
     <jsp:include page="../common/adminThinHeader.jsp" />
 <!-- 여기서부터 -->
+
 	<div class="wrapper">
 		<div class="main-panel" id="main-panel">
 			<!-- End Navbar -->
