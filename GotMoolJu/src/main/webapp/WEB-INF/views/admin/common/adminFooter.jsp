@@ -31,13 +31,13 @@ pageEncoding="UTF-8"%>
        				<nav>
          				<ul>
            					<li>
-             					<a href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1">Creative Tim</a>
+             					<a target="_blank" href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1">Creative Tim(Notion)</a>
        						</li>
            					<li>
-             					<a href="http://presentation.creative-tim.com"> About Us </a>
+             					<a target="_blank" href="https://github.com/angKH2nd"> github </a>
            					</li>
            					<li>
-             					<a href="http://blog.creative-tim.com"> Blog </a>
+             					<a href="main.ad"> GotMoolJu </a>
 				            </li>
        					</ul>
    					</nav>
@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
 			         	</script>
           				, Designed by
           				<a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-          				<a href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1" target="_blank">Creative Tim</a>.
+          				<a href="https://www.notion.so/Got-406e99dadbe442eabc0daab8e60b80f1 " target="_blank">Creative Tim</a>.
 					</div>
    				</div>
    			</footer>
