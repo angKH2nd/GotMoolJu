@@ -170,7 +170,9 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 #### 💦 프로젝트 개선점
 
-&nbsp; - 개선점 2개~3개 추가예정
+&nbsp; - DB에서 데이터를 가져와 서울시 아파트 가격 순위를 매기는 방식으로 기능을 구현하였습니다. 하지만 데이터를 가져오다보니 정적인 느낌을 많이 받았습니다. API를 이용하여 최근 몇 년간의 가격 변동이 큰 아파트, 한 달 간격으로 아파트 값이 많이 내려간 순으로 랭킹을 매기는 기능을 추가하여 발전시키고 싶습니다.
+
+&nbsp; - 대용량 데이터를 다룰 수 있도록 최적화 되어 있지 않아, 조금씩 로딩이 딜레이 되는 현상이 나타나곤 하였습니다. 성능을 보다 향상실킬 수 있도록 개선안을 마련하여 보다 빠른 로딩이 보장될 수 있도록 리팩토링하고 싶습니다.
 
 <br><br>
 
@@ -178,7 +180,7 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 ❤ 김재영
 
-&nbsp; - 느낀점 추가예정 TBD
+&nbsp; - 서로 다른 코딩 스타일과 이해도를 조율하는 과정이 필요했고, 이 과정에서 커뮤니케이션 스킬의 중요성을 다시금 깨닫게 되었습니다. 같은 방향을 바라보고 나아가는 팀원들 간의 협업을 위해 필수적인 과정이라고 생각하였고, 팀워크를 더욱 다질 수 있도록 조율하고 합의점을 찾는 경험을 통해 의사소통 스킬이 발전함을 느낄 수 있었습니다. 뿐만 아니라, 코드 품질 향상을 위한 테스팅 및 디버깅 능력도 함께 기르게 되어 매우 뜻깊고 뿌듯한 프로젝트였다고 생각합니다. 끝까지 함께 해 준 팀원들에게 감사합니다! 
 
 💛 류은송
 
@@ -431,13 +433,13 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 &nbsp;&nbsp;&nbsp; - 부동산 지도
 
-GIF 추가예정
+![일반지도](https://github.com/angKH2nd/GotMoolJu/assets/151509995/23d2d624-5754-4116-8894-fb72718a41e2)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 부동산 일반 지도, 지형, 위성지도, 겹쳐보기
 
-GIF 추가예정
+![지도 변환](https://github.com/angKH2nd/GotMoolJu/assets/151509995/1ada2914-ea4d-4f5c-bc1e-f8bba0c6e569)
 
 <br><br>
 
@@ -445,7 +447,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 부동산 리스트업, 조회
 
-GIF 추가예정
+![아파트클릭리스트](https://github.com/angKH2nd/GotMoolJu/assets/151509995/d91870f1-2bc0-402b-9a6d-1f552225748e)
 
 <br><br>
 
@@ -453,7 +455,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 부동산 지역별 마킹
 
-GIF 추가예정
+![지도이동시마커갱신](https://github.com/angKH2nd/GotMoolJu/assets/151509995/2b13d826-a707-4bff-916e-8cdb3c976fbd)
 
 <br><br>
 
@@ -461,7 +463,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 부동산 주소별 목록 조회
 
-GIF 추가예정
+![시에서 동](https://github.com/angKH2nd/GotMoolJu/assets/151509995/36afacb7-7482-4d31-9832-8a4b56ba549c)
 
 <br><br>
 
@@ -469,7 +471,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 부동산 검색
 
-GIF 추가예정
+![검색](https://github.com/angKH2nd/GotMoolJu/assets/151509995/3b08d89c-2223-4f8b-ba25-8738cffe7b25)
 
 <br><br>
 
@@ -477,7 +479,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 세금계산기 API
 
-GIF 추가예정
+![세금계산기](https://github.com/angKH2nd/GotMoolJu/assets/151509995/de634f79-ee16-4f82-b342-5783984683e5)
 
 <br><br>
 
@@ -485,13 +487,13 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 카카오 로그인 API
 
-GIF 추가예정
+![카카오 로그인](https://github.com/angKH2nd/GotMoolJu/assets/151509995/778e9131-5941-4cd0-b63e-844237c9a1b9)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 네이버 로그인 API
 
-GIF 추가예정
+![네이버로그인](https://github.com/angKH2nd/GotMoolJu/assets/151509995/0fcea53b-a4dd-4575-b56b-2a9be592dd27)
 
 <br><br>
 
