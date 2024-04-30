@@ -1,3 +1,5 @@
+![got_motion_logo](https://github.com/angKH2nd/GotMoolJu/assets/151509995/c8567a9a-3b7e-4ae2-8a2b-7acff9219bfd)
+
 # GotMoolJu
 
 <br><br>
@@ -580,10 +582,35 @@ GIF 추가예정
 <details>
 <summary>접기/펼치기</summary>
 <pre>
-<!--
-![1](https://github.com/angKH1st/FundFundhaeyo/assets/151509995/a6d02c01-4308-4a73-b011-dd1d88157b60)
-![2](https://github.com/angKH1st/FundFundhaeyo/assets/151509995/bb57fbb7-98ef-4b62-a29e-6b5a2df76c29)
--->
+  
+![1](https://github.com/angKH2nd/GotMoolJu/assets/151509995/95ee98c9-2ff6-407a-87a9-d966ab853893)
+![2](https://github.com/angKH2nd/GotMoolJu/assets/151509995/459b4a87-0b3c-42ad-9ba2-ddff73f6eee2)
+![3](https://github.com/angKH2nd/GotMoolJu/assets/151509995/7affce51-f74c-4fc4-bdba-6976bb082352)
+![4](https://github.com/angKH2nd/GotMoolJu/assets/151509995/abc8205c-e8e7-4e2f-9c88-c965f785562d)
+![5](https://github.com/angKH2nd/GotMoolJu/assets/151509995/1fb8d1ad-d97f-404b-bbab-70e508c67a1f)
+![6](https://github.com/angKH2nd/GotMoolJu/assets/151509995/a452d954-c595-4c83-9ee6-8e3dff6bcabf)
+![7](https://github.com/angKH2nd/GotMoolJu/assets/151509995/abc8f6bc-3b6b-43d0-80a7-9e83d15f4ae3)
+![8](https://github.com/angKH2nd/GotMoolJu/assets/151509995/0a1cf6aa-68ca-469e-a126-318b8b1e55a4)
+![9](https://github.com/angKH2nd/GotMoolJu/assets/151509995/9a0ba571-8d20-42a2-aa1c-5f49ddae2a56)
+![10](https://github.com/angKH2nd/GotMoolJu/assets/151509995/d4aece1d-b1d3-4601-aa0a-536ffef7e6f5)
+![11](https://github.com/angKH2nd/GotMoolJu/assets/151509995/6560d587-9e23-4c05-a49e-4c8b8cbf7f38)
+![12](https://github.com/angKH2nd/GotMoolJu/assets/151509995/09200bc4-d558-4bd2-a76a-5e1d518be5bc)
+![13](https://github.com/angKH2nd/GotMoolJu/assets/151509995/0aa1dee6-08fe-4bca-ba5c-1ba39e4c6ca1)
+![14](https://github.com/angKH2nd/GotMoolJu/assets/151509995/05668c10-cdbf-4bd0-b29c-9be9fcf24007)
+![15](https://github.com/angKH2nd/GotMoolJu/assets/151509995/117bef7f-11eb-472a-90f3-91724d5db5af)
+![16](https://github.com/angKH2nd/GotMoolJu/assets/151509995/969af4fd-9fc7-418e-ae45-063029707b70)
+![17](https://github.com/angKH2nd/GotMoolJu/assets/151509995/61f124ae-98d5-4ce7-a9a7-c44d388f31f7)
+![18](https://github.com/angKH2nd/GotMoolJu/assets/151509995/bd89da87-1e20-46b8-8872-3fd5f2611c32)
+![19](https://github.com/angKH2nd/GotMoolJu/assets/151509995/e63dc82a-21cc-4120-be63-3f757138a1d8)
+![20](https://github.com/angKH2nd/GotMoolJu/assets/151509995/37d868d3-b477-48b9-bcb8-4102b78915a1)
+![21](https://github.com/angKH2nd/GotMoolJu/assets/151509995/fbd640d4-d7b6-4c3f-8e19-ba08e1b38f71)
+![22](https://github.com/angKH2nd/GotMoolJu/assets/151509995/88ca50c0-f653-41ca-af4b-968f0ac3368e)
+![23](https://github.com/angKH2nd/GotMoolJu/assets/151509995/665d4c23-9a49-4e33-bf5b-b77cbd1272d6)
+![24](https://github.com/angKH2nd/GotMoolJu/assets/151509995/c1f15cb9-866c-4baa-a7a7-97ccd12d7dc4)
+![25](https://github.com/angKH2nd/GotMoolJu/assets/151509995/d54d3d36-bfc4-4021-aaa8-1246a8ca875c)
+![26](https://github.com/angKH2nd/GotMoolJu/assets/151509995/3bca534e-65c4-464b-b8ed-df745cd3b802)
+![27](https://github.com/angKH2nd/GotMoolJu/assets/151509995/4a651dd2-685b-4895-ac41-434f6f0774a7)
+
 </pre>
 </details>
 
