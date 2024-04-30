@@ -1,6 +1,6 @@
-![got_motion_logo](https://github.com/angKH2nd/GotMoolJu/assets/151509995/c8567a9a-3b7e-4ae2-8a2b-7acff9219bfd)
-
 # GotMoolJu
+
+![got_motion_logo](https://github.com/angKH2nd/GotMoolJu/assets/151509995/c8567a9a-3b7e-4ae2-8a2b-7acff9219bfd)
 
 <br><br>
 
