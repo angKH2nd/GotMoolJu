@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>갓물주</title>
 <style>
-.btn-format {
+#qnaList .btn-format {
     background-color: #434d68;
     color: white;
     padding: 10px 24px;
@@ -15,7 +15,7 @@
     border-radius: 5px;
 }
 
-.btn-format:hover {
+#qnaList .btn-format:hover {
     background-color: #4CAF50;
 }
 
