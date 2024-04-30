@@ -6,7 +6,7 @@
 </head>
 <body>
 <script type="text/javascript">
-  var naver_id_login = new naver_id_login("opjzzdCNjEas6y2mkSia", "http://localhost:8222/got/naver.me");
+  var naver_id_login = new naver_id_login("opjzzdCNjEas6y2mkSia", "http://192.168.20.35:8222/got/naver.me");
 
   naver_id_login.get_naver_userprofile("naverSignInCallback()");
 
@@ -24,7 +24,7 @@
         },
         success:function(result){
            if(result == 'yes'){
-            location.replace("http://localhost:8222/got/home.got");
+            location.replace("http://192.168.20.35:8222/got/home.got");
            }
           
         },

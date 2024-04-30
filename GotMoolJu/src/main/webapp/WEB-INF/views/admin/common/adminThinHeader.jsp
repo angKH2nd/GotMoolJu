@@ -48,16 +48,14 @@
               data-target="#navigation"
               aria-controls="navigation-index"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-bar navbar-kebab"></span>
               <span class="navbar-toggler-bar navbar-kebab"></span>
               <span class="navbar-toggler-bar navbar-kebab"></span>
             </button>
             <div
               class="collapse navbar-collapse justify-content-end"
-              id="navigation"
-            >
+              id="navigation">
               <form>
                 <!-- <%-- 상단 search --%> -->
                 <div class="input-group no-border">

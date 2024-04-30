@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
+
 
 <html>
   <head>
@@ -47,43 +49,43 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
         <div class="sidebar-wrapper" id="sidebar-wrapper">
           <ul class="nav">
             <!-- active임 원래 -->
-            <li class="active1">
+            <li class="active1" id="gotmoolju-sidebar-gogo1">
               <a href="main.ad">
                 <i class="now-ui-icons text_align-left"></i>
                 <p>메인화면</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo2">
               <a href="memberList.ad">
                 <i class="now-ui-icons business_badge"></i>
                 <p>회원</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo3">
               <a href="aptList.ad">
                 <i class="now-ui-icons travel_istanbul"></i>
                 <p>부동산</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo4">
               <a href="qnaList.ad">
                 <i class="now-ui-icons ui-1_send"></i>
                 <p>Q&A</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo5">
               <a href="impList.ad">
                 <i class="now-ui-icons ui-2_like"></i>
                 <p>개선의견</p>
               </a>
             </li>
-            <li>
+            <li id="gotmoolju-sidebar-gogo6">
               <a href="announcementList.ad">
                 <i class="now-ui-icons business_bulb-63"></i>
                 <p>공지사항</p>
               </a>
             </li>
-            <li class="active-pro">
+            <li class="active-pro" id="gotmoolju-sidebar-gogo7">
               <a href="logout.me">
                 <i class="now-ui-icons media-1_button-power"></i>
                 <p>로그아웃</p>
@@ -92,8 +94,8 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
           </ul>
         </div>
       </div>
-    </div>
-
+		
+		
     <!-- <%--   Core JS Files   --%> -->
     <script src="resources/assets/js/core/jquery.min.js"></script>
     <script src="resources/assets/js/core/popper.min.js"></script>
@@ -112,5 +114,6 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
     ></script>
     <!-- <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%> -->
     <script src="resources/assets/demo/demo.js"></script>
+    
   </body>
 </html>

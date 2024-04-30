@@ -242,6 +242,9 @@
     z-index: 3;
   }
 
+  &[data-color="gotmoolju"] {
+    @include sidebar-color($info-color);
+  }
   &[data-color="blue"] {
     @include sidebar-color($info-color);
   }

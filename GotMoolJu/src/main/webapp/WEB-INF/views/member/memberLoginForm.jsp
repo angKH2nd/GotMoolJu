@@ -68,10 +68,10 @@
     }
 
 	
-  	var naver_id_login = new naver_id_login("opjzzdCNjEas6y2mkSia", "http://localhost:8222/got/naver.me");
+  	var naver_id_login = new naver_id_login("opjzzdCNjEas6y2mkSia", "http://192.168.20.35:8222/got/naver.me");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 3,45);
-  	naver_id_login.setDomain("http://localhost:8222/got/");
+  	naver_id_login.setDomain("http://192.168.20.35:8222/got/");
   	naver_id_login.setState(state);
   	naver_id_login.init_naver_id_login();
 

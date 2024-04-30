@@ -55,6 +55,9 @@
             }
         }
     }
+    &[data-background-color="gotmoolju"]{
+        background-color: $danger-color;
+    }
 
     &[data-background-color="red"]{
         background-color: $danger-color;
