@@ -226,12 +226,16 @@ pageEncoding="UTF-8"%>
 				                        		
 				                        	}
 			                        	}
-								
+										</script>
+										
+										<script>
+										
 									$(document).ready(function(){
-									    //  WebSocket connection 연결
-									    function connect() {
+										var socket = null;
+									   
+										function connect() {
 									        console.log("연결 됀건가?");
-									        var socket = new WebSocket("ws://localhost:8222/replyEcho");
+									        var socket = new WebSocket("ws://localhost:8222/myHandler");
 
 									        socket.onopen = function() {
 									            console.log("연결 성공");
@@ -255,21 +259,24 @@ pageEncoding="UTF-8"%>
 									            console.log("error " + error.message);
 									        };
 									    }
-									    
 									    // connect function invoke
-									    connect();
+									    	connect();
 									    
-									    // 전송버튼 
-									    $("#ws-qna-btn").on('click', function(evt){
-									        console.log("여기도 타나???");
-									        evt.preventDefault();
-									        if (socket.readyState !== 1) return;
-									        let msg = $('input#msg').val();
-									        socket.send(msg);
-									    });
-									});
+										// 전송버튼 
+								    	 $("#ws-qna-btn").on('click', function(evt){
+								    	        console.log("Клик на кнопке");
+								    	        evt.preventDefault();
+								    	        if (socket.readyState !== 1) {
+								    	            console.log("Соединение не установлено или не готово");
+								    	            return;
+								    	        }
+								    	        let msg = $('input#msg').val();
+								    	        socket.send(msg);
+								    	    });
+								    	});
 
-								
+									    //  WebSocket connection 연결
+									    
 									</script>
 		                		</c:if>
 		                		<c:if test="${ ad.qnaStatus eq 'N' }">

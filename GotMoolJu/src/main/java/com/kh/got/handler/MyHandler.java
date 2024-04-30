@@ -12,7 +12,7 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-public class EchoHandler extends TextWebSocketHandler {
+public class MyHandler extends TextWebSocketHandler {
 	List<WebSocketSession> sessions = new ArrayList<>();
 //	Map<String, WebSocketSession> userSessions = new HashMap<>();
 	
