@@ -24,23 +24,24 @@
                 </tbody>
             </table>
                   
-            <input id="qna-number" type="hidden" name="qno">
-            <input id="qna-writer" type="hidden" name="qwriter">
+  
+  
+            <input id="qna-number" type="hidden" name="qno" value="">
+            <input id="qna-writer" type="hidden" name="qwriter" value="">
 	            
 	                
             <div class="qna-detail-head-area">
-			    <script>
-					let qnaWriter = $("#qna-writer").val();
-				</script>
-							
-			    <c:if test="${loginUser.userNickname eq qnaWriter }"> </c:if>
-			    <div class="qna-detail-btn-update">
-			        <a class="qna-btn btn-primary fl br5 mh" onclick="updateForm($('#qna-number').val());" style="margin-right: 5px;">수정하기</a>
-			        <a class="qna-btn btn-danger fl br5 mh" onclick="deleteQna($('#qna-number').val());" style="background-color: #4CAF50; color: white;">삭제하기</a>
-			    </div>
+				   
+				    <div class="qna-detail-btn-update">
+				        <a class="qna-btn btn-primary fl br5 mh" onclick="updateForm($('#qna-number').val());" style="margin-right: 5px;">수정하기</a>
+				        <a class="qna-btn btn-danger fl br5 mh" onclick="deleteQna($('#qna-number').val());" style="background-color: #4CAF50; color: white;">삭제하기</a>
+				    </div>
+			    
 	            <div id ="qna-sample" style="margin-top: 10px;" class="br5 mh"><button id="closeQnaDetailBtn" class="mh fb">목록으로</button></div>
 	        </div>
-                 
+      
+      
+      
         <script>
             function deleteQna(){
                if(confirm("문의 사항 삭제하시겠습니까?")){
@@ -54,7 +55,7 @@
                           $("#qnaList").show();
                       },
                       error: function(){
-                          console.log('error');
+                         // console.log('error');
                       }
                   });
                }

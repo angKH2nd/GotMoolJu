@@ -363,49 +363,49 @@ ERD : [**DB 모델링**](https://www.erdcloud.com/d/yYqmHgTa9GDgntMJS)
 
 &nbsp;&nbsp;&nbsp; - 관리자 페이지
 
-GIF 추가예정
+![eunsong_admin_page](https://github.com/angKH2nd/GotMoolJu/assets/151509995/6cac3c58-f2ad-49e4-80e4-de9f3176802c)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 회원 조회, 상세 조회, 수정
 
-GIF 추가예정
+![eunsong_adm_select_update_member](https://github.com/angKH2nd/GotMoolJu/assets/151509995/44c75ea1-6793-4529-a30a-3ca0f83ac8de)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 공지사항 조회, 상세 조회, 등록
 
-GIF 추가예정
+![eunsong_adm_select_insert_announcement](https://github.com/angKH2nd/GotMoolJu/assets/151509995/4be8cddb-d6b8-4a24-baf3-5253732eaecd)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 공지사항 수정, 삭제, 복구
 
-GIF 추가예정
+![eunsong_update_delete_revive_announcement](https://github.com/angKH2nd/GotMoolJu/assets/151509995/1eae8678-7869-4218-87ee-082ba8bde521)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 Q&A 조회, 답변 리스트 확인
 
-GIF 추가예정
+![eunsong_adm_select_qna](https://github.com/angKH2nd/GotMoolJu/assets/151509995/0cc5142f-eb4d-498f-b16d-02b2785a990b)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 Q&A 삭제, 답변 등록, 답변 수정
 
-GIF 추가예정
+![eunsong_adm_delete_insert_update_qna](https://github.com/angKH2nd/GotMoolJu/assets/151509995/9c94193e-2005-4d9b-b23f-cc6cde4639e2)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 부동산 조회, 상세 조회, 삭제
 
-GIF 추가예정
+![eunsong_adm_select_detail_delete_apart](https://github.com/angKH2nd/GotMoolJu/assets/151509995/6f047484-b278-4349-9b60-d585ed4991e7)
 
 <br><br>
 
 &nbsp;&nbsp;&nbsp; - 관리자 개선의견 조회, 삭제
 
-GIF 추가예정
+![eunsong_adm_select_delete_improvement](https://github.com/angKH2nd/GotMoolJu/assets/151509995/37123768-0c0c-4f8d-996e-196c6254efda)
 
 <br><br>
 
@@ -413,7 +413,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - 회사소개, 이용약관, 개인정보처리방침
 
-GIF 추가예정
+![eunsong_select_company_introduce](https://github.com/angKH2nd/GotMoolJu/assets/151509995/c353610b-7b5a-4729-b734-ca77743b0c17)
 
 <br><br>
 
@@ -421,7 +421,7 @@ GIF 추가예정
 
 &nbsp;&nbsp;&nbsp; - SNS 공유 API
 
-GIF 추가예정
+![eunsong_kakao_sns_share](https://github.com/angKH2nd/GotMoolJu/assets/151509995/cd0f62d8-0c51-46ed-95c7-2cb664657a98)
 
 <br><br>
 
