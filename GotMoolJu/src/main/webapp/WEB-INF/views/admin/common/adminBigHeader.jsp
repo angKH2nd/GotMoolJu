@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
 			               	<span class="navbar-toggler-bar bar3"></span>
 		             	</button>
        				</div>
-           			<a class="navbar-brand" href="#pablo">Dashboard</a>
+           			<a class="navbar-brand" href="#pablo">지역별 매물 수</a>
        			</div>
          		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
            			<span class="navbar-toggler-bar navbar-kebab"></span>

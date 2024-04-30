@@ -6,6 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>갓물주</title>
+<style>
+.qna-top-area .btn-format {
+    background-color: #434d68;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+}
+
+.qna-top-area .btn-format:hover {
+    background-color: #4CAF50;
+}
+
+</style>
 <link rel="stylesheet" href="resources/css/helpCenter/qna/qnaListView.css">
 </head>
 <body>

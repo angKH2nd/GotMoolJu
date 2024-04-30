@@ -407,7 +407,7 @@ public class MemberController {
 		String url = 
 				"https://kauth.kakao.com/oauth/authorize"
 				+ "?client_id=a07a1d3336ad0e46b650f0614d3df7c7"
-				+ "&redirect_uri=http://localhost:8222/got/login.ka"
+				+ "&redirect_uri=http://192.168.20.35:8222/got/login.ka"
 				+ "&response_type=code";
 		
 		return url;
@@ -487,7 +487,7 @@ public class MemberController {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
             sb.append("&client_id=a07a1d3336ad0e46b650f0614d3df7c7");  //본인이 발급받은 key
-            sb.append("&redirect_uri=http://localhost:8222/got/login.ka");     // 본인이 설정해 놓은 경로
+            sb.append("&redirect_uri=http://192.168.20.35:8222/got/login.ka");     // 본인이 설정해 놓은 경로
             sb.append("&code=" + authorize_code);
             bw.write(sb.toString());
             bw.flush();
