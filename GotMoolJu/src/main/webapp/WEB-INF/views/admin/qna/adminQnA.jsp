@@ -202,19 +202,18 @@ pageEncoding="UTF-8"%>
 		                <td colspan="3" name="qnaAnswerCreateDate"></td>
                 	</c:if>
                 		<input type="hidden" id="qnaTypeValue" value="${ad.qnaType}">
+								<div>
+									<input type="hidden" id="msg" value="회원님 질문에 답변이 등록 되었습니다" class="form-control"/>
+								</div>
 		                <c:choose>
 		                 	<c:when test="${ ad.qnaAnswerStatus eq 'N' }">
 		                 		<%-- 작성하기 이모지, 아이콘 --%>
 		                 		<c:if test="${ ad.qnaStatus eq 'Y' }">
-		                 			<td colspan=2 align="center" onclick="moveToEnrollQna(${ ad.qnaNo }); connect();"> 
-		                 				<a style="float:right; color:blue; border-radius: 20px"><i class="fa-solid fa-paper-plane"></i></a>
+		                 			<td colspan=2 align="center" onclick="moveToEnrollQna(${ ad.qnaNo }); "> 
+		                 				<a style="float:right; color:blue; border-radius: 20px"><i id="ws-qna-btn" class="fa-solid fa-paper-plane"></i></a>
 									</td> 
 									
 									<!-- 알림보내는 메시지 -->
-									<div>
-										<input type="hidden" id="msg" value="회원님 질문에 답변이 등록 되었습니다" class="form-control"/>
-									
-									</div>
 									
 									<script>
 										function moveToEnrollQna(qno){
@@ -222,44 +221,55 @@ pageEncoding="UTF-8"%>
 				                        		var contentId = "#qnaAnswerContent" + qno;
 				                        	    var content = $(contentId).val();
 				                        	   
-				                        	    let msg= $('input#msg').val();
-				                        	    socket.send(msg);
-			                        			
 				                        	    location.href = "qnaAnswerEnroll.ad?qno=" + qno + "&qnaAnswerContent=" + content + "&qnaType=" + $("#qnaTypeValue").val();
 				                        	}else{
 				                        		
 				                        	}
 			                        	}
-									</script>
-									
-									<script>
-									var socket = null;
-									function connect(){
-										console.log("tttttt")
-										var ws = new WebSocket("ws://localhost:8222/home.got);
-										socket = ws;
-										
-										ws.onopen = function(){
-											console.log('info: connection opened.');
-										};
-										
-										ws.onmessage = function(event){
-											console.log("RecieveMessage:",event.data+'\n');
-										};
-										
-										ws.onclose = function (event){
-											console.log('Info: connection closed.');
-										};
-										
-										ws.onerror = function(err){
-											console.log('Error:', err);
-										};
-									}
-									
-									
-									
-									
-									
+								
+									$(document).ready(function(){
+									    //  WebSocket connection 연결
+									    function connect() {
+									        console.log("연결 됀건가?");
+									        var socket = new WebSocket("ws://localhost:8222/replyEcho");
+
+									        socket.onopen = function() {
+									            console.log("연결 성공");
+									        };
+
+									        socket.onmessage = function(event) {
+									            console.log("메시지 도착했어요: " + event.data);
+									            // 필요시 코드 추가
+									        };
+
+									        socket.onclose = function(event) {
+									            if (event.wasClean) {
+									                console.log("connection is closed");
+									            } else {
+									                console.log("connection is interrupted");
+									            }
+									            console.log("code: " + event.code + ", reason: " + event.reason);
+									        };
+
+									        socket.onerror = function(error) {
+									            console.log("error " + error.message);
+									        };
+									    }
+									    
+									    // connect function invoke
+									    connect();
+									    
+									    // 전송버튼 
+									    $("#ws-qna-btn").on('click', function(evt){
+									        console.log("여기도 타나???");
+									        evt.preventDefault();
+									        if (socket.readyState !== 1) return;
+									        let msg = $('input#msg').val();
+									        socket.send(msg);
+									    });
+									});
+
+								
 									</script>
 		                		</c:if>
 		                		<c:if test="${ ad.qnaStatus eq 'N' }">

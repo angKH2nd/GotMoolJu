@@ -27,9 +27,13 @@ public class EchoHandler extends TextWebSocketHandler {
 	@Override
 	public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
 		System.out.println("handleTextMessage" +session + ":" + message);
-		String senderId = session.getId();
+		String payload = message.getPayload();
+		
+		 // Отправляем полученное сообщение обратно клиенту
+        session.sendMessage(new TextMessage("Вы отправили сообщение: " + payload));
+        
 		for (WebSocketSession sess: sessions) {
-			sess.sendMessage(new TextMessage(senderId + ":" + message.getPayload()));
+			sess.sendMessage(new TextMessage( "새로운알림이 도착했습니다 :" + payload));
 		}
 		
 	}	
