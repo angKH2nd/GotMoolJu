@@ -1,19 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="https://kit.fontawesome.com/4dc2c036ac.js" crossorigin="anonymous"></script>
 <!DOCTYPE html>
-<style>
-
-/* 활성화된 메뉴 항목의 아이콘 색상 */
-.sidebar-wrapper .nav li.active {
-  background-color: #2CA8FF;
-  color: light;
-}
-
-.sidebar-wrapper .nav li.active i {
-  color: light;
-}
-</style>
 
 <html>
   <head>
@@ -125,38 +114,5 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/c
     <!-- <%-- Now Ui Dashboard DEMO methods, don't include it in your project! --%> -->
     <script src="resources/assets/demo/demo.js"></script>
     
-    <script>
-    $(document).ready(function() {
-    	  // 초기 상태 설정
-    	  $(".sidebar-wrapper .nav li:first-child").addClass("active");
-    	  $(".sidebar-wrapper .nav li:first-child").css("background-color", "#2CA8FF");
-    	  $(".sidebar-wrapper .nav li:first-child i").css("color", "white");
-
-    	  // 사이드바 메뉴 항목 클릭 이벤트 처리
-    	  $(".sidebar-wrapper .nav li").click(function() {
-    	    // 모든 메뉴 항목의 active 클래스 제거
-    	    $(".sidebar-wrapper .nav li").removeClass("active");
-    	    $(".sidebar-wrapper .nav li").css("background-color", "");
-    	    $(".sidebar-wrapper .nav li i").css("color", "");
-
-    	    // 클릭된 메뉴 항목에 active 클래스 추가
-    	    $(this).addClass("active");
-    	    $(this).css("background-color", "#2CA8FF");
-    	    $(this).find("i").css("color", "white");
-    	  });
-    	});
-    
-    $(document).ready(function() {
-    	  // 현재 URL에 따라 해당 메뉴 항목 활성화
-    	  var currentUrl = window.location.href;
-    	  $(".sidebar-wrapper .nav li a").each(function() {
-    	    if ($(this).attr("href") === currentUrl) {
-    	      $(this).parent().addClass("active");
-    	      $(this).parent().css("background-color", "#2CA8FF");
-    	      $(this).find("i").css("color", "white");
-    	    }
-    	  });
-    	});
-    </script>
   </body>
 </html>
