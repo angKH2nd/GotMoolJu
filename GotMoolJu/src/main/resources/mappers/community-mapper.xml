@@ -356,13 +356,13 @@
 		  from 
 		       (
 		        select 
-		                   count(town_star) + count(town_likes) + count(town_click) + count(town_reply_count) as "town_star"
+		                   sum(town_star + town_likes + town_click + town_reply_count) as "town_star"
 		                 , town_writer
 		                 , town_writer_img
 		              from tb_town
 		             where town_status = 'Y'
 		             group by town_writer, town_writer_img
-		             order by count(town_star) + count(town_likes) + count(town_click) + count(town_reply_count) desc
+		             order by sum(town_star + town_likes + town_click + town_reply_count) desc
 		       )
 		 where rownum between 1 and 5
 	</select>

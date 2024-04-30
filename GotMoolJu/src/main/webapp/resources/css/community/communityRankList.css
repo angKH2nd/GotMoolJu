@@ -30,7 +30,7 @@
 }
 
 .town-rank-count {
-	width: 20px;
+	width: 35px;
 }
 
 .town-rank-text {
@@ -38,7 +38,7 @@
 }
 
 .town-rank-blank {
-	width: calc(100% - 335px);
+	width: calc(100% - 350px);
 }
 
 .crown0 {

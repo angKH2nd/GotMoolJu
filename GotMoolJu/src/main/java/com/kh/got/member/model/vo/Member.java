@@ -8,9 +8,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@NoArgsConstructor
-@Setter
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Member {
 	
@@ -31,5 +32,6 @@ public class Member {
 	private String userStatus;
 	private String userOriginName;
 	private String userUpdateName;
+	
 	
 }
