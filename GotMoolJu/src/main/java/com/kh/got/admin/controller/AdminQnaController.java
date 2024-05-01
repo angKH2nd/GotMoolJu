@@ -9,8 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.kh.got.admin.model.service.AdminMemberService;
 import com.kh.got.admin.model.service.AdminQnaService;
 import com.kh.got.common.model.vo.PageInfo;
@@ -108,7 +110,14 @@ public class AdminQnaController {
 	}
 	
 	
-	
+	@ResponseBody
+	@RequestMapping(value ="qnaReply", produces = "application/json; charset=utf-8")
+	public String selectAnswer(@RequestParam("qno") int qno) {
+	    QnaAnswer r = adminQService.qnaAnswer(qno);
+	    System.out.println(r);
+	    return new Gson().toJson(r);
+	}
+
 	
 	
 	

@@ -70,6 +70,11 @@ public class AdminQnaServiceImpl implements AdminQnaService {
 		return adminQDao.adminUpdateQnaAnswer(sqlSession, qnaAnswerContent, qnaNo);
 	}
 
+	@Override
+	public QnaAnswer qnaAnswer(int qnaNo) {
+		return adminQDao.qnaAnswer(sqlSession, qnaNo);
+	}
+
 	
 
 	

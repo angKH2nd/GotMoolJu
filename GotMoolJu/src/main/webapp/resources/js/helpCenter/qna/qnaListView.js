@@ -39,7 +39,7 @@ function showQnaDetail(qnaNo) {
 			data: {qno:qnaNo},
 			success: function(result){
 				// 성공한 경우 => qnaDetailView.jsp 내에 해당 ajax 조회 결과 (qna 상세정보) 기입해주기 (qna-detail-area 는 예시)
-				if(result.qnaType == "2"){
+				if(result.qnaType == "2" && result.qnaWriter !== nickName){
 					$(".qna-detail-area tbody td").html("비밀글입니다");
 					$("#qna-number").val(result.qnaNo);
 					$("#qna-writer").val(result.qnaWriter);
@@ -58,14 +58,35 @@ function showQnaDetail(qnaNo) {
 	           			$(".qna-detail-btn-update").hide();
 	           		}
 				
+				    showQnaAnswer(qnaNo);
 			}, error: function(){
 				console.log('error');
 			}
-		});
-	
+	});
+}
+
+//답변 완료시 보이게 하는  function		
+function showQnaAnswer(qnaNo) {
+    $.ajax({
+        url: "qnaReply",
+        data: { qno: qnaNo },
+        success: function(response) {
+            console.log(response);
+            if(response && response.qnaAnswerContent !== null){
+                $("#qna-answer").html(response.qnaAnswerContent);
+         	}else{
+         		$("#qna-answer").html("답변 대기중입니다");
+         	}
+        },
+        error: function(xhr, status, error) {
+            console.error('ajax통신 실패:', error);
+        }
+    });
     $("#qnaList").hide(); // 리스트 숨기기
     $("#qnaDetail").show(); // 상세보기 열기
+	
 }
+
 
 // 글쓰기를 보여주는 함수 정의
 function showQnaInsert() {

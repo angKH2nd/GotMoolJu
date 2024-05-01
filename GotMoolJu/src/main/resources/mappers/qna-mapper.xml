@@ -227,4 +227,15 @@
 			 )
 	</insert>
 	
+	<select id="qnaReply" resultMap="qnaAnswerResult">
+		
+		select
+			qna_answer_no,
+			qna_answer_content
+		  from tb_qna_answer
+			where qna_answer_status = 'Y'
+			and qna_answer_ref_no = #{qnaNo}
+						
+		</select>
+	
 </mapper>

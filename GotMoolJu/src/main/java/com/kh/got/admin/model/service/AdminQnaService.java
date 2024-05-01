@@ -25,6 +25,8 @@ public interface AdminQnaService {
 	
 	// qna 답글 수정
 	int adminUpdateQnaAnswer(String qnaAnswerContent, int qnaNo);
+
+	QnaAnswer qnaAnswer(int qnaNo);
 	
 
 }

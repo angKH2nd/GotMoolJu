@@ -21,6 +21,10 @@
                     <tr>
                         <td style="width: 100%; height: 45px; border-bottom: 0.5px solid #434d68;"></td>
                     </tr>
+                    
+                    <tr>
+                        <td id="qna-answer" style="width: 100%; height: 45px; border-bottom: 0.5px solid #434d68;"></td>
+                    </tr>
                 </tbody>
             </table>
                   
