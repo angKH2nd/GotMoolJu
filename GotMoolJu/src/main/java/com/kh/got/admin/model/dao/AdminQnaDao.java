@@ -74,6 +74,11 @@ public class AdminQnaDao {
 		
 	}
 
+	public QnaAnswer qnaAnswer(SqlSessionTemplate sqlSession, int qnaNo) {
+		return sqlSession.selectOne("qnaMapper.qnaReply", qnaNo);
+	}
+
+
 
 	
 }
