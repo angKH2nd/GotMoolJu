@@ -326,9 +326,9 @@ pageEncoding="UTF-8"%>
                   				<table class="table" id="miniAnnouncementArea">
 				                    <thead class="text-primary">
 				                    	<th>No</th>
-				                     	<th>작성자</th>
-				                      	<th>제목</th>
-				                     	<th>작성일</th>
+				                     	<th>Writer</th>
+				                      	<th>Title</th>
+				                     	<th>Date</th>
 			                    	</thead>
                     				<tbody id="announcementlistClick">
            		      					<c:forEach var="ad" items="${ admAnnouncementList }">
