@@ -114,7 +114,7 @@ public class AdminQnaController {
 	@RequestMapping(value ="qnaReply", produces = "application/json; charset=utf-8")
 	public String selectAnswer(@RequestParam("qno") int qno) {
 	    QnaAnswer r = adminQService.qnaAnswer(qno);
-	    System.out.println(r);
+//	    System.out.println(r);
 	    return new Gson().toJson(r);
 	}
 
